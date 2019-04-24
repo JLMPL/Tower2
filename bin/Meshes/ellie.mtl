@@ -1,0 +1,36 @@
+# Blender MTL File: 'ellie.blend'
+# Material Count: 3
+
+newmtl backpack
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 7
+map_Kd /home/dominik/Desktop/Main Outfit/ellie-backpack-low-color - dxt1 - 1024x1024.png
+
+newmtl jeans
+Ns 96.078431
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 7
+map_Kd /home/dominik/Desktop/Main Outfit/ellie-jeans-color - dxt1 - 1024x1024.png
+
+newmtl shirt
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 7
+map_Kd /home/dominik/Desktop/Main Outfit/ellie-shirt-color - dxt1 - 2048x2048.png
+map_Ks /home/dominik/Desktop/Main Outfit/ellie-shirt-singleplayer-spec-mask - bc4 - 1024x1024.png

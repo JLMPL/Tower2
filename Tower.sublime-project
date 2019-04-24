@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "src"
+		},
+		{
+			"path": "bin/Shaders"
+		},
+		{
+			"path": "bin/Materials"
+		}
+	]
+}

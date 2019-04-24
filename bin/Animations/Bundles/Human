@@ -1,0 +1,106 @@
+{
+    "name": "Humanoid",
+    "animations": [
+        {
+            "name": "Idle",
+            "file": "Guy_idle.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Run",
+            "file": "Guy_run.dae",
+            "loop": true,
+            "rootMotion": false,
+
+            "events": []
+        },
+        {
+            "name": "RunLeft",
+            "file": "Guy_runLeft.dae",
+            "loop": true,
+            "rootMotion": false,
+
+            "events": []
+        },
+        {
+            "name": "RunRight",
+            "file": "Guy_runRight.dae",
+            "loop": true,
+            "rootMotion": false,
+
+            "events": []
+        },
+        {
+            "name": "Jump",
+            "file": "Guy_jump.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Attack",
+            "file": "Guy_attack.dae",
+            "loop": false,
+            "rootMotion": true,
+
+            "events": [
+                {
+                    "type": "DamageTarget",
+                    "joint": "none",
+                    "time": 0.5
+                }
+            ]
+        },
+        {
+            "name": "Death",
+            "file": "Guy_death.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Chest",
+            "file": "Guy_chest.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Pickup",
+            "file": "Guy_pickup.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "AimBow",
+            "file": "Guy_aimBow.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Pain",
+            "file": "Guy_pain.dae",
+            "loop": false,
+            "rootMotion": true,
+            "events": []
+        },
+        {
+            "name": "Draw",
+            "file": "Guy_draw.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Sheathe",
+            "file": "Guy_sheathe.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        }
+    ]
+}

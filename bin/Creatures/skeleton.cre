@@ -1,0 +1,12 @@
+{
+    "code": "skeleton",
+    "type": "human",
+    "name": "Skeleton",
+    "apperance": "skeleton.x",
+    "dialogue": "Dialogues/totally_not_bobs",
+    "radius": 0.25,
+    "height": 1.5,
+    "name_offset": 2.25,
+    "speed": 6.0,
+    "xp_reward": 100
+}

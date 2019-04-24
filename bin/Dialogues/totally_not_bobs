@@ -1,0 +1,83 @@
+# Totally not bob - Herbert
+
+talk 0
+player "Hey!"
+next 1
+end_talk
+
+choice 1
+opt 0 true 2 "You got some quests maybe?"
+opt 1 false 3 "About this thang..."
+opt 2 true -1 "Nevermind"
+end_choice
+
+talk 2
+player "You got some quests maybe?"
+other "Well... I got one."
+other "I need you to bring me this damn ancient artefact."
+other "It's in that cave over there."
+other "Bring it to me & I'll give you shit ton of gold."
+other "Whataya say?"
+disable 1:0
+enable 1:1
+next 102
+end_talk
+
+script 102
+function main()
+    beginQuest("planty", "Damn Herb");
+end
+function next()
+    return 1
+end
+end_script
+
+talk 3
+player "About this ancient artefact..."
+next 103
+end_talk
+
+script 103
+function main()
+end
+function next()
+    -- if hasItem(0, "damn_herb") then
+    if false then
+        return 33
+    else
+        return 44
+    end
+end
+end_script
+
+talk 33
+player "I got your damn thing"
+other "Wow It must've been really hard"
+player "Really hard!"
+other "Yeah take the gold!"
+disable 1:1
+next 133
+end_talk
+
+script 133
+function main()
+    endQuest("planty", true)
+end
+function next()
+    return -1
+end
+end_script
+
+talk 44
+player "I'm working on it"
+other "Just hurry up. Would you?"
+next -1
+end_talk
+
+talk
+{
+    id: 44;
+    player: "I'm working on it";
+    other: "Just hurry up. Would you?";
+    next: -1;
+}

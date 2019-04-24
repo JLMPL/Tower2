@@ -1,0 +1,35 @@
+#shader vertex
+#version 130
+
+in vec2 vertexPos;
+in vec2 vertexCoord;
+
+out vec2 fragCoord;
+
+uniform mat4 uProj;
+uniform vec2 uPos;
+
+void main()
+{
+    vec4 clipPos = uProj * vec4(vertexPos + uPos, 0, 1);
+    gl_Position = clipPos;
+
+    fragCoord = vertexCoord;
+}
+
+
+#shader fragment
+#version 130
+
+in vec2 fragCoord;
+
+out vec4 theColor;
+
+uniform sampler2D uImage;
+uniform vec4 uColor;
+
+void main()
+{
+    theColor = texture(uImage, fragCoord) * uColor;
+}
+

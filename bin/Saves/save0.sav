@@ -1,0 +1,8 @@
+world 0
+entity 3 creature
+pos -8.81889 5.02 -0.260125
+end_entity
+entity 4 creature
+pos 2 1 4
+end_entity
+end_world

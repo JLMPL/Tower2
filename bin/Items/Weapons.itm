@@ -1,0 +1,43 @@
+{
+"items" : [
+    {
+        "id": 100,
+        "code": "damn_sord",
+        "type": "one_handed",
+        "name": "Damn Sord",
+        "mesh": "sord.obj",
+        "texture": "env_plant",
+        "image": "sword.png",
+        "description": "Dis asscutter gous thru ur crack like butter",
+        "value": 10,
+
+        "damage": 5
+    },
+    {
+        "id": 101,
+        "code": "viol_sord",
+        "type": "one_handed",
+        "name": "Sword of Violation",
+        "mesh": "sord.obj",
+        "texture": "env_plant",
+        "image": "sword.png",
+        "description": "It's just fucking awesome!",
+        "value": 500,
+
+        "damage": 50
+    },
+    {
+        "id": 223,
+        "code": "sum_bow",
+        "type": "bow",
+        "name": "Some Bow",
+        "mesh": "bow.obj",
+        "texture": "env_wood",
+        "image": "nass.png",
+        "description": "Is that supposed to be wet?",
+        "value": 5,
+
+        "damage": 10
+    }
+]
+}

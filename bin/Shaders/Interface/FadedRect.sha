@@ -1,0 +1,33 @@
+#shader vertex
+#version 130
+
+in vec2 vertexPos;
+in float vertexAlpha;
+
+out float fragAlpha;
+
+uniform mat4 uProj;
+uniform vec2 uPos;
+
+void main()
+{
+    vec4 clipPos = uProj * vec4(vertexPos + uPos, 0, 1);
+    gl_Position = clipPos;
+
+    fragAlpha = vertexAlpha;
+}
+
+#shader fragment
+#version 130
+
+in float fragAlpha;
+
+out vec4 theColor;
+
+uniform vec4 color;
+
+void main()
+{
+    theColor = vec4(color.rgb, color.a * (fragAlpha*fragAlpha));
+}
+
