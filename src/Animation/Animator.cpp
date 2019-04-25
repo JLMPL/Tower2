@@ -1,6 +1,5 @@
 #include "Animator.hpp"
-#include <Debug/Log.hpp>
-#include <Core/Utils.hpp>
+#include "Debug/Log.hpp"
 #include "Animation.hpp"
 #include "Pose.hpp"
 #include "Skeleton.hpp"
@@ -99,6 +98,10 @@ void Animator::genGlobalPose(const Joint& joint, const mat4& parentTransform, co
     }
 
     mat4 globalTransform = parentTransform * jointTransformation;
+
+    if (joint.index < 0 || joint.index >= m_globalTransforms.size())
+        return;
+
     m_globalTransforms[joint.index] = DaeCorrectionMatrix * globalTransform;
     m_matrixPalette[joint.index] = DaeCorrectionMatrix * globalTransform * joint.offsetMatrix;
 

@@ -44,12 +44,15 @@ void Level::loadFromFile(const Path& path)
 
     // auto camra = m_sceneGraph.addCameraNode();
 
-    auto ass = m_sceneGraph.addMeshNode("pantses.obj");
+    // auto ass = m_sceneGraph.addMeshNode("pantses.obj");
     // ass->hide();
 
     // m_sceneGraph.getRoot()->attachNode(empty);
     m_sceneGraph.getRoot()->attachNode(light);
-    m_sceneGraph.getRoot()->attachNode(ass);
+    // m_sceneGraph.getRoot()->attachNode(ass);
+
+    auto rigud = m_sceneGraph.addSkinnedMeshNode("rigud.dae", "Rigud");
+    m_sceneGraph.getRoot()->attachNode(rigud);
 }
 
 void Level::loadMap(const std::string& map, const std::string& net)
@@ -120,7 +123,7 @@ Chest* Level::addChest(const Code& code)
     Entity::Ptr entity(new Chest());
 
     Chest* chest = entity->as<Chest>();
-    chest->init(m_lastEntityId, code);
+    chest->init(m_lastEntityId, code, &m_sceneGraph);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -133,7 +136,7 @@ Door* Level::addDoor(const std::string& code)
     Entity::Ptr entity(new Door());
 
     auto door = entity->as<Door>();
-    door->init(m_lastEntityId, code);
+    door->init(m_lastEntityId, code, &m_sceneGraph);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;

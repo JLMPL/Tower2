@@ -1,0 +1,12 @@
+{
+    "name": "Humanoid",
+    "animations": [
+        {
+            "name": "Idle",
+            "file": "rigud.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        }
+    ]
+}

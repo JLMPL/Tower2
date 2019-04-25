@@ -1,7 +1,28 @@
 #include "Waynet.hpp"
-#include "Core/Utils.hpp"
 #include "Debug/Log.hpp"
 #include <fstream>
+
+template <typename T>
+void removeFromVector(std::vector<T>& vec, T thing)
+{
+    for (u32 i = 0; i < vec.size(); i++)
+    {
+        if (vec[i] == thing)
+        {
+            vec.erase(vec.begin() + i);
+            return;
+        }
+    }
+}
+
+template <typename T>
+bool isInVector(const std::vector<T>& vec, T thing)
+{
+    for (auto& i : vec)
+        if (i == thing)
+            return true;
+    return false;
+}
 
 void Waynet::loadFromFile(const std::string& path)
 {
@@ -120,7 +141,7 @@ Waynet::Route Waynet::findWay(const vec3& from, const vec3& to)
     {
         Waypoint* current = pickOneWithLowestFCost(open);
 
-        Utils::removeFromVector(open, current);
+        removeFromVector(open, current);
         closed.push_back(current);
 
         if (current == end)
@@ -130,11 +151,11 @@ Waynet::Route Waynet::findWay(const vec3& from, const vec3& to)
         {
             auto& i = current->neighbors[hf];
 
-            if (Utils::isInVector(closed, i))
+            if (isInVector(closed, i))
                 continue;
 
             if (f32 newCost = current->gCost + math::distance(current->pos, i->pos);
-                newCost < i->gCost || !Utils::isInVector(open, i))
+                newCost < i->gCost || !isInVector(open, i))
             {
                 i->gCost = math::distance(i->pos, start->pos);
                 i->hCost = math::distance(i->pos, end->pos);
@@ -142,7 +163,7 @@ Waynet::Route Waynet::findWay(const vec3& from, const vec3& to)
 
                 i->cameFrom = current;
 
-                if (!Utils::isInVector(open, i))
+                if (!isInVector(open, i))
                     open.push_back(i);
             }
         }

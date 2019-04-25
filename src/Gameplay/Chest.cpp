@@ -3,15 +3,21 @@
 #include "Render/MeshManager.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Interface/Interface.hpp"
+#include "SceneGraph/SceneGraph.hpp"
+#include "SceneGraph/MeshNode.hpp"
 #include "Creature.hpp"
 #include "Item.hpp"
 
-void Chest::init(u32 id, const std::string& code)
+void Chest::init(u32 id, const std::string& code, SceneGraph* graph)
 {
     Base::init(id, code);
+    m_sceneGraph = graph;
 
     auto mesh = gfx::g_MeshMgr.getMesh("chest.obj");
 
+    m_mesh = m_sceneGraph->addMeshNode("chest.obj");
+
+    m_sceneGraph->getRoot()->attachNode(m_mesh);
     // m_mesh = gfx::g_Renderer3D.addStatic(&mesh->entries[0], gfx::g_MatMgr.getMaterial("env_grass"));
 
     m_staticBody = phys::g_PhysSys.addStaticBox(vec3(0.25,0.35,0.4), vec3(0));
@@ -44,8 +50,9 @@ void Chest::init(u32 id, const std::string& code)
 
 void Chest::update()
 {
-    m_transform = math::translate(m_pos);
+    m_mesh->setPosition(m_pos);
 
+    m_transform = math::translate(m_pos);
     m_staticBody.setGlobalTransform(m_transform * math::translate(vec3(0,0.35,0)));
     // m_mesh.setTransform(m_transform);
 

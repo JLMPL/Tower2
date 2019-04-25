@@ -10,7 +10,6 @@ i8 SkinnedMeshLoader::addNodesToSkeleton(SkinnedMesh& mesh, const aiNode& node)
     i8 jointIndex = mesh.skeleton.joints.size();
 
     anim::Joint joint;
-    std::string name = "Rig_" + std::string(node.mName.C_Str());
     joint.name = node.mName.C_Str();
 
     for (u32 i = 0; i < anim::Joint::MaxChildren; i++)

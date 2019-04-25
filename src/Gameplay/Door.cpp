@@ -3,9 +3,11 @@
 #include "Render/MeshManager.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Interface/Interface.hpp"
+#include "SceneGraph/SceneGraph.hpp"
+#include "SceneGraph/SceneNode.hpp"
 #include "Creature.hpp"
 
-void Door::init(u32 id, const std::string& code)
+void Door::init(u32 id, const std::string& code, SceneGraph* graph)
 {
     Base::init(id, code);
     initEventListening(GameEvent::EntityRelated);
@@ -13,6 +15,11 @@ void Door::init(u32 id, const std::string& code)
 
     // m_renderableHandle = gfx::g_Renderer3D.addStatic(
         // &gfx::g_MeshMgr.getMesh("door.obj")->entries[0], gfx::g_MatMgr.getMaterial("env_wood"), true);
+
+    m_sceneGraph = graph;
+
+    m_mesh = m_sceneGraph->addMeshNode("door.obj");
+    m_sceneGraph->getRoot()->attachNode(m_mesh);
 
     m_staticBody = phys::g_PhysSys.addStaticBox(vec3(0.05,1.5,1), vec3(0,0,0));
 
@@ -76,6 +83,9 @@ void Door::update()
         math::translate(m_pos) *
         // math::translate(vec3(0,0,0.5)) *
         math::rotate(m_yaw, vec3(0,1,0));
+
+    m_mesh->setPosition(m_pos);
+    m_mesh->setRotation(math::rotate(quat(), m_yaw, vec3(0,1,0)));
 
     mat4 staticBodyTransform =
         math::translate(m_pos) *

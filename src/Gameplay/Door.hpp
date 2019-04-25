@@ -2,12 +2,15 @@
 #include "Interactible.hpp"
 #include "Physics/PhysicsSystem.hpp"
 
+class SceneGraph;
+class SceneNode;
+
 class Door : public Interactible
 {
 public:
     using Base = Entity;
 
-    void init(u32 id, const std::string& code) override final;
+    void init(u32 id, const std::string& code, SceneGraph* graph);
     void update() override final;
     void onEvent(const GameEvent& event) override final;
     void interact(Creature* other) override final;
@@ -33,6 +36,9 @@ private:
     f32 m_yaw = 0.f;
 
     std::string m_keyItem;
+
+    SceneGraph* m_sceneGraph = nullptr;
+    SceneNode* m_mesh = nullptr;
 
     // gfx::RenderableHandle m_renderableHandle;
     phys::StaticBody       m_staticBody;
