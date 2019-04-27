@@ -25,14 +25,6 @@ uniform PointLight uPointLights[4];
 
 const float PI = 3.14159265359;
 
-float rand(vec2 co)
-{
-    return fract(sin(dot(co.xy, vec2(12.9898,78.233))) * 43758.5453);
-}
-
-const float spread = 0.005;
-const int numSamples = 32;
-
 float pointShadow0()
 {
     vec3 diff = fragPos - uPointLights[0].pos;

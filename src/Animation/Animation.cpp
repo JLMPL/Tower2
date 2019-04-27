@@ -28,9 +28,7 @@ void Animation::loadAnimation(const std::string& path)
             aiNodeAnim* channel = animation->mChannels[i];
 
             JointAnimation jointAnimation;
-            //std::string("Rig_") +
             std::string str = channel->mNodeName.C_Str();
-            printf("la: %s\n", str.c_str());
             jointAnimation.name = str.c_str();
 
             for (u32 i = 0; i < channel->mNumPositionKeys; i++)

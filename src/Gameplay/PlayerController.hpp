@@ -1,5 +1,7 @@
 #include "CreatureController.hpp"
 
+class Interactible;
+
 class PlayerController : public CreatureController
 {
 public:
@@ -38,4 +40,6 @@ private:
 
 private:
     State m_state = State::Idle;
+
+    Interactible* m_interactible = nullptr;
 };

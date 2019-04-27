@@ -16,6 +16,8 @@ void PlayerController::onEvent(const GameEvent& event)
 
 void PlayerController::update()
 {
+    m_interactible = m_cre->getLevel()->getClosestInteractible(m_cre->getPos(), m_cre->getFacingDir());
+
     switch (m_state)
     {
         case State::Idle:
@@ -96,9 +98,9 @@ void PlayerController::idle()
     {
         m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
 
-        if (gInput.isUse() && m_cre->getFocus())
+        if (gInput.isUse() && m_interactible)
         {
-            m_cre->getFocus()->interact(m_cre);
+            m_interactible->interact(m_cre);
         }
     }
 

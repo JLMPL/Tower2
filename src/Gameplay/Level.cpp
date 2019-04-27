@@ -36,20 +36,9 @@ void Level::loadFromFile(const Path& path)
     auto li = static_cast<LightNode*>(light);
     li->setColor(vec3(1,0.75,0.01) * 500);
     li->setShadowCasting(true);
-    li->setPosition(vec3(0,3,0));
+    li->setPosition(vec3(3,3,3));
 
-    // auto empty = m_sceneGraph.addEmptyNode();
-
-    // empty->attachNode(light);
-
-    // auto camra = m_sceneGraph.addCameraNode();
-
-    // auto ass = m_sceneGraph.addMeshNode("pantses.obj");
-    // ass->hide();
-
-    // m_sceneGraph.getRoot()->attachNode(empty);
     m_sceneGraph.getRoot()->attachNode(light);
-    // m_sceneGraph.getRoot()->attachNode(ass);
 
     auto rigud = m_sceneGraph.addSkinnedMeshNode("rigud.dae", "Rigud");
     m_sceneGraph.getRoot()->attachNode(rigud);
