@@ -1,9 +1,7 @@
 #include "Entity.hpp"
 
-void Entity::init(u32 id, const std::string& code)
+Entity::Entity(u32 id) : m_id(id)
 {
-    m_id = id;
-    m_code = code;
 }
 
 void Entity::setPos(const vec3& pos)

@@ -4,52 +4,70 @@
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "Chest.hpp"
-#include "Creature.hpp"
 #include "Door.hpp"
 #include "Lever.hpp"
 #include "Pickup.hpp"
 #include "PlayerController.hpp"
 #include "Render/GraphRenderer.hpp"
+#include "Script/Lua.hpp"
 #include <SDL2/SDL.h>
 #include <fstream>
 
 #include "SceneGraph/LightNode.hpp"
 
-void Level::loadFromFile(const Path& path)
+void Level::loload(const std::string& file)
 {
-    std::ifstream file(path);
-    json data;
-    file >> data;
+    lua::state state;
+    state.open_libraries(sol::lib::base);
 
-    m_name = data["name"].get<std::string>();
+    state["setLevelMesh"] = [&](const std::string& name)
+    {
+        setLevelMesh(name, "net.obj");
+    };
 
-    std::string mapMesh = data["mapMesh"].get<std::string>();
-    std::string waynetMesh = data["waynetMesh"].get<std::string>();
+    state["setPlayerSpawnPoint"] = [&](f32 x, f32 y, f32 z)
+    {
+        addCreature(Creature::Species::Player)->setPos(vec3(x,y,z));
+    };
 
-    loadMap(mapMesh, waynetMesh);
-    loadEntities(data["entities"]);
+    state["Species_Skeleton"] = i32(Creature::Species::Skeleton);
 
-    m_cameraController.init(m_entities[0]->as<Creature>());
+    state["addCreature"] = [&](i32 species, f32 x, f32 y, f32 z) -> i32
+    {
+        addCreature(Creature::Species(species))->setPos(vec3(x,y,z));
+        return 123;
+    };
+
+    state["addChest"] = [&](f32 x, f32 y, f32 z) -> i32
+    {
+        addChest("")->setPos(vec3(x,y,z));
+        return 123;
+    };
+
+    state.script_file("Maps/Level0.lua");
+
+    lua::function init = state["initializeLevel"];
+    init();
 
     auto light = m_sceneGraph.addLightNode();
-
-    auto li = static_cast<LightNode*>(light);
-    li->setColor(vec3(1,0.75,0.01) * 500);
+    auto li = light->as<LightNode>();
+    li->setColor(vec3(1,0.75,0.1) * 500);
     li->setShadowCasting(true);
     li->setPosition(vec3(3,3,3));
 
     m_sceneGraph.getRoot()->attachNode(light);
 
+    ui::g_Interface.setWhoms(m_entities[0]->as<Creature>());
+
     auto rigud = m_sceneGraph.addSkinnedMeshNode("rigud.dae", "Rigud");
     m_sceneGraph.getRoot()->attachNode(rigud);
 }
 
-void Level::loadMap(const std::string& map, const std::string& net)
+void Level::setLevelMesh(const std::string& map, const std::string& net)
 {
     m_waynet.loadFromFile(net);
 
     auto mesh = gfx::g_MeshMgr.getMesh(map);
-    auto mat = gfx::g_MatMgr.getMaterial("env_wall");
 
     for (const auto& entry : mesh->entries)
     {
@@ -77,16 +95,16 @@ void Level::loadMap(const std::string& map, const std::string& net)
     m_sceneGraph.getRoot()->attachNode(m_mapMesh);
 }
 
-Creature* Level::addCreature(const std::string& desc, bool isPlayer)
+Creature* Level::addCreature(Creature::Species species)
 {
-    Entity::Ptr entity(new Creature());
+    Entity::Ptr entity(new Creature(m_lastEntityId));
 
     Creature* creature = entity->as<Creature>();
 
-    creature->init(m_lastEntityId, this, &m_sceneGraph, isPlayer ? Creature::Species::Player : Creature::Species::Skeleton);
+    creature->init(this, &m_sceneGraph, species);
 
-    if (isPlayer)
-        creature->setController(new PlayerController(creature));
+    if (species == Creature::Species::Player)
+        creature->setController(new PlayerController(creature, m_sceneGraph));
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -96,10 +114,10 @@ Creature* Level::addCreature(const std::string& desc, bool isPlayer)
 
 Pickup* Level::addPickup(const std::string& item)
 {
-    Entity::Ptr entity(new Pickup());
+    Entity::Ptr entity(new Pickup(m_lastEntityId));
 
     Pickup* pickup = entity->as<Pickup>();
-    pickup->init(m_lastEntityId, "pik_damn_herb");
+    pickup->init();
 
     m_creationQueue.push_back(std::move(entity));
     m_lastEntityId++;
@@ -109,10 +127,10 @@ Pickup* Level::addPickup(const std::string& item)
 
 Chest* Level::addChest(const Code& code)
 {
-    Entity::Ptr entity(new Chest());
+    Entity::Ptr entity(new Chest(m_lastEntityId));
 
     Chest* chest = entity->as<Chest>();
-    chest->init(m_lastEntityId, code, &m_sceneGraph);
+    chest->init(&m_sceneGraph);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -122,10 +140,10 @@ Chest* Level::addChest(const Code& code)
 
 Door* Level::addDoor(const std::string& code)
 {
-    Entity::Ptr entity(new Door());
+    Entity::Ptr entity(new Door(m_lastEntityId));
 
     auto door = entity->as<Door>();
-    door->init(m_lastEntityId, code, &m_sceneGraph);
+    door->init(&m_sceneGraph);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -135,125 +153,16 @@ Door* Level::addDoor(const std::string& code)
 
 Lever* Level::addLever(const std::string& code)
 {
-    Entity::Ptr entity(new Lever());
+    Entity::Ptr entity(new Lever(m_lastEntityId));
 
     auto lever = entity->as<Lever>();
-    lever->init(m_lastEntityId, code);
+    lever->init(&m_sceneGraph);
     lever->setActivationTarget(3);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
 
     return lever;
-}
-
-void Level::loadCreature(const json& json)
-{
-    u32 id = json["id"].get<u32>();
-    std::string desc = json["creatureDesc"].get<std::string>();
-
-    auto creature = addCreature(desc, !id);
-
-    auto& position = json["position"];
-    creature->setPos(vec3(
-        position[0].get<f32>(),
-        position[1].get<f32>(),
-        position[2].get<f32>()
-    ));
-
-    auto& items = json["items"];
-
-    for (u32 i = 0; i < items.size(); i++)
-    {
-        std::string code = items[i]["code"].get<std::string>();
-        u32 count = items[i]["count"].get<u32>();
-
-        creature->getEquipment()->give(code, count);
-    }
-}
-
-void Level::loadChest(const json& json)
-{
-    std::string code = json["code"].get<std::string>();
-
-    auto chest = addChest(code);
-
-    auto& position = json["position"];
-    chest->setPos(vec3(
-        position[0].get<f32>(),
-        position[1].get<f32>(),
-        position[2].get<f32>()
-    ));
-
-    auto& items = json["items"];
-
-    for (u32 i = 0; i < items.size(); i++)
-    {
-        std::string code = items[i]["code"].get<std::string>();
-        u32 count = items[i]["count"].get<u32>();
-
-        chest->getEquipment().give(code, count);
-    }
-}
-
-void Level::loadDoor(const json& json)
-{
-    std::string code = json["code"].get<std::string>();
-    std::string keyItem = json["keyItem"].get<std::string>();
-
-    auto door = addDoor(code);
-    door->setKeyItem(keyItem);
-
-    auto& position = json["position"];
-    door->setPos(vec3(
-        position[0].get<f32>(),
-        position[1].get<f32>(),
-        position[2].get<f32>()
-    ));
-}
-
-void Level::loadLever(const json& json)
-{
-    std::string code = json["code"].get<std::string>();
-
-    auto lever = addLever(code);
-
-    auto& position = json["position"];
-    lever->setPos(vec3(
-        position[0].get<f32>(),
-        position[1].get<f32>(),
-        position[2].get<f32>()
-    ));
-}
-
-void Level::loadEntities(const json& json)
-{
-    for (u32 i = 0; i < json.size(); i++)
-    {
-        u32 id = json[i]["id"].get<u32>();
-        std::string type = json[i]["type"].get<std::string>();
-
-        if (type == "creature")
-        {
-            loadCreature(json[i]);
-        }
-        else if (type == "chest")
-        {
-            loadChest(json[i]);
-        }
-        else if (type == "door")
-        {
-            loadDoor(json[i]);
-        }
-        else if (type == "lever")
-        {
-            loadLever(json[i]);
-        }
-    }
-
-    auto player = m_entities[0]->as<Creature>();
-
-    ui::g_Interface.setWhoms(player, player->getEquipment());
 }
 
 Projectile* Level::addProjectile(Projectile* raw)
@@ -321,8 +230,6 @@ void Level::lateUpdate()
 {
     for (auto& ent : m_entities)
         ent->lateUpdate();
-
-    m_cameraController.update();
 
     if (DebugSwitches::drawWaynet)
         m_waynet.debugDraw();

@@ -145,7 +145,7 @@ void SkinnedMeshLoader::loadFromFile(SkinnedMesh& mesh, const std::string& path)
 void SkinnedMeshLoader::genBufferObjects(SkinnedMesh::Entry& entry)
 {
     entry.vao.init();
-    entry.vao.setVertexNumber(entry.indices.size());
+    entry.vao.setIndexNumber(entry.indices.size());
     entry.vao.bind();
 
     entry.dbo.init(GL_ARRAY_BUFFER);

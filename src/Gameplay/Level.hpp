@@ -2,14 +2,11 @@
 #include "Core/Json.hpp"
 #include "Physics/PhysicsSystem.hpp"
 #include "AI/Waynet.hpp"
-#include "Render/OrbitCamera.hpp"
-#include "CameraController.hpp"
 #include "Interactible.hpp"
 #include "Projectile.hpp"
+#include "Creature.hpp"
 
 #include "SceneGraph/SceneGraph.hpp"
-
-#include "Render/Light.hpp"
 
 union SDL_Event;
 
@@ -28,12 +25,13 @@ public:
     Level& operator=(const Level&) = delete;
 
     void loadFromFile(const Path& path);
+    void loload(const std::string& file);
     void update();
     void lateUpdate();
 
     void sendSystemEvent(const SDL_Event& event);
 
-    Creature* addCreature(const std::string& type, bool isPlayer = false);
+    Creature* addCreature(Creature::Species species);
     Pickup*   addPickup(const std::string& item);
     Chest*    addChest(const Code& code);
     Door*     addDoor(const std::string& code);
@@ -48,12 +46,7 @@ public:
     Entity*       getEntityById(u32 id) const;
 
 private:
-    void loadMap(const std::string& map, const std::string& net);
-    void loadEntities(const json& json);
-    void loadCreature(const json& json);
-    void loadChest(const json& json);
-    void loadDoor(const json& json);
-    void loadLever(const json& json);
+    void setLevelMesh(const std::string& map, const std::string& net);
 
     void createEntities();
     void destroyEntities();
@@ -67,8 +60,6 @@ private:
 
     SceneGraph m_sceneGraph;
     SceneNode* m_mapMesh = nullptr;
-
-    CameraController             m_cameraController;
 
     u32                          m_lastEntityId = 0;
     std::vector<Entity::Ptr>     m_creationQueue;

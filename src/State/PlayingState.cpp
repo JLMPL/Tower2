@@ -11,7 +11,7 @@ void PlayingState::init()
     ui::g_Interface.init();
     g_ItemMgr.loadItems();
 
-    m_level.loadFromFile("Maps/map0");
+    m_level.loload("Maps/Level0.lua");
 }
 
 void PlayingState::sendSystemEvent(const Event& event)

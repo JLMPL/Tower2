@@ -31,7 +31,7 @@ float pointShadow0()
     float dist = length(diff);
     vec3 sample = normalize(diff);
 
-    return (dist < textureCube(uPointShadowCubemap, sample).r + 0.01) ? 1.f : 0.f;
+    return (dist < textureCube(uPointShadowCubemap, sample).r + 0.01) ? 1.f : 0.1f;
 }
 
 vec4 extractTexture()

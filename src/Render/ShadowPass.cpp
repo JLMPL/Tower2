@@ -11,9 +11,9 @@ namespace gfx
 
 void ShadowPass::init()
 {
-    m_proj = math::perspective(90.0_rad, 1.f, 0.1f, 100.f);
-    m_fbo.init(Framebuffer::Type::Color, 1024, 1024, false, GL_R32F, GL_RED, GL_FLOAT);
-    m_cubemap.init(1024, GL_R32F, GL_RED, GL_FLOAT);
+    m_proj = math::perspective(90.0_rad, 1.f, 0.1f, 20.f);
+    m_fbo.init(Framebuffer::Type::Color, 256, 256, false, GL_R32F, GL_RED, GL_FLOAT);
+    m_cubemap.init(256, GL_R32F, GL_RED, GL_FLOAT);
 
     m_shadowShader.loadFromFile("Shaders/Static.vert", "Shaders/PointShadow.frag");
     m_ashadowShader.loadFromFile("Shaders/Skinned.vert", "Shaders/PointShadow.frag");

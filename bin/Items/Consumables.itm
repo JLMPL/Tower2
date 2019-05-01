@@ -1,0 +1,13 @@
+{
+"items" : [
+    {
+        "id": 0,
+        "code": "herb",
+        "type": "food",
+        "name": "Damn Herb",
+        "mesh": "sord.obj",
+        "texture": "env_plant",
+        "image": "damn_plant.png"
+    }
+]
+}

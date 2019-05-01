@@ -1,0 +1,31 @@
+{
+"items" : [
+    {
+        "id": 100,
+        "code": "torch",
+        "type": "torch",
+        "name": "Torch",
+        "mesh": "torch.dae",
+        "texture": "env_wood",
+        "image": "torch.png"
+    },
+    {
+        "id": 101,
+        "code": "test_key",
+        "type": "key",
+        "name": "Rusty Key",
+        "mesh": "torch.dae",
+        "texture": "env_wood",
+        "image": "key.png"
+    },
+    {
+        "id": 102,
+        "code": "test_armor",
+        "type": "armor",
+        "name": "Shitty Armor",
+        "mesh": "torch.dae",
+        "texture": "env_wood",
+        "image": "nass.png"
+    }
+]
+}

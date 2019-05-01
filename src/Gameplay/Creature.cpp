@@ -12,9 +12,12 @@
 #include "Level.hpp"
 #include "Pickup.hpp"
 
-void Creature::init(u32 id, Level* level, SceneGraph* graph, Species spec)
+Creature::Creature(u32 id) : Interactible(id)
 {
-    m_id = id;
+}
+
+void Creature::init(Level* level, SceneGraph* graph, Species spec)
+{
     m_level = level;
     m_species = spec;
 
@@ -33,14 +36,12 @@ void Creature::init(u32 id, Level* level, SceneGraph* graph, Species spec)
 
 void Creature::initPlayer()
 {
-    Base::init(m_id, "player");
-
     initLabel("Player", 2.25);
 
     m_meshNode = m_sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
 
-    auto camra = m_sceneGraph->addCameraNode();
-    m_meshNode->attachNode(camra);
+    // auto camra = m_sceneGraph->addCameraNode();
+    // m_meshNode->attachNode(camra);
 
     m_sceneGraph->getRoot()->attachNode(m_meshNode);
 
@@ -53,26 +54,25 @@ void Creature::initPlayer()
     m_meshNode->attachNode(light);*/
 
     m_conto.init(&m_id, 0.25, 1.5);
-    m_eq.init(m_id);
+    // m_eq.init(m_id);
 
     debug::g_Menu["Gameplay"]["Player"].bind("health", &m_health);
     debug::g_Menu["Gameplay"]["Player"].bind("maxHealth", (i32*)&m_maxHealth);
     debug::g_Menu["Gameplay"]["Player"].bind("magicka", &m_magicka);
     debug::g_Menu["Gameplay"]["Player"].bind("maxMagicka", (i32*)&m_maxMagicka);
 
-    m_sword = g_ItemMgr.getItem("damn_sord")->m_id;
+    // m_sword = g_ItemMgr.getItem("damn_sord")->m_id;
+    m_sword = 0;
 
     m_fuck.push_back(100);
     m_fuck.push_back(101);
     m_fuck.push_back(223);
 
-    ui::g_Interface.setWeapons(m_fuck);
+    // ui::g_Interface.setWeapons(m_fuck);
 }
 
 void Creature::initSkeleton()
 {
-    Base::init(m_id, "skeleton");
-
     initLabel("Skeleton", 2.25);
 
     auto mesh = gfx::g_MeshMgr.getSkinnedMesh("humx.dae");
@@ -81,7 +81,7 @@ void Creature::initSkeleton()
     m_sceneGraph->getRoot()->attachNode(m_meshNode);
 
     m_conto.init(&m_id, 0.25, 1.5);
-    m_eq.init(m_id);
+    // m_eq.init(m_id);
 }
 
 void Creature::setController(CreatureController* ctrl)
@@ -261,16 +261,6 @@ phys::CharacterController& Creature::getCharCtrl()
 Level* Creature::getLevel()
 {
     return m_level;
-}
-
-Interactible* Creature::getFocus()
-{
-    return m_focus;
-}
-
-Equipment* Creature::getEquipment()
-{
-    return &m_eq;
 }
 
 void Creature::setBusy(bool busy)

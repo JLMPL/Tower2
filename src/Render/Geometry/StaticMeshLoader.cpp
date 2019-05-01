@@ -65,7 +65,7 @@ void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const ai
 void StaticMeshLoader::setupBuffers(StaticMesh::Entry& ent)
 {
     ent.vao.init();
-    ent.vao.setVertexNumber(ent.indices.size());
+    ent.vao.setIndexNumber(ent.indices.size());
     ent.vao.bind();
 
     ent.dbo.init(GL_ARRAY_BUFFER);

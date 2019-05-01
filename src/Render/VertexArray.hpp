@@ -13,7 +13,7 @@ public:
 
     void init();
 
-    void setVertexNumber(u32 count);
+    void setIndexNumber(u32 count);
     void vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer);
 
     void drawElements() const;
@@ -23,7 +23,7 @@ public:
 
 private:
     GLuint m_vao = 0;
-    u32 m_numVertices = 0;
+    u32 m_numIndices = 0;
 };
 
 }

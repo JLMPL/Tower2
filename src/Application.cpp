@@ -23,7 +23,7 @@ Application::Application()
     setupSystems();
     setRelativeMouseMode(m_relativeMouse);
 
-    Lua::checkInitialization();
+    lua::checkInitialization();
 
     m_stateStack.push(State::Menu);
     // m_stateStack.push(State::Playing);

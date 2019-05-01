@@ -2,10 +2,12 @@
 #include "Creature.hpp"
 #include "ItemManager.hpp"
 
-void Pickup::init(u32 id, const std::string& code)
+Pickup::Pickup(u32 id) : Interactible(id)
 {
-    Entity::init(id, code);
+}
 
+void Pickup::init()
+{
     m_item = g_ItemMgr.getItem("damn_herb");
     m_labelName = m_item->m_name;
 
@@ -65,9 +67,9 @@ void Pickup::interact(Creature* other)
     other->getAnimator().callFunctionOnGlobalTime(
     [=]()
     {
-        other->getEquipment()->give(this->m_item, 1);
+        // other->getEquipment()->give(this->m_item, 1);
 
-        if (this->m_item->m_type == Item::Type::Torch && !other->getEquipment()->hasEquippedTorch())
+        // if (this->m_item->m_type == Item::Type::Torch && !other->getEquipment()->hasEquippedTorch())
         {
             // other->tryEquipItem(this->m_item);
         }

@@ -7,9 +7,12 @@
 #include "SceneGraph/SceneNode.hpp"
 #include "Creature.hpp"
 
-void Door::init(u32 id, const std::string& code, SceneGraph* graph)
+Door::Door(u32 id) : Interactible(id)
 {
-    Base::init(id, code);
+}
+
+void Door::init(SceneGraph* graph)
+{
     initEventListening(GameEvent::EntityRelated);
     g_EventSys.addListener(this);
 
@@ -101,10 +104,10 @@ void Door::interact(Creature* other)
 {
     if (f32 dist = math::distance(m_pos, other->getPos());
         dist < 1.5f &&
-        m_state == DoorState::Closed &&
-        other->getEquipment()->hasItem(m_keyItem))
+        m_state == DoorState::Closed/* &&
+        other->getEquipment()->hasItem(m_keyItem)*/)
     {
-        other->getEquipment()->take(m_keyItem, 1);
+        // other->getEquipment()->take(m_keyItem, 1);
         // setDoorState(DoorState::Opening);
         open();
     }

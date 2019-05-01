@@ -1,5 +1,9 @@
 #include "Interactible.hpp"
 
+Interactible::Interactible(u32 id) : Entity(id)
+{
+}
+
 void Interactible::initLabel(const std::string& name, f32 offset)
 {
     m_labelName = name;

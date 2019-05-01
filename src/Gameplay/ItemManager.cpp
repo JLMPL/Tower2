@@ -6,16 +6,23 @@ ItemManager g_ItemMgr;
 
 void ItemManager::loadItems()
 {
-    loadItemFile("Items/Foods.itm");
-    loadItemFile("Items/Weapons.itm");
-    loadItemFile("Items/Misc.itm");
+    loadItemFile("Items/Consumables.itm");
+    loadItemFile("Items/Keys.itm");
 }
 
 void ItemManager::loadItemFile(const std::string& path)
 {
     std::ifstream file(path);
     json items;
-    file >> items;
+
+    try
+    {
+        file >> items;
+    }
+    catch (nlohmann::detail::exception)
+    {
+        printf("Could not parse json in %s\n", path.c_str());
+    }
 
     for (u32 i = 0; i < items["items"].size(); i++)
     {

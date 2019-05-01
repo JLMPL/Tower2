@@ -7,10 +7,13 @@ public:
     CameraNode(float fov = 70.0_rad);
     ~CameraNode() = default;
 
+    void setOffset(const vec3& offset);
+
     const mat4& getProjection() const;
     const mat4& getView() const;
 
     const vec3& getPosition() const override final;
+    const vec3& getForwardDirection() const;
 
     Type getType() const override final;
 
@@ -24,4 +27,6 @@ private:
 
     vec3 m_pos;
     vec3 m_center;
+
+    vec3 m_forward;
 };

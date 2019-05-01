@@ -5,13 +5,11 @@
 
 namespace gfx
 {
-    class Camera;
     class Renderer2D;
 }
 
 struct Event;
 class Creature;
-class Equipment;
 
 namespace ui
 {
@@ -29,11 +27,8 @@ public:
 
     void draw();
 
-    void setCamera(const gfx::Camera* cam);
-    void setWhoms(Creature* creature, Equipment* eq);
+    void setWhoms(Creature* creature);
     void prompt(const std::string& small, const std::string& big);
-
-    void setWeapons(const std::vector<i32>& weaps);
 
 private:
     HeadsUpDisplay    m_hud;
@@ -41,7 +36,6 @@ private:
     ItemList          m_itemList;
 
     Creature*         m_creature = nullptr;
-    Equipment*        m_eq = nullptr;
 };
 
 extern Interface g_Interface;

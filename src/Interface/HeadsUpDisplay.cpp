@@ -1,7 +1,6 @@
 #include "HeadsUpDisplay.hpp"
 #include "Core/Config.hpp"
 #include "Gameplay/Creature.hpp"
-#include "Render/Camera.hpp"
 #include "Render/FontManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
@@ -43,10 +42,11 @@ void HeadsUpDisplay::setCreature(Creature* creature)
 
 void HeadsUpDisplay::update()
 {
-    if (auto focus = m_creature->getFocus(); focus && m_visible)
+    // if (auto focus = m_creature->getFocus(); focus && m_visible)
+    if (false)
     {
-        m_lable.setString(focus->getLabelName());
-        m_backLable.setString(focus->getLabelName());
+        // m_lable.setString(focus->getLabelName());
+        // m_backLable.setString(focus->getLabelName());
 
         auto display = core::g_Config.getDisplay();
 
@@ -57,7 +57,7 @@ void HeadsUpDisplay::update()
         //     vec4(0, 0, display.width, display.height)
         // );
 
-        vec3 flatpos;
+        vec3 flatpos = vec3(100,100,0);
 
         m_lable.setPosition({
             i32(flatpos.x - m_lable.getWidth() * 0.5f),
@@ -79,17 +79,18 @@ void HeadsUpDisplay::update()
     else
         m_labelVisible = false;
 
-    if (auto focus = m_creature->getFocus();
-        m_labelVisible && focus->getType() == Entity::Type::Creature)
+    // if (auto focus = m_creature->getFocus();
+        // m_labelVisible && focus->getType() == Entity::Type::Creature)
+    if (false)
     {
-        if (auto cre = focus->as<Creature>(); !cre->isDead())
+        // if (auto cre = focus->as<Creature>(); !cre->isDead())
         {
-            m_enemyHealth.setMaxValue(cre->getMaxHealth());
-            m_enemyHealth.setValue(cre->getHealth());
+            // m_enemyHealth.setMaxValue(cre->getMaxHealth());
+            // m_enemyHealth.setValue(cre->getHealth());
             m_lable.setColor({1,0,0,1});
             m_enemyHealthVisible = true;
         }
-        else
+        // else
             m_enemyHealthVisible = false;
     }
     else

@@ -8,7 +8,9 @@ class Pickup : public Interactible
 public:
     using Base = Entity;
 
-    void init(u32 id, const std::string& code);
+    Pickup(u32 id);
+
+    void init();
     void update() override final;
 
     void onEvent(const GameEvent& event) override final {}

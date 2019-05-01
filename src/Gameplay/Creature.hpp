@@ -3,7 +3,6 @@
 #include "Animation/AnimationSystem.hpp"
 #include "Core/Timer.hpp"
 #include "Interactible.hpp"
-#include "Equipment.hpp"
 #include "CreatureController.hpp"
 
 class Level;
@@ -34,7 +33,9 @@ public:
         Count
     };
 
-    void                 init(u32 id, Level* level, SceneGraph* graph, Species spec);
+    Creature(u32 id);
+
+    void                 init(Level* level, SceneGraph* graph, Species spec);
 
     void                 setController(CreatureController* ctrl);
 
@@ -66,8 +67,6 @@ public:
     i32                  getMagicka() const;
 
     Level*               getLevel();
-    Interactible*        getFocus();
-    Equipment*           getEquipment();
     anim::Animator&      getAnimator();
     phys::CharacterController& getCharCtrl();
 
@@ -120,9 +119,6 @@ private:
     vec3                    m_facingDir = {0,0,1};
     f32                     m_speed = 5.f;
     f32                     m_yaw = 0.f;
-
-    Interactible*           m_focus = nullptr;
-    Equipment               m_eq;
 
     std::vector<i32> m_fuck;
 

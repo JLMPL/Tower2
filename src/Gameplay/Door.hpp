@@ -10,7 +10,9 @@ class Door : public Interactible
 public:
     using Base = Entity;
 
-    void init(u32 id, const std::string& code, SceneGraph* graph);
+    Door(u32 id);
+
+    void init(SceneGraph* graph);
     void update() override final;
     void onEvent(const GameEvent& event) override final;
     void interact(Creature* other) override final;

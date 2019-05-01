@@ -17,6 +17,12 @@ public:
         Light
     };
 
+    template <typename T>
+    T* as()
+    {
+        return static_cast<T*>(this);
+    }
+
     SceneNode() = default;
     ~SceneNode() = default;
 

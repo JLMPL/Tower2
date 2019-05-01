@@ -1,12 +1,17 @@
 #pragma once
 #include "Interactible.hpp"
 
+class SceneGraph;
+class SceneNode;
+
 class Lever final : public Interactible
 {
 public:
     using Base = Interactible;
 
-    void init(u32 id, const std::string& code) override final;
+    Lever(u32 id);
+
+    void init(SceneGraph* graph);
     void update() override final;
 
     void setActivationTarget(u32 entityID);
@@ -17,7 +22,8 @@ public:
     Type getType() const override final;
 
 private:
-    // gfx::RenderableHandle m_mesh;
+    SceneGraph* m_sceneGraph = nullptr;
+    SceneNode* m_mesh = nullptr;
 
     f32 m_pitch = 0.f;
     f32 m_lerp = 0.f;

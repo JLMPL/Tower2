@@ -2,12 +2,22 @@
 #include "Input/Input.hpp"
 #include "Creature.hpp"
 #include "EventSystem/EventSystem.hpp"
+#include "SceneGraph/SceneGraph.hpp"
+#include "SceneGraph/CameraNode.hpp"
 #include "Level.hpp"
 
-PlayerController::PlayerController(Creature* cre)
-    : CreatureController(cre)
+PlayerController::PlayerController(Creature* cre, SceneGraph& graph)
+    : CreatureController(cre), m_sceneGraph(graph)
 {
     enterIdle();
+
+    m_camera = m_sceneGraph.addCameraNode()->as<CameraNode>();
+    m_camera->setOffset(vec3(-0.75, 2, -2));
+    m_cameraHolder = m_sceneGraph.addEmptyNode();
+
+    m_cameraHolder->attachNode(m_camera);
+    m_sceneGraph.getRoot()->attachNode(m_cameraHolder);
+
 }
 
 void PlayerController::onEvent(const GameEvent& event)
@@ -30,6 +40,8 @@ void PlayerController::update()
             attack();
             break;
     }
+
+    m_cameraHolder->setPosition(m_cre->getPos());
 
 /*    if (m_cre->getAnimator().isRootMotion())
     {
@@ -77,26 +89,15 @@ void PlayerController::idle()
 
     if (m_cre->isSwordDrawn())
     {
-        auto cbTarget = m_cre->getLevel()->getClosestCombatTarget(m_cre->getPos(), vec3(0));
-
-        if (!cbTarget)
-        {
-            m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
-        }
-        else
-        {
-            vec3 oldir = m_cre->getFacingDir();
-            vec3 nedir = math::normalize(cbTarget->getPos() - m_cre->getPos());
-
-            m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nedir, 0.2f)));
-        }
-
         if (gInput.isAttack())
             enterAttack();
     }
-    else
+
     {
-        m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
+        // m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
+
+        m_cameraHolderYaw -= rightAxis.x * 0.0025f;
+        m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY));
 
         if (gInput.isUse() && m_interactible)
         {
@@ -129,43 +130,35 @@ void PlayerController::move()
     if (m_cre->isSwordDrawn())
     {
         auto cbTarget = m_cre->getLevel()->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
-
-        if (!cbTarget)
-        {
-            m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
-        }
-        else
-        {
-            vec3 oldir = m_cre->getFacingDir();
-            vec3 nedir = math::normalize(cbTarget->getPos() - m_cre->getPos());
-
-            m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nedir, 0.2f)));
-        }
     }
-    else
-    {
-        m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
-    }
+
+    m_cameraHolderYaw -= rightAxis.x * 0.0025f;
+    m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY));
+
+    vec3 oldir = m_cre->getFacingDir();
+    vec3 cameraForward = m_camera->as<CameraNode>()->getForwardDirection();
+
+    m_cre->setFacingDirection(math::normalize(math::lerp(oldir, cameraForward, 0.2f)));
 
     vec3 godir;
     if (leftAxis.y > 0)
     {
-        godir += m_cre->getFacingDir();
+        godir += cameraForward;
         m_cre->getAnimator().setState("Run");
     }
     if (leftAxis.y < 0)
     {
-        godir += -m_cre->getFacingDir();
+        godir += -cameraForward;
         m_cre->getAnimator().setState("Run");
     }
     if (leftAxis.x > 0)
     {
-        godir += math::rotateY(m_cre->getFacingDir(), f32(-HALF_PI));
+        godir += math::rotateY(cameraForward, f32(-HALF_PI));
         m_cre->getAnimator().setState("RunRight");
     }
     if (leftAxis.x < 0)
     {
-        godir += math::rotateY(m_cre->getFacingDir(), f32(HALF_PI));
+        godir += math::rotateY(cameraForward, f32(HALF_PI));
         m_cre->getAnimator().setState("RunLeft");
     }
 
@@ -205,9 +198,6 @@ void PlayerController::enterAttack()
 void PlayerController::attack()
 {
     if (m_cre->isBusy())
-        return;
-
-    if (!m_cre->getFocus())
         return;
 
     m_cre->setDirection(m_cre->getFacingDir());

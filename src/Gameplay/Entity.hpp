@@ -24,9 +24,9 @@ public:
     }
 
     Entity() = default;
+    Entity(u32 id);
     virtual ~Entity() = default;
 
-    virtual void       init(u32 id, const std::string& code);
     virtual void       update() = 0;
     virtual void       lateUpdate() {};
 

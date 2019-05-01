@@ -14,9 +14,9 @@ void VertexArray::init()
     GL(glGenVertexArrays(1, &m_vao));
 }
 
-void VertexArray::setVertexNumber(u32 count)
+void VertexArray::setIndexNumber(u32 count)
 {
-    m_numVertices = count;
+    m_numIndices = count;
 }
 
 void VertexArray::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer)
@@ -28,7 +28,7 @@ void VertexArray::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLb
 void VertexArray::drawElements() const
 {
     GL(glBindVertexArray(m_vao));
-    GL(glDrawElements(GL_TRIANGLES, m_numVertices, GL_UNSIGNED_INT, 0));
+    GL(glDrawElements(GL_TRIANGLES, m_numIndices, GL_UNSIGNED_INT, 0));
     GL(glBindVertexArray(0));
 }
 

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"fuc",
+				"function\tfunction"
+			],
+			[
+				"Scen",
+				"SceneNode"
+			],
+			[
+				"Scene",
+				"SceneGraph"
+			],
+			[
 				"resul",
 				"result1"
 			],
@@ -502,28 +514,95 @@
 			[
 				"Ren",
 				"Renderer2D"
-			],
-			[
-				"Game",
-				"GameStateMachine"
-			],
-			[
-				"m_te",
-				"m_texAlloc"
-			],
-			[
-				"al",
-				"alignedAlloc"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "src/Gameplay/Level.cpp",
+			"file": "src/Render/VertexArray.hpp",
 			"settings":
 			{
-				"buffer_size": 10508,
+				"buffer_size": 486,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Render/VertexArray.cpp",
+			"settings":
+			{
+				"buffer_size": 887,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Script/Lua.cpp",
+			"settings":
+			{
+				"buffer_size": 217,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/Maps/map0",
+			"settings":
+			{
+				"buffer_size": 2423,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/Maps/Level0.lua",
+			"settings":
+			{
+				"buffer_size": 192,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/dominik/Desktop/lolo.lua",
+			"settings":
+			{
+				"buffer_size": 112,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Render/Geometry/StaticMeshLoader.cpp",
+			"settings":
+			{
+				"buffer_size": 3536,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Render/Geometry/SkinnedMeshLoader.cpp",
+			"settings":
+			{
+				"buffer_size": 5913,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Application.cpp",
+			"settings":
+			{
+				"buffer_size": 6966,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Script/Lua.hpp",
+			"settings":
+			{
+				"buffer_size": 167,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -715,22 +794,53 @@
 		"/home/dominik/Desktop/Tower/src/Render/PostProcess",
 		"/home/dominik/Desktop/Tower/src/SceneGraph",
 		"/home/dominik/Desktop/Tower/src/Script",
-		"/home/dominik/Desktop/Tower/src/State"
+		"/home/dominik/Desktop/Tower/src/State",
+		"/home/dominik/Desktop/Tower/bin/Shaders"
 	],
 	"file_history":
 	[
-		"/home/dominik/Desktop/Tower/src/Application.cpp",
+		"/home/dominik/Desktop/Tower/bin/Maps/Level0",
+		"/home/dominik/Desktop/Tower/src/Core/Math3D.cpp",
+		"/home/dominik/Desktop/Tower/src/Core/Math3D.hpp",
+		"/home/dominik/Desktop/lolo.lua",
+		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.hpp",
+		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Door.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
+		"/home/dominik/Desktop/Tower/src/Interface/ItemList.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
+		"/home/dominik/Desktop/Tower/src/State/MenuState.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Interaction.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Interaction.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.cpp",
+		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.cpp",
+		"/home/dominik/Desktop/Tower/src/Interface/Interface.hpp",
+		"/home/dominik/Desktop/Tower/src/Interface/Interface.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/ShaderManager.cpp",
 		"/home/dominik/Desktop/Tower/bin/Shaders/Flat.frag",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Equipment.hpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Prop.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/CameraController.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/CameraController.hpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animation.cpp",
+		"/home/dominik/Desktop/Tower/src/Application.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/ArrayBuffer.cpp",
 		"/home/dominik/Desktop/Towre/.gitignore",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.cpp",
 		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/BasePass.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.hpp",
 		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMesh.hpp",
 		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.cpp",
@@ -743,7 +853,6 @@
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.cpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.hpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.hpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.cpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.hpp",
 		"/home/dominik/Desktop/Tower/src/State/MenuState.cpp",
@@ -753,7 +862,6 @@
 		"/home/dominik/Desktop/Tower/.gitignore",
 		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.hpp",
 		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
 		"/home/dominik/Desktop/ogldev-source/tutorial22/mesh.cpp",
 		"/home/dominik/Desktop/ogldev-source/tutorial22/mesh.h",
 		"/home/dominik/Desktop/ogldev-source/tutorial22/tutorial22.cpp",
@@ -766,9 +874,6 @@
 		"/home/dominik/Desktop/Tower/src/Core/Config.cpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.cpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.hpp",
-		"/home/dominik/Desktop/Tower/src/Core/Math3D.hpp",
-		"/home/dominik/Desktop/Tower/src/Core/Math3D.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.cpp",
 		"/home/dominik/Desktop/Tower/bin/Materials/materials.json",
 		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.cpp",
 		"/home/dominik/Desktop/Tower/bin/config.cfg",
@@ -776,16 +881,8 @@
 		"/home/dominik/Desktop/Tower/src/AI/Waynet.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Arrow.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Arrow.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Door.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Door.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interaction.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Prop.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Prop.hpp",
-		"/home/dominik/Desktop/Tower/src/State/MenuState.hpp",
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationBundle.hpp",
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationBundle.cpp",
 		"/home/dominik/Desktop/Tower/bin/Animations/Bundles/Human",
@@ -793,8 +890,6 @@
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationManager.hpp",
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationSystem.hpp",
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/CameraController.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.hpp",
 		"/home/dominik/Desktop/Tower/bin/Shaders/Base.frag",
 		"/home/dominik/Desktop/Tower/src/Render/Renderer3D.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/PostProcessPass.hpp",
@@ -826,37 +921,23 @@
 		"/home/dominik/Desktop/Tower/src/Render/MaterialManager.hpp",
 		"/home/dominik/Desktop/Tower/src/Render/MaterialManager.cpp",
 		"/home/dominik/Desktop/Tower/src/Render/Material.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Equipment.cpp",
 		"/home/dominik/Desktop/Tower/src/Interface/InfoPrompt.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/CreatureDesc.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/CreatureDesc.hpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/CreatureDescManager.hpp",
-		"/home/dominik/Desktop/Tower/src/PlayEnvironment.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/LocatorNode.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/LocatorNode.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/SkeletonController.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/SkeletonController.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Skeleton.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animation.cpp",
-		"/home/dominik/.cache/.fr-F2NbsQ/ogldev-source/tutorial22/mesh.cpp",
-		"/home/dominik/.cache/.fr-Zf5BO7/ogldev-source/tutorial22/mesh.cpp",
-		"/home/dominik/.cache/.fr-jy4sgr/ogldev-source/tutorial22/tutorial22.cpp",
-		"/home/dominik/Desktop/Tower/bin/Meshes/humx.dae",
-		"/home/dominik/Desktop/Tower/src/Render/SkinnedMeshLoader.hpp",
-		"/home/dominik/Desktop/Tower/bin/Creatures/not_bob.cre",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.hpp",
-		"/home/dominik/Desktop/Tower/bin/Maps/map0"
+		"/home/dominik/Desktop/Tower/src/PlayEnvironment.hpp"
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
 		"height": 131.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -864,6 +945,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lua",
+			"array",
+			"Stuf_add",
+			"itm",
+			"ShaderManager",
+			"1024",
+			")));\n",
+			"m_mesh",
+			"m_itemList",
+			"m_items",
+			"g_interface",
+			"getfocus",
+			"getFocus",
+			"equipment",
+			"'",
+			"equipment",
+			"m_itemList",
+			"Equipment",
+			"getlevel",
+			"camera",
+			"m_interactible",
+			"m_cre->getFocus()"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -881,24 +984,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Gameplay/Level.cpp",
+					"file": "src/Render/VertexArray.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10508,
+						"buffer_size": 486,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1033,
-								1033
+								479,
+								479
 							]
 						],
 						"settings":
@@ -908,10 +1011,272 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 480.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Render/VertexArray.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 887,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								186,
+								186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Script/Lua.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								207,
+								207
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "bin/Maps/map0",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "bin/Maps/Level0.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/dominik/Desktop/lolo.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/Render/Geometry/StaticMeshLoader.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3536,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1851,
+								1851
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 876.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/Render/Geometry/SkinnedMeshLoader.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5913,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4368,
+								4368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2316.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/Application.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6966,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Script/Lua.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								107,
+								107
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -919,7 +1284,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -964,7 +1329,7 @@
 	"project": "tower2.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -975,19 +1340,79 @@
 		[
 			[
 				"",
-				"Application.cpp"
+				"src/Script/Lua.cpp"
+			],
+			[
+				"app",
+				"src/Application.cpp"
+			],
+			[
+				"math3",
+				"src/Core/Math3D.cpp"
+			],
+			[
+				"shadowpa",
+				"Render/ShadowPass.cpp"
+			],
+			[
+				"interf",
+				"Interface/Interface.cpp"
+			],
+			[
+				"itemlis",
+				"Interface/ItemList.cpp"
+			],
+			[
+				"equipmen",
+				"Gameplay/Equipment.hpp"
+			],
+			[
+				"intef",
+				"Interface/Interface.hpp"
+			],
+			[
+				"hud",
+				"Interface/HeadsUpDisplay.cpp"
 			],
 			[
 				"levl",
 				"Gameplay/Level.cpp"
 			],
 			[
-				"level",
-				"src/Gameplay/Level.cpp"
+				"cre",
+				"Gameplay/Creature.cpp"
 			],
 			[
-				"cre",
-				"src/Gameplay/Creature.cpp"
+				"play",
+				"Gameplay/PlayerController.cpp"
+			],
+			[
+				"scenno",
+				"SceneGraph/SceneNode.hpp"
+			],
+			[
+				"sceneno",
+				"SceneGraph/SceneNode.hpp"
+			],
+			[
+				"ent",
+				"Gameplay/Entity.cpp"
+			],
+			[
+				"level",
+				"Gameplay/Level.cpp"
+			],
+			[
+				"camercon",
+				"Gameplay/CameraController.cpp"
+			],
+			[
+				"playerco",
+				"Gameplay/PlayerController.cpp"
+			],
+			[
+				"animat",
+				"Animation/Animation.cpp"
 			],
 			[
 				"statimelo",
@@ -1054,10 +1479,6 @@
 				"src/Render/GraphRenderer.cpp"
 			],
 			[
-				"shadowpa",
-				"src/Render/ShadowPass.hpp"
-			],
-			[
 				"basepa",
 				"src/Render/BasePass.cpp"
 			],
@@ -1122,10 +1543,6 @@
 				"src/SceneGraph/CameraNode.hpp"
 			],
 			[
-				"scenno",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
 				"scneno",
 				"src/SceneGraph/SceneNode.hpp"
 			],
@@ -1140,10 +1557,6 @@
 			[
 				"base",
 				"src/Render/BasePass.cpp"
-			],
-			[
-				"sceneno",
-				"src/SceneGraph/SceneNode.cpp"
 			],
 			[
 				"sceng",
@@ -1390,10 +1803,6 @@
 				"src/Render/GraphRenderer.hpp"
 			],
 			[
-				"app",
-				"src/Application.cpp"
-			],
-			[
 				"playst",
 				"src/State/PlayingState.cpp"
 			],
@@ -1440,50 +1849,6 @@
 			[
 				"meh",
 				"src/SceneGraph/MeshNode.hpp"
-			],
-			[
-				"scnenno",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
-				"renderer",
-				"src/Render/Renderer3D.hpp"
-			],
-			[
-				"scnen",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
-				"scene",
-				"src/SceneGraph/SceneGraph.cpp"
-			],
-			[
-				"plays",
-				"src/State/PlayingState.cpp"
-			],
-			[
-				"playen",
-				"src/PlayEnvironment.hpp"
-			],
-			[
-				"playings",
-				"src/State/PlayingState.cpp"
-			],
-			[
-				"lign",
-				"src/SceneGraph/LightNode.hpp"
-			],
-			[
-				"lightnod",
-				"src/SceneGraph/LightNode.hpp"
-			],
-			[
-				"mehnod",
-				"src/SceneGraph/MeshNode.hpp"
-			],
-			[
-				"node",
-				"src/SceneGraph/LocatorNode.hpp"
 			]
 		],
 		"width": 0.0

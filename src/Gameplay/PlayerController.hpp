@@ -1,5 +1,9 @@
 #include "CreatureController.hpp"
+#include "Core/Math3D.hpp"
 
+class SceneNode;
+class SceneGraph;
+class CameraNode;
 class Interactible;
 
 class PlayerController : public CreatureController
@@ -16,7 +20,7 @@ public:
     };
 
     PlayerController() = default;
-    PlayerController(Creature* cre);
+    PlayerController(Creature* cre, SceneGraph& graph);
     ~PlayerController() = default;
 
     void update() override final;
@@ -41,5 +45,12 @@ private:
 private:
     State m_state = State::Idle;
 
+    SceneGraph& m_sceneGraph;
+
     Interactible* m_interactible = nullptr;
+
+    CameraNode* m_camera = nullptr;
+    SceneNode* m_cameraHolder = nullptr;
+    vec3 m_moveTowardsDir = vec3(1,0,0);
+    f32 m_cameraHolderYaw = 0.f;
 };
