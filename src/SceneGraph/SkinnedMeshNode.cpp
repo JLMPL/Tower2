@@ -2,10 +2,10 @@
 #include "Animation/AnimationSystem.hpp"
 #include "Render/Geometry/SkinnedMesh.hpp"
 
-SkinnedMeshNode::SkinnedMeshNode(gfx::SkinnedMesh* mesh, const std::string& bundle) :
+SkinnedMeshNode::SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* mesh, const std::string& bundle) :
     m_mesh(mesh)
 {
-    m_anim = anim::g_AnimSys.addAnimator(&m_mesh->skeleton, bundle);
+    m_anim = sys->addAnimator(&m_mesh->skeleton, bundle);
     m_anim->setState("Idle");
 }
 

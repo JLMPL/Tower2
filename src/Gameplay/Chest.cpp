@@ -7,19 +7,19 @@
 #include "SceneGraph/MeshNode.hpp"
 #include "Creature.hpp"
 #include "Item.hpp"
+#include "Level.hpp"
 
-Chest::Chest(u32 id) : Interactible(id)
+Chest::Chest(u32 id, LevelContext* context) :
+    Interactible(id, context)
 {
 }
 
-void Chest::init(SceneGraph* graph)
+void Chest::init()
 {
-    m_sceneGraph = graph;
+    m_mesh = m_context->sceneGraph->addMeshNode("chest.obj");
+    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
 
-    m_mesh = m_sceneGraph->addMeshNode("chest.obj");
-    m_sceneGraph->getRoot()->attachNode(m_mesh);
-
-    m_staticBody = phys::g_PhysSys.addStaticBox(vec3(0.25,0.35,0.4), vec3(0));
+    m_staticBody = m_context->physSys->addStaticBox(vec3(0.25,0.35,0.4), vec3(0));
 
     m_labelName = "Chest";
     m_offset = 1.f;

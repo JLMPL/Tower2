@@ -9,9 +9,9 @@ class Lever final : public Interactible
 public:
     using Base = Interactible;
 
-    Lever(u32 id);
+    Lever(u32 id, LevelContext* context);
 
-    void init(SceneGraph* graph);
+    void init();
     void update() override final;
 
     void setActivationTarget(u32 entityID);

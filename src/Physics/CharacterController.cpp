@@ -11,12 +11,13 @@ CharacterController::~CharacterController()
         m_controller->release();
 }
 
-void CharacterController::init(u32* entityID, f32 radius, f32 height)
+void CharacterController::init(PhysicsSystem* physSys, u32* entityID, f32 radius, f32 height)
 {
+    m_physSys = physSys;
     m_radius = radius;
     m_height = height;
 
-    m_controller = phys::g_PhysSys.addController(entityID, radius, height);
+    m_controller = m_physSys->addController(entityID, radius, height);
     m_controller->setNonWalkableMode(physx::PxControllerNonWalkableMode::ePREVENT_CLIMBING);//_AND_FORCE_SLIDING);
 }
 
@@ -28,7 +29,7 @@ void CharacterController::move(const vec3& move, f32 deltaTime, bool followGroun
 
     m_controller->move(core::conv::toPx(nuo), 0.001f, deltaTime, filters);
 
-    auto hit = phys::g_PhysSys.sweepSphere(
+    auto hit = m_physSys->sweepSphere(
         m_radius,
         core::conv::toGlm(m_controller->getPosition()),
         vec3(0,-1,0),

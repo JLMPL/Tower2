@@ -10,7 +10,7 @@ public:
     CharacterController() = default;
     ~CharacterController();
 
-    void init(u32* entityID, f32 radius = 0.25, f32 height = 1.5);
+    void init(PhysicsSystem* physSys, u32* entityID, f32 radius = 0.25, f32 height = 1.5);
     void move(const vec3& move, f32 deltaTime = 1000_ms, bool followGround = true);
 
     bool isOnGround() const;
@@ -22,6 +22,7 @@ public:
     vec3 getFootPosition() const;
 
 private:
+    PhysicsSystem* m_physSys = nullptr;
     physx::PxController* m_controller = nullptr;
 
     f32 m_radius = 1.f;

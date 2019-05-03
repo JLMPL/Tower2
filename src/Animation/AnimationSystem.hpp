@@ -23,6 +23,4 @@ private:
     std::vector<std::unique_ptr<Animator>> m_animators;
 };
 
-extern AnimationSystem g_AnimSys;
-
 }

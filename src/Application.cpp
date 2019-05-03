@@ -122,8 +122,8 @@ void Application::setupSystems()
 
     gInput.init();
 
-    anim::g_AnimSys.init();
-    phys::g_PhysSys.init();
+    // anim::g_AnimSys.init();
+    // phys::g_PhysSys.init();
 }
 
 void Application::processEvent(const SDL_Event& event)
@@ -222,17 +222,12 @@ void Application::processClientEvent(const Event& event)
     m_stateStack.sendSystemEvent(event);
 }
 
-void Application::earlyUpdate()
+void Application::update()
 {
     m_stateStack.update();
-}
 
-void Application::lateUpdate()
-{
-    m_stateStack.lateUpdate();
-
-    if (DebugSwitches::drawPhysX)
-        phys::g_PhysSys.debugDraw();
+    // if (DebugSwitches::drawPhysX)
+        // phys::g_PhysSys.debugDraw();
 }
 
 void Application::run()
@@ -250,14 +245,7 @@ void Application::run()
 
         gInput.update();
 
-        phys::g_PhysSys.preSimulationUpdate();
-
-        earlyUpdate();
-
-        phys::g_PhysSys.stepSimulation();
-
-        lateUpdate();
-        anim::g_AnimSys.animate();
+        update();
 
         gfx::g_Renderer2D.beginFrame();
         m_stateStack.draw();

@@ -170,6 +170,4 @@ private:
     physx::PxParticleSystem* m_particleSystem = nullptr;
 };
 
-extern PhysicsSystem g_PhysSys;
-
 }

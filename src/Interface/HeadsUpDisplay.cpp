@@ -43,7 +43,7 @@ void HeadsUpDisplay::setCreature(Creature* creature)
 void HeadsUpDisplay::update()
 {
     // if (auto focus = m_creature->getFocus(); focus && m_visible)
-    if (false)
+    if (true)
     {
         // m_lable.setString(focus->getLabelName());
         // m_backLable.setString(focus->getLabelName());
@@ -85,8 +85,6 @@ void HeadsUpDisplay::update()
     {
         // if (auto cre = focus->as<Creature>(); !cre->isDead())
         {
-            // m_enemyHealth.setMaxValue(cre->getMaxHealth());
-            // m_enemyHealth.setValue(cre->getHealth());
             m_lable.setColor({1,0,0,1});
             m_enemyHealthVisible = true;
         }

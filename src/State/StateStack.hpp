@@ -10,7 +10,6 @@ public:
 
     void sendSystemEvent(const Event& event);
     void update();
-    void lateUpdate();
     void draw();
     void drawGui();
 

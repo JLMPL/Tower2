@@ -63,14 +63,6 @@ void StateStack::update()
     }
 }
 
-void StateStack::lateUpdate()
-{
-    for (auto i = m_stack.rbegin(); i != m_stack.rend(); i++)
-    {
-        (*i)->lateUpdate();
-    }
-}
-
 void StateStack::draw()
 {
     for (auto i = m_stack.rbegin(); i != m_stack.rend(); i++)

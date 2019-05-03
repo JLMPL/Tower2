@@ -1,9 +1,15 @@
 #include "SceneGraph.hpp"
 #include "Render/MeshManager.hpp"
+#include "Gameplay/Level.hpp"
 #include "MeshNode.hpp"
 #include "SkinnedMeshNode.hpp"
 #include "LightNode.hpp"
 #include "CameraNode.hpp"
+
+void SceneGraph::init(LevelContext* context)
+{
+    m_context = context;
+}
 
 SceneNode* SceneGraph::addEmptyNode()
 {
@@ -19,7 +25,7 @@ SceneNode* SceneGraph::addMeshNode(const std::string& mesh)
 
 SceneNode* SceneGraph::addSkinnedMeshNode(const std::string& mesh, const std::string& bundle)
 {
-    m_nodes.emplace_back(new SkinnedMeshNode(gfx::g_MeshMgr.getSkinnedMesh(mesh), bundle));
+    m_nodes.emplace_back(new SkinnedMeshNode(m_context->animSys, gfx::g_MeshMgr.getSkinnedMesh(mesh), bundle));
     return m_nodes.back().get();
 }
 

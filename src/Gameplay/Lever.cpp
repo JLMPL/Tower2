@@ -5,19 +5,19 @@
 #include "EventSystem/EventSystem.hpp"
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/MeshNode.hpp"
+#include "Level.hpp"
 
-Lever::Lever(u32 id) : Interactible(id)
+Lever::Lever(u32 id, LevelContext* context) : Interactible(id, context)
 {
 }
 
-void Lever::init(SceneGraph* graph)
+void Lever::init()
 {
     Base::initLabel("Lever", 0.5f);
 
-    m_sceneGraph = graph;
-    m_mesh = m_sceneGraph->addMeshNode("sord.obj");
+    m_mesh = m_context->sceneGraph->addMeshNode("sord.obj");
 
-    m_sceneGraph->getRoot()->attachNode(m_mesh);
+    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
 }
 
 void Lever::setActivationTarget(u32 entityID)

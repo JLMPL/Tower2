@@ -1,6 +1,4 @@
 #pragma once
-#include "Core/Json.hpp"
-#include "Physics/PhysicsSystem.hpp"
 #include "AI/Waynet.hpp"
 #include "Interactible.hpp"
 #include "Projectile.hpp"
@@ -17,6 +15,14 @@ class Door;
 class Lever;
 class Animator;
 
+struct LevelContext
+{
+    class Level* level = nullptr;
+    SceneGraph* sceneGraph = nullptr;
+    anim::AnimationSystem* animSys = nullptr;
+    phys::PhysicsSystem* physSys = nullptr;
+};
+
 class Level
 {
 public:
@@ -24,10 +30,8 @@ public:
     Level(const Level&) = delete;
     Level& operator=(const Level&) = delete;
 
-    void loadFromFile(const Path& path);
-    void loload(const std::string& file);
+    void initFromScript(const std::string& file);
     void update();
-    void lateUpdate();
 
     void sendSystemEvent(const SDL_Event& event);
 
@@ -60,6 +64,10 @@ private:
 
     SceneGraph m_sceneGraph;
     SceneNode* m_mapMesh = nullptr;
+
+    LevelContext m_lvlContext;
+    anim::AnimationSystem m_animSys;
+    phys::PhysicsSystem m_physSys;
 
     u32                          m_lastEntityId = 0;
     std::vector<Entity::Ptr>     m_creationQueue;

@@ -6,8 +6,6 @@
 namespace anim
 {
 
-AnimationSystem g_AnimSys;
-
 void AnimationSystem::init()
 {
 }

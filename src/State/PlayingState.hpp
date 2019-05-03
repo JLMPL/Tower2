@@ -13,7 +13,6 @@ public:
     void init() override final;
     void sendSystemEvent(const Event& event) override final;
     void update() override final;
-    void lateUpdate() override final;
     void draw() override final;
 
 private:

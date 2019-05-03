@@ -31,7 +31,6 @@ public:
     virtual void init() = 0;
     virtual void sendSystemEvent(const Event& event) = 0;
     virtual void update() = 0;
-    virtual void lateUpdate() {}
     virtual void draw() {}
     virtual void drawGui() {}
 

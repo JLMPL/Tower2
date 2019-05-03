@@ -12,16 +12,13 @@
 #include "Level.hpp"
 #include "Pickup.hpp"
 
-Creature::Creature(u32 id) : Interactible(id)
+Creature::Creature(u32 id, LevelContext* context) : Interactible(id, context)
 {
 }
 
-void Creature::init(Level* level, SceneGraph* graph, Species spec)
+void Creature::init(Species spec)
 {
-    m_level = level;
     m_species = spec;
-
-    m_sceneGraph = graph;
 
     switch (m_species)
     {
@@ -38,14 +35,14 @@ void Creature::initPlayer()
 {
     initLabel("Player", 2.25);
 
-    m_meshNode = m_sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
+    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
 
-    // auto camra = m_sceneGraph->addCameraNode();
+    // auto camra = m_context->sceneGraph->addCameraNode();
     // m_meshNode->attachNode(camra);
 
-    m_sceneGraph->getRoot()->attachNode(m_meshNode);
+    m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
 
-/*    auto light = m_sceneGraph->addLightNode();
+/*    auto light = m_context->sceneGraph->addLightNode();
     auto li = static_cast<LightNode*>(light);
     li->setColor(vec3(1,0.75,0.01) * 100);
     li->setShadowCasting(true);
@@ -53,7 +50,7 @@ void Creature::initPlayer()
 
     m_meshNode->attachNode(light);*/
 
-    m_conto.init(&m_id, 0.25, 1.5);
+    m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
     // m_eq.init(m_id);
 
     debug::g_Menu["Gameplay"]["Player"].bind("health", &m_health);
@@ -64,10 +61,6 @@ void Creature::initPlayer()
     // m_sword = g_ItemMgr.getItem("damn_sord")->m_id;
     m_sword = 0;
 
-    m_fuck.push_back(100);
-    m_fuck.push_back(101);
-    m_fuck.push_back(223);
-
     // ui::g_Interface.setWeapons(m_fuck);
 }
 
@@ -77,10 +70,10 @@ void Creature::initSkeleton()
 
     auto mesh = gfx::g_MeshMgr.getSkinnedMesh("humx.dae");
 
-    m_meshNode = m_sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
-    m_sceneGraph->getRoot()->attachNode(m_meshNode);
+    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
+    m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
 
-    m_conto.init(&m_id, 0.25, 1.5);
+    m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
     // m_eq.init(m_id);
 }
 
@@ -97,8 +90,7 @@ void Creature::update()
 
 void Creature::lateUpdate()
 {
-    if (!m_busy)
-        m_pos = m_conto.getFootPosition();
+    m_pos = m_conto.getFootPosition();
 
     m_yaw = atan2(m_facingDir.x, m_facingDir.z);
     m_transform = math::translate(m_pos) * math::rotate(m_yaw, math::vecY);
@@ -176,8 +168,8 @@ void Creature::damage(Creature* other, i32 damage)
 
         if (!m_isPlayer)
         {
-            auto pick = getLevel()->addPickup("damn_herb");
-            pick->addRigidBody(getPos() + vec3(0.1,3,0.1));
+            // auto pick = getLevel()->addPickup("damn_herb");
+            // pick->addRigidBody(getPos() + vec3(0.1,3,0.1));
         }
     }
 }
@@ -249,28 +241,12 @@ f32 Creature::getYaw() const
 
 anim::Animator& Creature::getAnimator()
 {
-    // return *m_animator;
     return *static_cast<SkinnedMeshNode*>(m_meshNode)->getAnimator();
 }
 
 phys::CharacterController& Creature::getCharCtrl()
 {
     return m_conto;
-}
-
-Level* Creature::getLevel()
-{
-    return m_level;
-}
-
-void Creature::setBusy(bool busy)
-{
-    m_busy = busy;
-}
-
-bool Creature::isBusy() const
-{
-    return m_busy;
 }
 
 void Creature::kill()

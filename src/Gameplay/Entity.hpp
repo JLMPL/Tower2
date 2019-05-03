@@ -3,6 +3,8 @@
 #include "EventSystem/EventListener.hpp"
 #include <memory>
 
+struct LevelContext;
+
 class Entity : public EventListener
 {
 public:
@@ -24,7 +26,7 @@ public:
     }
 
     Entity() = default;
-    Entity(u32 id);
+    Entity(u32 id, LevelContext* context);
     virtual ~Entity() = default;
 
     virtual void       update() = 0;
@@ -49,7 +51,7 @@ public:
 
 protected:
     u32         m_id = 0u;
-    std::string m_code = "uncoded";
+    LevelContext* m_context = nullptr;
 
     mat4        m_transform;
     vec3        m_pos;

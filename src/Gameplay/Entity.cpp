@@ -1,6 +1,7 @@
 #include "Entity.hpp"
 
-Entity::Entity(u32 id) : m_id(id)
+Entity::Entity(u32 id, LevelContext* context) :
+    m_id(id), m_context(context)
 {
 }
 
@@ -27,11 +28,6 @@ mat4 Entity::getTransform() const
 u32 Entity::getId() const
 {
     return m_id;
-}
-
-const std::string& Entity::getCode() const
-{
-    return m_code;
 }
 
 void Entity::disable()

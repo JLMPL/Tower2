@@ -6,30 +6,21 @@
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SceneNode.hpp"
 #include "Creature.hpp"
+#include "Level.hpp"
 
-Door::Door(u32 id) : Interactible(id)
+Door::Door(u32 id, LevelContext* context) : Entity(id, context)
 {
 }
 
-void Door::init(SceneGraph* graph)
+void Door::init()
 {
     initEventListening(GameEvent::EntityRelated);
     g_EventSys.addListener(this);
 
-    // m_renderableHandle = gfx::g_Renderer3D.addStatic(
-        // &gfx::g_MeshMgr.getMesh("door.obj")->entries[0], gfx::g_MatMgr.getMaterial("env_wood"), true);
+    m_mesh = m_context->sceneGraph->addMeshNode("door.obj");
+    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
 
-    m_sceneGraph = graph;
-
-    m_mesh = m_sceneGraph->addMeshNode("door.obj");
-    m_sceneGraph->getRoot()->attachNode(m_mesh);
-
-    m_staticBody = phys::g_PhysSys.addStaticBox(vec3(0.05,1.5,1), vec3(0,0,0));
-
-    m_labelName = "Door";
-    m_offset = 2.f;
-
-    m_requiresTransform = false;
+    m_staticBody = m_context->physSys->addStaticBox(vec3(0.05,1.5,1), vec3(0,0,0));
 
     setDoorState(DoorState::Closed);
 }
@@ -97,20 +88,6 @@ void Door::update()
         math::translate(vec3(0,1.5,-1));
 
     m_staticBody.setGlobalTransform(staticBodyTransform);
-    // m_renderableHandle.setTransform(m_transform);
-}
-
-void Door::interact(Creature* other)
-{
-    if (f32 dist = math::distance(m_pos, other->getPos());
-        dist < 1.5f &&
-        m_state == DoorState::Closed/* &&
-        other->getEquipment()->hasItem(m_keyItem)*/)
-    {
-        // other->getEquipment()->take(m_keyItem, 1);
-        // setDoorState(DoorState::Opening);
-        open();
-    }
 }
 
 void Door::open()

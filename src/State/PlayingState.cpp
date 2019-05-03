@@ -11,7 +11,7 @@ void PlayingState::init()
     ui::g_Interface.init();
     g_ItemMgr.loadItems();
 
-    m_level.loload("Maps/Level0.lua");
+    m_level.initFromScript("Maps/Level0.lua");
 }
 
 void PlayingState::sendSystemEvent(const Event& event)
@@ -24,11 +24,7 @@ void PlayingState::update()
     g_EventSys.redistributeEvents();
 
     m_level.update();
-}
-
-void PlayingState::lateUpdate()
-{
-    m_level.lateUpdate();
+    // m_level.lateUpdate();
     ui::g_Interface.update();
 }
 

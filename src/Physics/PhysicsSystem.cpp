@@ -6,8 +6,6 @@
 namespace phys
 {
 
-PhysicsSystem g_PhysSys;
-
 PhysicsSystem::~PhysicsSystem()
 {
     // m_particleSystem->releaseParticles();

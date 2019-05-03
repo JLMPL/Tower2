@@ -17,7 +17,6 @@ void Interaction::begin(Creature* creature, Interactible* entity)
 
     m_creatureLerpPos[0] = m_creature->getPos();
     m_creatureLerpDir[0] = m_creature->getFacingDir();
-    m_creature->setBusy(true);
 }
 
 void Interaction::lerpIn()
@@ -57,8 +56,6 @@ void Interaction::lerpOut()
         m_finishFunc(m_creature);
         m_finished = true;
         m_isRunning = false;
-
-        m_creature->setBusy(false);
 
         m_lerp = 1;
     }

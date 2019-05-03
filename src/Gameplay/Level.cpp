@@ -15,8 +15,18 @@
 
 #include "SceneGraph/LightNode.hpp"
 
-void Level::loload(const std::string& file)
+void Level::initFromScript(const std::string& file)
 {
+    m_animSys.init();
+    m_physSys.init();
+
+    m_lvlContext.level = this;
+    m_lvlContext.sceneGraph = &m_sceneGraph;
+    m_lvlContext.animSys = &m_animSys;
+    m_lvlContext.physSys = &m_physSys;
+
+    m_sceneGraph.init(&m_lvlContext);
+
     lua::state state;
     state.open_libraries(sol::lib::base);
 
@@ -88,7 +98,7 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
         meshDesc.triangles.stride = sizeof(GLuint) * 3;
         meshDesc.triangles.data = &(entry.indices[0]);
 
-        phys::g_PhysSys.addTriangleMesh(meshDesc);
+        m_physSys.addTriangleMesh(meshDesc);
     }
 
     m_mapMesh = m_sceneGraph.addMeshNode(map);
@@ -97,14 +107,14 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
 
 Creature* Level::addCreature(Creature::Species species)
 {
-    Entity::Ptr entity(new Creature(m_lastEntityId));
+    Entity::Ptr entity(new Creature(m_lastEntityId, &m_lvlContext));
 
     Creature* creature = entity->as<Creature>();
 
-    creature->init(this, &m_sceneGraph, species);
+    creature->init(species);
 
     if (species == Creature::Species::Player)
-        creature->setController(new PlayerController(creature, m_sceneGraph));
+        creature->setController(new PlayerController(creature, &m_lvlContext));
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -114,7 +124,7 @@ Creature* Level::addCreature(Creature::Species species)
 
 Pickup* Level::addPickup(const std::string& item)
 {
-    Entity::Ptr entity(new Pickup(m_lastEntityId));
+    Entity::Ptr entity(new Pickup(m_lastEntityId, &m_lvlContext));
 
     Pickup* pickup = entity->as<Pickup>();
     pickup->init();
@@ -127,10 +137,10 @@ Pickup* Level::addPickup(const std::string& item)
 
 Chest* Level::addChest(const Code& code)
 {
-    Entity::Ptr entity(new Chest(m_lastEntityId));
+    Entity::Ptr entity(new Chest(m_lastEntityId, &m_lvlContext));
 
     Chest* chest = entity->as<Chest>();
-    chest->init(&m_sceneGraph);
+    chest->init();
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -140,10 +150,10 @@ Chest* Level::addChest(const Code& code)
 
 Door* Level::addDoor(const std::string& code)
 {
-    Entity::Ptr entity(new Door(m_lastEntityId));
+    Entity::Ptr entity(new Door(m_lastEntityId, &m_lvlContext));
 
     auto door = entity->as<Door>();
-    door->init(&m_sceneGraph);
+    door->init();
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -153,10 +163,10 @@ Door* Level::addDoor(const std::string& code)
 
 Lever* Level::addLever(const std::string& code)
 {
-    Entity::Ptr entity(new Lever(m_lastEntityId));
+    Entity::Ptr entity(new Lever(m_lastEntityId, &m_lvlContext));
 
     auto lever = entity->as<Lever>();
-    lever->init(&m_sceneGraph);
+    lever->init();
     lever->setActivationTarget(3);
 
     m_entities.push_back(std::move(entity));
@@ -213,6 +223,8 @@ void Level::destroyProjectiles()
 
 void Level::update()
 {
+    m_physSys.preSimulationUpdate();
+
     createEntities();
     destroyEntities();
 
@@ -224,10 +236,9 @@ void Level::update()
 
     for (auto& proj : m_projectiles)
         proj->update();
-}
 
-void Level::lateUpdate()
-{
+    m_physSys.stepSimulation();
+
     for (auto& ent : m_entities)
         ent->lateUpdate();
 
@@ -235,6 +246,8 @@ void Level::lateUpdate()
         m_waynet.debugDraw();
 
     m_sceneGraph.updateTransforms();
+
+    m_animSys.animate();
 
     gfx::g_GraphRenderer.render(m_sceneGraph);
 }

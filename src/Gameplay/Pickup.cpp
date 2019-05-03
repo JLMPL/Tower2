@@ -1,8 +1,9 @@
 #include "Pickup.hpp"
 #include "Creature.hpp"
 #include "ItemManager.hpp"
+#include "Level.hpp"
 
-Pickup::Pickup(u32 id) : Interactible(id)
+Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
 {
 }
 
@@ -10,24 +11,12 @@ void Pickup::init()
 {
     m_item = g_ItemMgr.getItem("damn_herb");
     m_labelName = m_item->m_name;
-
-    // m_mesh = gfx::g_Renderer3D.addFoliage(&m_item->m_mesh->entries[0], m_item->m_material);
 }
 
 void Pickup::addRigidBody(const vec3& pos)
 {
     m_hasRigidBody = true;
-    m_rigidBody = phys::g_PhysSys.addBox(pos, vec3(0), vec3(0.1));
-}
-
-void Pickup::addLight()
-{
-    m_hasLight = true;
-    // m_light.color = vec3(1,0.8,0.01);
-    // m_light.intensity = 10.f;
-    // m_light.enabled = true;
-
-    // gfx::g_Renderer3D.addLight(&m_light);
+    m_rigidBody = m_context->physSys->addBox(pos, vec3(0), vec3(0.1));
 }
 
 void Pickup::update()
@@ -39,8 +28,6 @@ void Pickup::update()
     }
     else
         m_transform = math::translate(m_pos);
-
-    // m_light.pos = m_pos;
 
     vec4 linez[4] =
     {
@@ -84,16 +71,8 @@ void Pickup::disable()
     if (m_hasRigidBody)
         m_rigidBody.disable();
 
-    if (m_hasLight)
-    {
-        // m_light.enabled = false;
-        // gfx::g_Renderer3D.removeLight(&m_light);
-    }
-
-    phys::g_PhysSys.removeRigidBody(m_rigidBody);
+    m_context->physSys->removeRigidBody(m_rigidBody);
     m_hasRigidBody = false;
-
-    // m_mesh.hide();
 
     Base::destroy();
 }

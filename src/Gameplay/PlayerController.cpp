@@ -6,17 +6,17 @@
 #include "SceneGraph/CameraNode.hpp"
 #include "Level.hpp"
 
-PlayerController::PlayerController(Creature* cre, SceneGraph& graph)
-    : CreatureController(cre), m_sceneGraph(graph)
+PlayerController::PlayerController(Creature* cre, LevelContext* context)
+    : CreatureController(cre), m_context(context)
 {
     enterIdle();
 
-    m_camera = m_sceneGraph.addCameraNode()->as<CameraNode>();
+    m_camera = m_context->sceneGraph->addCameraNode()->as<CameraNode>();
     m_camera->setOffset(vec3(-0.75, 2, -2));
-    m_cameraHolder = m_sceneGraph.addEmptyNode();
+    m_cameraHolder = m_context->sceneGraph->addEmptyNode();
 
     m_cameraHolder->attachNode(m_camera);
-    m_sceneGraph.getRoot()->attachNode(m_cameraHolder);
+    m_context->sceneGraph->getRoot()->attachNode(m_cameraHolder);
 
 }
 
@@ -26,7 +26,7 @@ void PlayerController::onEvent(const GameEvent& event)
 
 void PlayerController::update()
 {
-    m_interactible = m_cre->getLevel()->getClosestInteractible(m_cre->getPos(), m_cre->getFacingDir());
+    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_cre->getFacingDir());
 
     switch (m_state)
     {
@@ -82,9 +82,6 @@ void PlayerController::idle()
         return;
     }
 
-    if (m_cre->isBusy())
-        return;
-
     vec2 rightAxis = gInput.getRightAxis();
 
     if (m_cre->isSwordDrawn())
@@ -121,15 +118,12 @@ void PlayerController::enterMove()
 
 void PlayerController::move()
 {
-    if (m_cre->isBusy())
-        return;
-
     vec2 rightAxis = gInput.getRightAxis();
     vec2 leftAxis = gInput.getLeftAxis();
 
     if (m_cre->isSwordDrawn())
     {
-        auto cbTarget = m_cre->getLevel()->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
+        auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
     }
 
     m_cameraHolderYaw -= rightAxis.x * 0.0025f;
@@ -197,9 +191,6 @@ void PlayerController::enterAttack()
 
 void PlayerController::attack()
 {
-    if (m_cre->isBusy())
-        return;
-
     m_cre->setDirection(m_cre->getFacingDir());
 }
 

@@ -1,6 +1,6 @@
 #include "Interactible.hpp"
 
-Interactible::Interactible(u32 id) : Entity(id)
+Interactible::Interactible(u32 id, LevelContext* context) : Entity(id, context)
 {
 }
 

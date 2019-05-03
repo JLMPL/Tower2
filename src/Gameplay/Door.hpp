@@ -5,17 +5,16 @@
 class SceneGraph;
 class SceneNode;
 
-class Door : public Interactible
+class Door : public Entity
 {
 public:
     using Base = Entity;
 
-    Door(u32 id);
+    Door(u32 id, LevelContext* context);
 
-    void init(SceneGraph* graph);
+    void init();
     void update() override final;
     void onEvent(const GameEvent& event) override final;
-    void interact(Creature* other) override final;
 
     void setKeyItem(const std::string& key);
     void open();

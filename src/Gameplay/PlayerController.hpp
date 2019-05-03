@@ -6,6 +6,8 @@ class SceneGraph;
 class CameraNode;
 class Interactible;
 
+struct LevelContext;
+
 class PlayerController : public CreatureController
 {
 public:
@@ -20,7 +22,7 @@ public:
     };
 
     PlayerController() = default;
-    PlayerController(Creature* cre, SceneGraph& graph);
+    PlayerController(Creature* cre, LevelContext* context);
     ~PlayerController() = default;
 
     void update() override final;
@@ -45,7 +47,8 @@ private:
 private:
     State m_state = State::Idle;
 
-    SceneGraph& m_sceneGraph;
+    // SceneGraph& m_sceneGraph;
+    LevelContext* m_context = nullptr;
 
     Interactible* m_interactible = nullptr;
 

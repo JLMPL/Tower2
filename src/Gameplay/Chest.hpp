@@ -11,9 +11,9 @@ class Chest : public Interactible
 public:
     using Base = Entity;
 
-    Chest(u32 id);
+    Chest(u32 id, LevelContext* context);
 
-    void init(SceneGraph* graph);
+    void init();
     void update() override final;
     void onEvent(const GameEvent& event) override final {}
     void interact(Creature* other) override final;

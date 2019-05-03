@@ -23,8 +23,7 @@ public:
     void initialize();
 
     void processClientEvent(const Event& event);
-    void earlyUpdate();
-    void lateUpdate();
+    void update();
 
     void draw();
     void drawGui();

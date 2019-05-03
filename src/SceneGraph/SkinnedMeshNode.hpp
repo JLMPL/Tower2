@@ -9,13 +9,14 @@ namespace gfx
 namespace anim
 {
     class Animator;
+    class AnimationSystem;
 }
 
 class SkinnedMeshNode : public SceneNode
 {
 public:
     SkinnedMeshNode() = default;
-    SkinnedMeshNode(gfx::SkinnedMesh* mesh, const std::string& bundle);
+    SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* mesh, const std::string& bundle);
     ~SkinnedMeshNode() = default;
 
     gfx::SkinnedMesh* getMesh() const;

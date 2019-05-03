@@ -4,7 +4,7 @@
 class Interactible : public Entity
 {
 public:
-    Interactible(u32 id);
+    Interactible(u32 id, LevelContext* context);
     virtual ~Interactible() = default;
 
     void initLabel(const std::string& name, f32 offset);

@@ -10,6 +10,8 @@ class Item;
 class SceneGraph;
 class SceneNode;
 
+struct LevelContext;
+
 class Creature : public Interactible
 {
 public:
@@ -33,9 +35,9 @@ public:
         Count
     };
 
-    Creature(u32 id);
+    Creature(u32 id, LevelContext* context);
 
-    void                 init(Level* level, SceneGraph* graph, Species spec);
+    void                 init(Species spec);
 
     void                 setController(CreatureController* ctrl);
 
@@ -66,7 +68,6 @@ public:
     i32                  getHealth() const;
     i32                  getMagicka() const;
 
-    Level*               getLevel();
     anim::Animator&      getAnimator();
     phys::CharacterController& getCharCtrl();
 
@@ -83,9 +84,6 @@ public:
 
     bool                 isPlayer() const;
 
-    void                 setBusy(bool busy);
-    bool                 isBusy() const;
-
     void                 kill();
     bool                 isDead() const;
 
@@ -95,11 +93,8 @@ private:
 
 private:
     Species                 m_species = Species::Count;
-    Level*                  m_level = nullptr;
-
     CreatureController::Ptr m_controller;
 
-    SceneGraph*             m_sceneGraph = nullptr;
     SceneNode*              m_meshNode = nullptr;
 
     phys::CharacterController m_conto;
@@ -113,14 +108,10 @@ private:
     bool                    m_isPlayer = false;
     bool                    m_isDead = false;
 
-    bool                    m_busy = false;
-
     vec3                    m_dir = {0,0,1};
     vec3                    m_facingDir = {0,0,1};
     f32                     m_speed = 5.f;
     f32                     m_yaw = 0.f;
-
-    std::vector<i32> m_fuck;
 
     DrawnWeapon             m_drawnWeapon = DrawnWeapon::None;
     i32                     m_sword = -1;

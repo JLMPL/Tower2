@@ -15,9 +15,6 @@ void Arrow::init(const vec3& pos, const vec3& dir, f32 speed)
     m_pos = pos;
     m_dir = dir;
     m_speed = speed;
-
-    // m_mesh = gfx::g_Renderer3D.addStatic(
-        // &gfx::g_MeshMgr.getMesh("arrow.obj")->entries[0], gfx::g_MatMgr.getMaterial("env_wood"));
 }
 
 void Arrow::move()
@@ -43,7 +40,7 @@ void Arrow::updateTransforms()
 
 void Arrow::checkCollisions()
 {
-    auto result = phys::g_PhysSys.raycast(m_pos, m_dir, 0.5);
+/*    auto result = m_context->physSys->raycast(m_pos, m_dir, 0.5);
 
     if (result.hasHit)
     {
@@ -58,7 +55,7 @@ void Arrow::checkCollisions()
 
             destroy();
         }
-    }
+    }*/
 }
 
 void Arrow::update()

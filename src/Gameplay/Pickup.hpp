@@ -8,7 +8,7 @@ class Pickup : public Interactible
 public:
     using Base = Entity;
 
-    Pickup(u32 id);
+    Pickup(u32 id, LevelContext* context);
 
     void init();
     void update() override final;
@@ -16,7 +16,6 @@ public:
     void onEvent(const GameEvent& event) override final {}
 
     void addRigidBody(const vec3& pos = vec3(0,5,0));
-    void addLight();
 
     void interact(Creature* other) override final;
     void disable() override final;
@@ -28,10 +27,6 @@ public:
 private:
     const Item* m_item = nullptr;
 
-    // gfx::RenderableHandle m_mesh;
-
     bool m_hasRigidBody = false;
     phys::RigidBody m_rigidBody;
-
-    bool m_hasLight = false;
 };
