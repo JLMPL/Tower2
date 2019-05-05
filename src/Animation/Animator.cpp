@@ -9,7 +9,7 @@ namespace anim
 
 static mat4 DaeCorrectionMatrix = math::rotate(-90.0_rad, vec3(1,0,0));
 
-void Animator::init(const Skeleton* skeleton, const AnimationBundle& anims)
+Animator::Animator(const Skeleton* skeleton, const AnimationBundle& anims)
 {
     m_skeleton = skeleton;
 

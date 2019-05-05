@@ -6,10 +6,6 @@
 namespace anim
 {
 
-void AnimationSystem::init()
-{
-}
-
 void AnimationSystem::animate()
 {
     for (auto& animator : m_animators)
@@ -18,16 +14,8 @@ void AnimationSystem::animate()
 
 Animator* AnimationSystem::addAnimator(const Skeleton* skel, const std::string& bundle)
 {
-    m_animators.emplace_back(new Animator());
-    Animator* ar = m_animators.back().get();
-
-    if (!ar)
-        Log::warning("AnimationSystem: Could not add Animator! - Out of memory!\n");
-
-
-
-    ar->init(skel, *anim::g_AnimMgr.getBundle(bundle));
-    return ar;
+    m_animators.emplace_back(new Animator(skel, *anim::g_AnimMgr.getBundle(bundle)));
+    return m_animators.back().get();
 }
 
 }

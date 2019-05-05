@@ -35,9 +35,7 @@ public:
         Count
     };
 
-    Creature(u32 id, LevelContext* context);
-
-    void                 init(Species spec);
+    Creature(u32 id, LevelContext* context, Species spec);
 
     void                 setController(CreatureController* ctrl);
 
@@ -53,7 +51,7 @@ public:
     u32                  getDefense() const;
 
     void                 heal(i32 heal);
-    void                 damage(Creature* other, i32 damage);
+    void                 damage(i32 damage);
 
     void                 drawSword();
     void                 sheatheSword();
@@ -82,8 +80,6 @@ public:
     Type                 getType() const override final;
     Species              getSpecies() const;
 
-    bool                 isPlayer() const;
-
     void                 kill();
     bool                 isDead() const;
 
@@ -92,28 +88,27 @@ private:
     void                 initSkeleton();
 
 private:
-    Species                 m_species = Species::Count;
-    CreatureController::Ptr m_controller;
+    Species                   m_species = Species::Count;
+    CreatureController::Ptr   m_controller;
 
-    SceneNode*              m_meshNode = nullptr;
+    SceneNode*                m_meshNode = nullptr;
 
     phys::CharacterController m_conto;
 
-    u32                     m_maxHealth = 10;
-    u32                     m_maxMagicka = 10;
+    u32                       m_maxHealth = 10;
+    u32                       m_maxMagicka = 10;
 
-    i32                     m_health = 5;
-    i32                     m_magicka = 5;
+    i32                       m_health = 5;
+    i32                       m_magicka = 5;
 
-    bool                    m_isPlayer = false;
-    bool                    m_isDead = false;
+    bool                      m_isDead = false;
 
-    vec3                    m_dir = {0,0,1};
-    vec3                    m_facingDir = {0,0,1};
-    f32                     m_speed = 5.f;
-    f32                     m_yaw = 0.f;
+    vec3                      m_dir = {0,0,1};
+    vec3                      m_facingDir = {0,0,1};
+    f32                       m_speed = 5.f;
+    f32                       m_yaw = 0.f;
 
-    DrawnWeapon             m_drawnWeapon = DrawnWeapon::None;
-    i32                     m_sword = -1;
-    i32                     m_bow = -1;
+    DrawnWeapon               m_drawnWeapon = DrawnWeapon::None;
+    i32                       m_sword = -1;
+    i32                       m_bow = -1;
 };

@@ -1,14 +1,13 @@
 #include "PlayingState.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Input/Input.hpp"
-#include "Interface/Interface.hpp"
 #include "Gameplay/ItemManager.hpp"
 #include "StateStack.hpp"
 #include <SDL2/SDL.h>
 
 void PlayingState::init()
 {
-    ui::g_Interface.init();
+    m_hud.init();
     g_ItemMgr.loadItems();
 
     m_level.initFromScript("Maps/Level0.lua");
@@ -16,7 +15,6 @@ void PlayingState::init()
 
 void PlayingState::sendSystemEvent(const Event& event)
 {
-    ui::g_Interface.sendSystemEvent(event);
 }
 
 void PlayingState::update()
@@ -24,11 +22,11 @@ void PlayingState::update()
     g_EventSys.redistributeEvents();
 
     m_level.update();
-    // m_level.lateUpdate();
-    ui::g_Interface.update();
+
+    m_hud.update();
 }
 
 void PlayingState::draw()
 {
-    ui::g_Interface.draw();
+    m_hud.draw();
 }

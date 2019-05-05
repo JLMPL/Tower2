@@ -6,7 +6,8 @@ function initializeLevel()
     local skello = addCreature(Species_Skeleton, 2,0,0)
 
     local chesty = addChest(3,0,0)
-    addItemToChest(chesty, 0)
+    -- addItemToChest(chesty, 0)
 
-    print(ass)
+    local dorr = addDoor(-3,2,0)
+
 end

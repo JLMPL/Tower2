@@ -9,14 +9,9 @@
 
 Lever::Lever(u32 id, LevelContext* context) : Interactible(id, context)
 {
-}
-
-void Lever::init()
-{
     Base::initLabel("Lever", 0.5f);
 
     m_mesh = m_context->sceneGraph->addMeshNode("sord.obj");
-
     m_context->sceneGraph->getRoot()->attachNode(m_mesh);
 }
 

@@ -57,9 +57,39 @@ void Framebuffer::createDepth(bool forShadow)
     GL(glReadBuffer(GL_NONE));
 }
 
+void Framebuffer::createColorAndDepth()
+{
+    GL(glGenRenderbuffers(1, &m_buffer));
+    GL(glBindRenderbuffer(GL_RENDERBUFFER, m_buffer));
+    GL(glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, m_width, m_height));
+    GL(glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, m_buffer));
+
+    GL(glGenRenderbuffers(1, &m_buffer2));
+    GL(glBindRenderbuffer(GL_RENDERBUFFER, m_buffer2));
+    GL(glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, m_width, m_height));
+    GL(glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m_buffer2));
+
+    GL(glGenTextures(1, &m_texture));
+    GL(glBindTexture(GL_TEXTURE_2D, m_texture));
+    GL(glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+    GL(glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_texture, 0));
+
+    GL(glGenTextures(1, &m_texture2));
+    GL(glBindTexture(GL_TEXTURE_2D, m_texture2));
+    GL(glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT24, m_width, m_height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE));
+    GL(glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE));
+    GL(glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, m_texture2, 0));
+}
+
 void Framebuffer::init(Type type, u32 width, u32 height,
-    bool forShadow, GLint internalFormat, GLenum format, GLenum gltype
-    )
+    bool forShadow, GLint internalFormat, GLenum format, GLenum gltype)
 {
     {
         GL(glDeleteFramebuffers(1, &m_fbo));
@@ -79,8 +109,10 @@ void Framebuffer::init(Type type, u32 width, u32 height,
 
     if (type == Type::Color)
         createColor();
-    else
+    else if (type == Type::Depth)
         createDepth(forShadow);
+    else
+        createColorAndDepth();
 
     GL(int erre = glCheckFramebufferStatus(GL_FRAMEBUFFER));
 
@@ -135,5 +167,16 @@ GLuint Framebuffer::getDepth() const
 {
     return m_depth;
 }
+
+GLuint Framebuffer::getColorTexture() const
+{
+    return m_texture;
+}
+
+GLuint Framebuffer::getDepthTexture() const
+{
+    return m_texture2;
+}
+
 
 }

@@ -5,11 +5,6 @@
 #include "Bar.hpp"
 #include "DiscreteBar.hpp"
 
-namespace gfx
-{
-    class Camera;
-}
-
 class Creature;
 
 namespace ui
@@ -23,14 +18,11 @@ public:
     void update();
     void draw();
 
-    void setCamera(const gfx::Camera* camera);
-
     void show();
     void hide();
 
 private:
     Creature*          m_creature = nullptr;
-    const gfx::Camera* m_camera = nullptr;
 
     gfx::Rectangle     m_leftBack;
     gfx::Sprite        m_leftItem;

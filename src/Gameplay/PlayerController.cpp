@@ -17,7 +17,6 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     m_cameraHolder->attachNode(m_camera);
     m_context->sceneGraph->getRoot()->attachNode(m_cameraHolder);
-
 }
 
 void PlayerController::onEvent(const GameEvent& event)
@@ -182,11 +181,6 @@ void PlayerController::enterAttack()
     {
         enterIdle();
     }, core::g_FInfo.globalTime + m_cre->getAnimator().getState("Attack")->getDuration());
-
-    m_cre->getAnimator().callFunctionOnGlobalTime(
-    [&]()
-    {
-    }, core::g_FInfo.globalTime + (m_cre->getAnimator().getState("Attack")->getDuration() /2));
 }
 
 void PlayerController::attack()

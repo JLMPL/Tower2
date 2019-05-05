@@ -2,17 +2,12 @@
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "EventSystem/EventSystem.hpp"
-#include "Interface/Interface.hpp"
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SceneNode.hpp"
 #include "Creature.hpp"
 #include "Level.hpp"
 
 Door::Door(u32 id, LevelContext* context) : Entity(id, context)
-{
-}
-
-void Door::init()
 {
     initEventListening(GameEvent::EntityRelated);
     g_EventSys.addListener(this);
@@ -23,11 +18,6 @@ void Door::init()
     m_staticBody = m_context->physSys->addStaticBox(vec3(0.05,1.5,1), vec3(0,0,0));
 
     setDoorState(DoorState::Closed);
-}
-
-void Door::setKeyItem(const std::string& key)
-{
-    m_keyItem = key;
 }
 
 void Door::onEvent(const GameEvent& event)
@@ -64,7 +54,8 @@ void Door::update()
                 setDoorState(DoorState::Open);
             }
 
-            m_yaw = math::lerp(0.f, f32(HALF_PI), m_lerp);
+            // m_yaw = math::lerp(0.f, f32(HALF_PI), m_lerp);
+            m_pos.y = math::lerp(0.f, 2.f, m_lerp);
         }
         break;
 

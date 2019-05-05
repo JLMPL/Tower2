@@ -2,7 +2,6 @@
 #include "Core/Config.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "Debug/Log.hpp"
-#include "Debug/Switches.hpp"
 #include "Input/Input.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/GraphRenderer.hpp"
@@ -208,13 +207,6 @@ void Application::processClientEvent(const Event& event)
                 m_relativeMouse = !m_relativeMouse;
                 setRelativeMouseMode(m_relativeMouse);
                 debug::g_Menu.toggle();
-                break;
-            case Button::K_F2:
-                DebugSwitches::drawPhysX = !DebugSwitches::drawPhysX;
-                break;
-
-            case Button::K_F3:
-                DebugSwitches::drawWaynet = !DebugSwitches::drawWaynet;
                 break;
         }
     }

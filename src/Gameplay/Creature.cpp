@@ -2,8 +2,6 @@
 #include "Animation/AnimationSystem.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "EventSystem/EventSystem.hpp"
-#include "Interface/Interface.hpp"
-#include "Interface/Interface.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
@@ -12,14 +10,9 @@
 #include "Level.hpp"
 #include "Pickup.hpp"
 
-Creature::Creature(u32 id, LevelContext* context) : Interactible(id, context)
+Creature::Creature(u32 id, LevelContext* context, Species spec) :
+    Interactible(id, context), m_species(spec)
 {
-}
-
-void Creature::init(Species spec)
-{
-    m_species = spec;
-
     switch (m_species)
     {
         case Species::Player:
@@ -37,31 +30,16 @@ void Creature::initPlayer()
 
     m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
 
-    // auto camra = m_context->sceneGraph->addCameraNode();
-    // m_meshNode->attachNode(camra);
-
     m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
 
-/*    auto light = m_context->sceneGraph->addLightNode();
-    auto li = static_cast<LightNode*>(light);
-    li->setColor(vec3(1,0.75,0.01) * 100);
-    li->setShadowCasting(true);
-    li->setPosition(vec3(0,2,0));
-
-    m_meshNode->attachNode(light);*/
-
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
-    // m_eq.init(m_id);
 
     debug::g_Menu["Gameplay"]["Player"].bind("health", &m_health);
     debug::g_Menu["Gameplay"]["Player"].bind("maxHealth", (i32*)&m_maxHealth);
     debug::g_Menu["Gameplay"]["Player"].bind("magicka", &m_magicka);
     debug::g_Menu["Gameplay"]["Player"].bind("maxMagicka", (i32*)&m_maxMagicka);
 
-    // m_sword = g_ItemMgr.getItem("damn_sord")->m_id;
     m_sword = 0;
-
-    // ui::g_Interface.setWeapons(m_fuck);
 }
 
 void Creature::initSkeleton()
@@ -152,26 +130,17 @@ u32 Creature::getDefense() const
 void Creature::heal(i32 heal)
 {
     m_health += heal;
+
+    if (m_health > m_maxHealth)
+        m_health = m_maxHealth;
 }
 
-void Creature::damage(Creature* other, i32 damage)
+void Creature::damage(i32 damage)
 {
-    if (isDead())
-        return;
-
     m_health -= damage;
 
-    if (m_health <= 0)
-    {
+    if (m_health < 0)
         m_health = 0;
-        kill();
-
-        if (!m_isPlayer)
-        {
-            // auto pick = getLevel()->addPickup("damn_herb");
-            // pick->addRigidBody(getPos() + vec3(0.1,3,0.1));
-        }
-    }
 }
 
 u32 Creature::getMaxHealth() const
@@ -209,9 +178,9 @@ Entity::Type Creature::getType() const
     return Type::Creature;
 }
 
-bool Creature::isPlayer() const
+Creature::Species Creature::getSpecies() const
 {
-    return m_isPlayer;
+    return m_species;
 }
 
 void Creature::setDirection(const vec3& dir)

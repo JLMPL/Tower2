@@ -12,11 +12,9 @@ public:
 
     Door(u32 id, LevelContext* context);
 
-    void init();
     void update() override final;
     void onEvent(const GameEvent& event) override final;
 
-    void setKeyItem(const std::string& key);
     void open();
 
     Type getType() const override final;
@@ -35,8 +33,6 @@ private:
     DoorState m_state;
     f32 m_lerp = 0.f;
     f32 m_yaw = 0.f;
-
-    std::string m_keyItem;
 
     SceneGraph* m_sceneGraph = nullptr;
     SceneNode* m_mesh = nullptr;

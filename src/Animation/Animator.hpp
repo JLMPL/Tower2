@@ -14,9 +14,9 @@ class Animator
 {
 public:
     Animator() = default;
+    Animator(const Skeleton* skeleton, const AnimationBundle& anims);
     ~Animator() = default;
 
-    void init(const Skeleton* skeleton, const AnimationBundle& anims);
     Pose update();
 
     AnimationState* addState(const String& str, const Animation* anim);

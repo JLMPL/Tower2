@@ -11,7 +11,7 @@ namespace gfx
 
 void BasePass::init()
 {
-    m_fbo.init(gfx::Framebuffer::Type::Color, 1920, 1080);
+    m_fbo.init(gfx::Framebuffer::Type::ColorAndDepth, 1920, 1080);
 
     m_flatShader.loadFromFile("Shaders/Static.vert", "Shaders/Flat.frag");
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");

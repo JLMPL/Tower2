@@ -11,7 +11,6 @@ public:
 
     virtual void interact(class Creature* other) = 0;
 
-    const std::string& getLabelName() const;
     f32 getLabelOffset() const;
 
 protected:

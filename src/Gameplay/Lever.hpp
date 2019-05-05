@@ -10,8 +10,6 @@ public:
     using Base = Interactible;
 
     Lever(u32 id, LevelContext* context);
-
-    void init();
     void update() override final;
 
     void setActivationTarget(u32 entityID);

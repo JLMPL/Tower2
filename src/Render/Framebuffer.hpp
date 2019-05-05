@@ -11,7 +11,8 @@ public:
     enum class Type
     {
         Color,
-        Depth
+        Depth,
+        ColorAndDepth
     };
 
     ~Framebuffer();
@@ -34,15 +35,21 @@ public:
     GLuint getTexture() const;
     GLuint getDepth() const;
 
+    GLuint getColorTexture() const;
+    GLuint getDepthTexture() const;
+
 private:
     void createColor();
     void createDepth(bool forShadow);
+    void createColorAndDepth();
 
 private:
     GLuint    m_fbo = 0;
     GLuint    m_texture = 0;
+    GLuint    m_texture2 = 0;
     GLuint    m_depth = 0;
     GLuint    m_buffer = 0;
+    GLuint    m_buffer2 = 0;
 
     GLint     m_internalFormat = 0;
     GLenum    m_format = 0;

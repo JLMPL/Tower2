@@ -97,7 +97,7 @@ void HeadsUpDisplay::update()
         m_lable.setColor({1,1,1,1});
     }
 
-    if (m_visible)
+    if (m_visible && m_creature)
     {
         m_healthBar.setMaxValue(m_creature->getMaxHealth());
         m_healthBar.setValue(m_creature->getHealth());
@@ -125,11 +125,6 @@ void HeadsUpDisplay::draw()
     gfx::g_Renderer2D.draw(m_leftItem);
     m_healthBar.draw();
     m_manaBar.draw();
-}
-
-void HeadsUpDisplay::setCamera(const gfx::Camera* camera)
-{
-    m_camera = camera;
 }
 
 void HeadsUpDisplay::show()

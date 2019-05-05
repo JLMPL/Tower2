@@ -14,7 +14,6 @@ public:
     AnimationSystem() = default;
     ~AnimationSystem() = default;
 
-    void init();
     void animate();
 
     Animator* addAnimator(const Skeleton* skel, const std::string& bundle);

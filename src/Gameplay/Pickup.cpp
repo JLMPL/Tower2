@@ -5,10 +5,6 @@
 
 Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
 {
-}
-
-void Pickup::init()
-{
     m_item = g_ItemMgr.getItem("damn_herb");
     m_labelName = m_item->m_name;
 }
@@ -23,7 +19,7 @@ void Pickup::update()
 {
     if (m_hasRigidBody)
     {
-        m_transform = m_rigidBody.getGlobalTransform();// * math::rotate(-HALF_PI, vec3(0,0,1));
+        m_transform = m_rigidBody.getGlobalTransform();
         m_pos = m_transform[3];
     }
     else
@@ -43,25 +39,12 @@ void Pickup::update()
     // gfx::g_Renderer3D.addLine(linez[0], linez[0] + linez[1], vec3(1,0,0));
     // gfx::g_Renderer3D.addLine(linez[0], linez[0] + linez[2], vec3(0,1,0));
     // gfx::g_Renderer3D.addLine(linez[0], linez[0] + linez[3], vec3(0,0,1));
-
-    // m_mesh.setTransform(m_transform);
 }
 
 void Pickup::interact(Creature* other)
 {
     other->getAnimator().setState("Pickup");
     other->getAnimator().clearPendingFunctions();
-    other->getAnimator().callFunctionOnGlobalTime(
-    [=]()
-    {
-        // other->getEquipment()->give(this->m_item, 1);
-
-        // if (this->m_item->m_type == Item::Type::Torch && !other->getEquipment()->hasEquippedTorch())
-        {
-            // other->tryEquipItem(this->m_item);
-        }
-        this->disable();
-    }, core::g_FInfo.globalTime + other->getAnimator().getState("Pickup")->getDuration()/2);
 }
 
 void Pickup::disable()

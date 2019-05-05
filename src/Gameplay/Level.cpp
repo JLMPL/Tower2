@@ -1,23 +1,19 @@
 #include "Level.hpp"
-#include "Debug/Switches.hpp"
-#include "Interface/Interface.hpp"
+#include "Render/GraphRenderer.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
+#include "Script/Lua.hpp"
 #include "Chest.hpp"
 #include "Door.hpp"
 #include "Lever.hpp"
 #include "Pickup.hpp"
 #include "PlayerController.hpp"
-#include "Render/GraphRenderer.hpp"
-#include "Script/Lua.hpp"
 #include <SDL2/SDL.h>
-#include <fstream>
 
 #include "SceneGraph/LightNode.hpp"
 
 void Level::initFromScript(const std::string& file)
 {
-    m_animSys.init();
     m_physSys.init();
 
     m_lvlContext.level = this;
@@ -29,31 +25,7 @@ void Level::initFromScript(const std::string& file)
 
     lua::state state;
     state.open_libraries(sol::lib::base);
-
-    state["setLevelMesh"] = [&](const std::string& name)
-    {
-        setLevelMesh(name, "net.obj");
-    };
-
-    state["setPlayerSpawnPoint"] = [&](f32 x, f32 y, f32 z)
-    {
-        addCreature(Creature::Species::Player)->setPos(vec3(x,y,z));
-    };
-
-    state["Species_Skeleton"] = i32(Creature::Species::Skeleton);
-
-    state["addCreature"] = [&](i32 species, f32 x, f32 y, f32 z) -> i32
-    {
-        addCreature(Creature::Species(species))->setPos(vec3(x,y,z));
-        return 123;
-    };
-
-    state["addChest"] = [&](f32 x, f32 y, f32 z) -> i32
-    {
-        addChest("")->setPos(vec3(x,y,z));
-        return 123;
-    };
-
+    uploadFunctions(state);
     state.script_file("Maps/Level0.lua");
 
     lua::function init = state["initializeLevel"];
@@ -67,10 +39,40 @@ void Level::initFromScript(const std::string& file)
 
     m_sceneGraph.getRoot()->attachNode(light);
 
-    ui::g_Interface.setWhoms(m_entities[0]->as<Creature>());
+    // ui::g_Interface.setWhoms(m_entities[0]->as<Creature>());
 
     auto rigud = m_sceneGraph.addSkinnedMeshNode("rigud.dae", "Rigud");
     m_sceneGraph.getRoot()->attachNode(rigud);
+}
+
+void Level::uploadFunctions(lua::state& state)
+{
+    state["setLevelMesh"] = [&](const std::string& name)
+    {
+        setLevelMesh(name, "net.obj");
+    };
+
+    state["setPlayerSpawnPoint"] = [&](f32 x, f32 y, f32 z)
+    {
+        addCreature(Creature::Species::Player, vec3(x,y,z));
+    };
+
+    state["Species_Skeleton"] = i32(Creature::Species::Skeleton);
+
+    state["addCreature"] = [&](i32 species, f32 x, f32 y, f32 z) -> i32
+    {
+        return addCreature(Creature::Species(species), vec3(x,y,z));
+    };
+
+    state["addChest"] = [&](f32 x, f32 y, f32 z) -> i32
+    {
+        return addChest(vec3(x,y,z));
+    };
+
+    state["addDoor"] = [&](f32 x, f32 y, f32 z) -> i32
+    {
+        return addDoor(vec3(x,y,z));
+    };
 }
 
 void Level::setLevelMesh(const std::string& map, const std::string& net)
@@ -105,13 +107,12 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
     m_sceneGraph.getRoot()->attachNode(m_mapMesh);
 }
 
-Creature* Level::addCreature(Creature::Species species)
+u32 Level::addCreature(Creature::Species species, const vec3& pos)
 {
-    Entity::Ptr entity(new Creature(m_lastEntityId, &m_lvlContext));
+    Entity::Ptr entity(new Creature(m_lastEntityId, &m_lvlContext, species));
 
-    Creature* creature = entity->as<Creature>();
-
-    creature->init(species);
+    auto creature = entity->as<Creature>();
+    creature->setPos(pos);
 
     if (species == Creature::Species::Player)
         creature->setController(new PlayerController(creature, &m_lvlContext));
@@ -119,69 +120,55 @@ Creature* Level::addCreature(Creature::Species species)
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
 
-    return creature;
+    return m_lastEntityId-1;
 }
 
-Pickup* Level::addPickup(const std::string& item)
+u32 Level::addPickup(u32 item)
 {
     Entity::Ptr entity(new Pickup(m_lastEntityId, &m_lvlContext));
 
     Pickup* pickup = entity->as<Pickup>();
-    pickup->init();
 
     m_creationQueue.push_back(std::move(entity));
     m_lastEntityId++;
 
-    return pickup;
+    return m_lastEntityId-1;
 }
 
-Chest* Level::addChest(const Code& code)
+u32 Level::addChest(const vec3& pos)
 {
     Entity::Ptr entity(new Chest(m_lastEntityId, &m_lvlContext));
-
-    Chest* chest = entity->as<Chest>();
-    chest->init();
+    entity->setPos(pos);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
 
-    return chest;
+    return m_lastEntityId-1;
 }
 
-Door* Level::addDoor(const std::string& code)
+u32 Level::addDoor(const vec3& pos)
 {
     Entity::Ptr entity(new Door(m_lastEntityId, &m_lvlContext));
-
-    auto door = entity->as<Door>();
-    door->init();
+    entity->setPos(pos);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
 
-    return door;
+    return m_lastEntityId-1;
 }
 
-Lever* Level::addLever(const std::string& code)
+u32 Level::addLever(u32 target, const vec3& pos)
 {
     Entity::Ptr entity(new Lever(m_lastEntityId, &m_lvlContext));
 
     auto lever = entity->as<Lever>();
-    lever->init();
     lever->setActivationTarget(3);
+    lever->setPos(pos);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
 
-    return lever;
-}
-
-Projectile* Level::addProjectile(Projectile* raw)
-{
-    Projectile::Ptr proj(raw);
-
-    m_projectiles.push_back(std::move(proj));
-
-    return raw;
+    return m_lastEntityId-1;
 }
 
 void Level::sendSystemEvent(const SDL_Event& event)
@@ -205,22 +192,6 @@ void Level::destroyEntities()
     }
 }
 
-void Level::createProjectiles()
-{
-    for (auto& ent : m_projectileQueue)
-        m_projectiles.push_back(std::move(ent));
-    m_projectileQueue.clear();
-}
-
-void Level::destroyProjectiles()
-{
-    for (i32 i = m_projectiles.size() - 1; i >= 0; i--)
-    {
-        if (m_projectiles[i]->isDestroyed())
-            m_projectiles.erase(m_projectiles.begin() + i);
-    }
-}
-
 void Level::update()
 {
     m_physSys.preSimulationUpdate();
@@ -228,26 +199,19 @@ void Level::update()
     createEntities();
     destroyEntities();
 
-    createProjectiles();
-    destroyProjectiles();
-
     for (auto& ent : m_entities)
         ent->update();
-
-    for (auto& proj : m_projectiles)
-        proj->update();
 
     m_physSys.stepSimulation();
 
     for (auto& ent : m_entities)
         ent->lateUpdate();
 
-    if (DebugSwitches::drawWaynet)
-        m_waynet.debugDraw();
-
-    m_sceneGraph.updateTransforms();
+    // m_waynet.debugDraw();
 
     m_animSys.animate();
+    m_sceneGraph.updateTransforms();
+
 
     gfx::g_GraphRenderer.render(m_sceneGraph);
 }
@@ -259,9 +223,7 @@ Interactible* Level::getClosestInteractible(const vec3& pos, const vec3& dir)
     for (auto& ent : m_entities)
     {
         if ((ent->getType() == Entity::Type::Pickup ||
-            ent->getType() == Entity::Type::Creature ||
             ent->getType() == Entity::Type::Chest ||
-            ent->getType() == Entity::Type::Door ||
             ent->getType() == Entity::Type::Lever) &&
             !ent->isDisabled())
         {
@@ -311,7 +273,7 @@ Creature* Level::getClosestCombatTarget(const vec3& pos, const vec3& dir, bool o
             if (dir != vec3(0) && math::dot(dir, toTheFucker) < 0.7)
                 continue;
 
-            if (ent->as<Creature>()->isPlayer() && onlyPlayer)
+            if (ent->as<Creature>()->getSpecies() == Creature::Species::Player && onlyPlayer)
                 return ent->as<Creature>();
 
             if (bestest)
@@ -328,14 +290,6 @@ Creature* Level::getClosestCombatTarget(const vec3& pos, const vec3& dir, bool o
     }
 
     return bestest;
-}
-
-Entity* Level::getEntityById(u32 id) const
-{
-    for (auto& i : m_entities)
-        if (i->getId() == id)
-            return i.get();
-    return nullptr;
 }
 
 Waynet& Level::getWaynet()

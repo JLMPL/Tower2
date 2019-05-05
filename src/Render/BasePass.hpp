@@ -15,6 +15,8 @@ public:
     void init() override final;
     void execute(SceneGraph& graph, GLuint shadow0);
 
+    void addLine(const vec3& a, const vec3& b, const vec3& c);
+
 private:
     void extractNodes(SceneGraph& graph);
     void sortLights();
@@ -28,7 +30,6 @@ private:
 
     gfx::Shader             m_flatShader;
     gfx::Shader             m_aflatShader;
-
 };
 
 }
