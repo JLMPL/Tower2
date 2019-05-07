@@ -5,6 +5,7 @@
 #include "2D/FadedRect.hpp"
 #include "2D/Font.hpp"
 #include "Core/Config.hpp"
+#include "Interface/HeadsUpDisplay.hpp"
 
 namespace gfx
 {
@@ -86,6 +87,38 @@ void Renderer2D::draw(const FadedRect& faded)
     faded.render();
 
     m_shaders.fadedRect.unbind();
+}
+
+void Renderer2D::draw(const ui::HeadsUpDisplay& hud)
+{
+    auto display = core::g_Config.getDisplay();
+
+    hud.m_hudShader.bind();
+    hud.m_hudShader.setUniformMatrix("uProj", m_proj);
+    hud.m_hudShader.setUniformTexture("uCircularMask", 0, hud.m_circularMask);
+    hud.m_hudShader.setUniformTexture("uHealthMask", 1, hud.m_healthMask);
+    hud.m_hudShader.setUniform1f("uHealth", hud.m_healthPerc);
+    hud.m_hudShader.setUniform2f("uPos", vec2(32,display.height-160));
+    hud.m_hudShader.setUniform3f("uColor", vec3(1));
+
+    hud.m_hpVao.bind();
+    GL(glDrawArrays(GL_TRIANGLES, 0, 6));
+    hud.m_hpVao.unbind();
+    hud.m_hudShader.unbind();
+
+
+    hud.m_hudShader.bind();
+    hud.m_hudShader.setUniformMatrix("uProj", m_proj);
+    hud.m_hudShader.setUniformTexture("uCircularMask", 0, hud.m_circularMask);
+    hud.m_hudShader.setUniformTexture("uHealthMask", 1, hud.m_manaMask);
+    hud.m_hudShader.setUniform1f("uHealth", hud.m_manaPerc);
+    hud.m_hudShader.setUniform2f("uPos", vec2(32,display.height-160));
+    hud.m_hudShader.setUniform3f("uColor", vec3(0.4));
+
+    hud.m_hpVao.bind();
+    GL(glDrawArrays(GL_TRIANGLES, 0, 6));
+    hud.m_hpVao.unbind();
+    hud.m_hudShader.unbind();
 }
 
 void Renderer2D::endFrame()

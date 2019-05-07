@@ -10,29 +10,59 @@ namespace ui
 
 void HeadsUpDisplay::init()
 {
-    m_enemyHealth.init({128,16}, {1,0,0,1});
-
-    m_lable.init(gfx::g_FontMgr.getFont("NotoSans-Regular.ttf"));
-    m_lable.setCharacterSize(16);
-
-    m_backLable.init(gfx::g_FontMgr.getFont("NotoSans-Regular.ttf"));
-    m_backLable.setCharacterSize(16);
-    m_backLable.setColor({0,0,0,1});
-
     auto display = core::g_Config.getDisplay();
 
-    m_leftBack.init({64,64});
-    m_leftBack.setPosition({16, display.height - (64 + 16)});
-    m_leftBack.setColor({0,0,0,1});
+    m_hudShader.loadFromFile("Shaders/Interface/HudHealth.sha");
+    m_hudShader2.loadFromFile("Shaders/Interface/HudMana.sha");
 
-    m_leftItem.init(gfx::g_TexMgr.getTexture("key.png"), {0,0,48,48});
-    m_leftItem.setPosition(m_leftBack.getPosition() + vec2(8));
+    m_circularMask.loadFromFile("Textures/circular_mask.png");
+    m_healthMask.loadFromFile("Textures/health_mask.png");
+    m_manaMask.loadFromFile("Textures/mana_mask.png");
 
-    m_healthBar.init({128,32}, {1,0,0,1});
-    m_healthBar.setPosition({16 + 64, display.height - (16 + 64)});
+    m_back.init(gfx::g_TexMgr.getTexture("health_back.png"));
+    m_back.setColor(Color(0,0,0,0.8));
 
-    m_manaBar.init({128,32}, {0,0,1,1});
-    m_manaBar.setPosition({16 + 64, display.height - (16 + 32)});
+    m_back.setPosition(vec2(32, display.height - 160));
+
+    m_icon.init(gfx::g_TexMgr.getTexture("fire_icon.png"));
+    m_icon.setPosition(vec2(32, display.height - 160));
+
+    const f32 verts[] =
+    {
+        0,   0,
+        0,   128,
+        128, 128,
+
+        0,   0,
+        128, 128,
+        128, 0
+    };
+    const f32 coords[] =
+    {
+        0, 0,
+        0, 1,
+        1, 1,
+
+        0, 0,
+        1, 1,
+        1, 0
+    };
+
+    m_hpVao.init();
+    m_hpVao.bind();
+
+    m_hpVbo.init(GL_ARRAY_BUFFER);
+    m_hpVbo.bind();
+    m_hpVbo.setData(sizeof(f32) * 2 * 6, verts, GL_STATIC_DRAW);
+    m_hpVao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+    m_hpTbo.init(GL_ARRAY_BUFFER);
+    m_hpTbo.bind();
+    m_hpTbo.setData(sizeof(f32) * 2 * 6, coords, GL_STATIC_DRAW);
+    m_hpVao.vertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+    m_hpVao.unbind();
+    m_hpVbo.unbind();
 }
 
 void HeadsUpDisplay::setCreature(Creature* creature)
@@ -42,89 +72,18 @@ void HeadsUpDisplay::setCreature(Creature* creature)
 
 void HeadsUpDisplay::update()
 {
-    // if (auto focus = m_creature->getFocus(); focus && m_visible)
-    if (true)
-    {
-        // m_lable.setString(focus->getLabelName());
-        // m_backLable.setString(focus->getLabelName());
+    m_healthPerc = (sin(m_timer.getElapsedTime()) * 0.5f) + 0.5f;
+    m_manaPerc = (sin(m_timer.getElapsedTime() + 0.5f) * 0.5f) + 0.5f;
 
-        auto display = core::g_Config.getDisplay();
-
-        // vec3 flatpos = math::project(
-        //     focus->getPos() + vec3(0, focus->getLabelOffset(), 0),
-        //     gfx::g_Renderer3D.getActiveCamera()->getView(),
-        //     gfx::g_Renderer3D.getActiveCamera()->getProjection(),
-        //     vec4(0, 0, display.width, display.height)
-        // );
-
-        vec3 flatpos = vec3(100,100,0);
-
-        m_lable.setPosition({
-            i32(flatpos.x - m_lable.getWidth() * 0.5f),
-            i32((display.height - flatpos.y) - m_lable.getHeight())
-        });
-
-        m_backLable.setPosition({
-            i32(flatpos.x - m_backLable.getWidth() * 0.5f) + 2,
-            i32((display.height - flatpos.y) - m_backLable.getHeight()) + 2
-        });
-
-        m_enemyHealth.setPosition({
-            i32(flatpos.x - 64),
-            i32((display.height - flatpos.y) + 10)
-        });
-
-        m_labelVisible = true;
-    }
-    else
-        m_labelVisible = false;
-
-    // if (auto focus = m_creature->getFocus();
-        // m_labelVisible && focus->getType() == Entity::Type::Creature)
-    if (false)
-    {
-        // if (auto cre = focus->as<Creature>(); !cre->isDead())
-        {
-            m_lable.setColor({1,0,0,1});
-            m_enemyHealthVisible = true;
-        }
-        // else
-            m_enemyHealthVisible = false;
-    }
-    else
-    {
-        m_enemyHealthVisible = false;
-        m_lable.setColor({1,1,1,1});
-    }
-
-    if (m_visible && m_creature)
-    {
-        m_healthBar.setMaxValue(m_creature->getMaxHealth());
-        m_healthBar.setValue(m_creature->getHealth());
-
-        m_manaBar.setMaxValue(m_creature->getMaxMagicka());
-        m_manaBar.setValue(m_creature->getMagicka());
-    }
+    // m_healthPerc = 0.8;
+    // m_manaPerc = 0.75;
 }
 
 void HeadsUpDisplay::draw()
 {
-    if (m_labelVisible)
-    {
-        gfx::g_Renderer2D.draw(m_backLable);
-        gfx::g_Renderer2D.draw(m_lable);
-    }
-
-    if (m_enemyHealthVisible)
-        m_enemyHealth.draw();
-
-    // m_health.draw();
-    // m_magicka.draw();
-
-    gfx::g_Renderer2D.draw(m_leftBack);
-    gfx::g_Renderer2D.draw(m_leftItem);
-    m_healthBar.draw();
-    m_manaBar.draw();
+    gfx::g_Renderer2D.draw(m_back);
+    gfx::g_Renderer2D.draw(*this);
+    gfx::g_Renderer2D.draw(m_icon);
 }
 
 void HeadsUpDisplay::show()

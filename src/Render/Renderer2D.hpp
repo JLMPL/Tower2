@@ -4,6 +4,11 @@
 #include "Core/Math3D.hpp"
 #include <vector>
 
+namespace ui
+{
+    class HeadsUpDisplay;
+}
+
 namespace gfx
 {
 
@@ -25,6 +30,7 @@ public:
     void draw(const Text& data);
     void draw(const Sprite& data);
     void draw(const FadedRect& data);
+    void draw(const ui::HeadsUpDisplay& hud);
     void endFrame();
 
 private:

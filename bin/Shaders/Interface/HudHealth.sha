@@ -1,0 +1,42 @@
+#shader vertex
+#version 130
+
+in vec2 vertexPos;
+in vec2 vertexCoord;
+
+out vec2 fragCoord;
+
+uniform mat4 uProj;
+uniform vec2 uPos;
+
+void main()
+{
+    vec4 clipPos = uProj * vec4(vertexPos + uPos, 0, 1);
+    gl_Position = clipPos;
+
+    fragCoord = vertexCoord;
+}
+
+
+#shader fragment
+#version 130
+
+in vec2 fragCoord;
+
+out vec4 theColor;
+
+uniform sampler2D uCircularMask;
+uniform sampler2D uHealthMask;
+uniform float uHealth;
+uniform vec3 uColor;
+
+void main()
+{
+    float circular = texture(uCircularMask, fragCoord).r;
+
+    float hpPerc = uHealth;
+    circular = smoothstep(hpPerc + 0.005, hpPerc, circular);
+    float health = texture(uHealthMask, fragCoord).r;
+    theColor = vec4(uColor, circular * health);
+}
+
