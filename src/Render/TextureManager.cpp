@@ -5,7 +5,7 @@ namespace gfx
 
 TextureManager g_TexMgr;
 
-Texture* TextureManager::getTexture(const String& name)
+Texture* TextureManager::getTexture(const std::string& name)
 {
     auto found = m_textures.find(name);
 
@@ -13,7 +13,7 @@ Texture* TextureManager::getTexture(const String& name)
         return (*found).second.get();
 
     std::unique_ptr<Texture> texture(new Texture());
-    texture->loadFromFile(String("Textures/" + name).c_str());
+    texture->loadFromFile(std::string("Textures/" + name).c_str());
     m_textures[name] = std::move(texture);
 
     return m_textures[name].get();

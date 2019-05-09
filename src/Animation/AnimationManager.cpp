@@ -6,7 +6,7 @@ namespace anim
 
 AnimationManager g_AnimMgr;
 
-Animation* AnimationManager::getAnimation(const String& name)
+Animation* AnimationManager::getAnimation(const std::string& name)
 {
     auto found = m_animations.find(name);
 
@@ -14,7 +14,7 @@ Animation* AnimationManager::getAnimation(const String& name)
         return (*found).second.get();
 
     std::unique_ptr<Animation> anim(new Animation());
-    anim->loadFromFile(String("Animations/Clips/" + name).c_str());
+    anim->loadFromFile(std::string("Animations/Clips/" + name).c_str());
     m_animations[name] = std::move(anim);
 
     return m_animations[name].get();
@@ -28,7 +28,7 @@ AnimationBundle* AnimationManager::getBundle(const std::string& name)
         return (*found).second.get();
 
     std::unique_ptr<AnimationBundle> bundle(new AnimationBundle());
-    bundle->loadFromFile(String("Animations/Bundles/" + name).c_str());
+    bundle->loadFromFile(std::string("Animations/Bundles/" + name).c_str());
     m_bundles[name] = std::move(bundle);
 
     return m_bundles[name].get();

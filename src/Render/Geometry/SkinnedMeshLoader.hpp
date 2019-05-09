@@ -17,7 +17,7 @@ public:
     SkinnedMeshLoader() = default;
     ~SkinnedMeshLoader() = default;
 
-    void loadFromFile(SkinnedMesh& mesh, const Path& path);
+    void loadFromFile(SkinnedMesh& mesh, const std::string& path);
 
 private:
     i8 addNodesToSkeleton(SkinnedMesh& mesh, const aiNode& node);

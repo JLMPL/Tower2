@@ -20,7 +20,7 @@ Font::~Font()
     FT_Done_FreeType(m_library);
 }
 
-void Font::loadFromFile(const Path& path)
+void Font::loadFromFile(const std::string& path)
 {
     auto error = FT_New_Face(m_library, path.c_str(), 0, &m_face);
 

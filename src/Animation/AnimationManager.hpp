@@ -12,12 +12,12 @@ public:
     AnimationManager() = default;
     ~AnimationManager() = default;
 
-    Animation* getAnimation(const String& name);
+    Animation* getAnimation(const std::string& name);
     AnimationBundle* getBundle(const std::string& name);
 
 private:
-    std::map<String, std::unique_ptr<Animation>> m_animations;
-    std::map<String, std::unique_ptr<AnimationBundle>> m_bundles;
+    std::map<std::string, std::unique_ptr<Animation>> m_animations;
+    std::map<std::string, std::unique_ptr<AnimationBundle>> m_bundles;
 };
 
 extern AnimationManager g_AnimMgr;

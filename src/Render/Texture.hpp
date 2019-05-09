@@ -10,10 +10,10 @@ class Texture
 {
 public:
     Texture() = default;
-    Texture(CString path);
+    Texture(const char* path);
     ~Texture();
 
-    void loadFromFile(CString path);
+    void loadFromFile(const char* path);
     void create(u32 width, u32 height, void* data);
 
     u32 getWidth() const;

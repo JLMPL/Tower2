@@ -28,7 +28,7 @@ void Creature::initPlayer()
 {
     initLabel("Player", 2.25);
 
-    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
+    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("rigud.dae", "Rigud");
 
     m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
 
@@ -87,35 +87,18 @@ void Creature::move(Seconds deltaTime)
 
 void Creature::drawSword()
 {
-    m_drawnWeapon = DrawnWeapon::Sword;
+    m_swordDrawn = true;
 }
 
 void Creature::sheatheSword()
 {
-    m_drawnWeapon = DrawnWeapon::None;
+    m_swordDrawn = false;
 }
 
 bool Creature::isSwordDrawn()
 {
-    return m_drawnWeapon == DrawnWeapon::Sword;
+    return m_swordDrawn;
 }
-
-
-void Creature::drawBow()
-{
-
-}
-
-void Creature::sheatheBow()
-{
-
-}
-
-bool Creature::isBowDrawn()
-{
-    return m_drawnWeapon == DrawnWeapon::Bow;
-}
-
 
 u32 Creature::getDamageOutput() const
 {

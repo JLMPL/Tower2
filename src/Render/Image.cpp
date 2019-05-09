@@ -12,7 +12,7 @@ Image::~Image()
         stbi_image_free(m_data);
 }
 
-void Image::loadFromFile(CString path)
+void Image::loadFromFile(const char* path)
 {
     i32 wid, hei, chan;
     m_data = stbi_load(path, &wid, &hei, &chan, 0);

@@ -12,7 +12,7 @@ public:
     Sound() = default;
     ~Sound();
 
-    void loadFromFile(const Path& path);
+    void loadFromFile(const std::string& path);
 
     void play();
 

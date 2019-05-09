@@ -15,15 +15,15 @@ public:
 
     void init();
 
-    StaticMesh* getMesh(const String& name);
-    SkinnedMesh* getSkinnedMesh(const String& name);
+    StaticMesh* getMesh(const std::string& name);
+    SkinnedMesh* getSkinnedMesh(const std::string& name);
 
 private:
     StaticMeshLoader   m_staticMeshLoader;
     SkinnedMeshLoader  m_skinnedMeshLoader;
 
-    std::map<String, std::unique_ptr<StaticMesh>>         m_meshes;
-    std::map<String, std::unique_ptr<SkinnedMesh>>  m_skinMeshes;
+    std::map<std::string, std::unique_ptr<StaticMesh>>         m_meshes;
+    std::map<std::string, std::unique_ptr<SkinnedMesh>>  m_skinMeshes;
 };
 
 extern MeshManager g_MeshMgr;

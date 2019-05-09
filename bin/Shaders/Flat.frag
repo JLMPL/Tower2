@@ -131,7 +131,7 @@ void main()
     vec3 normal = computeNormal();
     vec3 toCam = normalize(uCamPos - fragPos);
 
-    vec3 final = vec3(0);//texture * vec3(0.00);
+    vec3 final = texture * vec3(0.01);
 
     final += calcPointLight(uPointLights[0], normal, texture, toCam) * pointShadow0();
     final += calcPointLight(uPointLights[1], normal, texture, toCam);

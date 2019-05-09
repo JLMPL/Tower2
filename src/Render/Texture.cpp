@@ -5,7 +5,7 @@
 namespace gfx
 {
 
-Texture::Texture(CString path)
+Texture::Texture(const char* path)
 {
     loadFromFile(path);
 }
@@ -16,7 +16,7 @@ Texture::~Texture()
         GL(glDeleteTextures(1, &m_texture));
 }
 
-void Texture::loadFromFile(CString path)
+void Texture::loadFromFile(const char* path)
 {
     Image img;
     img.loadFromFile(path);

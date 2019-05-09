@@ -12,6 +12,8 @@
 
 #define EPSILON (0.00001)
 
+#define SET_BIT(x) (1 << x)
+
 using u64 = uint64_t;
 using u32 = uint32_t;
 using u16 = uint16_t;
@@ -30,11 +32,6 @@ using f64 = double;
 using Bitmask = u32;
 using Moment = std::chrono::high_resolution_clock::time_point;
 using Seconds = f32;
-
-using Path = std::string;
-using Code = std::string;
-using String = std::string;
-using CString = const char*;
 
 using Identifier = u32;
 

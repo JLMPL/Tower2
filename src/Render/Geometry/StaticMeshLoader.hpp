@@ -16,7 +16,7 @@ public:
     StaticMeshLoader() = default;
     ~StaticMeshLoader() = default;
 
-    void loadFromFile(StaticMesh& mesh, const Path& path);
+    void loadFromFile(StaticMesh& mesh, const std::string& path);
 
 private:
     void loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh);

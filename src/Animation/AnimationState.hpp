@@ -27,7 +27,7 @@ public:
     };
 
     AnimationState() = default;
-    AnimationState(const String& name, const Animation* anim, const Skeleton* skel);
+    AnimationState(const std::string& name, const Animation* anim, const Skeleton* skel);
     AnimationState(const json& state);
 
     void loadFromJson(const json& state);
@@ -42,7 +42,7 @@ public:
     // void addEvent(const std::string& name, f32 time, const std::string& joint);
     // bool poolEvent(Event& event);
 
-    const String& getName() const;
+    const std::string& getName() const;
 
     void setLoop(bool val);
     bool isLoop() const;
@@ -61,7 +61,7 @@ private:
     void checkEvents();
 
 private:
-    String m_name;
+    std::string m_name;
 
     const Animation* m_anim = nullptr;
     const Skeleton* m_skeleton = nullptr;

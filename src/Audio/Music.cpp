@@ -9,7 +9,7 @@ Music::~Music()
     Mix_FreeMusic(m_music);
 }
 
-void Music::loadFromFile(const Path& path)
+void Music::loadFromFile(const std::string& path)
 {
     m_music = Mix_LoadMUS(path.c_str());
 

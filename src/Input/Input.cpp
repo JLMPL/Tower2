@@ -83,11 +83,6 @@ bool Input::isDrawMelee() const
     return m_buttons[Button::K_1];
 }
 
-bool Input::isDrawBow() const
-{
-    return m_buttons[Button::K_2];
-}
-
 bool Input::isJump() const
 {
     return m_buttons[Button::K_LAlt];

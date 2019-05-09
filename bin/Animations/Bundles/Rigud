@@ -2,8 +2,36 @@
     "name": "Humanoid",
     "animations": [
         {
-            "name": "Idle",
+            "name": "Backflip",
             "file": "rigud.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Idle",
+            "file": "c_idle.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Walk",
+            "file": "c_walk.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "WalkLeft",
+            "file": "c_walk_left.dae",
+            "loop": true,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "WalkRight",
+            "file": "c_walk_right.dae",
             "loop": true,
             "rootMotion": false,
             "events": []

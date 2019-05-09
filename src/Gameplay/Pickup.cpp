@@ -5,7 +5,7 @@
 
 Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
 {
-    m_item = g_ItemMgr.getItem("damn_herb");
+    m_item = g_ItemMgr.getItem(0);
     m_labelName = m_item->m_name;
 }
 

@@ -20,7 +20,6 @@ public:
     bool isFocus() const;
     bool isAttack() const;
     bool isDrawMelee() const;
-    bool isDrawBow() const;
     bool isJump() const;
 
     bool isButton(const Button& button) const;

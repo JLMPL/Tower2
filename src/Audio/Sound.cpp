@@ -9,7 +9,7 @@ Sound::~Sound()
     Mix_FreeChunk(m_chunk);
 }
 
-void Sound::loadFromFile(const Path& path)
+void Sound::loadFromFile(const std::string& path)
 {
     m_chunk = Mix_LoadWAV(path.c_str());
 

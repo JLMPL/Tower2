@@ -5,7 +5,7 @@ namespace gfx
 
 FontManager g_FontMgr;
 
-Font* FontManager::getFont(const String& name)
+Font* FontManager::getFont(const std::string& name)
 {
     auto found = m_fonts.find(name);
 
@@ -13,7 +13,7 @@ Font* FontManager::getFont(const String& name)
         return (*found).second.get();
 
     std::unique_ptr<Font> font(new Font());
-    font->loadFromFile(String("Fonts/" + name).c_str());
+    font->loadFromFile(std::string("Fonts/" + name).c_str());
     m_fonts[name] = std::move(font);
 
     return m_fonts[name].get();

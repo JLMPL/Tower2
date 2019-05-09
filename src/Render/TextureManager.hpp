@@ -10,10 +10,10 @@ public:
     TextureManager() = default;
     ~TextureManager() = default;
 
-    Texture* getTexture(const String& name);
+    Texture* getTexture(const std::string& name);
 
 private:
-    std::map<String, std::unique_ptr<Texture>> m_textures;
+    std::map<std::string, std::unique_ptr<Texture>> m_textures;
 };
 
 extern TextureManager g_TexMgr;

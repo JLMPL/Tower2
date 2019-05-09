@@ -14,13 +14,13 @@ public:
 
     void loadMaterials();
 
-    const Material* getMaterial(const String& name);
+    const Material* getMaterial(const std::string& name);
 
 private:
-    void loadMaterialsFile(const Path& path);
+    void loadMaterialsFile(const std::string& path);
 
 private:
-    std::map<String, std::unique_ptr<Material>> m_materials;
+    std::map<std::string, std::unique_ptr<Material>> m_materials;
 };
 
 extern MaterialManager g_MatMgr;

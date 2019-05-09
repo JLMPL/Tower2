@@ -17,13 +17,6 @@ class Creature : public Interactible
 public:
     using Base = Entity;
 
-    enum class DrawnWeapon
-    {
-        None = 0,
-        Sword,
-        Bow
-    };
-
     enum class Species
     {
         Player = 0,
@@ -56,10 +49,6 @@ public:
     void                 drawSword();
     void                 sheatheSword();
     bool                 isSwordDrawn();
-
-    void                 drawBow();
-    void                 sheatheBow();
-    bool                 isBowDrawn();
 
     u32                  getMaxHealth() const;
     u32                  getMaxMagicka() const;
@@ -108,7 +97,6 @@ private:
     f32                       m_speed = 5.f;
     f32                       m_yaw = 0.f;
 
-    DrawnWeapon               m_drawnWeapon = DrawnWeapon::None;
+    bool                      m_swordDrawn = false;
     i32                       m_sword = -1;
-    i32                       m_bow = -1;
 };

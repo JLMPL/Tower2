@@ -18,7 +18,7 @@ public:
     Image() = default;
     ~Image();
 
-    void loadFromFile(CString path);
+    void loadFromFile(const char* path);
 
     bool isValid() const;
 

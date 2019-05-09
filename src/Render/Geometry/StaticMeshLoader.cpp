@@ -88,7 +88,7 @@ void StaticMeshLoader::setupBuffers(StaticMesh::Entry& ent)
     ent.ibo.unbind();
 }
 
-void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const Path& path)
+void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),

@@ -19,14 +19,14 @@ public:
 
     Pose update();
 
-    AnimationState* addState(const String& str, const Animation* anim);
-    AnimationState* getState(const String& str);
+    AnimationState* addState(const std::string& str, const Animation* anim);
+    AnimationState* getState(const std::string& str);
 
     void bindAnimEventFunc(const std::string& event, const std::function<void (void)>& func);
 
-    void setState(const String& str);
-    void setStateOnGlobalFrame(const String& str, u64 globalFrame);
-    void setStateOnGlobalTime(const String& str, f64 globalTime);
+    void setState(const std::string& str);
+    void setStateOnGlobalFrame(const std::string& str, u64 globalFrame);
+    void setStateOnGlobalTime(const std::string& str, f64 globalTime);
     void callFunctionOnGlobalTime(const std::function<void (void)>& func, f64 globalTime);
 
     void clearPendingFunctions();

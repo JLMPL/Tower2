@@ -4,6 +4,7 @@
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Level.hpp"
 #include "Interface/HeadsUpDisplay.hpp"
+#include "EntitySystem/Scene.hpp"
 
 class PlayingState : public State
 {
@@ -18,5 +19,6 @@ public:
 
 private:
     ui::HeadsUpDisplay m_hud;
-    Level          m_level;
+    ecs::Scene m_scene;
+    // Level          m_level;
 };

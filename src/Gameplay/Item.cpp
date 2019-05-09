@@ -3,33 +3,15 @@
 #include "Render/TextureManager.hpp"
 #include "Render/MaterialManager.hpp"
 
-Item::Type Item::getTypeFromString(const String& type)
+Item::Type Item::getTypeFromString(const std::string& type)
 {
     if (type == "food")
     {
         return Item::Type::Food;
     }
-    else if (type == "one_handed")
-    {
-        m_weaponType = WeaponType::Sword;
-        return Item::Type::Weapon;
-    }
-    else if (type == "bow")
-    {
-        m_weaponType = WeaponType::Bow;
-        return Item::Type::Weapon;
-    }
-    else if (type == "torch")
-    {
-        return Item::Type::Torch;
-    }
     else if (type == "key")
     {
         return Item::Type::Key;
-    }
-    else if (type == "armor")
-    {
-        return Item::Type::Armor;
     }
 }
 
@@ -38,12 +20,6 @@ void Item::load(json& node)
     if (node["id"].is_null())
     {
         Log::warning("Item description does not contain id!\n");
-        return;
-    }
-
-    if (node["code"].is_null())
-    {
-        Log::warning("Item description does not contain code!\n");
         return;
     }
 
@@ -72,13 +48,12 @@ void Item::load(json& node)
     }
 
     m_id = node["id"].get<i32>();
-    m_code = node["code"].get<String>();
-    m_type = getTypeFromString(node["type"].get<String>());
-    m_name = node["name"].get<String>();
+    m_type = getTypeFromString(node["type"].get<std::string>());
+    m_name = node["name"].get<std::string>();
 
-    m_mesh = gfx::g_MeshMgr.getMesh(node["mesh"].get<String>());
-    m_material = gfx::g_MatMgr.getMaterial(node["texture"].get<String>());
-    m_image = gfx::g_TexMgr.getTexture(node["image"].get<String>());
+    m_mesh = gfx::g_MeshMgr.getMesh(node["mesh"].get<std::string>());
+    m_material = gfx::g_MatMgr.getMaterial(node["texture"].get<std::string>());
+    m_image = gfx::g_TexMgr.getTexture(node["image"].get<std::string>());
 
     // if (!node["consumable"].is_null())
         m_consumable = true;

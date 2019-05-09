@@ -57,12 +57,12 @@ void PlayerController::checkDrawWeapon()
 
     if (gInput.isDrawMelee() && !m_cre->isSwordDrawn() && idleAnim == currAnim)
     {
-        m_cre->getAnimator().setState("Draw");
+        // m_cre->getAnimator().setState("Draw");
         m_cre->drawSword();
     }
     else if (gInput.isDrawMelee() && m_cre->isSwordDrawn() && idleAnim == currAnim)
     {
-        m_cre->getAnimator().setState("Sheathe");
+        // m_cre->getAnimator().setState("Sheathe");
         m_cre->sheatheSword();
     }
 }
@@ -120,10 +120,10 @@ void PlayerController::move()
     vec2 rightAxis = gInput.getRightAxis();
     vec2 leftAxis = gInput.getLeftAxis();
 
-    if (m_cre->isSwordDrawn())
-    {
-        auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
-    }
+    // if (m_cre->isSwordDrawn())
+    // {
+    //     auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
+    // }
 
     m_cameraHolderYaw -= rightAxis.x * 0.0025f;
     m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY));
@@ -137,22 +137,22 @@ void PlayerController::move()
     if (leftAxis.y > 0)
     {
         godir += cameraForward;
-        m_cre->getAnimator().setState("Run");
+        m_cre->getAnimator().setState("Walk");
     }
     if (leftAxis.y < 0)
     {
         godir += -cameraForward;
-        m_cre->getAnimator().setState("Run");
+        m_cre->getAnimator().setState("Walk");
     }
     if (leftAxis.x > 0)
     {
         godir += math::rotateY(cameraForward, f32(-HALF_PI));
-        m_cre->getAnimator().setState("RunRight");
+        m_cre->getAnimator().setState("WalkRight");
     }
     if (leftAxis.x < 0)
     {
         godir += math::rotateY(cameraForward, f32(HALF_PI));
-        m_cre->getAnimator().setState("RunLeft");
+        m_cre->getAnimator().setState("WalkLeft");
     }
 
     m_cre->setDirection(math::normalize(godir));
@@ -175,16 +175,26 @@ void PlayerController::enterAttack()
 {
     m_state = State::Attack;
 
-    m_cre->getAnimator().setState("Attack");
-    m_cre->getAnimator().callFunctionOnGlobalTime(
-    [&]()
-    {
-        enterIdle();
-    }, core::g_FInfo.globalTime + m_cre->getAnimator().getState("Attack")->getDuration());
+    // m_cre->getAnimator().setState("Attack");
+    // m_cre->getAnimator().callFunctionOnGlobalTime(
+    // [&]()
+    // {
+    //     enterIdle();
+    // }, core::g_FInfo.globalTime + m_cre->getAnimator().getState("Attack")->getDuration());
 }
 
 void PlayerController::attack()
 {
+    auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
+
+    if (cbTarget)
+    {
+        vec3 oldir = m_cre->getFacingDir();
+        vec3 nudir = math::normalize(cbTarget->getPos() - m_cre->getPos());
+
+        m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nudir, 0.2f)));
+    }
+
     m_cre->setDirection(m_cre->getFacingDir());
 }
 

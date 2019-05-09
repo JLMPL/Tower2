@@ -27,12 +27,12 @@ struct Animation
 public:
     using Ptr = std::shared_ptr<Animation>;
 
-    void loadFromFile(const Path& path);
+    void loadFromFile(const std::string& path);
 
     const JointAnimation* findJointAnim(const core::Name32& jointName) const;
 
 private:
-    void loadAnimation(const Path& path);
+    void loadAnimation(const std::string& path);
 
     vec3 lerpRoot(const JointAnimation& jointAnimation, Seconds animationTime) const;
     void generateRootMotion();

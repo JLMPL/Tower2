@@ -29,9 +29,9 @@ void Lever::update()
 
         if (m_lerp > 0.9 && !m_flag)
         {
-            GameEvent act(GameEvent::EntityRelated, GameEvent::Entity_Activated);
-            act.setReceiver(m_activationTarget);
-            g_EventSys.enqueue(act);
+            // GameEvent act(GameEvent::EntityRelated, GameEvent::Entity_Activated);
+            // act.setReceiver(m_activationTarget);
+            // g_EventSys.enqueue(act);
 
             m_flag = true;
         }

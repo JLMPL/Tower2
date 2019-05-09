@@ -9,10 +9,10 @@ public:
     FontManager() = default;
     ~FontManager() = default;
 
-    Font* getFont(const String& name);
+    Font* getFont(const std::string& name);
 
 private:
-    std::map<String, std::unique_ptr<Font>> m_fonts;
+    std::map<std::string, std::unique_ptr<Font>> m_fonts;
 };
 
 extern FontManager g_FontMgr;

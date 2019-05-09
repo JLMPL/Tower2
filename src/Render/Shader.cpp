@@ -21,7 +21,7 @@ Shader::~Shader()
     }
 }
 
-Shader::ShaderSources Shader::loadSource(const Path& path)
+Shader::ShaderSources Shader::loadSource(const std::string& path)
 {
     std::ifstream file(path.c_str());
 
@@ -59,7 +59,7 @@ Shader::ShaderSources Shader::loadSource(const Path& path)
     return sources;
 }
 
-std::string Shader::loadSeparateSource(const Path& path)
+std::string Shader::loadSeparateSource(const std::string& path)
 {
     std::ifstream file(path.c_str());
     std::string source;
@@ -100,7 +100,7 @@ GLuint Shader::createShader(const std::string& source, GLuint mode)
     return id;
 }
 
-void Shader::loadFromFile(const Path& path, const Path& otherPath)
+void Shader::loadFromFile(const std::string& path, const std::string& otherPath)
 {
     ShaderSources sources;
 

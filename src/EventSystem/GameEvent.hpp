@@ -1,8 +1,6 @@
 #pragma once
 #include "Core/Types.hpp"
 
-#define SET_BIT(x) (1 << x)
-
 class Creature;
 
 class GameEvent
@@ -19,22 +17,7 @@ public:
 
     enum Type
     {
-        Invalid = 0,
-
-        Player_WeaponDrawn,
-        Player_WeaponSheathed,
-        Player_GainCombatFocus,
-        Player_LoseCombatFocus,
-        Player_Hit,
-        Player_BlockInput,
-        Player_AllowInput,
-        Player_BowDrawn,
-        Player_BowReleased,
-
-        Creature_Damaged,
-        Creature_Killed,
-
-        Entity_Activated
+        Invalid = 0
     };
 
     GameEvent() = default;

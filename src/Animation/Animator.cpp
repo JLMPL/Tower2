@@ -125,14 +125,14 @@ Pose Animator::update()
     return m_pose;
 }
 
-AnimationState* Animator::addState(const String& str, const Animation* anim)
+AnimationState* Animator::addState(const std::string& str, const Animation* anim)
 {
     AnimationState::Ptr state(new AnimationState(str, anim, m_skeleton));
     m_animStates.push_back(std::move(state));
     return m_animStates.back().get();
 }
 
-AnimationState* Animator::getState(const String& str)
+AnimationState* Animator::getState(const std::string& str)
 {
     for (auto& state : m_animStates)
     {
@@ -143,7 +143,7 @@ AnimationState* Animator::getState(const String& str)
     return nullptr;
 }
 
-void Animator::setState(const String& str)
+void Animator::setState(const std::string& str)
 {
     auto state = getState(str);
 
@@ -164,7 +164,7 @@ void Animator::setState(const String& str)
     m_activeStates.push_back(state);
 }
 
-void Animator::setStateOnGlobalFrame(const String& str, u64 globalFrame)
+void Animator::setStateOnGlobalFrame(const std::string& str, u64 globalFrame)
 {
     auto state = getState(str);
 
@@ -181,7 +181,7 @@ void Animator::setStateOnGlobalFrame(const String& str, u64 globalFrame)
     m_pendingStates.push_back(ps);
 }
 
-void Animator::setStateOnGlobalTime(const String& str, f64 globalTime)
+void Animator::setStateOnGlobalTime(const std::string& str, f64 globalTime)
 {
     auto state = getState(str);
 

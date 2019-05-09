@@ -31,7 +31,7 @@ public:
     Font();
     ~Font();
 
-    void loadFromFile(const Path& path);
+    void loadFromFile(const std::string& path);
     Page* getPage(u32 size);
 
 private:

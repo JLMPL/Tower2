@@ -12,7 +12,7 @@ void MaterialManager::loadMaterials()
     loadMaterialsFile("Materials/materials.json");
 }
 
-void MaterialManager::loadMaterialsFile(const Path& path)
+void MaterialManager::loadMaterialsFile(const std::string& path)
 {
     std::ifstream file(path.c_str());
     json materials;
@@ -31,7 +31,7 @@ void MaterialManager::loadMaterialsFile(const Path& path)
     }
 }
 
-const Material* MaterialManager::getMaterial(const String& name)
+const Material* MaterialManager::getMaterial(const std::string& name)
 {
     auto found = m_materials.find(name);
 

@@ -12,7 +12,7 @@ public:
     Music() = default;
     ~Music();
 
-    void loadFromFile(const Path& path);
+    void loadFromFile(const std::string& path);
 
     void play();
     void pause();

@@ -6,7 +6,7 @@ namespace anim
 {
 
 AnimationState::AnimationState(
-    const String& name, const Animation* anim, const Skeleton* skel)
+    const std::string& name, const Animation* anim, const Skeleton* skel)
     : m_name(name), m_anim(anim), m_skeleton(skel)
 {
 }
@@ -116,7 +116,7 @@ void AnimationState::exit()
 {
 }
 
-const String& AnimationState::getName() const
+const std::string& AnimationState::getName() const
 {
     return m_name;
 }

@@ -5,7 +5,7 @@ namespace gfx
 
 MeshManager g_MeshMgr;
 
-StaticMesh* MeshManager::getMesh(const String& name)
+StaticMesh* MeshManager::getMesh(const std::string& name)
 {
     auto found = m_meshes.find(name);
 
@@ -13,13 +13,13 @@ StaticMesh* MeshManager::getMesh(const String& name)
         return (*found).second.get();
 
     std::unique_ptr<StaticMesh> mesh(new StaticMesh());
-    m_staticMeshLoader.loadFromFile(*mesh, String("Meshes/" + name).c_str());
+    m_staticMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str());
     m_meshes[name] = std::move(mesh);
 
     return m_meshes[name].get();
 }
 
-SkinnedMesh* MeshManager::getSkinnedMesh(const String& name)
+SkinnedMesh* MeshManager::getSkinnedMesh(const std::string& name)
 {
     auto found = m_skinMeshes.find(name);
 
@@ -27,7 +27,7 @@ SkinnedMesh* MeshManager::getSkinnedMesh(const String& name)
         return (*found).second.get();
 
     std::unique_ptr<SkinnedMesh> mesh(new SkinnedMesh());
-    m_skinnedMeshLoader.loadFromFile(*mesh, String("Meshes/" + name).c_str());
+    m_skinnedMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str());
     m_skinMeshes[name] = std::move(mesh);
 
     return m_skinMeshes[name].get();

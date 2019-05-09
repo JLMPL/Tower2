@@ -38,11 +38,6 @@ void Level::initFromScript(const std::string& file)
     li->setPosition(vec3(3,3,3));
 
     m_sceneGraph.getRoot()->attachNode(light);
-
-    // ui::g_Interface.setWhoms(m_entities[0]->as<Creature>());
-
-    auto rigud = m_sceneGraph.addSkinnedMeshNode("rigud.dae", "Rigud");
-    m_sceneGraph.getRoot()->attachNode(rigud);
 }
 
 void Level::uploadFunctions(lua::state& state)

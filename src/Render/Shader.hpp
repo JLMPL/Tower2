@@ -28,7 +28,7 @@ public:
 
     ~Shader();
 
-    void loadFromFile(const Path& path, const Path& otherPath = std::string());
+    void loadFromFile(const std::string& path, const std::string& otherPath = std::string());
 
     GLint getUniformLocation(const char* unif) const;
 
@@ -60,8 +60,8 @@ private:
         std::string fragmentShader;
     };
 
-    ShaderSources loadSource(const Path& path);
-    std::string loadSeparateSource(const Path& path);
+    ShaderSources loadSource(const std::string& path);
+    std::string loadSeparateSource(const std::string& path);
 
     GLuint createShader(const std::string& source, GLuint mode);
 

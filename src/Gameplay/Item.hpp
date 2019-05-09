@@ -15,17 +15,8 @@ public:
     enum class Type
     {
         Weapon,
-        Armor,
         Food,
-        Torch,
         Key
-    };
-
-    enum WeaponType
-    {
-        Hands,
-        Sword,
-        Bow
     };
 
     void load(json& node);
@@ -37,7 +28,6 @@ public:
     u32                     m_id = 0u;
     std::string             m_code = "itm_none";
     Type                    m_type;
-    WeaponType              m_weaponType;
 
     const gfx::Texture*     m_image = nullptr;
     const gfx::StaticMesh*  m_mesh = nullptr;

@@ -117,7 +117,7 @@ void Animation::generateRootMotion()
     }
 }
 
-void Animation::loadFromFile(const Path& path)
+void Animation::loadFromFile(const std::string& path)
 {
     loadAnimation(path);
     generateRootMotion();
