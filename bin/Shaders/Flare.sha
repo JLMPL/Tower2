@@ -1,0 +1,39 @@
+#shader vertex
+#version 130
+
+in vec3 vertexPos;
+in vec2 vertexCoord;
+
+out vec2 fragCoord;
+
+uniform mat4 uProj;
+uniform mat4 uView;
+uniform mat4 uModel;
+
+uniform float uScale;
+
+void main()
+{
+    mat4 modview = mat4(1.f);
+    modview[3] = mat4(uView * uModel)[3];
+
+    gl_Position = uProj * modview * vec4(vertexPos * uScale, 1);
+    fragCoord = vertexCoord;
+}
+
+#shader fragment
+#version 130
+
+in vec2 fragCoord;
+
+out vec4 outColor;
+
+uniform sampler2D uTexture;
+uniform vec4 uColor;
+
+void main()
+{
+    float dist = texture(uTexture, fragCoord).r;
+    outColor = vec4(mix(uColor.xyz, vec3(1), dist * dist), dist);
+}
+

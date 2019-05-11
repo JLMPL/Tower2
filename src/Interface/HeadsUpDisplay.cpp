@@ -1,6 +1,5 @@
 #include "HeadsUpDisplay.hpp"
 #include "Core/Config.hpp"
-#include "Gameplay/Creature.hpp"
 #include "Render/FontManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
@@ -63,11 +62,6 @@ void HeadsUpDisplay::init()
 
     m_hpVao.unbind();
     m_hpVbo.unbind();
-}
-
-void HeadsUpDisplay::setCreature(Creature* creature)
-{
-    m_creature = creature;
 }
 
 void HeadsUpDisplay::update()

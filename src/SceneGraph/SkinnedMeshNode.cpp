@@ -9,6 +9,30 @@ SkinnedMeshNode::SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* m
     m_anim->setState("Idle");
 }
 
+void SkinnedMeshNode::calcsUsingGlobal()
+{
+    for (auto& jc : m_jointChildren)
+    {
+        mat4 global = m_globalTransform * m_anim->getGlobalJointTransforms()[jc.joint];
+        jc.node->updateTransforms(global);
+    }
+}
+
+void SkinnedMeshNode::attachNode(i8 joint, SceneNode* node)
+{
+    m_jointChildren.push_back({joint, node});
+}
+
+void SkinnedMeshNode::attachNode(const std::string& joint, SceneNode* node)
+{
+    m_jointChildren.push_back({getJointIndex(joint), node});
+}
+
+i8 SkinnedMeshNode::getJointIndex(const std::string& name)
+{
+    return m_mesh->skeleton.findJointIndex(name.c_str());
+}
+
 gfx::SkinnedMesh* SkinnedMeshNode::getMesh() const
 {
     return m_mesh;

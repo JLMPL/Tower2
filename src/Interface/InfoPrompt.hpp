@@ -2,15 +2,14 @@
 #include <Render/2D/FadedRect.hpp>
 #include <Render/2D/Text.hpp>
 #include <Core/Timer.hpp>
-#include "EventSystem/EventListener.hpp"
 #include <deque>
 
-class Renderer2D;
+struct GameEvent;
 
 namespace ui
 {
 
-class InfoPrompt : public EventListener
+class InfoPrompt
 {
 public:
     void init();
@@ -23,7 +22,7 @@ private:
     void show();
     void hide();
 
-    void onEvent(const GameEvent& event) override final;
+    void onEvent(const GameEvent& event);
 
 private:
     struct Prompt

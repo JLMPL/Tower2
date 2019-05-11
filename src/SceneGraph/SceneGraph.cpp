@@ -1,10 +1,12 @@
 #include "SceneGraph.hpp"
 #include "Render/MeshManager.hpp"
+#include "Render/TextureManager.hpp"
 #include "Gameplay/Level.hpp"
 #include "MeshNode.hpp"
 #include "SkinnedMeshNode.hpp"
 #include "LightNode.hpp"
 #include "CameraNode.hpp"
+#include "FlareNode.hpp"
 
 void SceneGraph::init(LevelContext* context)
 {
@@ -38,6 +40,12 @@ SceneNode* SceneGraph::addLightNode()
 SceneNode* SceneGraph::addCameraNode()
 {
     m_nodes.emplace_back(new CameraNode());
+    return m_nodes.back().get();
+}
+
+SceneNode* SceneGraph::addFlareNode(const std::string& tex)
+{
+    m_nodes.emplace_back(new FlareNode(gfx::g_TexMgr.getTexture(tex)));
     return m_nodes.back().get();
 }
 

@@ -14,7 +14,8 @@ public:
         Camera,
         Mesh,
         SkinMesh,
-        Light
+        Light,
+        Flare
     };
 
     template <typename T>

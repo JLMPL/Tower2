@@ -101,7 +101,7 @@ vec3 calcPointLight(PointLight pl, vec3 normal, vec3 color, vec3 toCam)
     float metallic = 0;
     F0 = mix(F0, color, metallic);
 
-    float roughness = texture(uSpecular, fragCoord).r;
+    float roughness = max(0.001, texture(uSpecular, fragCoord).r);
 
     vec3 tmp = pl.pos - fragPos;
     vec3 toLight = normalize(tmp);
@@ -131,7 +131,7 @@ void main()
     vec3 normal = computeNormal();
     vec3 toCam = normalize(uCamPos - fragPos);
 
-    vec3 final = texture * vec3(0.01);
+    vec3 final = texture * vec3(0.002);
 
     final += calcPointLight(uPointLights[0], normal, texture, toCam) * pointShadow0();
     final += calcPointLight(uPointLights[1], normal, texture, toCam);

@@ -1,10 +1,10 @@
 #pragma once
-#include "EventSystem/EventListener.hpp"
 #include <memory>
 
 class Creature;
+struct GameEvent;
 
-class CreatureController : public EventListener
+class CreatureController
 {
 public:
     using Ptr = std::unique_ptr<CreatureController>;
@@ -14,9 +14,9 @@ public:
     ~CreatureController() = default;
 
     virtual void update() = 0;
+    virtual void onEvent(const GameEvent& event) = 0;
 
 protected:
-    virtual void onEvent(const GameEvent& event) = 0;
 
 protected:
     Creature* m_cre = nullptr;

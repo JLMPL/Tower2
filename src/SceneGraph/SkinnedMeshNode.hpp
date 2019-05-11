@@ -19,6 +19,12 @@ public:
     SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* mesh, const std::string& bundle);
     ~SkinnedMeshNode() = default;
 
+    void calcsUsingGlobal() override final;
+
+    void attachNode(i8 joint, SceneNode* node);
+    void attachNode(const std::string& joint, SceneNode* node);
+    i8 getJointIndex(const std::string& name);
+
     gfx::SkinnedMesh* getMesh() const;
     anim::Animator* getAnimator() const;
 
@@ -30,4 +36,12 @@ public:
 private:
     gfx::SkinnedMesh* m_mesh = nullptr;
     anim::Animator* m_anim = nullptr;
+
+    struct JointChild
+    {
+        i8 joint = -1;
+        SceneNode* node = nullptr;
+    };
+
+    std::vector<JointChild> m_jointChildren;
 };

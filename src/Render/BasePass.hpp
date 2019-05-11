@@ -30,6 +30,7 @@ private:
 
     gfx::Shader             m_flatShader;
     gfx::Shader             m_aflatShader;
+    gfx::Shader             m_flareShader;
 };
 
 }

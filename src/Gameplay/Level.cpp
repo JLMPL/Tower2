@@ -1,16 +1,17 @@
 #include "Level.hpp"
+#include "Controllers/PlayerController.hpp"
+#include "Entities/Chest.hpp"
+#include "Entities/Door.hpp"
+#include "Entities/Lever.hpp"
+#include "Entities/Pickup.hpp"
+#include "Entities/LightEffect.hpp"
 #include "Render/GraphRenderer.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "Script/Lua.hpp"
-#include "Chest.hpp"
-#include "Door.hpp"
-#include "Lever.hpp"
-#include "Pickup.hpp"
-#include "PlayerController.hpp"
 #include <SDL2/SDL.h>
 
-#include "SceneGraph/LightNode.hpp"
+// #include "SceneGraph/LightNode.hpp"
 
 void Level::initFromScript(const std::string& file)
 {
@@ -18,8 +19,9 @@ void Level::initFromScript(const std::string& file)
 
     m_lvlContext.level = this;
     m_lvlContext.sceneGraph = &m_sceneGraph;
-    m_lvlContext.animSys = &m_animSys;
-    m_lvlContext.physSys = &m_physSys;
+    m_lvlContext.eventSys   = &m_eventSys;
+    m_lvlContext.animSys    = &m_animSys;
+    m_lvlContext.physSys    = &m_physSys;
 
     m_sceneGraph.init(&m_lvlContext);
 
@@ -31,13 +33,15 @@ void Level::initFromScript(const std::string& file)
     lua::function init = state["initializeLevel"];
     init();
 
-    auto light = m_sceneGraph.addLightNode();
-    auto li = light->as<LightNode>();
-    li->setColor(vec3(1,0.75,0.1) * 500);
-    li->setShadowCasting(true);
-    li->setPosition(vec3(3,3,3));
+    // auto light = m_sceneGraph.addLightNode();
+    // auto li = light->as<LightNode>();
+    // li->setColor(vec3(0,0,0));
+    // li->setShadowCasting(false);
+    // li->setPosition(vec3(0,0,0));
 
-    m_sceneGraph.getRoot()->attachNode(light);
+    // m_sceneGraph.getRoot()->attachNode(light);
+
+    addLightEffect(vec3(0,3,0));
 }
 
 void Level::uploadFunctions(lua::state& state)
@@ -110,7 +114,8 @@ u32 Level::addCreature(Creature::Species species, const vec3& pos)
     creature->setPos(pos);
 
     if (species == Creature::Species::Player)
-        creature->setController(new PlayerController(creature, &m_lvlContext));
+        // creature->setController(new PlayerController(creature, &m_lvlContext));
+        m_controllers.emplace_back(new PlayerController(creature, &m_lvlContext));
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -166,6 +171,15 @@ u32 Level::addLever(u32 target, const vec3& pos)
     return m_lastEntityId-1;
 }
 
+void Level::addLightEffect(vec3 pos)
+{
+    Entity::Ptr entity(new LightEffect(m_lastEntityId, &m_lvlContext));
+    entity->setPos(pos);
+
+    m_entities.push_back(std::move(entity));
+    m_lastEntityId++;
+}
+
 void Level::sendSystemEvent(const SDL_Event& event)
 {
 
@@ -189,10 +203,22 @@ void Level::destroyEntities()
 
 void Level::update()
 {
-    m_physSys.preSimulationUpdate();
+    for (auto& event : m_eventSys.getEvents())
+    {
+        for (auto& ent : m_entities)
+            ent->onEvent(event);
+
+        for (auto& ctrl : m_controllers)
+            ctrl->onEvent(event);
+    }
 
     createEntities();
     destroyEntities();
+
+    for (auto& ctrl : m_controllers)
+        ctrl->update();
+
+    m_physSys.preSimulationUpdate();
 
     for (auto& ent : m_entities)
         ent->update();

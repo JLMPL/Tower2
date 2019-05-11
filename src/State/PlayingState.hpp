@@ -19,6 +19,6 @@ public:
 
 private:
     ui::HeadsUpDisplay m_hud;
-    ecs::Scene m_scene;
-    // Level          m_level;
+    // ecs::Scene m_scene;
+    Level          m_level;
 };

@@ -2,6 +2,7 @@
 #include "SceneGraph/CameraNode.hpp"
 #include "SceneGraph/MeshNode.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
+#include "SceneGraph/FlareNode.hpp"
 #include "Geometry/StaticMesh.hpp"
 #include "Geometry/SkinnedMesh.hpp"
 #include "Material.hpp"
@@ -15,6 +16,8 @@ void BasePass::init()
 
     m_flatShader.loadFromFile("Shaders/Static.vert", "Shaders/Flat.frag");
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");
+
+    m_flareShader.loadFromFile("Shaders/Flare.sha");
 }
 
 void BasePass::extractNodes(SceneGraph& graph)
@@ -147,6 +150,37 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
             }
         }
     }
+
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+    glDepthMask(GL_FALSE);
+
+    for (auto& node : graph.getNodes())
+    {
+        if (!node->isVisible())
+            continue;
+
+        if (node->getType() == SceneNode::Type::Flare)
+        {
+            auto flare = (FlareNode*)(node.get());
+
+            m_flareShader.bind();
+            m_flareShader.setUniformMatrix("uProj", m_cameraNode->getProjection());
+            m_flareShader.setUniformMatrix("uView", m_cameraNode->getView());
+            m_flareShader.setUniformMatrix("uModel", flare->getGlobalTransform());
+
+            m_flareShader.setUniform1f("uScale", flare->m_scale);
+            m_flareShader.setUniformColor4("uColor", flare->m_color);
+
+            m_flareShader.setUniformTexture("uTexture", 0, *flare->m_texture);
+
+            flare->render();
+
+            m_flareShader.unbind();
+        }
+    }
+    glDepthMask(GL_TRUE);
+    glDisable(GL_BLEND);
 
     m_fbo.unbind();
 }

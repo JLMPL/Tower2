@@ -22,12 +22,12 @@ void System::update()
 
 bool System::matchSignature(u32 other)
 {
-    return m_signature & other;
+    return (m_signature & other) == m_signature;
 }
 
 bool System::matchTags(u32 other)
 {
-    return m_tags & other;
+    return (m_tags & other) == m_tags;
 }
 
 }

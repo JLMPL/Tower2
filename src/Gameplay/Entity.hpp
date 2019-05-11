@@ -1,11 +1,11 @@
 #pragma once
 #include <Core/Math3D.hpp>
-#include "EventSystem/EventListener.hpp"
 #include <memory>
 
+struct GameEvent;
 struct LevelContext;
 
-class Entity : public EventListener
+class Entity
 {
 public:
     using Ptr = std::unique_ptr<Entity>;
@@ -16,7 +16,9 @@ public:
         Chest,
         Pickup,
         Lever,
-        Door
+        Door,
+
+        LightEffect
     };
 
     template <typename T>
@@ -31,6 +33,8 @@ public:
 
     virtual void       update() = 0;
     virtual void       lateUpdate() {};
+
+    virtual void       onEvent(const GameEvent& event) {}
 
     virtual Type       getType() const = 0;
 

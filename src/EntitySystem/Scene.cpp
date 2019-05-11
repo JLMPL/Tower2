@@ -1,5 +1,6 @@
 #include "Scene.hpp"
 #include "Systems/TransformSystem.hpp"
+#include "Systems/RenderSystem.hpp"
 
 namespace ecs
 {
@@ -14,6 +15,7 @@ Scene::Scene()
 void Scene::initSystems()
 {
     m_systems.emplace_back(new TransformSystem(m_ents));
+    m_systems.emplace_back(new RenderSystem(m_ents));
 }
 
 void Scene::update()

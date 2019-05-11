@@ -10,9 +10,6 @@ namespace ui
 
 void InfoPrompt::init()
 {
-    initEventListening(GameEvent::Category::PlayerRelated);
-    g_EventSys.addListener(this);
-
     m_back.init({192,80});
     m_back.setColor({0,0,0,0.8});
     m_back.setFade(128);

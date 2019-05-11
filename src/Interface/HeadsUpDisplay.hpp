@@ -9,7 +9,6 @@
 #include "DiscreteBar.hpp"
 #include "Core/Timer.hpp"
 
-class Creature;
 
 namespace gfx
 {
@@ -23,7 +22,6 @@ class HeadsUpDisplay
 {
 public:
     void init();
-    void setCreature(Creature* creature);
     void update();
     void draw();
 
@@ -31,8 +29,6 @@ public:
     void hide();
 
 private:
-    Creature*          m_creature = nullptr;
-
     gfx::Shader m_hudShader;
     gfx::Shader m_hudShader2;
 

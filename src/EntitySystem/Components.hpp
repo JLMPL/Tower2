@@ -1,10 +1,13 @@
 #pragma once
 #include "Core/Math3D.hpp"
+#include <string>
 
 namespace gfx
 {
     class StaticMesh;
 };
+
+class MeshNode;
 
 namespace ecs::comp
 {
@@ -31,7 +34,10 @@ struct StaticMesh
 {
     static constexpr u32 Signature = SET_BIT(1);
 
-    gfx::StaticMesh* mesh = nullptr;
+    MeshNode* meshNode = nullptr;
+
+    StaticMesh() = default;
+    StaticMesh(const std::string& name);
 };
 
 }

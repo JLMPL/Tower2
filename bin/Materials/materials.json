@@ -83,5 +83,11 @@
         "albedo" : "gray.png",
         "normal" : "shirt_n.png",
         "specular" : "gray.png"
+    },
+    {
+        "name" : "key",
+        "albedo" : "yellow.png",
+        "normal" : "blank_normal.png",
+        "specular" : "bone.png"
     }
 ]}

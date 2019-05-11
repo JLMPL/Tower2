@@ -39,6 +39,7 @@ public:
     SceneNode* addSkinnedMeshNode(const std::string& mesh, const std::string& bundle);
     SceneNode* addLightNode();
     SceneNode* addCameraNode();
+    SceneNode* addFlareNode(const std::string& tex);
 
     void updateTransforms();
 

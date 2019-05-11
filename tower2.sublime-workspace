@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"ta",
+				"transforms"
+			],
+			[
+				"Ent",
+				"EntityHandle"
+			],
+			[
+				"Tran",
+				"TransformComputation"
+			],
+			[
+				"ent",
+				"entity"
+			],
+			[
+				"Tra",
+				"TransformSignature"
+			],
+			[
+				"cre",
+				"creature"
+			],
+			[
 				"Lve",
 				"LevelContext"
 			],
@@ -42,10 +66,6 @@
 			[
 				"vert",
 				"vertexes"
-			],
-			[
-				"ent",
-				"entry"
 			],
 			[
 				"en",
@@ -424,10 +444,6 @@
 				"createProjectiles"
 			],
 			[
-				"cre",
-				"createEntities"
-			],
-			[
 				"v",
 				"virtual"
 			],
@@ -498,27 +514,76 @@
 			[
 				"Pla",
 				"Player"
-			],
-			[
-				"player",
-				"PlayerJump"
-			],
-			[
-				"Eney",
-				"EnemyState"
-			],
-			[
-				"def",
-				"default"
-			],
-			[
-				"Guy_",
-				"Guy_attack"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "src/EntitySystem/Scene.hpp",
+			"settings":
+			{
+				"buffer_size": 1565,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/Scene.cpp",
+			"settings":
+			{
+				"buffer_size": 1041,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/System.hpp",
+			"settings":
+			{
+				"buffer_size": 506,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/System.cpp",
+			"settings":
+			{
+				"buffer_size": 512,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/Components.hpp",
+			"settings":
+			{
+				"buffer_size": 451,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/Systems/TransformSystem.hpp",
+			"settings":
+			{
+				"buffer_size": 205,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/EntitySystem/Systems/TransformSystem.cpp",
+			"settings":
+			{
+				"buffer_size": 336,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "bin/Shaders/Interface/HudHealth.sha",
+			"settings":
+			{
+				"buffer_size": 710,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -543,13 +608,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "",
+		"height": 64.0,
+		"last_filter": "save all",
 		"selected_items":
 		[
 			[
 				"save all",
 				"File: Save All"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
 			],
 			[
 				"wrap",
@@ -694,6 +763,8 @@
 		"/home/dominik/Desktop/Tower/src/Audio",
 		"/home/dominik/Desktop/Tower/src/Core",
 		"/home/dominik/Desktop/Tower/src/Debug",
+		"/home/dominik/Desktop/Tower/src/EntitySystem",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems",
 		"/home/dominik/Desktop/Tower/src/EventSystem",
 		"/home/dominik/Desktop/Tower/src/Events",
 		"/home/dominik/Desktop/Tower/src/Gameplay",
@@ -707,138 +778,139 @@
 		"/home/dominik/Desktop/Tower/src/SceneGraph",
 		"/home/dominik/Desktop/Tower/src/Script",
 		"/home/dominik/Desktop/Tower/src/State",
-		"/home/dominik/Desktop/Tower/bin/Shaders"
+		"/home/dominik/Desktop/Tower/bin/Shaders",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Interface"
 	],
 	"file_history":
 	[
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interactible.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interactible.cpp",
-		"/home/dominik/Desktop/Tower/src/Application.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interaction.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/ItemManager.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.cpp",
-		"/home/dominik/.cache/.fr-NvslQm/ZeroToBero/src/system/label.hpp",
-		"/home/dominik/.cache/.fr-l8EPrJ/ZeroToBero/src/system/label.cpp",
-		"/home/dominik/.cache/.fr-gPNEyh/ZeroToBero/src/system/player.cpp",
-		"/home/dominik/.cache/.fr-excb1k/ZeroToBero/src/component/chest.hpp",
-		"/home/dominik/.cache/.fr-wdYSf1/ZeroToBero/src/component/combat.hpp",
-		"/home/dominik/.cache/.fr-nwWeVM/ZeroToBero/src/system/ai.cpp",
-		"/home/dominik/.cache/.fr-W6RffU/ZeroToBero/src/component/ai.cpp",
-		"/home/dominik/Desktop/Tower/bin/Maps/Level0.lua",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Projectile.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Projectile.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Arrow.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Arrow.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationSystem.hpp",
-		"/home/dominik/Desktop/Tower/src/State/StateStack.hpp",
-		"/home/dominik/Desktop/Tower/src/State/State.hpp",
-		"/home/dominik/Desktop/Tower/src/State/StateStack.cpp",
-		"/home/dominik/Desktop/Tower/src/Application.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Door.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Door.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.hpp",
-		"/home/dominik/Desktop/Tower/src/Physics/CharacterController.cpp",
-		"/home/dominik/Desktop/Tower/src/Physics/CharacterController.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.cpp",
-		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.hpp",
-		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Multiplayer.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Multiplayer.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Mouse.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Mouse.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Menu.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Menu.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Maze.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Maze.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/main.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Login.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Login.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Line.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Line.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/json.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Game.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Game.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Font.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Font.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/FindTheWayInside.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/FindTheWayInside.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/ConfigFile.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/ConfigFile.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/CatchMeIfYouCan.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/CatchMeIfYouCan.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Button.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Button.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/WaitingRoom.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/WaitingRoom.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/TextureLoader.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/TextureLoader.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Text.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Text.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/State.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Settings.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Settings.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Renderer.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Renderer.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Player.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/OfflineMod.hpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/OfflineMod.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Network.cpp",
+		"/home/dominik/Desktop/test/EscapeLinez/src/Network.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Components.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/System.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/System.cpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Scene.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Scene.cpp",
 		"/home/dominik/Desktop/Tower/src/State/PlayingState.cpp",
 		"/home/dominik/Desktop/Tower/src/State/PlayingState.hpp",
-		"/home/dominik/Desktop/Tower/src/Script/Lua.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.cpp",
-		"/home/dominik/Desktop/lolo.lua",
-		"/home/dominik/Desktop/Tower/bin/Maps/ass.lua",
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.cpp",
-		"/home/dominik/Desktop/Tower/src/Interface/Interface.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/CameraNode.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/CameraNode.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Item.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/VertexArray.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/VertexArray.cpp",
-		"/home/dominik/Desktop/Tower/src/Script/Lua.cpp",
-		"/home/dominik/Desktop/Tower/bin/Items/Consumables.itm",
-		"/home/dominik/Desktop/Tower/bin/Items/Keys.itm",
-		"/home/dominik/Desktop/Tower/bin/Items/Items.itm",
-		"/home/dominik/Desktop/Tower/src/Core/Json.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.cpp",
-		"/home/dominik/Desktop/Tower/bin/Maps/map0",
-		"/home/dominik/Desktop/Tower/bin/Maps/Level0",
-		"/home/dominik/Desktop/Tower/src/Core/Math3D.cpp",
-		"/home/dominik/Desktop/Tower/src/Core/Math3D.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.cpp",
-		"/home/dominik/Desktop/Tower/src/Interface/ItemList.cpp",
-		"/home/dominik/Desktop/Tower/src/State/MenuState.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interaction.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/Interface.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/ShaderManager.cpp",
-		"/home/dominik/Desktop/Tower/bin/Shaders/Flat.frag",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Equipment.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Prop.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/CameraController.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/CameraController.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animation.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/ArrayBuffer.cpp",
-		"/home/dominik/Desktop/Towre/.gitignore",
-		"/home/dominik/Desktop/Tower/src/Render/BasePass.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMesh.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMesh.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/LightNode.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/LightNode.hpp",
-		"/home/dominik/Desktop/Tower/src/State/MenuState.cpp",
-		"/home/dominik/Desktop/Towre/bin/Materials/materials.json",
-		"/home/dominik/Desktop/Towre/bin/Shaders/Flat.frag",
-		"/home/dominik/Desktop/Tower/.gitignore",
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/TransformSystem.hpp",
+		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/TransformSystem.cpp",
+		"/home/dominik/Desktop/Tower/src/main.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animation.hpp",
+		"/home/dominik/Desktop/Tower/src/Core/Types.hpp",
+		"/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.hpp",
 		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.hpp",
-		"/home/dominik/Desktop/ogldev-source/tutorial22/mesh.cpp",
-		"/home/dominik/Desktop/ogldev-source/tutorial22/mesh.h",
-		"/home/dominik/Desktop/ogldev-source/tutorial22/tutorial22.cpp",
-		"/home/dominik/Desktop/ogldev-source/Common/technique.cpp",
-		"/home/dominik/Desktop/ogldev-source/Include/ogldev.h",
-		"/home/dominik/Desktop/ogldev-source/Include/ogldev_app.h",
-		"/home/dominik/Desktop/ogldev-source/Include/technique.h",
-		"/home/dominik/Desktop/ogldev-source/Include/ogldev_basic_mesh.h",
-		"/home/dominik/Desktop/ogldev-source/Include/ogldev_backend.h",
-		"/home/dominik/Desktop/Tower/src/Core/Config.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.hpp",
-		"/home/dominik/Desktop/Tower/bin/Materials/materials.json",
-		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.cpp",
-		"/home/dominik/Desktop/Tower/bin/config.cfg",
-		"/home/dominik/Desktop/Tower/src/AI/Waynet.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Prop.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationBundle.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationBundle.cpp",
-		"/home/dominik/Desktop/Tower/bin/Animations/Bundles/Human",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/2D/Font.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/2D/Font.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Shader.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Shader.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/TextureManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/TextureManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/MeshManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/MeshManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/MaterialManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/MaterialManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Audio/Sound.hpp",
+		"/home/dominik/Desktop/Tower/src/Audio/Sound.cpp",
+		"/home/dominik/Desktop/Tower/src/Audio/Music.hpp",
+		"/home/dominik/Desktop/Tower/src/Audio/Music.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animation.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/FontManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/FontManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Image.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Image.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Pickup.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Item.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animator.hpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animator.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/AnimationState.hpp",
+		"/home/dominik/Desktop/Tower/src/Animation/AnimationState.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Texture.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Texture.hpp",
 		"/home/dominik/Desktop/Tower/src/Animation/AnimationManager.hpp",
-		"/home/dominik/Desktop/Tower/bin/Shaders/Base.frag",
-		"/home/dominik/Desktop/Tower/src/Render/Renderer3D.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/PostProcessPass.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/PostProcessPass.cpp"
+		"/home/dominik/Desktop/Tower/src/Animation/AnimationManager.cpp",
+		"/home/dominik/Desktop/Tower/src/ThirdParty/json/json.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Renderer2D.cpp",
+		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.hpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Interface/HudHealth.sha",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Item.hpp",
+		"/home/dominik/Desktop/Tower/bin/Items/Keys.itm",
+		"/home/dominik/Desktop/Tower/bin/Items/Consumables.itm",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Door.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.cpp",
+		"/home/dominik/Desktop/Tower/bin/Animations/Bundles/Rigud",
+		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.cpp",
+		"/home/dominik/Desktop/Tower/src/Input/Input.cpp",
+		"/home/dominik/Desktop/Tower/src/Input/Input.hpp",
+		"/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.cpp",
+		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.cpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Flat.frag",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/ItemManager.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/ItemManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Renderer2D.hpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Interface/Sprite.sha",
+		"/home/dominik/Desktop/Tower/src/Render/2D/Sprite.cpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Interface/HudMana.sha",
+		"/home/dominik/Desktop/Tower/bin/Maps/Level0.lua",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Door.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Interactible.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.hpp",
+		"/home/dominik/Desktop/plunoe.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/BasePass.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Framebuffer.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/LineRenderer.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/BasePass.cpp",
+		"/home/dominik/Desktop/Minor/deferred_test/src/gbuffer.c",
+		"/home/dominik/Desktop/Tower/src/Render/Framebuffer.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.hpp"
 	],
 	"find":
 	{
@@ -857,6 +929,116 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"RectTimeData",
+			"MyUdpSocket",
+			"myudpsocketport",
+			"Component",
+			"u32",
+			"m_col",
+			"String",
+			"CString",
+			"String",
+			"CString",
+			"String",
+			"String&",
+			"Path&",
+			"Path",
+			"SET_bit",
+			"SET",
+			"event",
+			"setState",
+			"Run",
+			"setState",
+			"cbTarget",
+			"GameEvent::",
+			"bow",
+			"GameEvent::Type::",
+			"bow",
+			"m_back",
+			"uHealth",
+			"100",
+			"m_hpVao",
+			"m_tbo",
+			"m_vbo",
+			"m_vao",
+			",\n",
+			"he",
+			"we",
+			"py",
+			"px",
+			"m_dest",
+			"addDoor",
+			"Chest",
+			"chest",
+			"addCreature",
+			"addchest",
+			"*",
+			"GameEvent",
+			"m_",
+			"this",
+			"600",
+			"1024",
+			"depthTexture",
+			"albedoTexture",
+			"depthBuffer",
+			"albedoBuffer",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"GL",
+			"gl",
+			"DiscreteBar",
+			"m_creature",
+			"#include \"Interface/Interface.hpp\"\n",
+			"ui::g_",
+			"ui::",
+			"g_Interface",
+			"getYaw",
+			"yaw",
+			"m_",
+			"getSpecies",
+			"isPlayer",
+			"level",
+			"m_item",
+			"getEntityById",
+			"Effect",
+			"Event",
+			"EventQueue",
 			"LightNode",
 			"fstream",
 			"Switches",
@@ -874,65 +1056,7 @@
 			"m_conto",
 			"CharacterController",
 			"sceneGraph",
-			"m_sceneGraph",
-			"level",
-			"lateUpdate",
-			"earlyUpdate",
-			"phys::g_PhysSys",
-			"g_AnimSys",
-			"Interactible",
-			"json",
-			"jsoin",
-			"PhysicsSystem",
-			"g_Renderer3D",
-			"light",
-			"g_Renderer3D",
-			"m_interaction",
-			"m_interactTransform",
-			"mesh",
-			"code",
-			"m_moveTowardsDir",
-			"idle",
-			"damn_sord",
-			"damn_sword",
-			"addChest",
-			"m_cre->getFacingDir()",
-			"m_forward",
-			"m_cameraHolder",
-			"setstate",
-			"loadMap",
-			"addCreature",
-			"loadcre",
-			"addCreature",
-			"setWhoms",
-			"addCreature",
-			"loadCreature",
-			"loadEntities",
-			"desc",
-			"mat",
-			"mesh",
-			"lua",
-			"array",
-			"Stuf_add",
-			"itm",
-			"ShaderManager",
-			"1024",
-			")));\n",
-			"m_mesh",
-			"m_itemList",
-			"m_items",
-			"g_interface",
-			"getfocus",
-			"getFocus",
-			"equipment",
-			"'",
-			"equipment",
-			"m_itemList",
-			"Equipment",
-			"getlevel",
-			"camera",
-			"m_interactible",
-			"m_cre->getFocus()"
+			"m_sceneGraph"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -940,6 +1064,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"std::string&"
 		],
 		"reverse": false,
 		"show_context": false,
@@ -950,8 +1075,243 @@
 	"groups":
 	[
 		{
+			"selected": 7,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/EntitySystem/Scene.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1565,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/EntitySystem/Scene.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/EntitySystem/System.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 506,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/EntitySystem/System.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 512,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/EntitySystem/Components.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/EntitySystem/Systems/TransformSystem.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 205,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/EntitySystem/Systems/TransformSystem.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 336,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								336,
+								336
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "bin/Shaders/Interface/HudHealth.sha",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 710,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								604,
+								604
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 432.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1012,12 +1372,212 @@
 		"selected_items":
 		[
 			[
+				"tran",
+				"src/EntitySystem/Systems/TransformSystem.cpp"
+			],
+			[
+				"comp",
+				"src/EntitySystem/Components.hpp"
+			],
+			[
+				"sys",
+				"src/EntitySystem/System.hpp"
+			],
+			[
+				"scen",
+				"src/EntitySystem/Scene.hpp"
+			],
+			[
+				"",
+				"~/Desktop/test/EscapeLinez/src/Network.cpp"
+			],
+			[
+				"net",
+				"~/Desktop/test/EscapeLinez/src/Network.hpp"
+			],
+			[
+				"netwo",
+				"~/Desktop/test/EscapeLinez/src/Network.hpp"
+			],
+			[
+				"main",
+				"src/main.cpp"
+			],
+			[
+				"scene",
+				"src/EntitySystem/Scene.cpp"
+			],
+			[
+				"plays",
+				"src/State/PlayingState.cpp"
+			],
+			[
+				"sce",
+				"src/EntitySystem/Scene.cpp"
+			],
+			[
+				"trans",
+				"src/EntitySystem/Systems/TransformSystem.cpp"
+			],
+			[
+				"play",
+				"src/State/PlayingState.cpp"
+			],
+			[
+				"scne",
+				"src/EntitySystem/Scene.hpp"
+			],
+			[
+				"transfo",
+				"src/EntitySystem/Systems/TransformSystem.hpp"
+			],
+			[
+				"system",
+				"src/EntitySystem/System.hpp"
+			],
+			[
+				"type",
+				"src/Core/Types.hpp"
+			],
+			[
+				"itemmana",
+				"src/Gameplay/ItemManager.cpp"
+			],
+			[
+				"level",
+				"src/Gameplay/Level.cpp"
+			],
+			[
+				"flat",
+				"Shaders/Flat.frag"
+			],
+			[
+				"cre",
+				"src/Gameplay/Creature.cpp"
+			],
+			[
+				"playeocn",
+				"src/Gameplay/PlayerController.cpp"
+			],
+			[
+				"gamee",
+				"src/EventSystem/GameEvent.cpp"
+			],
+			[
+				"hael",
+				"Shaders/Interface/HudHealth.sha"
+			],
+			[
+				"spriet",
+				"src/Render/2D/Sprite.cpp"
+			],
+			[
+				"rend2",
+				"src/Render/Renderer2D.cpp"
+			],
+			[
+				"rende",
+				"src/Render/Renderer2D.cpp"
+			],
+			[
+				"sprite",
+				"src/Render/2D/Sprite.cpp"
+			],
+			[
+				"shader",
+				"src/Render/Shader.hpp"
+			],
+			[
+				"render2",
+				"src/Render/Renderer2D.cpp"
+			],
+			[
+				"spri",
+				"src/Render/2D/Sprite.cpp"
+			],
+			[
+				"spir.c",
+				"src/Render/2D/Sprite.cpp"
+			],
+			[
+				"huds",
+				"Shaders/Interface/Hud.sha"
+			],
+			[
+				"hud",
+				"src/Interface/HeadsUpDisplay.cpp"
+			],
+			[
+				"playercon",
+				"src/Gameplay/PlayerController.cpp"
+			],
+			[
+				"lev",
+				"src/Gameplay/Level.cpp"
+			],
+			[
+				"door",
+				"src/Gameplay/Door.hpp"
+			],
+			[
+				"chest",
+				"src/Gameplay/Chest.cpp"
+			],
+			[
 				"lever",
 				"src/Gameplay/Lever.cpp"
 			],
 			[
-				"level",
-				"src/Gameplay/Level.hpp"
+				"intera",
+				"src/Gameplay/Interactible.hpp"
+			],
+			[
+				"gameev",
+				"src/EventSystem/GameEvent.cpp"
+			],
+			[
+				"basepa",
+				"src/Render/BasePass.cpp"
+			],
+			[
+				"graph",
+				"src/Render/GraphRenderer.cpp"
+			],
+			[
+				"framebuf",
+				"src/Render/Framebuffer.cpp"
+			],
+			[
+				"liner",
+				"src/Render/LineRenderer.cpp"
+			],
+			[
+				"linere",
+				"src/Render/LineRenderer.cpp"
+			],
+			[
+				"garphre",
+				"src/Render/GraphRenderer.cpp"
+			],
+			[
+				"base",
+				"src/Render/BasePass.cpp"
+			],
+			[
+				"physis",
+				"src/Physics/PhysicsSystem.hpp"
+			],
+			[
+				"intefac",
+				"src/Interface/Interface.cpp"
+			],
+			[
+				"interfac",
+				"src/Interface/Interface.cpp"
+			],
+			[
+				"pickup",
+				"src/Gameplay/Pickup.cpp"
 			],
 			[
 				"animationsy",
@@ -1042,10 +1602,6 @@
 			[
 				"physsy",
 				"src/Physics/PhysicsSystem.hpp"
-			],
-			[
-				"cre",
-				"src/Gameplay/Creature.cpp"
 			],
 			[
 				"ent",
@@ -1084,20 +1640,12 @@
 				"src/Gameplay/Creature.cpp"
 			],
 			[
-				"intera",
-				"src/Gameplay/Interactible.cpp"
-			],
-			[
 				"phys",
 				"src/Physics/PhysicsSystem.hpp"
 			],
 			[
 				"playco",
 				"src/Gameplay/PlayerController.cpp"
-			],
-			[
-				"play",
-				"src/State/PlayingState.cpp"
 			],
 			[
 				"state",
@@ -1112,28 +1660,12 @@
 				"src/Application.cpp"
 			],
 			[
-				"plays",
-				"src/State/PlayingState.cpp"
-			],
-			[
 				"statesta",
 				"src/State/StateStack.cpp"
 			],
 			[
-				"",
-				"src/Gameplay/Level.cpp"
-			],
-			[
-				"door",
-				"src/Gameplay/Door.hpp"
-			],
-			[
 				"interaction",
 				"src/Gameplay/Interaction.cpp"
-			],
-			[
-				"chest",
-				"src/Gameplay/Chest.cpp"
 			],
 			[
 				"kesy",
@@ -1142,10 +1674,6 @@
 			[
 				"che",
 				"src/Gameplay/Chest.cpp"
-			],
-			[
-				"pickup",
-				"src/Gameplay/Pickup.cpp"
 			],
 			[
 				"interac",
@@ -1248,10 +1776,6 @@
 				"Interface/Interface.hpp"
 			],
 			[
-				"hud",
-				"Interface/HeadsUpDisplay.cpp"
-			],
-			[
 				"levl",
 				"Gameplay/Level.cpp"
 			],
@@ -1332,10 +1856,6 @@
 				"src/Render/GraphRenderer.cpp"
 			],
 			[
-				"basepa",
-				"src/Render/BasePass.cpp"
-			],
-			[
 				"shadowp",
 				"src/Render/ShadowPass.hpp"
 			],
@@ -1344,16 +1864,8 @@
 				"src/SceneGraph/CameraNode.cpp"
 			],
 			[
-				"lev",
-				"src/Gameplay/Level.cpp"
-			],
-			[
 				"basep",
 				"src/Render/BasePass.cpp"
-			],
-			[
-				"flat",
-				"Shaders/Flat.frag"
 			],
 			[
 				"shaodwpa",
@@ -1369,158 +1881,6 @@
 			],
 			[
 				"lighno",
-				"src/SceneGraph/LightNode.hpp"
-			],
-			[
-				"cmaerno",
-				"src/SceneGraph/CameraNode.cpp"
-			],
-			[
-				"scenn",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
-				"meshno",
-				"src/SceneGraph/MeshNode.cpp"
-			],
-			[
-				"math",
-				"src/Core/Math3D.hpp"
-			],
-			[
-				"cmaer",
-				"src/SceneGraph/CameraNode.hpp"
-			],
-			[
-				"scneno",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
-				"skinnedno",
-				"src/SceneGraph/SkinnedMeshNode.hpp"
-			],
-			[
-				"base",
-				"src/Render/BasePass.cpp"
-			],
-			[
-				"baspa",
-				"src/Render/BasePass.cpp"
-			],
-			[
-				"postpr",
-				"src/Render/PostProcessPass.cpp"
-			],
-			[
-				"render3",
-				"src/Render/Renderer3D.cpp"
-			],
-			[
-				"mesnm",
-				"src/Render/MeshManager.cpp"
-			],
-			[
-				"skinme",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
-			],
-			[
-				"scengra",
-				"src/SceneGraph/SceneGraph.cpp"
-			],
-			[
-				"crea",
-				"src/Gameplay/Creature.cpp"
-			],
-			[
-				"skinm",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
-			],
-			[
-				"skinmen",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
-			],
-			[
-				"skinmesno",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
-			],
-			[
-				"skinmehno",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
-			],
-			[
-				"bundle",
-				"src/Animation/AnimationBundle.cpp"
-			],
-			[
-				"animatman",
-				"src/Animation/AnimationManager.hpp"
-			],
-			[
-				"animatoinman",
-				"src/Animation/AnimationManager.hpp"
-			],
-			[
-				"animatsy",
-				"src/Animation/AnimationSystem.cpp"
-			],
-			[
-				"animatbu",
-				"src/Animation/AnimationBundle.cpp"
-			],
-			[
-				"creatur",
-				"src/Gameplay/Creature.hpp"
-			],
-			[
-				"men",
-				"src/SceneGraph/MeshNode.hpp"
-			],
-			[
-				"shdaop",
-				"src/Render/ShadowPass.cpp"
-			],
-			[
-				"scenenon",
-				"src/SceneGraph/SceneNode.hpp"
-			],
-			[
-				"menus",
-				"src/State/MenuState.hpp"
-			],
-			[
-				"scen",
-				"src/SceneGraph/SceneGraph.hpp"
-			],
-			[
-				"shadowpas",
-				"src/Render/ShadowPass.cpp"
-			],
-			[
-				"shadows",
-				"src/Render/ShadowPass.cpp"
-			],
-			[
-				"garph",
-				"src/Render/GraphRenderer.cpp"
-			],
-			[
-				"poinsh",
-				"Shaders/PointShadow.frag"
-			],
-			[
-				"graphrre",
-				"src/Render/GraphRenderer.cpp"
-			],
-			[
-				"shader",
-				"src/Render/Shader.hpp"
-			],
-			[
-				"renderpa",
-				"src/Render/RenderPass.hpp"
-			],
-			[
-				"lightno",
 				"src/SceneGraph/LightNode.hpp"
 			]
 		],

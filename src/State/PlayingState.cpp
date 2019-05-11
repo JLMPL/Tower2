@@ -10,17 +10,17 @@ void PlayingState::init()
     m_hud.init();
     g_ItemMgr.loadItems();
 
-    // m_level.initFromScript("Maps/Level0.lua");
+    m_level.initFromScript("Maps/Level0.lua");
 
-    m_scene.initSystems();
+    // m_scene.initSystems();
 
-    auto ent = m_scene.createEntity();
+    // auto ent = m_scene.createEntity();
 
-    auto tr = m_scene.addComponent<ecs::comp::Transform>(ent);
-    tr->tr = mat4(1.f);
+    // auto tr = m_scene.addComponent<ecs::comp::Transform>(ent);
+    // tr->tr = mat4(1.f);
 
-    auto mesh = m_scene.addComponent<ecs::comp::StaticMesh>(ent);
-    mesh->mesh = nullptr;
+    // auto mesh = m_scene.addComponent<ecs::comp::StaticMesh>(ent);
+    // mesh->mesh = nullptr;
 }
 
 void PlayingState::sendSystemEvent(const Event& event)
@@ -29,11 +29,11 @@ void PlayingState::sendSystemEvent(const Event& event)
 
 void PlayingState::update()
 {
-    g_EventSys.redistributeEvents();
+    // g_EventSys.redistributeEvents();
 
-    // m_level.update();
+    m_level.update();
 
-    m_scene.update();
+    // m_scene.update();
 
     m_hud.update();
 }

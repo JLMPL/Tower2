@@ -1,9 +1,10 @@
 #pragma once
 #include "AI/Waynet.hpp"
-#include "Script/Lua.hpp"
-#include "Creature.hpp"
-
+#include "CreatureController.hpp"
+#include "EventSystem/EventSystem.hpp"
+#include "Gameplay/Entities/Creature.hpp"
 #include "SceneGraph/SceneGraph.hpp"
+#include "Script/Lua.hpp"
 
 union SDL_Event;
 
@@ -16,10 +17,11 @@ class Animator;
 
 struct LevelContext
 {
-    class Level* level = nullptr;
-    SceneGraph* sceneGraph = nullptr;
+    class Level*           level = nullptr;
+    SceneGraph*            sceneGraph = nullptr;
+    EventSystem*           eventSys = nullptr;
     anim::AnimationSystem* animSys = nullptr;
-    phys::PhysicsSystem* physSys = nullptr;
+    phys::PhysicsSystem*   physSys = nullptr;
 };
 
 class Level
@@ -41,6 +43,8 @@ public:
     u32 addDoor(const vec3& pos = vec3(0));
     u32 addLever(u32 target, const vec3& pos = vec3(0));
 
+    void addLightEffect(vec3 pos);
+
     Waynet& getWaynet();
 
     Interactible* getClosestInteractible(const vec3& pos, const vec3& dir);
@@ -60,10 +64,13 @@ private:
     SceneNode* m_mapMesh = nullptr;
 
     LevelContext m_lvlContext;
+    EventSystem m_eventSys;
     anim::AnimationSystem m_animSys;
     phys::PhysicsSystem m_physSys;
 
     u32                          m_lastEntityId = 0;
     std::vector<Entity::Ptr>     m_creationQueue;
     std::vector<Entity::Ptr>     m_entities;
+
+    std::vector<CreatureController::Ptr> m_controllers;
 };
