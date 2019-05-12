@@ -1,6 +1,8 @@
 #include "PhysicsSystem.hpp"
 #include "Debug/Log.hpp"
+#include "Debug/DebugMenu.hpp"
 #include "Core/Random.hpp"
+#include "Render/GraphRenderer.hpp"
 #include <PhysX/PxRigidActor.h>
 
 namespace phys
@@ -195,6 +197,8 @@ void PhysicsSystem::init()
             printf("OUT OF CREAM!!!\n");
     }
     //*/
+
+    debug::g_Menu["Physics"].bind("debugDraw", &m_debugDraw);
 }
 
 physx::PxController* PhysicsSystem::addController(u32* entityID, f32 radius, f32 height)
@@ -367,6 +371,9 @@ void PhysicsSystem::stepSimulation()
 
 void PhysicsSystem::debugDraw()
 {
+    if (!m_debugDraw)
+        return;
+
     using namespace physx;
 
     const PxRenderBuffer& buff = m_scene->getRenderBuffer();
@@ -375,11 +382,11 @@ void PhysicsSystem::debugDraw()
     {
         const PxDebugLine& line = buff.getLines()[i];
 
-        // gfx::g_Renderer3D.addLine(
-        //     vec3(line.pos0.x, line.pos0.y, line.pos0.z),
-        //     vec3(line.pos1.x, line.pos1.y, line.pos1.z),
-        //     vec3(1.f,1.f,1.f)
-        // );
+        gfx::g_GraphRenderer.addLine(
+            vec3(line.pos0.x, line.pos0.y, line.pos0.z),
+            vec3(line.pos1.x, line.pos1.y, line.pos1.z),
+            vec3(1.f,1.f,1.f)
+        );
     }
 }
 

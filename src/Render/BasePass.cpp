@@ -18,6 +18,8 @@ void BasePass::init()
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");
 
     m_flareShader.loadFromFile("Shaders/Flare.sha");
+
+    m_lines.init();
 }
 
 void BasePass::extractNodes(SceneGraph& graph)
@@ -28,6 +30,8 @@ void BasePass::extractNodes(SceneGraph& graph)
         {
             case SceneNode::Type::Camera:
                 m_cameraNode = dynamic_cast<CameraNode*>(i.get());
+                m_fuckView = m_cameraNode->getView();
+                m_fuckProj = m_cameraNode->getProjection();
                 break;
             case SceneNode::Type::Light:
                 m_lights.push_back((LightNode*)(i.get()));
@@ -151,6 +155,8 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
         }
     }
 
+    m_lines.render(m_fuckView, m_fuckProj);
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE);
     glDepthMask(GL_FALSE);
@@ -162,6 +168,8 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
 
         if (node->getType() == SceneNode::Type::Flare)
         {
+            if (!m_cameraNode)
+                printf("fuck2\n");
             auto flare = (FlareNode*)(node.get());
 
             m_flareShader.bind();
@@ -187,11 +195,19 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
 
 void BasePass::execute(SceneGraph& graph, GLuint shadow0)
 {
+    m_lines.prepare();
+
     extractNodes(graph);
     sortLights();
     renderMeshes(graph, shadow0);
 
     m_lights.clear();
+    m_lines.clear();
+}
+
+void BasePass::addLine(const vec3& a, const vec3& b, const vec3& c)
+{
+    m_lines.addLine(a,b,c);
 }
 
 }

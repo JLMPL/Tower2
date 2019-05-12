@@ -17,12 +17,8 @@ public:
 
     struct Event
     {
-        std::string name;
         f32 time;
-        i32 joint;
-
         std::function<void (void)> func;
-
         bool alreadyFiredThisRun = false;
     };
 
@@ -37,7 +33,7 @@ public:
     Pose update(f32 delta);
     void exit();
 
-    void bindEvent(const std::string& evt, const std::function<void (void)>& func);
+    void bindEvent(f32 time, const std::function<void (void)>& func);
 
     // void addEvent(const std::string& name, f32 time, const std::string& joint);
     // bool poolEvent(Event& event);

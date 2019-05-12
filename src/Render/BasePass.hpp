@@ -3,6 +3,8 @@
 #include "SceneGraph/LightNode.hpp"
 #include "Shader.hpp"
 
+#include "LineRenderer.hpp"
+
 namespace gfx
 {
 
@@ -31,6 +33,11 @@ private:
     gfx::Shader             m_flatShader;
     gfx::Shader             m_aflatShader;
     gfx::Shader             m_flareShader;
+
+    LineRenderer m_lines;
+
+    mat4 m_fuckView;
+    mat4 m_fuckProj;
 };
 
 }

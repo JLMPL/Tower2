@@ -233,7 +233,7 @@ void Level::update()
     m_animSys.animate();
     m_sceneGraph.updateTransforms();
 
-
+    m_physSys.debugDraw();
     gfx::g_GraphRenderer.render(m_sceneGraph);
 }
 

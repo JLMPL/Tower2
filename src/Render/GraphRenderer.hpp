@@ -23,6 +23,8 @@ public:
     void init();
     void render(SceneGraph& graph);
 
+    void addLine(const vec3& a, const vec3& b, const vec3& c);
+
 private:
     void finalFrame();
 

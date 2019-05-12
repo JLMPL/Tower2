@@ -168,6 +168,8 @@ private:
     std::vector<physx::PxRigidDynamic*> m_dynamics;
 
     physx::PxParticleSystem* m_particleSystem = nullptr;
+
+    bool m_debugDraw = false;
 };
 
 }

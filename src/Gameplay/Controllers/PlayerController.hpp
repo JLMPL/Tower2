@@ -1,5 +1,6 @@
 #include "Gameplay/CreatureController.hpp"
 #include "Core/Math3D.hpp"
+#include "Core/Timer.hpp"
 
 class SceneNode;
 class SceneGraph;
@@ -43,6 +44,8 @@ private:
 
     void fall();
 
+    void moveCamera();
+
     void checkDrawWeapon();
     bool isAnyMovementKey() const;
 
@@ -61,4 +64,6 @@ private:
 
     SceneNode* m_sord = nullptr;
     FlareNode* m_light = nullptr;
+
+    core::Timer m_lolo;
 };

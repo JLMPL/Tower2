@@ -27,8 +27,8 @@ Animator::Animator(const Skeleton* skeleton, const AnimationBundle& anims)
 
 void Animator::bindAnimEventFunc(const std::string& event, const std::function<void (void)>& func)
 {
-    for (auto& i : m_animStates)
-        i->bindEvent(event, func);
+    // for (auto& i : m_animStates)
+    //     i->bindEvent(event, func);
 }
 
 void Animator::checkForPendingStates()

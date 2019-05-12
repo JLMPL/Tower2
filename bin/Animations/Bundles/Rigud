@@ -35,6 +35,13 @@
             "loop": true,
             "rootMotion": false,
             "events": []
+        },
+        {
+            "name": "Attack0",
+            "file": "c_attack0.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
         }
     ]
 }

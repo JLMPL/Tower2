@@ -19,6 +19,9 @@ void DebugMenuEntry::drawGui()
         {
             switch (val.second.type)
             {
+                case DebugMenuEntry::Type::Bool:
+                    ImGui::Checkbox(val.first.c_str(), val.second.bvalue);
+                    break;
                 case DebugMenuEntry::Type::Integer:
                     ImGui::InputInt(val.first.c_str(), val.second.ivalue);
                     break;

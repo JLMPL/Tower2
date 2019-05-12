@@ -33,6 +33,7 @@ private:
     DoorState m_state;
     f32 m_lerp = 0.f;
     f32 m_yaw = 0.f;
+    f32 m_raise = 0.f;
 
     SceneGraph* m_sceneGraph = nullptr;
     SceneNode* m_mesh = nullptr;

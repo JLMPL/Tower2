@@ -32,4 +32,9 @@ void GraphRenderer::render(SceneGraph& graph)
     finalFrame();
 }
 
+void GraphRenderer::addLine(const vec3& a, const vec3& b, const vec3& c)
+{
+    m_basePass.addLine(a,b,c);
+}
+
 }

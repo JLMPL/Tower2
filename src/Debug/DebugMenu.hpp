@@ -12,7 +12,8 @@ struct DebugMenuEntry
         Integer,
         Float,
         CString,
-        Vector3
+        Vector3,
+        Bool
     };
 
     struct Value
@@ -24,6 +25,7 @@ struct DebugMenuEntry
             f32* fvalue;
             char* svalue;
             vec3* v3value;
+            bool* bvalue;
         };
 
         Value()
@@ -40,6 +42,12 @@ struct DebugMenuEntry
     {
         entries[name].name = name;
         return entries[name];
+    }
+
+    void bind(const std::string& n, bool* val)
+    {
+        values[n].bvalue = val;
+        values[n].type = Type::Bool;
     }
 
     void bind(const std::string& n, i32* val)

@@ -44,9 +44,7 @@ void Creature::initSkeleton()
 {
     initLabel("Skeleton", 2.25);
 
-    auto mesh = gfx::g_MeshMgr.getSkinnedMesh("humx.dae");
-
-    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("humx.dae", "Human");
+    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("skeleton.dae", "Human");
     m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
 
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
