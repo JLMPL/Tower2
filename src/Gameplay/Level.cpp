@@ -173,7 +173,7 @@ u32 Level::addLever(u32 target, const vec3& pos)
 
 void Level::addLightEffect(vec3 pos)
 {
-    Entity::Ptr entity(new LightEffect(m_lastEntityId, &m_lvlContext));
+    Entity::Ptr entity(new LightEffect(m_lastEntityId, &m_lvlContext, 0));
     entity->setPos(pos);
 
     m_entities.push_back(std::move(entity));
@@ -311,6 +311,17 @@ Creature* Level::getClosestCombatTarget(const vec3& pos, const vec3& dir, bool o
     }
 
     return bestest;
+}
+
+Entity* Level::getEntityByID(u32 id)
+{
+    for (auto& ent : m_entities)
+    {
+        if (ent->getID() == id)
+            return ent.get();
+    }
+
+    return nullptr;
 }
 
 Waynet& Level::getWaynet()

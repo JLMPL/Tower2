@@ -11,7 +11,7 @@ namespace gfx
 
 void ShadowPass::init()
 {
-    m_proj = math::perspective(90.0_rad, 1.f, 0.1f, 20.f);
+    m_proj = math::perspective(90.0_rad, 1.f, 0.01f, 20.f);
     m_fbo.init(Framebuffer::Type::Color, 256, 256, false, GL_R32F, GL_RED, GL_FLOAT);
     m_cubemap.init(256, GL_R32F, GL_RED, GL_FLOAT);
 

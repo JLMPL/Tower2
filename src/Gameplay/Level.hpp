@@ -47,6 +47,8 @@ public:
 
     Waynet& getWaynet();
 
+    Entity* getEntityByID(u32 id);
+
     Interactible* getClosestInteractible(const vec3& pos, const vec3& dir);
     Creature*     getClosestCombatTarget(const vec3& pos, const vec3& dir, bool onlyPlayer = false);
 

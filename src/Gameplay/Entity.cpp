@@ -25,7 +25,7 @@ mat4 Entity::getTransform() const
     return m_transform;
 }
 
-u32 Entity::getId() const
+u32 Entity::getID() const
 {
     return m_id;
 }

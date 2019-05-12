@@ -58,7 +58,7 @@ void PlayerController::update()
             break;
     }
 
-    m_cameraHolder->setPosition(m_cre->getPos());
+    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos(), 0.4f));
 
 /*    if (m_cre->getAnimator().isRootMotion())
     {

@@ -44,7 +44,7 @@ public:
     void               setTransform(const mat4& tr);
     mat4               getTransform() const;
 
-    u32                getId() const;
+    u32                getID() const;
     const std::string& getCode() const;
 
     virtual void       disable();
