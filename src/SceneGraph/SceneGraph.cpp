@@ -19,34 +19,34 @@ SceneNode* SceneGraph::addEmptyNode()
     return m_nodes.back().get();
 }
 
-SceneNode* SceneGraph::addMeshNode(const std::string& mesh)
+MeshNode* SceneGraph::addMeshNode(const std::string& mesh)
 {
     m_nodes.emplace_back(new MeshNode(gfx::g_MeshMgr.getMesh(mesh)));
-    return m_nodes.back().get();
+    return m_nodes.back()->as<MeshNode>();
 }
 
-SceneNode* SceneGraph::addSkinnedMeshNode(const std::string& mesh, const std::string& bundle)
+SkinnedMeshNode* SceneGraph::addSkinnedMeshNode(const std::string& mesh, const std::string& bundle)
 {
     m_nodes.emplace_back(new SkinnedMeshNode(m_context->animSys, gfx::g_MeshMgr.getSkinnedMesh(mesh), bundle));
-    return m_nodes.back().get();
+    return m_nodes.back()->as<SkinnedMeshNode>();
 }
 
-SceneNode* SceneGraph::addLightNode()
+LightNode* SceneGraph::addLightNode()
 {
     m_nodes.emplace_back(new LightNode(vec3(50)));
-    return m_nodes.back().get();
+    return m_nodes.back()->as<LightNode>();
 }
 
-SceneNode* SceneGraph::addCameraNode()
+CameraNode* SceneGraph::addCameraNode()
 {
     m_nodes.emplace_back(new CameraNode());
-    return m_nodes.back().get();
+    return m_nodes.back()->as<CameraNode>();
 }
 
-SceneNode* SceneGraph::addFlareNode(const std::string& tex)
+FlareNode* SceneGraph::addFlareNode(const std::string& tex)
 {
     m_nodes.emplace_back(new FlareNode(gfx::g_TexMgr.getTexture(tex)));
-    return m_nodes.back().get();
+    return m_nodes.back()->as<FlareNode>();
 }
 
 SceneNode* SceneGraph::getRoot()

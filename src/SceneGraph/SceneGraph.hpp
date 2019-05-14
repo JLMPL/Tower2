@@ -1,18 +1,6 @@
 #pragma once
 #include "SceneNode.hpp"
 
-/*
-
-LocatorNode
-MeshNode
-LightNode
-SkinMeshNode
-CameraNode
-
-*/
-
-//Purely for rendering
-
 namespace gfx
 {
     class StaticMesh;
@@ -23,6 +11,8 @@ namespace gfx
 class MeshNode;
 class LightNode;
 class CameraNode;
+class SkinnedMeshNode;
+class FlareNode;
 
 struct LevelContext;
 
@@ -35,11 +25,11 @@ public:
     void init(LevelContext* context);
 
     SceneNode* addEmptyNode();
-    SceneNode* addMeshNode(const std::string& mesh);
-    SceneNode* addSkinnedMeshNode(const std::string& mesh, const std::string& bundle);
-    SceneNode* addLightNode();
-    SceneNode* addCameraNode();
-    SceneNode* addFlareNode(const std::string& tex);
+    MeshNode* addMeshNode(const std::string& mesh);
+    SkinnedMeshNode* addSkinnedMeshNode(const std::string& mesh, const std::string& bundle);
+    LightNode* addLightNode();
+    CameraNode* addCameraNode();
+    FlareNode* addFlareNode(const std::string& tex);
 
     void updateTransforms();
 

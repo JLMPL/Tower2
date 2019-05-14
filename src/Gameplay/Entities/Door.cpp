@@ -5,7 +5,7 @@
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/SceneNode.hpp"
+#include "SceneGraph/MeshNode.hpp"
 
 Door::Door(u32 id, LevelContext* context) : Entity(id, context)
 {

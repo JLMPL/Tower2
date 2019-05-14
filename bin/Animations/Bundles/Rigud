@@ -4,7 +4,7 @@
         {
             "name": "Backflip",
             "file": "rigud.dae",
-            "loop": true,
+            "loop": false,
             "rootMotion": false,
             "events": []
         },

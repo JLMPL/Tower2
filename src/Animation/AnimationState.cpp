@@ -23,19 +23,6 @@ void AnimationState::loadFromJson(const json& state)
 
     m_isLooping = state["loop"].get<bool>();
     m_hasRootMotion = state["rootMotion"].get<bool>();
-
-    // for (u32 i = 0; i < state["events"].size(); i++)
-    // {
-    //     loadEventFromJson(state["events"][i]);
-    // }
-}
-
-AnimationState::Event AnimationState::loadEventFromJson(const json& jvt)
-{
-    // Event event;
-    // event.name = jvt["type"].get<std::string>();
-    // event.time = jvt["time"].get<f32>();
-    // m_events.push_back(event);
 }
 
 void AnimationState::bindEvent(f32 time, const std::function<void (void)>& func)

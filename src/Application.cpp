@@ -120,9 +120,6 @@ void Application::setupSystems()
     aud::g_AudioSys.init();
 
     gInput.init();
-
-    // anim::g_AnimSys.init();
-    // phys::g_PhysSys.init();
 }
 
 void Application::processEvent(const SDL_Event& event)
@@ -217,9 +214,6 @@ void Application::processClientEvent(const Event& event)
 void Application::update()
 {
     m_stateStack.update();
-
-    // if (DebugSwitches::drawPhysX)
-        // phys::g_PhysSys.debugDraw();
 }
 
 void Application::run()

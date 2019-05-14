@@ -6,6 +6,7 @@ class SceneNode;
 class SceneGraph;
 class LightNode;
 class FlareNode;
+class MeshNode;
 class CameraNode;
 class Interactible;
 
@@ -52,7 +53,6 @@ private:
 private:
     State m_state = State::Idle;
 
-    // SceneGraph& m_sceneGraph;
     LevelContext* m_context = nullptr;
 
     Interactible* m_interactible = nullptr;
@@ -61,9 +61,12 @@ private:
     SceneNode* m_cameraHolder = nullptr;
     vec3 m_moveTowardsDir = vec3(1,0,0);
     f32 m_cameraHolderYaw = 0.f;
+    f32 m_cameraHolderPitch = 0.f;
 
-    SceneNode* m_sord = nullptr;
+    MeshNode* m_sord = nullptr;
     FlareNode* m_light = nullptr;
 
     core::Timer m_lolo;
+
+    i32 m_combo = 0;
 };

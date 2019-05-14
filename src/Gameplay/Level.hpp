@@ -63,7 +63,7 @@ private:
     Waynet                       m_waynet;
 
     SceneGraph m_sceneGraph;
-    SceneNode* m_mapMesh = nullptr;
+    MeshNode* m_mapMesh = nullptr;
 
     LevelContext m_lvlContext;
     EventSystem m_eventSys;

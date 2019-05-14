@@ -22,9 +22,6 @@ public:
     AnimationState* addState(const std::string& str, const Animation* anim);
     AnimationState* getState(const std::string& str);
 
-    void bindAnimEventFunc(const std::string& event, const std::function<void (void)>& func);
-    void bindAnimEventFunc(f32 time, const std::function<void (void)>& func);
-
     void setState(const std::string& str);
     void setStateOnGlobalFrame(const std::string& str, u64 globalFrame);
     void setStateOnGlobalTime(const std::string& str, f64 globalTime);

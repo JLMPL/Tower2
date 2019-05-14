@@ -8,6 +8,7 @@
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
 #include "SceneGraph/FlareNode.hpp"
+#include "SceneGraph/MeshNode.hpp"
 
 PlayerController::PlayerController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
@@ -15,7 +16,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     enterIdle();
 
     m_camera = m_context->sceneGraph->addCameraNode()->as<CameraNode>();
-    m_camera->setOffset(vec3(-0.75, 2, -2));
+    m_camera->setOffset(vec3(-0.75, 0, -2));
     m_cameraHolder = m_context->sceneGraph->addEmptyNode();
 
     m_cameraHolder->attachNode(m_camera);
@@ -25,9 +26,9 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_sord->setPosition(vec3(0,0.25,0));
     m_cre->getSkinMeshNode()->attachNode("Hand.R", m_sord);
 
-    m_light = m_context->sceneGraph->addFlareNode("flare.png")->as<FlareNode>();
+    m_light = m_context->sceneGraph->addFlareNode("flare.png");
     m_light->setColor(Color(1,0,0,1));
-    m_light->setScale(0.75);
+    m_light->setScale(5.f);
     m_light->setPosition(vec3(0,0.25,0));
     m_light->hide();
 
@@ -36,13 +37,21 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
 
-    m_cre->getAnimator().getState("Attack0")->bindEvent(0.333333,
+    auto& animator = m_cre->getAnimator();
+
+    animator.getState("Attack0")->bindEvent(0.333333,
     [&]()
     {
         m_lolo.reset();
     });
 
-    m_cre->getAnimator().getState("Attack0")->bindEvent(0.625,
+    animator.getState("Attack0")->bindEvent(0.625,
+    [&]()
+    {
+        enterIdle();
+    });
+
+    animator.getState("Backflip")->bindEvent(animator.getState("Backflip")->getDuration(),
     [&]()
     {
         enterIdle();
@@ -57,14 +66,10 @@ void PlayerController::update()
 {
     m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_cre->getFacingDir());
 
-    if (m_lolo.getElapsedTime() < 0.5)
-    {
+    if (m_lolo.getElapsedTime() < 0.25)
         m_light->show();
-    }
     else
-    {
         m_light->hide();
-    }
 
     switch (m_state)
     {
@@ -79,7 +84,7 @@ void PlayerController::update()
             break;
     }
 
-    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos(), 0.4f));
+    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 0.4f));
 
 /*    if (m_cre->getAnimator().isRootMotion())
     {
@@ -94,7 +99,20 @@ void PlayerController::moveCamera()
     vec2 rightAxis = gInput.getRightAxis();
 
     m_cameraHolderYaw -= rightAxis.x * 0.0025f;
-     m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY));
+    m_cameraHolderPitch += rightAxis.y * 0.0025f;
+
+    if (m_cameraHolderPitch < -0.8)
+    {
+        m_cameraHolderPitch = -0.8;
+    }
+    else if (m_cameraHolderPitch > 0.9)
+    {
+        m_cameraHolderPitch = 0.9;
+    }
+
+    printf("%f\n", m_cameraHolderPitch);
+
+    m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY) * math::rotate(quat(), m_cameraHolderPitch, math::vecX));
 }
 
 void PlayerController::checkDrawWeapon()
@@ -150,7 +168,9 @@ void PlayerController::idle()
     checkDrawWeapon();
 
     if (gInput.isAttack())
+    {
         enterAttack();
+    }
 
     if (!m_cre->getCharCtrl().isOnGround())
         fall();
@@ -222,7 +242,10 @@ void PlayerController::enterAttack()
 {
     m_state = State::Attack;
 
-    m_cre->getAnimator().setState("Attack0");
+    if (m_combo == 0)
+        m_cre->getAnimator().setState("Attack0");
+    else
+        m_cre->getAnimator().setState("Backflip");
 }
 
 void PlayerController::attack()
@@ -240,6 +263,16 @@ void PlayerController::attack()
     moveCamera();
 
     m_cre->setDirection(m_cre->getFacingDir());
+
+    if (gInput.isAttack())
+    {
+        if (m_lolo.getElapsedTime() < 0.25)
+            m_combo++;
+        else
+            m_combo = 0;
+
+        enterAttack();
+    }
 }
 
 void PlayerController::fall()

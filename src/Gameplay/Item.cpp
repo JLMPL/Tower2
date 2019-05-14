@@ -55,10 +55,7 @@ void Item::load(json& node)
     m_material = gfx::g_MatMgr.getMaterial(node["texture"].get<std::string>());
     m_image = gfx::g_TexMgr.getTexture(node["image"].get<std::string>());
 
-    // if (!node["consumable"].is_null())
-        m_consumable = true;
-
-    // Item specific
+    m_consumable = true;
 
     if (!node["damage"].is_null())
         m_damage = node["damage"].get<i32>();

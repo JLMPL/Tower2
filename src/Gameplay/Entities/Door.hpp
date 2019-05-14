@@ -3,7 +3,7 @@
 #include "Physics/PhysicsSystem.hpp"
 
 class SceneGraph;
-class SceneNode;
+class MeshNode;
 
 class Door : public Entity
 {
@@ -35,8 +35,7 @@ private:
     f32 m_yaw = 0.f;
     f32 m_raise = 0.f;
 
-    SceneGraph* m_sceneGraph = nullptr;
-    SceneNode* m_mesh = nullptr;
+    MeshNode* m_mesh = nullptr;
 
     // gfx::RenderableHandle m_renderableHandle;
     phys::StaticBody       m_staticBody;

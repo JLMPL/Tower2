@@ -35,9 +35,6 @@ public:
 
     void bindEvent(f32 time, const std::function<void (void)>& func);
 
-    // void addEvent(const std::string& name, f32 time, const std::string& joint);
-    // bool poolEvent(Event& event);
-
     const std::string& getName() const;
 
     void setLoop(bool val);
@@ -52,7 +49,6 @@ public:
     bool isFinished() const;
 
 private:
-    Event loadEventFromJson(const json& jvt);
     void resetEvents();
     void checkEvents();
 

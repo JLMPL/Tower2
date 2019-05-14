@@ -9,6 +9,7 @@
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "Script/Lua.hpp"
+#include "SceneGraph/MeshNode.hpp"
 #include <SDL2/SDL.h>
 
 // #include "SceneGraph/LightNode.hpp"
