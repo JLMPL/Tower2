@@ -20,11 +20,6 @@ i32 GameEvent::getReceiver() const
     return m_receiver;
 }
 
-bool GameEvent::isInCategory(Category cat) const
-{
-    return cat & m_category;
-}
-
 GameEvent::Type GameEvent::getType() const
 {
     return m_type;

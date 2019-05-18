@@ -7,10 +7,10 @@
 
 void PlayingState::init()
 {
-    m_hud.init();
     g_ItemMgr.loadItems();
 
     m_level.initFromScript("Maps/Level0.lua");
+    // m_hud.init(m_level.getSceneGraph().getCamera());
 
     // m_scene.initSystems();
 
@@ -35,10 +35,10 @@ void PlayingState::update()
 
     // m_scene.update();
 
-    m_hud.update();
+    // m_hud.update();
 }
 
 void PlayingState::draw()
 {
-    m_hud.draw();
+    m_level.draw();
 }

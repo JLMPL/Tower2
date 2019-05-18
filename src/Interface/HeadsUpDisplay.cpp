@@ -3,12 +3,16 @@
 #include "Render/FontManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
+#include "SceneGraph/CameraNode.hpp"
+#include "EventSystem/GameEvent.hpp"
 
 namespace ui
 {
 
-void HeadsUpDisplay::init()
+void HeadsUpDisplay::init(const CameraNode& camera)
 {
+    m_camera = &camera;
+
     auto display = core::g_Config.getDisplay();
 
     m_hudShader.loadFromFile("Shaders/Interface/HudHealth.sha");
@@ -25,6 +29,8 @@ void HeadsUpDisplay::init()
 
     m_icon.init(gfx::g_TexMgr.getTexture("fire_icon.png"));
     m_icon.setPosition(vec2(32, display.height - 160));
+
+    m_focus.init(gfx::g_TexMgr.getTexture("circle.png"));
 
     const f32 verts[] =
     {
@@ -64,10 +70,33 @@ void HeadsUpDisplay::init()
     m_hpVbo.unbind();
 }
 
+void HeadsUpDisplay::onEvent(const GameEvent& event)
+{
+    if (event.getType() == GameEvent::Type::UpdateHud)
+    {
+        m_isFocus = event.hud.focus;
+
+        m_focusPos.x = event.hud.focusX;
+        m_focusPos.y = event.hud.focusY;
+        m_focusPos.z = event.hud.focusZ;
+    }
+}
+
 void HeadsUpDisplay::update()
 {
     m_healthPerc = (sin(m_timer.getElapsedTime()) * 0.5f) + 0.5f;
     m_manaPerc = (sin(m_timer.getElapsedTime() + 0.5f) * 0.5f) + 0.5f;
+
+    auto display = core::g_Config.getDisplay();
+
+    vec3 flatpos = math::project(
+        m_focusPos,
+        m_camera->getView(),
+        m_camera->getProjection(),
+        vec4(0, 0, display.width, display.height)
+    );
+
+    m_focus.setPosition(vec2(flatpos.x, display.height - flatpos.y));
 
     // m_healthPerc = 0.8;
     // m_manaPerc = 0.75;
@@ -75,6 +104,9 @@ void HeadsUpDisplay::update()
 
 void HeadsUpDisplay::draw()
 {
+    // if (m_isFocus)
+        gfx::g_Renderer2D.draw(m_focus);
+
     gfx::g_Renderer2D.draw(m_back);
     gfx::g_Renderer2D.draw(*this);
     gfx::g_Renderer2D.draw(m_icon);

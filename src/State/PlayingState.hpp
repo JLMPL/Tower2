@@ -3,7 +3,6 @@
 #include <Animation/AnimationBundle.hpp>
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Level.hpp"
-#include "Interface/HeadsUpDisplay.hpp"
 #include "EntitySystem/Scene.hpp"
 
 class PlayingState : public State
@@ -18,7 +17,7 @@ public:
     void draw() override final;
 
 private:
-    ui::HeadsUpDisplay m_hud;
+    // ui::HeadsUpDisplay m_hud;
     // ecs::Scene m_scene;
     Level          m_level;
 };

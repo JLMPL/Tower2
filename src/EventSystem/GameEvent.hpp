@@ -6,24 +6,15 @@ class Creature;
 class GameEvent
 {
 public:
-    enum Category
-    {
-        Null            = 0,
-        PlayerRelated   = SET_BIT(0),
-        CreatureRelated = SET_BIT(1),
-        EntityRelated   = SET_BIT(2),
-        SystemRelated   = SET_BIT(3)
-    };
-
     enum Type
     {
-        Invalid = 0
+        Invalid = 0,
+        UpdateHud,
+        Damage,
     };
 
     GameEvent() = default;
-    GameEvent(Category cat, Type type) :
-        m_category(cat), m_type(type)
-    {}
+    GameEvent(Type type) : m_type(type) {}
     ~GameEvent() = default;
 
     void setSender(i32 id);
@@ -32,16 +23,29 @@ public:
     i32 getSender() const;
     i32 getReceiver() const;
 
-    bool isInCategory(Category catg) const;
     Type getType() const;
 
 public:
-    Creature* creature = nullptr;
-    f32 fvalue = 0;
-    i32 ivalue = 0;
+    struct UpdateHudData
+    {
+        u32 health = 0;
+        u32 mana = 0;
+        u8 spell = 0;
+        f32 focusX = 0;
+        f32 focusY = 0;
+        f32 focusZ = 0;
+        bool focus = false;
+    };
+
+    union
+    {
+        f32 fvalue;
+        i32 ivalue;
+
+        UpdateHudData hud;
+    };
 
 private:
-    Category m_category = Category::Null;
     Type m_type = Type::Invalid;
 
     i32 m_sender = -1;

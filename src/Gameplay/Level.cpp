@@ -1,5 +1,6 @@
 #include "Level.hpp"
 #include "Controllers/PlayerController.hpp"
+#include "Controllers/SkeletonController.hpp"
 #include "Entities/Chest.hpp"
 #include "Entities/Door.hpp"
 #include "Entities/Lever.hpp"
@@ -43,6 +44,7 @@ void Level::initFromScript(const std::string& file)
     // m_sceneGraph.getRoot()->attachNode(light);
 
     addLightEffect(vec3(0,3,0));
+    m_hud.init(m_sceneGraph.getCamera());
 }
 
 void Level::uploadFunctions(lua::state& state)
@@ -115,8 +117,9 @@ u32 Level::addCreature(Creature::Species species, const vec3& pos)
     creature->setPos(pos);
 
     if (species == Creature::Species::Player)
-        // creature->setController(new PlayerController(creature, &m_lvlContext));
         m_controllers.emplace_back(new PlayerController(creature, &m_lvlContext));
+    else if (species == Creature::Species::Skeleton)
+        m_controllers.emplace_back(new SkeletonController(creature, &m_lvlContext));
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -211,7 +214,10 @@ void Level::update()
 
         for (auto& ctrl : m_controllers)
             ctrl->onEvent(event);
+
+        m_hud.onEvent(event);
     }
+    m_eventSys.clear();
 
     createEntities();
     destroyEntities();
@@ -236,6 +242,13 @@ void Level::update()
 
     m_physSys.debugDraw();
     gfx::g_GraphRenderer.render(m_sceneGraph);
+
+    m_hud.update();
+}
+
+void Level::draw()
+{
+    m_hud.draw();
 }
 
 Interactible* Level::getClosestInteractible(const vec3& pos, const vec3& dir)
@@ -323,6 +336,11 @@ Entity* Level::getEntityByID(u32 id)
     }
 
     return nullptr;
+}
+
+SceneGraph& Level::getSceneGraph()
+{
+    return m_sceneGraph;
 }
 
 Waynet& Level::getWaynet()

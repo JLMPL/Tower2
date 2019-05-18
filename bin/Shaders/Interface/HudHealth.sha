@@ -35,7 +35,7 @@ void main()
     float circular = texture(uCircularMask, fragCoord).r;
 
     float hpPerc = uHealth;
-    circular = smoothstep(hpPerc + 0.005, hpPerc, circular);
+    circular = smoothstep(hpPerc + 0.01, hpPerc, circular);
     float health = texture(uHealthMask, fragCoord).r;
     theColor = vec4(uColor, circular * health);
 }

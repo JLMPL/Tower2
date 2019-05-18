@@ -50,12 +50,15 @@ private:
     void checkDrawWeapon();
     bool isAnyMovementKey() const;
 
+    void updateHud();
+
 private:
     State m_state = State::Idle;
 
     LevelContext* m_context = nullptr;
 
     Interactible* m_interactible = nullptr;
+    i32 m_combatTarget = -1;
 
     CameraNode* m_camera = nullptr;
     SceneNode* m_cameraHolder = nullptr;

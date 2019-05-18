@@ -32,7 +32,10 @@ void LightEffect::update()
     vec3 tmp = math::rotateY(m_posOffset, m_angle);
 
     f32 y = 2.5 + (sin(m_angle * 4) * 0.05);
-    m_pos = m_owner->getPos() + vec3(0,y,0);
+
+    // m_pos = m_owner->getPos() + vec3(0,y,0);
+
+    m_pos = math::lerp(m_pos, m_owner->getPos() + vec3(0,y,0), 10.f * core::g_FInfo.delta);
 
     m_light->setPosition(m_pos + tmp);
     m_flare->setPosition(m_light->getPosition());

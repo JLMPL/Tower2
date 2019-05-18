@@ -40,6 +40,7 @@ LightNode* SceneGraph::addLightNode()
 CameraNode* SceneGraph::addCameraNode()
 {
     m_nodes.emplace_back(new CameraNode());
+    m_camera = m_nodes.back()->as<CameraNode>();
     return m_nodes.back()->as<CameraNode>();
 }
 
@@ -57,6 +58,11 @@ SceneNode* SceneGraph::getRoot()
 std::vector<SceneNode::Ptr>& SceneGraph::getNodes()
 {
     return m_nodes;
+}
+
+const CameraNode& SceneGraph::getCamera() const
+{
+    return *m_camera;
 }
 
 void SceneGraph::updateTransforms()

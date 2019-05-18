@@ -15,18 +15,23 @@ namespace gfx
     class Renderer2D;
 }
 
+class CameraNode;
+struct GameEvent;
+
 namespace ui
 {
 
 class HeadsUpDisplay
 {
 public:
-    void init();
+    void init(const CameraNode& camera);
     void update();
     void draw();
 
     void show();
     void hide();
+
+    void onEvent(const GameEvent& event);
 
 private:
     gfx::Shader m_hudShader;
@@ -43,9 +48,15 @@ private:
     gfx::Sprite m_back;
     gfx::Sprite m_icon;
 
+    bool m_isFocus = false;
+    vec3 m_focusPos;
+    gfx::Sprite m_focus;
+
     core::Timer m_timer;
     f32 m_healthPerc = 0.5f;
     f32 m_manaPerc = 0.5f;
+
+    const CameraNode* m_camera = nullptr;
 
     bool m_visible = true;
 

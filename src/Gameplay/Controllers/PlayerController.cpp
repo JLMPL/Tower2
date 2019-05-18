@@ -43,6 +43,12 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     [&]()
     {
         m_lolo.reset();
+
+        GameEvent event(GameEvent::Type::Damage);
+        event.setSender(m_cre->getID());
+        event.setReceiver(m_combatTarget);
+        event.ivalue = 1;
+        m_context->eventSys->enqueue(event);
     });
 
     animator.getState("Attack0")->bindEvent(0.625,
@@ -60,6 +66,24 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
 void PlayerController::onEvent(const GameEvent& event)
 {
+}
+
+void PlayerController::updateHud()
+{
+    GameEvent event(GameEvent::Type::UpdateHud);
+    event.hud.health = 1;
+    event.hud.mana = 1;
+    event.hud.spell = 1;
+
+    if (m_interactible)
+    {
+        event.hud.focus = true;
+        event.hud.focusX = m_interactible->getPos().x;
+        event.hud.focusY = m_interactible->getPos().y;
+        event.hud.focusZ = m_interactible->getPos().z;
+    }
+    else
+        event.hud.focus = false;
 }
 
 void PlayerController::update()
@@ -84,7 +108,7 @@ void PlayerController::update()
             break;
     }
 
-    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 0.4f));
+    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
 
 /*    if (m_cre->getAnimator().isRootMotion())
     {
@@ -92,6 +116,8 @@ void PlayerController::update()
 
         m_cre->getCharCtrl().move(dir);
     }*/
+
+    updateHud();
 }
 
 void PlayerController::moveCamera()
@@ -101,16 +127,14 @@ void PlayerController::moveCamera()
     m_cameraHolderYaw -= rightAxis.x * 0.0025f;
     m_cameraHolderPitch += rightAxis.y * 0.0025f;
 
-    if (m_cameraHolderPitch < -0.8)
+    if (m_cameraHolderPitch < -0.6)
     {
-        m_cameraHolderPitch = -0.8;
+        m_cameraHolderPitch = -0.6;
     }
     else if (m_cameraHolderPitch > 0.9)
     {
         m_cameraHolderPitch = 0.9;
     }
-
-    printf("%f\n", m_cameraHolderPitch);
 
     m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY) * math::rotate(quat(), m_cameraHolderPitch, math::vecX));
 }
@@ -154,15 +178,11 @@ void PlayerController::idle()
             enterAttack();
     }
 
+    moveCamera();
+
+    if (gInput.isUse() && m_interactible)
     {
-        // m_cre->setFacingDirection(math::rotateY(m_cre->getFacingDir(), -rightAxis.x * 0.0025f));
-
-        moveCamera();
-
-        if (gInput.isUse() && m_interactible)
-        {
-            m_interactible->interact(m_cre);
-        }
+        m_interactible->interact(m_cre);
     }
 
     checkDrawWeapon();
@@ -187,11 +207,6 @@ void PlayerController::enterMove()
 void PlayerController::move()
 {
     vec2 leftAxis = gInput.getLeftAxis();
-
-    // if (m_cre->isSwordDrawn())
-    // {
-    //     auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
-    // }
 
     moveCamera();
 
@@ -228,9 +243,6 @@ void PlayerController::move()
     if (gInput.isAttack())
         enterAttack();
 
-    // if (isJumpKey())
-        // m_stateMachine->setState(new PlayerJump());
-
     if (!m_cre->getCharCtrl().isOnGround())
         fall();
 
@@ -254,11 +266,14 @@ void PlayerController::attack()
 
     if (cbTarget)
     {
+        m_combatTarget = cbTarget->getID();
         vec3 oldir = m_cre->getFacingDir();
         vec3 nudir = math::normalize(cbTarget->getPos() - m_cre->getPos());
 
         m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nudir, 0.2f)));
     }
+    else
+        m_combatTarget = -1;
 
     moveCamera();
 

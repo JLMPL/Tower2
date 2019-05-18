@@ -4,6 +4,7 @@
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
 #include "SceneGraph/SceneGraph.hpp"
+#include "Interface/HeadsUpDisplay.hpp"
 #include "Script/Lua.hpp"
 
 union SDL_Event;
@@ -34,6 +35,7 @@ public:
     void initFromScript(const std::string& file);
     void uploadFunctions(lua::state& state);
     void update();
+    void draw();
 
     void sendSystemEvent(const SDL_Event& event);
 
@@ -48,6 +50,8 @@ public:
     Waynet& getWaynet();
 
     Entity* getEntityByID(u32 id);
+
+    SceneGraph& getSceneGraph();
 
     Interactible* getClosestInteractible(const vec3& pos, const vec3& dir);
     Creature*     getClosestCombatTarget(const vec3& pos, const vec3& dir, bool onlyPlayer = false);
@@ -69,6 +73,8 @@ private:
     EventSystem m_eventSys;
     anim::AnimationSystem m_animSys;
     phys::PhysicsSystem m_physSys;
+
+    ui::HeadsUpDisplay m_hud;
 
     u32                          m_lastEntityId = 0;
     std::vector<Entity::Ptr>     m_creationQueue;

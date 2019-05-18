@@ -36,10 +36,13 @@ public:
     SceneNode* getRoot();
 
     std::vector<SceneNode::Ptr>& getNodes();
+    const CameraNode& getCamera() const;
 
 private:
     LevelContext* m_context = nullptr;
     SceneNode m_root;
+
+    CameraNode* m_camera = nullptr;
 
     std::vector<SceneNode::Ptr> m_nodes;
 
