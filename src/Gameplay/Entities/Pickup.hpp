@@ -3,6 +3,8 @@
 #include "Physics/PhysicsSystem.hpp"
 #include "Gameplay/Item.hpp"
 
+class MeshNode;
+
 class Pickup : public Interactible
 {
 public:
@@ -26,6 +28,8 @@ public:
 
 private:
     const Item* m_item = nullptr;
+
+    MeshNode* m_mesh = nullptr;
 
     bool m_hasRigidBody = false;
     phys::RigidBody m_rigidBody;

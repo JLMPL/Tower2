@@ -19,7 +19,7 @@ LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
 
     auto fl = m_flare->as<FlareNode>();
     // fl->setScale(0.5f);
-    fl->setColor(Color(0,0.7,1,1));
+    fl->setColor(Color(0.5,0.75,1,1));
 
     m_context->sceneGraph->getRoot()->attachNode(m_flare);
 

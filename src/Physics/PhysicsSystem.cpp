@@ -61,7 +61,7 @@ void PhysicsSystem::init()
 
     //*/
     {
-        u32 size = 80;
+        u32 size = 40;
         u32 size2 = size * size;
 
         PxClothParticle vertices[size2];

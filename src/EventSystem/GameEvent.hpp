@@ -11,6 +11,7 @@ public:
         Invalid = 0,
         UpdateHud,
         Damage,
+        SpawnPickup
     };
 
     GameEvent() = default;
@@ -37,12 +38,19 @@ public:
         bool focus = false;
     };
 
+    struct SpawnPickupData
+    {
+        f32 x,y,z;
+        i32 itemID;
+    };
+
     union
     {
         f32 fvalue;
         i32 ivalue;
 
         UpdateHudData hud;
+        SpawnPickupData pickup;
     };
 
 private:

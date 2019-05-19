@@ -111,8 +111,11 @@ void Creature::damage(i32 damage)
 {
     m_health -= damage;
 
-    if (m_health < 0)
+    if (m_health <= 0)
+    {
         m_health = 0;
+        m_isDead = true;
+    }
 }
 
 u32 Creature::getMaxHealth() const

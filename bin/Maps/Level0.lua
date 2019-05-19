@@ -5,9 +5,12 @@ function initializeLevel()
 
     local skello = addCreature(Species_Skeleton, 2,0,0)
 
-    local chesty = addChest(3,0,0)
+    for i = 0,2 do
+        local chesty = addChest(0,0,i)
+    end
     -- addItemToChest(chesty, 0)
 
     local dorr = addDoor(-3,2,0)
+    local levre = addLever(-1,2,0)
 
 end

@@ -127,11 +127,13 @@ u32 Level::addCreature(Creature::Species species, const vec3& pos)
     return m_lastEntityId-1;
 }
 
-u32 Level::addPickup(u32 item)
+u32 Level::addPickup(u32 item, const vec3& pos)
 {
     Entity::Ptr entity(new Pickup(m_lastEntityId, &m_lvlContext));
+    // entity->setPos(pos);
 
     Pickup* pickup = entity->as<Pickup>();
+    pickup->getRigidBody().setGlobalTransform(math::translate(pos));
 
     m_creationQueue.push_back(std::move(entity));
     m_lastEntityId++;
@@ -205,10 +207,21 @@ void Level::destroyEntities()
     }
 }
 
+void Level::onEvent(const GameEvent& event)
+{
+    if (event.getType() == GameEvent::Type::SpawnPickup)
+    {
+        addPickup(event.pickup.itemID,
+            vec3(event.pickup.x, event.pickup.y, event.pickup.z));
+    }
+}
+
 void Level::update()
 {
     for (auto& event : m_eventSys.getEvents())
     {
+        onEvent(event);
+
         for (auto& ent : m_entities)
             ent->onEvent(event);
 
@@ -336,11 +349,6 @@ Entity* Level::getEntityByID(u32 id)
     }
 
     return nullptr;
-}
-
-SceneGraph& Level::getSceneGraph()
-{
-    return m_sceneGraph;
 }
 
 Waynet& Level::getWaynet()

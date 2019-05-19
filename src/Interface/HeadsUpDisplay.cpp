@@ -96,7 +96,7 @@ void HeadsUpDisplay::update()
         vec4(0, 0, display.width, display.height)
     );
 
-    m_focus.setPosition(vec2(flatpos.x, display.height - flatpos.y));
+    m_focus.setPosition(vec2(i32(flatpos.x) -12, i32(display.height - flatpos.y) -12));
 
     // m_healthPerc = 0.8;
     // m_manaPerc = 0.75;
@@ -104,7 +104,7 @@ void HeadsUpDisplay::update()
 
 void HeadsUpDisplay::draw()
 {
-    // if (m_isFocus)
+    if (m_isFocus)
         gfx::g_Renderer2D.draw(m_focus);
 
     gfx::g_Renderer2D.draw(m_back);

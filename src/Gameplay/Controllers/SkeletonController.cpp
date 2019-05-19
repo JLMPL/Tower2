@@ -51,6 +51,12 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     {
         enterIdle();
     });
+
+    animator.getState("Pain")->bindEvent(animator.getState("Pain")->getDuration(),
+    [&]()
+    {
+        enterIdle();
+    });
 }
 
 void SkeletonController::onEvent(const GameEvent& event)
@@ -81,6 +87,9 @@ void SkeletonController::update()
             break;
         case State::Pain:
             pain();
+            break;
+        case State::Death:
+            death();
             break;
     }
 }
@@ -144,10 +153,41 @@ void SkeletonController::attack()
 void SkeletonController::enterPain()
 {
     m_state = State::Pain;
-    m_cre->getAnimator().setState("Backflip");
+    m_cre->damage(1);
+
+    if (!m_cre->isDead())
+        m_cre->getAnimator().setState("Pain");
+    else
+        enterDeath();
 }
 
 void SkeletonController::pain()
+{
+
+}
+
+void SkeletonController::enterDeath()
+{
+    m_state = State::Death;
+
+    m_cre->getAnimator().setState("Death");
+
+    // GameEvent event(GameEvent::Type::SpawnPickup);
+    // event.pickup.x = m_cre->getPos().x;
+    // event.pickup.y = m_cre->getPos().y + 2;
+    // event.pickup.z = m_cre->getPos().z;
+    // event.pickup.itemID = 0;
+
+    // m_context->eventSys->enqueue(event);
+
+    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+}
+
+void SkeletonController::death()
 {
 
 }

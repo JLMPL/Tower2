@@ -84,11 +84,13 @@ void PlayerController::updateHud()
     }
     else
         event.hud.focus = false;
+
+    m_context->eventSys->enqueue(event);
 }
 
 void PlayerController::update()
 {
-    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_cre->getFacingDir());
+    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_camera->getForwardDirection());
 
     if (m_lolo.getElapsedTime() < 0.25)
         m_light->show();
@@ -182,7 +184,8 @@ void PlayerController::idle()
 
     if (gInput.isUse() && m_interactible)
     {
-        m_interactible->interact(m_cre);
+        // m_interactible->interact(m_cre);
+        m_cre->getAnimator().setState("Backflip");
     }
 
     checkDrawWeapon();

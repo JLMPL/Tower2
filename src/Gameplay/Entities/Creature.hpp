@@ -80,11 +80,11 @@ private:
 
     phys::CharacterController m_conto;
 
-    u32                       m_maxHealth = 10;
-    u32                       m_maxMagicka = 10;
+    u32                       m_maxHealth = 3;
+    u32                       m_maxMagicka = 3;
 
-    i32                       m_health = 5;
-    i32                       m_magicka = 5;
+    i32                       m_health = 3;
+    i32                       m_magicka = 3;
 
     bool                      m_isDead = false;
 

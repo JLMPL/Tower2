@@ -19,7 +19,7 @@ public:
     {
         Idle,
         Move,
-        Dead,
+        Death,
         Attack,
         Pain,
         Jump
@@ -45,6 +45,9 @@ private:
 
     void enterPain();
     void pain();
+
+    void enterDeath();
+    void death();
 
     void fall();
 

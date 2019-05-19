@@ -2,17 +2,22 @@
 #include "Creature.hpp"
 #include "Gameplay/ItemManager.hpp"
 #include "Gameplay/Level.hpp"
+#include "SceneGraph/MeshNode.hpp"
 
 Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
 {
     m_item = g_ItemMgr.getItem(0);
     m_labelName = m_item->m_name;
+    addRigidBody();
+
+    m_mesh = m_context->sceneGraph->addMeshNode("key.obj");
+    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
 }
 
 void Pickup::addRigidBody(const vec3& pos)
 {
     m_hasRigidBody = true;
-    m_rigidBody = m_context->physSys->addBox(pos, vec3(0), vec3(0.1));
+    m_rigidBody = m_context->physSys->addBox(pos, vec3(0), vec3(0.1,0.2,0.04));
 }
 
 void Pickup::update()
@@ -21,6 +26,11 @@ void Pickup::update()
     {
         m_transform = m_rigidBody.getGlobalTransform();
         m_pos = m_transform[3];
+
+        m_mesh->setTransform(m_transform);
+
+        m_mesh->setPosition(m_transform[3]);
+        m_mesh->setRotation(math::quat_cast(m_transform));
     }
     else
         m_transform = math::translate(m_pos);

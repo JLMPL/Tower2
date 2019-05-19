@@ -34,13 +34,14 @@ public:
 
     void initFromScript(const std::string& file);
     void uploadFunctions(lua::state& state);
+    void onEvent(const GameEvent& event);
     void update();
     void draw();
 
     void sendSystemEvent(const SDL_Event& event);
 
     u32 addCreature(Creature::Species species, const vec3& pos = vec3(0));
-    u32 addPickup(u32 item);
+    u32 addPickup(u32 item, const vec3& pos = vec3(0));
     u32 addChest(const vec3& pos = vec3(0));
     u32 addDoor(const vec3& pos = vec3(0));
     u32 addLever(u32 target, const vec3& pos = vec3(0));
@@ -50,8 +51,6 @@ public:
     Waynet& getWaynet();
 
     Entity* getEntityByID(u32 id);
-
-    SceneGraph& getSceneGraph();
 
     Interactible* getClosestInteractible(const vec3& pos, const vec3& dir);
     Creature*     getClosestCombatTarget(const vec3& pos, const vec3& dir, bool onlyPlayer = false);

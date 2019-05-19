@@ -10,8 +10,6 @@ public:
 
     void enqueue(const GameEvent& event);
 
-    void redistributeEvents();
-
     const std::vector<GameEvent>& getEvents() const;
     void clear();
 

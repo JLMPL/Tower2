@@ -42,6 +42,20 @@
             "loop": false,
             "rootMotion": false,
             "events": []
+        },
+        {
+            "name": "Pain",
+            "file": "c_pain.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
+        },
+        {
+            "name": "Death",
+            "file": "c_death.dae",
+            "loop": false,
+            "rootMotion": false,
+            "events": []
         }
     ]
 }
