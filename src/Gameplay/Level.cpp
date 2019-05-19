@@ -254,6 +254,11 @@ void Level::update()
     m_sceneGraph.updateTransforms();
 
     m_physSys.debugDraw();
+
+    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(1,1,0), vec3(1,0,0));
+    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(0,2,0), vec3(0,1,0));
+    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(0,1,1), vec3(0,0,1));
+
     gfx::g_GraphRenderer.render(m_sceneGraph);
 
     m_hud.update();

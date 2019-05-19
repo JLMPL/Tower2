@@ -170,6 +170,8 @@ private:
     physx::PxParticleSystem* m_particleSystem = nullptr;
 
     bool m_debugDraw = false;
+
+    f32 m_sinning = 0.f;
 };
 
 }

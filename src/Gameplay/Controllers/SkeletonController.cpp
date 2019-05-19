@@ -180,11 +180,10 @@ void SkeletonController::enterDeath()
 
     // m_context->eventSys->enqueue(event);
 
-    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
-    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
-    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
-    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
-    m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    for (auto i = 0; i < 250; i++)
+    {
+        m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
+    }
 }
 
 void SkeletonController::death()

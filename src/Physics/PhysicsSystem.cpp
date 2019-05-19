@@ -61,7 +61,7 @@ void PhysicsSystem::init()
 
     //*/
     {
-        u32 size = 40;
+        u32 size = 20;
         u32 size2 = size * size;
 
         PxClothParticle vertices[size2];
@@ -70,7 +70,7 @@ void PhysicsSystem::init()
         for (u32 j = 0; j < size; j++)
         {
             u32 index = i * size + j;
-            vertices[index] = PxClothParticle(PxVec3(0, f32(i) * 0.025, f32(j) * 0.025), (i == size-1) ? 0 : 1.f);
+            vertices[index] = PxClothParticle(PxVec3(0, f32(i) * 0.05, f32(j) * 0.05), (i == size-1) ? 0 : 0.1f);
         }
 
         PxU32 primitives[(size-1)*(size-1)*4];
@@ -107,21 +107,35 @@ void PhysicsSystem::init()
         m_fabric = PxClothFabricCreate(*m_physics, meshDesc, PxVec3(0, -1, 0));
 
         // PxTransform pose = PxTransform(PxIdentity);
-        PxTransform pose = PxTransform(PxVec3(2,0.5,0));
+        PxTransform pose = PxTransform(PxVec3(2,1,0));
         m_cloth = m_physics->createCloth(pose, *m_fabric, vertices, PxClothFlags());
 
-        m_cloth->setClothFlag(PxClothFlag::eSCENE_COLLISION, true);
+        m_cloth->setClothFlag(PxClothFlag::eSCENE_COLLISION, false);
         m_cloth->setClothFlag(PxClothFlag::eSWEPT_CONTACT, true);
 
         m_cloth->setSolverFrequency(240);
         m_cloth->setStiffnessFrequency(30.0f);
 
-        m_cloth->setDampingCoefficient(PxVec3(0.1f));
-        m_cloth->setLinearDragCoefficient(PxVec3(0.1f));
-        m_cloth->setAngularDragCoefficient(PxVec3(0.1f));
+        m_cloth->setDampingCoefficient(PxVec3(0.2f));
+        m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
+        m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
         m_cloth->setSelfCollisionDistance(0.1f);
         m_cloth->setSelfCollisionStiffness(1.0f);
+
+        PxClothCollisionSphere sphere;
+        sphere.pos = PxVec3(2,0,0);
+        sphere.radius = 1.5f;
+        m_cloth->setCollisionSpheres(&sphere, 1);
+
+        PxClothCollisionSphere spheres[2] =
+        {
+            PxClothCollisionSphere(PxVec3(0,0.5,0), 0.25f),
+            PxClothCollisionSphere(PxVec3(0,1,0), 0.25f)
+        };
+
+        m_cloth->setCollisionSpheres(spheres, 2);
+        m_cloth->addCollisionCapsule(0, 1);
 
         // reduce impact of frame acceleration
         // x, z: cloth swings out less when walking in a circle
@@ -146,6 +160,7 @@ void PhysicsSystem::init()
         // m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, stretchConfig);
 
         m_cloth->setSelfCollisionDistance(0.01f);
+
         m_scene->addActor(*m_cloth);
     }
     //*/
@@ -363,7 +378,14 @@ void PhysicsSystem::preSimulationUpdate()
 
 void PhysicsSystem::stepSimulation()
 {
-    m_cloth->setExternalAcceleration(physx::PxVec3(5,0,0));
+    using namespace physx;
+    // m_cloth->setExternalAcceleration(physx::PxVec3(5,0,0));
+
+    m_sinning += core::g_FInfo.delta;
+
+    quat rot = math::rotate(quat(), f32(HALF_PI), vec3(0,1,0));
+    PxTransform poz = PxTransform(PxVec3(-0.5,2,sin(m_sinning)*2), core::conv::toPx(rot));
+    m_cloth->setTargetPose(poz);
 
     m_scene->simulate(core::g_FInfo.delta);
     m_scene->fetchResults(true);
