@@ -62,6 +62,8 @@ public:
     RaycastResult raycast(const vec3& origin, const vec3& dir, f32 dist);
     SweepResult sweepSphere(f32 radius, const vec3& origin, const vec3& dir, f32 dist);
 
+    void testo(const mat4& tr);
+
 private:
     physx::PxPhysics*                m_physics = nullptr;
     physx::PxFoundation*             m_foundation = nullptr;

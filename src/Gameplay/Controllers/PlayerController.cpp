@@ -112,6 +112,7 @@ void PlayerController::update()
 
     m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
 
+    m_context->physSys->testo(m_cre->getTransform());
 /*    if (m_cre->getAnimator().isRootMotion())
     {
         vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());

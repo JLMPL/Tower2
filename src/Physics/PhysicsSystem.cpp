@@ -62,36 +62,6 @@ void PhysicsSystem::init()
 
     //*/
     {
-/*        u32 size = 20;
-        u32 size2 = size * size;
-
-        PxClothParticle vertices[size2];
-
-        for (u32 i = 0; i < size; i++)
-        for (u32 j = 0; j < size; j++)
-        {
-            u32 index = i * size + j;
-            vertices[index] = PxClothParticle(PxVec3(0, f32(i) * 0.05, f32(j) * 0.05), (i == size-1) ? 0 : 0.1f);
-        }
-
-        PxU32 primitives[(size-1)*(size-1)*4];
-
-        u32 primitiveIndex = 0u;
-
-        for (u32 i = 0; i < size-1; i++)
-        for (u32 j = 0; j < size-1; j++)
-        {
-            u32 center = i * size + j;
-            u32 right = i * size + j + 1;
-            u32 down = (i + 1) * size + j;
-            u32 rightDown = (i + 1) * size + j + 1;
-
-            primitives[primitiveIndex++] = rightDown;
-            primitives[primitiveIndex++] = right;
-            primitives[primitiveIndex++] = center;
-            primitives[primitiveIndex++] = down;
-        }*/
-
         auto cape = gfx::g_MeshMgr.getMesh("cape.obj");
 
         std::vector<PxClothParticle> verts;
@@ -103,7 +73,7 @@ void PhysicsSystem::init()
 
             f32 cont = FLT_MAX;
 
-            if (vert.pos.y > 1.75)
+            if (vert.pos.y > 1.65)
                 cont = 0.f;
 
             constraints.push_back(PxClothParticleMotionConstraint(core::conv::toPx(vert.pos), cont));
@@ -125,26 +95,8 @@ void PhysicsSystem::init()
         if (!meshDesc.isValid())
             printf("NOT VALID!\n");
 
-/*        PxClothMeshDesc meshDesc;
-        meshDesc.points.data = vertices;
-        meshDesc.points.count = size2;
-        meshDesc.points.stride = sizeof(PxClothParticle);
-
-        meshDesc.invMasses.data = &vertices->invWeight;
-        meshDesc.invMasses.count = size2;
-        meshDesc.invMasses.stride = sizeof(PxClothParticle);
-
-        meshDesc.quads.data = primitives;
-        meshDesc.quads.count = (size-1) * (size-1);
-        meshDesc.quads.stride = sizeof(PxU32) * 4;*/
-
-        // PxClothMeshQuadifier quadifier(meshDesc);
-
-        // auto quaded = quadifier.getDescriptor();
-
         m_fabric = PxClothFabricCreate(*m_physics, meshDesc, PxVec3(0, -1, 0));
 
-        // PxTransform pose = PxTransform(PxIdentity);
         PxTransform pose = PxTransform(PxVec3(1,0.5,0));
         m_cloth = m_physics->createCloth(pose, *m_fabric, &verts[0], PxClothFlags());
 
@@ -154,8 +106,8 @@ void PhysicsSystem::init()
         m_cloth->setSolverFrequency(240.f);
         m_cloth->setStiffnessFrequency(30.0f);
 
-        m_cloth->setDampingCoefficient(PxVec3(0.5f));
-        m_cloth->setLinearDragCoefficient(PxVec3(0.5f));
+        m_cloth->setDampingCoefficient(PxVec3(0.2f));
+        m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
         m_cloth->setAngularDragCoefficient(PxVec3(0.5f));
 
         m_cloth->setMotionConstraints(&constraints[0]);
@@ -164,15 +116,10 @@ void PhysicsSystem::init()
         // m_cloth->setSelfCollisionDistance(0.01f);
         // m_cloth->setSelfCollisionStiffness(0.5f);
 
-        // PxClothCollisionSphere sphere;
-        // sphere.pos = PxVec3(2,0,0);
-        // sphere.radius = 1.5f;
-        // m_cloth->setCollisionSpheres(&sphere, 1);
-
         PxClothCollisionSphere spheres[2] =
         {
-            PxClothCollisionSphere(PxVec3(0,1,0), 0.25f),
-            PxClothCollisionSphere(PxVec3(0,0,0), 0.25f)
+            PxClothCollisionSphere(PxVec3(0,2,0), 0.1),
+            PxClothCollisionSphere(PxVec3(0,0,0), 0.1)
         };
 
         m_cloth->setCollisionSpheres(spheres, 2);
@@ -181,7 +128,7 @@ void PhysicsSystem::init()
         // reduce impact of frame acceleration
         // x, z: cloth swings out less when walking in a circle
         // y: cloth responds less to jump acceleration
-        // m_cloth->setLinearInertiaScale(PxVec3(0.8f, 0.6f, 0.8f));
+        m_cloth->setLinearInertiaScale(PxVec3(0.8f, 0.6f, 0.8f));
 
         // leave impact of frame torque at default
         // m_cloth->setAngularInertiaScale(PxVec3(1.0f));
@@ -199,8 +146,6 @@ void PhysicsSystem::init()
         // stretchConfig.stretchLimit = 0;
         // m_cloth->setStretchConfig(PxClothFabricPhaseType::eVERTICAL, stretchConfig);
         // m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, stretchConfig);
-
-        // m_cloth->setSelfCollisionDistance(0.01f);
 
         m_scene->addActor(*m_cloth);
     }
@@ -422,11 +367,11 @@ void PhysicsSystem::stepSimulation()
     using namespace physx;
 
     m_sinning += core::g_FInfo.delta;
-    m_cloth->setExternalAcceleration(physx::PxVec3(0,0,sin(m_sinning * 2) * 10));
+    // m_cloth->setExternalAcceleration(physx::PxVec3(0,0,sin(m_sinning * 2) * 10));
 
-    mat4 clothTr = math::translate(vec3(-0.5,2,sin(m_sinning)*2)) * math::rotate(f32(HALF_PI), vec3(0,1,0));
+    // mat4 clothTr = math::translate(vec3(1,1,sin(m_sinning)));// * math::rotate(f32(HALF_PI), vec3(0,1,0));
 
-    mat4 invCloth = math::inverse(clothTr);
+    // mat4 invCloth = math::inverse(clothTr);
 
     // PxClothCollisionSphere spheres[2] =
     // {
@@ -436,10 +381,15 @@ void PhysicsSystem::stepSimulation()
 
     // m_cloth->setCollisionSpheres(spheres, 2);
 
-    // m_cloth->setTargetPose(core::conv::toPx(math::translate(vec3(1,1,0))));
+    // m_cloth->setTargetPose(core::conv::toPx(clothTr));
 
     m_scene->simulate(core::g_FInfo.delta);
     m_scene->fetchResults(true);
+}
+
+void PhysicsSystem::testo(const mat4& tr)
+{
+    m_cloth->setTargetPose(core::conv::toPx(tr));
 }
 
 void PhysicsSystem::debugDraw()

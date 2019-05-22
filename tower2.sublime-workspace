@@ -520,161 +520,27 @@
 	"buffers":
 	[
 		{
-			"file": "src/Animation/Animator.hpp",
+			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_ClothController.cpp",
 			"settings":
 			{
-				"buffer_size": 1850,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Animation/Animator.cpp",
-			"settings":
-			{
-				"buffer_size": 5420,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Controllers/PlayerController.cpp",
-			"settings":
-			{
-				"buffer_size": 7361,
+				"buffer_size": 12870,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Gameplay/Controllers/SkeletonController.cpp",
+			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
 			"settings":
 			{
-				"buffer_size": 4497,
-				"encoding": "UTF-8",
+				"buffer_size": 92028,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Animation/Skeleton.cpp",
+			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
 			"settings":
 			{
-				"buffer_size": 2373,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Controllers/SkeletonController.hpp",
-			"settings":
-			{
-				"buffer_size": 1223,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/EventSystem/GameEvent.cpp",
-			"settings":
-			{
-				"buffer_size": 334,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/EventSystem/GameEvent.hpp",
-			"settings":
-			{
-				"buffer_size": 942,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/EventSystem/EventSystem.cpp",
-			"settings":
-			{
-				"buffer_size": 253,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/EventSystem/EventSystem.hpp",
-			"settings":
-			{
-				"buffer_size": 309,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 817 files for \"Category\"\n\n/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.cpp:\n   23: bool GameEvent::isInCategory(Category cat) const\n   25:     return cat & m_category;\n\n/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.hpp:\n    9:     enum Category\n   25:     GameEvent(Category cat, Type type) :\n   26:         m_category(cat), m_type(type)\n   36:     bool isInCategory(Category catg) const;\n   45:     Category m_category = Category::Null;\n\n/home/dominik/Desktop/Tower/src/ThirdParty/ImGui/imgui_demo.cpp:\n 2130:             if (ImGui::CollapsingHeader(\"Category A\")) { ImGui::Text(\"Blah blah blah\"); } ImGui::NextColumn();\n 2131:             if (ImGui::CollapsingHeader(\"Category B\")) { ImGui::Text(\"Blah blah blah\"); } ImGui::NextColumn();\n 2132:             if (ImGui::CollapsingHeader(\"Category C\")) { ImGui::Text(\"Blah blah blah\"); } ImGui::NextColumn();\n\n/home/dominik/Desktop/Tower/src/ThirdParty/json/json.hpp:\n  457: using iterator_category_t = typename T::iterator_category;\n  535:         is_detected<iterator_category_t, traits>::value &&\n 1617:         using iterator_category = std::input_iterator_tag;\n 2389:                  std::is_same<typename std::iterator_traits<IteratorType>::iterator_category, std::random_access_iterator_tag>::value,\n 2432:                             std::is_base_of<std::random_access_iterator_tag, typename std::iterator_traits<decltype(std::begin(std::declval<ContiguousContainer const>()))>::iterator_category>::value,\n 5535:     /// iterator_category, value_type, difference_type, pointer, and reference.\n 5537:     using iterator_category = std::bidirectional_iterator_tag;\n 18444:                      typename std::iterator_traits<IteratorType>::iterator_category>::value, int>::type = 0>\n 18457:                      typename std::iterator_traits<IteratorType>::iterator_category>::value, int>::type = 0>\n 18466:                      typename std::iterator_traits<IteratorType>::iterator_category>::value, int>::type = 0>\n\n/home/dominik/Desktop/Tower/src/ThirdParty/sol2/sol/container_traits.hpp:\n  575: \t\t\ttypedef typename meta::iterator_tag<iterator>::type iterator_category;\n  576: \t\t\ttypedef std::is_same<iterator_category, std::input_iterator_tag> is_input_iterator;\n  613: \t\t\tstatic error_result at_category(std::input_iterator_tag, lua_State* L, T& self, std::ptrdiff_t pos) {\n  633: \t\t\tstatic error_result at_category(std::random_access_iterator_tag, lua_State* L, T& self, std::ptrdiff_t pos) {\n  644: \t\t\t\treturn at_category(iterator_category(), L, self, pos);\n  656: \t\t\tstatic error_result get_category(std::input_iterator_tag, lua_State* L, T& self, K& key) {\n  676: \t\t\tstatic error_result get_category(std::random_access_iterator_tag, lua_State* L, T& self, K& key) {\n  687: \t\t\t\treturn get_category(iterator_category(), L, self, key);\n  730: \t\t\tstatic error_result set_category(std::input_iterator_tag, lua_State* L, T& self, stack_object okey, stack_object value) {\n  748: \t\t\tstatic error_result set_category(std::random_access_iterator_tag, lua_State* L, T& self, stack_object okey, stack_object value) {\n  809: \t\t\t\treturn set_category(iterator_category(), L, self, std::move(key), std::move(value));\n\n/home/dominik/Desktop/Tower/src/ThirdParty/sol2/sol/stack_iterator.hpp:\n   38: \t\ttypedef std::random_access_iterator_tag iterator_category;\n\n/home/dominik/Desktop/Tower/src/ThirdParty/sol2/sol/table_iterator.hpp:\n   38: \t\ttypedef std::input_iterator_tag iterator_category;\n\n/home/dominik/Desktop/Tower/src/ThirdParty/sol2/sol/traits.hpp:\n  637: \t\tstruct iterator_tag<T, std::conditional_t<false, typename T::iterator_category, void>> {\n  638: \t\t\tusing type = typename T::iterator_category;\n\n43 matches across 8 files\n\n\nSearching 819 files for \"SpawnPickup\"\n\n/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.hpp:\n   14:         SpawnPickup\n   41:     struct SpawnPickupData\n   53:         SpawnPickupData pickup;\n\n/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp:\n  212:     if (event.getType() == GameEvent::Type::SpawnPickup)\n\n/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.cpp:\n  175:     GameEvent event(GameEvent::Type::SpawnPickup);\n\n5 matches across 3 files\n\n\nSearching 819 files for \"SpawnPickup\"\n\n/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.hpp:\n   14:         SpawnPickup\n   41:     struct SpawnPickupData\n   53:         SpawnPickupData pickup;\n\n/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp:\n  212:     if (event.getType() == GameEvent::Type::SpawnPickup)\n\n/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.cpp:\n  175:     GameEvent event(GameEvent::Type::SpawnPickup);\n\n5 matches across 3 files\n",
-			"settings":
-			{
-				"buffer_size": 4668,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "src/Gameplay/Controllers/PlayerController.hpp",
-			"settings":
-			{
-				"buffer_size": 1369,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Level.hpp",
-			"settings":
-			{
-				"buffer_size": 2193,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/State/PlayingState.cpp",
-			"settings":
-			{
-				"buffer_size": 858,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/State/PlayingState.hpp",
-			"settings":
-			{
-				"buffer_size": 562,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Level.cpp",
-			"settings":
-			{
-				"buffer_size": 8815,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entities/Pickup.cpp",
-			"settings":
-			{
-				"buffer_size": 1887,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/SceneGraph/SceneNode.cpp",
-			"settings":
-			{
-				"buffer_size": 1543,
+				"buffer_size": 17831,
 				"line_ending": "Unix"
 			}
 		},
@@ -682,7 +548,17 @@
 			"file": "src/Physics/PhysicsSystem.cpp",
 			"settings":
 			{
-				"buffer_size": 12372,
+				"buffer_size": 14780,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Render/Geometry/StaticMeshLoader.cpp",
+			"settings":
+			{
+				"buffer_size": 3543,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -690,7 +566,44 @@
 			"file": "src/Physics/PhysicsSystem.hpp",
 			"settings":
 			{
-				"buffer_size": 4255,
+				"buffer_size": 2565,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Physics/StaticBody.hpp",
+			"settings":
+			{
+				"buffer_size": 484,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Physics/StaticBody.cpp",
+			"settings":
+			{
+				"buffer_size": 577,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Physics/RigidBody.hpp",
+			"settings":
+			{
+				"buffer_size": 534,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Physics/RigidBody.cpp",
+			"settings":
+			{
+				"buffer_size": 789,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -699,112 +612,6 @@
 			"settings":
 			{
 				"buffer_size": 705,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entity.hpp",
-			"settings":
-			{
-				"buffer_size": 1303,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/GraphRenderer.cpp",
-			"settings":
-			{
-				"buffer_size": 762,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Interface/HeadsUpDisplay.cpp",
-			"settings":
-			{
-				"buffer_size": 2886,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bin/Maps/Level0.lua",
-			"settings":
-			{
-				"buffer_size": 321,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "bin/Animations/Bundles/Rigud",
-			"settings":
-			{
-				"buffer_size": 1424,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/SceneGraph/SceneGraph.cpp",
-			"settings":
-			{
-				"buffer_size": 1689,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/SceneGraph/SceneGraph.hpp",
-			"settings":
-			{
-				"buffer_size": 995,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Interface/HeadsUpDisplay.hpp",
-			"settings":
-			{
-				"buffer_size": 1133,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entities/Creature.cpp",
-			"settings":
-			{
-				"buffer_size": 3943,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entities/Creature.hpp",
-			"settings":
-			{
-				"buffer_size": 2693,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Animation/Skeleton.hpp",
-			"settings":
-			{
-				"buffer_size": 802,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entities/LightEffect.cpp",
-			"settings":
-			{
-				"buffer_size": 1236,
-				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -1009,134 +816,134 @@
 	],
 	"file_history":
 	[
-		"/home/dominik/Desktop/Tower/src/Animation/Animation.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Chest.cpp",
-		"/home/dominik/Desktop/Tower (old)/src/Interface/HeadsUpDisplay.cpp",
-		"/home/dominik/Desktop/Tower/src/EventSystem/EventSystem.cpp",
-		"/home/dominik/Desktop/plunoe.cpp",
-		"/home/dominik/Desktop/tretefe",
-		"/home/dominik/Desktop/Tower/bin/Shaders/Interface/HudHealth.sha",
-		"/home/dominik/Desktop/PhysX/linking",
-		"/home/dominik/Desktop/Tower/src/Render/LineRenderer.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/LineRenderer.cpp",
-		"/home/dominik/Desktop/Tower/src/Render/BasePass.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Door.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Door.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSampleApplication.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSampleApplication.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Picking.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Picking.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RawLoader.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RawLoader.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RaycastCCD.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RaycastCCD.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBaseActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBaseActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBaseObject.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBaseObject.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBoxActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBoxActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderCapsuleActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderCapsuleActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderGridActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderGridActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMaterial.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMaterial.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMeshActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMeshActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderParticleSystemActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderParticleSystemActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderPhysX3Debug.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderPhysX3Debug.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderSphereActor.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderSphereActor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderTexture.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderTexture.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocatorSDKClasses.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleArray.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleBaseInputEventIds.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCamera.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCamera.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCameraController.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCameraController.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCharacterHelpers.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCharacterHelpers.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleConsole.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleConsole.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleInputMappingAsset.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleInputMappingAsset.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMain.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMouseFilter.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMouseFilter.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SamplePreprocessor.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleRandomPrecomputed.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleRandomPrecomputed.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleStepper.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleStepper.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleUserInputDefines.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleUtils.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Test.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestCloth.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothCollisionHelpers.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothCollisionHelpers.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothHelpers.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothHelpers.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothReadDataLock.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGeometryHelpers.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGeometryHelpers.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGroup.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGroup.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestMotionGenerator.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestMotionGenerator.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/wavefront.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/wavefront.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/AcclaimLoader.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/AcclaimLoader.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Dummy.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/InputEventBuffer.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/InputEventBuffer.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitter.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitter.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterPressure.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterPressure.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterRate.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterRate.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleFactory.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleFactory.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleSystem.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleSystem.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_CCT.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_FilterShader.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothInputEventIds.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Main.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothPlatform.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Platform.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_PlatformBuilder.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothSettings.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMesh.hpp",
+		"/home/dominik/Desktop/Tower/src/Core/Convert.cpp",
+		"/home/dominik/Desktop/Dane_PR2/Kierowcy.txt",
+		"/home/dominik/Desktop/ukisis/imagcompar.cpp",
+		"/home/dominik/.cache/.fr-c5wRBy/Dane_PR2/liczby.txt",
+		"/home/dominik/.cache/.fr-4B9NpH/Dane_PR2/kraina.txt",
+		"/home/dominik/Desktop/ukisi",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
-		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.hpp",
-		"/home/dominik/Desktop/Tower/src/Debug/DebugMenu.hpp",
-		"/home/dominik/Desktop/Tower/src/State/PlayingState.hpp",
-		"/home/dominik/Desktop/Tower/src/State/PlayingState.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationState.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.hpp",
-		"/home/dominik/Desktop/Tower/src/Application.cpp",
-		"/home/dominik/Desktop/Tower/src/AI/Waynet.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Item.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/BasePass.cpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/RenderSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/Debug/DebugMenu.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.cpp",
-		"/home/dominik/Desktop/Tower/bin/Animations/Bundles/Rigud",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.cpp",
-		"/home/dominik/Desktop/stuff/meldunek.txt",
-		"/home/dominik/Desktop/stuff/studenci.txt",
-		"/home/dominik/Desktop/stuff/wypozyczenia.txt",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/Zodsy",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/zapytania.txt",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/notes",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/querus",
-		"/home/dominik/Desktop/Tower/CMakeLists.txt",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/fukduk",
-		"/home/dominik/Desktop/stuff/fukduk",
-		"/home/dominik/Desktop/FuckingShitFuckThisFuckingCrap/wypozyczenia.txt",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.hpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/AnimationState.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothJump.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothJump.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_TerrainBuilder.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Skeleton.cpp",
 		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.hpp",
-		"/home/dominik/Desktop/Tower/bin/Shaders/PointShadow.frag",
-		"/home/dominik/Desktop/Tower/src/Render/ShadowPass.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Interactible.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/HeadsUpDisplay.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/FlareNode.cpp",
-		"/home/dominik/Desktop/Tower/bin/Shaders/Flare.sha",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/LightEffect.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Lever.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/LightEffect.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/FlareNode.hpp",
-		"/home/dominik/Desktop/Tower/src/Render/Shader.hpp",
+		"/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.cpp",
 		"/home/dominik/Desktop/Tower/src/EventSystem/GameEvent.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/InfoPrompt.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Interactible.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Door.hpp",
-		"/home/dominik/Desktop/Tower/bin/Materials/materials.json",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Chest.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Creature.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Door.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.hpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/PlayerController.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/CreatureController.hpp",
+		"/home/dominik/Desktop/Tower/src/EventSystem/EventSystem.cpp",
 		"/home/dominik/Desktop/Tower/src/EventSystem/EventSystem.hpp",
-		"/home/dominik/Desktop/Tower/src/Interface/InfoPrompt.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Lever.cpp",
-		"/home/dominik/Desktop/Tower/bin/Shaders/Flat.frag",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.hpp",
+		"/home/dominik/Desktop/Tower/src/State/PlayingState.cpp",
+		"/home/dominik/Desktop/Tower/src/State/PlayingState.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.cpp",
 		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Skeleton.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/TransformSystem.cpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Scene.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Scene.cpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/System.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/System.cpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Components.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Components.cpp",
-		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/TransformSystem.hpp",
-		"/home/dominik/Desktop/Tower/src/EntitySystem/Systems/RenderSystem.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Multiplayer.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Multiplayer.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Mouse.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Mouse.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Menu.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Menu.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Maze.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Maze.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/main.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Login.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Login.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Line.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Line.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/json.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Game.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Game.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Font.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Font.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/FindTheWayInside.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/FindTheWayInside.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/ConfigFile.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/ConfigFile.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/CatchMeIfYouCan.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/CatchMeIfYouCan.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Button.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/Button.cpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/WaitingRoom.hpp",
-		"/home/dominik/Desktop/test/EscapeLinez/src/WaitingRoom.cpp"
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entity.hpp"
 	],
 	"find":
 	{
@@ -1155,6 +962,30 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"25",
+			"0.1f",
+			"));\n",
+			"0.5",
+			"getTolerancesScale",
+			"createClothFromMeshDesc",
+			"spheres",
+			"Spheres",
+			"spheres",
+			"createMeshFromObj",
+			"mCurrentBoneTransform",
+			"getFramePose",
+			"25f",
+			"0.5",
+			"Character",
+			"character",
+			"25",
+			"0",
+			"0.5",
+			"getFramePose",
+			"physx::",
+			"PxClothFlag::eSCENE_COLLISION",
+			"cct",
+			"size2",
 			"SpawnPickup",
 			"addPickup",
 			"addpickup",
@@ -1258,31 +1089,7 @@
 			"m_tbo",
 			"m_vbo",
 			"m_vao",
-			",\n",
-			"he",
-			"we",
-			"py",
-			"px",
-			"m_dest",
-			"addDoor",
-			"Chest",
-			"chest",
-			"addCreature",
-			"addchest",
-			"*",
-			"GameEvent",
-			"m_",
-			"this",
-			"600",
-			"1024",
-			"depthTexture",
-			"albedoTexture",
-			"depthBuffer",
-			"albedoBuffer",
-			"GL",
-			"gl",
-			"GL",
-			"gl"
+			",\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1301,749 +1108,111 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 9,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/Animation/Animator.hpp",
+					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_ClothController.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1850,
+						"buffer_size": 12870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								4548,
+								4548
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2681.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 32,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/Animation/Animator.cpp",
+					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5420,
+						"buffer_size": 92028,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								20,
-								21
+								76672,
+								76680
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 39434.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 31,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "src/Gameplay/Controllers/PlayerController.cpp",
+					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7361,
+						"buffer_size": 17831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2623,
-								2623
+								3239,
+								3239
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 279.0,
-						"translation.y": 1355.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 24,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Gameplay/Controllers/SkeletonController.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4497,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4352,
-								4352
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3038.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Animation/Skeleton.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/Gameplay/Controllers/SkeletonController.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								838,
-								848
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 648.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/EventSystem/GameEvent.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 334,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								266,
-								266
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/EventSystem/GameEvent.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 942,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								178,
-								178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/EventSystem/EventSystem.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/EventSystem/EventSystem.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 309,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								187,
-								187
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1218.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 3,
+					"file": "src/Physics/PhysicsSystem.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4668,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										122,
-										130
-									],
-									[
-										131,
-										139
-									],
-									[
-										177,
-										185
-									],
-									[
-										263,
-										271
-									],
-									[
-										293,
-										301
-									],
-									[
-										337,
-										345
-									],
-									[
-										385,
-										393
-									],
-									[
-										394,
-										402
-									],
-									[
-										427,
-										435
-									],
-									[
-										438,
-										446
-									],
-									[
-										449,
-										457
-									],
-									[
-										579,
-										587
-									],
-									[
-										697,
-										705
-									],
-									[
-										815,
-										823
-									],
-									[
-										966,
-										974
-									],
-									[
-										1000,
-										1008
-									],
-									[
-										1046,
-										1054
-									],
-									[
-										1106,
-										1114
-									],
-									[
-										1233,
-										1241
-									],
-									[
-										1473,
-										1481
-									],
-									[
-										1515,
-										1523
-									],
-									[
-										1604,
-										1612
-									],
-									[
-										1731,
-										1739
-									],
-									[
-										1848,
-										1856
-									],
-									[
-										1965,
-										1973
-									],
-									[
-										2145,
-										2153
-									],
-									[
-										2195,
-										2203
-									],
-									[
-										2282,
-										2290
-									],
-									[
-										2394,
-										2402
-									],
-									[
-										2502,
-										2510
-									],
-									[
-										2520,
-										2528
-									],
-									[
-										2581,
-										2589
-									],
-									[
-										2682,
-										2690
-									],
-									[
-										2779,
-										2787
-									],
-									[
-										2797,
-										2805
-									],
-									[
-										2858,
-										2866
-									],
-									[
-										2990,
-										2998
-									],
-									[
-										3118,
-										3126
-									],
-									[
-										3136,
-										3144
-									],
-									[
-										3323,
-										3331
-									],
-									[
-										3456,
-										3464
-									],
-									[
-										3610,
-										3618
-									],
-									[
-										3673,
-										3681
-									],
-									[
-										3825,
-										3836
-									],
-									[
-										3855,
-										3866
-									],
-									[
-										3886,
-										3897
-									],
-									[
-										4014,
-										4025
-									],
-									[
-										4149,
-										4160
-									],
-									[
-										4304,
-										4315
-									],
-									[
-										4334,
-										4345
-									],
-									[
-										4365,
-										4376
-									],
-									[
-										4493,
-										4504
-									],
-									[
-										4628,
-										4639
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								4310,
-								4310
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 3,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1278.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/Gameplay/Controllers/PlayerController.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1369,
+						"buffer_size": 14780,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								907,
-								890
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 25,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/Gameplay/Level.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1100,
-								1100
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 530.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/State/PlayingState.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 858,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								855,
-								855
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 26,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/State/PlayingState.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 562,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								144,
-								144
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 27,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "src/Gameplay/Level.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8815,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5332,
-								5332
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3564.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/Gameplay/Entities/Pickup.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								586,
-								586
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 54.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/SceneGraph/SceneNode.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1543,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
+								5235,
+								5235
 							]
 						],
 						"settings":
@@ -2060,20 +1229,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
-					"file": "src/Physics/PhysicsSystem.cpp",
+					"buffer": 4,
+					"file": "src/Render/Geometry/StaticMeshLoader.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12372,
+						"buffer_size": 3543,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								3373,
+								3373
 							]
 						],
 						"settings":
@@ -2083,57 +1252,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1566.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 5,
 					"file": "src/Physics/PhysicsSystem.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4255,
+						"buffer_size": 2565,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								741,
-								759
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 486.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "src/Gameplay/Entities/Pickup.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 705,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								634,
-								634
+								310,
+								310
 							]
 						],
 						"settings":
@@ -2146,352 +1285,80 @@
 						"translation.y": 54.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
-					"file": "src/Gameplay/Entity.hpp",
+					"buffer": 6,
+					"file": "src/Physics/StaticBody.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1303,
+						"buffer_size": 484,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								720,
-								685
+								412,
+								412
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "src/Render/GraphRenderer.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 762,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 30,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 23,
-					"file": "src/Interface/HeadsUpDisplay.cpp",
+					"buffer": 7,
+					"file": "src/Physics/StaticBody.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2886,
+						"buffer_size": 577,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2514,
-								2514
+								53,
+								53
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 594.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 24,
-					"file": "bin/Maps/Level0.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 321,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								315,
-								315
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.sublime-syntax"
+							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 22,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 25,
-					"file": "bin/Animations/Bundles/Rigud",
+					"buffer": 8,
+					"file": "src/Physics/RigidBody.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1424,
+						"buffer_size": 534,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1320,
-								1320
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 432.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 26,
-					"file": "src/SceneGraph/SceneGraph.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1689,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1540,
-								1540
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 786.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 28,
-					"type": "text"
-				},
-				{
-					"buffer": 27,
-					"file": "src/SceneGraph/SceneGraph.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								912,
-								912
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 324.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 29,
-					"type": "text"
-				},
-				{
-					"buffer": 28,
-					"file": "src/Interface/HeadsUpDisplay.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1133,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								357,
-								357
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 29,
-					"file": "src/Gameplay/Entities/Creature.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3943,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2677,
-								2677
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 212.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 30,
-					"file": "src/Gameplay/Entities/Creature.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2693,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2216,
-								2216
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 456.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
-					"type": "text"
-				},
-				{
-					"buffer": 31,
-					"file": "src/Animation/Skeleton.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 802,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 32,
-					"file": "src/Gameplay/Entities/LightEffect.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1236,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								644,
-								644
+								86,
+								13
 							]
 						],
 						"settings":
@@ -2506,13 +1373,71 @@
 					},
 					"stack_index": 1,
 					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/Physics/RigidBody.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 789,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								180,
+								180
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/Gameplay/Entities/Pickup.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 705,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								513,
+								513
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -2557,7 +1482,7 @@
 	"project": "tower2.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2567,12 +1492,48 @@
 		"selected_items":
 		[
 			[
+				"rigd",
+				"src/Physics/RigidBody.hpp"
+			],
+			[
+				"staticmeloa",
+				"src/Render/Geometry/StaticMeshLoader.cpp"
+			],
+			[
+				"staticme",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"physys",
+				"src/Physics/PhysicsSystem.cpp"
+			],
+			[
+				"conver",
+				"src/Core/Convert.cpp"
+			],
+			[
+				"phsysy",
+				"src/Physics/PhysicsSystem.cpp"
+			],
+			[
 				"skeleoncon",
 				"src/Gameplay/Controllers/SkeletonController.cpp"
 			],
 			[
 				"",
-				"src/Gameplay/Entities/LightEffect.cpp"
+				"src/Physics/PhysicsSystem.cpp"
+			],
+			[
+				"level",
+				"src/Gameplay/Level.hpp"
+			],
+			[
+				"skelcon",
+				"src/Gameplay/Controllers/SkeletonController.cpp"
+			],
+			[
+				"phys",
+				"src/Physics/PhysicsSystem.hpp"
 			],
 			[
 				"pick",
@@ -2585,10 +1546,6 @@
 			[
 				"animaton",
 				"src/Animation/Animation.cpp"
-			],
-			[
-				"level",
-				"src/Gameplay/Level.hpp"
 			],
 			[
 				"lelv",
@@ -2620,10 +1577,6 @@
 			],
 			[
 				"skelonc",
-				"src/Gameplay/Controllers/SkeletonController.cpp"
-			],
-			[
-				"skelcon",
 				"src/Gameplay/Controllers/SkeletonController.cpp"
 			],
 			[
@@ -2725,10 +1678,6 @@
 			[
 				"debugmen",
 				"src/Debug/DebugMenu.cpp"
-			],
-			[
-				"physys",
-				"src/Physics/PhysicsSystem.cpp"
 			],
 			[
 				"baspe",
@@ -3047,36 +1996,12 @@
 				"src/Gameplay/Creature.cpp"
 			],
 			[
-				"phys",
-				"src/Physics/PhysicsSystem.hpp"
-			],
-			[
 				"playco",
 				"src/Gameplay/PlayerController.cpp"
 			],
 			[
 				"state",
 				"src/State/State.hpp"
-			],
-			[
-				"statest",
-				"src/State/StateStack.cpp"
-			],
-			[
-				"app",
-				"src/Application.cpp"
-			],
-			[
-				"statesta",
-				"src/State/StateStack.cpp"
-			],
-			[
-				"interaction",
-				"src/Gameplay/Interaction.cpp"
-			],
-			[
-				"kesy",
-				"~/Desktop/Tower/bin/Items/Keys.itm"
 			]
 		],
 		"width": 0.0
@@ -3127,7 +2052,7 @@
 	"show_open_files": true,
 	"show_tabs": false,
 	"side_bar_visible": true,
-	"side_bar_width": 279.0,
+	"side_bar_width": 314.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
