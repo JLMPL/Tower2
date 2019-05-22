@@ -180,7 +180,7 @@ void SkeletonController::enterDeath()
 
     // m_context->eventSys->enqueue(event);
 
-    for (auto i = 0; i < 250; i++)
+    for (auto i = 0; i < 10; i++)
     {
         m_context->level->addPickup(0, m_cre->getPos() + vec3(0,2,0));
     }

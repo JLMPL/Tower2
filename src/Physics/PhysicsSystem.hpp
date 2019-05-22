@@ -8,6 +8,8 @@
 #include "CCTFilterCallback.hpp"
 #define _DEBUG
 #include <PhysX/PxPhysicsAPI.h>
+#include "RigidBody.hpp"
+#include "StaticBody.hpp"
 #include <vector>
 
 namespace phys
@@ -26,92 +28,6 @@ struct SweepResult
     bool hasHit = false;
     vec3 pos;
     vec3 normal;
-};
-
-class RigidBody
-{
-    public:
-        RigidBody() = default;
-        RigidBody(physx::PxRigidDynamic* pxActor)
-            : m_pxActor(pxActor)
-        {
-        }
-
-        bool isValid()
-        {
-            return m_pxActor;
-        }
-
-        void setGlobalTransform(const mat4& tr)
-        {
-            m_pxActor->setGlobalPose(core::conv::toPx(tr));
-        }
-
-        mat4 getGlobalTransform() const
-        {
-            return core::conv::toGlm(m_pxActor->getGlobalPose());
-        }
-
-        vec3 getPosition() const
-        {
-            return getGlobalTransform()[3];
-        }
-
-        void enable()
-        {
-            m_pxActor->setActorFlag(physx::PxActorFlag::eDISABLE_SIMULATION, false);
-        }
-
-        void disable()
-        {
-            m_pxActor->setActorFlag(physx::PxActorFlag::eDISABLE_SIMULATION, true);
-        }
-
-        physx::PxRigidDynamic* getPxActor()
-        {
-            return m_pxActor;
-        }
-
-    private:
-        physx::PxRigidDynamic* m_pxActor = nullptr;
-};
-
-class StaticBody
-{
-    public:
-        StaticBody() = default;
-        StaticBody(physx::PxRigidStatic* actor)
-            : m_pxActor(actor)
-        {
-        }
-
-        bool isValid()
-        {
-            return m_pxActor;
-        }
-
-        void setGlobalTransform(const mat4& tr)
-        {
-            m_pxActor->setGlobalPose(core::conv::toPx(tr));
-        }
-
-        mat4 getGlobalTransform() const
-        {
-            return core::conv::toGlm(m_pxActor->getGlobalPose());
-        }
-
-        vec3 getPosition() const
-        {
-            return getGlobalTransform()[3];
-        }
-
-        physx::PxRigidStatic* getPxActor()
-        {
-            return m_pxActor;
-        }
-
-    private:
-        physx::PxRigidStatic* m_pxActor = nullptr;
 };
 
 class PhysicsSystem
@@ -169,7 +85,7 @@ private:
 
     physx::PxParticleSystem* m_particleSystem = nullptr;
 
-    bool m_debugDraw = false;
+    bool m_debugDraw = true;
 
     f32 m_sinning = 0.f;
 };
