@@ -106,9 +106,9 @@ void PhysicsSystem::init()
         m_cloth->setSolverFrequency(240.f);
         m_cloth->setStiffnessFrequency(30.0f);
 
-        m_cloth->setDampingCoefficient(PxVec3(0.2f));
+        m_cloth->setDampingCoefficient(PxVec3(0.5f,0.1f,0.5f));
         m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
-        m_cloth->setAngularDragCoefficient(PxVec3(0.5f));
+        m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
         m_cloth->setMotionConstraints(&constraints[0]);
 
