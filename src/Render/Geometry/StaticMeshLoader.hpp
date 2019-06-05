@@ -16,10 +16,11 @@ public:
     StaticMeshLoader() = default;
     ~StaticMeshLoader() = default;
 
-    void loadFromFile(StaticMesh& mesh, const std::string& path);
+    void loadFromFile(StaticMesh& mesh, const std::string& path, bool cloth = false);
 
 private:
     void loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh);
+    void loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh);
     void setupBuffers(StaticMesh::Entry& ent);
 
 private:

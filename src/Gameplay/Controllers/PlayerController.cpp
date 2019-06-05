@@ -1,14 +1,19 @@
 #include "PlayerController.hpp"
+#include "Animation/Skeleton.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
+#include "Physics/Cloth.hpp"
+#include "Render/Geometry/StaticMesh.hpp"
+#include "Render/MeshManager.hpp"
 #include "SceneGraph/CameraNode.hpp"
+#include "SceneGraph/ClothNode.hpp"
+#include "SceneGraph/FlareNode.hpp"
 #include "SceneGraph/LightNode.hpp"
+#include "SceneGraph/MeshNode.hpp"
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
-#include "SceneGraph/FlareNode.hpp"
-#include "SceneGraph/MeshNode.hpp"
 
 PlayerController::PlayerController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
@@ -33,6 +38,11 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_light->hide();
 
     m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
+
+    m_cape = m_context->physSys->addCloth("cape.obj");
+
+    m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
+    m_context->sceneGraph->getRoot()->attachNode(m_capeNode);
 
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
@@ -112,7 +122,33 @@ void PlayerController::update()
 
     m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
 
-    m_context->physSys->testo(m_cre->getTransform());
+    // m_context->physSys->testo(m_cre->getTransform());
+    m_cape->setTargetTransform(m_cre->getTransform());
+
+    auto meh = m_cape->getMesh();
+
+    std::vector<phys::Cloth::Constraint> conts;
+
+    i8 joindex = m_cre->getAnimator().getSkeleton().findJointIndex("Chest");
+
+    mat4 as = m_cre->getAnimator().getMatrixPalette()[joindex];
+
+    for (auto& vert : meh->entries[0].vertices)
+    {
+        f32 cont = FLT_MAX;
+
+        if (vert.pos.y > 1.72)
+            cont = 0.f;
+
+        vec4 vp = math::rotate(90.0_rad, vec3(1,0,0)) * vec4(vert.pos,1);
+
+        vec3 poz = vec3(as * vp);
+
+        conts.push_back(phys::Cloth::Constraint(poz, cont));
+    }
+
+    m_cape->setConstraints(conts);
+
 /*    if (m_cre->getAnimator().isRootMotion())
     {
         vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());

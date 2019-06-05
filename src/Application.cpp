@@ -24,7 +24,7 @@ Application::Application()
 
     lua::checkInitialization();
 
-    m_stateStack.push(State::Menu);
+    m_stateStack.push(State::Splash);
     // m_stateStack.push(State::Playing);
     // m_stateStack.push(State::Loading);
     // m_stateStack.push(State::Debug);

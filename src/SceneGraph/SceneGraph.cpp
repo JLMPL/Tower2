@@ -7,6 +7,7 @@
 #include "LightNode.hpp"
 #include "CameraNode.hpp"
 #include "FlareNode.hpp"
+#include "ClothNode.hpp"
 
 void SceneGraph::init(LevelContext* context)
 {
@@ -48,6 +49,12 @@ FlareNode* SceneGraph::addFlareNode(const std::string& tex)
 {
     m_nodes.emplace_back(new FlareNode(gfx::g_TexMgr.getTexture(tex)));
     return m_nodes.back()->as<FlareNode>();
+}
+
+ClothNode* SceneGraph::addClothNode(phys::Cloth* cloth)
+{
+    m_nodes.emplace_back(new ClothNode(cloth));
+    return m_nodes.back()->as<ClothNode>();
 }
 
 SceneNode* SceneGraph::getRoot()

@@ -2,12 +2,18 @@
 #include "Core/Math3D.hpp"
 #include "Core/Timer.hpp"
 
+namespace phys
+{
+    class Cloth;
+}
+
 class SceneNode;
 class SceneGraph;
 class LightNode;
 class FlareNode;
 class MeshNode;
 class CameraNode;
+class ClothNode;
 class Interactible;
 
 struct LevelContext;
@@ -68,6 +74,9 @@ private:
 
     MeshNode* m_sord = nullptr;
     FlareNode* m_light = nullptr;
+    ClothNode* m_capeNode = nullptr;
+
+    phys::Cloth* m_cape = nullptr;
 
     core::Timer m_lolo;
 

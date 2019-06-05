@@ -19,6 +19,13 @@ struct Vertex
     UvCoord uv;
     vec3    tan;
     vec3    bitan;
+
+    f32 getHash()
+    {
+        return pos.x + pos.y + pos.z +
+            normal.x + normal.y + normal.z +
+            uv.x + uv.y;
+    }
 };
 
 struct StaticMesh

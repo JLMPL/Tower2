@@ -1,4 +1,3 @@
-#pragma once
 #include "Components.hpp"
 #include "Render/MeshManager.hpp"
 

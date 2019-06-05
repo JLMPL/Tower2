@@ -37,6 +37,8 @@ void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const ai
         entry.vertices.push_back(vert);
     }
 
+    printf("verts.size %d\n", entry.vertices.size());
+
     u32 materialIndex = inMesh.mMaterialIndex;
 
     auto material = scene.mMaterials[materialIndex];
@@ -57,6 +59,80 @@ void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const ai
         entry.indices.push_back(face.mIndices[0]);
         entry.indices.push_back(face.mIndices[1]);
         entry.indices.push_back(face.mIndices[2]);
+    }
+
+    mesh.entries.push_back(entry);
+}
+
+void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh)
+{
+    StaticMesh::Entry entry;
+
+    std::vector<f32> hashes;
+    std::vector<i32> redirect(inMesh.mNumVertices);
+
+    for (u32 i = 0; i < inMesh.mNumVertices; i++)
+    {
+        Vertex vert;
+        vert.pos = core::conv::toGlm(inMesh.mVertices[i]);
+        vert.normal = core::conv::toGlm(inMesh.mNormals[i]);
+        vert.tan = core::conv::toGlm(inMesh.mTangents[i]);
+        vert.bitan = core::conv::toGlm(inMesh.mBitangents[i]);
+
+        if (inMesh.GetNumColorChannels() > 0)
+            vert.color = core::conv::toGlm(inMesh.mColors[0][i]);
+        else
+            vert.color = vec4(1);
+
+        if (inMesh.GetNumUVChannels() > 0)
+            vert.uv = {inMesh.mTextureCoords[0][i].x, inMesh.mTextureCoords[0][i].y};
+        else
+            vert.uv = vec2(0);
+
+        bool isUnique = true;
+
+        for (auto j = 0; j < hashes.size(); j++)
+        {
+            f32& storedHash = hashes[j];
+
+            f32 vertHash = vert.getHash();
+
+            if (vertHash > storedHash - EPSILON && vertHash < storedHash + EPSILON)
+            {
+                redirect[i] = j;
+                isUnique = false;
+                break;
+            }
+        }
+
+        if (isUnique)
+        {
+            entry.vertices.push_back(vert);
+            hashes.push_back(vert.getHash());
+            redirect[i] = entry.vertices.size()-1;
+        }
+    }
+
+    u32 materialIndex = inMesh.mMaterialIndex;
+
+    auto material = scene.mMaterials[materialIndex];
+
+    aiString name;
+    material->Get(AI_MATKEY_NAME, name);
+
+    entry.material = g_MatMgr.getMaterial(name.C_Str());
+
+    if (!entry.material)
+        Log::info("in %s\n", mesh.name.c_str());
+
+    for (u32 i = 0; i < inMesh.mNumFaces; i++)
+    {
+        aiFace face = inMesh.mFaces[i];
+        assert(face.mNumIndices == 3);
+
+        entry.indices.push_back(redirect[face.mIndices[0]]);
+        entry.indices.push_back(redirect[face.mIndices[1]]);
+        entry.indices.push_back(redirect[face.mIndices[2]]);
     }
 
     mesh.entries.push_back(entry);
@@ -88,7 +164,7 @@ void StaticMeshLoader::setupBuffers(StaticMesh::Entry& ent)
     ent.ibo.unbind();
 }
 
-void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path)
+void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),
@@ -107,7 +183,12 @@ void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path)
     mesh.name = path;
 
     for (u32 i = 0; i < scene->mNumMeshes; i++)
-        loadMesh(mesh, *scene, *scene->mMeshes[i]);
+    {
+        if (!cloth)
+            loadMesh(mesh, *scene, *scene->mMeshes[i]);
+        else
+            loadClothMesh(mesh, *scene, *scene->mMeshes[i]);
+    }
 
     for (auto& ent : mesh.entries)
         setupBuffers(ent);

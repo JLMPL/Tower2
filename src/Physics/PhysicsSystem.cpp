@@ -14,8 +14,6 @@ PhysicsSystem::~PhysicsSystem()
     // m_particleSystem->releaseParticles();
     // m_particleSystem->release();
     m_material->release();
-    m_fabric->release();
-    m_cloth->release();
 
     for (auto& i : m_dynamics)
         i->release();
@@ -60,100 +58,10 @@ void PhysicsSystem::init()
 
     m_material = m_physics->createMaterial(0.5,0.5,0.5);
 
-    //*/
-    {
-        auto cape = gfx::g_MeshMgr.getMesh("cape.obj");
-
-        std::vector<PxClothParticle> verts;
-        std::vector<PxClothParticleMotionConstraint> constraints;
-
-        for (auto& vert : cape->entries[0].vertices)
-        {
-            verts.push_back(PxClothParticle(core::conv::toPx(vert.pos), 0.5));
-
-            f32 cont = FLT_MAX;
-
-            if (vert.pos.y > 1.65)
-                cont = 0.f;
-
-            constraints.push_back(PxClothParticleMotionConstraint(core::conv::toPx(vert.pos), cont));
-        }
-
-        PxClothMeshDesc meshDesc;
-        meshDesc.points.data = &verts[0];
-        meshDesc.points.count = verts.size();
-        meshDesc.points.stride = sizeof(PxClothParticle);
-
-        meshDesc.invMasses.data = &verts[0].invWeight;
-        meshDesc.invMasses.count = verts.size();
-        meshDesc.invMasses.stride = sizeof(PxClothParticle);
-
-        meshDesc.triangles.data = &cape->entries[0].indices[0];
-        meshDesc.triangles.count = cape->entries[0].indices.size()/3;
-        meshDesc.triangles.stride = sizeof(u32) * 3;
-
-        if (!meshDesc.isValid())
-            printf("NOT VALID!\n");
-
-        m_fabric = PxClothFabricCreate(*m_physics, meshDesc, PxVec3(0, -1, 0));
-
-        PxTransform pose = PxTransform(PxVec3(1,0.5,0));
-        m_cloth = m_physics->createCloth(pose, *m_fabric, &verts[0], PxClothFlags());
-
-        m_cloth->setClothFlag(PxClothFlag::eSCENE_COLLISION, false);
-        m_cloth->setClothFlag(PxClothFlag::eSWEPT_CONTACT, true);
-
-        m_cloth->setSolverFrequency(240.f);
-        m_cloth->setStiffnessFrequency(30.0f);
-
-        m_cloth->setDampingCoefficient(PxVec3(0.5f,0.1f,0.5f));
-        m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
-        m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
-
-        m_cloth->setMotionConstraints(&constraints[0]);
-
-
-        // m_cloth->setSelfCollisionDistance(0.01f);
-        // m_cloth->setSelfCollisionStiffness(0.5f);
-
-        PxClothCollisionSphere spheres[2] =
-        {
-            PxClothCollisionSphere(PxVec3(0,2,0), 0.1),
-            PxClothCollisionSphere(PxVec3(0,0,0), 0.1)
-        };
-
-        m_cloth->setCollisionSpheres(spheres, 2);
-        m_cloth->addCollisionCapsule(0, 1);
-
-        // reduce impact of frame acceleration
-        // x, z: cloth swings out less when walking in a circle
-        // y: cloth responds less to jump acceleration
-        m_cloth->setLinearInertiaScale(PxVec3(0.8f, 0.6f, 0.8f));
-
-        // leave impact of frame torque at default
-        // m_cloth->setAngularInertiaScale(PxVec3(1.0f));
-
-        // reduce centrifugal force of rotating frame
-        // m_cloth->setCentrifugalInertiaScale(PxVec3(0.3f));
-
-        m_cloth->setStretchConfig(PxClothFabricPhaseType::eVERTICAL, PxClothStretchConfig(1));
-        m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, PxClothStretchConfig(1));
-
-        // PxClothStretchConfig stretchConfig;
-        // stretchConfig.stiffness = 0.5f;
-        // stretchConfig.stiffnessMultiplier = 0.5f;
-        // stretchConfig.compressionLimit = 0.2f;
-        // stretchConfig.stretchLimit = 0;
-        // m_cloth->setStretchConfig(PxClothFabricPhaseType::eVERTICAL, stretchConfig);
-        // m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, stretchConfig);
-
-        m_scene->addActor(*m_cloth);
-    }
-    //*/
-
     m_manager = PxCreateControllerManager(*m_scene);
     m_manager->setOverlapRecoveryModule(true);
     m_manager->setTessellation(true, 0.5);
+
 
 
     /*/
@@ -165,9 +73,9 @@ void PhysicsSystem::init()
     m_scene->addActor(*m_particleSystem);
 
     m_particleSystem->setExternalAcceleration(PxVec3(0,9.75f,0));
-    m_particleSystem->setDamping(1);
+    m_particleSystem->setDamping(0.1);
 
-    for (u32 i = 0; i < 999; i++)
+    for (u32 i = 0; i < 1000; i++)
     {
         PxParticleCreationData particleCreationData;
         particleCreationData.numParticles = 1;
@@ -177,9 +85,9 @@ void PhysicsSystem::init()
         PxVec3 poses[] =
         {
             PxVec3(
-                Random::inRange<f32>(-0.5, 0.5),
-                Random::inRange<f32>(0,1) + 2.5,
-                Random::inRange<f32>(-0.5, 0.5)
+                core::rand::inRange<f32>(-0.5, 0.5),
+                core::rand::inRange<f32>(0,1) + 2.5,
+                core::rand::inRange<f32>(-0.5, 0.5)
             )
         };
 
@@ -200,6 +108,15 @@ void PhysicsSystem::init()
     //*/
 
     debug::g_Menu["Physics"].bind("debugDraw", &m_debugDraw);
+}
+
+Cloth* PhysicsSystem::addCloth(const std::string& mesh)
+{
+    m_cloths.emplace_back(new Cloth(m_physics, mesh));
+
+    m_scene->addActor(*m_cloths.back()->getClothActor());
+
+    return m_cloths.back().get();
 }
 
 physx::PxController* PhysicsSystem::addController(u32* entityID, f32 radius, f32 height)
@@ -366,30 +283,13 @@ void PhysicsSystem::stepSimulation()
 {
     using namespace physx;
 
-    m_sinning += core::g_FInfo.delta;
-    // m_cloth->setExternalAcceleration(physx::PxVec3(0,0,sin(m_sinning * 2) * 10));
-
-    // mat4 clothTr = math::translate(vec3(1,1,sin(m_sinning)));// * math::rotate(f32(HALF_PI), vec3(0,1,0));
-
-    // mat4 invCloth = math::inverse(clothTr);
-
-    // PxClothCollisionSphere spheres[2] =
-    // {
-    //     PxClothCollisionSphere(core::conv::toPx(vec3(vec4(-2,0,0,1) * invCloth)), 0.5),
-    //     PxClothCollisionSphere(core::conv::toPx(vec3(vec4(0,0,0,1) * invCloth)), 0.5)
-    // };
-
-    // m_cloth->setCollisionSpheres(spheres, 2);
-
-    // m_cloth->setTargetPose(core::conv::toPx(clothTr));
+    for (auto& cloth : m_cloths)
+    {
+        cloth->drawPoints();
+    }
 
     m_scene->simulate(core::g_FInfo.delta);
     m_scene->fetchResults(true);
-}
-
-void PhysicsSystem::testo(const mat4& tr)
-{
-    m_cloth->setTargetPose(core::conv::toPx(tr));
 }
 
 void PhysicsSystem::debugDraw()

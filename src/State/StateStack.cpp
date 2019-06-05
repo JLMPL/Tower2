@@ -2,6 +2,7 @@
 #include "PlayingState.hpp"
 #include "LoadingState.hpp"
 #include "MenuState.hpp"
+#include "SplashState.hpp"
 
 void StateStack::sendSystemEvent(const Event& event)
 {
@@ -23,6 +24,9 @@ State::Ptr StateStack::createState(State::Type type)
             break;
         case State::Loading:
             return State::Ptr(new LoadingState(*this));
+            break;
+        case State::Splash:
+            return State::Ptr(new SplashState(*this));
             break;
 
         default: break;

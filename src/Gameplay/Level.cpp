@@ -81,7 +81,7 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
 {
     m_waynet.loadFromFile(net);
 
-    auto mesh = gfx::g_MeshMgr.getMesh(map);
+    auto mesh = gfx::g_MeshMgr.getMesh(map, true);
 
     for (const auto& entry : mesh->entries)
     {

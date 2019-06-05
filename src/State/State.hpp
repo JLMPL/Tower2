@@ -20,6 +20,7 @@ public:
         UI,
         Debug,
         Loading,
+        Splash,
 
         Count
     };

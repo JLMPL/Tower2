@@ -13,8 +13,14 @@ class LightNode;
 class CameraNode;
 class SkinnedMeshNode;
 class FlareNode;
+class ClothNode;
 
 struct LevelContext;
+
+namespace phys
+{
+    class Cloth;
+}
 
 class SceneGraph
 {
@@ -30,6 +36,7 @@ public:
     LightNode* addLightNode();
     CameraNode* addCameraNode();
     FlareNode* addFlareNode(const std::string& tex);
+    ClothNode* addClothNode(phys::Cloth* cloth);
 
     void updateTransforms();
 

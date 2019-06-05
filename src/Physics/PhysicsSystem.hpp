@@ -10,6 +10,7 @@
 #include <PhysX/PxPhysicsAPI.h>
 #include "RigidBody.hpp"
 #include "StaticBody.hpp"
+#include "Cloth.hpp"
 #include <vector>
 
 namespace phys
@@ -59,10 +60,10 @@ public:
 
     physx::PxController* addController(u32* entityID, f32 radius, f32 height);
 
+    Cloth* addCloth(const std::string& mesh);
+
     RaycastResult raycast(const vec3& origin, const vec3& dir, f32 dist);
     SweepResult sweepSphere(f32 radius, const vec3& origin, const vec3& dir, f32 dist);
-
-    void testo(const mat4& tr);
 
 private:
     physx::PxPhysics*                m_physics = nullptr;
@@ -76,20 +77,17 @@ private:
     physx::PxScene*                  m_scene = nullptr;
     physx::PxMaterial*               m_material = nullptr;
 
-    physx::PxClothFabric*            m_fabric = nullptr;
-    physx::PxCloth*                  m_cloth = nullptr;
-
     physx::PxControllerManager*      m_manager = nullptr;
 
     std::vector<physx::PxTriangleMesh*> m_triangleMeshes;
     std::vector<physx::PxRigidStatic*> m_statics;
     std::vector<physx::PxRigidDynamic*> m_dynamics;
 
+    std::vector<Cloth::Ptr> m_cloths;
+
     physx::PxParticleSystem* m_particleSystem = nullptr;
 
     bool m_debugDraw = true;
-
-    f32 m_sinning = 0.f;
 };
 
 }
