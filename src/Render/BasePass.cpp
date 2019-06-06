@@ -126,7 +126,7 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
         {
             auto clothNode = (ClothNode*)(node.get());
 
-            auto mat = g_MatMgr.getMaterial("jacket");
+            auto mat = clothNode->getMaterial();
 
             m_flatShader.bind();
             m_flatShader.setUniformMatrix("uProj", m_cameraNode->getProjection());

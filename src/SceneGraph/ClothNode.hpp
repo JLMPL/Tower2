@@ -12,6 +12,7 @@ namespace phys
 namespace gfx
 {
     class BasePass;
+    class Material;
 }
 
 class ClothNode : public SceneNode
@@ -23,6 +24,8 @@ public:
 
     void updateGeometry();
     void render() const;
+
+    const gfx::Material* getMaterial() const;
 
     Type getType() const override final;
 

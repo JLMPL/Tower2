@@ -59,8 +59,8 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
 
     m_cloth->setMotionConstraints(&constraints[0]);
 
-    // m_cloth->setSelfCollisionDistance(0.01f);
-    // m_cloth->setSelfCollisionStiffness(0.5f);
+    m_cloth->setSelfCollisionDistance(0.002f);
+    m_cloth->setSelfCollisionStiffness(0.5f);
 
 /*    PxClothCollisionSphere spheres[2] =
     {
@@ -74,8 +74,8 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     // reduce impact of frame acceleration
     // x, z: cloth swings out less when walking in a circle
     // y: cloth responds less to jump acceleration
-    // m_cloth->setLinearInertiaScale(PxVec3(0.1f, 0.1f, 0.1f));
-    m_cloth->setInertiaScale(0.01f);
+    m_cloth->setLinearInertiaScale(PxVec3(0.1f, 0.1f, 0.1f));
+    // m_cloth->setInertiaScale(0.01f);
 
     // leave impact of frame torque at default
     // m_cloth->setAngularInertiaScale(PxVec3(1.0f));

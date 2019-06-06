@@ -86,6 +86,11 @@ void ClothNode::render() const
     m_vao.drawElements();
 }
 
+const gfx::Material* ClothNode::getMaterial() const
+{
+    return m_cloth->getMesh()->entries[0].material;
+}
+
 SceneNode::Type ClothNode::getType() const
 {
     return Type::Cloth;

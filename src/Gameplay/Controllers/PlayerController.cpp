@@ -129,7 +129,7 @@ void PlayerController::update()
 
     std::vector<phys::Cloth::Constraint> conts;
 
-    i8 joindex = m_cre->getAnimator().getSkeleton().findJointIndex("Chest");
+    i8 joindex = m_cre->getAnimator().getSkeleton().findJointIndex("Root");
 
     mat4 as = m_cre->getAnimator().getMatrixPalette()[joindex];
 
@@ -137,7 +137,7 @@ void PlayerController::update()
     {
         f32 cont = FLT_MAX;
 
-        if (vert.pos.y > 1.72)
+        if (vert.pos.y > 1.12)
             cont = 0.f;
 
         vec4 vp = math::rotate(90.0_rad, vec3(1,0,0)) * vec4(vert.pos,1);
