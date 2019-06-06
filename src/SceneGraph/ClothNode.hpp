@@ -21,10 +21,15 @@ public:
     ClothNode(phys::Cloth* cloth);
     ~ClothNode() = default;
 
-    void updateBuffers();
+    void updateGeometry();
     void render() const;
 
     Type getType() const override final;
+
+private:
+    void updatePositions();
+    void updateNormals();
+    void updateBuffers();
 
 private:
     phys::Cloth* m_cloth = nullptr;

@@ -21,8 +21,8 @@ public:
 
     void calcsUsingGlobal() override final;
 
-    void attachNode(i8 joint, SceneNode* node);
-    void attachNode(const std::string& joint, SceneNode* node);
+    void attachNodeToJoint(i8 joint, SceneNode* node);
+    void attachNodeToJoint(const std::string& joint, SceneNode* node);
     i8 getJointIndex(const std::string& name);
 
     gfx::SkinnedMesh* getMesh() const;

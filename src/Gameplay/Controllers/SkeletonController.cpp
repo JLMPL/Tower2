@@ -17,7 +17,7 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
 
     m_sord = m_context->sceneGraph->addMeshNode("sord.obj");
     m_sord->setPosition(vec3(0,0.25,0));
-    m_cre->getSkinMeshNode()->attachNode("Hand.R", m_sord);
+    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_sord);
 
     m_light = m_context->sceneGraph->addFlareNode("flare.png");
     m_light->setColor(Color(1,0,0,1));
@@ -25,7 +25,7 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     m_light->setPosition(vec3(0,0.25,0));
     m_light->hide();
 
-    m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
+    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);

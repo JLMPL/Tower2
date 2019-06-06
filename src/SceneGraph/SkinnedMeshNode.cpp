@@ -18,12 +18,12 @@ void SkinnedMeshNode::calcsUsingGlobal()
     }
 }
 
-void SkinnedMeshNode::attachNode(i8 joint, SceneNode* node)
+void SkinnedMeshNode::attachNodeToJoint(i8 joint, SceneNode* node)
 {
     m_jointChildren.push_back({joint, node});
 }
 
-void SkinnedMeshNode::attachNode(const std::string& joint, SceneNode* node)
+void SkinnedMeshNode::attachNodeToJoint(const std::string& joint, SceneNode* node)
 {
     m_jointChildren.push_back({getJointIndex(joint), node});
 }

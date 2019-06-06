@@ -82,7 +82,7 @@ private:
 
     physx::PxParticleSystem* m_particleSystem = nullptr;
 
-    bool m_debugDraw = true;
+    bool m_debugDraw = false;
 };
 
 }

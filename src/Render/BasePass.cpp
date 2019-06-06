@@ -71,7 +71,7 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
 
         if (node->getType() == SceneNode::Type::Cloth)
         {
-            node->as<ClothNode>()->updateBuffers();
+            node->as<ClothNode>()->updateGeometry();
         }
     }
 
