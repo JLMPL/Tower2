@@ -24,6 +24,7 @@ public:
     void render(SceneGraph& graph);
 
     void addLine(const vec3& a, const vec3& b, const vec3& c);
+    void addSphere(const vec3& pos, f32 rad, const vec3& c);
 
 private:
     void finalFrame();

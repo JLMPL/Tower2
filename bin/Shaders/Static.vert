@@ -12,6 +12,7 @@ out vec2 fragCoord;
 out vec4 fragColor;
 out mat3 fragToTan;
 out vec3 shadowSpacePos;
+out vec3 fragNormal;
 
 uniform mat4 uProj;
 uniform mat4 uView;
@@ -39,4 +40,6 @@ void main()
         worldTangent.y, worldBiTangent.y, worldNormal.y,
         worldTangent.z, worldBiTangent.z, worldNormal.z
     ));
+
+    fragNormal = worldNormal;
 }

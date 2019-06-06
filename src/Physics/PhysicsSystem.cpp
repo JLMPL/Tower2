@@ -265,11 +265,6 @@ void PhysicsSystem::stepSimulation()
 {
     using namespace physx;
 
-    for (auto& cloth : m_cloths)
-    {
-        cloth->drawPoints();
-    }
-
     m_scene->simulate(core::g_FInfo.delta);
     m_scene->fetchResults(true);
 }

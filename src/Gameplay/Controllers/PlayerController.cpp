@@ -14,6 +14,7 @@
 #include "SceneGraph/MeshNode.hpp"
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
+#include "Render/GraphRenderer.hpp"
 
 PlayerController::PlayerController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
@@ -40,6 +41,19 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
     m_cape = m_context->physSys->addCloth("cape.obj");
+
+    m_cape->setNumSpheres(6);
+    m_cape->setCollisionSphere(0, vec3(0,0,0), 0.1);
+    m_cape->setCollisionSphere(1, vec3(0,0,0), 0.1);
+    m_cape->setCollisionSphere(2, vec3(0,0,0), 0.1);
+    m_cape->setCollisionSphere(3, vec3(0,0,0), 0.1);
+    m_cape->setCollisionSphere(4, vec3(0,0,0), 0.1);
+    m_cape->setCollisionSphere(5, vec3(0,0,0), 0.1);
+    m_cape->addCapsule(0,1);
+    m_cape->addCapsule(1,2);
+
+    m_cape->addCapsule(3,4);
+    m_cape->addCapsule(4,5);
 
     m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
     m_cre->getSkinMeshNode()->attachNode(m_capeNode);
@@ -102,6 +116,8 @@ void PlayerController::update()
 {
     m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_camera->getForwardDirection());
 
+    m_spawnTimer++;
+
     if (m_lolo.getElapsedTime() < 0.25)
         m_light->show();
     else
@@ -122,6 +138,18 @@ void PlayerController::update()
 
     m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
 
+    {
+        auto& skeleton = m_cre->getAnimator().getSkeleton();
+        const auto& transforms = m_cre->getAnimator().getGlobalJointTransforms();
+
+        m_cape->setCollisionSphere(0, transforms[skeleton.findJointIndex("IK_Thigh.L")][3], 0.12);
+        m_cape->setCollisionSphere(1, transforms[skeleton.findJointIndex("IK_Shin.L")][3], 0.15);
+        m_cape->setCollisionSphere(2, transforms[skeleton.findJointIndex("IK_Foot.L")][3], 0.12);
+
+        m_cape->setCollisionSphere(3, transforms[skeleton.findJointIndex("IK_Thigh.R")][3], 0.12);
+        m_cape->setCollisionSphere(4, transforms[skeleton.findJointIndex("IK_Shin.R")][3], 0.15);
+        m_cape->setCollisionSphere(5, transforms[skeleton.findJointIndex("IK_Foot.R")][3], 0.12);
+    }
     // m_context->physSys->testo(m_cre->getTransform());
     m_cape->setTargetTransform(m_cre->getTransform());
 
@@ -135,7 +163,7 @@ void PlayerController::update()
 
     for (auto& vert : meh->entries[0].vertices)
     {
-        f32 cont = FLT_MAX;
+        f32 cont = (m_spawnTimer > 3) ? FLT_MAX : 0.f;
 
         if (vert.pos.y > 1.12)
             cont = 0.f;
@@ -278,7 +306,7 @@ void PlayerController::move()
     }
 
     m_cre->setDirection(math::normalize(godir));
-    m_cre->getCharCtrl().move(m_cre->getDirection() * 5.f, core::g_FInfo.delta);
+    m_cre->getCharCtrl().move(m_cre->getDirection() * 1.5f, core::g_FInfo.delta);
 
     if (gInput.isAttack())
         enterAttack();

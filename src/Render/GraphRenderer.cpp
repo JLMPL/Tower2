@@ -37,4 +37,23 @@ void GraphRenderer::addLine(const vec3& a, const vec3& b, const vec3& c)
     m_basePass.addLine(a,b,c);
 }
 
+void GraphRenderer::addSphere(const vec3& pos, f32 rad, const vec3& c)
+{
+    f32 step = M_TAU / 16.f;
+    for (f32 i = 0; i < M_TAU - step; i += step)
+    {
+        vec3 a = pos + vec3(cos(i) * rad, sin(i) * rad, 0);
+        vec3 b = pos + vec3(cos(i + step) * rad, sin(i + step) * rad, 0);
+        m_basePass.addLine(a,b,c);
+
+        a = pos + vec3(cos(i) * rad, 0, sin(i) * rad);
+        b = pos + vec3(cos(i + step) * rad, 0, sin(i + step) * rad);
+        m_basePass.addLine(a,b,c);
+
+        a = pos + vec3(0, cos(i) * rad, sin(i) * rad);
+        b = pos + vec3(0, cos(i + step) * rad, sin(i + step) * rad);
+        m_basePass.addLine(a,b,c);
+    }
+}
+
 }

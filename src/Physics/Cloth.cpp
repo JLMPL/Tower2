@@ -74,7 +74,7 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     // reduce impact of frame acceleration
     // x, z: cloth swings out less when walking in a circle
     // y: cloth responds less to jump acceleration
-    m_cloth->setLinearInertiaScale(PxVec3(0.1f, 0.1f, 0.1f));
+    m_cloth->setLinearInertiaScale(PxVec3(0.01f, 0.01f, 0.01f));
     // m_cloth->setInertiaScale(0.01f);
 
     // leave impact of frame torque at default
@@ -97,86 +97,20 @@ Cloth::~Cloth()
     m_cloth->release();
 }
 
-void Cloth::drawPoints()
+void Cloth::setNumSpheres(u32 num)
 {
-    return;
-    using namespace physx;
-    physx::PxClothParticleData* readData = m_cloth->lockParticleData();
+    m_numSpheres = num;
+}
 
-    if (!readData)
-        return;
+void Cloth::setCollisionSphere(u32 index, const vec3& pos, f32 rad)
+{
+    m_colSpheres[index] = physx::PxClothCollisionSphere(core::conv::toPx(pos), rad);
+    m_cloth->setCollisionSpheres(&m_colSpheres[0], m_numSpheres);
+}
 
-    u32 numVerts = m_cloth->getNbParticles();
-
-    // for (u32 i = 0; i < numVerts; i++)
-        // gfx::g_GraphRenderer.addLine(core::conv::toGlm(readData->particles[i].pos), core::conv::toGlm(readData->particles[i].pos) + vec3(0.01), vec3(1.f));
-
-    PxU32 numTriangles = m_meshDesc.triangles.count;
-    PxU32 numQuads = m_meshDesc.quads.count;
-
-    PxU16* faces = (PxU16*)malloc(sizeof(PxU16)* (numTriangles*3 + numQuads*6));
-    PxU16* fIt = faces;
-
-    PxU8* triangles = (PxU8*)m_meshDesc.triangles.data;
-    for (PxU32 i = 0; i < numTriangles; i++)
-    {
-        if (m_meshDesc.flags & PxMeshFlag::e16_BIT_INDICES)
-        {
-            PxU16* triangle = (PxU16*)triangles;
-            *fIt++ = triangle[ 0 ];
-            *fIt++ = triangle[ 1 ];
-            *fIt++ = triangle[ 2 ];
-        }
-        else
-        {
-            PxU32* triangle = (PxU32*)triangles;
-            *fIt++ = triangle[ 0 ];
-            *fIt++ = triangle[ 1 ];
-            *fIt++ = triangle[ 2 ];
-        }
-        triangles += m_meshDesc.triangles.stride;
-    }
-
-    PxU8* quads = (PxU8*)m_meshDesc.quads.data;
-    for (PxU32 i = 0; i < numQuads; i++)
-    {
-        if (m_meshDesc.flags & PxMeshFlag::e16_BIT_INDICES)
-        {
-            PxU16* quad = (PxU16*)quads;
-            *fIt++ = quad[ 0 ];
-            *fIt++ = quad[ 1 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 3 ];
-            *fIt++ = quad[ 0 ];
-        }
-        else
-        {
-            PxU32* quad = (PxU32*)quads;
-            *fIt++ = quad[ 0 ];
-            *fIt++ = quad[ 1 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 3 ];
-            *fIt++ = quad[ 0 ];
-        }
-        quads += m_meshDesc.quads.stride;
-    }
-
-    for (auto i = 0; i < (numTriangles + (numQuads * 2)) * 3; i += 3)
-    {
-        PxVec3 a = m_readData->particles[faces[i]].pos;
-        PxVec3 b = m_readData->particles[faces[i + 1]].pos;
-        PxVec3 c = m_readData->particles[faces[i + 2]].pos;
-
-        gfx::g_GraphRenderer.addLine(core::conv::toGlm(a), core::conv::toGlm(b), vec3(1.f));
-        gfx::g_GraphRenderer.addLine(core::conv::toGlm(b), core::conv::toGlm(c), vec3(1.f));
-        gfx::g_GraphRenderer.addLine(core::conv::toGlm(a), core::conv::toGlm(c), vec3(1.f));
-    }
-
-    readData->unlock();
-
-    free(faces);
+void Cloth::addCapsule(i32 a, i32 b)
+{
+    m_cloth->addCollisionCapsule(a, b);
 }
 
 void Cloth::lockParticleData()
@@ -206,70 +140,6 @@ vec3* Cloth::getVertices()
     }
 
     return m_vertices;
-}
-
-u32 Cloth::getTriangleCount()
-{
-    return m_meshDesc.triangles.count + (m_meshDesc.quads.count * 2);
-}
-
-u16* Cloth::getTriangleIndices()
-{
-    using namespace physx;
-
-    PxU32 numTriangles = m_meshDesc.triangles.count;
-    PxU32 numQuads = m_meshDesc.quads.count;
-
-    PxU16* faces = (PxU16*)malloc(sizeof(PxU16)* (numTriangles*3 + numQuads*6));
-    PxU16* fIt = faces;
-
-    PxU8* triangles = (PxU8*)m_meshDesc.triangles.data;
-    for (PxU32 i = 0; i < numTriangles; i++)
-    {
-        if (m_meshDesc.flags & PxMeshFlag::e16_BIT_INDICES)
-        {
-            PxU16* triangle = (PxU16*)triangles;
-            *fIt++ = triangle[ 0 ];
-            *fIt++ = triangle[ 1 ];
-            *fIt++ = triangle[ 2 ];
-        }
-        else
-        {
-            PxU32* triangle = (PxU32*)triangles;
-            *fIt++ = triangle[ 0 ];
-            *fIt++ = triangle[ 1 ];
-            *fIt++ = triangle[ 2 ];
-        }
-        triangles += m_meshDesc.triangles.stride;
-    }
-
-    PxU8* quads = (PxU8*)m_meshDesc.quads.data;
-    for (PxU32 i = 0; i < numQuads; i++)
-    {
-        if (m_meshDesc.flags & PxMeshFlag::e16_BIT_INDICES)
-        {
-            PxU16* quad = (PxU16*)quads;
-            *fIt++ = quad[ 0 ];
-            *fIt++ = quad[ 1 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 3 ];
-            *fIt++ = quad[ 0 ];
-        }
-        else
-        {
-            PxU32* quad = (PxU32*)quads;
-            *fIt++ = quad[ 0 ];
-            *fIt++ = quad[ 1 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 2 ];
-            *fIt++ = quad[ 3 ];
-            *fIt++ = quad[ 0 ];
-        }
-        quads += m_meshDesc.quads.stride;
-    }
-
-    return faces;
 }
 
 void Cloth::setConstraints(const std::vector<Constraint>& constraints)

@@ -40,6 +40,7 @@ void ClothNode::updateNormals()
     for (auto i = 0; i < m_mesh->entries[0].indices.size(); i += 3)
     {
         i32 index = m_mesh->entries[0].indices[i];
+
         vec3 a = m_vertices[index].pos;
         vec3 b = m_vertices[index + 1].pos;
         vec3 c = m_vertices[index + 2].pos;

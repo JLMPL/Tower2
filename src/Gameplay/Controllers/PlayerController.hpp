@@ -78,7 +78,11 @@ private:
 
     phys::Cloth* m_cape = nullptr;
 
+
+
     core::Timer m_lolo;
+
+    i32 m_spawnTimer = 0;
 
     i32 m_combo = 0;
 };

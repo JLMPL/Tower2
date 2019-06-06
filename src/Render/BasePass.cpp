@@ -18,6 +18,7 @@ void BasePass::init()
 
     m_flatShader.loadFromFile("Shaders/Static.vert", "Shaders/Flat.frag");
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");
+    m_clothShader.loadFromFile("Shaders/Static.vert", "Shaders/Cloth.frag");
 
     m_flareShader.loadFromFile("Shaders/Flare.sha");
 
@@ -128,11 +129,11 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
 
             auto mat = clothNode->getMaterial();
 
-            m_flatShader.bind();
-            m_flatShader.setUniformMatrix("uProj", m_cameraNode->getProjection());
-            m_flatShader.setUniformMatrix("uView", m_cameraNode->getView());
-            m_flatShader.setUniformMatrix("uModel", clothNode->getGlobalTransform());
-            m_flatShader.setUniform3f("uCamPos", m_cameraNode->getPosition());
+            m_clothShader.bind();
+            m_clothShader.setUniformMatrix("uProj", m_cameraNode->getProjection());
+            m_clothShader.setUniformMatrix("uView", m_cameraNode->getView());
+            m_clothShader.setUniformMatrix("uModel", clothNode->getGlobalTransform());
+            m_clothShader.setUniform3f("uCamPos", m_cameraNode->getPosition());
 
             for (u32 i = 0; i < 4; i++)
             {
@@ -141,19 +142,19 @@ void BasePass::renderMeshes(SceneGraph& graph, GLuint shadow0)
                 std::string pos = "uPointLights[" + index + "].pos";
                 std::string color = "uPointLights[" + index + "].color";
 
-                m_flatShader.setUniform3f(pos.c_str(), m_lights[i]->getPosition());
-                m_flatShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
+                m_clothShader.setUniform3f(pos.c_str(), m_lights[i]->getPosition());
+                m_clothShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
             }
 
-            m_flatShader.setUniformTexture("uImage", 0, *mat->m_textures[0]);
-            m_flatShader.setUniformTexture("uNormal", 1, *mat->m_textures[1]);
-            m_flatShader.setUniformTexture("uSpecular", 2, *mat->m_textures[2]);
+            m_clothShader.setUniformTexture("uImage", 0, *mat->m_textures[0]);
+            m_clothShader.setUniformTexture("uNormal", 1, *mat->m_textures[1]);
+            m_clothShader.setUniformTexture("uSpecular", 2, *mat->m_textures[2]);
 
-            m_flatShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
+            m_clothShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
             clothNode->m_vao.drawElements();
 
-            m_flatShader.unbind();
+            m_clothShader.unbind();
         }
         else if (node->getType() == SceneNode::Type::SkinMesh)
         {
