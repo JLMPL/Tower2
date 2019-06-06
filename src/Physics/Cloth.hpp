@@ -37,12 +37,26 @@ public:
 
     void setConstraints(const std::vector<Constraint>& constraints);
 
+    void lockParticleData();
+    void unlockParticleData();
+
+    u32 getVertexCount();
+    vec3* getVertices();
+
+    u32 getTriangleCount();
+    u16* getTriangleIndices();
+
     gfx::StaticMesh* getMesh() const;
     physx::PxCloth* getClothActor() const;
 
 private:
-    physx::PxClothFabric* m_fabric = nullptr;
-    physx::PxCloth*       m_cloth = nullptr;
+    physx::PxClothFabric*  m_fabric = nullptr;
+    physx::PxCloth*        m_cloth = nullptr;
+    physx::PxClothMeshDesc m_meshDesc;
+
+    vec3* m_vertices = nullptr;
+
+    physx::PxClothParticleData* m_readData = nullptr;
 
     gfx::StaticMesh* m_mesh = nullptr;
 };

@@ -44,15 +44,10 @@ public:
     void stepSimulation();
     void debugDraw();
 
-    void setupFilters(physx::PxRigidActor* actor, physx::PxU32 group, physx::PxU32 others);
-
     void addTriangleMesh(const physx::PxTriangleMeshDesc& desc);
-    void addHeightField(const physx::PxHeightFieldDesc& desc, const vec3& scale);
     RigidBody addBox(const vec3& pos, const vec3& vel, const vec3& size);
-
     RigidBody addCapsule(const vec3& pos, const vec3& vel,
         f32 radius = 0.2, f32 halfHeight = 0.4);
-
     StaticBody addStaticBox(const vec3& size, const vec3& pos,
         const quat& rot = quat());
 

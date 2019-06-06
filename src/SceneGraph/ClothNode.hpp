@@ -9,6 +9,11 @@ namespace phys
     class Cloth;
 }
 
+namespace gfx
+{
+    class BasePass;
+}
+
 class ClothNode : public SceneNode
 {
 public:
@@ -30,4 +35,6 @@ private:
     gfx::VertexArray m_vao;
     gfx::ArrayBuffer m_dbo;
     gfx::ArrayBuffer m_ibo;
+
+    friend class gfx::BasePass;
 };

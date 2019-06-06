@@ -168,24 +168,6 @@ void PhysicsSystem::addTriangleMesh(const physx::PxTriangleMeshDesc& desc)
     m_statics.push_back(actor);
 }
 
-void PhysicsSystem::addHeightField(const physx::PxHeightFieldDesc& desc, const vec3& scale)
-{
-    physx::PxHeightField* heightfield =
-        m_cooking->createHeightField(desc, m_physics->getPhysicsInsertionCallback());
-
-    physx::PxHeightFieldGeometry geometry(heightfield, physx::PxMeshGeometryFlags(), scale.y, scale.x, scale.z);
-
-    physx::PxTransform tr =
-        physx::PxTransform(physx::PxVec3(0.0f));//, physx::PxQuat(-HALF_PI, physx::PxVec3(0,1,0)));
-    auto actor = m_physics->createRigidStatic(tr);
-    actor->createShape(geometry, *m_material);
-
-    // physx::PxShape* shape = physx::PxRigidActor::createShape(geometry, m_material);
-
-    m_scene->addActor(*actor);
-    m_statics.push_back(actor);
-}
-
 RigidBody PhysicsSystem::addBox(const vec3& pos, const vec3& vel, const vec3& size)
 {
     physx::PxTransform boxPos(physx::PxVec3(pos.x, pos.y, pos.z), physx::PxQuat(physx::PxHalfPi, physx::PxVec3(1.f,0.f,1.f)));

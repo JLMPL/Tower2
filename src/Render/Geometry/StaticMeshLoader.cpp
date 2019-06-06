@@ -97,7 +97,7 @@ void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, con
 
             f32 vertHash = vert.getHash();
 
-            if (vertHash > storedHash - EPSILON && vertHash < storedHash + EPSILON)
+            if (vertHash == storedHash)
             {
                 redirect[i] = j;
                 isUnique = false;

@@ -17,6 +17,13 @@ ClothNode::ClothNode(phys::Cloth* cloth) :
 
 void ClothNode::updateBuffers()
 {
+    m_cloth->lockParticleData();
+    for (auto i = 0; i < m_cloth->getVertexCount(); i++)
+    {
+        m_vertices[i].pos = m_cloth->getVertices()[i];
+    }
+    m_cloth->unlockParticleData();
+
     m_vao.init();
     m_vao.setIndexNumber(m_mesh->entries[0].indices.size());
     m_vao.bind();
