@@ -6,6 +6,7 @@
 #include "Input/Input.hpp"
 #include "Physics/Cloth.hpp"
 #include "Render/Geometry/StaticMesh.hpp"
+#include "Render/GraphRenderer.hpp"
 #include "Render/MeshManager.hpp"
 #include "SceneGraph/CameraNode.hpp"
 #include "SceneGraph/ClothNode.hpp"
@@ -14,7 +15,6 @@
 #include "SceneGraph/MeshNode.hpp"
 #include "SceneGraph/SceneGraph.hpp"
 #include "SceneGraph/SkinnedMeshNode.hpp"
-#include "Render/GraphRenderer.hpp"
 
 PlayerController::PlayerController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
@@ -22,7 +22,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     enterIdle();
 
     m_camera = m_context->sceneGraph->addCameraNode()->as<CameraNode>();
-    m_camera->setOffset(vec3(-0.75, 0, -2));
+    m_camera->setOffset(vec3(0, -0.25, -2.6));
     m_cameraHolder = m_context->sceneGraph->addEmptyNode();
 
     m_cameraHolder->attachNode(m_camera);
@@ -42,18 +42,18 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     m_cape = m_context->physSys->addCloth("cape.obj");
 
-    m_cape->setNumSpheres(6);
-    m_cape->setCollisionSphere(0, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(1, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(2, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(3, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(4, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(5, vec3(0,0,0), 0.1);
-    m_cape->addCapsule(0,1);
-    m_cape->addCapsule(1,2);
+    // m_cape->setNumSpheres(6);
+    // m_cape->setCollisionSphere(0, vec3(0,0,0), 0.1);
+    // m_cape->setCollisionSphere(1, vec3(0,0,0), 0.1);
+    // m_cape->setCollisionSphere(2, vec3(0,0,0), 0.1);
+    // m_cape->setCollisionSphere(3, vec3(0,0,0), 0.1);
+    // m_cape->setCollisionSphere(4, vec3(0,0,0), 0.1);
+    // m_cape->setCollisionSphere(5, vec3(0,0,0), 0.1);
+    // m_cape->addCapsule(0,1);
+    // m_cape->addCapsule(1,2);
 
-    m_cape->addCapsule(3,4);
-    m_cape->addCapsule(4,5);
+    // m_cape->addCapsule(3,4);
+    // m_cape->addCapsule(4,5);
 
     m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
     m_cre->getSkinMeshNode()->attachNode(m_capeNode);
@@ -142,13 +142,13 @@ void PlayerController::update()
         auto& skeleton = m_cre->getAnimator().getSkeleton();
         const auto& transforms = m_cre->getAnimator().getGlobalJointTransforms();
 
-        m_cape->setCollisionSphere(0, transforms[skeleton.findJointIndex("IK_Thigh.L")][3], 0.12);
-        m_cape->setCollisionSphere(1, transforms[skeleton.findJointIndex("IK_Shin.L")][3], 0.15);
-        m_cape->setCollisionSphere(2, transforms[skeleton.findJointIndex("IK_Foot.L")][3], 0.12);
+        // m_cape->setCollisionSphere(0, transforms[skeleton.findJointIndex("IK_Thigh.L")][3], 0.12);
+        // m_cape->setCollisionSphere(1, transforms[skeleton.findJointIndex("IK_Shin.L")][3], 0.16);
+        // m_cape->setCollisionSphere(2, transforms[skeleton.findJointIndex("IK_Foot.L")][3], 0.12);
 
-        m_cape->setCollisionSphere(3, transforms[skeleton.findJointIndex("IK_Thigh.R")][3], 0.12);
-        m_cape->setCollisionSphere(4, transforms[skeleton.findJointIndex("IK_Shin.R")][3], 0.15);
-        m_cape->setCollisionSphere(5, transforms[skeleton.findJointIndex("IK_Foot.R")][3], 0.12);
+        // m_cape->setCollisionSphere(3, transforms[skeleton.findJointIndex("IK_Thigh.R")][3], 0.12);
+        // m_cape->setCollisionSphere(4, transforms[skeleton.findJointIndex("IK_Shin.R")][3], 0.16);
+        // m_cape->setCollisionSphere(5, transforms[skeleton.findJointIndex("IK_Foot.R")][3], 0.12);
     }
     // m_context->physSys->testo(m_cre->getTransform());
     m_cape->setTargetTransform(m_cre->getTransform());
@@ -163,13 +163,12 @@ void PlayerController::update()
 
     for (auto& vert : meh->entries[0].vertices)
     {
-        f32 cont = (m_spawnTimer > 3) ? FLT_MAX : 0.f;
+        f32 cont = (m_spawnTimer > 30) ? FLT_MAX : 0.f;
 
         if (vert.pos.y > 1.12)
             cont = 0.f;
 
         vec4 vp = math::rotate(90.0_rad, vec3(1,0,0)) * vec4(vert.pos,1);
-
         vec3 poz = vec3(as * vp);
 
         conts.push_back(phys::Cloth::Constraint(poz, cont));
@@ -177,12 +176,12 @@ void PlayerController::update()
 
     m_cape->setConstraints(conts);
 
-/*    if (m_cre->getAnimator().isRootMotion())
-    {
-        vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
+    // if (m_cre->getAnimator().isRootMotion())
+    // {
+    //     vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
 
-        m_cre->getCharCtrl().move(dir);
-    }*/
+    //     m_cre->getCharCtrl().move(dir);
+    // }
 
     updateHud();
 }
@@ -237,8 +236,6 @@ void PlayerController::idle()
         return;
     }
 
-    vec2 rightAxis = gInput.getRightAxis();
-
     if (m_cre->isSwordDrawn())
     {
         if (gInput.isAttack())
@@ -262,6 +259,8 @@ void PlayerController::idle()
 
     if (!m_cre->getCharCtrl().isOnGround())
         fall();
+    else
+        m_verticalVelocity = 0;
 
     if (isAnyMovementKey())
         enterMove();
@@ -313,6 +312,8 @@ void PlayerController::move()
 
     if (!m_cre->getCharCtrl().isOnGround())
         fall();
+    else
+        m_verticalVelocity = 0;
 
     if (!isAnyMovementKey())
         enterIdle();
@@ -360,7 +361,8 @@ void PlayerController::attack()
 
 void PlayerController::fall()
 {
-    m_cre->getCharCtrl().move(vec3(0,-1,0), core::g_FInfo.delta);
+    m_verticalVelocity -= core::g_FInfo.delta * 9.8;
+    m_cre->getCharCtrl().move(vec3(0,m_verticalVelocity,0), core::g_FInfo.delta);
 }
 
 bool PlayerController::isAnyMovementKey() const

@@ -12,18 +12,10 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_mesh = gfx::g_MeshMgr.getMesh(mesh, true);
 
     std::vector<PxClothParticle> verts;
-    std::vector<PxClothParticleMotionConstraint> constraints;
 
     for (auto& vert : m_mesh->entries[0].vertices)
     {
-        verts.push_back(PxClothParticle(core::conv::toPx(vert.pos), 0.5));
-
-        f32 cont = FLT_MAX;
-
-        if (vert.pos.y > 1.7)
-            cont = 0.0f;
-
-        constraints.push_back(PxClothParticleMotionConstraint(core::conv::toPx(vert.pos), cont));
+        verts.push_back(PxClothParticle(core::conv::toPx(vert.pos), 5));
     }
 
     m_meshDesc.points.data = &verts[0];
@@ -53,14 +45,12 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_cloth->setSolverFrequency(240.f);
     m_cloth->setStiffnessFrequency(20.0f);
 
-    m_cloth->setDampingCoefficient(PxVec3(0.1f));
-    m_cloth->setLinearDragCoefficient(PxVec3(0.1f));
-    m_cloth->setAngularDragCoefficient(PxVec3(0.1f));
+    m_cloth->setDampingCoefficient(PxVec3(0.2f));
+    m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
+    m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
-    m_cloth->setMotionConstraints(&constraints[0]);
-
-    m_cloth->setSelfCollisionDistance(0.002f);
-    m_cloth->setSelfCollisionStiffness(0.5f);
+    // m_cloth->setSelfCollisionDistance(0.002f);
+    // m_cloth->setSelfCollisionStiffness(0.5f);
 
 /*    PxClothCollisionSphere spheres[2] =
     {
@@ -71,14 +61,10 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_cloth->setCollisionSpheres(spheres, 2);
     m_cloth->addCollisionCapsule(0, 1);*/
 
-    // reduce impact of frame acceleration
-    // x, z: cloth swings out less when walking in a circle
-    // y: cloth responds less to jump acceleration
-    m_cloth->setLinearInertiaScale(PxVec3(0.01f, 0.01f, 0.01f));
+    m_cloth->setLinearInertiaScale(PxVec3(0.001f, 0.01f, 0.001f));
     // m_cloth->setInertiaScale(0.01f);
 
-    // leave impact of frame torque at default
-    // m_cloth->setAngularInertiaScale(PxVec3(1.0f));
+    m_cloth->setAngularInertiaScale(PxVec3(0.75));
 
     // reduce centrifugal force of rotating frame
     // m_cloth->setCentrifugalInertiaScale(PxVec3(0.3f));

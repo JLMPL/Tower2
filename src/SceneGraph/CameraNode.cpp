@@ -12,7 +12,7 @@ CameraNode::CameraNode(float fov)
         2000.f
     );
 
-    m_pos = vec3(-0.6,2,-2.5);
+    m_pos = vec3(0,2,-2.5);
     m_center = vec3(0,1.5,5);
 
     m_view = math::lookAt(m_pos, m_center, math::vecY);

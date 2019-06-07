@@ -18,7 +18,7 @@ ClothNode::ClothNode(phys::Cloth* cloth) :
 void ClothNode::updateGeometry()
 {
     updatePositions();
-    // updateNormals();
+    updateNormals();
     updateBuffers();
 }
 
@@ -39,17 +39,19 @@ void ClothNode::updateNormals()
 
     for (auto i = 0; i < m_mesh->entries[0].indices.size(); i += 3)
     {
-        i32 index = m_mesh->entries[0].indices[i];
+        i32 index0 = m_mesh->entries[0].indices[i];
+        i32 index1 = m_mesh->entries[0].indices[i + 1];
+        i32 index2 = m_mesh->entries[0].indices[i + 2];
 
-        vec3 a = m_vertices[index].pos;
-        vec3 b = m_vertices[index + 1].pos;
-        vec3 c = m_vertices[index + 2].pos;
+        vec3 a = m_vertices[index0].pos;
+        vec3 b = m_vertices[index1].pos;
+        vec3 c = m_vertices[index2].pos;
 
         vec3 n = math::normalize(math::cross(b - a, c - a));
 
-        m_vertices[index].normal += n;
-        m_vertices[index + 1].normal += n;
-        m_vertices[index + 2].normal += n;
+        m_vertices[index0].normal += n;
+        m_vertices[index1].normal += n;
+        m_vertices[index2].normal += n;
     }
 
     for (auto& vert : m_vertices)

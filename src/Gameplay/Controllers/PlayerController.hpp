@@ -78,7 +78,7 @@ private:
 
     phys::Cloth* m_cape = nullptr;
 
-
+    f32 m_verticalVelocity = 0;
 
     core::Timer m_lolo;
 
