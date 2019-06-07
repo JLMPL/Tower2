@@ -52,22 +52,9 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_cloth->setSelfCollisionDistance(0.002f);
     m_cloth->setSelfCollisionStiffness(0.5f);
 
-/*    PxClothCollisionSphere spheres[2] =
-    {
-        PxClothCollisionSphere(PxVec3(0,2,0), 0.1),
-        PxClothCollisionSphere(PxVec3(0,0,0), 0.1)
-    };
-
-    m_cloth->setCollisionSpheres(spheres, 2);
-    m_cloth->addCollisionCapsule(0, 1);*/
-
     m_cloth->setLinearInertiaScale(PxVec3(0.001f, 0.01f, 0.001f));
-    // m_cloth->setInertiaScale(0.01f);
 
     m_cloth->setAngularInertiaScale(PxVec3(0.75));
-
-    // reduce centrifugal force of rotating frame
-    // m_cloth->setCentrifugalInertiaScale(PxVec3(0.3f));
 
     m_cloth->setStretchConfig(PxClothFabricPhaseType::eVERTICAL, PxClothStretchConfig(1));
     m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, PxClothStretchConfig(1));
@@ -83,15 +70,9 @@ Cloth::~Cloth()
     m_cloth->release();
 }
 
-void Cloth::setNumSpheres(u32 num)
+void Cloth::setCollisionSpheres(const Sphere* spheres, u32 numSpheres)
 {
-    m_numSpheres = num;
-}
-
-void Cloth::setCollisionSphere(u32 index, const vec3& pos, f32 rad)
-{
-    m_colSpheres[index] = physx::PxClothCollisionSphere(core::conv::toPx(pos), rad);
-    m_cloth->setCollisionSpheres(&m_colSpheres[0], m_numSpheres);
+    m_cloth->setCollisionSpheres(&spheres[0], numSpheres);
 }
 
 void Cloth::addCapsule(i32 a, i32 b)

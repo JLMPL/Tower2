@@ -1,11 +1,7 @@
 #include "Gameplay/CreatureController.hpp"
 #include "Core/Math3D.hpp"
 #include "Core/Timer.hpp"
-
-namespace phys
-{
-    class Cloth;
-}
+#include "Physics/Cloth.hpp"
 
 class SceneNode;
 class SceneGraph;
@@ -77,6 +73,7 @@ private:
     ClothNode* m_capeNode = nullptr;
 
     phys::Cloth* m_cape = nullptr;
+    phys::Cloth::Sphere m_spheres[6];
 
     f32 m_verticalVelocity = 0;
 

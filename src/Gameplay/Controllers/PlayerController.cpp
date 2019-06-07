@@ -4,7 +4,6 @@
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
-#include "Physics/Cloth.hpp"
 #include "Render/Geometry/StaticMesh.hpp"
 #include "Render/GraphRenderer.hpp"
 #include "Render/MeshManager.hpp"
@@ -38,23 +37,21 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_light->setPosition(vec3(0,0.25,0));
     m_light->hide();
 
-    // m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
-    // m_context->sceneGraph->getRoot()->attachNode(m_light);
+    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
     m_cape = m_context->physSys->addCloth("cape.obj");
 
-    m_cape->setNumSpheres(6);
-    m_cape->setCollisionSphere(0, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(1, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(2, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(3, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(4, vec3(0,0,0), 0.1);
-    m_cape->setCollisionSphere(5, vec3(0,0,0), 0.1);
+    for (auto i = 0; i < 6; i++)
+    {
+        m_spheres[i] = phys::Cloth::Sphere({0,0,0}, 0.1);
+    }
+
+    m_cape->setCollisionSpheres(&m_spheres[0], 6);
     m_cape->addCapsule(0,1);
     m_cape->addCapsule(1,2);
-
     m_cape->addCapsule(3,4);
     m_cape->addCapsule(4,5);
+    m_cape->addCapsule(0,3);
 
     m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
     m_cre->getSkinMeshNode()->attachNode(m_capeNode);
@@ -143,13 +140,23 @@ void PlayerController::update()
         auto& skeleton = m_cre->getAnimator().getSkeleton();
         const auto& transforms = m_cre->getAnimator().getGlobalJointTransforms();
 
-        m_cape->setCollisionSphere(0, transforms[skeleton.findJointIndex("IK_Thigh.L")][3], 0.12);
-        m_cape->setCollisionSphere(1, transforms[skeleton.findJointIndex("IK_Shin.L")][3], 0.16);
-        m_cape->setCollisionSphere(2, transforms[skeleton.findJointIndex("IK_Foot.L")][3], 0.12);
+        i32 jInds[] =
+        {
+            skeleton.findJointIndex("IK_Thigh.L"),
+            skeleton.findJointIndex("IK_Shin.L"),
+            skeleton.findJointIndex("IK_Foot.L"),
 
-        m_cape->setCollisionSphere(3, transforms[skeleton.findJointIndex("IK_Thigh.R")][3], 0.12);
-        m_cape->setCollisionSphere(4, transforms[skeleton.findJointIndex("IK_Shin.R")][3], 0.16);
-        m_cape->setCollisionSphere(5, transforms[skeleton.findJointIndex("IK_Foot.R")][3], 0.12);
+            skeleton.findJointIndex("IK_Thigh.R"),
+            skeleton.findJointIndex("IK_Shin.R"),
+            skeleton.findJointIndex("IK_Foot.R")
+        };
+
+        for (auto i = 0; i < 6; i++)
+        {
+            m_spheres[i] = phys::Cloth::Sphere(core::conv::toPx(transforms[jInds[i]][3]), 0.12);
+        }
+
+        m_cape->setCollisionSpheres(&m_spheres[0], 6);
     }
     // m_context->physSys->testo(m_cre->getTransform());
     m_cape->setTargetTransform(m_cre->getTransform());
@@ -283,29 +290,33 @@ void PlayerController::move()
 
     m_cre->setFacingDirection(math::normalize(math::lerp(oldir, cameraForward, 0.2f)));
 
-    vec3 godir;
-    if (leftAxis.y > 0)
+    if (leftAxis.y > 0 && leftAxis.x < 0)
     {
-        godir += cameraForward;
-        m_cre->getAnimator().setState("Walk");
+        m_cre->getAnimator().setState("WalkLeft");
     }
-    if (leftAxis.y < 0)
+    else if (leftAxis.y > 0 && leftAxis.x > 0)
     {
-        godir += -cameraForward;
-        m_cre->getAnimator().setState("Walk");
-    }
-    if (leftAxis.x > 0)
-    {
-        godir += math::rotateY(cameraForward, f32(-HALF_PI));
         m_cre->getAnimator().setState("WalkRight");
     }
-    if (leftAxis.x < 0)
+    else if (leftAxis.y > 0)
     {
-        godir += math::rotateY(cameraForward, f32(HALF_PI));
+        m_cre->getAnimator().setState("Walk");
+    }
+    else if (leftAxis.y < 0)
+    {
+        m_cre->getAnimator().setState("Walk");
+    }
+    else if (leftAxis.x > 0)
+    {
+        m_cre->getAnimator().setState("WalkRight");
+    }
+    else if (leftAxis.x < 0)
+    {
         m_cre->getAnimator().setState("WalkLeft");
     }
 
-    m_cre->setDirection(math::normalize(godir));
+    vec3 walkDir = (leftAxis.y * cameraForward) + (leftAxis.x * math::rotateY(cameraForward, f32(-HALF_PI)));
+    m_cre->setDirection(math::normalize(walkDir));
     m_cre->getCharCtrl().move(m_cre->getDirection() * 2.5f, core::g_FInfo.delta);
 
     if (gInput.isAttack())
