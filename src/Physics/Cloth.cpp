@@ -43,14 +43,14 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_cloth->setClothFlag(PxClothFlag::eSWEPT_CONTACT, false);
 
     m_cloth->setSolverFrequency(240.f);
-    m_cloth->setStiffnessFrequency(20.0f);
+    m_cloth->setStiffnessFrequency(5.0f);
 
-    m_cloth->setDampingCoefficient(PxVec3(0.2f));
+    m_cloth->setDampingCoefficient(PxVec3(0.3f));
     m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
     m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
-    // m_cloth->setSelfCollisionDistance(0.002f);
-    // m_cloth->setSelfCollisionStiffness(0.5f);
+    m_cloth->setSelfCollisionDistance(0.002f);
+    m_cloth->setSelfCollisionStiffness(0.5f);
 
 /*    PxClothCollisionSphere spheres[2] =
     {
