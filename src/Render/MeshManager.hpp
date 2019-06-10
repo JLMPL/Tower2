@@ -16,7 +16,7 @@ public:
     void init();
 
     StaticMesh* getMesh(const std::string& name, bool cloth = false);
-    SkinnedMesh* getSkinnedMesh(const std::string& name);
+    SkinnedMesh* getSkinnedMesh(const std::string& name, bool cloth = false);
 
 private:
     StaticMeshLoader   m_staticMeshLoader;

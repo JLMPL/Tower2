@@ -39,7 +39,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
-    m_cape = m_context->physSys->addCloth("cape.dae");
+    m_cape = m_context->physSys->addCloth("cape.dae", &m_cre->getAnimator());
 
     for (auto i = 0; i < 6; i++)
     {
@@ -154,29 +154,6 @@ void PlayerController::update()
     }
     // m_context->physSys->testo(m_cre->getTransform());
     m_cape->setTargetTransform(m_cre->getTransform());
-
-    auto meh = m_cape->getMesh();
-
-    std::vector<phys::Cloth::Constraint> conts;
-
-    i8 joindex = m_cre->getAnimator().getSkeleton().findJointIndex("Root");
-
-    mat4 as = m_cre->getAnimator().getMatrixPalette()[joindex];
-
-    for (auto& vert : meh->entries[0].vertices)
-    {
-        f32 cont = (m_spawnTimer > 30) ? FLT_MAX : 0.f;
-
-        if (vert.pos.y > 1.12)
-            cont = 0.f;
-
-        vec4 vp = math::rotate(90.0_rad, vec3(1,0,0)) * vec4(vert.pos,1);
-        vec3 poz = vec3(as * vp);
-
-        conts.push_back(phys::Cloth::Constraint(poz, cont));
-    }
-
-    m_cape->setConstraints(conts);
 
     // if (m_cre->getAnimator().isRootMotion())
     // {

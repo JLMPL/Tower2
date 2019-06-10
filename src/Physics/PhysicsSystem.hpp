@@ -13,6 +13,11 @@
 #include "Cloth.hpp"
 #include <vector>
 
+namespace anim
+{
+    class Animator;
+}
+
 namespace phys
 {
 
@@ -55,7 +60,7 @@ public:
 
     physx::PxController* addController(u32* entityID, f32 radius, f32 height);
 
-    Cloth* addCloth(const std::string& mesh);
+    Cloth* addCloth(const std::string& mesh, anim::Animator* animer);
 
     RaycastResult raycast(const vec3& origin, const vec3& dir, f32 dist);
     SweepResult sweepSphere(f32 radius, const vec3& origin, const vec3& dir, f32 dist);

@@ -19,7 +19,7 @@ StaticMesh* MeshManager::getMesh(const std::string& name, bool cloth)
     return m_meshes[name].get();
 }
 
-SkinnedMesh* MeshManager::getSkinnedMesh(const std::string& name)
+SkinnedMesh* MeshManager::getSkinnedMesh(const std::string& name, bool cloth)
 {
     auto found = m_skinMeshes.find(name);
 
@@ -27,7 +27,7 @@ SkinnedMesh* MeshManager::getSkinnedMesh(const std::string& name)
         return (*found).second.get();
 
     std::unique_ptr<SkinnedMesh> mesh(new SkinnedMesh());
-    m_skinnedMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str());
+    m_skinnedMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str(), cloth);
     m_skinMeshes[name] = std::move(mesh);
 
     return m_skinMeshes[name].get();

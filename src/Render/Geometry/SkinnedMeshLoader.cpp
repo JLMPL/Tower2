@@ -5,7 +5,7 @@
 namespace gfx
 {
 
-i8 SkinnedMeshLoader::addNodesToSkeleton(SkinnedMesh& mesh, const aiNode& node)
+i8 SkinnedMeshLoader::addJointsToSkeleton(SkinnedMesh& mesh, const aiNode& node)
 {
     i8 jointIndex = mesh.skeleton.joints.size();
 
@@ -22,7 +22,7 @@ i8 SkinnedMeshLoader::addNodesToSkeleton(SkinnedMesh& mesh, const aiNode& node)
 
     for (u32 i = 0; i < node.mNumChildren; i++)
     {
-        i8 childJointIndex = addNodesToSkeleton(mesh, *node.mChildren[i]);
+        i8 childJointIndex = addJointsToSkeleton(mesh, *node.mChildren[i]);
         mesh.skeleton.joints[jointIndex].children[i] = childJointIndex;
     }
 
@@ -113,7 +113,7 @@ void SkinnedMeshLoader::doTheShitWithWeights(SkinnedMesh& mesh, const aiMesh& in
     }
 }
 
-void SkinnedMeshLoader::loadFromFile(SkinnedMesh& mesh, const std::string& path)
+void SkinnedMeshLoader::loadFromFile(SkinnedMesh& mesh, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),
@@ -132,7 +132,7 @@ void SkinnedMeshLoader::loadFromFile(SkinnedMesh& mesh, const std::string& path)
 
     mesh.name = path;
 
-    addNodesToSkeleton(mesh, *scene->mRootNode);
+    addJointsToSkeleton(mesh, *scene->mRootNode);
     addMeshesAndJoints(mesh, *scene);
 
     for (u32 i = 0; i < scene->mNumMeshes; i++)

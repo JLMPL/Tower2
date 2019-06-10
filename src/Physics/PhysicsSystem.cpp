@@ -110,9 +110,9 @@ void PhysicsSystem::init()
     debug::g_Menu["Physics"].bind("debugDraw", &m_debugDraw);
 }
 
-Cloth* PhysicsSystem::addCloth(const std::string& mesh)
+Cloth* PhysicsSystem::addCloth(const std::string& mesh, anim::Animator* animer)
 {
-    m_cloths.emplace_back(new Cloth(m_physics, mesh));
+    m_cloths.emplace_back(new Cloth(m_physics, mesh, animer));
 
     m_scene->addActor(*m_cloths.back()->getClothActor());
 
@@ -264,6 +264,9 @@ void PhysicsSystem::preSimulationUpdate()
 void PhysicsSystem::stepSimulation()
 {
     using namespace physx;
+
+    for (auto& cloth : m_cloths)
+        cloth->skin();
 
     m_scene->simulate(core::g_FInfo.delta);
     m_scene->fetchResults(true);

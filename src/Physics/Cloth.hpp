@@ -5,9 +5,15 @@
 #include <memory>
 #include <vector>
 
+namespace anim
+{
+    class Animator;
+}
+
 namespace gfx
 {
-    struct StaticMesh;
+    // struct StaticMesh;
+    struct SkinnedMesh;
 }
 
 namespace phys
@@ -23,18 +29,19 @@ public:
         vec3 pos;
         f32 rad;
 
+        Constraint() : pos(vec3(0)), rad(0) {}
         Constraint(const vec3& p, f32 r) : pos(p), rad(r) {}
     };
 
     using Sphere = physx::PxClothCollisionSphere;
 
     Cloth() = default;
-    Cloth(physx::PxPhysics* phys, const std::string& mesh);
+    Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* animer);
     ~Cloth();
 
     void setTargetTransform(const mat4& pos);
 
-    void setConstraints(const std::vector<Constraint>& constraints);
+    void skin();
 
     void setCollisionSpheres(const Sphere* spheres, u32 numSpheres);
     void addCapsule(i32 a, i32 b);
@@ -45,7 +52,7 @@ public:
     u32 getVertexCount();
     vec3* getVertices();
 
-    gfx::StaticMesh* getMesh() const;
+    gfx::SkinnedMesh* getMesh() const;
     physx::PxCloth* getClothActor() const;
 
 private:
@@ -53,11 +60,15 @@ private:
     physx::PxCloth*        m_cloth = nullptr;
     physx::PxClothMeshDesc m_meshDesc;
 
+    physx::PxClothParticleMotionConstraint* m_constraints = nullptr;
     vec3* m_vertices = nullptr;
 
     physx::PxClothParticleData* m_readData = nullptr;
 
-    gfx::StaticMesh* m_mesh = nullptr;
+    anim::Animator* m_animator = nullptr;
+    gfx::SkinnedMesh* m_mesh = nullptr;
+    u32 m_spawnTimer = 0;
+
 };
 
 }

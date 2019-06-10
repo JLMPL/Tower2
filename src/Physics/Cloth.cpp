@@ -2,20 +2,26 @@
 #include "Render/MeshManager.hpp"
 #include "Core/Convert.hpp"
 #include "Render/GraphRenderer.hpp"
+#include "Animation/Animator.hpp"
 
 namespace phys
 {
 
-Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
+constexpr u32 ClothProtectionFrames = 8;
+
+Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* animer) :
+    m_animator(animer)
 {
     using namespace physx;
-    m_mesh = gfx::g_MeshMgr.getMesh(mesh, true);
+    m_mesh = gfx::g_MeshMgr.getSkinnedMesh(mesh, true);
 
     std::vector<PxClothParticle> verts;
 
     for (auto& vert : m_mesh->entries[0].vertices)
     {
-        verts.push_back(PxClothParticle(core::conv::toPx(vert.pos), 5));
+        verts.push_back(PxClothParticle(
+            core::conv::toPx(vec3(math::rotate(-90.0_rad, vec3(1,0,0)) * vec4(vert.pos, 1))),
+            5));
     }
 
     m_meshDesc.points.data = &verts[0];
@@ -60,14 +66,46 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
     m_cloth->setStretchConfig(PxClothFabricPhaseType::eHORIZONTAL, PxClothStretchConfig(1));
 
     m_vertices = (vec3*)malloc(sizeof(vec3) * getVertexCount());
+    m_constraints = (physx::PxClothParticleMotionConstraint*)malloc(sizeof(physx::PxClothParticleMotionConstraint) * getVertexCount());
 }
 
 Cloth::~Cloth()
 {
     free(m_vertices);
+    free(m_constraints);
 
     m_fabric->release();
     m_cloth->release();
+}
+
+void Cloth::skin()
+{
+    m_spawnTimer++;
+
+    if (m_spawnTimer > ClothProtectionFrames + 1)
+        m_spawnTimer = ClothProtectionFrames + 1;
+
+    auto jTrs = m_animator->getMatrixPalette();
+    std::vector<Constraint> consts(m_mesh->entries[0].vertices.size());
+
+    auto& skinData = m_mesh->entries[0].weightsData;
+    auto& vertData = m_mesh->entries[0].vertices;
+
+    for (auto i = 0; i < vertData.size(); i++)
+    {
+        f32 rad = (m_spawnTimer > ClothProtectionFrames) ? vertData[i].color.r * 2 : 0;
+
+        mat4 tr = (jTrs[skinData[i].joints[0]] * skinData[i].weights[0]) +
+            (jTrs[skinData[i].joints[1]] * skinData[i].weights[1]) +
+            (jTrs[skinData[i].joints[2]] * skinData[i].weights[2]) +
+            (jTrs[skinData[i].joints[3]] * skinData[i].weights[3]);
+
+        vec3 pos = vec3(tr * vec4(vertData[i].pos, 1));
+
+        m_constraints[i] = physx::PxClothParticleMotionConstraint(core::conv::toPx(pos), rad);
+    }
+
+    m_cloth->setMotionConstraints(&m_constraints[0]);
 }
 
 void Cloth::setCollisionSpheres(const Sphere* spheres, u32 numSpheres)
@@ -109,24 +147,12 @@ vec3* Cloth::getVertices()
     return m_vertices;
 }
 
-void Cloth::setConstraints(const std::vector<Constraint>& constraints)
-{
-    std::vector<physx::PxClothParticleMotionConstraint> cut;
-
-    for (auto i = 0; i < constraints.size(); i++)
-    {
-        cut.push_back(physx::PxClothParticleMotionConstraint(core::conv::toPx(constraints[i].pos), constraints[i].rad));
-    }
-
-    m_cloth->setMotionConstraints(&cut[0]);
-}
-
 void Cloth::setTargetTransform(const mat4& pos)
 {
     m_cloth->setTargetPose(core::conv::toPx(pos));
 }
 
-gfx::StaticMesh* Cloth::getMesh() const
+gfx::SkinnedMesh* Cloth::getMesh() const
 {
     return m_mesh;
 }
