@@ -35,7 +35,7 @@ private:
     gfx::Shader             m_flareShader;
     gfx::Shader             m_clothShader;
 
-    LineRenderer m_lines;
+    LineRenderer            m_lines;
 
     mat4 m_fuckView;
     mat4 m_fuckProj;

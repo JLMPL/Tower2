@@ -19,8 +19,8 @@ public:
     void loadFromFile(StaticMesh& mesh, const std::string& path, bool cloth = false);
 
 private:
-    void loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh);
-    void loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh);
+    void loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
+    void loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
     void setupBuffers(StaticMesh::Entry& ent);
 
 private:

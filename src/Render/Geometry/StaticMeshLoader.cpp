@@ -12,14 +12,18 @@
 namespace gfx
 {
 
-void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh)
+void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
     StaticMesh::Entry entry;
 
     for (u32 i = 0; i < inMesh.mNumVertices; i++)
     {
         Vertex vert;
-        vert.pos = core::conv::toGlm(inMesh.mVertices[i]);
+        if (isDae)
+            vert.pos = vec3(math::rotate(-90.0_rad, vec3(1,0,0)) * vec4(core::conv::toGlm(inMesh.mVertices[i]), 1));
+        else
+            vert.pos = core::conv::toGlm(inMesh.mVertices[i]);
+
         vert.normal = core::conv::toGlm(inMesh.mNormals[i]);
         vert.tan = core::conv::toGlm(inMesh.mTangents[i]);
         vert.bitan = core::conv::toGlm(inMesh.mBitangents[i]);
@@ -64,7 +68,7 @@ void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const ai
     mesh.entries.push_back(entry);
 }
 
-void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh)
+void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
     StaticMesh::Entry entry;
 
@@ -74,7 +78,11 @@ void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, con
     for (u32 i = 0; i < inMesh.mNumVertices; i++)
     {
         Vertex vert;
-        vert.pos = core::conv::toGlm(inMesh.mVertices[i]);
+        if (isDae)
+            vert.pos = vec3(math::rotate(-90.0_rad, vec3(1,0,0)) * vec4(core::conv::toGlm(inMesh.mVertices[i]), 1));
+        else
+            vert.pos = core::conv::toGlm(inMesh.mVertices[i]);
+
         vert.normal = core::conv::toGlm(inMesh.mNormals[i]);
         vert.tan = core::conv::toGlm(inMesh.mTangents[i]);
         vert.bitan = core::conv::toGlm(inMesh.mBitangents[i]);
@@ -182,12 +190,14 @@ void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path, b
 
     mesh.name = path;
 
+    bool isDae = (path.substr(path.size()-3, 3) == "dae") ? true : false;
+
     for (u32 i = 0; i < scene->mNumMeshes; i++)
     {
         if (!cloth)
-            loadMesh(mesh, *scene, *scene->mMeshes[i]);
+            loadMesh(mesh, *scene, *scene->mMeshes[i], isDae);
         else
-            loadClothMesh(mesh, *scene, *scene->mMeshes[i]);
+            loadClothMesh(mesh, *scene, *scene->mMeshes[i], isDae);
     }
 
     for (auto& ent : mesh.entries)

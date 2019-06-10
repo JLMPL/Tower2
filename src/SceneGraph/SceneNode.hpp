@@ -31,9 +31,6 @@ public:
     void attachNode(SceneNode* node);
     void detachNode(SceneNode* node);
 
-    virtual void onAttach() {}
-    virtual void onDetach() {}
-
     void updateTransforms(mat4 parent);
 
     void setRotation(const quat& qt);

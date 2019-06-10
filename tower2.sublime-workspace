@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"setC",
+				"setCollisionSphere"
+			],
+			[
+				"m_ca",
+				"m_cape"
+			],
+			[
+				"m_mes",
+				"m_meshDesc"
+			],
+			[
+				"m_me",
+				"m_meshDesc"
+			],
+			[
 				"const",
 				"constraints"
 			],
@@ -70,10 +86,6 @@
 			[
 				"Lve",
 				"LevelContext"
-			],
-			[
-				"m_ca",
-				"m_camera"
 			],
 			[
 				"atta",
@@ -502,230 +514,26 @@
 			[
 				"RE",
 				"RenderableHandle"
-			],
-			[
-				"getite",
-				"getItemInSlot"
-			],
-			[
-				"Enem",
-				"EnemyDeath"
-			],
-			[
-				"Ene",
-				"EnemyDeath"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_ClothController.cpp",
-			"settings":
-			{
-				"buffer_size": 12870,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
-			"settings":
-			{
-				"buffer_size": 92028,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
-			"settings":
-			{
-				"buffer_size": 17831,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/PhysicsSystem.cpp",
-			"settings":
-			{
-				"buffer_size": 9176,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Animation/Animator.hpp",
-			"settings":
-			{
-				"buffer_size": 1850,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Level.hpp",
-			"settings":
-			{
-				"buffer_size": 2193,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Level.cpp",
-			"settings":
-			{
-				"buffer_size": 9042,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Animation/Animator.cpp",
-			"settings":
-			{
-				"buffer_size": 5420,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Controllers/PlayerController.hpp",
-			"settings":
-			{
-				"buffer_size": 1442,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "src/Gameplay/Controllers/PlayerController.cpp",
 			"settings":
 			{
-				"buffer_size": 8249,
+				"buffer_size": 9675,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "bin/config.cfg",
+			"file": "/home/dominik/Desktop/PS4/list",
 			"settings":
 			{
-				"buffer_size": 86,
+				"buffer_size": 382,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/Geometry/StaticMesh.hpp",
-			"settings":
-			{
-				"buffer_size": 878,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/Geometry/SkinnedMesh.hpp",
-			"settings":
-			{
-				"buffer_size": 1126,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/MeshManager.cpp",
-			"settings":
-			{
-				"buffer_size": 887,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/Cloth.cpp",
-			"settings":
-			{
-				"buffer_size": 3535,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Controllers/SkeletonController.cpp",
-			"settings":
-			{
-				"buffer_size": 4279,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/MeshManager.hpp",
-			"settings":
-			{
-				"buffer_size": 758,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Render/Geometry/StaticMeshLoader.hpp",
-			"settings":
-			{
-				"buffer_size": 597,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/PhysicsSystem.hpp",
-			"settings":
-			{
-				"buffer_size": 2532,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/StaticBody.hpp",
-			"settings":
-			{
-				"buffer_size": 484,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/StaticBody.cpp",
-			"settings":
-			{
-				"buffer_size": 577,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/RigidBody.hpp",
-			"settings":
-			{
-				"buffer_size": 534,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Physics/RigidBody.cpp",
-			"settings":
-			{
-				"buffer_size": 789,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/Gameplay/Entities/Pickup.hpp",
-			"settings":
-			{
-				"buffer_size": 705,
 				"line_ending": "Unix"
 			}
 		}
@@ -934,11 +742,93 @@
 	],
 	"file_history":
 	[
-		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.cpp",
-		"/home/dominik/Desktop/Tower/bin/Meshes/cape.obj",
-		"/home/dominik/Desktop/Tower/src/Physics/Cloth.hpp",
+		"/home/dominik/Desktop/Tower/src/Animation/AnimationBundle.hpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/BasePass.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/BasePass.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMeshLoader.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.hpp",
+		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.hpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/ClothNode.hpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Static.vert",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Cloth.frag",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/CameraNode.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/ClothNode.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Material.hpp",
+		"/home/dominik/Desktop/Tower/src/Physics/PhysicsSystem.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Level.hpp",
 		"/home/dominik/Desktop/Tower/src/Physics/Cloth.cpp",
+		"/home/dominik/Desktop/Tower/src/Physics/Cloth.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMaterial.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleFramework/renderer/include/Renderer.h",
+		"/home/dominik/Desktop/Tower/src/Render/GraphRenderer.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/PlayerController.hpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SkinnedMeshNode.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleFramework/framework/include/SampleFilesystem.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleFramework/renderer/include/RendererLightDesc.h",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/LightEffect.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_ClothController.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animator.cpp",
+		"/home/dominik/Desktop/Tower/src/Animation/Animator.hpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.cpp",
+		"/home/dominik/Desktop/Tower/bin/Shaders/Flat.frag",
+		"/home/dominik/Desktop/Tower/src/Render/Material.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.hpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.hpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.h",
+		"/home/dominik/Desktop/Tower/bin/Maps/Level0.lua",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMeshLoader.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/MeshManager.cpp",
+		"/home/dominik/Desktop/Tower/bin/Materials/materials.json",
+		"/home/dominik/Desktop/Tower/src/State/SplashState.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneGraph.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/SceneNode.cpp",
+		"/home/dominik/Desktop/Tower/src/SceneGraph/MeshNode.cpp",
+		"/home/dominik/Desktop/Tower/src/Core/Random.cpp",
+		"/home/dominik/Desktop/Tower/src/Physics/CCTFilterCallback.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/VertexArray.cpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/StaticMesh.hpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_TerrainBuilder.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothSettings.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_PlatformBuilder.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Platform.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothPlatform.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Main.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothInputEventIds.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_FilterShader.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.h",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_CCT.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothJump.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothJump.h",
+		"/home/dominik/Desktop/Tower/src/State/State.hpp",
+		"/home/dominik/Desktop/Tower/src/State/StateStack.cpp",
+		"/home/dominik/Desktop/Tower/src/Application.cpp",
+		"/home/dominik/Desktop/Tower/src/State/SplashState.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/2D/Sprite.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/2D/Sprite.cpp",
+		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.hpp",
+		"/home/dominik/Desktop/Tower/src/Physics/RigidBody.cpp",
+		"/home/dominik/Desktop/Tower/src/Physics/RigidBody.hpp",
+		"/home/dominik/Desktop/Tower/src/Physics/StaticBody.cpp",
+		"/home/dominik/Desktop/Tower/src/Physics/StaticBody.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/MeshManager.hpp",
+		"/home/dominik/Desktop/Tower/src/Render/Geometry/SkinnedMesh.hpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
+		"/home/dominik/Desktop/Tower/bin/config.cfg",
+		"/home/dominik/Desktop/Tower/bin/Meshes/cape.obj",
 		"/home/dominik/Desktop/asea",
 		"/home/dominik/Desktop/nazi/nazi.cpp",
 		"/home/dominik/Desktop/nazi/nazilang2",
@@ -959,9 +849,6 @@
 		"/home/dominik/Desktop/nets",
 		"/home/dominik/Desktop/znajdowanie usterek w okablowaniu pionowym i pozio",
 		"/home/dominik/Desktop/PS4/list",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.cpp",
-		"/home/dominik/Desktop/Tower/src/Animation/Animator.hpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.cpp",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSampleApplication.cpp",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSampleApplication.h",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Picking.cpp",
@@ -978,90 +865,11 @@
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderBoxActor.h",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderCapsuleActor.cpp",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderCapsuleActor.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderClothActor.h",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderGridActor.cpp",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderGridActor.h",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMaterial.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMaterial.h",
 		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMeshActor.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMeshActor.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderParticleSystemActor.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderParticleSystemActor.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderPhysX3Debug.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderPhysX3Debug.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderSphereActor.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderSphereActor.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderTexture.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderTexture.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocator.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleAllocatorSDKClasses.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleArray.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleBaseInputEventIds.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCamera.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCamera.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCameraController.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCameraController.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCharacterHelpers.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleCharacterHelpers.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleConsole.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleConsole.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleInputMappingAsset.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleInputMappingAsset.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMain.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMouseFilter.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleMouseFilter.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SamplePreprocessor.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleRandomPrecomputed.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleRandomPrecomputed.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleStepper.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleStepper.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleUserInputDefines.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/SampleUtils.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Test.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestCloth.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothCollisionHelpers.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothCollisionHelpers.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothHelpers.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothHelpers.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestClothReadDataLock.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGeometryHelpers.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGeometryHelpers.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGroup.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestGroup.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestMotionGenerator.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/TestMotionGenerator.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/wavefront.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/wavefront.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/AcclaimLoader.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/AcclaimLoader.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/Dummy.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/InputEventBuffer.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/InputEventBuffer.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitter.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitter.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterPressure.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterPressure.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterRate.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleEmitterRate.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleFactory.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleFactory.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleSystem.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/ParticleSystem.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothCameraController.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_CCT.cpp",
-		"/home/dominik/Desktop/Tower/src/Gameplay/Controllers/SkeletonController.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_FilterShader.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothFlag.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothInputEventIds.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Main.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterClothPlatform.h",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_Platform.cpp",
-		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_PlatformBuilder.cpp"
+		"/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/RenderMeshActor.h"
 	],
 	"find":
 	{
@@ -1080,6 +888,80 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"samplerenderer",
+			"godir",
+			"dir",
+			"godir",
+			"move(",
+			".L",
+			"cloth",
+			"setCollisionSpheres",
+			"addCollisionCapsule",
+			"capsule",
+			"move(",
+			"move",
+			"setCollisionSphere",
+			"m_cape",
+			"m_fabric",
+			"index",
+			"isAnyMovementKey",
+			"RightAxis",
+			"rightAxis",
+			"idle",
+			";\n",
+			"setCollisionSphere",
+			"no",
+			"constraints",
+			"fall",
+			"0.08",
+			".L",
+			"sphereradius",
+			"vec3",
+			"x",
+			"0.1",
+			"0.2",
+			"m_lolo",
+			"updateNormals",
+			"m_cloth",
+			"move",
+			"m_flatShader",
+			"cloth",
+			"node",
+			"normals",
+			"noramlize",
+			"Cloth",
+			"verts",
+			"uv",
+			"}\n",
+			"faces",
+			"desc",
+			"meshDesc",
+			"Mesh",
+			"mesh",
+			"setupFilters",
+			"Random",
+			"m_particleSystem",
+			"m_manager",
+			"m_cctFilterCallback",
+			"cctFilterCallback",
+			"CCTFilterCallback",
+			"updaterendershape",
+			"mFaces",
+			"createFacesFromMeshDesc",
+			"1024",
+			"addClothNode",
+			"tof(",
+			"vertex",
+			"Vertex",
+			"ibo",
+			"dbo",
+			"vao",
+			"ent.",
+			"ent",
+			"MeshNode",
+			"renderactor",
+			"512",
+			"LoadingState",
 			"insert",
 			"posHash",
 			"hash",
@@ -1133,81 +1015,7 @@
 			"konneṇ",
 			"kommen",
 			"kennen",
-			"helfen",
-			"heißen",
-			"hangen",
-			"halten",
-			"haben",
-			"gewinnen",
-			"gehen",
-			"geben",
-			"fliegen",
-			"finden",
-			"fallen",
-			"fahren",
-			"essen",
-			"durfen",
-			"denken",
-			"bringen",
-			"brechen",
-			"bleiben",
-			"bitten",
-			"bieten",
-			"biegen",
-			"brochen",
-			"IST",
-			"HAT",
-			"<< file;",
-			"ist",
-			"hat",
-			" ist/hat",
-			"hat",
-			"schlagen",
-			"schlafen",
-			"schlagen",
-			"schlafen",
-			".\n",
-			"m_cape",
-			"nor",
-			"pos",
-			"34/1/1",
-			"vn 0.6670 0.7439 0.0411",
-			"vt 0.108839 0.748837",
-			"v 0.113123 1.747616 -0.082435",
-			"v 0.138486 1.747863 -0.014986",
-			"1",
-			"loadMesh",
-			"m_meshes",
-			"tte2",
-			"DaeCorrectionMatrix",
-			"m_matrixPalette",
-			"DaeCorrectionMatrix",
-			"cape",
-			"m_physics",
-			"4",
-			"65",
-			"25f",
-			"0.5",
-			"25",
-			"0.1f",
-			"));\n",
-			"0.5",
-			"getTolerancesScale",
-			"createClothFromMeshDesc",
-			"spheres",
-			"Spheres",
-			"spheres",
-			"createMeshFromObj",
-			"mCurrentBoneTransform",
-			"getFramePose",
-			"25f",
-			"0.5",
-			"Character",
-			"character",
-			"25",
-			"0",
-			"0.5",
-			"getFramePose"
+			"helfen"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1226,201 +1034,24 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleCharacterCloth/SampleCharacterCloth_ClothController.cpp",
+					"file": "src/Gameplay/Controllers/PlayerController.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12870,
+						"buffer_size": 9675,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4548,
-								4548
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2834.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 92028,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								76672,
-								76680
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 41629.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/dominik/Desktop/PhysX/PhysX-3.3-master/PhysXSDK/Samples/SampleBase/PhysXSample.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17831,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3239,
-								3239
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1285.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 23,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "src/Physics/PhysicsSystem.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9176,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6773,
-								6773
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "src/Animation/Animator.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1850,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1558,
-								1558
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 752.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/Gameplay/Level.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 513.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/Gameplay/Level.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9042,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2896,
-								2896
+								791,
+								791
 							]
 						],
 						"settings":
@@ -1431,507 +1062,39 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 399.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/Animation/Animator.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5420,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5322,
-								5322
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4123.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/Gameplay/Controllers/PlayerController.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1442,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1391,
-								1391
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 969.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/Gameplay/Controllers/PlayerController.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8249,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6962,
-								6962
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "bin/config.cfg",
+					"buffer": 1,
+					"file": "/home/dominik/Desktop/PS4/list",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 86,
+						"buffer_size": 382,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22,
-								26
+								169,
+								169
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "src/Render/Geometry/StaticMesh.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 878,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								454,
-								454
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 57.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "src/Render/Geometry/SkinnedMesh.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1126,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 524.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "src/Render/MeshManager.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 887,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								397,
-								397
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 81.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "src/Physics/Cloth.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3535,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								477,
-								477
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "src/Gameplay/Controllers/SkeletonController.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4279,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 399.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "src/Render/MeshManager.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 758,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "src/Render/Geometry/StaticMeshLoader.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 597,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								354,
-								354
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "src/Physics/PhysicsSystem.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2532,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2178,
-								2178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1037.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "src/Physics/StaticBody.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 484,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								86,
-								13
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 20,
-					"file": "src/Physics/StaticBody.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 577,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								53,
-								53
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "src/Physics/RigidBody.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 534,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								86,
-								86
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "src/Physics/RigidBody.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 789,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								206,
-								206
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 23,
-					"file": "src/Gameplay/Entities/Pickup.hpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 705,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								513,
-								513
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 20,
 					"type": "text"
 				}
 			]
@@ -1994,44 +1157,164 @@
 		"selected_items":
 		[
 			[
-				"staticm",
-				"src/Render/Geometry/StaticMesh.hpp"
+				"playercon",
+				"src/Gameplay/Controllers/PlayerController.cpp"
+			],
+			[
+				"basepa",
+				"src/Render/BasePass.cpp"
 			],
 			[
 				"",
-				"src/Render/Geometry/StaticMeshLoader.cpp"
-			],
-			[
-				"statimce",
-				"src/Render/Geometry/StaticMesh.hpp"
-			],
-			[
-				"level",
-				"src/Gameplay/Level.hpp"
-			],
-			[
-				"skeloncon",
-				"src/Gameplay/Controllers/SkeletonController.cpp"
-			],
-			[
-				"cloth",
 				"src/Physics/Cloth.cpp"
 			],
 			[
-				"placyon",
-				"src/Gameplay/Controllers/PlayerController.cpp"
+				"lightef",
+				"src/Gameplay/Entities/LightEffect.cpp"
 			],
 			[
 				"playcon",
 				"src/Gameplay/Controllers/PlayerController.cpp"
 			],
 			[
-				"meshman",
-				"src/Render/MeshManager.cpp"
+				"level",
+				"src/Gameplay/Level.hpp"
+			],
+			[
+				"camer",
+				"src/SceneGraph/CameraNode.cpp"
+			],
+			[
+				"graphre",
+				"src/Render/GraphRenderer.cpp"
+			],
+			[
+				"animator",
+				"src/Animation/Animator.cpp"
+			],
+			[
+				"clohtno",
+				"src/SceneGraph/ClothNode.cpp"
 			],
 			[
 				"cloht",
+				"src/Physics/Cloth.hpp"
+			],
+			[
+				"mater",
+				"src/Render/Material.cpp"
+			],
+			[
+				"phys",
+				"src/Physics/PhysicsSystem.hpp"
+			],
+			[
+				"skinmeno",
+				"src/SceneGraph/SkinnedMeshNode.cpp"
+			],
+			[
+				"cre",
+				"src/Gameplay/Entities/Creature.cpp"
+			],
+			[
+				"cloh",
+				"src/SceneGraph/ClothNode.hpp"
+			],
+			[
+				"meshma",
+				"src/Render/MeshManager.cpp"
+			],
+			[
+				"clothnod",
+				"src/SceneGraph/ClothNode.hpp"
+			],
+			[
+				"scneno",
+				"src/SceneGraph/SceneNode.cpp"
+			],
+			[
+				"clohtnod",
+				"src/SceneGraph/ClothNode.cpp"
+			],
+			[
+				"random",
+				"src/Core/Random.cpp"
+			],
+			[
+				"statime",
+				"src/Render/Geometry/StaticMeshLoader.cpp"
+			],
+			[
+				"cloth",
 				"src/Physics/Cloth.cpp"
+			],
+			[
+				"spla",
+				"src/State/SplashState.cpp"
+			],
+			[
+				"playrecon",
+				"src/Gameplay/Controllers/PlayerController.cpp"
+			],
+			[
+				"scengr",
+				"src/SceneGraph/SceneGraph.cpp"
+			],
+			[
+				"verta",
+				"src/Render/VertexArray.cpp"
+			],
+			[
+				"saticme",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"statimel",
+				"src/Render/Geometry/StaticMeshLoader.cpp"
+			],
+			[
+				"statimeh",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"staticmeh",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"meshno",
+				"src/SceneGraph/MeshNode.cpp"
+			],
+			[
+				"sprite",
+				"src/Render/2D/Sprite.hpp"
+			],
+			[
+				"spr",
+				"src/Render/2D/Sprite.cpp"
+			],
+			[
+				"app",
+				"src/Application.cpp"
+			],
+			[
+				"staticm",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"statimce",
+				"src/Render/Geometry/StaticMesh.hpp"
+			],
+			[
+				"skeloncon",
+				"src/Gameplay/Controllers/SkeletonController.cpp"
+			],
+			[
+				"placyon",
+				"src/Gameplay/Controllers/PlayerController.cpp"
+			],
+			[
+				"meshman",
+				"src/Render/MeshManager.cpp"
 			],
 			[
 				"compnent",
@@ -2048,10 +1331,6 @@
 			[
 				"staticmehloa",
 				"src/Render/Geometry/StaticMeshLoader.cpp"
-			],
-			[
-				"animator",
-				"src/Animation/Animator.cpp"
 			],
 			[
 				"aniamtro",
@@ -2072,14 +1351,6 @@
 			[
 				"playcc",
 				"src/Gameplay/Controllers/PlayerController.cpp"
-			],
-			[
-				"cloh",
-				"src/Physics/Cloth.hpp"
-			],
-			[
-				"cre",
-				"src/Gameplay/Entities/Creature.cpp"
 			],
 			[
 				"rigd",
@@ -2114,10 +1385,6 @@
 				"src/Gameplay/Controllers/SkeletonController.cpp"
 			],
 			[
-				"phys",
-				"src/Physics/PhysicsSystem.hpp"
-			],
-			[
 				"pick",
 				"src/Gameplay/Entities/Pickup.cpp"
 			],
@@ -2132,10 +1399,6 @@
 			[
 				"lelv",
 				"src/Gameplay/Level.cpp"
-			],
-			[
-				"scneno",
-				"src/SceneGraph/SceneNode.cpp"
 			],
 			[
 				"lev",
@@ -2182,10 +1445,6 @@
 				"src/EventSystem/GameEvent.hpp"
 			],
 			[
-				"playercon",
-				"src/Gameplay/Controllers/PlayerController.cpp"
-			],
-			[
 				"plays",
 				"src/State/PlayingState.cpp"
 			],
@@ -2198,16 +1457,8 @@
 				"src/EventSystem/GameEvent.cpp"
 			],
 			[
-				"scengr",
-				"src/SceneGraph/SceneGraph.cpp"
-			],
-			[
 				"leve",
 				"src/Gameplay/Level.hpp"
-			],
-			[
-				"graphre",
-				"src/Render/GraphRenderer.cpp"
 			],
 			[
 				"skeleont",
@@ -2256,10 +1507,6 @@
 			[
 				"rendersy",
 				"src/EntitySystem/Systems/RenderSystem.cpp"
-			],
-			[
-				"basepa",
-				"src/Render/BasePass.cpp"
 			],
 			[
 				"leel",
@@ -2332,10 +1579,6 @@
 			[
 				"creaturcon",
 				"src/Gameplay/CreatureController.hpp"
-			],
-			[
-				"skinmeno",
-				"src/SceneGraph/SkinnedMeshNode.cpp"
 			],
 			[
 				"skinemn",
@@ -2424,86 +1667,6 @@
 			[
 				"itemmana",
 				"src/Gameplay/ItemManager.cpp"
-			],
-			[
-				"playeocn",
-				"src/Gameplay/PlayerController.cpp"
-			],
-			[
-				"gamee",
-				"src/EventSystem/GameEvent.cpp"
-			],
-			[
-				"hael",
-				"Shaders/Interface/HudHealth.sha"
-			],
-			[
-				"spriet",
-				"src/Render/2D/Sprite.cpp"
-			],
-			[
-				"rend2",
-				"src/Render/Renderer2D.cpp"
-			],
-			[
-				"rende",
-				"src/Render/Renderer2D.cpp"
-			],
-			[
-				"sprite",
-				"src/Render/2D/Sprite.cpp"
-			],
-			[
-				"shader",
-				"src/Render/Shader.hpp"
-			],
-			[
-				"render2",
-				"src/Render/Renderer2D.cpp"
-			],
-			[
-				"spri",
-				"src/Render/2D/Sprite.cpp"
-			],
-			[
-				"spir.c",
-				"src/Render/2D/Sprite.cpp"
-			],
-			[
-				"huds",
-				"Shaders/Interface/Hud.sha"
-			],
-			[
-				"lever",
-				"src/Gameplay/Lever.cpp"
-			],
-			[
-				"graph",
-				"src/Render/GraphRenderer.cpp"
-			],
-			[
-				"framebuf",
-				"src/Render/Framebuffer.cpp"
-			],
-			[
-				"garphre",
-				"src/Render/GraphRenderer.cpp"
-			],
-			[
-				"base",
-				"src/Render/BasePass.cpp"
-			],
-			[
-				"physis",
-				"src/Physics/PhysicsSystem.hpp"
-			],
-			[
-				"intefac",
-				"src/Interface/Interface.cpp"
-			],
-			[
-				"interfac",
-				"src/Interface/Interface.cpp"
 			]
 		],
 		"width": 0.0

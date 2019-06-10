@@ -39,7 +39,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
-    m_cape = m_context->physSys->addCloth("cape.obj");
+    m_cape = m_context->physSys->addCloth("cape.dae");
 
     for (auto i = 0; i < 6; i++)
     {
@@ -123,15 +123,9 @@ void PlayerController::update()
 
     switch (m_state)
     {
-        case State::Idle:
-            idle();
-            break;
-        case State::Move:
-            move();
-            break;
-        case State::Attack:
-            attack();
-            break;
+        case State::Idle: idle(); break;
+        case State::Move: move(); break;
+        case State::Attack: attack(); break;
     }
 
     m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
