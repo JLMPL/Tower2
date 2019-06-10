@@ -135,5 +135,5 @@ void main()
     final += calcPointLight(uPointLights[2], normal, texture, toCam);
     final += calcPointLight(uPointLights[3], normal, texture, toCam);
 
-    outColor = correctGammaAndTonemap(final) * fragColor;
+    outColor = correctGammaAndTonemap(final);// * fragColor;
 }

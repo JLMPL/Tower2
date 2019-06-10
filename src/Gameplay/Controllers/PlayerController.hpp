@@ -71,8 +71,10 @@ private:
     MeshNode* m_sord = nullptr;
     FlareNode* m_light = nullptr;
     ClothNode* m_capeNode = nullptr;
+    ClothNode* m_capeNode2 = nullptr;
 
     phys::Cloth* m_cape = nullptr;
+    phys::Cloth* m_cape2 = nullptr;
     phys::Cloth::Sphere m_spheres[6];
 
     f32 m_verticalVelocity = 0;

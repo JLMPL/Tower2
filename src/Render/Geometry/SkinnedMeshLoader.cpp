@@ -29,14 +29,16 @@ i8 SkinnedMeshLoader::addJointsToSkeleton(SkinnedMesh& mesh, const aiNode& node)
     return jointIndex;
 }
 
-void SkinnedMeshLoader::addMeshesAndJoints(SkinnedMesh& mesh, const aiScene& scene)
+void SkinnedMeshLoader::addMeshesAndJoints(SkinnedMesh& mesh, const aiScene& scene, bool cloth)
 {
     for (u32 i = 0; i < scene.mNumMeshes; i++)
     {
         aiMesh* inMesh = scene.mMeshes[i];
 
         SkinnedMesh::Entry entry;
-        entry.weightsData.resize(inMesh->mNumVertices);
+
+        std::vector<f32> hashes;
+        m_redirect.resize(inMesh->mNumVertices);
 
         for (u32 i = 0; i < inMesh->mNumVertices; i++)
         {
@@ -56,8 +58,36 @@ void SkinnedMeshLoader::addMeshesAndJoints(SkinnedMesh& mesh, const aiScene& sce
             else
                 vert.uv = vec2(0);
 
-            entry.vertices.push_back(vert);
+            if (!cloth)
+                entry.vertices.push_back(vert);
+            else
+            {
+                bool isUnique = true;
+
+                for (auto j = 0; j < hashes.size(); j++)
+                {
+                    f32& storedHash = hashes[j];
+
+                    f32 vertHash = vert.getHash();
+
+                    if (vertHash == storedHash)
+                    {
+                        m_redirect[i] = j;
+                        isUnique = false;
+                        break;
+                    }
+                }
+
+                if (isUnique)
+                {
+                    entry.vertices.push_back(vert);
+                    hashes.push_back(vert.getHash());
+                    m_redirect[i] = entry.vertices.size()-1;
+                }
+            }
         }
+
+        entry.weightsData.resize(entry.vertices.size());
 
         u32 materialIndex = inMesh->mMaterialIndex;
 
@@ -73,9 +103,18 @@ void SkinnedMeshLoader::addMeshesAndJoints(SkinnedMesh& mesh, const aiScene& sce
             aiFace face = inMesh->mFaces[i];
             assert(face.mNumIndices == 3);
 
-            entry.indices.push_back(face.mIndices[0]);
-            entry.indices.push_back(face.mIndices[1]);
-            entry.indices.push_back(face.mIndices[2]);
+            if (cloth)
+            {
+                entry.indices.push_back(m_redirect[face.mIndices[0]]);
+                entry.indices.push_back(m_redirect[face.mIndices[1]]);
+                entry.indices.push_back(m_redirect[face.mIndices[2]]);
+            }
+            else
+            {
+                entry.indices.push_back(face.mIndices[0]);
+                entry.indices.push_back(face.mIndices[1]);
+                entry.indices.push_back(face.mIndices[2]);
+            }
         }
 
         mesh.entries.push_back(entry);
@@ -88,7 +127,7 @@ void SkinnedMeshLoader::addMeshesAndJoints(SkinnedMesh& mesh, const aiScene& sce
     }
 }
 
-void SkinnedMeshLoader::doTheShitWithWeights(SkinnedMesh& mesh, const aiMesh& inMesh, SkinnedMesh::Entry& entry)
+void SkinnedMeshLoader::doTheShitWithWeights(SkinnedMesh& mesh, const aiMesh& inMesh, SkinnedMesh::Entry& entry, bool cloth)
 {
     for (u32 i = 0; i < mesh.skeleton.joints.size(); i++)
     {
@@ -108,7 +147,10 @@ void SkinnedMeshLoader::doTheShitWithWeights(SkinnedMesh& mesh, const aiMesh& in
         for (u32 j = 0; j < bone->mNumWeights; j++)
         {
             u32 vertexIndex = bone->mWeights[j].mVertexId;
-            entry.weightsData[vertexIndex].addData(i, bone->mWeights[j].mWeight);
+            if (cloth)
+                entry.weightsData[m_redirect[vertexIndex]].addData(i, bone->mWeights[j].mWeight);
+            else
+                entry.weightsData[vertexIndex].addData(i, bone->mWeights[j].mWeight);
         }
     }
 }
@@ -133,10 +175,10 @@ void SkinnedMeshLoader::loadFromFile(SkinnedMesh& mesh, const std::string& path,
     mesh.name = path;
 
     addJointsToSkeleton(mesh, *scene->mRootNode);
-    addMeshesAndJoints(mesh, *scene);
+    addMeshesAndJoints(mesh, *scene, cloth);
 
     for (u32 i = 0; i < scene->mNumMeshes; i++)
-        doTheShitWithWeights(mesh, *scene->mMeshes[i], mesh.entries[i]);
+        doTheShitWithWeights(mesh, *scene->mMeshes[i], mesh.entries[i], cloth);
 
     for (auto& ent : mesh.entries)
         genBufferObjects(ent);

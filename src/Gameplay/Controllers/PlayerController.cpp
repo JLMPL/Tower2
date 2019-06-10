@@ -40,6 +40,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
     m_cape = m_context->physSys->addCloth("cape.dae", &m_cre->getAnimator());
+    m_cape2 = m_context->physSys->addCloth("cape2.dae", &m_cre->getAnimator());
 
     for (auto i = 0; i < 6; i++)
     {
@@ -55,6 +56,9 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
     m_cre->getSkinMeshNode()->attachNode(m_capeNode);
+
+    m_capeNode2 = m_context->sceneGraph->addClothNode(m_cape2);
+    m_cre->getSkinMeshNode()->attachNode(m_capeNode2);
 
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
@@ -152,8 +156,9 @@ void PlayerController::update()
 
         m_cape->setCollisionSpheres(&m_spheres[0], 6);
     }
-    // m_context->physSys->testo(m_cre->getTransform());
+
     m_cape->setTargetTransform(m_cre->getTransform());
+    m_cape2->setTargetTransform(m_cre->getTransform());
 
     // if (m_cre->getAnimator().isRootMotion())
     // {
