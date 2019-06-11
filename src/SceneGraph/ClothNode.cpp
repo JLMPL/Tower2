@@ -24,12 +24,10 @@ void ClothNode::updateGeometry()
 
 void ClothNode::updatePositions()
 {
-    m_cloth->lockParticleData();
     for (auto i = 0; i < m_cloth->getVertexCount(); i++)
     {
         m_vertices[i].pos = m_cloth->getVertices()[i];
     }
-    m_cloth->unlockParticleData();
 }
 
 void ClothNode::updateNormals()

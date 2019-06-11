@@ -23,16 +23,6 @@ class Cloth
 {
 public:
     using Ptr = std::unique_ptr<Cloth>;
-
-    struct Constraint
-    {
-        vec3 pos;
-        f32 rad;
-
-        Constraint() : pos(vec3(0)), rad(0) {}
-        Constraint(const vec3& p, f32 r) : pos(p), rad(r) {}
-    };
-
     using Sphere = physx::PxClothCollisionSphere;
 
     Cloth() = default;
@@ -46,9 +36,6 @@ public:
     void setCollisionSpheres(const Sphere* spheres, u32 numSpheres);
     void addCapsule(i32 a, i32 b);
 
-    void lockParticleData();
-    void unlockParticleData();
-
     u32 getVertexCount();
     vec3* getVertices();
 
@@ -56,19 +43,15 @@ public:
     physx::PxCloth* getClothActor() const;
 
 private:
-    physx::PxClothFabric*  m_fabric = nullptr;
-    physx::PxCloth*        m_cloth = nullptr;
-    physx::PxClothMeshDesc m_meshDesc;
+    physx::PxClothFabric*                   m_fabric = nullptr;
+    physx::PxCloth*                         m_cloth = nullptr;
 
     physx::PxClothParticleMotionConstraint* m_constraints = nullptr;
-    vec3* m_vertices = nullptr;
+    vec3*                                   m_vertices = nullptr;
 
-    physx::PxClothParticleData* m_readData = nullptr;
-
-    anim::Animator* m_animator = nullptr;
-    gfx::SkinnedMesh* m_mesh = nullptr;
-    u32 m_spawnTimer = 0;
-
+    anim::Animator*                         m_animator = nullptr;
+    gfx::SkinnedMesh*                       m_mesh = nullptr;
+    u32                                     m_spawnTimer = 0;
 };
 
 }

@@ -7,7 +7,7 @@
 namespace phys
 {
 
-constexpr u32 ClothProtectionFrames = 8;
+constexpr u32 ClothProtectionFrames = 30;
 
 Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* animer) :
     m_animator(animer)
@@ -24,22 +24,23 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* an
             5));
     }
 
-    m_meshDesc.points.data = &verts[0];
-    m_meshDesc.points.count = verts.size();
-    m_meshDesc.points.stride = sizeof(PxClothParticle);
+    physx::PxClothMeshDesc meshDesc;
+    meshDesc.points.data = &verts[0];
+    meshDesc.points.count = verts.size();
+    meshDesc.points.stride = sizeof(PxClothParticle);
 
-    m_meshDesc.invMasses.data = &verts[0].invWeight;
-    m_meshDesc.invMasses.count = verts.size();
-    m_meshDesc.invMasses.stride = sizeof(PxClothParticle);
+    meshDesc.invMasses.data = &verts[0].invWeight;
+    meshDesc.invMasses.count = verts.size();
+    meshDesc.invMasses.stride = sizeof(PxClothParticle);
 
-    m_meshDesc.triangles.data = &m_mesh->entries[0].indices[0];
-    m_meshDesc.triangles.count = m_mesh->entries[0].indices.size()/3;
-    m_meshDesc.triangles.stride = sizeof(u32) * 3;
+    meshDesc.triangles.data = &m_mesh->entries[0].indices[0];
+    meshDesc.triangles.count = m_mesh->entries[0].indices.size()/3;
+    meshDesc.triangles.stride = sizeof(u32) * 3;
 
-    if (!m_meshDesc.isValid())
+    if (!meshDesc.isValid())
         printf("NOT VALID!\n");
 
-    PxClothMeshQuadifier quadifier(m_meshDesc);
+    PxClothMeshQuadifier quadifier(meshDesc);
     m_fabric = PxClothFabricCreate(*phys, quadifier.getDescriptor(), PxVec3(0, -1, 0));
 
     PxTransform pose = PxTransform(PxVec3(1,0.5,0));
@@ -55,10 +56,10 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* an
     m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
     m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
-    m_cloth->setSelfCollisionDistance(0.002f);
-    m_cloth->setSelfCollisionStiffness(0.5f);
+    // m_cloth->setSelfCollisionDistance(0.002f);
+    // m_cloth->setSelfCollisionStiffness(0.5f);
 
-    m_cloth->setLinearInertiaScale(PxVec3(0.001f, 0.01f, 0.001f));
+    m_cloth->setLinearInertiaScale(PxVec3(0.001f, 0.1f, 0.001f));
 
     m_cloth->setAngularInertiaScale(PxVec3(0.75));
 
@@ -86,7 +87,6 @@ void Cloth::skin()
         m_spawnTimer = ClothProtectionFrames + 1;
 
     auto jTrs = m_animator->getMatrixPalette();
-    std::vector<Constraint> consts(m_mesh->entries[0].vertices.size());
 
     auto& skinData = m_mesh->entries[0].weightsData;
     auto& vertData = m_mesh->entries[0].vertices;
@@ -106,6 +106,15 @@ void Cloth::skin()
     }
 
     m_cloth->setMotionConstraints(&m_constraints[0]);
+
+    auto readData = m_cloth->lockParticleData();
+
+    for (auto i = 0; i < getVertexCount(); i++)
+    {
+        m_vertices[i] = core::conv::toGlm(readData->particles[i].pos);
+    }
+
+    readData->unlock();
 }
 
 void Cloth::setCollisionSpheres(const Sphere* spheres, u32 numSpheres)
@@ -118,20 +127,6 @@ void Cloth::addCapsule(i32 a, i32 b)
     m_cloth->addCollisionCapsule(a, b);
 }
 
-void Cloth::lockParticleData()
-{
-    m_readData = m_cloth->lockParticleData();
-}
-
-void Cloth::unlockParticleData()
-{
-    if (m_readData)
-    {
-        m_readData->unlock();
-        m_readData = nullptr;
-    }
-}
-
 u32 Cloth::getVertexCount()
 {
     m_cloth->getNbParticles();
@@ -139,11 +134,6 @@ u32 Cloth::getVertexCount()
 
 vec3* Cloth::getVertices()
 {
-    for (auto i = 0; i < getVertexCount(); i++)
-    {
-        m_vertices[i] = core::conv::toGlm(m_readData->particles[i].pos);
-    }
-
     return m_vertices;
 }
 
