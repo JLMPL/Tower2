@@ -4,7 +4,7 @@
 namespace gfx
 {
     class StaticMesh;
-    class SkinnedMesh;
+    class Mesh;
     class GraphRenderer;
 };
 

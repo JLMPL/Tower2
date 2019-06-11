@@ -5,7 +5,7 @@
 namespace gfx
 {
     class Texture;
-    class StaticMesh;
+    class Mesh;
     class Material;
 }
 
@@ -30,7 +30,7 @@ public:
     Type                    m_type;
 
     const gfx::Texture*     m_image = nullptr;
-    const gfx::StaticMesh*  m_mesh = nullptr;
+    const gfx::Mesh*  m_mesh = nullptr;
     const gfx::Material*    m_material = nullptr;
 
     std::string             m_name;

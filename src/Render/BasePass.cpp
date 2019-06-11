@@ -4,8 +4,7 @@
 #include "SceneGraph/SkinnedMeshNode.hpp"
 #include "SceneGraph/FlareNode.hpp"
 #include "SceneGraph/ClothNode.hpp"
-#include "Geometry/StaticMesh.hpp"
-#include "Geometry/SkinnedMesh.hpp"
+#include "Geometry/Mesh.hpp"
 #include "Material.hpp"
 #include "MaterialManager.hpp"
 

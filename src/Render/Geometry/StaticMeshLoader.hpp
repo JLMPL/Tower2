@@ -1,6 +1,6 @@
 #pragma once
 #include "Core/Math3D.hpp"
-#include "Render/Geometry/StaticMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 #include <vector>
 #include <string>
 
@@ -16,12 +16,12 @@ public:
     StaticMeshLoader() = default;
     ~StaticMeshLoader() = default;
 
-    void loadFromFile(StaticMesh& mesh, const std::string& path, bool cloth = false);
+    void loadFromFile(Mesh& mesh, const std::string& path, bool cloth = false);
 
 private:
-    void loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
-    void loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
-    void setupBuffers(StaticMesh::Entry& ent);
+    void loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
+    void loadClothMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae);
+    void setupBuffers(Mesh::Entry& ent);
 
 private:
 };

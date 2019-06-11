@@ -4,7 +4,7 @@
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
-#include "Render/Geometry/StaticMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 #include "Render/GraphRenderer.hpp"
 #include "Render/MeshManager.hpp"
 #include "SceneGraph/CameraNode.hpp"

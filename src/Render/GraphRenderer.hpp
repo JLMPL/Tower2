@@ -13,7 +13,7 @@ struct Light;
 struct Material;
 
 class Material;
-class SkinnedMesh;
+class Mesh;
 
 class GraphRenderer
 {

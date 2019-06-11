@@ -1,16 +1,16 @@
 #include "MeshNode.hpp"
 
-MeshNode::MeshNode(gfx::StaticMesh* mesh) :
+MeshNode::MeshNode(gfx::Mesh* mesh) :
     m_mesh(mesh)
 {
 }
 
-void MeshNode::setMesh(gfx::StaticMesh* mesh)
+void MeshNode::setMesh(gfx::Mesh* mesh)
 {
     m_mesh = mesh;
 }
 
-gfx::StaticMesh* MeshNode::getMesh() const
+gfx::Mesh* MeshNode::getMesh() const
 {
     return m_mesh;
 }

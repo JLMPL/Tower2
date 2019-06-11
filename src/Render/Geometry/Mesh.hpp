@@ -31,7 +31,7 @@ struct VertexWeightData
     }
 };
 
-struct SkinVertex
+struct Vertex
 {
     vec3 pos;
     vec3 normal;
@@ -48,11 +48,11 @@ struct SkinVertex
 }
 };
 
-struct SkinnedMesh
+struct Mesh
 {
     struct Entry
     {
-        std::vector<SkinVertex>       vertices;
+        std::vector<Vertex>           vertices;
         std::vector<VertexWeightData> weightsData;
         std::vector<u32>              indices;
 

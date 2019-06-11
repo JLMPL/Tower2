@@ -1,8 +1,8 @@
 #include "SkinnedMeshNode.hpp"
 #include "Animation/AnimationSystem.hpp"
-#include "Render/Geometry/SkinnedMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 
-SkinnedMeshNode::SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* mesh, const std::string& bundle) :
+SkinnedMeshNode::SkinnedMeshNode(anim::AnimationSystem* sys, gfx::Mesh* mesh, const std::string& bundle) :
     m_mesh(mesh)
 {
     m_anim = sys->addAnimator(&m_mesh->skeleton, bundle);
@@ -33,7 +33,7 @@ i8 SkinnedMeshNode::getJointIndex(const std::string& name)
     return m_mesh->skeleton.findJointIndex(name.c_str());
 }
 
-gfx::SkinnedMesh* SkinnedMeshNode::getMesh() const
+gfx::Mesh* SkinnedMeshNode::getMesh() const
 {
     return m_mesh;
 }

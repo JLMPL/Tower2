@@ -3,7 +3,7 @@
 
 namespace gfx
 {
-    class SkinnedMesh;
+    class Mesh;
 }
 
 namespace anim
@@ -16,7 +16,7 @@ class SkinnedMeshNode : public SceneNode
 {
 public:
     SkinnedMeshNode() = default;
-    SkinnedMeshNode(anim::AnimationSystem* sys, gfx::SkinnedMesh* mesh, const std::string& bundle);
+    SkinnedMeshNode(anim::AnimationSystem* sys, gfx::Mesh* mesh, const std::string& bundle);
     ~SkinnedMeshNode() = default;
 
     void calcsUsingGlobal() override final;
@@ -25,7 +25,7 @@ public:
     void attachNodeToJoint(const std::string& joint, SceneNode* node);
     i8 getJointIndex(const std::string& name);
 
-    gfx::SkinnedMesh* getMesh() const;
+    gfx::Mesh* getMesh() const;
     anim::Animator* getAnimator() const;
 
     i32 getNumJoints() const;
@@ -34,7 +34,7 @@ public:
     Type getType() const override final;
 
 private:
-    gfx::SkinnedMesh* m_mesh = nullptr;
+    gfx::Mesh* m_mesh = nullptr;
     anim::Animator* m_anim = nullptr;
 
     struct JointChild

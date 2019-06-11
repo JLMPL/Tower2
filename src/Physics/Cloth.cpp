@@ -142,7 +142,7 @@ void Cloth::setTargetTransform(const mat4& pos)
     m_cloth->setTargetPose(core::conv::toPx(pos));
 }
 
-gfx::SkinnedMesh* Cloth::getMesh() const
+gfx::Mesh* Cloth::getMesh() const
 {
     return m_mesh;
 }

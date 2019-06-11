@@ -1,7 +1,6 @@
 #pragma once
 #include "SceneNode.hpp"
-#include "Render/Geometry/StaticMesh.hpp"
-#include "Render/Geometry/SkinnedMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 #include "Render/VertexArray.hpp"
 #include "Render/ArrayBuffer.hpp"
 
@@ -37,9 +36,9 @@ private:
 
 private:
     phys::Cloth* m_cloth = nullptr;
-    gfx::SkinnedMesh* m_mesh = nullptr;
+    gfx::Mesh* m_mesh = nullptr;
 
-    std::vector<gfx::SkinVertex> m_vertices;
+    std::vector<gfx::Vertex> m_vertices;
 
     gfx::VertexArray m_vao;
     gfx::ArrayBuffer m_dbo;

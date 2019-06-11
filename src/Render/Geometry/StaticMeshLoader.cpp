@@ -12,9 +12,9 @@
 namespace gfx
 {
 
-void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
+void StaticMeshLoader::loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
-    StaticMesh::Entry entry;
+    Mesh::Entry entry;
 
     for (u32 i = 0; i < inMesh.mNumVertices; i++)
     {
@@ -68,9 +68,9 @@ void StaticMeshLoader::loadMesh(StaticMesh& mesh, const aiScene& scene, const ai
     mesh.entries.push_back(entry);
 }
 
-void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
+void StaticMeshLoader::loadClothMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
-    StaticMesh::Entry entry;
+    Mesh::Entry entry;
 
     std::vector<f32> hashes;
     std::vector<i32> redirect(inMesh.mNumVertices);
@@ -146,7 +146,7 @@ void StaticMeshLoader::loadClothMesh(StaticMesh& mesh, const aiScene& scene, con
     mesh.entries.push_back(entry);
 }
 
-void StaticMeshLoader::setupBuffers(StaticMesh::Entry& ent)
+void StaticMeshLoader::setupBuffers(Mesh::Entry& ent)
 {
     ent.vao.init();
     ent.vao.setIndexNumber(ent.indices.size());
@@ -172,7 +172,7 @@ void StaticMeshLoader::setupBuffers(StaticMesh::Entry& ent)
     ent.ibo.unbind();
 }
 
-void StaticMeshLoader::loadFromFile(StaticMesh& mesh, const std::string& path, bool cloth)
+void StaticMeshLoader::loadFromFile(Mesh& mesh, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),

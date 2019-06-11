@@ -3,21 +3,21 @@
 
 namespace gfx
 {
-    class StaticMesh;
+    class Mesh;
 }
 
 class MeshNode : public SceneNode
 {
 public:
     MeshNode() = default;
-    MeshNode(gfx::StaticMesh* mesh);
+    MeshNode(gfx::Mesh* mesh);
     ~MeshNode() = default;
 
-    void setMesh(gfx::StaticMesh* mesh);
-    gfx::StaticMesh* getMesh() const;
+    void setMesh(gfx::Mesh* mesh);
+    gfx::Mesh* getMesh() const;
 
     Type getType() const override final;
 
 private:
-    gfx::StaticMesh* m_mesh = nullptr;
+    gfx::Mesh* m_mesh = nullptr;
 };

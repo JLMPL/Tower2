@@ -1,5 +1,5 @@
 #include "ClothNode.hpp"
-#include "Render/Geometry/StaticMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 #include "Physics/Cloth.hpp"
 
 ClothNode::ClothNode(phys::Cloth* cloth) :

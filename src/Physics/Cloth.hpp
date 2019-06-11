@@ -13,7 +13,7 @@ namespace anim
 namespace gfx
 {
     // struct StaticMesh;
-    struct SkinnedMesh;
+    struct Mesh;
 }
 
 namespace phys
@@ -39,7 +39,7 @@ public:
     u32 getVertexCount();
     vec3* getVertices();
 
-    gfx::SkinnedMesh* getMesh() const;
+    gfx::Mesh* getMesh() const;
     physx::PxCloth* getClothActor() const;
 
 private:
@@ -50,7 +50,7 @@ private:
     vec3*                                   m_vertices = nullptr;
 
     anim::Animator*                         m_animator = nullptr;
-    gfx::SkinnedMesh*                       m_mesh = nullptr;
+    gfx::Mesh*                       m_mesh = nullptr;
     u32                                     m_spawnTimer = 0;
 };
 

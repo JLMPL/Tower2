@@ -6,9 +6,9 @@
 #include "SceneGraph/CameraNode.hpp"
 #include "SceneGraph/LightNode.hpp"
 #include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/SkinnedMeshNode.hpp"
-#include "SceneGraph/FlareNode.hpp"
 #include "SceneGraph/MeshNode.hpp"
+#include "SceneGraph/FlareNode.hpp"
+#include "SceneGraph/SkinnedMeshNode.hpp"
 
 SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)

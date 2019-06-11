@@ -1,7 +1,7 @@
 #include "RenderSystem.hpp"
 #include "EntitySystem/Scene.hpp"
 #include "EntitySystem/Components.hpp"
-#include "Render/Geometry/StaticMesh.hpp"
+#include "Render/Geometry/Mesh.hpp"
 
 namespace ecs
 {

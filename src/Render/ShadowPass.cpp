@@ -1,6 +1,5 @@
 #include "ShadowPass.hpp"
-#include "Geometry/StaticMesh.hpp"
-#include "Geometry/SkinnedMesh.hpp"
+#include "Geometry/Mesh.hpp"
 #include "SceneGraph/CameraNode.hpp"
 #include "SceneGraph/LightNode.hpp"
 #include "SceneGraph/MeshNode.hpp"
