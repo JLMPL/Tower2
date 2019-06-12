@@ -15,7 +15,7 @@ namespace gfx
     class Renderer2D;
 }
 
-class CameraNode;
+class RenderScene;
 struct GameEvent;
 
 namespace ui
@@ -24,7 +24,7 @@ namespace ui
 class HeadsUpDisplay
 {
 public:
-    void init(const CameraNode& camera);
+    void init(RenderScene& scene);
     void update();
     void draw();
 
@@ -56,7 +56,7 @@ private:
     f32 m_healthPerc = 0.5f;
     f32 m_manaPerc = 0.5f;
 
-    const CameraNode* m_camera = nullptr;
+    RenderScene* m_renderScene = nullptr;
 
     bool m_visible = true;
 

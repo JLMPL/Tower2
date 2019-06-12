@@ -2,8 +2,8 @@
 #include "Core/Timer.hpp"
 #include "Gameplay/Entity.hpp"
 
-class SceneGraph;
-class SceneNode;
+class RenderLight;
+class RenderFlare;
 class Creature;
 struct GameEvent;
 
@@ -18,8 +18,8 @@ public:
     Type getType() const override final;
 
 private:
-    SceneNode* m_light = nullptr;
-    SceneNode* m_flare = nullptr;
+    RenderLight* m_light = nullptr;
+    RenderFlare* m_flare = nullptr;
 
     Entity* m_owner = nullptr;
 

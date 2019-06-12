@@ -1,5 +1,5 @@
 #pragma once
-#include "SceneGraph/SceneGraph.hpp"
+#include "Render/Scene/RenderScene.hpp"
 #include "Framebuffer.hpp"
 
 namespace gfx
@@ -12,7 +12,7 @@ public:
     ~RenderPass() = default;
 
     virtual void init() {}
-    virtual void execute(SceneGraph& graph) {}
+    virtual void execute(RenderScene& scene) {}
 
     virtual GLuint getRender() const;
 

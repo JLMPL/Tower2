@@ -6,26 +6,25 @@
 #include "Entities/Lever.hpp"
 #include "Entities/Pickup.hpp"
 #include "Entities/LightEffect.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "Script/Lua.hpp"
-#include "SceneGraph/MeshNode.hpp"
+#include "Render/Scene/RenderMesh.hpp"
 #include <SDL2/SDL.h>
-
-// #include "SceneGraph/LightNode.hpp"
 
 void Level::initFromScript(const std::string& file)
 {
     m_physSys.init();
 
-    m_lvlContext.level = this;
-    m_lvlContext.sceneGraph = &m_sceneGraph;
-    m_lvlContext.eventSys   = &m_eventSys;
-    m_lvlContext.animSys    = &m_animSys;
-    m_lvlContext.physSys    = &m_physSys;
+    m_lvlContext.level       = this;
+    m_lvlContext.renderScene = &m_renderScene;
+    m_lvlContext.eventSys    = &m_eventSys;
+    m_lvlContext.animSys     = &m_animSys;
+    m_lvlContext.physSys     = &m_physSys;
+    m_lvlContext.camera      = &m_camera;
 
-    m_sceneGraph.init(&m_lvlContext);
+    m_hud.init(m_renderScene);
 
     lua::state state;
     state.open_libraries(sol::lib::base);
@@ -35,16 +34,9 @@ void Level::initFromScript(const std::string& file)
     lua::function init = state["initializeLevel"];
     init();
 
-    // auto light = m_sceneGraph.addLightNode();
-    // auto li = light->as<LightNode>();
-    // li->setColor(vec3(0,0,0));
-    // li->setShadowCasting(false);
-    // li->setPosition(vec3(0,0,0));
-
-    // m_sceneGraph.getRoot()->attachNode(light);
+    m_cameraCtrl.init(&m_lvlContext);
 
     addLightEffect(vec3(0,3,0));
-    m_hud.init(m_sceneGraph.getCamera());
 }
 
 void Level::uploadFunctions(lua::state& state)
@@ -105,8 +97,7 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
         m_physSys.addTriangleMesh(meshDesc);
     }
 
-    m_mapMesh = m_sceneGraph.addMeshNode(map);
-    m_sceneGraph.getRoot()->attachNode(m_mapMesh);
+    m_mapMesh = m_renderScene.addRenderMesh(map);
 }
 
 u32 Level::addCreature(Creature::Species species, const vec3& pos)
@@ -235,6 +226,8 @@ void Level::update()
     createEntities();
     destroyEntities();
 
+    m_cameraCtrl.updateCameraRotation();
+
     for (auto& ctrl : m_controllers)
         ctrl->update();
 
@@ -245,21 +238,22 @@ void Level::update()
 
     m_physSys.stepSimulation();
 
+
     for (auto& ent : m_entities)
         ent->lateUpdate();
 
+    m_cameraCtrl.updateCameraPosition();
     // m_waynet.debugDraw();
 
     m_animSys.animate();
-    m_sceneGraph.updateTransforms();
 
     m_physSys.debugDraw();
 
-    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(1,1,0), vec3(1,0,0));
-    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(0,2,0), vec3(0,1,0));
-    gfx::g_GraphRenderer.addLine(vec3(0,1,0), vec3(0,1,1), vec3(0,0,1));
+    gfx::g_SceneRenderer.addLine(vec3(0,1,0), vec3(1,1,0), vec3(1,0,0));
+    gfx::g_SceneRenderer.addLine(vec3(0,1,0), vec3(0,2,0), vec3(0,1,0));
+    gfx::g_SceneRenderer.addLine(vec3(0,1,0), vec3(0,1,1), vec3(0,0,1));
 
-    gfx::g_GraphRenderer.render(m_sceneGraph);
+    gfx::g_SceneRenderer.render(m_renderScene);
 
     m_hud.update();
 }

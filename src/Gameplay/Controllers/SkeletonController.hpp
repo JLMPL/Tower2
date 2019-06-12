@@ -2,12 +2,10 @@
 #include "Core/Math3D.hpp"
 #include "Core/Timer.hpp"
 
-class SceneNode;
-class SceneGraph;
-class LightNode;
-class FlareNode;
-class MeshNode;
-class CameraNode;
+class RenderLight;
+class RenderFlare;
+class RenderMesh;
+// class CameraNode;
 class Interactible;
 
 struct LevelContext;
@@ -65,8 +63,8 @@ private:
 
     vec3 m_moveTowardsDir = vec3(1,0,0);
 
-    MeshNode* m_sord = nullptr;
-    FlareNode* m_light = nullptr;
+    RenderMesh* m_sord = nullptr;
+    RenderFlare* m_light = nullptr;
 
     i32 m_combo = 0;
 };

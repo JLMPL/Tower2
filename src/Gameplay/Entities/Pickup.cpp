@@ -2,7 +2,7 @@
 #include "Creature.hpp"
 #include "Gameplay/ItemManager.hpp"
 #include "Gameplay/Level.hpp"
-#include "SceneGraph/MeshNode.hpp"
+#include "Render/Scene/RenderMesh.hpp"
 
 Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
 {
@@ -10,8 +10,7 @@ Pickup::Pickup(u32 id, LevelContext* context) : Interactible(id, context)
     m_labelName = m_item->m_name;
     addRigidBody();
 
-    m_mesh = m_context->sceneGraph->addMeshNode("key.obj");
-    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
+    m_mesh = m_context->renderScene->addRenderMesh("key.obj");
 }
 
 void Pickup::addRigidBody(const vec3& pos)
@@ -29,8 +28,8 @@ void Pickup::update()
 
         m_mesh->setTransform(m_transform);
 
-        m_mesh->setPosition(m_transform[3]);
-        m_mesh->setRotation(math::quat_cast(m_transform));
+        // m_mesh->setPosition(m_transform[3]);
+        // m_mesh->setRotation(math::quat_cast(m_transform));
     }
     else
         m_transform = math::translate(m_pos);

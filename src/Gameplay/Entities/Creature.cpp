@@ -4,8 +4,7 @@
 #include "EventSystem/EventSystem.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
-#include "SceneGraph/SkinnedMeshNode.hpp"
-#include "SceneGraph/LightNode.hpp"
+#include "Render/Scene/RenderSkinnedMesh.hpp"
 #include "Gameplay/Level.hpp"
 
 Creature::Creature(u32 id, LevelContext* context, Species spec) :
@@ -26,9 +25,8 @@ void Creature::initPlayer()
 {
     initLabel("Player", 2.25);
 
-    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("rigud.dae", "Rigud");
-
-    m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
+    m_animator = m_context->animSys->addAnimator(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
+    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->getMatrixPalette());
 
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
 
@@ -44,8 +42,8 @@ void Creature::initSkeleton()
 {
     initLabel("Skeleton", 2.25);
 
-    m_meshNode = m_context->sceneGraph->addSkinnedMeshNode("rigud.dae", "Rigud");
-    m_context->sceneGraph->getRoot()->attachNode(m_meshNode);
+    m_animator = m_context->animSys->addAnimator(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
+    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->getMatrixPalette());
 
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
     // m_eq.init(m_id);
@@ -62,8 +60,10 @@ void Creature::lateUpdate()
     m_yaw = atan2(m_facingDir.x, m_facingDir.z);
     m_transform = math::translate(m_pos) * math::rotate(m_yaw, math::vecY);
 
-    m_meshNode->setPosition(m_pos);
-    m_meshNode->setRotation(math::rotate(quat(), m_yaw, math::vecY));
+    // m_meshNode->setPosition(m_pos);
+    // m_meshNode->setRotation(math::rotate(quat(), m_yaw, math::vecY));
+
+    m_meshNode->setTransform(m_transform);
 
     // gfx::g_Renderer3D.addLine(m_pos + vec3(0,0.1,0), vec3(0,0.1,0) + m_pos + m_facingDir, vec3(0,1,0));
     // gfx::g_Renderer3D.addLine(m_pos + vec3(0,0.1,0), vec3(0,0.1,0) + m_pos + m_dir, vec3(0,0,1));
@@ -158,11 +158,6 @@ Creature::Species Creature::getSpecies() const
     return m_species;
 }
 
-SkinnedMeshNode* Creature::getSkinMeshNode()
-{
-    return m_meshNode->as<SkinnedMeshNode>();
-}
-
 void Creature::setDirection(const vec3& dir)
 {
     m_dir = dir;
@@ -190,7 +185,7 @@ f32 Creature::getYaw() const
 
 anim::Animator& Creature::getAnimator()
 {
-    return *static_cast<SkinnedMeshNode*>(m_meshNode)->getAnimator();
+    return *m_animator;
 }
 
 phys::CharacterController& Creature::getCharCtrl()

@@ -5,7 +5,7 @@
 #include "Render/2D/Sprite.hpp"
 #include "Render/2D/Text.hpp"
 #include "Render/Texture.hpp"
-#include "SceneGraph/SceneGraph.hpp"
+#include "Render/Scene/RenderScene.hpp"
 
 class MenuState : public State
 {
@@ -27,5 +27,5 @@ private:
     gfx::Text m_title;
     gfx::Text m_text;
 
-    SceneGraph m_sceneGraph;
+    RenderScene m_renderScene;
 };

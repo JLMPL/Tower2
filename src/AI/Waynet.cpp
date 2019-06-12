@@ -1,6 +1,6 @@
 #include "Waynet.hpp"
 #include "Debug/Log.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include <fstream>
 
 template <typename T>
@@ -187,5 +187,5 @@ Waynet::Route Waynet::findWay(const vec3& from, const vec3& to)
 void Waynet::debugDraw()
 {
     for (auto& edge : m_edges)
-        gfx::g_GraphRenderer.addLine(edge.a->pos, edge.b->pos, vec3(1,0,0));
+        gfx::g_SceneRenderer.addLine(edge.a->pos, edge.b->pos, vec3(1,0,0));
 }

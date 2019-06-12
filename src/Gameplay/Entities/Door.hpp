@@ -2,8 +2,7 @@
 #include "Interactible.hpp"
 #include "Physics/PhysicsSystem.hpp"
 
-class SceneGraph;
-class MeshNode;
+class RenderMesh;
 
 class Door : public Entity
 {
@@ -35,7 +34,7 @@ private:
     f32 m_yaw = 0.f;
     f32 m_raise = 0.f;
 
-    MeshNode* m_mesh = nullptr;
+    RenderMesh* m_mesh = nullptr;
 
     // gfx::RenderableHandle m_renderableHandle;
     phys::StaticBody       m_staticBody;

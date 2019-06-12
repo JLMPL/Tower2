@@ -3,29 +3,28 @@
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
-#include "SceneGraph/CameraNode.hpp"
-#include "SceneGraph/LightNode.hpp"
-#include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/MeshNode.hpp"
-#include "SceneGraph/FlareNode.hpp"
-#include "SceneGraph/SkinnedMeshNode.hpp"
+#include "Render/Scene/RenderLight.hpp"
+#include "Render/Scene/RenderScene.hpp"
+#include "Render/Scene/RenderMesh.hpp"
+#include "Render/Scene/RenderFlare.hpp"
+#include "Render/Scene/RenderSkinnedMesh.hpp"
 
 SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
 {
     enterIdle();
 
-    m_sord = m_context->sceneGraph->addMeshNode("sord.obj");
-    m_sord->setPosition(vec3(0,0.25,0));
-    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_sord);
+    m_sord = m_context->renderScene->addRenderMesh("sord.obj");
+    // m_sord->setPosition(vec3(0,0.25,0));
+    // m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_sord);
 
-    m_light = m_context->sceneGraph->addFlareNode("flare.png");
+    m_light = m_context->renderScene->addRenderFlare("flare.png");
     m_light->setColor(Color(1,0,0,1));
     m_light->setScale(5.f);
     m_light->setPosition(vec3(0,0.25,0));
     m_light->hide();
 
-    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
+    // m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
 
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);

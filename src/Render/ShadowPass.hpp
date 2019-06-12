@@ -13,16 +13,15 @@ public:
     ~ShadowPass() = default;
 
     void init() override final;
-    void execute(SceneGraph& graph) override final;
+    void execute(RenderScene& scene) override final;
 
     GLuint getRender() const override final;
 
 private:
-    void extractNodes(SceneGraph& graph);
+    void extractNodes(RenderScene& scene);
 
 private:
-    CameraNode* m_camera = nullptr;
-    LightNode* m_light = nullptr;
+    RenderLight* m_light = nullptr;
 
     Shader m_shadowShader;
     Shader m_ashadowShader;

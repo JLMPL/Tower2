@@ -1,7 +1,7 @@
 #include "Cloth.hpp"
 #include "Render/MeshManager.hpp"
 #include "Core/Convert.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Animation/Animator.hpp"
 
 namespace phys

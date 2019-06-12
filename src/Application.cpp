@@ -4,7 +4,7 @@
 #include "Debug/Log.hpp"
 #include "Input/Input.hpp"
 #include "Render/MaterialManager.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Script/Lua.hpp"
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLEW
@@ -115,7 +115,7 @@ void Application::setupImGui()
 void Application::setupSystems()
 {
     gfx::g_MatMgr.loadMaterials();
-    gfx::g_GraphRenderer.init();
+    gfx::g_SceneRenderer.init();
     gfx::g_Renderer2D.init();
     aud::g_AudioSys.init();
 

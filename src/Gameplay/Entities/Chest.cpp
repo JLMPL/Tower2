@@ -1,8 +1,8 @@
 #include "Chest.hpp"
 #include "Render/MeshManager.hpp"
 #include "Render/MaterialManager.hpp"
-#include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/MeshNode.hpp"
+#include "Render/Scene/RenderScene.hpp"
+#include "Render/Scene/RenderMesh.hpp"
 #include "Creature.hpp"
 #include "Gameplay/Item.hpp"
 #include "Gameplay/Level.hpp"
@@ -10,8 +10,7 @@
 Chest::Chest(u32 id, LevelContext* context) :
     Interactible(id, context)
 {
-    m_mesh = m_context->sceneGraph->addMeshNode("chest.obj");
-    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
+    m_mesh = m_context->renderScene->addRenderMesh("chest.obj");
 
     m_staticBody = m_context->physSys->addStaticBox(vec3(0.25,0.35,0.4), vec3(0));
 
@@ -25,9 +24,9 @@ Chest::Chest(u32 id, LevelContext* context) :
 
 void Chest::update()
 {
-    m_mesh->setPosition(m_pos);
 
     m_transform = math::translate(m_pos);
+    m_mesh->setTransform(m_transform);
     m_staticBody.setGlobalTransform(m_transform * math::translate(vec3(0,0.35,0)));
 }
 

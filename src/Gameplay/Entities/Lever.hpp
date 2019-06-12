@@ -2,7 +2,7 @@
 #include "Interactible.hpp"
 
 class SceneGraph;
-class SceneNode;
+class RenderMesh;
 struct GameEvent;
 
 class Lever final : public Interactible
@@ -22,7 +22,7 @@ public:
 
 private:
     SceneGraph* m_sceneGraph = nullptr;
-    SceneNode* m_mesh = nullptr;
+    RenderMesh* m_mesh = nullptr;
 
     f32 m_pitch = 0.f;
     f32 m_lerp = 0.f;

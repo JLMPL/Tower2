@@ -1,6 +1,6 @@
 #include "MenuState.hpp"
 #include "Render/Renderer2D.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Input/Input.hpp"
 #include "Core/Config.hpp"
 #include "StateStack.hpp"
@@ -24,7 +24,7 @@ void MenuState::init()
 
     m_title.init(&m_font);
     m_title.setCharacterSize(96);
-    m_title.setString("TITLE");
+    m_title.setString("LONGER TITLE");
     m_title.setPosition(
         (display.width / 2) - (m_title.getWidth() / 2),
         (display.height / 2) - m_title.getHeight()
@@ -50,7 +50,7 @@ void MenuState::sendSystemEvent(const Event& event)
 
 void MenuState::update()
 {
-    gfx::g_GraphRenderer.render(m_sceneGraph);
+    gfx::g_SceneRenderer.render(m_renderScene);
 }
 
 void MenuState::draw()

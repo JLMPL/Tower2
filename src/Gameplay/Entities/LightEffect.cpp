@@ -2,26 +2,21 @@
 #include "Core/FrameInfo.hpp"
 #include "Gameplay/Level.hpp"
 #include "Gameplay/Level.hpp"
-#include "SceneGraph/FlareNode.hpp"
-#include "SceneGraph/LightNode.hpp"
+#include "Render/Scene/RenderFlare.hpp"
+#include "Render/Scene/RenderLight.hpp"
 
 LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
     Entity(id, context)
 {
-    m_light = m_context->sceneGraph->addLightNode();
+    m_light = m_context->renderScene->addRenderLight();
 
-    auto li = m_light->as<LightNode>();
+    auto li = m_light->as<RenderLight>();
     li->setColor(vec3(0,50,100));
 
-    m_context->sceneGraph->getRoot()->attachNode(m_light);
+    m_flare = m_context->renderScene->addRenderFlare("flare.png");
 
-    m_flare = m_context->sceneGraph->addFlareNode("flare.png");
-
-    auto fl = m_flare->as<FlareNode>();
     // fl->setScale(0.5f);
-    fl->setColor(Color(0.5,0.75,1,1));
-
-    m_context->sceneGraph->getRoot()->attachNode(m_flare);
+    m_flare->setColor(Color(0.5,0.75,1,1));
 
     m_owner = context->level->getEntityByID(owner);
 }

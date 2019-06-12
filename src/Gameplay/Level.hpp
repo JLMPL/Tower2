@@ -1,10 +1,13 @@
 #pragma once
 #include "AI/Waynet.hpp"
+#include "Animation/AnimationSystem.hpp"
+#include "Controllers/CameraController.hpp"
 #include "CreatureController.hpp"
+#include "Entities/Camera.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
-#include "SceneGraph/SceneGraph.hpp"
 #include "Interface/HeadsUpDisplay.hpp"
+#include "Render/Scene/RenderScene.hpp"
 #include "Script/Lua.hpp"
 
 union SDL_Event;
@@ -19,10 +22,11 @@ class Animator;
 struct LevelContext
 {
     class Level*           level = nullptr;
-    SceneGraph*            sceneGraph = nullptr;
+    RenderScene*           renderScene = nullptr;
     EventSystem*           eventSys = nullptr;
     anim::AnimationSystem* animSys = nullptr;
     phys::PhysicsSystem*   physSys = nullptr;
+    Camera*                camera = nullptr;
 };
 
 class Level
@@ -62,11 +66,11 @@ private:
     void destroyEntities();
 
 private:
-    std::string                  m_name;
-    Waynet                       m_waynet;
+    std::string m_name;
+    Waynet      m_waynet;
 
-    SceneGraph m_sceneGraph;
-    MeshNode* m_mapMesh = nullptr;
+    RenderScene m_renderScene;
+    RenderMesh* m_mapMesh = nullptr;
 
     LevelContext m_lvlContext;
     EventSystem m_eventSys;
@@ -78,6 +82,9 @@ private:
     u32                          m_lastEntityId = 0;
     std::vector<Entity::Ptr>     m_creationQueue;
     std::vector<Entity::Ptr>     m_entities;
+
+    Camera m_camera;
+    CameraController m_cameraCtrl;
 
     std::vector<CreatureController::Ptr> m_controllers;
 };

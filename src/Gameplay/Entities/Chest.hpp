@@ -3,8 +3,7 @@
 #include "Physics/PhysicsSystem.hpp"
 
 struct GameEvent;
-class SceneGraph;
-class SceneNode;
+class RenderMesh;
 
 class Chest : public Interactible
 {
@@ -20,7 +19,6 @@ public:
     Type getType() const override final;
 
 private:
-    SceneGraph* m_sceneGraph = nullptr;
-    SceneNode* m_mesh = nullptr;
+    RenderMesh* m_mesh = nullptr;
     phys::StaticBody m_staticBody;
 };

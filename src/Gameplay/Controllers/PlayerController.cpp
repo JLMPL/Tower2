@@ -2,45 +2,33 @@
 #include "Animation/Skeleton.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
+#include "Gameplay/Entities/Camera.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
 #include "Render/Geometry/Mesh.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Render/MeshManager.hpp"
-#include "SceneGraph/CameraNode.hpp"
-#include "SceneGraph/ClothNode.hpp"
-#include "SceneGraph/FlareNode.hpp"
-#include "SceneGraph/LightNode.hpp"
-#include "SceneGraph/MeshNode.hpp"
-#include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/SkinnedMeshNode.hpp"
+#include "Render/Scene/RenderCloth.hpp"
+#include "Render/Scene/RenderFlare.hpp"
+#include "Render/Scene/RenderMesh.hpp"
+#include "Render/Scene/RenderScene.hpp"
+#include "Render/Scene/RenderSkinnedMesh.hpp"
 
 PlayerController::PlayerController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
 {
     enterIdle();
 
-    m_camera = m_context->sceneGraph->addCameraNode()->as<CameraNode>();
-    m_camera->setOffset(vec3(0, -0.25, -2.6));
-    m_cameraHolder = m_context->sceneGraph->addEmptyNode();
+    m_sord = m_context->renderScene->addRenderMesh("sord.obj");
 
-    m_cameraHolder->attachNode(m_camera);
-    m_context->sceneGraph->getRoot()->attachNode(m_cameraHolder);
-
-    m_sord = m_context->sceneGraph->addMeshNode("sord.obj");
-    m_sord->setPosition(vec3(0,0.25,0));
-    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_sord);
-
-    m_light = m_context->sceneGraph->addFlareNode("flare.png");
+    m_light = m_context->renderScene->addRenderFlare("flare.png");
     m_light->setColor(Color(1,0,0,1));
     m_light->setScale(5.f);
     m_light->setPosition(vec3(0,0.25,0));
     m_light->hide();
 
-    m_cre->getSkinMeshNode()->attachNodeToJoint("Hand.R", m_light);
-
     m_cape = m_context->physSys->addCloth("cape.dae", &m_cre->getAnimator());
-    m_cape2 = m_context->physSys->addCloth("cape2.dae", &m_cre->getAnimator());
+    // m_cape2 = m_context->physSys->addCloth("cape2.dae", &m_cre->getAnimator());
 
     for (auto i = 0; i < 6; i++)
     {
@@ -54,14 +42,8 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_cape->addCapsule(4,5);
     m_cape->addCapsule(0,3);
 
-    m_capeNode = m_context->sceneGraph->addClothNode(m_cape);
-    m_cre->getSkinMeshNode()->attachNode(m_capeNode);
-
-    m_capeNode2 = m_context->sceneGraph->addClothNode(m_cape2);
-    m_cre->getSkinMeshNode()->attachNode(m_capeNode2);
-
-    // m_sord->attachNode(m_light);
-    // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
+    m_capeNode = m_context->renderScene->addRenderCloth(m_cape);
+    // m_capeNode2 = m_context->renderScene->addRenderCloth(m_cape2);
 
     auto& animator = m_cre->getAnimator();
 
@@ -116,7 +98,7 @@ void PlayerController::updateHud()
 
 void PlayerController::update()
 {
-    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_camera->getForwardDirection());
+    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_context->camera->getForward());// m_camera->getForwardDirection());
 
     m_spawnTimer++;
 
@@ -131,8 +113,6 @@ void PlayerController::update()
         case State::Move: move(); break;
         case State::Attack: attack(); break;
     }
-
-    m_cameraHolder->setPosition(math::lerp(m_cameraHolder->getPosition(), m_cre->getPos() + vec3(0,1.5,0), 15 * core::g_FInfo.delta));
 
     {
         auto& skeleton = m_cre->getAnimator().getSkeleton();
@@ -158,14 +138,16 @@ void PlayerController::update()
     }
 
     m_cape->setTargetTransform(m_cre->getTransform());
-    m_cape2->setTargetTransform(m_cre->getTransform());
+    m_capeNode->setTransform(m_cre->getTransform());
+    // m_cape2->setTargetTransform(m_cre->getTransform());
+    // m_capeNode2->setTransform(m_cre->getTransform());
 
-    // if (m_cre->getAnimator().isRootMotion())
-    // {
-    //     vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
+    if (m_cre->getAnimator().isRootMotion())
+    {
+        vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
 
-    //     m_cre->getCharCtrl().move(dir);
-    // }
+        m_cre->getCharCtrl().move(dir);
+    }
 
     updateHud();
 }
@@ -185,8 +167,6 @@ void PlayerController::moveCamera()
     {
         m_cameraHolderPitch = 0.9;
     }
-
-    m_cameraHolder->setRotation(math::rotate(quat(), m_cameraHolderYaw, math::vecY) * math::rotate(quat(), m_cameraHolderPitch, math::vecX));
 }
 
 void PlayerController::checkDrawWeapon()
@@ -262,7 +242,7 @@ void PlayerController::move()
     moveCamera();
 
     vec3 oldir = m_cre->getFacingDir();
-    vec3 cameraForward = m_camera->as<CameraNode>()->getForwardDirection();
+    vec3 cameraForward = m_context->camera->getForward();
 
     m_cre->setFacingDirection(math::normalize(math::lerp(oldir, cameraForward, 0.2f)));
 

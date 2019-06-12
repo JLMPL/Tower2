@@ -88,7 +88,7 @@ vec3 Animation::lerpRoot(const JointAnimation& jointAnimation, Seconds animation
 
 void Animation::generateRootMotion()
 {
-    auto assAnim = findJointAnimInternal("G0_Ass");
+    auto assAnim = findJointAnimInternal("Root");
 
     if (!assAnim)
     {

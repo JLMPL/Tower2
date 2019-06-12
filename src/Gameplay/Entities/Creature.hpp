@@ -1,14 +1,12 @@
 #pragma once
 #include "Physics/CharacterController.hpp"
-#include "Animation/AnimationSystem.hpp"
+#include "Animation/Animator.hpp"
 #include "Core/Timer.hpp"
 #include "Interactible.hpp"
 
 class Level;
 class Item;
-class SceneGraph;
-class SceneNode;
-class SkinnedMeshNode;
+class RenderSkinnedMesh;
 
 struct LevelContext;
 
@@ -54,8 +52,6 @@ public:
     anim::Animator&      getAnimator();
     phys::CharacterController& getCharCtrl();
 
-    SkinnedMeshNode* getSkinMeshNode();
-
     void                 setDirection(const vec3& dir);
     vec3                 getDirection() const;
     void                 setFacingDirection(const vec3& dir);
@@ -76,8 +72,9 @@ private:
 
 private:
     Species                   m_species = Species::Count;
-    SceneNode*                m_meshNode = nullptr;
+    RenderSkinnedMesh*                m_meshNode = nullptr;
 
+    anim::Animator* m_animator = nullptr;
     phys::CharacterController m_conto;
 
     u32                       m_maxHealth = 3;

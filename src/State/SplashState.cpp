@@ -2,7 +2,7 @@
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
 #include "StateStack.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Core/Config.hpp"
 
 void SplashState::init()
@@ -41,7 +41,7 @@ void SplashState::update()
         m_stateStack.push(State::Menu);
     }
 
-    gfx::g_GraphRenderer.render(m_sceneGraph);
+    gfx::g_SceneRenderer.render(m_renderScene);
 }
 
 void SplashState::draw()

@@ -1,6 +1,6 @@
 #pragma once
 #include "RenderPass.hpp"
-#include "SceneGraph/LightNode.hpp"
+#include "Render/Scene/RenderLight.hpp"
 #include "Shader.hpp"
 
 #include "LineRenderer.hpp"
@@ -15,20 +15,18 @@ public:
     ~BasePass() = default;
 
     void init() override final;
-    void execute(SceneGraph& graph, GLuint shadow0);
+    void execute(RenderScene& scene, GLuint shadow0);
 
     void addLine(const vec3& a, const vec3& b, const vec3& c);
 
 private:
-    void extractNodes(SceneGraph& graph);
-    void sortLights();
-    void renderMeshes(SceneGraph& graph, GLuint shadow0);
+    void extractNodes(RenderScene& scene);
+    void sortLights(RenderScene& scene);
+    void renderMeshes(RenderScene& scene, GLuint shadow0);
 
 private:
-    CameraNode*             m_cameraNode = nullptr;
-
-    std::vector<LightNode*> m_lights;
-    LightNode               m_nullLight;
+    std::vector<RenderLight*> m_lights;
+    RenderLight               m_nullLight;
 
     gfx::Shader             m_flatShader;
     gfx::Shader             m_aflatShader;
@@ -36,9 +34,6 @@ private:
     gfx::Shader             m_clothShader;
 
     LineRenderer            m_lines;
-
-    mat4 m_fuckView;
-    mat4 m_fuckProj;
 };
 
 }

@@ -3,13 +3,9 @@
 #include "Core/Timer.hpp"
 #include "Physics/Cloth.hpp"
 
-class SceneNode;
-class SceneGraph;
-class LightNode;
-class FlareNode;
-class MeshNode;
-class CameraNode;
-class ClothNode;
+class RenderFlare;
+class RenderMesh;
+class RenderCloth;
 class Interactible;
 
 struct LevelContext;
@@ -62,16 +58,16 @@ private:
     Interactible* m_interactible = nullptr;
     i32 m_combatTarget = -1;
 
-    CameraNode* m_camera = nullptr;
-    SceneNode* m_cameraHolder = nullptr;
+    // CameraNode* m_camera = nullptr;
+    // SceneNode* m_cameraHolder = nullptr;
     vec3 m_moveTowardsDir = vec3(1,0,0);
     f32 m_cameraHolderYaw = 0.f;
     f32 m_cameraHolderPitch = 0.f;
 
-    MeshNode* m_sord = nullptr;
-    FlareNode* m_light = nullptr;
-    ClothNode* m_capeNode = nullptr;
-    ClothNode* m_capeNode2 = nullptr;
+    RenderMesh* m_sord = nullptr;
+    RenderFlare* m_light = nullptr;
+    RenderCloth* m_capeNode = nullptr;
+    RenderCloth* m_capeNode2 = nullptr;
 
     phys::Cloth* m_cape = nullptr;
     phys::Cloth* m_cape2 = nullptr;

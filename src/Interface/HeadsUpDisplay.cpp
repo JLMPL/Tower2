@@ -3,15 +3,15 @@
 #include "Render/FontManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
-#include "SceneGraph/CameraNode.hpp"
 #include "EventSystem/GameEvent.hpp"
+#include "Render/Scene/RenderScene.hpp"
 
 namespace ui
 {
 
-void HeadsUpDisplay::init(const CameraNode& camera)
+void HeadsUpDisplay::init(RenderScene& scene)
 {
-    m_camera = &camera;
+    m_renderScene = &scene;
 
     auto display = core::g_Config.getDisplay();
 
@@ -91,10 +91,12 @@ void HeadsUpDisplay::update()
 
     vec3 flatpos = math::project(
         m_focusPos,
-        m_camera->getView(),
-        m_camera->getProjection(),
+        m_renderScene->getView(),
+        m_renderScene->getProjection(),
         vec4(0, 0, display.width, display.height)
     );
+
+    // vec3 flatpos = vec3(100,100,0);
 
     m_focus.setPosition(vec2(i32(flatpos.x) -12, i32(display.height - flatpos.y) -12));
 

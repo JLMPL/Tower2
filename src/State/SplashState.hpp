@@ -2,7 +2,7 @@
 #include "State.hpp"
 #include "Render/2D/Sprite.hpp"
 #include "Core/Timer.hpp"
-#include "SceneGraph/SceneGraph.hpp"
+#include "Render/Scene/RenderScene.hpp"
 
 class SplashState : public State
 {
@@ -20,5 +20,5 @@ private:
     gfx::Sprite m_spr;
     core::Timer m_timer;
 
-    SceneGraph m_sceneGraph;
+    RenderScene m_renderScene;
 };

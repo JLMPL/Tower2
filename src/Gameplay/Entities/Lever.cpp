@@ -4,15 +4,14 @@
 #include "Gameplay/Level.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
-#include "SceneGraph/MeshNode.hpp"
-#include "SceneGraph/SceneGraph.hpp"
+#include "Render/Scene/RenderMesh.hpp"
+#include "Render/Scene/RenderScene.hpp"
 
 Lever::Lever(u32 id, LevelContext* context) : Interactible(id, context)
 {
     Base::initLabel("Lever", 0.5f);
 
-    m_mesh = m_context->sceneGraph->addMeshNode("sord.obj");
-    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
+    m_mesh = m_context->renderScene->addRenderMesh("sord.obj");
 }
 
 void Lever::setActivationTarget(u32 entityID)
@@ -39,8 +38,9 @@ void Lever::update()
 
     m_pitch = math::lerp(-f32(HALF_PI/2), -f32(HALF_PI + HALF_PI/2), m_lerp);
 
-    m_mesh->setPosition(m_pos);
-    m_mesh->setRotation(math::rotate(quat(), m_pitch, vec3(0,0,1)));
+    mat4 tr = math::translate(m_pos) * math::rotate(m_pitch, vec3(0,0,1));
+
+    m_mesh->setTransform(tr);
 }
 
 void Lever::interact(Creature* other)

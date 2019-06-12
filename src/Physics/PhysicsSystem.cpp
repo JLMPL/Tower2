@@ -2,7 +2,7 @@
 #include "Debug/Log.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "Core/Random.hpp"
-#include "Render/GraphRenderer.hpp"
+#include "Render/SceneRenderer.hpp"
 #include "Render/MeshManager.hpp"
 #include <PhysX/PxRigidActor.h>
 
@@ -285,7 +285,7 @@ void PhysicsSystem::debugDraw()
     {
         const PxDebugLine& line = buff.getLines()[i];
 
-        gfx::g_GraphRenderer.addLine(
+        gfx::g_SceneRenderer.addLine(
             vec3(line.pos0.x, line.pos0.y, line.pos0.z),
             vec3(line.pos1.x, line.pos1.y, line.pos1.z),
             vec3(1.f,1.f,1.f)

@@ -4,13 +4,12 @@
 #include "Gameplay/Level.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
-#include "SceneGraph/SceneGraph.hpp"
-#include "SceneGraph/MeshNode.hpp"
+#include "Render/Scene/RenderScene.hpp"
+#include "Render/Scene/RenderMesh.hpp"
 
 Door::Door(u32 id, LevelContext* context) : Entity(id, context)
 {
-    m_mesh = m_context->sceneGraph->addMeshNode("door.obj");
-    m_context->sceneGraph->getRoot()->attachNode(m_mesh);
+    m_mesh = m_context->renderScene->addRenderMesh("door.obj");
 
     m_staticBody = m_context->physSys->addStaticBox(vec3(0.05,1.5,1), vec3(0,0,0));
 
@@ -63,8 +62,9 @@ void Door::update()
             break;
     }
 
-    m_mesh->setPosition(m_pos + vec3(0, m_raise, 0));
-    m_mesh->setRotation(math::rotate(quat(), m_yaw, vec3(0,1,0)));
+    mat4 tr = math::translate(m_pos + vec3(0, m_raise, 0)) * math::rotate(m_yaw, vec3(0,1,0));
+
+    m_mesh->setTransform(tr);
 
     mat4 staticBodyTransform =
         math::translate(m_pos + vec3(0, m_raise, 0)) *

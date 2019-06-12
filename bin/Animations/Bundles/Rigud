@@ -40,7 +40,7 @@
             "name": "Attack0",
             "file": "c_attack0.dae",
             "loop": false,
-            "rootMotion": false,
+            "rootMotion": true,
             "events": []
         },
         {

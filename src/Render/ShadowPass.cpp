@@ -1,9 +1,8 @@
 #include "ShadowPass.hpp"
 #include "Geometry/Mesh.hpp"
-#include "SceneGraph/CameraNode.hpp"
-#include "SceneGraph/LightNode.hpp"
-#include "SceneGraph/MeshNode.hpp"
-#include "SceneGraph/SkinnedMeshNode.hpp"
+#include "Render/Scene/RenderLight.hpp"
+#include "Render/Scene/RenderMesh.hpp"
+#include "Render/Scene/RenderSkinnedMesh.hpp"
 
 namespace gfx
 {
@@ -18,48 +17,30 @@ void ShadowPass::init()
     m_ashadowShader.loadFromFile("Shaders/Skinned.vert", "Shaders/PointShadow.frag");
 }
 
-void ShadowPass::extractNodes(SceneGraph& graph)
+void ShadowPass::extractNodes(RenderScene& scene)
 {
-    for (auto& i : graph.getNodes())
+    for (auto& light : scene.m_lights)
     {
-        switch (i->getType())
+        if (!m_light)
         {
-            case SceneNode::Type::Camera:
-                m_camera = (CameraNode*)(i.get());
-                break;
+            m_light = light.get();
+            continue;
         }
-    }
 
-    for (auto& i : graph.getNodes())
-    {
-        switch (i->getType())
+        if (math::length2(m_light->getPosition() - scene.getCameraPos()) <
+            math::length2(light->getPosition() - scene.getCameraPos()))
         {
-            case SceneNode::Type::Light:
-            {
-                auto light = (LightNode*)(i.get());
-
-                if (!m_light)
-                {
-                    m_light = light;
-                    continue;
-                }
-
-                if (math::length2(m_light->getPosition() - m_camera->getPosition()) <
-                    math::length2(light->getPosition() - m_camera->getPosition()))
-                {
-                    m_light = light;
-                }
-            }
+            m_light = light.get();
         }
     }
 }
 
-void ShadowPass::execute(SceneGraph& graph)
+void ShadowPass::execute(RenderScene& scene)
 {
-    if (!graph.getRoot()->hasChildren())
-        return;
+    extractNodes(scene);
 
-    extractNodes(graph);
+    if (!m_light)
+        return;
 
     vec3 eye = m_light->getPosition();
 
@@ -77,57 +58,55 @@ void ShadowPass::execute(SceneGraph& graph)
         GL(glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + face, m_cubemap.getId(), 0));
         GL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 
-        for (auto& node : graph.getNodes())
+        for (auto& renderMesh : scene.m_meshes)
         {
-            if (!node->isVisible())
+            if (!renderMesh->isVisible())
                 continue;
 
-            if (node->getType() == SceneNode::Type::Mesh)
+            auto mesh = renderMesh->getMesh();
+
+            for (auto& entry : mesh->entries)
             {
-                auto meshNode = (MeshNode*)(node.get());
-                auto mesh = meshNode->getMesh();
+                auto vao = &entry.vao;
 
-                for (auto& entry : mesh->entries)
-                {
-                    auto vao = &entry.vao;
+                m_shadowShader.bind();
+                m_shadowShader.setUniformMatrix("uProj", m_proj);
+                m_shadowShader.setUniformMatrix("uView", m_views[face]);
+                m_shadowShader.setUniformMatrix("uModel", renderMesh->getTransform());
+                m_shadowShader.setUniform3f("uLightPos", eye);
 
-                    m_shadowShader.bind();
-                    m_shadowShader.setUniformMatrix("uProj", m_proj);
-                    m_shadowShader.setUniformMatrix("uView", m_views[face]);
-                    m_shadowShader.setUniformMatrix("uModel", meshNode->getGlobalTransform());
-                    m_shadowShader.setUniform3f("uLightPos", eye);
+                vao->drawElements();
 
-                    vao->drawElements();
-
-                    m_shadowShader.unbind();
-                }
+                m_shadowShader.unbind();
             }
-            else if (node->getType() == SceneNode::Type::SkinMesh)
+        }
+        for (auto& renderSkin : scene.m_skinMeshes)
+        {
+            if (!renderSkin->isVisible())
+                continue;
+
+            auto mesh = renderSkin->getMesh();
+
+            for (auto& entry : mesh->entries)
             {
-                auto meshNode = (SkinnedMeshNode*)(node.get());
-                auto mesh = meshNode->getMesh();
+                auto vao = &entry.vao;
 
-                for (auto& entry : mesh->entries)
+                m_ashadowShader.bind();
+                m_ashadowShader.setUniformMatrix("uProj", m_proj);
+                m_ashadowShader.setUniformMatrix("uView", m_views[face]);
+                m_ashadowShader.setUniformMatrix("uModel", renderSkin->getTransform());
+                m_ashadowShader.setUniform3f("uLightPos", eye);
+
+                for (u32 j = 0; j < renderSkin->getNumJoints(); j++)
                 {
-                    auto vao = &entry.vao;
-
-                    m_ashadowShader.bind();
-                    m_ashadowShader.setUniformMatrix("uProj", m_proj);
-                    m_ashadowShader.setUniformMatrix("uView", m_views[face]);
-                    m_ashadowShader.setUniformMatrix("uModel", meshNode->getGlobalTransform());
-                    m_ashadowShader.setUniform3f("uLightPos", eye);
-
-                    for (u32 j = 0; j < meshNode->getNumJoints(); j++)
-                    {
-                        char index[10];
-                        sprintf(index, "bones[%d]", j);
-                        m_ashadowShader.setUniformMatrix(index, meshNode->getMatrixPalette()[j]);
-                    }
-
-                    vao->drawElements();
-
-                    m_ashadowShader.unbind();
+                    char index[10];
+                    sprintf(index, "bones[%d]", j);
+                    m_ashadowShader.setUniformMatrix(index, renderSkin->getMatrixPalette()[j]);
                 }
+
+                vao->drawElements();
+
+                m_ashadowShader.unbind();
             }
         }
     }
