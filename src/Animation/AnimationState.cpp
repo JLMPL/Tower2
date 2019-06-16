@@ -66,6 +66,7 @@ void AnimationState::checkEvents()
 
 Pose AnimationState::update(f32 delta)
 {
+    m_prevTime = m_animTime;
     m_animTime += delta;
 
     if (m_animTime >= m_anim->duration)
@@ -92,7 +93,8 @@ Pose AnimationState::update(f32 delta)
         return Pose::lerp(m_startPose, now, m_lerpTime);
     }
 
-    m_rootMotion = m_skeleton->getRootMotion(m_anim, m_animTime);
+    m_rootMotion = m_skeleton->getRootMotion(m_anim, m_animTime) -
+        m_skeleton->getRootMotion(m_anim, m_prevTime);
 
     return m_skeleton->getPose(m_anim, m_animTime);
 }

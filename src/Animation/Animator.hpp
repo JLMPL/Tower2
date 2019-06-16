@@ -19,16 +19,9 @@ public:
 
     Pose update();
 
-    AnimationState* addState(const std::string& str, const Animation* anim);
     AnimationState* getState(const std::string& str);
 
     void setState(const std::string& str);
-    void setStateOnGlobalFrame(const std::string& str, u64 globalFrame);
-    void setStateOnGlobalTime(const std::string& str, f64 globalTime);
-    void callFunctionOnGlobalTime(const std::function<void (void)>& func, f64 globalTime);
-
-    void clearPendingFunctions();
-
     AnimationState* getCurrentState() const;
 
     bool isRootMotion() const;
@@ -41,23 +34,12 @@ public:
 private:
     void genGlobalPose(const Joint& joint, const mat4& parentTransform, const Pose& pose);
 
-    void checkForPendingStates();
-    void checkForPendingFunctions();
-    void mixStates();
-
 private:
     struct PendingState
     {
         u64 frame = 0;
         f64 time = 0;
         AnimationState* state = nullptr;
-    };
-
-    struct PendingFunction
-    {
-        u64 frame = 0;
-        f64 time = 0;
-        std::function<void (void)> func;
     };
 
     const Skeleton* m_skeleton = nullptr;
@@ -67,9 +49,7 @@ private:
 
     std::vector<AnimationState::Ptr> m_animStates;
     std::vector<AnimationState*> m_activeStates;
-    std::vector<PendingState> m_pendingStates;
-
-    std::vector<PendingFunction> m_pendingFunctions;
+    AnimationState* m_activeState = nullptr;
 
     Pose m_pose;
     vec3 m_rootMotion;

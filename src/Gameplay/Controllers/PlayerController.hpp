@@ -58,11 +58,7 @@ private:
     Interactible* m_interactible = nullptr;
     i32 m_combatTarget = -1;
 
-    // CameraNode* m_camera = nullptr;
-    // SceneNode* m_cameraHolder = nullptr;
     vec3 m_moveTowardsDir = vec3(1,0,0);
-    f32 m_cameraHolderYaw = 0.f;
-    f32 m_cameraHolderPitch = 0.f;
 
     RenderMesh* m_sord = nullptr;
     RenderFlare* m_light = nullptr;

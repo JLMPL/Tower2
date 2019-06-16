@@ -152,23 +152,6 @@ void PlayerController::update()
     updateHud();
 }
 
-void PlayerController::moveCamera()
-{
-    vec2 rightAxis = gInput.getRightAxis();
-
-    m_cameraHolderYaw -= rightAxis.x * 0.0025f;
-    m_cameraHolderPitch += rightAxis.y * 0.0025f;
-
-    if (m_cameraHolderPitch < -0.6)
-    {
-        m_cameraHolderPitch = -0.6;
-    }
-    else if (m_cameraHolderPitch > 0.9)
-    {
-        m_cameraHolderPitch = 0.9;
-    }
-}
-
 void PlayerController::checkDrawWeapon()
 {
     auto idleAnim = m_cre->getAnimator().getState("Idle");
@@ -206,8 +189,6 @@ void PlayerController::idle()
             enterAttack();
     }
 
-    moveCamera();
-
     if (gInput.isUse() && m_interactible)
     {
         // m_interactible->interact(m_cre);
@@ -239,41 +220,31 @@ void PlayerController::move()
 {
     vec2 leftAxis = gInput.getLeftAxis();
 
-    moveCamera();
-
-    vec3 oldir = m_cre->getFacingDir();
     vec3 cameraForward = m_context->camera->getForward();
 
-    m_cre->setFacingDirection(math::normalize(math::lerp(oldir, cameraForward, 0.2f)));
+    f32 speed = 1.5;
 
-    if (leftAxis.y > 0 && leftAxis.x < 0)
+    if (gInput.isJump())
     {
-        m_cre->getAnimator().setState("WalkLeft");
+        m_cre->getAnimator().setState("Run");
+        speed = 4;
     }
-    else if (leftAxis.y > 0 && leftAxis.x > 0)
-    {
-        m_cre->getAnimator().setState("WalkRight");
-    }
-    else if (leftAxis.y > 0)
-    {
+    else
         m_cre->getAnimator().setState("Walk");
-    }
-    else if (leftAxis.y < 0)
-    {
-        m_cre->getAnimator().setState("Walk");
-    }
-    else if (leftAxis.x > 0)
-    {
-        m_cre->getAnimator().setState("WalkRight");
-    }
-    else if (leftAxis.x < 0)
-    {
-        m_cre->getAnimator().setState("WalkLeft");
-    }
 
-    vec3 walkDir = (leftAxis.y * cameraForward) + (leftAxis.x * math::rotateY(cameraForward, f32(-HALF_PI)));
-    m_cre->setDirection(math::normalize(walkDir));
-    m_cre->getCharCtrl().move(m_cre->getDirection() * 2.5f, core::g_FInfo.delta);
+
+    vec3 walkDir = math::normalize(
+        (leftAxis.y * cameraForward) +
+        (leftAxis.x * math::rotateY(cameraForward, f32(-HALF_PI)))
+    );
+
+    if (leftAxis != vec2(0))
+    {
+        m_cre->setDirection(walkDir);
+        m_cre->setFacingDirection(math::lerp(m_cre->getFacingDir(), walkDir, core::g_FInfo.delta * 5));
+
+        m_cre->getCharCtrl().move(m_cre->getDirection() * speed, core::g_FInfo.delta);
+    }
 
     if (gInput.isAttack())
         enterAttack();
@@ -311,8 +282,6 @@ void PlayerController::attack()
     }
     else
         m_combatTarget = -1;
-
-    moveCamera();
 
     m_cre->setDirection(m_cre->getFacingDir());
 

@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
     </contributor>
-    <created>2019-05-07T15:07:15</created>
-    <modified>2019-05-07T15:07:15</modified>
+    <created>2019-06-16T14:02:58</created>
+    <modified>2019-06-16T14:02:58</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -15,7 +15,7 @@
   <library_animations>
     <animation id="metarig_Root_pose_matrix">
       <source id="metarig_Root_pose_matrix-input">
-        <float_array id="metarig_Root_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Root_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Root_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -23,7 +23,7 @@
         </technique_common>
       </source>
       <source id="metarig_Root_pose_matrix-output">
-        <float_array id="metarig_Root_pose_matrix-output-array" count="48">0.669711 0.2466354 0.70047 4.0578e-10 -0.7426219 0.2224208 0.6316976 -0.02391914 -8.9407e-8 -0.9432391 0.3321144 1.148066 0 0 0 1 0.669711 0.2466354 0.70047 4.0578e-10 -0.7426219 0.2224208 0.6316976 -0.02391914 -8.9407e-8 -0.9432391 0.3321144 1.148066 0 0 0 1 0.669711 0.2466354 0.70047 4.0578e-10 -0.7426219 0.2224208 0.6316976 -0.02391914 -8.9407e-8 -0.9432391 0.3321144 1.148066 0 0 0 1</float_array>
+        <float_array id="metarig_Root_pose_matrix-output-array" count="48">-0.05155551 0.3316728 0.9419847 4.0578e-10 -0.99867 -0.01712227 -0.04862919 -0.02391914 -8.9407e-8 -0.943239 0.3321144 1.148066 0 0 0 1 -0.05155551 0.3316728 0.9419847 4.0578e-10 -0.99867 -0.01712227 -0.04862919 -0.02391914 -8.9407e-8 -0.943239 0.3321144 1.148066 0 0 0 1 -0.05155551 0.3316728 0.9419847 4.0578e-10 -0.99867 -0.01712227 -0.04862919 -0.02391914 -8.9407e-8 -0.943239 0.3321144 1.148066 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Root_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -47,7 +47,7 @@
     </animation>
     <animation id="metarig_IK_Thigh_L_pose_matrix">
       <source id="metarig_IK_Thigh_L_pose_matrix-input">
-        <float_array id="metarig_IK_Thigh_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Thigh_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -55,7 +55,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Thigh_L_pose_matrix-output">
-        <float_array id="metarig_IK_Thigh_L_pose_matrix-output-array" count="48">0.9988343 0.04701185 -0.01095158 0.098 -0.03124651 0.8026356 0.5956508 0.0946902 0.03679277 -0.5946143 0.8031688 -0.01974627 0 0 0 1 0.9988344 0.04701167 -0.01095152 0.098 -0.04634131 0.9974092 0.05502227 0.0946902 0.01350994 -0.0544506 0.998425 -0.01974627 0 0 0 1 0.9988343 0.04701185 -0.01095158 0.098 -0.03124651 0.8026356 0.5956508 0.0946902 0.03679277 -0.5946143 0.8031688 -0.01974627 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Thigh_L_pose_matrix-output-array" count="48">0.9988344 0.04701185 -0.01095154 0.098 -0.03124651 0.8026356 0.5956509 0.0946902 0.03679274 -0.5946141 0.8031688 -0.0197463 0 0 0 1 0.9988344 0.04701167 -0.01095158 0.098 -0.04634131 0.9974092 0.05502236 0.0946902 0.0135099 -0.0544506 0.9984249 -0.0197463 0 0 0 1 0.9988344 0.04701185 -0.01095154 0.098 -0.03124651 0.8026356 0.5956509 0.0946902 0.03679274 -0.5946141 0.8031688 -0.0197463 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -79,7 +79,7 @@
     </animation>
     <animation id="metarig_IK_Shin_L_pose_matrix">
       <source id="metarig_IK_Shin_L_pose_matrix-input">
-        <float_array id="metarig_IK_Shin_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Shin_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -87,7 +87,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Shin_L_pose_matrix-output">
-        <float_array id="metarig_IK_Shin_L_pose_matrix-output-array" count="48">0.9988457 -0.04016012 0.02635596 0 0.04224504 0.9955692 -0.08400764 0.4669631 -0.02286544 0.08502406 0.9961165 -2.98023e-8 0 0 0 1 0.9988457 -0.04016012 0.02635596 0 0.04224504 0.9955692 -0.08400764 0.4669631 -0.02286544 0.08502406 0.9961165 -2.98023e-8 0 0 0 1 0.9988457 -0.04016012 0.02635596 0 0.04224504 0.9955692 -0.08400764 0.4669631 -0.02286544 0.08502406 0.9961165 -2.98023e-8 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Shin_L_pose_matrix-output-array" count="48">0.9988457 -0.04016013 0.02635592 0 0.04224506 0.9955691 -0.08400764 0.4669633 -0.02286539 0.08502404 0.9961165 2.98023e-8 0 0 0 1 0.9988457 -0.04016013 0.02635592 0 0.04224506 0.9955691 -0.08400764 0.4669633 -0.02286539 0.08502404 0.9961165 2.98023e-8 0 0 0 1 0.9988457 -0.04016013 0.02635592 0 0.04224506 0.9955691 -0.08400764 0.4669633 -0.02286539 0.08502404 0.9961165 2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -111,7 +111,7 @@
     </animation>
     <animation id="metarig_IK_Foot_L_pose_matrix">
       <source id="metarig_IK_Foot_L_pose_matrix-input">
-        <float_array id="metarig_IK_Foot_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Foot_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -119,7 +119,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Foot_L_pose_matrix-output">
-        <float_array id="metarig_IK_Foot_L_pose_matrix-output-array" count="48">0.9996561 -0.005653556 -0.02561093 0 0.02396357 0.5937603 0.8042852 0.4927515 0.01065978 -0.8046221 0.5936915 0 0 0 0 1 0.9998333 2.94719e-4 -0.0182564 0 0.01451336 0.5938748 0.8044267 0.4927515 0.01107909 -0.8045575 0.5937714 0 0 0 0 1 0.9996561 -0.005653556 -0.02561093 0 0.02396357 0.5937603 0.8042852 0.4927515 0.01065978 -0.8046221 0.5936915 0 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Foot_L_pose_matrix-output-array" count="48">0.999656 -0.005653512 -0.02561095 -1.49012e-8 0.02396357 0.5937603 0.8042851 0.4927515 0.01065974 -0.8046221 0.5936914 2.98023e-8 0 0 0 1 0.9998333 2.94674e-4 -0.01825642 -1.49012e-8 0.01451336 0.5938747 0.8044266 0.4927515 0.01107907 -0.8045574 0.5937714 2.98023e-8 0 0 0 1 0.999656 -0.005653512 -0.02561095 -1.49012e-8 0.02396357 0.5937603 0.8042851 0.4927515 0.01065974 -0.8046221 0.5936914 2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -143,7 +143,7 @@
     </animation>
     <animation id="metarig_IK_Thigh_R_pose_matrix">
       <source id="metarig_IK_Thigh_R_pose_matrix-input">
-        <float_array id="metarig_IK_Thigh_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Thigh_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -151,7 +151,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Thigh_R_pose_matrix-output">
-        <float_array id="metarig_IK_Thigh_R_pose_matrix-output-array" count="48">0.9988343 -0.04701166 0.01095114 -0.098 0.04634131 0.9974091 0.05502227 0.0946902 -0.01350936 -0.05445066 0.998425 -0.0197463 0 0 0 1 0.9988343 -0.04701157 0.01095119 -0.098 0.03124646 0.8026354 0.5956508 0.0946902 -0.0367922 -0.5946143 0.8031688 -0.0197463 0 0 0 1 0.9988343 -0.04701166 0.01095114 -0.098 0.04634131 0.9974091 0.05502227 0.0946902 -0.01350936 -0.05445066 0.998425 -0.0197463 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Thigh_R_pose_matrix-output-array" count="48">0.9988343 -0.04701165 0.01095111 -0.09799999 0.04634133 0.9974091 0.05502233 0.0946902 -0.01350942 -0.05445063 0.998425 -0.01974636 0 0 0 1 0.9988343 -0.04701155 0.01095117 -0.09799999 0.03124649 0.8026354 0.5956508 0.0946902 -0.03679226 -0.5946143 0.8031688 -0.01974636 0 0 0 1 0.9988343 -0.04701165 0.01095111 -0.09799999 0.04634133 0.9974091 0.05502233 0.0946902 -0.01350942 -0.05445063 0.998425 -0.01974636 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -175,7 +175,7 @@
     </animation>
     <animation id="metarig_IK_Shin_R_pose_matrix">
       <source id="metarig_IK_Shin_R_pose_matrix-input">
-        <float_array id="metarig_IK_Shin_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Shin_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -183,7 +183,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Shin_R_pose_matrix-output">
-        <float_array id="metarig_IK_Shin_R_pose_matrix-output-array" count="48">0.9988457 0.04016013 -0.02635585 0 -0.04224505 0.9955692 -0.08400768 0.4669632 0.02286539 0.08502415 0.9961165 0 0 0 0 1 0.9988457 0.04016013 -0.02635585 0 -0.04224505 0.9955692 -0.08400768 0.4669632 0.02286539 0.08502415 0.9961165 0 0 0 0 1 0.9988457 0.04016013 -0.02635585 0 -0.04224505 0.9955692 -0.08400768 0.4669632 0.02286539 0.08502415 0.9961165 0 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Shin_R_pose_matrix-output-array" count="48">0.9988456 0.04016013 -0.02635591 0 -0.04224506 0.9955693 -0.08400771 0.4669634 0.02286538 0.08502415 0.9961166 -2.98023e-8 0 0 0 1 0.9988456 0.04016013 -0.02635591 0 -0.04224506 0.9955693 -0.08400771 0.4669634 0.02286538 0.08502415 0.9961166 -2.98023e-8 0 0 0 1 0.9988456 0.04016013 -0.02635591 0 -0.04224506 0.9955693 -0.08400771 0.4669634 0.02286538 0.08502415 0.9961166 -2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -207,7 +207,7 @@
     </animation>
     <animation id="metarig_IK_Foot_R_pose_matrix">
       <source id="metarig_IK_Foot_R_pose_matrix-input">
-        <float_array id="metarig_IK_Foot_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Foot_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -215,7 +215,7 @@
         </technique_common>
       </source>
       <source id="metarig_IK_Foot_R_pose_matrix-output">
-        <float_array id="metarig_IK_Foot_R_pose_matrix-output-array" count="48">0.9998332 -2.94655e-4 0.01825647 0 -0.0145133 0.5938747 0.8044267 0.4927515 -0.01107899 -0.8045574 0.5937714 -2.98023e-8 0 0 0 1 0.9996559 0.005653496 0.02561097 0 -0.02396351 0.5937603 0.8042852 0.4927515 -0.01065966 -0.8046222 0.5936915 -2.98023e-8 0 0 0 1 0.9998332 -2.94655e-4 0.01825647 0 -0.0145133 0.5938747 0.8044267 0.4927515 -0.01107899 -0.8045574 0.5937714 -2.98023e-8 0 0 0 1</float_array>
+        <float_array id="metarig_IK_Foot_R_pose_matrix-output-array" count="48">0.9998334 -2.94682e-4 0.0182564 7.45058e-9 -0.01451334 0.5938747 0.8044267 0.4927516 -0.01107907 -0.8045574 0.5937713 0 0 0 0 1 0.9996561 0.005653495 0.02561094 7.45058e-9 -0.02396354 0.5937603 0.8042852 0.4927516 -0.01065974 -0.8046221 0.5936914 0 0 0 0 1 0.9998334 -2.94682e-4 0.0182564 7.45058e-9 -0.01451334 0.5938747 0.8044267 0.4927516 -0.01107907 -0.8045574 0.5937713 0 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -239,7 +239,7 @@
     </animation>
     <animation id="metarig_Spine0_pose_matrix">
       <source id="metarig_Spine0_pose_matrix-input">
-        <float_array id="metarig_Spine0_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Spine0_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Spine0_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -247,7 +247,7 @@
         </technique_common>
       </source>
       <source id="metarig_Spine0_pose_matrix-output">
-        <float_array id="metarig_Spine0_pose_matrix-output-array" count="48">0.988078 0.03759123 0.1492953 0 0.05113071 -0.9948151 -0.08791201 1.19209e-7 0.1452194 0.09449752 -0.984897 0 0 0 0 1 0.988078 0.03759123 0.1492953 0 0.05113071 -0.9948151 -0.08791201 1.19209e-7 0.1452194 0.09449752 -0.984897 0 0 0 0 1 0.988078 0.03759123 0.1492953 0 0.05113071 -0.9948151 -0.08791201 1.19209e-7 0.1452194 0.09449752 -0.984897 0 0 0 0 1</float_array>
+        <float_array id="metarig_Spine0_pose_matrix-output-array" count="48">0.9880778 0.0375912 0.1492952 -1.86265e-9 0.05113073 -0.9948151 -0.08791208 1.19209e-7 0.1452194 0.09449749 -0.984897 -5.96046e-8 0 0 0 1 0.9880778 0.0375912 0.1492952 -1.86265e-9 0.05113073 -0.9948151 -0.08791208 1.19209e-7 0.1452194 0.09449749 -0.984897 -5.96046e-8 0 0 0 1 0.9880778 0.0375912 0.1492952 -1.86265e-9 0.05113073 -0.9948151 -0.08791208 1.19209e-7 0.1452194 0.09449749 -0.984897 -5.96046e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Spine0_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -271,7 +271,7 @@
     </animation>
     <animation id="metarig_Spine1_pose_matrix">
       <source id="metarig_Spine1_pose_matrix-input">
-        <float_array id="metarig_Spine1_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Spine1_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Spine1_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -279,7 +279,7 @@
         </technique_common>
       </source>
       <source id="metarig_Spine1_pose_matrix-output">
-        <float_array id="metarig_Spine1_pose_matrix-output-array" count="48">0.9675384 -0.01682517 0.2521638 -3.72529e-9 -0.06170794 0.9518529 0.3002805 0.1554121 -0.2450751 -0.3060933 0.9199157 0 0 0 0 1 0.9675384 -0.01682517 0.2521638 -3.72529e-9 -0.06170794 0.9518529 0.3002805 0.1554121 -0.2450751 -0.3060933 0.9199157 0 0 0 0 1 0.9675384 -0.01682517 0.2521638 -3.72529e-9 -0.06170794 0.9518529 0.3002805 0.1554121 -0.2450751 -0.3060933 0.9199157 0 0 0 0 1</float_array>
+        <float_array id="metarig_Spine1_pose_matrix-output-array" count="48">0.9675384 -0.01682518 0.2521639 -3.72529e-9 -0.06170793 0.9518528 0.3002805 0.1554122 -0.2450752 -0.3060933 0.9199158 0 0 0 0 1 0.9675384 -0.01682518 0.2521639 -3.72529e-9 -0.06170793 0.9518528 0.3002805 0.1554122 -0.2450752 -0.3060933 0.9199158 0 0 0 0 1 0.9675384 -0.01682518 0.2521639 -3.72529e-9 -0.06170793 0.9518528 0.3002805 0.1554122 -0.2450752 -0.3060933 0.9199158 0 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Spine1_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -303,7 +303,7 @@
     </animation>
     <animation id="metarig_Chest_pose_matrix">
       <source id="metarig_Chest_pose_matrix-input">
-        <float_array id="metarig_Chest_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Chest_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Chest_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -311,7 +311,7 @@
         </technique_common>
       </source>
       <source id="metarig_Chest_pose_matrix-output">
-        <float_array id="metarig_Chest_pose_matrix-output-array" count="48">1 -4.74806e-8 5.38128e-7 1.36788e-9 -4.47069e-8 0.9847438 0.1740114 0.1708293 -4.81423e-7 -0.1740114 0.9847437 0 0 0 0 1 1 -4.74806e-8 5.38128e-7 1.36788e-9 -4.47069e-8 0.9847438 0.1740114 0.1708293 -4.81423e-7 -0.1740114 0.9847437 0 0 0 0 1 1 -4.74806e-8 5.38128e-7 1.36788e-9 -4.47069e-8 0.9847438 0.1740114 0.1708293 -4.81423e-7 -0.1740114 0.9847437 0 0 0 0 1</float_array>
+        <float_array id="metarig_Chest_pose_matrix-output-array" count="48">1 -3.50919e-8 4.59114e-7 -1.86265e-9 -4.28568e-8 0.9847437 0.1740114 0.1708291 -4.51248e-7 -0.1740114 0.9847436 0 0 0 0 1 1 -3.50919e-8 4.59114e-7 -1.86265e-9 -4.28568e-8 0.9847437 0.1740114 0.1708291 -4.51248e-7 -0.1740114 0.9847436 0 0 0 0 1 1 -3.50919e-8 4.59114e-7 -1.86265e-9 -4.28568e-8 0.9847437 0.1740114 0.1708291 -4.51248e-7 -0.1740114 0.9847436 0 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Chest_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -335,7 +335,7 @@
     </animation>
     <animation id="metarig_Neck0_pose_matrix">
       <source id="metarig_Neck0_pose_matrix-input">
-        <float_array id="metarig_Neck0_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Neck0_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Neck0_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -343,7 +343,7 @@
         </technique_common>
       </source>
       <source id="metarig_Neck0_pose_matrix-output">
-        <float_array id="metarig_Neck0_pose_matrix-output-array" count="48">0.8984618 0.1150087 0.4237207 6.1118e-10 0.1050144 0.8807772 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 0 0 0 0 1 0.8984618 0.1150087 0.4237207 6.1118e-10 0.1050144 0.8807772 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 0 0 0 0 1 0.8984618 0.1150087 0.4237207 6.1118e-10 0.1050144 0.8807772 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 0 0 0 0 1</float_array>
+        <float_array id="metarig_Neck0_pose_matrix-output-array" count="48">0.8984619 0.1150087 0.4237207 -1.86265e-9 0.1050144 0.8807773 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 2.98023e-8 0 0 0 1 0.8984619 0.1150087 0.4237207 -1.86265e-9 0.1050144 0.8807773 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 2.98023e-8 0 0 0 1 0.8984619 0.1150087 0.4237207 -1.86265e-9 0.1050144 0.8807773 -0.4617392 0.2587514 -0.4263077 0.4593518 0.7792674 2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Neck0_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -367,7 +367,7 @@
     </animation>
     <animation id="metarig_Neck1_pose_matrix">
       <source id="metarig_Neck1_pose_matrix-input">
-        <float_array id="metarig_Neck1_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Neck1_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Neck1_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -375,7 +375,7 @@
         </technique_common>
       </source>
       <source id="metarig_Neck1_pose_matrix-output">
-        <float_array id="metarig_Neck1_pose_matrix-output-array" count="48">1 1.49298e-8 -4.4804e-10 9.31323e-10 -1.39025e-8 0.9982322 0.05943385 0.06539869 -6.29484e-10 -0.05943386 0.9982322 2.98023e-8 0 0 0 1 1 1.49298e-8 -4.4804e-10 9.31323e-10 -1.39025e-8 0.9982322 0.05943385 0.06539869 -6.29484e-10 -0.05943386 0.9982322 2.98023e-8 0 0 0 1 1 1.49298e-8 -4.4804e-10 9.31323e-10 -1.39025e-8 0.9982322 0.05943385 0.06539869 -6.29484e-10 -0.05943386 0.9982322 2.98023e-8 0 0 0 1</float_array>
+        <float_array id="metarig_Neck1_pose_matrix-output-array" count="48">0.9620233 0.05571986 0.26722 -1.86265e-9 -0.07150323 0.9962016 0.04969527 0.06539893 -0.2634358 -0.06691512 0.9623533 2.98023e-8 0 0 0 1 0.9620233 0.05571986 0.26722 -1.86265e-9 -0.07150323 0.9962016 0.04969527 0.06539893 -0.2634358 -0.06691512 0.9623533 2.98023e-8 0 0 0 1 0.9620233 0.05571986 0.26722 -1.86265e-9 -0.07150323 0.9962016 0.04969527 0.06539893 -0.2634358 -0.06691512 0.9623533 2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Neck1_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -399,7 +399,7 @@
     </animation>
     <animation id="metarig_Head_pose_matrix">
       <source id="metarig_Head_pose_matrix-input">
-        <float_array id="metarig_Head_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Head_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Head_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -407,7 +407,7 @@
         </technique_common>
       </source>
       <source id="metarig_Head_pose_matrix-output">
-        <float_array id="metarig_Head_pose_matrix-output-array" count="48">0.9999999 4.13133e-8 -4.74197e-7 0 4.05494e-8 0.9850739 0.1721319 0.06127465 4.74278e-7 -0.1721319 0.985074 0 0 0 0 1 0.9999999 4.13133e-8 -4.74197e-7 0 4.05494e-8 0.9850739 0.1721319 0.06127465 4.74278e-7 -0.1721319 0.985074 0 0 0 0 1 0.9999999 4.13133e-8 -4.74197e-7 0 4.05494e-8 0.9850739 0.1721319 0.06127465 4.74278e-7 -0.1721319 0.985074 0 0 0 0 1</float_array>
+        <float_array id="metarig_Head_pose_matrix-output-array" count="48">0.9274291 0.01218176 0.3738009 -1.86265e-9 -0.07634298 0.9845914 0.1573261 0.06127477 -0.3661246 -0.1744459 0.9140686 0 0 0 0 1 0.9274291 0.01218176 0.3738009 -1.86265e-9 -0.07634298 0.9845914 0.1573261 0.06127477 -0.3661246 -0.1744459 0.9140686 0 0 0 0 1 0.9274291 0.01218176 0.3738009 -1.86265e-9 -0.07634298 0.9845914 0.1573261 0.06127477 -0.3661246 -0.1744459 0.9140686 0 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Head_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -431,7 +431,7 @@
     </animation>
     <animation id="metarig_Shoulder_L_pose_matrix">
       <source id="metarig_Shoulder_L_pose_matrix-input">
-        <float_array id="metarig_Shoulder_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Shoulder_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -439,7 +439,7 @@
         </technique_common>
       </source>
       <source id="metarig_Shoulder_L_pose_matrix-output">
-        <float_array id="metarig_Shoulder_L_pose_matrix-output-array" count="48">0.4587099 0.8801276 0.1223131 0.02921179 -0.2051535 -0.02903309 0.978299 0.1954796 0.8645791 -0.4738485 0.1672435 0.0665977 0 0 0 1 0.4587099 0.8801276 0.1223131 0.02921179 -0.2051535 -0.02903309 0.978299 0.1954796 0.8645791 -0.4738485 0.1672435 0.0665977 0 0 0 1 0.4587099 0.8801276 0.1223131 0.02921179 -0.2051535 -0.02903309 0.978299 0.1954796 0.8645791 -0.4738485 0.1672435 0.0665977 0 0 0 1</float_array>
+        <float_array id="metarig_Shoulder_L_pose_matrix-output-array" count="48">0.4587099 0.8801277 0.1223131 0.02921179 -0.2051535 -0.0290331 0.978299 0.1954796 0.8645792 -0.4738485 0.1672435 0.06659773 0 0 0 1 0.4587099 0.8801277 0.1223131 0.02921179 -0.2051535 -0.0290331 0.978299 0.1954796 0.8645792 -0.4738485 0.1672435 0.06659773 0 0 0 1 0.4587099 0.8801277 0.1223131 0.02921179 -0.2051535 -0.0290331 0.978299 0.1954796 0.8645792 -0.4738485 0.1672435 0.06659773 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -463,7 +463,7 @@
     </animation>
     <animation id="metarig_UpperArm_L_pose_matrix">
       <source id="metarig_UpperArm_L_pose_matrix-input">
-        <float_array id="metarig_UpperArm_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_UpperArm_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -471,7 +471,7 @@
         </technique_common>
       </source>
       <source id="metarig_UpperArm_L_pose_matrix-output">
-        <float_array id="metarig_UpperArm_L_pose_matrix-output-array" count="48">-0.4941298 -0.3011613 0.8155596 0 -0.8054469 0.5116861 -0.2990527 0.1961788 -0.3272476 -0.8046609 -0.4954089 1.19209e-7 0 0 0 1 -0.3534164 0.3266138 0.8765958 0 -0.8802661 0.2010183 -0.4297943 0.1961788 -0.3165886 -0.923534 0.216464 1.19209e-7 0 0 0 1 -0.4941298 -0.3011613 0.8155596 0 -0.8054469 0.5116861 -0.2990527 0.1961788 -0.3272476 -0.8046609 -0.4954089 1.19209e-7 0 0 0 1</float_array>
+        <float_array id="metarig_UpperArm_L_pose_matrix-output-array" count="48">-0.4941298 -0.3011613 0.8155596 2.98023e-8 -0.8054469 0.5116861 -0.2990527 0.1961788 -0.3272477 -0.8046609 -0.4954089 0 0 0 0 1 -0.3534164 0.3266138 0.8765958 2.98023e-8 -0.8802661 0.2010183 -0.4297944 0.1961788 -0.3165888 -0.923534 0.216464 0 0 0 0 1 -0.4941298 -0.3011613 0.8155596 2.98023e-8 -0.8054469 0.5116861 -0.2990527 0.1961788 -0.3272477 -0.8046609 -0.4954089 0 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -495,7 +495,7 @@
     </animation>
     <animation id="metarig_Forearm_L_pose_matrix">
       <source id="metarig_Forearm_L_pose_matrix-input">
-        <float_array id="metarig_Forearm_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Forearm_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -503,7 +503,7 @@
         </technique_common>
       </source>
       <source id="metarig_Forearm_L_pose_matrix-output">
-        <float_array id="metarig_Forearm_L_pose_matrix-output-array" count="48">0.9968062 -0.0425164 0.06759934 -5.96046e-8 0.06311639 0.9380431 -0.3407218 0.2824196 -0.04892482 0.3439003 0.9377308 -5.96046e-8 0 0 0 1 0.9968062 -0.0425164 0.06759934 -5.96046e-8 0.06311639 0.9380431 -0.3407218 0.2824196 -0.04892482 0.3439003 0.9377308 -5.96046e-8 0 0 0 1 0.9968062 -0.0425164 0.06759934 -5.96046e-8 0.06311639 0.9380431 -0.3407218 0.2824196 -0.04892482 0.3439003 0.9377308 -5.96046e-8 0 0 0 1</float_array>
+        <float_array id="metarig_Forearm_L_pose_matrix-output-array" count="48">0.9968061 -0.0425164 0.06759934 0 0.06311637 0.938043 -0.3407218 0.2824197 -0.04892479 0.3439002 0.9377308 1.19209e-7 0 0 0 1 0.9968061 -0.0425164 0.06759934 0 0.06311637 0.938043 -0.3407218 0.2824197 -0.04892479 0.3439002 0.9377308 1.19209e-7 0 0 0 1 0.9968061 -0.0425164 0.06759934 0 0.06311637 0.938043 -0.3407218 0.2824197 -0.04892479 0.3439002 0.9377308 1.19209e-7 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -527,7 +527,7 @@
     </animation>
     <animation id="metarig_Hand_L_pose_matrix">
       <source id="metarig_Hand_L_pose_matrix-input">
-        <float_array id="metarig_Hand_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Hand_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -535,7 +535,7 @@
         </technique_common>
       </source>
       <source id="metarig_Hand_L_pose_matrix-output">
-        <float_array id="metarig_Hand_L_pose_matrix-output-array" count="48">0.9845698 0.1690629 -0.04516447 -5.96046e-8 -0.1704858 0.984911 -0.02974197 0.2962031 0.03945474 0.03698295 0.9985366 0 0 0 0 1 0.9845698 0.1690629 -0.04516447 -5.96046e-8 -0.1704858 0.984911 -0.02974197 0.2962031 0.03945474 0.03698295 0.9985366 0 0 0 0 1 0.9845698 0.1690629 -0.04516447 -5.96046e-8 -0.1704858 0.984911 -0.02974197 0.2962031 0.03945474 0.03698295 0.9985366 0 0 0 0 1</float_array>
+        <float_array id="metarig_Hand_L_pose_matrix-output-array" count="48">0.9845698 0.1690629 -0.04516445 5.96046e-8 -0.1704858 0.9849111 -0.02974199 0.2962032 0.03945473 0.036983 0.9985365 8.9407e-8 0 0 0 1 0.9845698 0.1690629 -0.04516445 5.96046e-8 -0.1704858 0.9849111 -0.02974199 0.2962032 0.03945473 0.036983 0.9985365 8.9407e-8 0 0 0 1 0.9845698 0.1690629 -0.04516445 5.96046e-8 -0.1704858 0.9849111 -0.02974199 0.2962032 0.03945473 0.036983 0.9985365 8.9407e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_L_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -559,7 +559,7 @@
     </animation>
     <animation id="metarig_Shoulder_R_pose_matrix">
       <source id="metarig_Shoulder_R_pose_matrix-input">
-        <float_array id="metarig_Shoulder_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Shoulder_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -567,7 +567,7 @@
         </technique_common>
       </source>
       <source id="metarig_Shoulder_R_pose_matrix-output">
-        <float_array id="metarig_Shoulder_R_pose_matrix-output-array" count="48">0.4587102 -0.8801275 -0.1223132 -0.02921182 0.2051536 -0.02903308 0.9782991 0.1954798 -0.8645792 -0.4738489 0.1672435 0.0665977 0 0 0 1 0.4587102 -0.8801275 -0.1223132 -0.02921182 0.2051536 -0.02903308 0.9782991 0.1954798 -0.8645792 -0.4738489 0.1672435 0.0665977 0 0 0 1 0.4587102 -0.8801275 -0.1223132 -0.02921182 0.2051536 -0.02903308 0.9782991 0.1954798 -0.8645792 -0.4738489 0.1672435 0.0665977 0 0 0 1</float_array>
+        <float_array id="metarig_Shoulder_R_pose_matrix-output-array" count="48">0.4587103 -0.8801275 -0.1223133 -0.02921182 0.2051536 -0.02903309 0.9782992 0.1954796 -0.8645793 -0.4738488 0.1672435 0.0665977 0 0 0 1 0.4587103 -0.8801275 -0.1223133 -0.02921182 0.2051536 -0.02903309 0.9782992 0.1954796 -0.8645793 -0.4738488 0.1672435 0.0665977 0 0 0 1 0.4587103 -0.8801275 -0.1223133 -0.02921182 0.2051536 -0.02903309 0.9782992 0.1954796 -0.8645793 -0.4738488 0.1672435 0.0665977 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -591,7 +591,7 @@
     </animation>
     <animation id="metarig_UpperArm_R_pose_matrix">
       <source id="metarig_UpperArm_R_pose_matrix-input">
-        <float_array id="metarig_UpperArm_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_UpperArm_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -599,7 +599,7 @@
         </technique_common>
       </source>
       <source id="metarig_UpperArm_R_pose_matrix-output">
-        <float_array id="metarig_UpperArm_R_pose_matrix-output-array" count="48">-0.3534164 -0.3266138 -0.8765959 7.45058e-9 0.8802662 0.2010183 -0.4297943 0.1961788 0.3165886 -0.923534 0.2164639 0 0 0 0 1 -0.4941299 0.3011613 -0.8155598 7.45058e-9 0.805447 0.5116863 -0.2990527 0.1961788 0.3272475 -0.8046609 -0.4954089 0 0 0 0 1 -0.3534164 -0.3266138 -0.8765959 7.45058e-9 0.8802662 0.2010183 -0.4297943 0.1961788 0.3165886 -0.923534 0.2164639 0 0 0 0 1</float_array>
+        <float_array id="metarig_UpperArm_R_pose_matrix-output-array" count="48">-0.3534164 -0.3266138 -0.8765959 0 0.8802663 0.2010185 -0.4297943 0.1961788 0.3165885 -0.9235342 0.2164639 1.19209e-7 0 0 0 1 -0.4941298 0.3011613 -0.8155597 0 0.805447 0.5116863 -0.2990526 0.1961788 0.3272475 -0.804661 -0.4954089 1.19209e-7 0 0 0 1 -0.3534164 -0.3266138 -0.8765959 0 0.8802663 0.2010185 -0.4297943 0.1961788 0.3165885 -0.9235342 0.2164639 1.19209e-7 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -623,7 +623,7 @@
     </animation>
     <animation id="metarig_Forearm_R_pose_matrix">
       <source id="metarig_Forearm_R_pose_matrix-input">
-        <float_array id="metarig_Forearm_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Forearm_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -631,7 +631,7 @@
         </technique_common>
       </source>
       <source id="metarig_Forearm_R_pose_matrix-output">
-        <float_array id="metarig_Forearm_R_pose_matrix-output-array" count="48">0.9968063 0.04251651 -0.0675992 0 -0.06311648 0.9380432 -0.3407217 0.2824196 0.04892468 0.3439001 0.9377308 2.98023e-8 0 0 0 1 0.9968063 0.04251651 -0.0675992 0 -0.06311648 0.9380432 -0.3407217 0.2824196 0.04892468 0.3439001 0.9377308 2.98023e-8 0 0 0 1 0.9968063 0.04251651 -0.0675992 0 -0.06311648 0.9380432 -0.3407217 0.2824196 0.04892468 0.3439001 0.9377308 2.98023e-8 0 0 0 1</float_array>
+        <float_array id="metarig_Forearm_R_pose_matrix-output-array" count="48">0.9968063 0.04251648 -0.06759921 0 -0.06311645 0.9380432 -0.3407218 0.2824194 0.04892474 0.3439001 0.937731 2.98023e-8 0 0 0 1 0.9968063 0.04251648 -0.06759921 0 -0.06311645 0.9380432 -0.3407218 0.2824194 0.04892474 0.3439001 0.937731 2.98023e-8 0 0 0 1 0.9968063 0.04251648 -0.06759921 0 -0.06311645 0.9380432 -0.3407218 0.2824194 0.04892474 0.3439001 0.937731 2.98023e-8 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>
@@ -655,7 +655,7 @@
     </animation>
     <animation id="metarig_Hand_R_pose_matrix">
       <source id="metarig_Hand_R_pose_matrix-input">
-        <float_array id="metarig_Hand_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Hand_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -663,7 +663,7 @@
         </technique_common>
       </source>
       <source id="metarig_Hand_R_pose_matrix-output">
-        <float_array id="metarig_Hand_R_pose_matrix-output-array" count="48">0.9845699 -0.1690629 0.04516442 0 0.1704859 0.9849111 -0.02974194 0.2962031 -0.03945467 0.03698292 0.9985366 0 0 0 0 1 0.9845699 -0.1690629 0.04516442 0 0.1704859 0.9849111 -0.02974194 0.2962031 -0.03945467 0.03698292 0.9985366 0 0 0 0 1 0.9845699 -0.1690629 0.04516442 0 0.1704859 0.9849111 -0.02974194 0.2962031 -0.03945467 0.03698292 0.9985366 0 0 0 0 1</float_array>
+        <float_array id="metarig_Hand_R_pose_matrix-output-array" count="48">0.98457 -0.1690629 0.04516442 5.96046e-8 0.1704858 0.984911 -0.02974194 0.296203 -0.03945469 0.03698292 0.9985366 1.19209e-7 0 0 0 1 0.98457 -0.1690629 0.04516442 5.96046e-8 0.1704858 0.984911 -0.02974194 0.296203 -0.03945469 0.03698292 0.9985366 1.19209e-7 0 0 0 1 0.98457 -0.1690629 0.04516442 5.96046e-8 0.1704858 0.984911 -0.02974194 0.296203 -0.03945469 0.03698292 0.9985366 1.19209e-7 0 0 0 1</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_R_pose_matrix-output-array" count="3" stride="16">
             <param name="TRANSFORM" type="float4x4"/>

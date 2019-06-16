@@ -5,57 +5,55 @@
             "name": "Backflip",
             "file": "rigud.dae",
             "loop": false,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         },
         {
             "name": "Idle",
             "file": "c_idle.dae",
             "loop": true,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         },
         {
             "name": "Walk",
             "file": "c_walk.dae",
             "loop": true,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
+        },
+        {
+            "name": "Run",
+            "file": "c_run.dae",
+            "loop": true,
+            "rootMotion": false
         },
         {
             "name": "WalkLeft",
             "file": "c_walk_left.dae",
             "loop": true,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         },
         {
             "name": "WalkRight",
             "file": "c_walk_right.dae",
             "loop": true,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         },
         {
             "name": "Attack0",
             "file": "c_attack0.dae",
             "loop": false,
-            "rootMotion": true,
-            "events": []
+            "rootMotion": true
         },
         {
             "name": "Pain",
             "file": "c_pain.dae",
             "loop": false,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         },
         {
             "name": "Death",
             "file": "c_death.dae",
             "loop": false,
-            "rootMotion": false,
-            "events": []
+            "rootMotion": false
         }
     ]
 }

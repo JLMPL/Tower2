@@ -53,7 +53,6 @@ void Pickup::update()
 void Pickup::interact(Creature* other)
 {
     other->getAnimator().setState("Pickup");
-    other->getAnimator().clearPendingFunctions();
 }
 
 void Pickup::disable()

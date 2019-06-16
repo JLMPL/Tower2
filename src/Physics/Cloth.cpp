@@ -56,8 +56,8 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* an
     m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
     m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
 
-    // m_cloth->setSelfCollisionDistance(0.002f);
-    // m_cloth->setSelfCollisionStiffness(0.5f);
+    m_cloth->setSelfCollisionDistance(0.01f);
+    m_cloth->setSelfCollisionStiffness(0.5f);
 
     m_cloth->setLinearInertiaScale(PxVec3(0.001f, 0.1f, 0.001f));
 

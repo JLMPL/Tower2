@@ -20,54 +20,8 @@ Animator::Animator(const Skeleton* skeleton, const AnimationBundle& anims)
     {
         AnimationState::Ptr state(new AnimationState());
         *state = anims.getStates()[i];
-        (*state).setSkeleton(skeleton);
+        state->setSkeleton(skeleton);
         m_animStates.push_back(std::move(state));
-    }
-}
-
-void Animator::checkForPendingStates()
-{
-    if (m_pendingStates.empty())
-        return;
-
-    for (i32 i = m_pendingStates.size()-1; i >= 0; i--)
-    {
-        auto& pending = m_pendingStates[i];
-
-        if (pending.frame == core::g_FInfo.globalFrame ||
-            (pending.time != 0.0 && core::g_FInfo.globalTime >= pending.time))
-        {
-            pending.state->enter(m_pose);
-            m_activeStates.push_back(pending.state);
-            m_pendingStates.erase(m_pendingStates.begin() + i);
-        }
-    }
-}
-
-void Animator::checkForPendingFunctions()
-{
-    if (m_pendingFunctions.empty())
-        return;
-
-    for (i32 i = m_pendingFunctions.size()-1; i >= 0; i--)
-    {
-        auto& pending = m_pendingFunctions[i];
-
-        if (pending.frame == core::g_FInfo.globalFrame ||
-            (pending.time != 0.0 && core::g_FInfo.globalTime >= pending.time))
-        {
-            pending.func();
-            m_pendingFunctions.erase(m_pendingFunctions.begin() + i);
-        }
-    }
-}
-
-void Animator::mixStates()
-{
-    for (auto& i : m_activeStates)
-    {
-        m_pose = i->update(core::g_FInfo.delta);
-        m_rootMotion = i->getRootMotion();
     }
 }
 
@@ -108,22 +62,12 @@ void Animator::genGlobalPose(const Joint& joint, const mat4& parentTransform, co
 
 Pose Animator::update()
 {
-    if (m_activeStates.empty())
-        return m_pose;
+    m_pose = m_activeState->update(core::g_FInfo.delta);
+    m_rootMotion = m_activeState->getRootMotion();
 
-    checkForPendingStates();
-    checkForPendingFunctions();
-    mixStates();
     genGlobalPose(m_skeleton->joints[0], mat4(1.f), m_pose);
 
     return m_pose;
-}
-
-AnimationState* Animator::addState(const std::string& str, const Animation* anim)
-{
-    AnimationState::Ptr state(new AnimationState(str, anim, m_skeleton));
-    m_animStates.push_back(std::move(state));
-    return m_animStates.back().get();
 }
 
 AnimationState* Animator::getState(const std::string& str)
@@ -141,12 +85,8 @@ void Animator::setState(const std::string& str)
 {
     auto state = getState(str);
 
-    if (!m_activeStates.empty())
-        if (m_activeStates.back() == state)
-            return;
-
-    m_activeStates.clear();
-
+    if (m_activeState == state)
+        return;
 
     if (!state)
     {
@@ -155,66 +95,17 @@ void Animator::setState(const std::string& str)
     }
 
     state->enter(m_pose);
-    m_activeStates.push_back(state);
-}
-
-void Animator::setStateOnGlobalFrame(const std::string& str, u64 globalFrame)
-{
-    auto state = getState(str);
-
-    if (!state)
-    {
-        Log::warning("Could not queue(frame) state %s does not exist!\n", str.c_str());
-        return;
-    }
-
-    PendingState ps;
-    ps.frame = globalFrame;
-    ps.state = state;
-
-    m_pendingStates.push_back(ps);
-}
-
-void Animator::setStateOnGlobalTime(const std::string& str, f64 globalTime)
-{
-    auto state = getState(str);
-
-    if (!state)
-    {
-        Log::warning("Could not queue(frame) state %s does not exist!\n", str.c_str());
-        return;
-    }
-
-    PendingState ps;
-    ps.time = globalTime;
-    ps.state = state;
-
-    m_pendingStates.push_back(ps);
-}
-
-void Animator::callFunctionOnGlobalTime(const std::function<void (void)>& func, f64 globalTime)
-{
-    PendingFunction pf;
-
-    pf.time = globalTime;
-    pf.func = func;
-
-    m_pendingFunctions.push_back(pf);
-}
-
-void Animator::clearPendingFunctions()
-{
-    m_pendingFunctions.clear();
+    m_activeState = state;
 }
 
 AnimationState* Animator::getCurrentState() const
 {
-    return m_activeStates[0];
+    return m_activeState;
 }
 
 bool Animator::isRootMotion() const
 {
-    return m_activeStates[0]->hasRootMotion();
+    return m_activeState->hasRootMotion();
 }
 
 vec3 Animator::getRootMotion() const

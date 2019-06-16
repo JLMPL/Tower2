@@ -99,19 +99,34 @@ void Animation::generateRootMotion()
     i32 numSamples = 24 * duration;
     f32 step = duration / numSamples;
 
-    for (u32 i = 1; i < numSamples; i++)
-    {
-        vec3 prev = lerpRoot(*assAnim, (i-1) * step);
-        vec3 curr = lerpRoot(*assAnim, i * step);
+    // for (u32 i = 1; i < numSamples; i++)
+    // {
+    //     vec3 prev = lerpRoot(*assAnim, (i-1) * step);
+    //     vec3 curr = lerpRoot(*assAnim, i * step);
 
-        vec3 diff = curr - prev;
-        rootMotion.positionKeys.push_back({-vec3(diff.x, 0, diff.y), (i-1) * step});
-    }
+    //     vec3 diff = curr - prev;
+    //     rootMotion.positionKeys.push_back({-vec3(diff.x, 0, diff.y), (i-1) * step});
+    // }
 
-    rootMotion.positionKeys.push_back({rootMotion.positionKeys.back().value, duration});
+
+    // for (u32 i = 1; i < numSamples; i++)
+    // {
+    //     vec3 pos = lerpRoot(*assAnim, i * step);
+
+    //     rootMotion.positionKeys.push_back({-vec3(pos.x, 0, pos.y), i * step});
+    // }
+
+    // rootMotion.positionKeys.push_back({rootMotion.positionKeys.back().value, duration});
+
+    rootMotion = *assAnim;
 
     for (u32 i = 0; i < assAnim->positionKeys.size(); i++)
     {
+        vec3 root = rootMotion.positionKeys[i].value;
+        rootMotion.positionKeys[i].value.x = -root.x;
+        rootMotion.positionKeys[i].value.y = root.z;
+        rootMotion.positionKeys[i].value.z = -root.y;
+
         assAnim->positionKeys[i].value.x = 0;
         assAnim->positionKeys[i].value.y = 0;
     }

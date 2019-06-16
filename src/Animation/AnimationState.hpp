@@ -64,6 +64,7 @@ private:
     bool m_hasRootMotion = false;
     vec3 m_rootMotion;
 
+    f32 m_prevTime = 0_ms;
     f32 m_animTime = 0_ms;
     f32 m_lerpTime = 0_ms;
     bool m_isLerp = false;

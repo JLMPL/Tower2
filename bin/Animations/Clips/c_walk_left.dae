@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
     </contributor>
-    <created>2019-05-07T15:06:20</created>
-    <modified>2019-05-07T15:06:20</modified>
+    <created>2019-06-16T13:58:48</created>
+    <modified>2019-06-16T13:58:48</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -15,7 +15,7 @@
   <library_animations>
     <animation id="metarig_Root_pose_matrix">
       <source id="metarig_Root_pose_matrix-input">
-        <float_array id="metarig_Root_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Root_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Root_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -47,7 +47,7 @@
     </animation>
     <animation id="metarig_IK_Thigh_L_pose_matrix">
       <source id="metarig_IK_Thigh_L_pose_matrix-input">
-        <float_array id="metarig_IK_Thigh_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Thigh_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -79,7 +79,7 @@
     </animation>
     <animation id="metarig_IK_Shin_L_pose_matrix">
       <source id="metarig_IK_Shin_L_pose_matrix-input">
-        <float_array id="metarig_IK_Shin_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Shin_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -111,7 +111,7 @@
     </animation>
     <animation id="metarig_IK_Foot_L_pose_matrix">
       <source id="metarig_IK_Foot_L_pose_matrix-input">
-        <float_array id="metarig_IK_Foot_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Foot_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -143,7 +143,7 @@
     </animation>
     <animation id="metarig_IK_Thigh_R_pose_matrix">
       <source id="metarig_IK_Thigh_R_pose_matrix-input">
-        <float_array id="metarig_IK_Thigh_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Thigh_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Thigh_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -175,7 +175,7 @@
     </animation>
     <animation id="metarig_IK_Shin_R_pose_matrix">
       <source id="metarig_IK_Shin_R_pose_matrix-input">
-        <float_array id="metarig_IK_Shin_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Shin_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Shin_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -207,7 +207,7 @@
     </animation>
     <animation id="metarig_IK_Foot_R_pose_matrix">
       <source id="metarig_IK_Foot_R_pose_matrix-input">
-        <float_array id="metarig_IK_Foot_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_IK_Foot_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_IK_Foot_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -239,7 +239,7 @@
     </animation>
     <animation id="metarig_Spine0_pose_matrix">
       <source id="metarig_Spine0_pose_matrix-input">
-        <float_array id="metarig_Spine0_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Spine0_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Spine0_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -271,7 +271,7 @@
     </animation>
     <animation id="metarig_Spine1_pose_matrix">
       <source id="metarig_Spine1_pose_matrix-input">
-        <float_array id="metarig_Spine1_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Spine1_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Spine1_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -303,7 +303,7 @@
     </animation>
     <animation id="metarig_Chest_pose_matrix">
       <source id="metarig_Chest_pose_matrix-input">
-        <float_array id="metarig_Chest_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Chest_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Chest_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -335,7 +335,7 @@
     </animation>
     <animation id="metarig_Neck0_pose_matrix">
       <source id="metarig_Neck0_pose_matrix-input">
-        <float_array id="metarig_Neck0_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Neck0_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Neck0_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -367,7 +367,7 @@
     </animation>
     <animation id="metarig_Neck1_pose_matrix">
       <source id="metarig_Neck1_pose_matrix-input">
-        <float_array id="metarig_Neck1_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Neck1_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Neck1_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -399,7 +399,7 @@
     </animation>
     <animation id="metarig_Head_pose_matrix">
       <source id="metarig_Head_pose_matrix-input">
-        <float_array id="metarig_Head_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Head_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Head_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -431,7 +431,7 @@
     </animation>
     <animation id="metarig_Shoulder_L_pose_matrix">
       <source id="metarig_Shoulder_L_pose_matrix-input">
-        <float_array id="metarig_Shoulder_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Shoulder_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -463,7 +463,7 @@
     </animation>
     <animation id="metarig_UpperArm_L_pose_matrix">
       <source id="metarig_UpperArm_L_pose_matrix-input">
-        <float_array id="metarig_UpperArm_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_UpperArm_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -495,7 +495,7 @@
     </animation>
     <animation id="metarig_Forearm_L_pose_matrix">
       <source id="metarig_Forearm_L_pose_matrix-input">
-        <float_array id="metarig_Forearm_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Forearm_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -527,7 +527,7 @@
     </animation>
     <animation id="metarig_Hand_L_pose_matrix">
       <source id="metarig_Hand_L_pose_matrix-input">
-        <float_array id="metarig_Hand_L_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Hand_L_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_L_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -559,7 +559,7 @@
     </animation>
     <animation id="metarig_Shoulder_R_pose_matrix">
       <source id="metarig_Shoulder_R_pose_matrix-input">
-        <float_array id="metarig_Shoulder_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Shoulder_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Shoulder_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -591,7 +591,7 @@
     </animation>
     <animation id="metarig_UpperArm_R_pose_matrix">
       <source id="metarig_UpperArm_R_pose_matrix-input">
-        <float_array id="metarig_UpperArm_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_UpperArm_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_UpperArm_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -623,7 +623,7 @@
     </animation>
     <animation id="metarig_Forearm_R_pose_matrix">
       <source id="metarig_Forearm_R_pose_matrix-input">
-        <float_array id="metarig_Forearm_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Forearm_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Forearm_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
@@ -655,7 +655,7 @@
     </animation>
     <animation id="metarig_Hand_R_pose_matrix">
       <source id="metarig_Hand_R_pose_matrix-input">
-        <float_array id="metarig_Hand_R_pose_matrix-input-array" count="3">0 0.4166666 0.8333333</float_array>
+        <float_array id="metarig_Hand_R_pose_matrix-input-array" count="3">0 0.625 1.25</float_array>
         <technique_common>
           <accessor source="#metarig_Hand_R_pose_matrix-input-array" count="3" stride="1">
             <param name="TIME" type="float"/>
