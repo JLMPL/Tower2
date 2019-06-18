@@ -2,6 +2,7 @@
 #include "Core/Math3D.hpp"
 #include "Core/Timer.hpp"
 #include "Physics/Cloth.hpp"
+#include "Physics/RigidBody.hpp"
 
 class RenderFlare;
 class RenderMesh;
@@ -68,6 +69,8 @@ private:
     phys::Cloth* m_cape = nullptr;
     phys::Cloth* m_cape2 = nullptr;
     phys::Cloth::Sphere m_spheres[6];
+
+    phys::RigidBody m_dongle;
 
     f32 m_verticalVelocity = 0;
 

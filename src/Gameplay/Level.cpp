@@ -269,10 +269,9 @@ Interactible* Level::getClosestInteractible(const vec3& pos, const vec3& dir)
 
     for (auto& ent : m_entities)
     {
-        if ((ent->getType() == Entity::Type::Pickup ||
+        if (ent->getType() == Entity::Type::Pickup ||
             ent->getType() == Entity::Type::Chest ||
-            ent->getType() == Entity::Type::Lever) &&
-            !ent->isDisabled())
+            ent->getType() == Entity::Type::Lever)
         {
             vec3 flatpos = vec3(pos.x, 0, pos.z);
             vec3 entpos = vec3(ent->getPos().x, 0, ent->getPos().z);

@@ -51,6 +51,18 @@ RenderCloth* RenderScene::addRenderCloth(phys::Cloth* cloth)
     return m_cloths.back().get();
 }
 
+void RenderScene::removeRenderMesh(RenderMesh* mesh)
+{
+    for (auto i = m_meshes.begin(); i != m_meshes.end(); i++)
+    {
+        if ((*i).get() == mesh)
+        {
+            m_meshes.erase(i);
+            break;
+        }
+    }
+}
+
 void RenderScene::setProjection(const mat4& proj)
 {
     m_proj = proj;

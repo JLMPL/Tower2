@@ -15,10 +15,15 @@ PhysicsSystem::~PhysicsSystem()
     // m_particleSystem->release();
     m_material->release();
 
+    m_distanceJoint->release();
+
     for (auto& i : m_dynamics)
         i->release();
 
     for (auto& i : m_statics)
+        i->release();
+
+    for (auto& i : m_triangleMeshes)
         i->release();
 
     m_manager->release();
@@ -55,14 +60,14 @@ void PhysicsSystem::init()
     m_scene->setVisualizationParameter(PxVisualizationParameter::eCLOTH_VERTICAL, 1.f);
     m_scene->setVisualizationParameter(PxVisualizationParameter::eCLOTH_HORIZONTAL, 1.f);
     m_scene->setVisualizationParameter(PxVisualizationParameter::ePARTICLE_SYSTEM_POSITION, 0.1f);
+    m_scene->setVisualizationParameter(PxVisualizationParameter::eJOINT_LOCAL_FRAMES, 1.f);
+    m_scene->setVisualizationParameter(PxVisualizationParameter::eJOINT_LIMITS, 1.f);
 
     m_material = m_physics->createMaterial(0.5,0.5,0.5);
 
     m_manager = PxCreateControllerManager(*m_scene);
     m_manager->setOverlapRecoveryModule(true);
     m_manager->setTessellation(true, 0.5);
-
-
 
     /*/
     m_particleSystem = m_physics->createParticleSystem(1000);
@@ -211,9 +216,27 @@ StaticBody PhysicsSystem::addStaticBox(const vec3& size, const vec3& pos, const 
     return StaticBody(actor);
 }
 
+//TODO: removing thos rigidbodies
 void PhysicsSystem::removeRigidBody(RigidBody& rb)
 {
     m_scene->removeActor(*rb.getPxActor());
+}
+
+void PhysicsSystem::addDistanceJoint(RigidBody* rb, const vec3& local, const vec3& pos)
+{
+    m_distanceJoint = physx::PxDistanceJointCreate(*m_physics,
+        rb->getPxActor(), physx::PxTransform(core::conv::toPx(local)),
+        NULL,             physx::PxTransform(core::conv::toPx(pos)));
+
+    m_distanceJoint->setMaxDistance(0.5f);
+    m_distanceJoint->setDamping(0.75f);
+    m_distanceJoint->setDistanceJointFlag(physx::PxDistanceJointFlag::eMAX_DISTANCE_ENABLED, true);
+    m_distanceJoint->setConstraintFlag(physx::PxConstraintFlag::eVISUALIZATION, true);
+}
+
+void PhysicsSystem::setLocalPose(const vec3& pos)
+{
+    m_distanceJoint->setLocalPose(physx::PxJointActorIndex::eACTOR1, physx::PxTransform(core::conv::toPx(pos)));
 }
 
 RaycastResult PhysicsSystem::raycast(const vec3& origin, const vec3& dir, f32 dist)
@@ -291,6 +314,11 @@ void PhysicsSystem::debugDraw()
             vec3(1.f,1.f,1.f)
         );
     }
+}
+
+CCTFilterCallback* PhysicsSystem::getCCTFilter()
+{
+    return &m_cctFilterCallback;
 }
 
 }

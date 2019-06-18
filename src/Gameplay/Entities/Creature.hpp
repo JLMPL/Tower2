@@ -72,9 +72,9 @@ private:
 
 private:
     Species                   m_species = Species::Count;
-    RenderSkinnedMesh*                m_meshNode = nullptr;
+    RenderSkinnedMesh*        m_meshNode = nullptr;
 
-    anim::Animator* m_animator = nullptr;
+    anim::Animator*           m_animator = nullptr;
     phys::CharacterController m_conto;
 
     u32                       m_maxHealth = 3;

@@ -30,6 +30,8 @@ public:
     RenderFlare* addRenderFlare(const std::string& tex);
     RenderCloth* addRenderCloth(phys::Cloth* cloth);
 
+    void removeRenderMesh(RenderMesh* mesh);
+
     void setProjection(const mat4& proj);
     void setView(const mat4& view);
 

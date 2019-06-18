@@ -70,6 +70,15 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     {
         enterIdle();
     });
+
+    animator.getState("Pickup")->bindEvent(animator.getState("Pickup")->getDuration(),
+    [&]()
+    {
+        enterIdle();
+    });
+
+    m_dongle = m_context->physSys->addBox(vec3(0,2,0), vec3(0), vec3(0.05,0.3,0.02));
+    m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
 }
 
 void PlayerController::onEvent(const GameEvent& event)
@@ -135,10 +144,16 @@ void PlayerController::update()
         }
 
         m_cape->setCollisionSpheres(&m_spheres[0], 6);
+
+        mat4 tr = m_cre->getTransform() * transforms[skeleton.findJointIndex("Belt0")];
+        m_context->physSys->setLocalPose(tr[3]);
     }
 
     m_cape->setTargetTransform(m_cre->getTransform());
     m_capeNode->setTransform(m_cre->getTransform());
+
+
+    m_sord->setTransform(m_dongle.getGlobalTransform() * math::translate(vec3(0,0.5,0)) * math::rotate(M_PI, vec3(1,0,0)));
     // m_cape2->setTargetTransform(m_cre->getTransform());
     // m_capeNode2->setTransform(m_cre->getTransform());
 
@@ -189,10 +204,9 @@ void PlayerController::idle()
             enterAttack();
     }
 
-    if (gInput.isUse() && m_interactible)
+    if (gInput.isUse() && m_interactible && m_cre->getAnimator().getCurrentState() == m_cre->getAnimator().getState("Idle"))
     {
-        // m_interactible->interact(m_cre);
-        m_cre->getAnimator().setState("Backflip");
+        m_interactible->interact(m_cre);
     }
 
     checkDrawWeapon();

@@ -24,6 +24,7 @@ void CharacterController::init(PhysicsSystem* physSys, u32* entityID, f32 radius
 void CharacterController::move(const vec3& move, f32 deltaTime, bool followGround)
 {
     physx::PxControllerFilters filters;
+    filters.mCCTFilterCallback = m_physSys->getCCTFilter();
     vec3 nuo = move * deltaTime;
     nuo.y -= 0.02f;
 

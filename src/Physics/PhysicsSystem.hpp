@@ -58,12 +58,17 @@ public:
 
     void removeRigidBody(RigidBody& rb);
 
+    void addDistanceJoint(RigidBody* rb, const vec3& local, const vec3& pos);
+    void setLocalPose(const vec3& pos);
+
     physx::PxController* addController(u32* entityID, f32 radius, f32 height);
 
     Cloth* addCloth(const std::string& mesh, anim::Animator* animer);
 
     RaycastResult raycast(const vec3& origin, const vec3& dir, f32 dist);
     SweepResult sweepSphere(f32 radius, const vec3& origin, const vec3& dir, f32 dist);
+
+    CCTFilterCallback* getCCTFilter();
 
 private:
     physx::PxPhysics*                m_physics = nullptr;
@@ -87,7 +92,9 @@ private:
 
     physx::PxParticleSystem* m_particleSystem = nullptr;
 
-    bool m_debugDraw = false;
+    physx::PxDistanceJoint* m_distanceJoint = nullptr;
+
+    bool m_debugDraw = true;
 };
 
 }

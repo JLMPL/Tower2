@@ -613,8 +613,51 @@
 			"file": "src/Gameplay/Controllers/PlayerController.cpp",
 			"settings":
 			{
-				"buffer_size": 8448,
+				"buffer_size": 7689,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Gameplay/Entities/Interactible.cpp",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Gameplay/Entities/Interactible.hpp",
+			"settings":
+			{
+				"buffer_size": 501,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 830 files for \"public Interactible\"\n\n/home/dominik/Desktop/Tower/src/Gameplay/Entities/Chest.hpp:\n    8: class Chest : public Interactible\n\n/home/dominik/Desktop/Tower/src/Gameplay/Entities/Creature.hpp:\n   13: class Creature : public Interactible\n\n/home/dominik/Desktop/Tower/src/Gameplay/Entities/Lever.hpp:\n    8: class Lever final : public Interactible\n\n/home/dominik/Desktop/Tower/src/Gameplay/Entities/Pickup.hpp:\n    8: class Pickup : public Interactible\n\n4 matches across 4 files\n",
+			"settings":
+			{
+				"buffer_size": 498,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "src/Input/Input.cpp",
+			"settings":
+			{
+				"buffer_size": 1943,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Input/Input.hpp",
+			"settings":
+			{
+				"buffer_size": 660,
 				"line_ending": "Unix"
 			}
 		},
@@ -691,7 +734,7 @@
 			"file": "src/Gameplay/Controllers/PlayerController.hpp",
 			"settings":
 			{
-				"buffer_size": 1610,
+				"buffer_size": 1459,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -1046,7 +1089,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -1061,6 +1104,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"public Interactible",
+			"camera",
+			"moveCamera",
 			"addState",
 			"mixStates",
 			"m_activeState",
@@ -1185,10 +1231,7 @@
 			"cloth",
 			"setCollisionSpheres",
 			"addCollisionCapsule",
-			"capsule",
-			"move(",
-			"move",
-			"setCollisionSphere"
+			"capsule"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1209,7 +1252,7 @@
 	"groups":
 	[
 		{
-			"selected": 10,
+			"selected": 12,
 			"sheets":
 			[
 				{
@@ -1239,7 +1282,7 @@
 						"translation.y": 708.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1269,7 +1312,7 @@
 						"translation.y": 285.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1299,7 +1342,7 @@
 						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1327,7 +1370,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 21,
 					"type": "text"
 				},
 				{
@@ -1355,7 +1398,7 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 19,
 					"type": "text"
 				},
 				{
@@ -1385,7 +1428,7 @@
 						"translation.y": 912.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 17,
+					"stack_index": 22,
 					"type": "text"
 				},
 				{
@@ -1415,7 +1458,7 @@
 						"translation.y": 4394.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 20,
 					"type": "text"
 				},
 				{
@@ -1457,7 +1500,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 18,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
@@ -1491,7 +1534,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 21,
+					"stack_index": 26,
 					"type": "text"
 				},
 				{
@@ -1516,10 +1559,10 @@
 							"syntax": "Packages/C++/C++.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 513.0,
+						"translation.y": 316.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 15,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1528,15 +1571,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8448,
+						"buffer_size": 7689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6466,
-								6466
+								6338,
+								6338
 							]
 						],
 						"settings":
@@ -1546,14 +1589,189 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 4555.0,
+						"translation.y": 4284.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "src/Gameplay/Entities/Interactible.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "src/Gameplay/Entities/Interactible.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 498,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										129,
+										148
+									],
+									[
+										238,
+										257
+									],
+									[
+										347,
+										366
+									],
+									[
+										452,
+										471
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "src/Input/Input.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 285.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "src/Input/Input.hpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 660,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
 					"file": "src/Physics/CharacterController.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1579,11 +1797,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 17,
 					"file": "src/Physics/CharacterController.hpp",
 					"semi_transient": false,
 					"settings":
@@ -1609,11 +1827,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 18,
 					"file": "src/Animation/Animation.hpp",
 					"semi_transient": false,
 					"settings":
@@ -1639,11 +1857,11 @@
 						"translation.y": 399.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 19,
 					"file": "src/Animation/Animation.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1669,11 +1887,11 @@
 						"translation.y": 1881.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 20,
 					"file": "src/Animation/AnimationState.hpp",
 					"semi_transient": false,
 					"settings":
@@ -1699,11 +1917,11 @@
 						"translation.y": 513.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 21,
 					"file": "src/Animation/AnimationState.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1729,11 +1947,11 @@
 						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 22,
 					"file": "src/Animation/Skeleton.hpp",
 					"semi_transient": false,
 					"settings":
@@ -1759,11 +1977,11 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 15,
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 23,
 					"file": "src/Animation/Skeleton.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1789,24 +2007,24 @@
 						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 24,
 					"file": "src/Gameplay/Controllers/PlayerController.hpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1610,
+						"buffer_size": 1459,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1607,
-								1607
+								1047,
+								1047
 							]
 						],
 						"settings":
@@ -1816,14 +2034,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1209.0,
+						"translation.y": 926.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 25,
 					"file": "src/Render/SceneRenderer.cpp",
 					"semi_transient": false,
 					"settings":
@@ -1849,11 +2067,11 @@
 						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 19,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 26,
 					"file": "src/Render/SceneRenderer.hpp",
 					"semi_transient": false,
 					"settings":
@@ -1879,7 +2097,7 @@
 						"translation.y": 171.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 25,
 					"type": "text"
 				}
 			]
@@ -1942,16 +2160,28 @@
 		"selected_items":
 		[
 			[
+				"intera",
+				"src/Gameplay/Entities/Interactible.hpp"
+			],
+			[
+				"interac",
+				"src/Gameplay/Entities/Interactible.cpp"
+			],
+			[
+				"",
+				"src/Input/Input.cpp"
+			],
+			[
+				"input",
+				"src/Input/Input.cpp"
+			],
+			[
 				"playcon/",
 				"src/Gameplay/Controllers/PlayerController.cpp"
 			],
 			[
 				"cloth",
 				"src/Physics/Cloth.hpp"
-			],
-			[
-				"",
-				"src/Animation/Animation.cpp"
 			],
 			[
 				"skelon",
@@ -2440,18 +2670,6 @@
 			[
 				"door",
 				"src/Gameplay/Entities/Door.cpp"
-			],
-			[
-				"rendersy",
-				"src/EntitySystem/Systems/RenderSystem.cpp"
-			],
-			[
-				"leel",
-				"src/Gameplay/Level.hpp"
-			],
-			[
-				"liner",
-				"src/Render/LineRenderer.hpp"
 			]
 		],
 		"width": 0.0

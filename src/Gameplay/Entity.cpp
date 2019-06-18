@@ -30,16 +30,6 @@ u32 Entity::getID() const
     return m_id;
 }
 
-void Entity::disable()
-{
-    m_disabled = true;
-}
-
-bool Entity::isDisabled() const
-{
-    return m_disabled;
-}
-
 void Entity::destroy()
 {
     m_destroyed = true;

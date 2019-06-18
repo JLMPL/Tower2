@@ -53,19 +53,16 @@ void Pickup::update()
 void Pickup::interact(Creature* other)
 {
     other->getAnimator().setState("Pickup");
+
+    destroy();
 }
 
-void Pickup::disable()
+void Pickup::destroy()
 {
-    Base::disable();
-
-    if (m_hasRigidBody)
-        m_rigidBody.disable();
-
+    m_context->renderScene->removeRenderMesh(m_mesh);
     m_context->physSys->removeRigidBody(m_rigidBody);
-    m_hasRigidBody = false;
 
-    Base::destroy();
+    m_destroyed = true;
 }
 
 phys::RigidBody& Pickup::getRigidBody()

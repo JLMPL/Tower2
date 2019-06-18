@@ -8,6 +8,12 @@
             "rootMotion": false
         },
         {
+            "name": "Pickup",
+            "file": "c_pickup.dae",
+            "loop": false,
+            "rootMotion": false
+        },
+        {
             "name": "Idle",
             "file": "c_idle.dae",
             "loop": true,

@@ -45,21 +45,17 @@ public:
     mat4               getTransform() const;
 
     u32                getID() const;
-    const std::string& getCode() const;
 
-    virtual void       disable();
-    bool               isDisabled() const;
-
-    void               destroy();
+    virtual void       destroy();
     bool               isDestroyed() const;
 
 protected:
-    u32         m_id = 0u;
+    u32           m_id = 0u;
     LevelContext* m_context = nullptr;
 
-    mat4        m_transform;
-    vec3        m_pos;
+    mat4          m_transform;
+    vec3          m_pos;
 
-    bool        m_disabled = false;
-    bool        m_destroyed = false;
+    bool          m_disabled = false;
+    bool          m_destroyed = false;
 };

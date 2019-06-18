@@ -20,7 +20,8 @@ public:
     void addRigidBody(const vec3& pos = vec3(0,5,0));
 
     void interact(Creature* other) override final;
-    void disable() override final;
+
+    void destroy() override final;
 
     phys::RigidBody& getRigidBody();
 
