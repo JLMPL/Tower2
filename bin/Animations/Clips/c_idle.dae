@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
     </contributor>
-    <created>2019-05-07T15:03:34</created>
-    <modified>2019-05-07T15:03:34</modified>
+    <created>2019-06-18T21:46:49</created>
+    <modified>2019-06-18T21:46:49</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -685,6 +685,38 @@
       </sampler>
       <channel source="#metarig_Hand_R_pose_matrix-sampler" target="metarig_Hand_R/transform"/>
     </animation>
+    <animation id="metarig_Belt0_pose_matrix">
+      <source id="metarig_Belt0_pose_matrix-input">
+        <float_array id="metarig_Belt0_pose_matrix-input-array" count="3">0 1.25 2.5</float_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-input-array" count="3" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Belt0_pose_matrix-output">
+        <float_array id="metarig_Belt0_pose_matrix-output-array" count="48">0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-output-array" count="3" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Belt0_pose_matrix-interpolation">
+        <Name_array id="metarig_Belt0_pose_matrix-interpolation-array" count="3">LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-interpolation-array" count="3" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Belt0_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Belt0_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Belt0_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Belt0_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Belt0_pose_matrix-sampler" target="metarig_Belt0/transform"/>
+    </animation>
   </library_animations>
   <library_controllers/>
   <library_visual_scenes>
@@ -756,6 +788,9 @@
                 </node>
               </node>
             </node>
+          </node>
+          <node id="metarig_Belt0" name="Belt0" sid="Belt0" type="JOINT">
+            <matrix sid="transform">0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1</matrix>
           </node>
         </node>
       </node>

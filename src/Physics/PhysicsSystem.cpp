@@ -6,6 +6,59 @@
 #include "Render/MeshManager.hpp"
 #include <PhysX/PxRigidActor.h>
 
+enum Group
+{
+    Statics = SET_BIT(0),
+    Dynamics = SET_BIT(1),
+    Controllers = SET_BIT(2)
+};
+
+void setupFiltering(physx::PxRigidActor* actor, physx::PxU32 filterGroup, physx::PxU32 filterMask)
+{
+    using namespace physx;
+
+    PxFilterData filterData;
+    filterData.word0 = filterGroup; // word0 = own ID
+    filterData.word1 = filterMask;  // word1 = ID mask to filter pairs that trigger a
+                                    // contact callback;
+    const PxU32 numShapes = actor->getNbShapes();
+    PxShape** shapes = (PxShape**)malloc(sizeof(PxShape*) * numShapes);
+    actor->getShapes(shapes, numShapes);
+
+    for(PxU32 i = 0; i < numShapes; i++)
+    {
+        PxShape* shape = shapes[i];
+        shape->setSimulationFilterData(filterData);
+    }
+
+    free(shapes);
+}
+
+physx::PxFilterFlags ShamelessRipoff(
+    physx::PxFilterObjectAttributes attributes0, physx::PxFilterData filterData0,
+    physx::PxFilterObjectAttributes attributes1, physx::PxFilterData filterData1,
+    physx::PxPairFlags& pairFlags, const void* constantBlock, physx::PxU32 constantBlockSize)
+{
+    using namespace physx;
+    // let triggers through
+    if(PxFilterObjectIsTrigger(attributes0) || PxFilterObjectIsTrigger(attributes1))
+    {
+        pairFlags = PxPairFlag::eTRIGGER_DEFAULT;
+        return PxFilterFlag::eDEFAULT;
+    }
+    // generate contacts for all that were not filtered above
+    pairFlags = PxPairFlag::eCONTACT_DEFAULT;
+
+    // trigger the contact callback for pairs (A,B) where
+    // the filtermask of A contains the ID of B and vice versa.
+    if((filterData0.word0 & filterData1.word1) && (filterData1.word0 & filterData0.word1))
+    {
+        return PxFilterFlag::eKILL;
+    }
+
+    return PxFilterFlag::eDEFAULT;
+}
+
 namespace phys
 {
 
@@ -52,7 +105,7 @@ void PhysicsSystem::init()
 
     sceneDesc.gravity       = PxVec3(0.f,-9.8f,0.f);
     sceneDesc.cpuDispatcher = PxDefaultCpuDispatcherCreate(1);
-    sceneDesc.filterShader  = PxDefaultSimulationFilterShader;
+    sceneDesc.filterShader  = ShamelessRipoff;
 
     m_scene = m_physics->createScene(sceneDesc);
     m_scene->setVisualizationParameter(PxVisualizationParameter::eSCALE, 1.f);
@@ -145,6 +198,8 @@ physx::PxController* PhysicsSystem::addController(u32* entityID, f32 radius, f32
 
     cct->getActor()->userData = reinterpret_cast<void*>(entityID);
 
+    setupFiltering(cct->getActor(), Controllers, Dynamics);
+
     // physx::PxShape* shape = nullptr;
     // cct->getActor()->getShapes(&shape, 1);
     // shape->setFlag(physx::PxShapeFlag::eSCENE_QUERY_SHAPE, false);
@@ -185,6 +240,8 @@ RigidBody PhysicsSystem::addBox(const vec3& pos, const vec3& vel, const vec3& si
     box->setLinearVelocity(physx::PxVec3(vel.x, vel.y, vel.z));
     box->setAngularVelocity(physx::PxVec3(11,11,11));
 
+    setupFiltering(box, Dynamics, Controllers);
+
     return RigidBody(box);
 }
 
@@ -216,7 +273,6 @@ StaticBody PhysicsSystem::addStaticBox(const vec3& size, const vec3& pos, const 
     return StaticBody(actor);
 }
 
-//TODO: removing thos rigidbodies
 void PhysicsSystem::removeRigidBody(RigidBody& rb)
 {
     m_scene->removeActor(*rb.getPxActor());
@@ -228,8 +284,8 @@ void PhysicsSystem::addDistanceJoint(RigidBody* rb, const vec3& local, const vec
         rb->getPxActor(), physx::PxTransform(core::conv::toPx(local)),
         NULL,             physx::PxTransform(core::conv::toPx(pos)));
 
-    m_distanceJoint->setMaxDistance(0.5f);
-    m_distanceJoint->setDamping(0.75f);
+    m_distanceJoint->setMaxDistance(0.f);
+    m_distanceJoint->setDamping(2);
     m_distanceJoint->setDistanceJointFlag(physx::PxDistanceJointFlag::eMAX_DISTANCE_ENABLED, true);
     m_distanceJoint->setConstraintFlag(physx::PxConstraintFlag::eVISUALIZATION, true);
 }
