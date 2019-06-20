@@ -6,9 +6,9 @@ class ParticleGroup;
 class ParticleAffector;
 class RenderLight;
 class RenderFlare;
+class RenderParticles;
 class Creature;
 struct GameEvent;
-
 
 class LightEffect final : public Entity
 {
@@ -27,6 +27,7 @@ private:
     Entity* m_owner = nullptr;
 
     ParticleGroup* m_particleGroup = nullptr;
+    RenderParticles* m_renderParticles = nullptr;
 
     core::Timer m_timer;
     vec3 m_posOffset = vec3(0.25,0,0);

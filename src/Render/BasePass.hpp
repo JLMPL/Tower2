@@ -32,6 +32,7 @@ private:
     gfx::Shader             m_aflatShader;
     gfx::Shader             m_flareShader;
     gfx::Shader             m_clothShader;
+    gfx::Shader             m_particleShader;
 
     LineRenderer            m_lines;
 };

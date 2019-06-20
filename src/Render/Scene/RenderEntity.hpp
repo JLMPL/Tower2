@@ -14,7 +14,8 @@ public:
         SkinMesh,
         Light,
         Flare,
-        Cloth
+        Cloth,
+        Particles
     };
 
     template <typename T>

@@ -3,6 +3,11 @@
 #include "ParticleAffector.hpp"
 #include <memory>
 
+namespace gfx
+{
+    class RenderParticles;
+}
+
 class ParticleAffector;
 
 class ParticleGroup
@@ -57,4 +62,6 @@ private:
     vec2 m_velVar;
     vec2 m_weightVar;
     vec2 m_lifeVar;
+
+    friend class RenderParticles;
 };

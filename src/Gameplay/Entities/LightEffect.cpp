@@ -4,6 +4,7 @@
 #include "Gameplay/Level.hpp"
 #include "Render/Scene/RenderFlare.hpp"
 #include "Render/Scene/RenderLight.hpp"
+#include "Render/Scene/RenderParticles.hpp"
 
 LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
     Entity(id, context)
@@ -18,11 +19,13 @@ LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
     // fl->setScale(0.5f);
     m_flare->setColor(Color(0.5,0.75,1,1));
 
-    m_particleGroup = m_context->particleSys->addParticleGroup(32, vec3(0,0,0));
+    m_particleGroup = m_context->particleSys->addParticleGroup(32, vec3(0,-0.5,0));
     m_particleGroup->enableAutoSpawn();
     m_particleGroup->setSpawnPeriod(0.2);
     m_particleGroup->setWeightVariance(0.1, 0.5);
-    m_particleGroup->setLifetimeVariance(1, 2);
+    m_particleGroup->setLifetimeVariance(2, 2);
+
+    m_renderParticles = m_context->renderScene->addRenderParticles(*m_particleGroup);
 
     m_owner = context->level->getEntityByID(owner);
 }

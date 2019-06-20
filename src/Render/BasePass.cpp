@@ -7,6 +7,8 @@
 #include "Material.hpp"
 #include "MaterialManager.hpp"
 
+#include "TextureManager.hpp"
+
 namespace gfx
 {
 
@@ -18,6 +20,7 @@ void BasePass::init()
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");
     m_clothShader.loadFromFile("Shaders/Static.vert", "Shaders/Cloth.frag");
     m_flareShader.loadFromFile("Shaders/Flare.sha");
+    m_particleShader.loadFromFile("Shaders/Particles.sha");
 
     m_lines.init();
 }
@@ -55,6 +58,12 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
     {
         if (cloth->isVisible())
             cloth->updateGeometry();
+    }
+
+    for (auto& part : scene.m_particles)
+    {
+        if (part->isVisible())
+            part->updateTransforms();
     }
 
     m_fbo.bind();
@@ -209,6 +218,32 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
         m_flareShader.unbind();
     }
+
+    for (auto& renderParticles : scene.m_particles)
+    {
+        if (!renderParticles->isVisible())
+            continue;
+
+        auto tex = g_TexMgr.getTexture("flare.png");
+
+        m_particleShader.bind();
+        m_particleShader.setUniformMatrix("uProj", scene.getProjection());
+        m_particleShader.setUniformMatrix("uView", scene.getView());
+
+        for (auto i = 0; i < renderParticles->getParticleCount(); i++)
+        {
+            char index[15];
+            sprintf(index, "uModels[%d]", i);
+            m_particleShader.setUniformMatrix(index, renderParticles->getMatrixArray()[i]);
+        }
+
+        m_particleShader.setUniformTexture("uTexture", 0, *tex);
+
+        renderParticles->render();
+
+        m_particleShader.unbind();
+    }
+
     glDepthMask(GL_TRUE);
     glDisable(GL_BLEND);
 
