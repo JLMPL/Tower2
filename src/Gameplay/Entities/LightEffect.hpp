@@ -2,10 +2,13 @@
 #include "Core/Timer.hpp"
 #include "Gameplay/Entity.hpp"
 
+class ParticleGroup;
+class ParticleAffector;
 class RenderLight;
 class RenderFlare;
 class Creature;
 struct GameEvent;
+
 
 class LightEffect final : public Entity
 {
@@ -22,6 +25,8 @@ private:
     RenderFlare* m_flare = nullptr;
 
     Entity* m_owner = nullptr;
+
+    ParticleGroup* m_particleGroup = nullptr;
 
     core::Timer m_timer;
     vec3 m_posOffset = vec3(0.25,0,0);

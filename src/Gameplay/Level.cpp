@@ -11,6 +11,7 @@
 #include "Render/MeshManager.hpp"
 #include "Script/Lua.hpp"
 #include "Render/Scene/RenderMesh.hpp"
+#include "Core/Random.hpp"
 #include <SDL2/SDL.h>
 
 void Level::initFromScript(const std::string& file)
@@ -22,6 +23,7 @@ void Level::initFromScript(const std::string& file)
     m_lvlContext.eventSys    = &m_eventSys;
     m_lvlContext.animSys     = &m_animSys;
     m_lvlContext.physSys     = &m_physSys;
+    m_lvlContext.particleSys = &m_particleSystem;
     m_lvlContext.camera      = &m_camera;
 
     m_hud.init(m_renderScene);
@@ -37,6 +39,11 @@ void Level::initFromScript(const std::string& file)
     m_cameraCtrl.init(&m_lvlContext);
 
     addLightEffect(vec3(0,3,0));
+
+    m_particleGroup = m_particleSystem.addParticleGroup(1024, vec3(0));
+    m_particleAffector = m_particleGroup->addParticleAffector();
+    m_particleAffector->setPosition(vec3(3,2,0));
+    m_particleAffector->setStrength(25);
 }
 
 void Level::uploadFunctions(lua::state& state)
@@ -226,6 +233,16 @@ void Level::update()
     createEntities();
     destroyEntities();
 
+    for (auto i = 0; i < 8; i++)
+    {
+        Particle p;
+        p.pos = vec3(0,2,0);
+        p.vel = vec3(core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f));
+        p.weight = 0.1;
+        p.lifetime = 2;
+        m_particleGroup->spawnParticle(p);
+    }
+
     m_cameraCtrl.updateCameraRotation();
 
     for (auto& ctrl : m_controllers)
@@ -246,6 +263,10 @@ void Level::update()
     // m_waynet.debugDraw();
 
     m_animSys.animate();
+
+    m_particleAffector->setPosition(m_entities[0]->getPos() + vec3(0,1,0));
+
+    m_particleSystem.update();
 
     m_physSys.debugDraw();
 

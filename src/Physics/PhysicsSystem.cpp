@@ -13,22 +13,21 @@ enum Group
     Controllers = SET_BIT(2)
 };
 
-void setupFiltering(physx::PxRigidActor* actor, physx::PxU32 filterGroup, physx::PxU32 filterMask)
+void setupFiltering(physx::PxRigidActor* actor, u32 filterGroup, u32 filterMask)
 {
     using namespace physx;
 
     PxFilterData filterData;
-    filterData.word0 = filterGroup; // word0 = own ID
-    filterData.word1 = filterMask;  // word1 = ID mask to filter pairs that trigger a
-                                    // contact callback;
-    const PxU32 numShapes = actor->getNbShapes();
+    filterData.word0 = filterGroup;
+    filterData.word1 = filterMask;
+
+    u32 numShapes = actor->getNbShapes();
     PxShape** shapes = (PxShape**)malloc(sizeof(PxShape*) * numShapes);
     actor->getShapes(shapes, numShapes);
 
-    for(PxU32 i = 0; i < numShapes; i++)
+    for(u32 i = 0; i < numShapes; i++)
     {
-        PxShape* shape = shapes[i];
-        shape->setSimulationFilterData(filterData);
+        shapes[i]->setSimulationFilterData(filterData);
     }
 
     free(shapes);
@@ -40,17 +39,15 @@ physx::PxFilterFlags ShamelessRipoff(
     physx::PxPairFlags& pairFlags, const void* constantBlock, physx::PxU32 constantBlockSize)
 {
     using namespace physx;
-    // let triggers through
+
     if(PxFilterObjectIsTrigger(attributes0) || PxFilterObjectIsTrigger(attributes1))
     {
         pairFlags = PxPairFlag::eTRIGGER_DEFAULT;
         return PxFilterFlag::eDEFAULT;
     }
-    // generate contacts for all that were not filtered above
+
     pairFlags = PxPairFlag::eCONTACT_DEFAULT;
 
-    // trigger the contact callback for pairs (A,B) where
-    // the filtermask of A contains the ID of B and vice versa.
     if((filterData0.word0 & filterData1.word1) && (filterData1.word0 & filterData0.word1))
     {
         return PxFilterFlag::eKILL;

@@ -9,6 +9,7 @@
 #include "Interface/HeadsUpDisplay.hpp"
 #include "Render/Scene/RenderScene.hpp"
 #include "Script/Lua.hpp"
+#include "Render/Effects/ParticleSystem.hpp"
 
 union SDL_Event;
 
@@ -26,6 +27,7 @@ struct LevelContext
     EventSystem*           eventSys = nullptr;
     anim::AnimationSystem* animSys = nullptr;
     phys::PhysicsSystem*   physSys = nullptr;
+    ParticleSystem*        particleSys = nullptr;
     Camera*                camera = nullptr;
 };
 
@@ -76,6 +78,10 @@ private:
     EventSystem m_eventSys;
     anim::AnimationSystem m_animSys;
     phys::PhysicsSystem m_physSys;
+    ParticleSystem m_particleSystem;
+
+    ParticleGroup* m_particleGroup = nullptr;
+    ParticleAffector* m_particleAffector = nullptr;
 
     ui::HeadsUpDisplay m_hud;
 
