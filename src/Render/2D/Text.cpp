@@ -71,7 +71,7 @@ void Text::updateGeometry()
         coords.push_back(xpos);
         coords.push_back(ypos);
 
-        cursor += glyph.advance >> 6;
+        cursor += glyph.advance;// >> 6;
     }
 
     m_width = cursor;

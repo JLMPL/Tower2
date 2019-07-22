@@ -1,94 +1,68 @@
 #include "Font.hpp"
 #include "Debug/Log.hpp"
+#define STB_TRUETYPE_IMPLEMENTATION
+#include "ThirdParty/stb/stb_truetype.h"
 #include <fstream>
 
 namespace gfx
 {
 
-//TODO remove freetype as a dependency
-
 Font::Font()
 {
-    auto error = FT_Init_FreeType(&m_library);
-    if (error)
-    {
-        Log::error("Freetype Initialization Error: %d\n", error);
-    }
 }
 
 Font::~Font()
 {
-    FT_Done_Face(m_face);
-    FT_Done_FreeType(m_library);
+    free(m_fontBuffer);
 }
 
 void Font::loadFromFile(const std::string& path)
 {
-    auto error = FT_New_Face(m_library, path.c_str(), 0, &m_face);
+    FILE* file = fopen(path.c_str(), "r");
 
-    if (error == FT_Err_Unknown_File_Format)
+    if (!file)
     {
-        Log::error("Could not load font %s! Unknown file format.\n", path.c_str());
+        Log::error("Could not load font %s\n", path.c_str());
     }
-    else if (error)
-    {
-        Log::error("Could not load font %s (%d)\n", path.c_str(), error);
-    }
+
+    fseek(file, 0, SEEK_END);
+    size_t fileSize = ftell(file);
+    fseek(file, 0, SEEK_SET);
+
+    m_fontBuffer = (byte*)malloc(fileSize);
+    fread(m_fontBuffer, 1, fileSize, file);
+    fclose(file);
 }
 
 void Font::createPage(u32 size)
 {
-    FT_Set_Pixel_Sizes(m_face, 0, size);
-
     Page page;
-    i32 dualSize = size * 2;
-    i32 bufferSize = 16 * dualSize;
-    byte* buffer = new byte[bufferSize * bufferSize];
-    std::memset(buffer, 0, bufferSize * bufferSize);
+    stbtt_pack_context packContext;
 
-    i32 xIndex = 0;
-    i32 yIndex = 0;
+    byte* datas = (byte*)malloc(512*512);
+    stbtt_packedchar* packedChars = (stbtt_packedchar*)malloc(sizeof(stbtt_packedchar) * 256);
 
-    for (int i = 0; i < 255; i++)
+    stbtt_PackBegin(&packContext, datas, 512, 512, 0, 1, NULL);
+    stbtt_PackSetOversampling(&packContext, 1, 1);
+    stbtt_PackFontRange(&packContext, m_fontBuffer, 0, size, 0, 256, packedChars);
+    stbtt_PackEnd(&packContext);
+
+    for (int i = 0; i < 256; i++)
     {
-        int glyphIndex = FT_Get_Char_Index(m_face, i);
+        const stbtt_packedchar& pc = packedChars[i];
 
-        FT_GlyphSlot glyph = m_face->glyph;
-
-        FT_Load_Glyph(m_face, glyphIndex, FT_LOAD_DEFAULT);
-        FT_Render_Glyph(glyph, FT_RENDER_MODE_NORMAL);
-
-        int w = glyph->bitmap.width;
-        int h = glyph->bitmap.rows;
-
-        page.glyphs[i].uvPos = {xIndex, yIndex};
-        page.glyphs[i].size = {w, h};
-        page.glyphs[i].bearing = {glyph->bitmap_left, glyph->bitmap_top};
-        page.glyphs[i].advance = glyph->advance.x;
-
-        for (auto i = 0; i < h; i++)
-        {
-            for (auto j = 0; j < w; j++)
-            {
-                int val = m_face->glyph->bitmap.buffer[j + w * i];
-                buffer[(xIndex + j) + bufferSize * (yIndex + i)] = val;
-            }
-        }
-
-        xIndex += dualSize;
-
-        if (xIndex == bufferSize)
-        {
-            xIndex = 0;
-            yIndex += dualSize;
-        }
+        page.glyphs[i].uvPos = {pc.x0, pc.y0};
+        page.glyphs[i].size = {pc.x1 - pc.x0, pc.y1 - pc.y0};
+        page.glyphs[i].bearing = {pc.xoff, -pc.yoff};
+        page.glyphs[i].advance = pc.xadvance;
     }
 
     page.texture = std::unique_ptr<Texture>(new Texture);
-    page.texture->create(bufferSize, bufferSize, buffer);
-    free(buffer);
-
+    page.texture->create(512, 512, datas);
     m_pages[size] = std::move(page);
+
+    free(packedChars);
+    free(datas);
 }
 
 Page* Font::getPage(u32 size)

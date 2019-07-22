@@ -1,8 +1,6 @@
 #pragma once
 #include "Core/Math3D.hpp"
 #include "Render/Texture.hpp"
-#include <freetype2/ft2build.h>
-#include FT_FREETYPE_H
 #include <memory>
 #include <map>
 
@@ -38,8 +36,7 @@ private:
     void createPage(u32 size);
 
 private:
-    FT_Library m_library = nullptr;
-    FT_Face m_face = nullptr;
+    byte* m_fontBuffer = nullptr;
 
     std::map<u32, Page> m_pages;
 };
