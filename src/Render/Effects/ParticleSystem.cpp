@@ -11,7 +11,7 @@ void ParticleSystem::update()
     for (auto& group : m_groups)
     {
         group->update();
-        group->debugDraw();
+        // group->debugDraw();
     }
 }
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.5.0)
 project(ASS)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(PROJECT_LINK_LIBS -lPhysX3Extensions -lm -lpthread -lfreetype -lGL -lGLEW -lSDL2 -lSDL2_mixer -llua5.3 -lassimp -lPhysX3_x64 -lPhysX3Common_x64 -lPhysX3CharacterKinematic_x64 -lPhysX3Cooking_x64)
+set(PROJECT_LINK_LIBS -lPhysX3Extensions -lfreetype -lGL -lGLEW -lSDL2 -llua5.3 -lassimp -lPhysX3_x64 -lPhysX3Common_x64 -lPhysX3CharacterKinematic_x64 -lPhysX3Cooking_x64)
 
 link_directories(/usr/local/lib)
 link_directories(./)

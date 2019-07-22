@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Music.hpp"
 #include "Sound.hpp"
 
@@ -26,3 +26,4 @@ private:
 extern AudioSystem g_AudioSys;
 
 }
+*/

@@ -117,7 +117,7 @@ void Application::setupSystems()
     gfx::g_MatMgr.loadMaterials();
     gfx::g_SceneRenderer.init();
     gfx::g_Renderer2D.init();
-    aud::g_AudioSys.init();
+    // aud::g_AudioSys.init();
 
     gInput.init();
 }

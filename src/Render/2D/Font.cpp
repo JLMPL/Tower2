@@ -5,6 +5,8 @@
 namespace gfx
 {
 
+//TODO remove freetype as a dependency
+
 Font::Font()
 {
     auto error = FT_Init_FreeType(&m_library);

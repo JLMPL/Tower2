@@ -1,7 +1,7 @@
-#include "Audio.hpp"
+/*#include "Audio.hpp"
 #include "Debug/Log.hpp"
 #include "Core/Config.hpp"
-#include <SDL2/SDL_mixer.h>
+// #include <SDL2/SDL_mixer.h>
 
 namespace aud
 {
@@ -10,7 +10,7 @@ AudioSystem g_AudioSys;
 
 AudioSystem::~AudioSystem()
 {
-    Mix_Quit();
+    // Mix_Quit();
 }
 
 void AudioSystem::init()
@@ -35,3 +35,4 @@ void AudioSystem::refresh()
 }
 
 }
+*/

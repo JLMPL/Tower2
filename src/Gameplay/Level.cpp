@@ -44,6 +44,8 @@ void Level::initFromScript(const std::string& file)
     m_particleAffector = m_particleGroup->addParticleAffector();
     m_particleAffector->setPosition(vec3(3,2,0));
     m_particleAffector->setStrength(25);
+
+    m_renderParticles = m_renderScene.addRenderParticles(m_particleGroup);
 }
 
 void Level::uploadFunctions(lua::state& state)
@@ -253,8 +255,10 @@ void Level::update()
     for (auto& ent : m_entities)
         ent->update();
 
-    m_physSys.stepSimulation();
+    for (auto& ctrl : m_controllers)
+        ctrl->preSimulationUpdate();
 
+    m_physSys.stepSimulation();
 
     for (auto& ent : m_entities)
         ent->lateUpdate();

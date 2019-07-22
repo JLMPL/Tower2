@@ -29,6 +29,7 @@ public:
     ~PlayerController() = default;
 
     void update() override final;
+    void preSimulationUpdate() override final;
     void onEvent(const GameEvent& event) override final;
 
 private:
@@ -70,7 +71,7 @@ private:
     phys::Cloth* m_cape2 = nullptr;
     phys::Cloth::Sphere m_spheres[6];
 
-    phys::RigidBody m_dongle;
+    // phys::RigidBody m_dongle;
 
     f32 m_verticalVelocity = 0;
 

@@ -1,4 +1,4 @@
-#pragma once
+/*#pragma once
 #include "Core/Types.hpp"
 #include <SDL2/SDL_mixer.h>
 #include <string>
@@ -26,3 +26,4 @@ private:
 };
 
 }
+*/

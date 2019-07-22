@@ -32,7 +32,7 @@ public:
     RenderLight* addRenderLight();
     RenderFlare* addRenderFlare(const std::string& tex);
     RenderCloth* addRenderCloth(phys::Cloth* cloth);
-    RenderParticles* addRenderParticles(const ParticleGroup& group);
+    RenderParticles* addRenderParticles(const ParticleGroup* group);
 
     void removeRenderMesh(RenderMesh* mesh);
 

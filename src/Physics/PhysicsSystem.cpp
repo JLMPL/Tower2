@@ -289,7 +289,7 @@ void PhysicsSystem::addDistanceJoint(RigidBody* rb, const vec3& local, const vec
 
 void PhysicsSystem::setLocalPose(const vec3& pos)
 {
-    m_distanceJoint->setLocalPose(physx::PxJointActorIndex::eACTOR1, physx::PxTransform(core::conv::toPx(pos)));
+    // m_distanceJoint->setLocalPose(physx::PxJointActorIndex::eACTOR1, physx::PxTransform(core::conv::toPx(pos)));
 }
 
 RaycastResult PhysicsSystem::raycast(const vec3& origin, const vec3& dir, f32 dist)

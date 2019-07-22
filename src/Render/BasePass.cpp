@@ -229,17 +229,13 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
         m_particleShader.bind();
         m_particleShader.setUniformMatrix("uProj", scene.getProjection());
         m_particleShader.setUniformMatrix("uView", scene.getView());
+        m_particleShader.setUniformTexture("uTexture", 0, *tex);
 
         for (auto i = 0; i < renderParticles->getParticleCount(); i++)
         {
-            char index[15];
-            sprintf(index, "uModels[%d]", i);
-            m_particleShader.setUniformMatrix(index, renderParticles->getMatrixArray()[i]);
+            m_particleShader.setUniformMatrix("uModel", renderParticles->getMatrixArray()[i]);
+            renderParticles->render();
         }
-
-        m_particleShader.setUniformTexture("uTexture", 0, *tex);
-
-        renderParticles->render();
 
         m_particleShader.unbind();
     }

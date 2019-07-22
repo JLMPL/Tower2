@@ -14,20 +14,20 @@ void Input::update()
 
     const Uint8* keys = SDL_GetKeyboardState(nullptr);
 
-    if (keys[SDL_SCANCODE_W])
+    if (keys[SDL_SCANCODE_UP])
     {
         m_leftAxis.y = 1.f;
     }
-    if (keys[SDL_SCANCODE_S])
+    if (keys[SDL_SCANCODE_DOWN])
     {
         m_leftAxis.y = -1.f;
     }
 
-    if (keys[SDL_SCANCODE_A])
+    if (keys[SDL_SCANCODE_LEFT])
     {
         m_leftAxis.x = -1.f;
     }
-    if (keys[SDL_SCANCODE_D])
+    if (keys[SDL_SCANCODE_RIGHT])
     {
         m_leftAxis.x = 1.f;
     }

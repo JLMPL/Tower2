@@ -19,6 +19,11 @@ public:
     vec3 getForward() const;
     vec3 getSide() const;
 
+    vec3 getPos() const
+    {
+        return m_eye;
+    }
+
 private:
     vec3 m_eye;
     vec3 m_center;

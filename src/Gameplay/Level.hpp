@@ -82,6 +82,7 @@ private:
 
     ParticleGroup* m_particleGroup = nullptr;
     ParticleAffector* m_particleAffector = nullptr;
+    RenderParticles* m_renderParticles = nullptr;
 
     ui::HeadsUpDisplay m_hud;
 

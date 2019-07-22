@@ -25,7 +25,7 @@ LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
     m_particleGroup->setWeightVariance(0.1, 0.5);
     m_particleGroup->setLifetimeVariance(2, 2);
 
-    m_renderParticles = m_context->renderScene->addRenderParticles(*m_particleGroup);
+    m_renderParticles = m_context->renderScene->addRenderParticles(m_particleGroup);
 
     m_owner = context->level->getEntityByID(owner);
 }

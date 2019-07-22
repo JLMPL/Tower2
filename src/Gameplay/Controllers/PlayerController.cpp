@@ -77,8 +77,8 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
         enterIdle();
     });
 
-    m_dongle = m_context->physSys->addBox(vec3(0,2,0), vec3(0), vec3(0.05,0.3,0.02));
-    m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
+    // m_dongle = m_context->physSys->addBox(vec3(0,2,0), vec3(0), vec3(0.05,0.3,0.02));
+    // m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
 }
 
 void PlayerController::onEvent(const GameEvent& event)
@@ -149,14 +149,6 @@ void PlayerController::update()
         m_context->physSys->setLocalPose(tr[3]);
     }
 
-    m_cape->setTargetTransform(m_cre->getTransform());
-    m_capeNode->setTransform(m_cre->getTransform());
-
-
-    m_sord->setTransform(m_dongle.getGlobalTransform() * math::translate(vec3(0,0.5,0)) * math::rotate(M_PI, vec3(1,0,0)));
-    // m_cape2->setTargetTransform(m_cre->getTransform());
-    // m_capeNode2->setTransform(m_cre->getTransform());
-
     if (m_cre->getAnimator().isRootMotion())
     {
         vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
@@ -165,6 +157,15 @@ void PlayerController::update()
     }
 
     updateHud();
+}
+
+void PlayerController::preSimulationUpdate()
+{
+    // TODO make entities also have preSimulationUpdate
+    mat4 tr = math::translate(m_cre->getCharCtrl().getFootPosition()) * math::rotate(m_cre->getYaw(), vec3(0,1,0));
+    m_cape->setTargetTransform(tr);
+    m_capeNode->setTransform(tr);
+    // m_sord->setTransform(m_dongle.getGlobalTransform() * math::translate(vec3(0,0.5,0)) * math::rotate(M_PI, vec3(1,0,0)));
 }
 
 void PlayerController::checkDrawWeapon()
