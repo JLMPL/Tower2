@@ -8,7 +8,7 @@
 namespace anim
 {
 
-void Animation::loadAnimation(const std::string& path)
+LOCAL void loadAnimation(Animation* anim, const std::string& path)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(), aiProcess_LimitBoneWeights);
@@ -47,10 +47,10 @@ void Animation::loadAnimation(const std::string& path)
                 jointAnimation.rotationKeys.push_back(quatKey);
             }
 
-            jointAnimations.push_back(jointAnimation);
+            anim->jointAnimations.push_back(jointAnimation);
         }
 
-        duration = scene->mAnimations[0]->mDuration;
+        anim->duration = scene->mAnimations[0]->mDuration;
     }
     else
     {
@@ -60,7 +60,7 @@ void Animation::loadAnimation(const std::string& path)
 }
 
 template<typename T>
-static u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
+LOCAL u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
 {
     for (u32 i = 0; i < keys.size() - 1; i++)
     {
@@ -70,7 +70,7 @@ static u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
     return -1;
 }
 
-vec3 Animation::lerpRoot(const JointAnimation& jointAnimation, Seconds animationTime) const
+LOCAL vec3 lerpRoot(const JointAnimation& jointAnimation, Seconds animationTime)
 {
     auto& keys = jointAnimation.positionKeys;
 
@@ -86,18 +86,27 @@ vec3 Animation::lerpRoot(const JointAnimation& jointAnimation, Seconds animation
     return math::lerp(keys[currPosIndex].value, keys[nextPosIndex].value, factor);
 }
 
-void Animation::generateRootMotion()
+LOCAL JointAnimation* findJointAnimInternal(Animation* anim, const core::Name32& jointName)
 {
-    auto assAnim = findJointAnimInternal("Root");
+    for (auto& i : anim->jointAnimations)
+        if (i.name == jointName)
+            return &i;
+
+    return nullptr;
+}
+
+LOCAL void generateRootMotion(Animation* anim)
+{
+    auto assAnim = findJointAnimInternal(anim, "Root");
 
     if (!assAnim)
     {
-        hasRootMotion = false;
+        anim->hasRootMotion = false;
         return;
     }
 
-    i32 numSamples = 24 * duration;
-    f32 step = duration / numSamples;
+    i32 numSamples = 24 * anim->duration;
+    f32 step = anim->duration / numSamples;
 
     // for (u32 i = 1; i < numSamples; i++)
     // {
@@ -118,38 +127,29 @@ void Animation::generateRootMotion()
 
     // rootMotion.positionKeys.push_back({rootMotion.positionKeys.back().value, duration});
 
-    rootMotion = *assAnim;
+    anim->rootMotion = *assAnim;
 
     for (u32 i = 0; i < assAnim->positionKeys.size(); i++)
     {
-        vec3 root = rootMotion.positionKeys[i].value;
-        rootMotion.positionKeys[i].value.x = -root.x;
-        rootMotion.positionKeys[i].value.y = root.z;
-        rootMotion.positionKeys[i].value.z = -root.y;
+        vec3 root = anim->rootMotion.positionKeys[i].value;
+        anim->rootMotion.positionKeys[i].value.x = -root.x;
+        anim->rootMotion.positionKeys[i].value.y = root.z;
+        anim->rootMotion.positionKeys[i].value.z = -root.y;
 
         assAnim->positionKeys[i].value.x = 0;
         assAnim->positionKeys[i].value.y = 0;
     }
 }
 
-void Animation::loadFromFile(const std::string& path)
+void loadAnimationFromFile(Animation* anim, const std::string& path)
 {
-    loadAnimation(path);
-    generateRootMotion();
+    loadAnimation(anim, path);
+    generateRootMotion(anim);
 }
 
-const JointAnimation* Animation::findJointAnim(const core::Name32& jointName) const
+const JointAnimation* findJointInAnimation(const Animation& anim, const core::Name32& jointName)
 {
-    for (auto& i : jointAnimations)
-        if (i.name == jointName)
-            return &i;
-
-    return nullptr;
-}
-
-JointAnimation* Animation::findJointAnimInternal(const core::Name32& jointName)
-{
-    for (auto& i : jointAnimations)
+    for (auto& i : anim.jointAnimations)
         if (i.name == jointName)
             return &i;
 

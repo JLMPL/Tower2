@@ -21,7 +21,7 @@ void Level::initFromScript(const std::string& file)
     m_lvlContext.level       = this;
     m_lvlContext.renderScene = &m_renderScene;
     m_lvlContext.eventSys    = &m_eventSys;
-    m_lvlContext.animSys     = &m_animSys;
+    // m_lvlContext.animSys     = &m_animSys;
     m_lvlContext.physSys     = &m_physSys;
     m_lvlContext.particleSys = &m_particleSystem;
     m_lvlContext.camera      = &m_camera;
@@ -266,7 +266,7 @@ void Level::update()
     m_cameraCtrl.updateCameraPosition();
     // m_waynet.debugDraw();
 
-    m_animSys.animate();
+    anim::updateAnimationSystem();
 
     m_particleAffector->setPosition(m_entities[0]->getPos() + vec3(0,1,0));
 

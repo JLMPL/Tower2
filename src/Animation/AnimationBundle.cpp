@@ -1,4 +1,4 @@
-#include "AnimationBundle.hpp"
+#include "Animation.hpp"
 #include <Core/Json.hpp>
 #include <fstream>
 

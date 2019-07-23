@@ -1,6 +1,5 @@
 #pragma once
 #include "Physics/CharacterController.hpp"
-#include "Animation/Animator.hpp"
 #include "Core/Timer.hpp"
 #include "Interactible.hpp"
 

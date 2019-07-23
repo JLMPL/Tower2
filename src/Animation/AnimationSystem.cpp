@@ -1,21 +1,27 @@
-#include "AnimationSystem.hpp"
-#include "AnimationManager.hpp"
+#include "Animation.hpp"
 #include "Debug/Log.hpp"
-#include "Pose.hpp"
 
 namespace anim
 {
 
-void AnimationSystem::animate()
+std::vector<std::unique_ptr<Animator>> l_animators;
+
+void updateAnimationSystem()
 {
-    for (auto& animator : m_animators)
-        animator->update();
+    for (auto& animator : l_animators)
+        updateAnimator(animator.get());
 }
 
-Animator* AnimationSystem::addAnimator(const Skeleton* skel, const std::string& bundle)
+Animator* addAnimatorToAnimSystem(const Skeleton* skel, const std::string& bundle)
 {
-    m_animators.emplace_back(new Animator(skel, *anim::g_AnimMgr.getBundle(bundle)));
-    return m_animators.back().get();
+    // l_animators.emplace_back(new Animator(skel, *anim::getLoadedBundle(bundle)));
+
+    std::unique_ptr<Animator> animer(new Animator());
+    setupAnimator(animer.get(), skel, *anim::getLoadedBundle(bundle));
+
+    l_animators.push_back(std::move(animer));
+
+    return l_animators.back().get();
 }
 
 }

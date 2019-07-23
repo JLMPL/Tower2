@@ -1,31 +1,29 @@
-#include "Animator.hpp"
-#include "Debug/Log.hpp"
 #include "Animation.hpp"
-#include "Pose.hpp"
-#include "Skeleton.hpp"
+#include "Debug/Log.hpp"
+#include "Core/FrameInfo.hpp"
 
 namespace anim
 {
 
 static mat4 DaeCorrectionMatrix = math::rotate(-90.0_rad, vec3(1,0,0));
 
-Animator::Animator(const Skeleton* skeleton, const AnimationBundle& anims)
+void setupAnimator(Animator* animer, const Skeleton* skeleton, const AnimationBundle& anims)
 {
-    m_skeleton = skeleton;
+    animer->skeleton = skeleton;
 
-    m_matrixPalette.resize(skeleton->joints.size());
-    m_globalTransforms.resize(skeleton->joints.size());
+    animer->matrixPalette.resize(skeleton->joints.size());
+    animer->jointTransforms.resize(skeleton->joints.size());
 
     for (u32 i = 0; i < anims.getStates().size(); i++)
     {
         AnimationState::Ptr state(new AnimationState());
         *state = anims.getStates()[i];
         state->setSkeleton(skeleton);
-        m_animStates.push_back(std::move(state));
+        animer->animStates.push_back(std::move(state));
     }
 }
 
-void Animator::genGlobalPose(const Joint& joint, const mat4& parentTransform, const Pose& pose)
+LOCAL void genGlobalPose(Animator* animer, const Joint& joint, const mat4& parentTransform, const Pose& pose)
 {
     const JointPose* poze = nullptr;
 
@@ -47,32 +45,32 @@ void Animator::genGlobalPose(const Joint& joint, const mat4& parentTransform, co
 
     mat4 globalTransform = parentTransform * jointTransformation;
 
-    if (joint.index < 0 || joint.index >= m_globalTransforms.size())
+    if (joint.index < 0 || joint.index >= animer->jointTransforms.size())
         return;
 
-    m_globalTransforms[joint.index] = DaeCorrectionMatrix * globalTransform;
-    m_matrixPalette[joint.index] = DaeCorrectionMatrix * globalTransform * joint.offsetMatrix;
+    animer->jointTransforms[joint.index] = DaeCorrectionMatrix * globalTransform;
+    animer->matrixPalette[joint.index] = DaeCorrectionMatrix * globalTransform * joint.offsetMatrix;
 
     for (u32 i = 0; i < Joint::MaxChildren; i++)
     {
         if (joint.children[i] != -1)
-            genGlobalPose(m_skeleton->joints[joint.children[i]], globalTransform, pose);
+            genGlobalPose(animer, animer->skeleton->joints[joint.children[i]], globalTransform, pose);
     }
 }
 
-Pose Animator::update()
+Pose updateAnimator(Animator* animer)
 {
-    m_pose = m_activeState->update(core::g_FInfo.delta);
-    m_rootMotion = m_activeState->getRootMotion();
+    animer->pose = animer->activeState->update(core::g_FInfo.delta);
+    animer->rootMotion = animer->activeState->getRootMotion();
 
-    genGlobalPose(m_skeleton->joints[0], mat4(1.f), m_pose);
+    genGlobalPose(animer, animer->skeleton->joints[0], mat4(1.f), animer->pose);
 
-    return m_pose;
+    return animer->pose;
 }
 
-AnimationState* Animator::getState(const std::string& str)
+AnimationState* getAnimatorState(Animator* animer, const std::string& str)
 {
-    for (auto& state : m_animStates)
+    for (auto& state : animer->animStates)
     {
         if (state->getName() == str)
             return state.get();
@@ -81,11 +79,11 @@ AnimationState* Animator::getState(const std::string& str)
     return nullptr;
 }
 
-void Animator::setState(const std::string& str)
+void setAnimatorState(Animator* animer, const std::string& str)
 {
-    auto state = getState(str);
+    auto state = getAnimatorState(animer, str);
 
-    if (m_activeState == state)
+    if (animer->activeState == state)
         return;
 
     if (!state)
@@ -94,38 +92,13 @@ void Animator::setState(const std::string& str)
         return;
     }
 
-    state->enter(m_pose);
-    m_activeState = state;
+    state->enter(animer->pose);
+    animer->activeState = state;
 }
 
-AnimationState* Animator::getCurrentState() const
+bool isAnimatorRootMotion(Animator* animer)
 {
-    return m_activeState;
-}
-
-bool Animator::isRootMotion() const
-{
-    return m_activeState->hasRootMotion();
-}
-
-vec3 Animator::getRootMotion() const
-{
-    return m_rootMotion;
-}
-
-const Skeleton& Animator::getSkeleton() const
-{
-    return *m_skeleton;
-}
-
-const mat4* Animator::getMatrixPalette() const
-{
-    return &m_matrixPalette[0];
-}
-
-const mat4* Animator::getGlobalJointTransforms() const
-{
-    return &m_globalTransforms[0];
+    return animer->activeState->hasRootMotion();
 }
 
 }

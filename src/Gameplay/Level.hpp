@@ -1,6 +1,6 @@
 #pragma once
 #include "AI/Waynet.hpp"
-#include "Animation/AnimationSystem.hpp"
+#include "Animation/Animation.hpp"
 #include "Controllers/CameraController.hpp"
 #include "CreatureController.hpp"
 #include "Entities/Camera.hpp"
@@ -25,7 +25,7 @@ struct LevelContext
     class Level*           level = nullptr;
     RenderScene*           renderScene = nullptr;
     EventSystem*           eventSys = nullptr;
-    anim::AnimationSystem* animSys = nullptr;
+    // anim::AnimationSystem* animSys = nullptr;
     phys::PhysicsSystem*   physSys = nullptr;
     ParticleSystem*        particleSys = nullptr;
     Camera*                camera = nullptr;
@@ -76,7 +76,7 @@ private:
 
     LevelContext m_lvlContext;
     EventSystem m_eventSys;
-    anim::AnimationSystem m_animSys;
+    // anim::AnimationSystem m_animSys;
     phys::PhysicsSystem m_physSys;
     ParticleSystem m_particleSystem;
 

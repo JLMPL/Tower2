@@ -1,4 +1,4 @@
-#include "Skeleton.hpp"
+#include "Animation.hpp"
 
 namespace anim
 {
@@ -54,7 +54,7 @@ Pose Skeleton::getPose(const Animation* anim, Seconds time) const
 
     for (u32 i = 0; i < joints.size(); i++)
     {
-        const JointAnimation* jointAnim = anim->findJointAnim(joints[i].name);
+        const JointAnimation* jointAnim = findJointInAnimation(*anim, joints[i].name);
 
         if (jointAnim)
         {

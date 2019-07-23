@@ -1,5 +1,5 @@
 #include "Creature.hpp"
-#include "Animation/AnimationSystem.hpp"
+#include "Animation/Animation.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Render/MaterialManager.hpp"
@@ -25,8 +25,8 @@ void Creature::initPlayer()
 {
     initLabel("Player", 2.25);
 
-    m_animator = m_context->animSys->addAnimator(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
-    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->getMatrixPalette());
+    m_animator = anim::addAnimatorToAnimSystem(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
+    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->matrixPalette.data());
 
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
 
@@ -42,8 +42,8 @@ void Creature::initSkeleton()
 {
     initLabel("Skeleton", 2.25);
 
-    m_animator = m_context->animSys->addAnimator(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
-    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->getMatrixPalette());
+    m_animator = anim::addAnimatorToAnimSystem(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
+    m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->matrixPalette.data());
 
     m_conto.init(m_context->physSys, &m_id, 0.25, 1.5);
     // m_eq.init(m_id);

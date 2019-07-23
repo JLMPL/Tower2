@@ -1,37 +1,38 @@
-#include "AnimationManager.hpp"
-#include "AnimationBundle.hpp"
+#include "Animation.hpp"
+// #include "AnimationBundle.hpp"
 
 namespace anim
 {
 
-AnimationManager g_AnimMgr;
+std::map<std::string, std::unique_ptr<Animation>> l_animations;
+std::map<std::string, std::unique_ptr<AnimationBundle>> l_bundles;
 
-Animation* AnimationManager::getAnimation(const std::string& name)
+Animation* getLoadedAnimation(const std::string& name)
 {
-    auto found = m_animations.find(name);
+    auto found = l_animations.find(name);
 
-    if (found != m_animations.end())
+    if (found != l_animations.end())
         return (*found).second.get();
 
     std::unique_ptr<Animation> anim(new Animation());
-    anim->loadFromFile(std::string("Animations/Clips/" + name).c_str());
-    m_animations[name] = std::move(anim);
+    loadAnimationFromFile(anim.get(), std::string("Animations/Clips/" + name).c_str());
+    l_animations[name] = std::move(anim);
 
-    return m_animations[name].get();
+    return l_animations[name].get();
 }
 
-AnimationBundle* AnimationManager::getBundle(const std::string& name)
+AnimationBundle* getLoadedBundle(const std::string& name)
 {
-    auto found = m_bundles.find(name);
+    auto found = l_bundles.find(name);
 
-    if (found != m_bundles.end())
+    if (found != l_bundles.end())
         return (*found).second.get();
 
     std::unique_ptr<AnimationBundle> bundle(new AnimationBundle());
     bundle->loadFromFile(std::string("Animations/Bundles/" + name).c_str());
-    m_bundles[name] = std::move(bundle);
+    l_bundles[name] = std::move(bundle);
 
-    return m_bundles[name].get();
+    return l_bundles[name].get();
 }
 
 }

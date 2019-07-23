@@ -1,9 +1,9 @@
-#include "Pose.hpp"
+#include "Animation.hpp"
 
 namespace anim
 {
 
-Pose Pose::lerp(const Pose& a, const Pose& b, f32 v)
+Pose lerpPose(const Pose& a, const Pose& b, f32 v)
 {
     Pose final;
     final.jointPoses.resize(a.jointPoses.size());

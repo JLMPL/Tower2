@@ -52,7 +52,7 @@ void Pickup::update()
 
 void Pickup::interact(Creature* other)
 {
-    other->getAnimator().setState("Pickup");
+    anim::setAnimatorState(&other->getAnimator(), "Pickup");
 
     destroy();
 }

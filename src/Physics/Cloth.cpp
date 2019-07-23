@@ -2,7 +2,6 @@
 #include "Render/MeshManager.hpp"
 #include "Core/Convert.hpp"
 #include "Render/SceneRenderer.hpp"
-#include "Animation/Animator.hpp"
 
 namespace phys
 {
@@ -86,7 +85,7 @@ void Cloth::skin()
     if (m_spawnTimer > ClothProtectionFrames + 1)
         m_spawnTimer = ClothProtectionFrames + 1;
 
-    auto jTrs = m_animator->getMatrixPalette();
+    auto jTrs = m_animator->matrixPalette;
 
     auto& skinData = m_mesh->entries[0].weightsData;
     auto& vertData = m_mesh->entries[0].vertices;

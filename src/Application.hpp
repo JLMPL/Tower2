@@ -1,10 +1,9 @@
 #pragma once
-#include "Animation/AnimationSystem.hpp"
+#include "Animation/Animation.hpp"
 #include "Audio/Audio.hpp"
 #include "Core/Config.hpp"
 #include "Core/FrameInfo.hpp"
 #include "Core/Timer.hpp"
-#include "Debug/Console.hpp"
 #include "Events/Event.hpp"
 #include "Input/Input.hpp"
 #include "Physics/PhysicsSystem.hpp"

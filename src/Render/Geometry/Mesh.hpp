@@ -1,7 +1,7 @@
 #pragma once
 #include "../ArrayBuffer.hpp"
 #include "../VertexArray.hpp"
-#include "Animation/Skeleton.hpp"
+#include "Animation/Animation.hpp"
 #include "Core/Types.hpp"
 #include <string>
 #include <memory>

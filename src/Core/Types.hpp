@@ -14,6 +14,9 @@
 
 #define SET_BIT(x) (1 << x)
 
+#define external extern
+#define LOCAL static
+
 using u64 = uint64_t;
 using u32 = uint32_t;
 using u16 = uint16_t;

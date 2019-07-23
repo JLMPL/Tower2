@@ -1,6 +1,4 @@
-#include "AnimationState.hpp"
-#include "AnimationManager.hpp"
-#include "Skeleton.hpp"
+#include "Animation.hpp"
 
 namespace anim
 {
@@ -19,7 +17,7 @@ AnimationState::AnimationState(const json& state)
 void AnimationState::loadFromJson(const json& state)
 {
     m_name = state["name"].get<std::string>();
-    m_anim = anim::g_AnimMgr.getAnimation(state["file"]);
+    m_anim = anim::getLoadedAnimation(state["file"]);
 
     m_isLooping = state["loop"].get<bool>();
     m_hasRootMotion = state["rootMotion"].get<bool>();
@@ -90,7 +88,7 @@ Pose AnimationState::update(f32 delta)
         }
 
         Pose now = m_skeleton->getPose(m_anim, m_animTime);
-        return Pose::lerp(m_startPose, now, m_lerpTime);
+        return lerpPose(m_startPose, now, m_lerpTime);
     }
 
     m_rootMotion = m_skeleton->getRootMotion(m_anim, m_animTime) -

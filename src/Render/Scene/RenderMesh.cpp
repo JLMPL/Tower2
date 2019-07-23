@@ -1,5 +1,5 @@
 #include "RenderMesh.hpp"
-#include "Animation/AnimationSystem.hpp"
+#include "Animation/Animation.hpp"
 #include "Render/Geometry/Mesh.hpp"
 
 RenderMesh::RenderMesh(gfx::Mesh* mesh) :

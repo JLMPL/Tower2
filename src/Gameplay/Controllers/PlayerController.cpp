@@ -1,5 +1,5 @@
 #include "PlayerController.hpp"
-#include "Animation/Skeleton.hpp"
+#include "Animation/Animation.hpp"
 #include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Entities/Camera.hpp"
@@ -45,9 +45,9 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_capeNode = m_context->renderScene->addRenderCloth(m_cape);
     // m_capeNode2 = m_context->renderScene->addRenderCloth(m_cape2);
 
-    auto& animator = m_cre->getAnimator();
+    auto animator = &m_cre->getAnimator();
 
-    animator.getState("Attack0")->bindEvent(0.333333,
+    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.333333,
     [&]()
     {
         m_lolo.reset();
@@ -59,19 +59,19 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
         m_context->eventSys->enqueue(event);
     });
 
-    animator.getState("Attack0")->bindEvent(0.625,
+    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.625,
     [&]()
     {
         enterIdle();
     });
 
-    animator.getState("Backflip")->bindEvent(animator.getState("Backflip")->getDuration(),
+    anim::getAnimatorState(animator, "Backflip")->bindEvent(anim::getAnimatorState(animator, "Backflip")->getDuration(),
     [&]()
     {
         enterIdle();
     });
 
-    animator.getState("Pickup")->bindEvent(animator.getState("Pickup")->getDuration(),
+    anim::getAnimatorState(animator, "Pickup")->bindEvent(anim::getAnimatorState(animator, "Pickup")->getDuration(),
     [&]()
     {
         enterIdle();
@@ -124,18 +124,18 @@ void PlayerController::update()
     }
 
     {
-        auto& skeleton = m_cre->getAnimator().getSkeleton();
-        const auto& transforms = m_cre->getAnimator().getGlobalJointTransforms();
+        auto& skeleton = m_cre->getAnimator().skeleton;
+        const auto& transforms = m_cre->getAnimator().jointTransforms;
 
         i32 jInds[] =
         {
-            skeleton.findJointIndex("IK_Thigh.L"),
-            skeleton.findJointIndex("IK_Shin.L"),
-            skeleton.findJointIndex("IK_Foot.L"),
+            skeleton->findJointIndex("IK_Thigh.L"),
+            skeleton->findJointIndex("IK_Shin.L"),
+            skeleton->findJointIndex("IK_Foot.L"),
 
-            skeleton.findJointIndex("IK_Thigh.R"),
-            skeleton.findJointIndex("IK_Shin.R"),
-            skeleton.findJointIndex("IK_Foot.R")
+            skeleton->findJointIndex("IK_Thigh.R"),
+            skeleton->findJointIndex("IK_Shin.R"),
+            skeleton->findJointIndex("IK_Foot.R")
         };
 
         for (auto i = 0; i < 6; i++)
@@ -145,13 +145,13 @@ void PlayerController::update()
 
         m_cape->setCollisionSpheres(&m_spheres[0], 6);
 
-        mat4 tr = m_cre->getTransform() * transforms[skeleton.findJointIndex("Belt0")];
+        mat4 tr = m_cre->getTransform() * transforms[skeleton->findJointIndex("Belt0")];
         m_context->physSys->setLocalPose(tr[3]);
     }
 
-    if (m_cre->getAnimator().isRootMotion())
+    if (anim::isAnimatorRootMotion(&m_cre->getAnimator()))
     {
-        vec3 dir = math::rotateY(m_cre->getAnimator().getRootMotion(), m_cre->getYaw());
+        vec3 dir = math::rotateY(m_cre->getAnimator().rootMotion, m_cre->getYaw());
 
         m_cre->getCharCtrl().move(dir);
     }
@@ -170,17 +170,17 @@ void PlayerController::preSimulationUpdate()
 
 void PlayerController::checkDrawWeapon()
 {
-    auto idleAnim = m_cre->getAnimator().getState("Idle");
-    auto currAnim = m_cre->getAnimator().getCurrentState();
+    auto idleAnim = anim::getAnimatorState(&m_cre->getAnimator(), "Idle");
+    auto currAnim = m_cre->getAnimator().activeState;
 
     if (gInput.isDrawMelee() && !m_cre->isSwordDrawn() && idleAnim == currAnim)
     {
-        // m_cre->getAnimator().setState("Draw");
+        // anim::setAnimatorState(&m_cre->getAnimator(), "Draw");
         m_cre->drawSword();
     }
     else if (gInput.isDrawMelee() && m_cre->isSwordDrawn() && idleAnim == currAnim)
     {
-        // m_cre->getAnimator().setState("Sheathe");
+        // anim::setAnimatorState(&m_cre->getAnimator(), "Sheathe");
         m_cre->sheatheSword();
     }
 }
@@ -188,7 +188,7 @@ void PlayerController::checkDrawWeapon()
 void PlayerController::enterIdle()
 {
     m_state = State::Idle;
-    m_cre->getAnimator().setState("Idle");
+    anim::setAnimatorState(&m_cre->getAnimator(), "Idle");
 }
 
 void PlayerController::idle()
@@ -205,7 +205,7 @@ void PlayerController::idle()
             enterAttack();
     }
 
-    if (gInput.isUse() && m_interactible && m_cre->getAnimator().getCurrentState() == m_cre->getAnimator().getState("Idle"))
+    if (gInput.isUse() && m_interactible && m_cre->getAnimator().activeState == anim::getAnimatorState(&m_cre->getAnimator(), "Idle"))
     {
         m_interactible->interact(m_cre);
     }
@@ -241,11 +241,11 @@ void PlayerController::move()
 
     if (gInput.isJump())
     {
-        m_cre->getAnimator().setState("Run");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Run");
         speed = 4;
     }
     else
-        m_cre->getAnimator().setState("Walk");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Walk");
 
 
     vec3 walkDir = math::normalize(
@@ -278,9 +278,9 @@ void PlayerController::enterAttack()
     m_state = State::Attack;
 
     if (m_combo == 0)
-        m_cre->getAnimator().setState("Attack0");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Attack0");
     else
-        m_cre->getAnimator().setState("Backflip");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Backflip");
 }
 
 void PlayerController::attack()

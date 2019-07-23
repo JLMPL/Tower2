@@ -8,6 +8,7 @@
 #include "Render/Scene/RenderMesh.hpp"
 #include "Render/Scene/RenderFlare.hpp"
 #include "Render/Scene/RenderSkinnedMesh.hpp"
+#include "Animation/Animation.hpp"
 
 SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     : CreatureController(cre), m_context(context)
@@ -29,9 +30,9 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
     // m_sord->attachNode(m_light);
     // m_cre->getSkinMeshNode()->attachNode("Hand.R", m_light);
 
-    auto& animator = m_cre->getAnimator();
+    auto animator = &m_cre->getAnimator();
 
-    animator.getState("Attack0")->bindEvent(0.333333,
+    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.333333,
     [&]()
     {
         GameEvent event(GameEvent::Type::Damage);
@@ -39,19 +40,19 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
         m_context->eventSys->enqueue(event);
     });
 
-    animator.getState("Attack0")->bindEvent(0.625,
+    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.625,
     [&]()
     {
         enterIdle();
     });
 
-    animator.getState("Backflip")->bindEvent(animator.getState("Backflip")->getDuration(),
+    anim::getAnimatorState(animator, "Backflip")->bindEvent(anim::getAnimatorState(animator, "Backflip")->getDuration(),
     [&]()
     {
         enterIdle();
     });
 
-    animator.getState("Pain")->bindEvent(animator.getState("Pain")->getDuration(),
+    anim::getAnimatorState(animator, "Pain")->bindEvent(anim::getAnimatorState(animator, "Pain")->getDuration(),
     [&]()
     {
         enterIdle();
@@ -96,7 +97,7 @@ void SkeletonController::update()
 void SkeletonController::enterIdle()
 {
     m_state = State::Idle;
-    m_cre->getAnimator().setState("Idle");
+    anim::setAnimatorState(&m_cre->getAnimator(), "Idle");
 }
 
 void SkeletonController::idle()
@@ -125,9 +126,9 @@ void SkeletonController::enterAttack()
     m_state = State::Attack;
 
     if (m_combo == 0)
-        m_cre->getAnimator().setState("Attack0");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Attack0");
     else
-        m_cre->getAnimator().setState("Backflip");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Backflip");
 }
 
 void SkeletonController::attack()
@@ -155,7 +156,7 @@ void SkeletonController::enterPain()
     m_cre->damage(1);
 
     if (!m_cre->isDead())
-        m_cre->getAnimator().setState("Pain");
+        anim::setAnimatorState(&m_cre->getAnimator(), "Pain");
     else
         enterDeath();
 }
@@ -169,7 +170,7 @@ void SkeletonController::enterDeath()
 {
     m_state = State::Death;
 
-    m_cre->getAnimator().setState("Death");
+    anim::setAnimatorState(&m_cre->getAnimator(), "Death");
 
     // GameEvent event(GameEvent::Type::SpawnPickup);
     // event.pickup.x = m_cre->getPos().x;
