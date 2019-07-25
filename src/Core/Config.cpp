@@ -7,9 +7,9 @@
 namespace core
 {
 
-Config g_Config;
+Display l_display;
 
-void Config::load()
+void loadConfigurationFile()
 {
     std::ifstream file("config.cfg");
 
@@ -22,20 +22,16 @@ void Config::load()
     json configs;
     file >> configs;
 
-    m_display.width = configs["DisplayWidth"].get<i32>();
-    m_display.halfWidth = m_display.width * 0.5;
-    m_display.height = configs["DisplayHeight"].get<i32>();
-    m_display.halfHeight = m_display.height * 0.5;
-    m_display.fullscreen = configs["DisplayFullscreen"].get<bool>();
+    l_display.width = configs["DisplayWidth"].get<i32>();
+    l_display.halfWidth = l_display.width * 0.5;
+    l_display.height = configs["DisplayHeight"].get<i32>();
+    l_display.halfHeight = l_display.height * 0.5;
+    l_display.fullscreen = configs["DisplayFullscreen"].get<bool>();
 }
 
-void Config::save()
+const Display& getDisplayConfig()
 {
-}
-
-const Config::Display& Config::getDisplay() const
-{
-    return m_display;
+    return l_display;
 }
 
 }

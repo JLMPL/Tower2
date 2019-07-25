@@ -12,7 +12,7 @@ void MenuState::init()
     m_sprite.init(&m_texture);
     m_sprite.setColor({0.5,0.5,0.5,1});
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     auto rect = m_sprite.getDest();
 
     f32 w = display.width / rect.w;

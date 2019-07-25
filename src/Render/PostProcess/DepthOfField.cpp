@@ -6,7 +6,7 @@ namespace gfx
 
 void PostProcessDof::init()
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_combine.fbo.init(Framebuffer::Type::Color, display.width, display.height);
     m_combine.shader.loadFromFile("Shaders/DepthOfField/DepthOfField.sha");

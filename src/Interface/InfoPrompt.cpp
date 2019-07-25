@@ -14,7 +14,7 @@ void InfoPrompt::init()
     m_back.setColor({0,0,0,0.8});
     m_back.setFade(128);
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_back.setPosition(0, display.halfHeight - 32);
 

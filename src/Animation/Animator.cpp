@@ -14,11 +14,11 @@ void setupAnimator(Animator* animer, const Skeleton* skeleton, const AnimationBu
     animer->matrixPalette.resize(skeleton->joints.size());
     animer->jointTransforms.resize(skeleton->joints.size());
 
-    for (u32 i = 0; i < anims.getStates().size(); i++)
+    for (u32 i = 0; i < anims.states.size(); i++)
     {
         AnimationState::Ptr state(new AnimationState());
-        *state = anims.getStates()[i];
-        state->setSkeleton(skeleton);
+        *state = anims.states[i];
+        state->skeleton = skeleton;
         animer->animStates.push_back(std::move(state));
     }
 }
@@ -60,8 +60,8 @@ LOCAL void genGlobalPose(Animator* animer, const Joint& joint, const mat4& paren
 
 Pose updateAnimator(Animator* animer)
 {
-    animer->pose = animer->activeState->update(core::g_FInfo.delta);
-    animer->rootMotion = animer->activeState->getRootMotion();
+    animer->pose = updateAnimationState(animer->activeState, core::g_FInfo.delta);
+    animer->rootMotion = animer->activeState->rootMotion;
 
     genGlobalPose(animer, animer->skeleton->joints[0], mat4(1.f), animer->pose);
 
@@ -72,7 +72,7 @@ AnimationState* getAnimatorState(Animator* animer, const std::string& str)
 {
     for (auto& state : animer->animStates)
     {
-        if (state->getName() == str)
+        if (state->name == str)
             return state.get();
     }
 
@@ -92,13 +92,13 @@ void setAnimatorState(Animator* animer, const std::string& str)
         return;
     }
 
-    state->enter(animer->pose);
+    enterAnimationState(state, animer->pose);
     animer->activeState = state;
 }
 
 bool isAnimatorRootMotion(Animator* animer)
 {
-    return animer->activeState->hasRootMotion();
+    return animer->activeState->hasRootMotion;
 }
 
 }

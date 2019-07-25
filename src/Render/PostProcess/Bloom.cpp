@@ -6,7 +6,7 @@ namespace gfx
 
 void Bloom::init()
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_luma.fbo.init(Framebuffer::Type::Color, display.width, display.height);
     m_luma.shader.loadFromFile("Shaders/Bloom/Luma.sha");

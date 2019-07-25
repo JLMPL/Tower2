@@ -3,26 +3,20 @@
 namespace core
 {
 
-Timer::Timer()
+Seconds resetTimer(Timer& timer)
 {
-    m_then = std::chrono::high_resolution_clock::now();
-    m_now = std::chrono::high_resolution_clock::now();
-}
+    timer.now = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<f32, std::ratio<1>> diff = timer.now - timer.then;
 
-Seconds Timer::reset()
-{
-    m_now = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<f32, std::ratio<1>> diff = m_now - m_then;
-
-    m_then = std::chrono::high_resolution_clock::now();
+    timer.then = std::chrono::high_resolution_clock::now();
 
     return diff.count();
 }
 
-Seconds Timer::getElapsedTime() const
+Seconds getElapsedTime(Timer& timer)
 {
-    m_now = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<f32, std::ratio<1>> diff = m_now - m_then;
+    timer.now = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<f32, std::ratio<1>> diff = timer.now - timer.then;
     return diff.count();
 }
 

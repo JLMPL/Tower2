@@ -42,7 +42,7 @@ void PostProcessBlur::init(f32 factor, KernelSize kernelSize)
 {
     m_kernelSize = kernelSize;
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_horizontal.fbo.init(Framebuffer::Type::Color, display.width * factor, display.height * factor);
     m_vertical.fbo.init(Framebuffer::Type::Color, display.width * factor, display.height * factor);

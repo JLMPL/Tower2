@@ -3,7 +3,7 @@
 
 void Camera::updateMatrices()
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_proj = math::perspective(
         m_fov,

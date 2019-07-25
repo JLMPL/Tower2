@@ -13,7 +13,7 @@ void SplashState::init()
 
     m_spr.setDest({0, 0, 800, m_spr.getDest().h * w});
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     m_spr.setPosition({
         display.halfWidth - (m_spr.getDest().w / 2),
         display.halfHeight - (m_spr.getDest().h / 2)
@@ -31,7 +31,7 @@ void SplashState::sendSystemEvent(const Event& event)
 
 void SplashState::update()
 {
-    f32 alpha = sin(m_timer.getElapsedTime());
+    f32 alpha = sin(core::getElapsedTime(m_timer));
 
     m_spr.setColor({1,1,1,alpha});
 

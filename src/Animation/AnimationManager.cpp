@@ -1,5 +1,4 @@
 #include "Animation.hpp"
-// #include "AnimationBundle.hpp"
 
 namespace anim
 {
@@ -29,7 +28,7 @@ AnimationBundle* getLoadedBundle(const std::string& name)
         return (*found).second.get();
 
     std::unique_ptr<AnimationBundle> bundle(new AnimationBundle());
-    bundle->loadFromFile(std::string("Animations/Bundles/" + name).c_str());
+    loadAnimationBundleFromFile(bundle.get(), std::string("Animations/Bundles/" + name).c_str());
     l_bundles[name] = std::move(bundle);
 
     return l_bundles[name].get();

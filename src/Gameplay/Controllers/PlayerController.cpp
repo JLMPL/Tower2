@@ -47,10 +47,10 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
 
     auto animator = &m_cre->getAnimator();
 
-    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.333333,
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Attack0"), 0.333333,
     [&]()
     {
-        m_lolo.reset();
+        core::resetTimer(m_lolo);
 
         GameEvent event(GameEvent::Type::Damage);
         event.setSender(m_cre->getID());
@@ -59,19 +59,19 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
         m_context->eventSys->enqueue(event);
     });
 
-    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.625,
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Attack0"), 0.625,
     [&]()
     {
         enterIdle();
     });
 
-    anim::getAnimatorState(animator, "Backflip")->bindEvent(anim::getAnimatorState(animator, "Backflip")->getDuration(),
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Backflip"), anim::getAnimatorState(animator, "Backflip")->anim->duration,
     [&]()
     {
         enterIdle();
     });
 
-    anim::getAnimatorState(animator, "Pickup")->bindEvent(anim::getAnimatorState(animator, "Pickup")->getDuration(),
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Pickup"), anim::getAnimatorState(animator, "Pickup")->anim->duration,
     [&]()
     {
         enterIdle();
@@ -111,7 +111,7 @@ void PlayerController::update()
 
     m_spawnTimer++;
 
-    if (m_lolo.getElapsedTime() < 0.25)
+    if (core::getElapsedTime(m_lolo) < 0.25)
         m_light->show();
     else
         m_light->hide();
@@ -129,13 +129,13 @@ void PlayerController::update()
 
         i32 jInds[] =
         {
-            skeleton->findJointIndex("IK_Thigh.L"),
-            skeleton->findJointIndex("IK_Shin.L"),
-            skeleton->findJointIndex("IK_Foot.L"),
+            findSkeletonJoint(skeleton, "IK_Thigh.L"),
+            findSkeletonJoint(skeleton, "IK_Shin.L"),
+            findSkeletonJoint(skeleton, "IK_Foot.L"),
 
-            skeleton->findJointIndex("IK_Thigh.R"),
-            skeleton->findJointIndex("IK_Shin.R"),
-            skeleton->findJointIndex("IK_Foot.R")
+            findSkeletonJoint(skeleton, "IK_Thigh.R"),
+            findSkeletonJoint(skeleton, "IK_Shin.R"),
+            findSkeletonJoint(skeleton, "IK_Foot.R")
         };
 
         for (auto i = 0; i < 6; i++)
@@ -145,7 +145,7 @@ void PlayerController::update()
 
         m_cape->setCollisionSpheres(&m_spheres[0], 6);
 
-        mat4 tr = m_cre->getTransform() * transforms[skeleton->findJointIndex("Belt0")];
+        mat4 tr = m_cre->getTransform() * transforms[anim::findSkeletonJoint(skeleton, "Belt0")];
         m_context->physSys->setLocalPose(tr[3]);
     }
 
@@ -302,7 +302,7 @@ void PlayerController::attack()
 
     if (gInput.isAttack())
     {
-        if (m_lolo.getElapsedTime() < 0.25)
+        if (core::getElapsedTime(m_lolo) < 0.25)
             m_combo++;
         else
             m_combo = 0;

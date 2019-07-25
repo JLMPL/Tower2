@@ -121,7 +121,7 @@ void SkinnedMeshLoader::addMeshesAndJoints(Mesh& mesh, const aiScene& scene, boo
 
         for (u32 i = 0; i < inMesh->mNumBones; i++)
         {
-            anim::Joint* joint = mesh.skeleton.findJoint(inMesh->mBones[i]->mName.C_Str());
+            anim::Joint* joint = getSkeletonJoint(&mesh.skeleton, inMesh->mBones[i]->mName.C_Str());
             joint->offsetMatrix = core::conv::toGlm(inMesh->mBones[i]->mOffsetMatrix);
         }
     }

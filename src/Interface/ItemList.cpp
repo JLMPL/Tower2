@@ -16,7 +16,7 @@ constexpr f32 timeout = 2.f;
 
 void ItemList::init()
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_pos = vec2(
         display.halfWidth - (((NumShownItems - 1) * spriteSize) + ((NumShownItems - 2) * interOffset)) / 2,
@@ -61,7 +61,7 @@ void ItemList::startScroll()
     if (m_scrollIndex == m_items->size())
         m_scrollIndex = 0;
 
-    m_timer.reset();
+    resetTimer(m_timer);
     m_visible = true;
 
     for (auto i = 0; i < NumShownItems; i++)
@@ -125,13 +125,13 @@ void ItemList::update()
 {
     performScroll();
 
-    if (m_timer.getElapsedTime() > timeout)
+    if (core::getElapsedTime(m_timer) > timeout)
         m_visible = false;
 
     i32 itemid = (*m_items)[(m_scrollIndex + 5) % m_items->size()];
     m_name.setString(g_ItemMgr.getItem(itemid)->m_name);
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     m_name.setPosition({display.halfWidth - (m_name.getWidth() / 2), display.height - 96});
 }
 

@@ -29,31 +29,23 @@ struct Animation
     using Ptr = std::shared_ptr<Animation>;
 
     std::vector<JointAnimation> jointAnimations;
-
-    bool hasRootMotion = true;
-    JointAnimation rootMotion;
-
-    f32 duration = 0_sec;
-    bool loop = true;
+    bool                        hasRootMotion = true;
+    JointAnimation              rootMotion;
+    f32                         duration = 0_sec;
+    bool                        loop = true;
 };
-
-void loadAnimationFromFile(Animation* anim, const std::string& path);
-const JointAnimation* findJointInAnimation(const Animation& anim, const core::Name32& jointName);
 
 struct JointPose
 {
     core::Name32 name;
-
-    vec3 pos;
-    quat rot;
+    vec3         pos;
+    quat         rot;
 };
 
 struct Pose
 {
     std::vector<JointPose> jointPoses;
 };
-
-Pose lerpPose(const Pose& a, const Pose& b, f32 v);
 
 struct Joint
 {
@@ -65,120 +57,82 @@ struct Joint
     i8        children[MaxChildren];
 };
 
-class Skeleton
+struct Skeleton
 {
-public:
-    Skeleton() = default;
-
-    Pose getPose(const Animation* anim, Seconds time) const;
-    vec3 getRootMotion(const Animation* anim, Seconds time) const;
-
-    i8 findJointIndex(const core::Name32& name) const;
-    Joint* findJoint(const core::Name32& name);
-
-private:
-    vec3 lerpPosition(const JointAnimation& jointAnimation, Seconds animationTime) const;
-    quat lerpRotation(const JointAnimation& jointAnimation, Seconds animationTime) const;
-
-public:
     std::vector<Joint> joints;
 };
 
-class AnimationState
+struct AnimationEvent
 {
-public:
+    f32 time;
+    std::function<void (void)> func;
+    bool alreadyFiredThisRun = false;
+};
+
+struct AnimationState
+{
     using Ptr = std::unique_ptr<AnimationState>;
 
-    struct Event
-    {
-        f32 time;
-        std::function<void (void)> func;
-        bool alreadyFiredThisRun = false;
-    };
+    std::string        name;
 
-    AnimationState() = default;
-    AnimationState(const std::string& name, const Animation* anim, const Skeleton* skel);
-    AnimationState(const json& state);
+    const Animation*   anim = nullptr;
+    const Skeleton*    skeleton = nullptr;
 
-    void loadFromJson(const json& state);
-    void setSkeleton(const Skeleton* skel);
+    std::vector<AnimationEvent> events;
 
-    void enter(Pose pose);
-    Pose update(f32 delta);
-    void exit();
+    bool               isLooping = true;
+    bool               hasRootMotion = false;
+    vec3               rootMotion;
 
-    void bindEvent(f32 time, const std::function<void (void)>& func);
+    f32                prevTime = 0_ms;
+    f32                animTime = 0_ms;
+    f32                lerpTime = 0_ms;
+    bool               isLerp = false;
 
-    const std::string& getName() const;
-
-    void setLoop(bool val);
-    bool isLoop() const;
-
-    f32 getDuration() const;
-
-    void setHasRootMotion(bool val);
-    bool hasRootMotion() const;
-    vec3 getRootMotion() const;
-
-    bool isFinished() const;
-
-private:
-    void resetEvents();
-    void checkEvents();
-
-private:
-    std::string m_name;
-
-    const Animation* m_anim = nullptr;
-    const Skeleton* m_skeleton = nullptr;
-
-    std::vector<Event> m_events;
-
-    bool m_isLooping = true;
-    bool m_hasRootMotion = false;
-    vec3 m_rootMotion;
-
-    f32 m_prevTime = 0_ms;
-    f32 m_animTime = 0_ms;
-    f32 m_lerpTime = 0_ms;
-    bool m_isLerp = false;
-
-    Pose m_startPose;
+    Pose               startPose;
 };
 
-class AnimationBundle
+struct AnimationBundle
 {
-public:
-    AnimationBundle() = default;
-    AnimationBundle(const std::string& path);
-    ~AnimationBundle() = default;
-
-    void loadFromFile(const std::string& path);
-
-    const std::vector<AnimationState>& getStates() const;
-    const std::string& getName() const;
-
-private:
-    std::string m_name;
-    std::vector<AnimationState> m_states;
+    std::string name;
+    std::vector<AnimationState> states;
 };
-
-Animation* getLoadedAnimation(const std::string& name);
-AnimationBundle* getLoadedBundle(const std::string& name);
 
 struct Animator
 {
-    const Skeleton* skeleton = nullptr;
+    const Skeleton*                  skeleton = nullptr;
 
-    std::vector<mat4> matrixPalette;
-    std::vector<mat4> jointTransforms;
+    std::vector<mat4>                matrixPalette;
+    std::vector<mat4>                jointTransforms;
 
     std::vector<AnimationState::Ptr> animStates;
-    AnimationState* activeState = nullptr;
+    AnimationState*                  activeState = nullptr;
 
-    Pose pose;
-    vec3 rootMotion;
+    Pose                             pose;
+    vec3                             rootMotion;
 };
+
+void loadAnimationFromFile(Animation* anim, const std::string& path);
+const JointAnimation* findJointInAnimation(const Animation& anim, const core::Name32& jointName);
+
+Pose lerpPose(const Pose& a, const Pose& b, f32 v);
+
+Pose getSkeletonPose(const Skeleton* skel, const Animation* anim, Seconds time);
+vec3 getSkeletonRootMotion(const Skeleton* skel, const Animation* anim, Seconds time);
+
+i8 findSkeletonJoint(const Skeleton* skel, const core::Name32& name);
+Joint* getSkeletonJoint(Skeleton* skel, const core::Name32& name);
+
+void initAnimationState(AnimationState* animState, const std::string& name, const Animation* anim, const Skeleton* skel);
+void loadAnimStateFromJson(AnimationState* animState, const json& state);
+void bindAnimStateEvent(AnimationState* animState, f32 time, const std::function<void (void)>& func);
+void enterAnimationState(AnimationState* animState, Pose pose);
+Pose updateAnimationState(AnimationState* animState, f32 delta);
+
+void loadAnimationBundleFromFile(AnimationBundle* bundle, const std::string& path);
+
+Animation* getLoadedAnimation(const std::string& name);
+AnimationBundle* getLoadedBundle(const std::string& name);
 
 void setupAnimator(Animator* animer, const Skeleton* skeleton, const AnimationBundle& anims);
 Pose updateAnimator(Animator* animer);

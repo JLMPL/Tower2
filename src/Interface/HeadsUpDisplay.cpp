@@ -13,7 +13,7 @@ void HeadsUpDisplay::init(RenderScene& scene)
 {
     m_renderScene = &scene;
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_hudShader.loadFromFile("Shaders/Interface/HudHealth.sha");
     m_hudShader2.loadFromFile("Shaders/Interface/HudMana.sha");
@@ -84,10 +84,10 @@ void HeadsUpDisplay::onEvent(const GameEvent& event)
 
 void HeadsUpDisplay::update()
 {
-    m_healthPerc = (sin(m_timer.getElapsedTime()) * 0.5f) + 0.5f;
-    m_manaPerc = (sin(m_timer.getElapsedTime() + 0.5f) * 0.5f) + 0.5f;
+    m_healthPerc = (sin(core::getElapsedTime(m_timer)) * 0.5f) + 0.5f;
+    m_manaPerc = (sin(core::getElapsedTime(m_timer) + 0.5f) * 0.5f) + 0.5f;
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     vec3 flatpos = math::project(
         m_focusPos,

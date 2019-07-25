@@ -4,7 +4,7 @@ namespace anim
 {
 
 template<typename T>
-static u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
+LOCAL u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
 {
     for (u32 i = 0; i < keys.size() - 1; i++)
     {
@@ -14,7 +14,7 @@ static u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
     return -1;
 }
 
-vec3 Skeleton::lerpPosition(const JointAnimation& jointAnimation, Seconds animationTime) const
+LOCAL vec3 lerpPosition(const JointAnimation& jointAnimation, Seconds animationTime)
 {
     auto& keys = jointAnimation.positionKeys;
 
@@ -30,7 +30,7 @@ vec3 Skeleton::lerpPosition(const JointAnimation& jointAnimation, Seconds animat
     return math::lerp(keys[currPosIndex].value, keys[nextPosIndex].value, factor);
 }
 
-quat Skeleton::lerpRotation(const JointAnimation& jointAnimation, Seconds animationTime) const
+LOCAL quat lerpRotation(const JointAnimation& jointAnimation, Seconds animationTime)
 {
     auto& keys = jointAnimation.rotationKeys;
 
@@ -46,19 +46,19 @@ quat Skeleton::lerpRotation(const JointAnimation& jointAnimation, Seconds animat
     return math::slerp(keys[currPosIndex].value, keys[nextPosIndex].value, factor);
 }
 
-Pose Skeleton::getPose(const Animation* anim, Seconds time) const
+Pose getSkeletonPose(const Skeleton* skel, const Animation* anim, Seconds time)
 {
     Pose poz;
 
-    poz.jointPoses.resize(joints.size());
+    poz.jointPoses.resize(skel->joints.size());
 
-    for (u32 i = 0; i < joints.size(); i++)
+    for (u32 i = 0; i < skel->joints.size(); i++)
     {
-        const JointAnimation* jointAnim = findJointInAnimation(*anim, joints[i].name);
+        const JointAnimation* jointAnim = findJointInAnimation(*anim, skel->joints[i].name);
 
         if (jointAnim)
         {
-            poz.jointPoses[i].name = joints[i].name;
+            poz.jointPoses[i].name = skel->joints[i].name;
 
             poz.jointPoses[i].pos = lerpPosition(*jointAnim, time);
             poz.jointPoses[i].rot = lerpRotation(*jointAnim, time);
@@ -68,7 +68,7 @@ Pose Skeleton::getPose(const Animation* anim, Seconds time) const
     return poz;
 }
 
-vec3 Skeleton::getRootMotion(const Animation* anim, Seconds time) const
+vec3 getSkeletonRootMotion(const Skeleton* skel, const Animation* anim, Seconds time)
 {
     if (anim->hasRootMotion)
         return lerpPosition(anim->rootMotion, time);
@@ -76,19 +76,19 @@ vec3 Skeleton::getRootMotion(const Animation* anim, Seconds time) const
         return vec3(0);
 }
 
-i8 Skeleton::findJointIndex(const core::Name32& name) const
+i8 findSkeletonJoint(const Skeleton* skel, const core::Name32& name)
 {
-    for (size_t i = 0; i < joints.size(); i++)
+    for (size_t i = 0; i < skel->joints.size(); i++)
     {
-        if (joints[i].name == name)
+        if (skel->joints[i].name == name)
             return i;
     }
     return -1;
 }
 
-Joint* Skeleton::findJoint(const core::Name32& name)
+Joint* getSkeletonJoint(Skeleton* skel, const core::Name32& name)
 {
-    return &joints[findJointIndex(name)];
+    return &skel->joints[findSkeletonJoint(skel, name)];
 }
 
 }

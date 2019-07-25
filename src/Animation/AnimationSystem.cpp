@@ -14,8 +14,6 @@ void updateAnimationSystem()
 
 Animator* addAnimatorToAnimSystem(const Skeleton* skel, const std::string& bundle)
 {
-    // l_animators.emplace_back(new Animator(skel, *anim::getLoadedBundle(bundle)));
-
     std::unique_ptr<Animator> animer(new Animator());
     setupAnimator(animer.get(), skel, *anim::getLoadedBundle(bundle));
 

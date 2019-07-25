@@ -6,7 +6,7 @@
 
 RenderScene::RenderScene()
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     m_proj = math::perspective(
         70.f,

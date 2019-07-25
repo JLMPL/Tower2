@@ -32,7 +32,7 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
 
     auto animator = &m_cre->getAnimator();
 
-    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.333333,
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Attack0"), 0.333333,
     [&]()
     {
         GameEvent event(GameEvent::Type::Damage);
@@ -40,19 +40,19 @@ SkeletonController::SkeletonController(Creature* cre, LevelContext* context)
         m_context->eventSys->enqueue(event);
     });
 
-    anim::getAnimatorState(animator, "Attack0")->bindEvent(0.625,
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Attack0"), 0.625,
     [&]()
     {
         enterIdle();
     });
 
-    anim::getAnimatorState(animator, "Backflip")->bindEvent(anim::getAnimatorState(animator, "Backflip")->getDuration(),
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Backflip"), anim::getAnimatorState(animator, "Backflip")->anim->duration,
     [&]()
     {
         enterIdle();
     });
 
-    anim::getAnimatorState(animator, "Pain")->bindEvent(anim::getAnimatorState(animator, "Pain")->getDuration(),
+    anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Pain"), anim::getAnimatorState(animator, "Pain")->anim->duration,
     [&]()
     {
         enterIdle();

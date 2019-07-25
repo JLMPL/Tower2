@@ -14,7 +14,7 @@
 
 Application::Application()
 {
-    core::g_Config.load();
+    core::loadConfigurationFile();
 
     setupSDL();
     setupGL();
@@ -55,7 +55,7 @@ void Application::setupSDL()
 
     u32 flags = SDL_WINDOW_OPENGL;
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     if (display.fullscreen)
         flags |= SDL_WINDOW_FULLSCREEN;
     else
@@ -226,8 +226,7 @@ void Application::run()
             processClientEvent(convertEvent(m_event));
         }
 
-        core::g_FInfo.delta = m_timer.reset();
-        core::g_FInfo.globalTime += core::g_FInfo.delta;
+        core::g_FInfo.delta = resetTimer(m_timer);
 
         gInput.update();
 
@@ -253,7 +252,6 @@ void Application::run()
         SDL_GL_MakeCurrent(m_window, m_context);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         SDL_GL_SwapWindow(m_window);
-        core::g_FInfo.globalFrame++;
     }
 }
 

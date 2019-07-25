@@ -19,7 +19,7 @@ void Renderer2D::init()
     m_shaders.sprite.loadFromFile("Shaders/Interface/Sprite.sha");
     m_shaders.fadedRect.loadFromFile("Shaders/Interface/FadedRect.sha");
 
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     m_proj = math::ortho(0.f, f32(display.width), f32(display.height), 0.f);
 }
 
@@ -91,7 +91,7 @@ void Renderer2D::draw(const FadedRect& faded)
 
 void Renderer2D::draw(const ui::HeadsUpDisplay& hud)
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
 
     hud.m_hudShader.bind();
     hud.m_hudShader.setUniformMatrix("uProj", m_proj);

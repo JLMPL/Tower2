@@ -3,56 +3,43 @@
 namespace anim
 {
 
-AnimationState::AnimationState(
-    const std::string& name, const Animation* anim, const Skeleton* skel)
-    : m_name(name), m_anim(anim), m_skeleton(skel)
+void initAnimationState(AnimationState* animState, const std::string& name, const Animation* anim, const Skeleton* skel)
 {
+    animState->name = name;
+    animState->anim = anim;
+    animState->skeleton = skel;
 }
 
-AnimationState::AnimationState(const json& state)
+void loadAnimStateFromJson(AnimationState* animState, const json& state)
 {
-    loadFromJson(state);
+    animState->name = state["name"].get<std::string>();
+    animState->anim = anim::getLoadedAnimation(state["file"]);
+
+    animState->isLooping = state["loop"].get<bool>();
+    animState->hasRootMotion = state["rootMotion"].get<bool>();
 }
 
-void AnimationState::loadFromJson(const json& state)
+void bindAnimStateEvent(AnimationState* animState, f32 time, const std::function<void (void)>& func)
 {
-    m_name = state["name"].get<std::string>();
-    m_anim = anim::getLoadedAnimation(state["file"]);
-
-    m_isLooping = state["loop"].get<bool>();
-    m_hasRootMotion = state["rootMotion"].get<bool>();
+    animState->events.push_back({time, func, false});
 }
 
-void AnimationState::bindEvent(f32 time, const std::function<void (void)>& func)
+void enterAnimationState(AnimationState* animState, Pose pose)
 {
-    m_events.push_back({time, func, false});
-}
+    animState->startPose = pose;
+    animState->lerpTime = 0_ms;
+    animState->animTime = 0_ms;
+    animState->isLerp = true;
 
-void AnimationState::setSkeleton(const Skeleton* skel)
-{
-    m_skeleton = skel;
-}
-
-void AnimationState::enter(Pose pose)
-{
-    m_startPose = pose;
-    m_lerpTime = 0_ms;
-    m_animTime = 0_ms;
-    m_isLerp = true;
-    resetEvents();
-}
-
-void AnimationState::resetEvents()
-{
-    for (auto& e : m_events)
+    for (auto& e : animState->events)
         e.alreadyFiredThisRun = false;
 }
 
-void AnimationState::checkEvents()
+void checkEvents(AnimationState* animState)
 {
-    for (auto& e : m_events)
+    for (auto& e : animState->events)
     {
-        if (m_animTime >= e.time && !e.alreadyFiredThisRun)
+        if (animState->animTime >= e.time && !e.alreadyFiredThisRun)
         {
             if (e.func)
                 e.func();
@@ -62,83 +49,39 @@ void AnimationState::checkEvents()
     }
 }
 
-Pose AnimationState::update(f32 delta)
+Pose updateAnimationState(AnimationState* animState, f32 delta)
 {
-    m_prevTime = m_animTime;
-    m_animTime += delta;
+    animState->prevTime = animState->animTime;
+    animState->animTime += delta;
 
-    if (m_animTime >= m_anim->duration)
+    if (animState->animTime >= animState->anim->duration)
     {
-        m_animTime = (m_isLooping) ? 0_ms : m_anim->duration;
+        animState->animTime = (animState->isLooping) ? 0_ms : animState->anim->duration;
 
         // printf("multiple resets\n");
         // resetEvents();
     }
 
-    checkEvents();
+    checkEvents(animState);
 
-    if (m_isLerp)
+    if (animState->isLerp)
     {
-        m_lerpTime += delta * (1000.f/150.f);
+        animState->lerpTime += delta * (1000.f/150.f);
 
-        if (m_lerpTime >= 1.f)
+        if (animState->lerpTime >= 1.f)
         {
-            m_lerpTime = 1;
-            m_isLerp = false;
+            animState->lerpTime = 1;
+            animState->isLerp = false;
         }
 
-        Pose now = m_skeleton->getPose(m_anim, m_animTime);
-        return lerpPose(m_startPose, now, m_lerpTime);
+        Pose now = getSkeletonPose(animState->skeleton, animState->anim, animState->animTime);
+        return lerpPose(animState->startPose, now, animState->lerpTime);
     }
 
-    m_rootMotion = m_skeleton->getRootMotion(m_anim, m_animTime) -
-        m_skeleton->getRootMotion(m_anim, m_prevTime);
+    animState->rootMotion = getSkeletonRootMotion(animState->skeleton, animState->anim, animState->animTime) -
+        getSkeletonRootMotion(animState->skeleton, animState->anim, animState->prevTime);
 
-    return m_skeleton->getPose(m_anim, m_animTime);
-}
-
-void AnimationState::exit()
-{
-}
-
-const std::string& AnimationState::getName() const
-{
-    return m_name;
-}
-
-void AnimationState::setLoop(bool val)
-{
-    m_isLooping = val;
-}
-
-bool AnimationState::isLoop() const
-{
-    return m_isLooping;
-}
-
-f32 AnimationState::getDuration() const
-{
-    return m_anim->duration;
-}
-
-void AnimationState::setHasRootMotion(bool val)
-{
-    m_hasRootMotion = val;
-}
-
-bool AnimationState::hasRootMotion() const
-{
-    return m_hasRootMotion;
-}
-
-vec3 AnimationState::getRootMotion() const
-{
-    return m_rootMotion;
-}
-
-bool AnimationState::isFinished() const
-{
-
+    return getSkeletonPose(animState->skeleton, animState->anim, animState->animTime);
 }
 
 }

@@ -4,17 +4,13 @@
 namespace core
 {
 
-class Timer
+struct Timer
 {
-public:
-    Timer();
-
-    Seconds reset();
-    Seconds getElapsedTime() const;
-
-private:
-    Moment m_then;
-    mutable Moment m_now;
+    Moment then = std::chrono::high_resolution_clock::now();
+    Moment now = std::chrono::high_resolution_clock::now();
 };
+
+Seconds resetTimer(Timer& timer);
+Seconds getElapsedTime(Timer& timer);
 
 }

@@ -133,7 +133,7 @@ void Framebuffer::bind() const
 
 void Framebuffer::unbind() const
 {
-    auto display = core::g_Config.getDisplay();
+    auto display = core::getDisplayConfig();
     GL(glBindFramebuffer(GL_FRAMEBUFFER, 0));
     GL(glViewport(0, 0, display.width, display.height));
 }
