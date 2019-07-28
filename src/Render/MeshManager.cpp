@@ -13,7 +13,7 @@ Mesh* MeshManager::getMesh(const std::string& name, bool cloth)
         return (*found).second.get();
 
     std::unique_ptr<Mesh> mesh(new Mesh());
-    m_staticMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str(), cloth);
+    loadStaticMeshFromFile(*mesh, std::string("Meshes/" + name).c_str(), cloth);
     m_meshes[name] = std::move(mesh);
 
     return m_meshes[name].get();
@@ -27,7 +27,7 @@ Mesh* MeshManager::getSkinnedMesh(const std::string& name, bool cloth)
         return (*found).second.get();
 
     std::unique_ptr<Mesh> mesh(new Mesh());
-    m_skinnedMeshLoader.loadFromFile(*mesh, std::string("Meshes/" + name).c_str(), cloth);
+    loadSkinnedMeshFromFile(*mesh, std::string("Meshes/" + name).c_str(), cloth);
     m_skinMeshes[name] = std::move(mesh);
 
     return m_skinMeshes[name].get();

@@ -1,6 +1,5 @@
 #pragma once
 #include "Core/Timer.hpp"
-#include "Geometry/ScreenQuad.hpp"
 #include "Render/Scene/RenderScene.hpp"
 #include "BasePass.hpp"
 #include "ShadowPass.hpp"
@@ -34,7 +33,6 @@ private:
     BasePass   m_basePass;
 
     Shader     m_frameShader;
-    ScreenQuad m_screenQuad;
 };
 
 extern SceneRenderer g_SceneRenderer;

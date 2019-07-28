@@ -23,7 +23,7 @@ void MenuState::init()
     m_font.loadFromFile("Fonts/NotoSans-Regular.ttf");
 
     m_title.init(&m_font);
-    m_title.setCharacterSize(96);
+    m_title.setCharacterSize(128);
     m_title.setString("LONGER TITLE");
     m_title.setPosition(
         (display.width / 2) - (m_title.getWidth() / 2),
@@ -31,7 +31,7 @@ void MenuState::init()
     );
 
     m_text.init(&m_font);
-    m_text.setCharacterSize(16);
+    m_text.setCharacterSize(32);
     m_text.setString("Press almost any button!");
     m_text.setPosition(
         (display.width / 2) - (m_text.getWidth() / 2),

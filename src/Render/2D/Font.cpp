@@ -39,10 +39,10 @@ void Font::createPage(u32 size)
     Page page;
     stbtt_pack_context packContext;
 
-    byte* datas = (byte*)malloc(512*512);
+    byte* datas = (byte*)malloc(1024*1024);
     stbtt_packedchar* packedChars = (stbtt_packedchar*)malloc(sizeof(stbtt_packedchar) * 256);
 
-    stbtt_PackBegin(&packContext, datas, 512, 512, 0, 1, NULL);
+    stbtt_PackBegin(&packContext, datas, 1024, 1024, 0, 1, NULL);
     stbtt_PackSetOversampling(&packContext, 1, 1);
     stbtt_PackFontRange(&packContext, m_fontBuffer, 0, size, 0, 256, packedChars);
     stbtt_PackEnd(&packContext);
@@ -58,7 +58,7 @@ void Font::createPage(u32 size)
     }
 
     page.texture = std::unique_ptr<Texture>(new Texture);
-    page.texture->create(512, 512, datas);
+    page.texture->create(1024, 1024, datas);
     m_pages[size] = std::move(page);
 
     free(packedChars);

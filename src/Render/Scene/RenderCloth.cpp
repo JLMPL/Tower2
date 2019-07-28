@@ -1,5 +1,5 @@
 #include "RenderCloth.hpp"
-#include "Render/Geometry/Mesh.hpp"
+#include "Render/Geometry/Geometry.hpp"
 #include "Physics/Cloth.hpp"
 
 RenderCloth::RenderCloth(phys::Cloth* cloth) :
@@ -58,33 +58,33 @@ void RenderCloth::updateNormals()
 
 void RenderCloth::updateBuffers()
 {
-    m_vao.init();
-    m_vao.setIndexNumber(m_mesh->entries[0].indices.size());
-    m_vao.bind();
+    gfx::createVertexArray(m_vao);
+    m_vao.numIndices = m_mesh->entries[0].indices.size();
+    gfx::bindVertexArray(m_vao);
 
     m_dbo.init(GL_ARRAY_BUFFER);
     m_dbo.bind();
     m_dbo.setData(sizeof(gfx::Vertex) * m_vertices.size(), &m_vertices[0], GL_STATIC_DRAW);
 
-    m_vao.vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), 0);
-    m_vao.vertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, normal));
-    m_vao.vertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, color));
-    m_vao.vertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, uv));
-    m_vao.vertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, tan));
-    m_vao.vertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, bitan));
+    gfx::setVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), 0);
+    gfx::setVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, normal));
+    gfx::setVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, color));
+    gfx::setVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, uv));
+    gfx::setVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, tan));
+    gfx::setVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(gfx::Vertex), (const GLvoid*)offsetof(gfx::Vertex, bitan));
 
     m_ibo.init(GL_ELEMENT_ARRAY_BUFFER);
     m_ibo.bind();
     m_ibo.setData(sizeof(GLuint) * m_mesh->entries[0].indices.size(), &m_mesh->entries[0].indices[0], GL_STATIC_DRAW);
 
-    m_vao.unbind();
+    gfx::unbindVertexArray(m_vao);
     m_dbo.unbind();
     m_ibo.unbind();
 }
 
-void RenderCloth::render() const
+void RenderCloth::render()
 {
-    m_vao.drawElements();
+    drawVertexArray(m_vao);
 }
 
 const gfx::Material* RenderCloth::getMaterial() const

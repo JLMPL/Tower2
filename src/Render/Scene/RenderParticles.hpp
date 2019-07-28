@@ -23,7 +23,7 @@ public:
     ~RenderParticles();
 
     void updateTransforms();
-    void render() const;
+    void render();
 
     u32 getParticleCount();
     mat4* getMatrixArray();

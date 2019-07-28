@@ -3,7 +3,7 @@
 #include "Render/Scene/RenderSkinnedMesh.hpp"
 #include "Render/Scene/RenderFlare.hpp"
 #include "Render/Scene/RenderCloth.hpp"
-#include "Geometry/Mesh.hpp"
+#include "Geometry/Geometry.hpp"
 #include "Material.hpp"
 #include "MaterialManager.hpp"
 
@@ -104,7 +104,8 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
             m_flatShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
-            vao->drawElements();
+            // vao->drawElements();
+            gfx::drawVertexArray(*vao);
 
             m_flatShader.unbind();
         }
@@ -140,7 +141,7 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
         m_clothShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
-        renderCloth->m_vao.drawElements();
+        drawVertexArray(renderCloth->m_vao);
 
         m_clothShader.unbind();
     }
@@ -187,7 +188,7 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
             m_aflatShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
-            vao->drawElements();
+            gfx::drawVertexArray(*vao);
 
             m_aflatShader.unbind();
         }

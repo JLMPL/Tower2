@@ -1,4 +1,5 @@
 #include "SceneRenderer.hpp"
+#include "Geometry/Geometry.hpp"
 
 namespace gfx
 {
@@ -8,7 +9,6 @@ SceneRenderer g_SceneRenderer;
 void SceneRenderer::init()
 {
     m_frameShader.loadFromFile("Shaders/Frame.sha");
-    m_screenQuad.init();
 
     m_shadowPass.init();
     m_basePass.init();
@@ -20,7 +20,7 @@ void SceneRenderer::finalFrame()
 
     m_frameShader.bind();
     m_frameShader.setUniformTexture("image", 0, m_basePass.getRender());
-    m_screenQuad.render();
+    renderScreenQuad();
     m_frameShader.unbind();
 }
 

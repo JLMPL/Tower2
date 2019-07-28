@@ -53,20 +53,20 @@ void HeadsUpDisplay::init(RenderScene& scene)
         1, 0
     };
 
-    m_hpVao.init();
-    m_hpVao.bind();
+    gfx::createVertexArray(m_hpVao);
+    gfx::bindVertexArray(m_hpVao);
 
     m_hpVbo.init(GL_ARRAY_BUFFER);
     m_hpVbo.bind();
     m_hpVbo.setData(sizeof(f32) * 2 * 6, verts, GL_STATIC_DRAW);
-    m_hpVao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    gfx::setVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
     m_hpTbo.init(GL_ARRAY_BUFFER);
     m_hpTbo.bind();
     m_hpTbo.setData(sizeof(f32) * 2 * 6, coords, GL_STATIC_DRAW);
-    m_hpVao.vertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    gfx::setVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-    m_hpVao.unbind();
+    gfx::unbindVertexArray(m_hpVao);
     m_hpVbo.unbind();
 }
 

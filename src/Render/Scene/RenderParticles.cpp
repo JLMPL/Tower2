@@ -26,20 +26,20 @@ RenderParticles::RenderParticles(const ParticleGroup* group) :
         0,0
     };
 
-    m_vao.init();
-    m_vao.bind();
+    gfx::createVertexArray(m_vao);
+    gfx::bindVertexArray(m_vao);
 
     m_vbo.init(GL_ARRAY_BUFFER);
     m_vbo.bind();
     m_vbo.setData(sizeof(f32) * 12, &verts[0], GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    gfx::setVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
     m_tbo.init(GL_ARRAY_BUFFER);
     m_tbo.bind();
     m_tbo.setData(sizeof(f32) * 12, &coords[0], GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    gfx::setVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-    m_vao.unbind();
+    gfx::unbindVertexArray(m_vao);
     m_vbo.unbind();
 }
 
@@ -56,11 +56,11 @@ void RenderParticles::updateTransforms()
     }
 }
 
-void RenderParticles::render() const
+void RenderParticles::render()
 {
-    m_vao.bind();
+    bindVertexArray(m_vao);
     GL(glDrawArrays(GL_TRIANGLES, 0, 6));
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
 }
 
 u32 RenderParticles::getParticleCount()

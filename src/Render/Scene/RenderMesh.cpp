@@ -1,6 +1,6 @@
 #include "RenderMesh.hpp"
 #include "Animation/Animation.hpp"
-#include "Render/Geometry/Mesh.hpp"
+#include "Render/Geometry/Geometry.hpp"
 
 RenderMesh::RenderMesh(gfx::Mesh* mesh) :
     m_mesh(mesh)

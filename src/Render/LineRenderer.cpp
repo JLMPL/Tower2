@@ -3,6 +3,11 @@
 namespace gfx
 {
 
+LineRenderer::~LineRenderer()
+{
+    destroyVertexArray(m_vao);
+}
+
 void LineRenderer::init()
 {
     m_shader.loadFromFile("Shaders/DebugLines.sha");
@@ -20,20 +25,20 @@ void LineRenderer::prepare()
 {
     if (m_needsUpdate)
     {
-        m_vao.init();
-        m_vao.bind();
+        createVertexArray(m_vao);
+        bindVertexArray(m_vao);
 
         m_vbo.init(GL_ARRAY_BUFFER);
         m_vbo.bind();
         m_vbo.setData(sizeof(vec3) * 2 * m_posData.size(), &m_posData[0], GL_STATIC_DRAW);
-        m_vao.vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+        setVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
         m_cbo.init(GL_ARRAY_BUFFER);
         m_cbo.bind();
         m_cbo.setData(sizeof(vec3) * 2 * m_colorData.size(), &m_colorData[0], GL_STATIC_DRAW);
-        m_vao.vertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
+        setVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
-        m_vao.unbind();
+        unbindVertexArray(m_vao);
         m_vbo.unbind();
     }
 }
@@ -44,9 +49,9 @@ void LineRenderer::render(const mat4& view, const mat4& proj)
     m_shader.setUniformMatrix("uProj", proj);
     m_shader.setUniformMatrix("uView", view);
 
-    m_vao.bind();
+    bindVertexArray(m_vao);
     GL(glDrawArrays(GL_LINES, 0, m_posData.size() * 2));
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
 
     m_shader.unbind();
 }

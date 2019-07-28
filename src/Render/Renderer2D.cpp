@@ -31,7 +31,7 @@ void Renderer2D::beginFrame()
     GL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 }
 
-void Renderer2D::draw(const Rectangle& rect)
+void Renderer2D::draw(Rectangle& rect)
 {
     m_shaders.rectangle.bind();
     m_shaders.rectangle.setUniformMatrix("uProj", m_proj);
@@ -44,7 +44,7 @@ void Renderer2D::draw(const Rectangle& rect)
     m_shaders.rectangle.unbind();
 }
 
-void Renderer2D::draw(const Text& text)
+void Renderer2D::draw(Text& text)
 {
     m_shaders.text.bind();
     m_shaders.text.setUniformMatrix("uProj", m_proj);
@@ -64,7 +64,7 @@ void Renderer2D::draw(const Text& text)
     m_shaders.text.unbind();
 }
 
-void Renderer2D::draw(const Sprite& sprite)
+void Renderer2D::draw(Sprite& sprite)
 {
     m_shaders.sprite.bind();
     m_shaders.sprite.setUniformMatrix("uProj", m_proj);
@@ -77,7 +77,7 @@ void Renderer2D::draw(const Sprite& sprite)
     m_shaders.sprite.unbind();
 }
 
-void Renderer2D::draw(const FadedRect& faded)
+void Renderer2D::draw(FadedRect& faded)
 {
     m_shaders.fadedRect.bind();
     m_shaders.fadedRect.setUniformMatrix("uProj", m_proj);
@@ -89,7 +89,7 @@ void Renderer2D::draw(const FadedRect& faded)
     m_shaders.fadedRect.unbind();
 }
 
-void Renderer2D::draw(const ui::HeadsUpDisplay& hud)
+void Renderer2D::draw(ui::HeadsUpDisplay& hud)
 {
     auto display = core::getDisplayConfig();
 
@@ -101,11 +101,10 @@ void Renderer2D::draw(const ui::HeadsUpDisplay& hud)
     hud.m_hudShader.setUniform2f("uPos", vec2(32,display.height-160));
     hud.m_hudShader.setUniform3f("uColor", vec3(1));
 
-    hud.m_hpVao.bind();
+    bindVertexArray(hud.m_hpVao);
     GL(glDrawArrays(GL_TRIANGLES, 0, 6));
-    hud.m_hpVao.unbind();
+    unbindVertexArray(hud.m_hpVao);
     hud.m_hudShader.unbind();
-
 
     hud.m_hudShader.bind();
     hud.m_hudShader.setUniformMatrix("uProj", m_proj);
@@ -115,9 +114,9 @@ void Renderer2D::draw(const ui::HeadsUpDisplay& hud)
     hud.m_hudShader.setUniform2f("uPos", vec2(32,display.height-160));
     hud.m_hudShader.setUniform3f("uColor", vec3(0.4));
 
-    hud.m_hpVao.bind();
+    bindVertexArray(hud.m_hpVao);
     GL(glDrawArrays(GL_TRIANGLES, 0, 6));
-    hud.m_hpVao.unbind();
+    unbindVertexArray(hud.m_hpVao);
     hud.m_hudShader.unbind();
 }
 

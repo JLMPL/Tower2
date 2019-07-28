@@ -1,11 +1,17 @@
-#include "SkinnedMeshLoader.hpp"
+#include "Geometry.hpp"
 #include "Core/Convert.hpp"
 #include "Render/MaterialManager.hpp"
+#include <assimp/Importer.hpp>
+#include <assimp/postprocess.h>
+#include <assimp/scene.h>
+#include <vector>
 
 namespace gfx
 {
 
-i8 SkinnedMeshLoader::addJointsToSkeleton(Mesh& mesh, const aiNode& node)
+LOCAL std::vector<i32> m_redirect;
+
+LOCAL i8 addJointsToSkeleton(Mesh& mesh, const aiNode& node)
 {
     i8 jointIndex = mesh.skeleton.joints.size();
 
@@ -29,7 +35,7 @@ i8 SkinnedMeshLoader::addJointsToSkeleton(Mesh& mesh, const aiNode& node)
     return jointIndex;
 }
 
-void SkinnedMeshLoader::addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
+LOCAL void addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
 {
     for (u32 i = 0; i < scene.mNumMeshes; i++)
     {
@@ -68,7 +74,7 @@ void SkinnedMeshLoader::addMeshesAndJoints(Mesh& mesh, const aiScene& scene, boo
                 {
                     f32& storedHash = hashes[j];
 
-                    f32 vertHash = vert.getHash();
+                    f32 vertHash = getVertexHash(vert);
 
                     if (vertHash == storedHash)
                     {
@@ -81,7 +87,7 @@ void SkinnedMeshLoader::addMeshesAndJoints(Mesh& mesh, const aiScene& scene, boo
                 if (isUnique)
                 {
                     entry.vertices.push_back(vert);
-                    hashes.push_back(vert.getHash());
+                    hashes.push_back(getVertexHash(vert));
                     m_redirect[i] = entry.vertices.size()-1;
                 }
             }
@@ -127,7 +133,20 @@ void SkinnedMeshLoader::addMeshesAndJoints(Mesh& mesh, const aiScene& scene, boo
     }
 }
 
-void SkinnedMeshLoader::doTheShitWithWeights(Mesh& mesh, const aiMesh& inMesh, Mesh::Entry& entry, bool cloth)
+LOCAL void addVertexWeightData(VertexWeightData& vwd, const i32& id, f32 weight)
+{
+    for (u32 i = 0; i < 4; i++)
+    {
+        if (vwd.weights[i] == 0.f)
+        {
+            vwd.joints[i] = id;
+            vwd.weights[i] = weight;
+            return;
+        }
+    }
+}
+
+LOCAL void doTheShitWithWeights(Mesh& mesh, const aiMesh& inMesh, Mesh::Entry& entry, bool cloth)
 {
     for (u32 i = 0; i < mesh.skeleton.joints.size(); i++)
     {
@@ -148,14 +167,45 @@ void SkinnedMeshLoader::doTheShitWithWeights(Mesh& mesh, const aiMesh& inMesh, M
         {
             u32 vertexIndex = bone->mWeights[j].mVertexId;
             if (cloth)
-                entry.weightsData[m_redirect[vertexIndex]].addData(i, bone->mWeights[j].mWeight);
+                addVertexWeightData(entry.weightsData[m_redirect[vertexIndex]], i, bone->mWeights[j].mWeight);
             else
-                entry.weightsData[vertexIndex].addData(i, bone->mWeights[j].mWeight);
+                addVertexWeightData(entry.weightsData[vertexIndex], i, bone->mWeights[j].mWeight);
         }
     }
 }
 
-void SkinnedMeshLoader::loadFromFile(Mesh& mesh, const std::string& path, bool cloth)
+LOCAL void genBufferObjects(Mesh::Entry& entry)
+{
+    createVertexArray(entry.vao);
+    entry.vao.numIndices = entry.indices.size();
+    bindVertexArray(entry.vao);
+
+    entry.dbo.init(GL_ARRAY_BUFFER);
+    entry.dbo.bind();
+    entry.dbo.setData(sizeof(Vertex) * entry.vertices.size(), &entry.vertices[0], GL_STATIC_DRAW);
+
+    setVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+    setVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, normal));
+    setVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, color));
+    setVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, uv));
+    setVertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, tan));
+    setVertexAttribPointer(7, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, bitan));
+
+    entry.wbo.init(GL_ARRAY_BUFFER);
+    entry.wbo.bind();
+    entry.wbo.setData(sizeof(VertexWeightData) * entry.weightsData.size(), &entry.weightsData[0], GL_STATIC_DRAW);
+    GL(glEnableVertexAttribArray(4));
+    GL(glVertexAttribIPointer(4, 4, GL_INT, sizeof(VertexWeightData), 0));
+    setVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(VertexWeightData), (const GLvoid*)(offsetof(VertexWeightData, weights)));
+
+    entry.ibo.init(GL_ELEMENT_ARRAY_BUFFER);
+    entry.ibo.bind();
+    entry.ibo.setData(sizeof(GLuint) * entry.indices.size(), &entry.indices[0], GL_STATIC_DRAW);
+
+    unbindVertexArray(entry.vao);
+}
+
+void loadSkinnedMeshFromFile(Mesh& mesh, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),
@@ -182,37 +232,6 @@ void SkinnedMeshLoader::loadFromFile(Mesh& mesh, const std::string& path, bool c
 
     for (auto& ent : mesh.entries)
         genBufferObjects(ent);
-}
-
-void SkinnedMeshLoader::genBufferObjects(Mesh::Entry& entry)
-{
-    entry.vao.init();
-    entry.vao.setIndexNumber(entry.indices.size());
-    entry.vao.bind();
-
-    entry.dbo.init(GL_ARRAY_BUFFER);
-    entry.dbo.bind();
-    entry.dbo.setData(sizeof(Vertex) * entry.vertices.size(), &entry.vertices[0], GL_STATIC_DRAW);
-
-    entry.vao.vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-    entry.vao.vertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, normal));
-    entry.vao.vertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, color));
-    entry.vao.vertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, uv));
-    entry.vao.vertexAttribPointer(6, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, tan));
-    entry.vao.vertexAttribPointer(7, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, bitan));
-
-    entry.wbo.init(GL_ARRAY_BUFFER);
-    entry.wbo.bind();
-    entry.wbo.setData(sizeof(VertexWeightData) * entry.weightsData.size(), &entry.weightsData[0], GL_STATIC_DRAW);
-    GL(glEnableVertexAttribArray(4));
-    GL(glVertexAttribIPointer(4, 4, GL_INT, sizeof(VertexWeightData), 0));
-    entry.vao.vertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(VertexWeightData), (const GLvoid*)(offsetof(VertexWeightData, weights)));
-
-    entry.ibo.init(GL_ELEMENT_ARRAY_BUFFER);
-    entry.ibo.bind();
-    entry.ibo.setData(sizeof(GLuint) * entry.indices.size(), &entry.indices[0], GL_STATIC_DRAW);
-
-    entry.vao.unbind();
 }
 
 }

@@ -14,7 +14,7 @@ public:
     void init(const vec2& size);
     void init(u32 x, u32 y);
 
-    void render() const;
+    void render();
 
     void setSize(const vec2& size);
     void setSize(u32 x, u32 y);

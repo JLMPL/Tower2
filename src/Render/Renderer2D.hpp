@@ -26,11 +26,11 @@ public:
     void init();
 
     void beginFrame();
-    void draw(const Rectangle& data);
-    void draw(const Text& data);
-    void draw(const Sprite& data);
-    void draw(const FadedRect& data);
-    void draw(const ui::HeadsUpDisplay& hud);
+    void draw(Rectangle& data);
+    void draw(Text& data);
+    void draw(Sprite& data);
+    void draw(FadedRect& data);
+    void draw(ui::HeadsUpDisplay& hud);
     void endFrame();
 
 private:

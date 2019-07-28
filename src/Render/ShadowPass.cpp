@@ -1,5 +1,5 @@
 #include "ShadowPass.hpp"
-#include "Geometry/Mesh.hpp"
+#include "Geometry/Geometry.hpp"
 #include "Render/Scene/RenderLight.hpp"
 #include "Render/Scene/RenderMesh.hpp"
 #include "Render/Scene/RenderSkinnedMesh.hpp"
@@ -75,7 +75,7 @@ void ShadowPass::execute(RenderScene& scene)
                 m_shadowShader.setUniformMatrix("uModel", renderMesh->getTransform());
                 m_shadowShader.setUniform3f("uLightPos", eye);
 
-                vao->drawElements();
+                drawVertexArray(*vao);
 
                 m_shadowShader.unbind();
             }
@@ -104,7 +104,7 @@ void ShadowPass::execute(RenderScene& scene)
                     m_ashadowShader.setUniformMatrix(index, renderSkin->getMatrixPalette()[j]);
                 }
 
-                vao->drawElements();
+                drawVertexArray(*vao);
 
                 m_ashadowShader.unbind();
             }

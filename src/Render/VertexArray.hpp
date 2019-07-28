@@ -5,25 +5,17 @@
 namespace gfx
 {
 
-class VertexArray
+struct VertexArray
 {
-public:
-    VertexArray() = default;
-    ~VertexArray();
-
-    void init();
-
-    void setIndexNumber(u32 count);
-    void vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer);
-
-    void drawElements() const;
-
-    void bind() const;
-    void unbind() const;
-
-private:
-    GLuint m_vao = 0;
-    u32 m_numIndices = 0;
+    GLuint id = 0;
+    u32 numIndices = 0;
 };
+
+void createVertexArray(VertexArray& vao);
+void destroyVertexArray(VertexArray& vao);
+void setVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer);
+void drawVertexArray(VertexArray& vao);
+void bindVertexArray(VertexArray& vao);
+void unbindVertexArray(VertexArray& vao);
 
 }

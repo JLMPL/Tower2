@@ -11,6 +11,7 @@ namespace gfx
 class LineRenderer
 {
 public:
+    ~LineRenderer();
     void init();
 
     void addLine(const vec3& a, const vec3& b, const vec3& c);

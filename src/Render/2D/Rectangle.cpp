@@ -18,23 +18,23 @@ void Rectangle::init(const vec2& size)
         1,0
     };
 
-    m_vao.init();
-    m_vao.bind();
+    createVertexArray(m_vao);
+    bindVertexArray(m_vao);
 
     m_vbo.init(GL_ARRAY_BUFFER);
     m_vbo.bind();
     m_vbo.setData(sizeof(f32) * 2 * 6, verts, GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    setVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
     m_vbo.unbind();
 }
 
-void Rectangle::render() const
+void Rectangle::render()
 {
-    m_vao.bind();
+    bindVertexArray(m_vao);
     GL(glDrawArrays(GL_TRIANGLES, 0, 6));
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
 }
 
 void Rectangle::setSize(const vec2& size)

@@ -1,6 +1,6 @@
 #pragma once
 #include "RenderEntity.hpp"
-#include "Render/Geometry/Mesh.hpp"
+#include "Render/Geometry/Geometry.hpp"
 #include "Render/VertexArray.hpp"
 #include "Render/ArrayBuffer.hpp"
 
@@ -25,7 +25,7 @@ public:
     ~RenderCloth() = default;
 
     void updateGeometry();
-    void render() const;
+    void render();
 
     const gfx::Material* getMaterial() const;
 

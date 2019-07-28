@@ -52,28 +52,28 @@ void FadedRect::updateGeometry()
         0,1,0
     };
 
-    m_vao.init();
-    m_vao.bind();
+    createVertexArray(m_vao);
+    bindVertexArray(m_vao);
 
     m_vbo.init(GL_ARRAY_BUFFER);
     m_vbo.bind();
     m_vbo.setData(sizeof(f32) * 2 * 18, verts, GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    setVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
     m_cbo.init(GL_ARRAY_BUFFER);
     m_cbo.bind();
     m_cbo.setData(sizeof(f32) * 18, alphas, GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(1, 1, GL_FLOAT, GL_FALSE, 0, 0);
+    setVertexAttribPointer(1, 1, GL_FLOAT, GL_FALSE, 0, 0);
 
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
     m_vbo.unbind();
 }
 
-void FadedRect::render() const
+void FadedRect::render()
 {
-    m_vao.bind();
+    bindVertexArray(m_vao);
     GL(glDrawArrays(GL_TRIANGLES, 0, 18));
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
 }
 
 void FadedRect::setSize(const vec2& size)

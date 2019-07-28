@@ -1,6 +1,6 @@
 #include "RenderSkinnedMesh.hpp"
 #include "Animation/Animation.hpp"
-#include "Render/Geometry/Mesh.hpp"
+#include "Render/Geometry/Geometry.hpp"
 
 RenderSkinnedMesh::RenderSkinnedMesh(gfx::Mesh* mesh, const mat4* palette) :
     m_mesh(mesh), m_matrixPalette(palette)

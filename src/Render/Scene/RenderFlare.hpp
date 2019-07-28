@@ -18,7 +18,7 @@ public:
     RenderFlare(const gfx::Texture* tex);
     ~RenderFlare() = default;
 
-    void render() const;
+    void render();
 
     void setColor(const Color& color);
     void setScale(f32 factor);

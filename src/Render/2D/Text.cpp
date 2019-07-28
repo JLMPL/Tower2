@@ -19,7 +19,9 @@ void Text::updateGeometry()
     auto glyphs = m_font->getPage(m_characterSize)->glyphs;
     m_width = 0;
 
+    f32 maxCursor = 0;
     f32 cursor = 0;
+    f32 cursorY = 0;
     std::vector<f32> verts;
     std::vector<f32> coords;
 
@@ -29,23 +31,30 @@ void Text::updateGeometry()
     {
         const auto& glyph = glyphs[m_string[i]];
 
-        verts.push_back(cursor + glyph.bearing.x);
-        verts.push_back(-glyph.bearing.y + glyph.size.y);
-
-        verts.push_back(cursor + glyph.bearing.x + glyph.size.x);
-        verts.push_back(-glyph.bearing.y + glyph.size.y);
-
-        verts.push_back(cursor + glyph.bearing.x + glyph.size.x);
-        verts.push_back(-glyph.bearing.y);
+        if (m_string[i] == '\n')
+        {
+            cursorY += m_characterSize;
+            cursor = 0;
+            continue;
+        }
 
         verts.push_back(cursor + glyph.bearing.x);
-        verts.push_back(-glyph.bearing.y + glyph.size.y);
+        verts.push_back(cursorY + -glyph.bearing.y + glyph.size.y);
 
         verts.push_back(cursor + glyph.bearing.x + glyph.size.x);
-        verts.push_back(-glyph.bearing.y);
+        verts.push_back(cursorY + -glyph.bearing.y + glyph.size.y);
+
+        verts.push_back(cursor + glyph.bearing.x + glyph.size.x);
+        verts.push_back(cursorY + -glyph.bearing.y);
 
         verts.push_back(cursor + glyph.bearing.x);
-        verts.push_back(-glyph.bearing.y);
+        verts.push_back(cursorY + -glyph.bearing.y + glyph.size.y);
+
+        verts.push_back(cursor + glyph.bearing.x + glyph.size.x);
+        verts.push_back(cursorY + -glyph.bearing.y);
+
+        verts.push_back(cursor + glyph.bearing.x);
+        verts.push_back(cursorY + -glyph.bearing.y);
 
         f32 xpos = glyph.uvPos.x * texel;
         f32 ypos = glyph.uvPos.y * texel;
@@ -72,27 +81,30 @@ void Text::updateGeometry()
         coords.push_back(ypos);
 
         cursor += glyph.advance;// >> 6;
+
+        if (cursor > maxCursor)
+            maxCursor = cursor;
     }
 
-    m_width = cursor;
+    m_width = maxCursor;
 
     const auto& glyph = glyphs['A'];
     m_height = glyph.size.y;
 
-    m_vao.init();
-    m_vao.bind();
+    createVertexArray(m_vao);
+    bindVertexArray(m_vao);
 
     m_vbo.init(GL_ARRAY_BUFFER);
     m_vbo.bind();
     m_vbo.setData(sizeof(f32) * verts.size(), &verts[0], GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    setVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
     m_tbo.init(GL_ARRAY_BUFFER);
     m_tbo.bind();
     m_tbo.setData(sizeof(f32) * coords.size(), &coords[0], GL_STATIC_DRAW);
-    m_vao.vertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+    setVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
     m_vbo.unbind();
 }
 
@@ -102,11 +114,11 @@ void Text::setString(const std::string& str)
     updateGeometry();
 }
 
-void Text::render() const
+void Text::render()
 {
-    m_vao.bind();
+    bindVertexArray(m_vao);
     GL(glDrawArrays(GL_TRIANGLES, 0, m_string.size() * 12));
-    m_vao.unbind();
+    unbindVertexArray(m_vao);
 }
 
 void Text::setCharacterSize(u32 size)

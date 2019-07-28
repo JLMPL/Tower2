@@ -5,7 +5,7 @@
 #include "Gameplay/Entities/Camera.hpp"
 #include "Gameplay/Level.hpp"
 #include "Input/Input.hpp"
-#include "Render/Geometry/Mesh.hpp"
+#include "Render/Geometry/Geometry.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/MeshManager.hpp"
 #include "Render/Scene/RenderCloth.hpp"

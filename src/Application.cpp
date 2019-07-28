@@ -1,47 +1,39 @@
 #include "Application.hpp"
+#include "Animation/Animation.hpp"
 #include "Core/Config.hpp"
+#include "Core/FrameInfo.hpp"
+#include "Core/Timer.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "Debug/Log.hpp"
+#include "Events/Event.hpp"
 #include "Input/Input.hpp"
+#include "Physics/PhysicsSystem.hpp"
 #include "Render/MaterialManager.hpp"
+#include "Render/Renderer2D.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Script/Lua.hpp"
+#include "State/StateStack.hpp"
+#include "Render/Geometry/Geometry.hpp"
+#include <SDL2/SDL.h>
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLEW
 #include <ImGui/imgui.h>
 #include <ImGui/imgui_impl_sdl.h>
 #include <ImGui/imgui_impl_opengl3.h>
 
-Application::Application()
-{
-    core::loadConfigurationFile();
+SDL_Window*        l_window = nullptr;
+SDL_GLContext      l_context;
+SDL_Event          l_event;
 
-    setupSDL();
-    setupGL();
-    setupImGui();
-    setupSystems();
-    setRelativeMouseMode(m_relativeMouse);
+core::Timer        l_timer;
+StateStack         l_stateStack;
 
-    lua::checkInitialization();
+bool               l_relativeMouse = true;
+bool               l_running = true;
+bool               l_captureMouse = true;
+bool               l_imguiWantsKeyboard = false;
 
-    m_stateStack.push(State::Splash);
-    // m_stateStack.push(State::Playing);
-    // m_stateStack.push(State::Loading);
-    // m_stateStack.push(State::Debug);
-}
-
-Application::~Application()
-{
-    ImGui_ImplOpenGL3_Shutdown();
-    ImGui_ImplSDL2_Shutdown();
-    ImGui::DestroyContext();
-
-    SDL_GL_DeleteContext(m_context);
-    SDL_DestroyWindow(m_window);
-    SDL_Quit();
-}
-
-void Application::setupSDL()
+LOCAL void setupSDL()
 {
     if (SDL_Init(SDL_INIT_EVENTS))
     {
@@ -61,7 +53,7 @@ void Application::setupSDL()
     else
         flags |= SDL_WINDOW_SHOWN;
 
-    m_window = SDL_CreateWindow(
+    l_window = SDL_CreateWindow(
         "Tower",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
@@ -69,17 +61,17 @@ void Application::setupSDL()
         flags
     );
 
-    if (!m_window)
+    if (!l_window)
     {
         Log::error("Window could not be created! %s\n", SDL_GetError());
         SDL_ClearError();
         exit(EXIT_FAILURE);
     }
 
-    m_context = SDL_GL_CreateContext(m_window);
+    l_context = SDL_GL_CreateContext(l_window);
 }
 
-void Application::setupGL()
+LOCAL void setupGL()
 {
     GLenum error = glewInit();
 
@@ -96,9 +88,11 @@ void Application::setupGL()
     GL(glEnable(GL_TEXTURE_2D));
     GL(glEnable(GL_TEXTURE_3D));
     GL(glEnable(GL_TEXTURE_CUBE_MAP_SEAMLESS));
+
+    gfx::initScreenQuad();
 }
 
-void Application::setupImGui()
+LOCAL void setupImGui()
 {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -106,13 +100,13 @@ void Application::setupImGui()
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
     // io.MouseDrawCursor = true;
 
-    ImGui_ImplSDL2_InitForOpenGL(m_window, m_context);
+    ImGui_ImplSDL2_InitForOpenGL(l_window, l_context);
     ImGui_ImplOpenGL3_Init("#version 130");
 
     ImGui::StyleColorsDark();
 }
 
-void Application::setupSystems()
+LOCAL void setupSystems()
 {
     gfx::g_MatMgr.loadMaterials();
     gfx::g_SceneRenderer.init();
@@ -122,32 +116,66 @@ void Application::setupSystems()
     gInput.init();
 }
 
-void Application::processEvent(const SDL_Event& event)
+LOCAL void setRelativeMouseMode(bool val)
+{
+    SDL_SetRelativeMouseMode(val ? SDL_TRUE : SDL_FALSE);
+}
+
+LOCAL void init()
+{
+    core::loadConfigurationFile();
+
+    setupSDL();
+    setupGL();
+    setupImGui();
+    setupSystems();
+    setRelativeMouseMode(l_relativeMouse);
+
+    lua::checkInitialization();
+
+    l_stateStack.push(State::Splash);
+    // l_stateStack.push(State::Playing);
+    // l_stateStack.push(State::Loading);
+    // l_stateStack.push(State::Debug);
+}
+
+LOCAL void shutdown()
+{
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplSDL2_Shutdown();
+    ImGui::DestroyContext();
+
+    SDL_GL_DeleteContext(l_context);
+    SDL_DestroyWindow(l_window);
+    SDL_Quit();
+}
+
+LOCAL void processEvent(const SDL_Event& event)
 {
     if (event.type == SDL_QUIT)
     {
-        m_running = false;
+        l_running = false;
     }
     else if (event.type == SDL_KEYDOWN)
     {
         if (event.key.keysym.sym == SDLK_F4)
         {
-            m_running = false;
+            l_running = false;
         }
     }
 
-    if (m_imguiWantsKeyboard)
+    if (l_imguiWantsKeyboard)
         SDL_StartTextInput();
 
-    ImGui_ImplSDL2_ProcessEvent(&m_event);
+    ImGui_ImplSDL2_ProcessEvent(&l_event);
 
-    if (!m_imguiWantsKeyboard)
+    if (!l_imguiWantsKeyboard)
     {
         SDL_StopTextInput();
     }
 }
 
-Event Application::convertEvent(const SDL_Event& event)
+LOCAL Event convertEvent(const SDL_Event& event)
 {
     if (event.type == SDL_KEYDOWN)
     {
@@ -194,68 +222,67 @@ Event Application::convertEvent(const SDL_Event& event)
     return Event(Event::Invalid);
 }
 
-void Application::processClientEvent(const Event& event)
+LOCAL void processClientEvent(const Event& event)
 {
     if (event.type == Event::ButtonPressed)
     {
         switch (event.button)
         {
             case Button::K_F1:
-                m_relativeMouse = !m_relativeMouse;
-                setRelativeMouseMode(m_relativeMouse);
+                l_relativeMouse = !l_relativeMouse;
+                setRelativeMouseMode(l_relativeMouse);
                 debug::g_Menu.toggle();
                 break;
         }
     }
 
-    m_stateStack.sendSystemEvent(event);
+    l_stateStack.sendSystemEvent(event);
 }
 
-void Application::update()
+LOCAL void update()
 {
-    m_stateStack.update();
+    l_stateStack.update();
 }
 
-void Application::run()
+void runApplication()
 {
-    while (m_running)
+    init();
+
+    while (l_running)
     {
-        while (SDL_PollEvent(&m_event))
+        while (SDL_PollEvent(&l_event))
         {
-            processEvent(m_event);
-            processClientEvent(convertEvent(m_event));
+            processEvent(l_event);
+            processClientEvent(convertEvent(l_event));
         }
 
-        core::g_FInfo.delta = resetTimer(m_timer);
+        core::g_FInfo.delta = resetTimer(l_timer);
 
         gInput.update();
 
         update();
 
         gfx::g_Renderer2D.beginFrame();
-        m_stateStack.draw();
+        l_stateStack.draw();
         gfx::g_Renderer2D.endFrame();
 
         ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplSDL2_NewFrame(m_window);
+        ImGui_ImplSDL2_NewFrame(l_window);
         ImGui::NewFrame();
 
-        m_stateStack.drawGui();
+        l_stateStack.drawGui();
 
         debug::g_Menu.drawGui();
 
         ImGui::Render();
 
         ImGuiIO& io = ImGui::GetIO(); (void)io;
-        m_imguiWantsKeyboard = io.WantCaptureKeyboard;
+        l_imguiWantsKeyboard = io.WantCaptureKeyboard;
 
-        SDL_GL_MakeCurrent(m_window, m_context);
+        SDL_GL_MakeCurrent(l_window, l_context);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-        SDL_GL_SwapWindow(m_window);
+        SDL_GL_SwapWindow(l_window);
     }
-}
 
-void Application::setRelativeMouseMode(bool val)
-{
-    SDL_SetRelativeMouseMode(val ? SDL_TRUE : SDL_FALSE);
+    shutdown();
 }

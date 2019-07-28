@@ -17,7 +17,7 @@ public:
 
     void init(Font* font);
     void setString(const std::string& str);
-    void render() const;
+    void render();
 
     void setCharacterSize(u32 size);
     void setColor(const Color& color);

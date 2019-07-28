@@ -12,7 +12,7 @@ public:
     Rectangle() = default;
 
     void init(const vec2& size);
-    void render() const;
+    void render();
 
     void setSize(const vec2& size);
     vec2 getSize() const;

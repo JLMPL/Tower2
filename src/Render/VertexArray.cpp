@@ -3,41 +3,36 @@
 namespace gfx
 {
 
-VertexArray::~VertexArray()
+void createVertexArray(VertexArray& vao)
 {
-    GL(glDeleteVertexArrays(1, &m_vao));
+    GL(glDeleteVertexArrays(1, &vao.id));
+    GL(glGenVertexArrays(1, &vao.id));
 }
 
-void VertexArray::init()
+void destroyVertexArray(VertexArray& vao)
 {
-    GL(glDeleteVertexArrays(1, &m_vao));
-    GL(glGenVertexArrays(1, &m_vao));
+    GL(glDeleteVertexArrays(1, &vao.id));
 }
 
-void VertexArray::setIndexNumber(u32 count)
-{
-    m_numIndices = count;
-}
-
-void VertexArray::vertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer)
+void setVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid* pointer)
 {
     GL(glEnableVertexAttribArray(index));
     GL(glVertexAttribPointer(index, size, type, normalized, stride, pointer));
 }
 
-void VertexArray::drawElements() const
+void drawVertexArray(VertexArray& vao)
 {
-    GL(glBindVertexArray(m_vao));
-    GL(glDrawElements(GL_TRIANGLES, m_numIndices, GL_UNSIGNED_INT, 0));
+    GL(glBindVertexArray(vao.id));
+    GL(glDrawElements(GL_TRIANGLES, vao.numIndices, GL_UNSIGNED_INT, 0));
     GL(glBindVertexArray(0));
 }
 
-void VertexArray::bind() const
+void bindVertexArray(VertexArray& vao)
 {
-    GL(glBindVertexArray(m_vao));
+    GL(glBindVertexArray(vao.id));
 }
 
-void VertexArray::unbind() const
+void unbindVertexArray(VertexArray& vao)
 {
     GL(glBindVertexArray(0));
 }

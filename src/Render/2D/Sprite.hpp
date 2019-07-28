@@ -20,7 +20,7 @@ public:
     Sprite() = default;
 
     void init(const Texture* texture, const Rect& dest = {0,0,0,0}, const Rect& src = {0,0,0,0});
-    void render() const;
+    void render();
 
     void setTexture(const Texture* tex);
     void setDest(const Rect& dest);

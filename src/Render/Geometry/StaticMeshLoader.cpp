@@ -1,4 +1,4 @@
-#include "StaticMeshLoader.hpp"
+#include "Geometry.hpp"
 #include "Core/Convert.hpp"
 #include "Debug/Log.hpp"
 #include "Render/MaterialManager.hpp"
@@ -12,7 +12,7 @@
 namespace gfx
 {
 
-void StaticMeshLoader::loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
+LOCAL void loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
     Mesh::Entry entry;
 
@@ -68,7 +68,7 @@ void StaticMeshLoader::loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& 
     mesh.entries.push_back(entry);
 }
 
-void StaticMeshLoader::loadClothMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
+LOCAL void loadClothMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool isDae)
 {
     Mesh::Entry entry;
 
@@ -103,7 +103,7 @@ void StaticMeshLoader::loadClothMesh(Mesh& mesh, const aiScene& scene, const aiM
         {
             f32& storedHash = hashes[j];
 
-            f32 vertHash = vert.getHash();
+            f32 vertHash = getVertexHash(vert);
 
             if (vertHash == storedHash)
             {
@@ -116,7 +116,7 @@ void StaticMeshLoader::loadClothMesh(Mesh& mesh, const aiScene& scene, const aiM
         if (isUnique)
         {
             entry.vertices.push_back(vert);
-            hashes.push_back(vert.getHash());
+            hashes.push_back(getVertexHash(vert));
             redirect[i] = entry.vertices.size()-1;
         }
     }
@@ -146,33 +146,33 @@ void StaticMeshLoader::loadClothMesh(Mesh& mesh, const aiScene& scene, const aiM
     mesh.entries.push_back(entry);
 }
 
-void StaticMeshLoader::setupBuffers(Mesh::Entry& ent)
+LOCAL void setupBuffers(Mesh::Entry& ent)
 {
-    ent.vao.init();
-    ent.vao.setIndexNumber(ent.indices.size());
-    ent.vao.bind();
+    createVertexArray(ent.vao);
+    ent.vao.numIndices = ent.indices.size();
+    bindVertexArray(ent.vao);
 
     ent.dbo.init(GL_ARRAY_BUFFER);
     ent.dbo.bind();
     ent.dbo.setData(sizeof(Vertex) * ent.vertices.size(), &ent.vertices[0], GL_STATIC_DRAW);
 
-    ent.vao.vertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
-    ent.vao.vertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, normal));
-    ent.vao.vertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, color));
-    ent.vao.vertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, uv));
-    ent.vao.vertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, tan));
-    ent.vao.vertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, bitan));
+    setVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), 0);
+    setVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, normal));
+    setVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, color));
+    setVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, uv));
+    setVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, tan));
+    setVertexAttribPointer(5, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid*)offsetof(Vertex, bitan));
 
     ent.ibo.init(GL_ELEMENT_ARRAY_BUFFER);
     ent.ibo.bind();
     ent.ibo.setData(sizeof(GLuint) * ent.indices.size(), &ent.indices[0], GL_STATIC_DRAW);
 
-    ent.vao.unbind();
+    unbindVertexArray(ent.vao);
     ent.dbo.unbind();
     ent.ibo.unbind();
 }
 
-void StaticMeshLoader::loadFromFile(Mesh& mesh, const std::string& path, bool cloth)
+void loadStaticMeshFromFile(Mesh& mesh, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),
