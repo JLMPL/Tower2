@@ -11,8 +11,8 @@ LightEffect::LightEffect(u32 id, LevelContext* context, u32 owner) :
 {
     m_light = m_context->renderScene->addRenderLight();
 
-    auto li = m_light->as<RenderLight>();
-    li->setColor(vec3(0,50,100));
+    // auto li = m_light->as<RenderLight>();
+    m_light->setColor(vec3(0,500,1000));
 
     m_flare = m_context->renderScene->addRenderFlare("flare.png");
 

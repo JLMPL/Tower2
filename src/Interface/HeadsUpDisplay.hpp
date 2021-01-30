@@ -16,7 +16,6 @@ namespace gfx
 }
 
 class RenderScene;
-struct GameEvent;
 
 namespace ui
 {
@@ -30,8 +29,6 @@ public:
 
     void show();
     void hide();
-
-    void onEvent(const GameEvent& event);
 
 private:
     gfx::Shader m_hudShader;

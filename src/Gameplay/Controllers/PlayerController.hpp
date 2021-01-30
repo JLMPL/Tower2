@@ -7,7 +7,6 @@
 class RenderFlare;
 class RenderMesh;
 class RenderCloth;
-class Interactible;
 
 struct LevelContext;
 
@@ -30,7 +29,6 @@ public:
 
     void update() override final;
     void preSimulationUpdate() override final;
-    void onEvent(const GameEvent& event) override final;
 
 private:
 
@@ -57,7 +55,6 @@ private:
 
     LevelContext* m_context = nullptr;
 
-    Interactible* m_interactible = nullptr;
     i32 m_combatTarget = -1;
 
     vec3 m_moveTowardsDir = vec3(1,0,0);

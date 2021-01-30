@@ -94,7 +94,7 @@ private:
 
     physx::PxDistanceJoint* m_distanceJoint = nullptr;
 
-    bool m_debugDraw = true;
+    bool m_debugDraw = false;
 };
 
 }

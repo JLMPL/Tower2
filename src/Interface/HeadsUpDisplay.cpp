@@ -3,7 +3,6 @@
 #include "Render/FontManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/TextureManager.hpp"
-#include "EventSystem/GameEvent.hpp"
 #include "Render/Scene/RenderScene.hpp"
 
 namespace ui
@@ -68,18 +67,6 @@ void HeadsUpDisplay::init(RenderScene& scene)
 
     gfx::unbindVertexArray(m_hpVao);
     m_hpVbo.unbind();
-}
-
-void HeadsUpDisplay::onEvent(const GameEvent& event)
-{
-    if (event.getType() == GameEvent::Type::UpdateHud)
-    {
-        m_isFocus = event.hud.focus;
-
-        m_focusPos.x = event.hud.focusX;
-        m_focusPos.y = event.hud.focusY;
-        m_focusPos.z = event.hud.focusZ;
-    }
 }
 
 void HeadsUpDisplay::update()

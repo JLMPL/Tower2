@@ -6,6 +6,7 @@ set(PROJECT_LINK_LIBS -lPhysX3Extensions -lGL -lGLEW -lSDL2 -llua5.3 -lassimp -l
 
 link_directories(/usr/local/lib)
 link_directories(./)
+link_directories(/home/dominik/Desktop/PhysX/PhysX-3.3/PhysXSDK/Bin/linux64)
 
 # -fno-exceptions
 add_definitions(-g -std=c++17 -Wfatal-errors -Wall)

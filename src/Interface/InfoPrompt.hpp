@@ -4,8 +4,6 @@
 #include <Core/Timer.hpp>
 #include <deque>
 
-struct GameEvent;
-
 namespace ui
 {
 
@@ -21,8 +19,6 @@ public:
 private:
     void show();
     void hide();
-
-    void onEvent(const GameEvent& event);
 
 private:
     struct Prompt

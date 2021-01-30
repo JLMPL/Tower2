@@ -15,7 +15,6 @@ public:
 
     virtual void update() = 0;
     virtual void preSimulationUpdate() {}
-    virtual void onEvent(const GameEvent& event) = 0;
 
 protected:
 

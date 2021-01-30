@@ -14,8 +14,8 @@ public:
     Mesh* getSkinnedMesh(const std::string& name, bool cloth = false);
 
 private:
-    std::map<std::string, std::unique_ptr<Mesh>>  m_cloths;
-    std::map<std::string, std::unique_ptr<Mesh>>  m_meshes;
+    std::map<std::string, std::unique_ptr<Mesh>> m_cloths;
+    std::map<std::string, std::unique_ptr<Mesh>> m_meshes;
     std::map<std::string, std::unique_ptr<Mesh>> m_skinMeshes;
 };
 

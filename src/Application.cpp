@@ -12,8 +12,8 @@
 #include "Render/Renderer2D.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Script/Lua.hpp"
-#include "State/StateStack.hpp"
 #include "Render/Geometry/Geometry.hpp"
+#include "Gameplay/Level.hpp"
 #include <SDL2/SDL.h>
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLEW
@@ -26,7 +26,7 @@ SDL_GLContext      l_context;
 SDL_Event          l_event;
 
 core::Timer        l_timer;
-StateStack         l_stateStack;
+std::unique_ptr<Level> m_level;
 
 bool               l_relativeMouse = true;
 bool               l_running = true;
@@ -133,10 +133,8 @@ LOCAL void init()
 
     lua::checkInitialization();
 
-    l_stateStack.push(State::Splash);
-    // l_stateStack.push(State::Playing);
-    // l_stateStack.push(State::Loading);
-    // l_stateStack.push(State::Debug);
+    m_level = std::make_unique<Level>();
+    m_level->initFromScript("Maps/Level0.lua");
 }
 
 LOCAL void shutdown()
@@ -235,13 +233,11 @@ LOCAL void processClientEvent(const Event& event)
                 break;
         }
     }
-
-    l_stateStack.sendSystemEvent(event);
 }
 
 LOCAL void update()
 {
-    l_stateStack.update();
+    m_level->update();
 }
 
 void runApplication()
@@ -263,14 +259,12 @@ void runApplication()
         update();
 
         gfx::g_Renderer2D.beginFrame();
-        l_stateStack.draw();
+        m_level->draw();
         gfx::g_Renderer2D.endFrame();
 
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL2_NewFrame(l_window);
         ImGui::NewFrame();
-
-        l_stateStack.drawGui();
 
         debug::g_Menu.drawGui();
 

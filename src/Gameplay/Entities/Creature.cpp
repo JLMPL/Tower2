@@ -1,14 +1,13 @@
 #include "Creature.hpp"
 #include "Animation/Animation.hpp"
 #include "Debug/DebugMenu.hpp"
-#include "EventSystem/EventSystem.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
 #include "Render/Scene/RenderSkinnedMesh.hpp"
 #include "Gameplay/Level.hpp"
 
 Creature::Creature(u32 id, LevelContext* context, Species spec) :
-    Interactible(id, context), m_species(spec)
+    Entity(id, context), m_species(spec)
 {
     switch (m_species)
     {
@@ -23,7 +22,7 @@ Creature::Creature(u32 id, LevelContext* context, Species spec) :
 
 void Creature::initPlayer()
 {
-    initLabel("Player", 2.25);
+    // initLabel("Player", 2.25);
 
     m_animator = anim::addAnimatorToAnimSystem(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
     m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->matrixPalette.data());
@@ -40,7 +39,7 @@ void Creature::initPlayer()
 
 void Creature::initSkeleton()
 {
-    initLabel("Skeleton", 2.25);
+    // initLabel("Skeleton", 2.25);
 
     m_animator = anim::addAnimatorToAnimSystem(&gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton, "Rigud");
     m_meshNode = m_context->renderScene->addRenderSkinnedMesh("rigud.dae", m_animator->matrixPalette.data());
@@ -138,9 +137,9 @@ i32 Creature::getMagicka() const
     return m_magicka;
 }
 
-void Creature::interact(Creature* other)
-{
-}
+// void Creature::interact(Creature* other)
+// {
+// }
 
 void Creature::setPos(const vec3& pos)
 {

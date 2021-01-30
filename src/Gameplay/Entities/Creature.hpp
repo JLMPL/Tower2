@@ -1,7 +1,7 @@
 #pragma once
 #include "Physics/CharacterController.hpp"
 #include "Core/Timer.hpp"
-#include "Interactible.hpp"
+#include "../Entity.hpp"
 
 class Level;
 class Item;
@@ -9,7 +9,7 @@ class RenderSkinnedMesh;
 
 struct LevelContext;
 
-class Creature : public Interactible
+class Creature : public Entity
 {
 public:
     using Base = Entity;
@@ -30,7 +30,7 @@ public:
     void                 update() override final;
     void                 lateUpdate() override final;
 
-    void                 interact(Creature* other) override final;
+    // void                 interact(Creature* other) override final;
     void                 move(Seconds deltaTime = 1000_ms);
 
     u32                  getDamageOutput() const;

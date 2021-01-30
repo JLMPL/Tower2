@@ -1,6 +1,5 @@
 #include "PlayerController.hpp"
 #include "Animation/Animation.hpp"
-#include "EventSystem/EventSystem.hpp"
 #include "Gameplay/Entities/Creature.hpp"
 #include "Gameplay/Entities/Camera.hpp"
 #include "Gameplay/Level.hpp"
@@ -52,11 +51,11 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     {
         core::resetTimer(m_lolo);
 
-        GameEvent event(GameEvent::Type::Damage);
-        event.setSender(m_cre->getID());
-        event.setReceiver(m_combatTarget);
-        event.ivalue = 1;
-        m_context->eventSys->enqueue(event);
+        // GameEvent event(GameEvent::Type::Damage);
+        // event.setSender(m_cre->getID());
+        // event.setReceiver(m_combatTarget);
+        // event.ivalue = 1;
+        // m_context->eventSys->enqueue(event);
     });
 
     anim::bindAnimStateEvent(anim::getAnimatorState(animator, "Attack0"), 0.625,
@@ -81,33 +80,29 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     // m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
 }
 
-void PlayerController::onEvent(const GameEvent& event)
-{
-}
-
 void PlayerController::updateHud()
 {
-    GameEvent event(GameEvent::Type::UpdateHud);
-    event.hud.health = 1;
-    event.hud.mana = 1;
-    event.hud.spell = 1;
+    // GameEvent event(GameEvent::Type::UpdateHud);
+    // event.hud.health = 1;
+    // event.hud.mana = 1;
+    // event.hud.spell = 1;
 
-    if (m_interactible)
-    {
-        event.hud.focus = true;
-        event.hud.focusX = m_interactible->getPos().x;
-        event.hud.focusY = m_interactible->getPos().y;
-        event.hud.focusZ = m_interactible->getPos().z;
-    }
-    else
-        event.hud.focus = false;
+    // if (m_interactible)
+    // {
+    //     event.hud.focus = true;
+    //     event.hud.focusX = m_interactible->getPos().x;
+    //     event.hud.focusY = m_interactible->getPos().y;
+    //     event.hud.focusZ = m_interactible->getPos().z;
+    // }
+    // else
+    //     event.hud.focus = false;
 
-    m_context->eventSys->enqueue(event);
+    // m_context->eventSys->enqueue(event);
 }
 
 void PlayerController::update()
 {
-    m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_context->camera->getForward());// m_camera->getForwardDirection());
+    // m_interactible = m_context->level->getClosestInteractible(m_cre->getPos(), m_context->camera->getForward());// m_camera->getForwardDirection());
 
     m_spawnTimer++;
 
@@ -205,9 +200,9 @@ void PlayerController::idle()
             enterAttack();
     }
 
-    if (gInput.isUse() && m_interactible && m_cre->getAnimator().activeState == anim::getAnimatorState(&m_cre->getAnimator(), "Idle"))
+    // if (gInput.isUse() && m_interactible && m_cre->getAnimator().activeState == anim::getAnimatorState(&m_cre->getAnimator(), "Idle"))
     {
-        m_interactible->interact(m_cre);
+        // m_interactible->interact(m_cre);
     }
 
     checkDrawWeapon();
@@ -285,18 +280,18 @@ void PlayerController::enterAttack()
 
 void PlayerController::attack()
 {
-    auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
+    // auto cbTarget = m_context->level->getClosestCombatTarget(m_cre->getPos(), m_cre->getFacingDir());
 
-    if (cbTarget)
-    {
-        m_combatTarget = cbTarget->getID();
-        vec3 oldir = m_cre->getFacingDir();
-        vec3 nudir = math::normalize(cbTarget->getPos() - m_cre->getPos());
+    // if (cbTarget)
+    // {
+    //     m_combatTarget = cbTarget->getID();
+    //     vec3 oldir = m_cre->getFacingDir();
+    //     vec3 nudir = math::normalize(cbTarget->getPos() - m_cre->getPos());
 
-        m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nudir, 0.2f)));
-    }
-    else
-        m_combatTarget = -1;
+    //     m_cre->setFacingDirection(math::normalize(math::lerp(oldir, nudir, 0.2f)));
+    // }
+    // else
+    //     m_combatTarget = -1;
 
     m_cre->setDirection(m_cre->getFacingDir());
 

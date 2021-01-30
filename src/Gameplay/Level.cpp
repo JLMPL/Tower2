@@ -1,10 +1,5 @@
 #include "Level.hpp"
 #include "Controllers/PlayerController.hpp"
-#include "Controllers/SkeletonController.hpp"
-#include "Entities/Chest.hpp"
-#include "Entities/Door.hpp"
-#include "Entities/Lever.hpp"
-#include "Entities/Pickup.hpp"
 #include "Entities/LightEffect.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/MaterialManager.hpp"
@@ -20,7 +15,7 @@ void Level::initFromScript(const std::string& file)
 
     m_lvlContext.level       = this;
     m_lvlContext.renderScene = &m_renderScene;
-    m_lvlContext.eventSys    = &m_eventSys;
+    // m_lvlContext.eventSys    = &m_eventSys;
     // m_lvlContext.animSys     = &m_animSys;
     m_lvlContext.physSys     = &m_physSys;
     m_lvlContext.particleSys = &m_particleSystem;
@@ -66,16 +61,6 @@ void Level::uploadFunctions(lua::state& state)
     {
         return addCreature(Creature::Species(species), vec3(x,y,z));
     };
-
-    state["addChest"] = [&](f32 x, f32 y, f32 z) -> i32
-    {
-        return addChest(vec3(x,y,z));
-    };
-
-    state["addDoor"] = [&](f32 x, f32 y, f32 z) -> i32
-    {
-        return addDoor(vec3(x,y,z));
-    };
 }
 
 void Level::setLevelMesh(const std::string& map, const std::string& net)
@@ -118,58 +103,6 @@ u32 Level::addCreature(Creature::Species species, const vec3& pos)
 
     if (species == Creature::Species::Player)
         m_controllers.emplace_back(new PlayerController(creature, &m_lvlContext));
-    else if (species == Creature::Species::Skeleton)
-        m_controllers.emplace_back(new SkeletonController(creature, &m_lvlContext));
-
-    m_entities.push_back(std::move(entity));
-    m_lastEntityId++;
-
-    return m_lastEntityId-1;
-}
-
-u32 Level::addPickup(u32 item, const vec3& pos)
-{
-    Entity::Ptr entity(new Pickup(m_lastEntityId, &m_lvlContext));
-    // entity->setPos(pos);
-
-    Pickup* pickup = entity->as<Pickup>();
-    pickup->getRigidBody().setGlobalTransform(math::translate(pos));
-
-    m_creationQueue.push_back(std::move(entity));
-    m_lastEntityId++;
-
-    return m_lastEntityId-1;
-}
-
-u32 Level::addChest(const vec3& pos)
-{
-    Entity::Ptr entity(new Chest(m_lastEntityId, &m_lvlContext));
-    entity->setPos(pos);
-
-    m_entities.push_back(std::move(entity));
-    m_lastEntityId++;
-
-    return m_lastEntityId-1;
-}
-
-u32 Level::addDoor(const vec3& pos)
-{
-    Entity::Ptr entity(new Door(m_lastEntityId, &m_lvlContext));
-    entity->setPos(pos);
-
-    m_entities.push_back(std::move(entity));
-    m_lastEntityId++;
-
-    return m_lastEntityId-1;
-}
-
-u32 Level::addLever(u32 target, const vec3& pos)
-{
-    Entity::Ptr entity(new Lever(m_lastEntityId, &m_lvlContext));
-
-    auto lever = entity->as<Lever>();
-    lever->setActivationTarget(3);
-    lever->setPos(pos);
 
     m_entities.push_back(std::move(entity));
     m_lastEntityId++;
@@ -209,29 +142,15 @@ void Level::destroyEntities()
 
 void Level::onEvent(const GameEvent& event)
 {
-    if (event.getType() == GameEvent::Type::SpawnPickup)
+    // if (event.getType() == GameEvent::Type::SpawnPickup)
     {
-        addPickup(event.pickup.itemID,
-            vec3(event.pickup.x, event.pickup.y, event.pickup.z));
+        // addPickup(event.pickup.itemID,
+            // vec3(event.pickup.x, event.pickup.y, event.pickup.z));
     }
 }
 
 void Level::update()
 {
-    for (auto& event : m_eventSys.getEvents())
-    {
-        onEvent(event);
-
-        for (auto& ent : m_entities)
-            ent->onEvent(event);
-
-        for (auto& ctrl : m_controllers)
-            ctrl->onEvent(event);
-
-        m_hud.onEvent(event);
-    }
-    m_eventSys.clear();
-
     createEntities();
     destroyEntities();
 
@@ -286,81 +205,6 @@ void Level::update()
 void Level::draw()
 {
     m_hud.draw();
-}
-
-Interactible* Level::getClosestInteractible(const vec3& pos, const vec3& dir)
-{
-    Interactible* bestest = nullptr;
-
-    for (auto& ent : m_entities)
-    {
-        if (ent->getType() == Entity::Type::Pickup ||
-            ent->getType() == Entity::Type::Chest ||
-            ent->getType() == Entity::Type::Lever)
-        {
-            vec3 flatpos = vec3(pos.x, 0, pos.z);
-            vec3 entpos = vec3(ent->getPos().x, 0, ent->getPos().z);
-
-            if (f32 dist = math::distance(flatpos, entpos); dist > 4.f || dist < 0.01f)
-                continue;
-
-            vec3 toTheStuff = math::normalize(entpos - flatpos);
-
-            if (math::dot(dir, toTheStuff) < 0.75)
-                continue;
-
-            if (bestest)
-            {
-                f32 distone = math::distance2(pos, bestest->getPos());
-                f32 distwo = math::distance2(pos, ent->getPos());
-
-                if (distwo < distone)
-                    bestest = ent->as<Interactible>();
-            }
-            else
-                bestest = ent->as<Interactible>();
-        }
-    }
-
-    return bestest;
-}
-
-Creature* Level::getClosestCombatTarget(const vec3& pos, const vec3& dir, bool onlyPlayer)
-{
-    Creature* bestest = nullptr;
-
-    for (auto& ent : m_entities)
-    {
-        if (ent->getType() == Entity::Type::Creature)
-        {
-            if (ent->as<Creature>()->isDead())
-                continue;
-
-            if (f32 dist = math::distance(pos, ent->getPos()); dist > 10.f || dist < 0.01f)
-                continue;
-
-            vec3 toTheFucker = math::normalize(ent->getPos() - pos);
-
-            if (dir != vec3(0) && math::dot(dir, toTheFucker) < 0.7)
-                continue;
-
-            if (ent->as<Creature>()->getSpecies() == Creature::Species::Player && onlyPlayer)
-                return ent->as<Creature>();
-
-            if (bestest)
-            {
-                f32 distone = math::distance2(pos, bestest->getPos());
-                f32 distwo = math::distance2(pos, ent->getPos());
-
-                if (distwo < distone)
-                    bestest = ent->as<Creature>();
-            }
-            else
-                bestest = ent->as<Creature>();
-        }
-    }
-
-    return bestest;
 }
 
 Entity* Level::getEntityByID(u32 id)

@@ -3,7 +3,6 @@
 #include "Render/FontManager.hpp"
 #include "Core/Config.hpp"
 #include "Core/FrameInfo.hpp"
-#include "EventSystem/EventSystem.hpp"
 
 namespace ui
 {
@@ -31,13 +30,6 @@ void InfoPrompt::enqueue(const std::string& small, const std::string& big)
 {
     m_queue.push_back({small, big});
     m_timer = 0;
-}
-
-void InfoPrompt::onEvent(const GameEvent& event)
-{
-    switch (event.getType())
-    {
-    }
 }
 
 void InfoPrompt::update()
