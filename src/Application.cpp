@@ -1,7 +1,6 @@
 #include "Application.hpp"
 #include "Animation/Animation.hpp"
 #include "Core/Config.hpp"
-#include "Core/FrameInfo.hpp"
 #include "Core/Timer.hpp"
 #include "Debug/DebugMenu.hpp"
 #include "Debug/Log.hpp"
@@ -9,7 +8,6 @@
 #include "Input/Input.hpp"
 #include "Physics/PhysicsSystem.hpp"
 #include "Render/MaterialManager.hpp"
-#include "Render/Renderer2D.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/Geometry/Geometry.hpp"
 #include "Gameplay/Level.hpp"
@@ -60,6 +58,8 @@ LOCAL void setupSDL()
         flags
     );
 
+    // SDL_CaptureMouse(SDL_TRUE);
+
     if (!l_window)
     {
         Log::error("Window could not be created! %s\n", SDL_GetError());
@@ -109,7 +109,7 @@ LOCAL void setupSystems()
 {
     gfx::g_MatMgr.loadMaterials();
     gfx::g_SceneRenderer.init();
-    gfx::g_Renderer2D.init();
+    // gfx::g_Renderer2D.init();
     // aud::g_AudioSys.init();
 
     gInput.init();
@@ -249,15 +249,16 @@ void runApplication()
             processClientEvent(convertEvent(l_event));
         }
 
-        core::g_FInfo.delta = resetTimer(l_timer);
+        // timer::delta = resetTimer(l_timer);
+        timer::delta = resetTimer(l_timer);
 
         gInput.update();
 
         update();
 
-        gfx::g_Renderer2D.beginFrame();
-        m_level->draw();
-        gfx::g_Renderer2D.endFrame();
+        // gfx::g_Renderer2D.beginFrame();
+        // m_level->draw();
+        // gfx::g_Renderer2D.endFrame();
 
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL2_NewFrame(l_window);

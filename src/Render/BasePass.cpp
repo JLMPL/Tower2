@@ -6,6 +6,7 @@
 #include "Geometry/Geometry.hpp"
 #include "Material.hpp"
 #include "MaterialManager.hpp"
+#include "Core/Config.hpp"
 
 #include "TextureManager.hpp"
 
@@ -14,7 +15,7 @@ namespace gfx
 
 void BasePass::init()
 {
-    m_fbo.init(gfx::Framebuffer::Type::ColorAndDepth, 1920, 1080);
+    m_fbo.init(gfx::Framebuffer::Type::ColorAndDepth, core::getDisplayConfig().width, core::getDisplayConfig().height);
 
     m_flatShader.loadFromFile("Shaders/Static.vert", "Shaders/Flat.frag");
     m_aflatShader.loadFromFile("Shaders/Skinned.vert", "Shaders/Flat.frag");
@@ -60,11 +61,11 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
             cloth->updateGeometry();
     }
 
-    for (auto& part : scene.m_particles)
-    {
-        if (part->isVisible())
-            part->updateTransforms();
-    }
+    // for (auto& part : scene.m_particles)
+    // {
+    //     if (part->isVisible())
+    //         part->updateTransforms();
+    // }
 
     m_fbo.bind();
     GL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
@@ -220,26 +221,26 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
         m_flareShader.unbind();
     }
 
-    for (auto& renderParticles : scene.m_particles)
-    {
-        if (!renderParticles->isVisible())
-            continue;
+    // for (auto& renderParticles : scene.m_particles)
+    // {
+    //     if (!renderParticles->isVisible())
+    //         continue;
 
-        auto tex = g_TexMgr.getTexture("flare.png");
+    //     auto tex = g_TexMgr.getTexture("flare.png");
 
-        m_particleShader.bind();
-        m_particleShader.setUniformMatrix("uProj", scene.getProjection());
-        m_particleShader.setUniformMatrix("uView", scene.getView());
-        m_particleShader.setUniformTexture("uTexture", 0, *tex);
+    //     m_particleShader.bind();
+    //     m_particleShader.setUniformMatrix("uProj", scene.getProjection());
+    //     m_particleShader.setUniformMatrix("uView", scene.getView());
+    //     m_particleShader.setUniformTexture("uTexture", 0, *tex);
 
-        for (auto i = 0; i < renderParticles->getParticleCount(); i++)
-        {
-            m_particleShader.setUniformMatrix("uModel", renderParticles->getMatrixArray()[i]);
-            renderParticles->render();
-        }
+    //     for (auto i = 0; i < renderParticles->getParticleCount(); i++)
+    //     {
+    //         m_particleShader.setUniformMatrix("uModel", renderParticles->getMatrixArray()[i]);
+    //         renderParticles->render();
+    //     }
 
-        m_particleShader.unbind();
-    }
+    //     m_particleShader.unbind();
+    // }
 
     glDepthMask(GL_TRUE);
     glDisable(GL_BLEND);

@@ -51,11 +51,11 @@ RenderCloth* RenderScene::addRenderCloth(phys::Cloth* cloth)
     return m_cloths.back().get();
 }
 
-RenderParticles* RenderScene::addRenderParticles(const ParticleGroup* group)
-{
-    m_particles.emplace_back(new RenderParticles(group));
-    return m_particles.back().get();
-}
+// RenderParticles* RenderScene::addRenderParticles(const ParticleGroup* group)
+// {
+//     m_particles.emplace_back(new RenderParticles(group));
+//     return m_particles.back().get();
+// }
 
 void RenderScene::removeRenderMesh(RenderMesh* mesh)
 {

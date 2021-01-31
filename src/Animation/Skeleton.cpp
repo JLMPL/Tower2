@@ -76,7 +76,7 @@ vec3 getSkeletonRootMotion(const Skeleton* skel, const Animation* anim, Seconds 
         return vec3(0);
 }
 
-i8 findSkeletonJoint(const Skeleton* skel, const core::Name32& name)
+i8 findSkeletonJoint(const Skeleton* skel, const std::string& name)
 {
     for (size_t i = 0; i < skel->joints.size(); i++)
     {
@@ -86,7 +86,7 @@ i8 findSkeletonJoint(const Skeleton* skel, const core::Name32& name)
     return -1;
 }
 
-Joint* getSkeletonJoint(Skeleton* skel, const core::Name32& name)
+Joint* getSkeletonJoint(Skeleton* skel, const std::string& name)
 {
     return &skel->joints[findSkeletonJoint(skel, name)];
 }

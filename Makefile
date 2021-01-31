@@ -123,141 +123,6 @@ out/fast:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/build
 .PHONY : out/fast
 
-src/AI/Waynet.o: src/AI/Waynet.cpp.o
-
-.PHONY : src/AI/Waynet.o
-
-# target to build an object file
-src/AI/Waynet.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/AI/Waynet.cpp.o
-.PHONY : src/AI/Waynet.cpp.o
-
-src/AI/Waynet.i: src/AI/Waynet.cpp.i
-
-.PHONY : src/AI/Waynet.i
-
-# target to preprocess a source file
-src/AI/Waynet.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/AI/Waynet.cpp.i
-.PHONY : src/AI/Waynet.cpp.i
-
-src/AI/Waynet.s: src/AI/Waynet.cpp.s
-
-.PHONY : src/AI/Waynet.s
-
-# target to generate assembly for a file
-src/AI/Waynet.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/AI/Waynet.cpp.s
-.PHONY : src/AI/Waynet.cpp.s
-
-src/Animation/AnimationBundle.o: src/Animation/AnimationBundle.cpp.o
-
-.PHONY : src/Animation/AnimationBundle.o
-
-# target to build an object file
-src/Animation/AnimationBundle.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationBundle.cpp.o
-.PHONY : src/Animation/AnimationBundle.cpp.o
-
-src/Animation/AnimationBundle.i: src/Animation/AnimationBundle.cpp.i
-
-.PHONY : src/Animation/AnimationBundle.i
-
-# target to preprocess a source file
-src/Animation/AnimationBundle.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationBundle.cpp.i
-.PHONY : src/Animation/AnimationBundle.cpp.i
-
-src/Animation/AnimationBundle.s: src/Animation/AnimationBundle.cpp.s
-
-.PHONY : src/Animation/AnimationBundle.s
-
-# target to generate assembly for a file
-src/Animation/AnimationBundle.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationBundle.cpp.s
-.PHONY : src/Animation/AnimationBundle.cpp.s
-
-src/Animation/AnimationManager.o: src/Animation/AnimationManager.cpp.o
-
-.PHONY : src/Animation/AnimationManager.o
-
-# target to build an object file
-src/Animation/AnimationManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationManager.cpp.o
-.PHONY : src/Animation/AnimationManager.cpp.o
-
-src/Animation/AnimationManager.i: src/Animation/AnimationManager.cpp.i
-
-.PHONY : src/Animation/AnimationManager.i
-
-# target to preprocess a source file
-src/Animation/AnimationManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationManager.cpp.i
-.PHONY : src/Animation/AnimationManager.cpp.i
-
-src/Animation/AnimationManager.s: src/Animation/AnimationManager.cpp.s
-
-.PHONY : src/Animation/AnimationManager.s
-
-# target to generate assembly for a file
-src/Animation/AnimationManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationManager.cpp.s
-.PHONY : src/Animation/AnimationManager.cpp.s
-
-src/Animation/AnimationState.o: src/Animation/AnimationState.cpp.o
-
-.PHONY : src/Animation/AnimationState.o
-
-# target to build an object file
-src/Animation/AnimationState.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationState.cpp.o
-.PHONY : src/Animation/AnimationState.cpp.o
-
-src/Animation/AnimationState.i: src/Animation/AnimationState.cpp.i
-
-.PHONY : src/Animation/AnimationState.i
-
-# target to preprocess a source file
-src/Animation/AnimationState.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationState.cpp.i
-.PHONY : src/Animation/AnimationState.cpp.i
-
-src/Animation/AnimationState.s: src/Animation/AnimationState.cpp.s
-
-.PHONY : src/Animation/AnimationState.s
-
-# target to generate assembly for a file
-src/Animation/AnimationState.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationState.cpp.s
-.PHONY : src/Animation/AnimationState.cpp.s
-
-src/Animation/AnimationSystem.o: src/Animation/AnimationSystem.cpp.o
-
-.PHONY : src/Animation/AnimationSystem.o
-
-# target to build an object file
-src/Animation/AnimationSystem.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationSystem.cpp.o
-.PHONY : src/Animation/AnimationSystem.cpp.o
-
-src/Animation/AnimationSystem.i: src/Animation/AnimationSystem.cpp.i
-
-.PHONY : src/Animation/AnimationSystem.i
-
-# target to preprocess a source file
-src/Animation/AnimationSystem.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationSystem.cpp.i
-.PHONY : src/Animation/AnimationSystem.cpp.i
-
-src/Animation/AnimationSystem.s: src/Animation/AnimationSystem.cpp.s
-
-.PHONY : src/Animation/AnimationSystem.s
-
-# target to generate assembly for a file
-src/Animation/AnimationSystem.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/AnimationSystem.cpp.s
-.PHONY : src/Animation/AnimationSystem.cpp.s
-
 src/Animation/Animator.o: src/Animation/Animator.cpp.o
 
 .PHONY : src/Animation/Animator.o
@@ -447,33 +312,6 @@ src/Core/Convert.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/Convert.cpp.s
 .PHONY : src/Core/Convert.cpp.s
 
-src/Core/FrameInfo.o: src/Core/FrameInfo.cpp.o
-
-.PHONY : src/Core/FrameInfo.o
-
-# target to build an object file
-src/Core/FrameInfo.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/FrameInfo.cpp.o
-.PHONY : src/Core/FrameInfo.cpp.o
-
-src/Core/FrameInfo.i: src/Core/FrameInfo.cpp.i
-
-.PHONY : src/Core/FrameInfo.i
-
-# target to preprocess a source file
-src/Core/FrameInfo.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/FrameInfo.cpp.i
-.PHONY : src/Core/FrameInfo.cpp.i
-
-src/Core/FrameInfo.s: src/Core/FrameInfo.cpp.s
-
-.PHONY : src/Core/FrameInfo.s
-
-# target to generate assembly for a file
-src/Core/FrameInfo.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Core/FrameInfo.cpp.s
-.PHONY : src/Core/FrameInfo.cpp.s
-
 src/Core/Math3D.o: src/Core/Math3D.cpp.o
 
 .PHONY : src/Core/Math3D.o
@@ -609,167 +447,32 @@ src/Debug/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Debug/Log.cpp.s
 .PHONY : src/Debug/Log.cpp.s
 
-src/Gameplay/Controllers/CameraController.o: src/Gameplay/Controllers/CameraController.cpp.o
+src/Gameplay/Camera.o: src/Gameplay/Camera.cpp.o
 
-.PHONY : src/Gameplay/Controllers/CameraController.o
-
-# target to build an object file
-src/Gameplay/Controllers/CameraController.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.o
-.PHONY : src/Gameplay/Controllers/CameraController.cpp.o
-
-src/Gameplay/Controllers/CameraController.i: src/Gameplay/Controllers/CameraController.cpp.i
-
-.PHONY : src/Gameplay/Controllers/CameraController.i
-
-# target to preprocess a source file
-src/Gameplay/Controllers/CameraController.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.i
-.PHONY : src/Gameplay/Controllers/CameraController.cpp.i
-
-src/Gameplay/Controllers/CameraController.s: src/Gameplay/Controllers/CameraController.cpp.s
-
-.PHONY : src/Gameplay/Controllers/CameraController.s
-
-# target to generate assembly for a file
-src/Gameplay/Controllers/CameraController.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.s
-.PHONY : src/Gameplay/Controllers/CameraController.cpp.s
-
-src/Gameplay/Controllers/PlayerController.o: src/Gameplay/Controllers/PlayerController.cpp.o
-
-.PHONY : src/Gameplay/Controllers/PlayerController.o
+.PHONY : src/Gameplay/Camera.o
 
 # target to build an object file
-src/Gameplay/Controllers/PlayerController.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.o
-.PHONY : src/Gameplay/Controllers/PlayerController.cpp.o
+src/Gameplay/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o
+.PHONY : src/Gameplay/Camera.cpp.o
 
-src/Gameplay/Controllers/PlayerController.i: src/Gameplay/Controllers/PlayerController.cpp.i
+src/Gameplay/Camera.i: src/Gameplay/Camera.cpp.i
 
-.PHONY : src/Gameplay/Controllers/PlayerController.i
-
-# target to preprocess a source file
-src/Gameplay/Controllers/PlayerController.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.i
-.PHONY : src/Gameplay/Controllers/PlayerController.cpp.i
-
-src/Gameplay/Controllers/PlayerController.s: src/Gameplay/Controllers/PlayerController.cpp.s
-
-.PHONY : src/Gameplay/Controllers/PlayerController.s
-
-# target to generate assembly for a file
-src/Gameplay/Controllers/PlayerController.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.s
-.PHONY : src/Gameplay/Controllers/PlayerController.cpp.s
-
-src/Gameplay/Entities/Camera.o: src/Gameplay/Entities/Camera.cpp.o
-
-.PHONY : src/Gameplay/Entities/Camera.o
-
-# target to build an object file
-src/Gameplay/Entities/Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.o
-.PHONY : src/Gameplay/Entities/Camera.cpp.o
-
-src/Gameplay/Entities/Camera.i: src/Gameplay/Entities/Camera.cpp.i
-
-.PHONY : src/Gameplay/Entities/Camera.i
+.PHONY : src/Gameplay/Camera.i
 
 # target to preprocess a source file
-src/Gameplay/Entities/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.i
-.PHONY : src/Gameplay/Entities/Camera.cpp.i
+src/Gameplay/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Camera.cpp.i
+.PHONY : src/Gameplay/Camera.cpp.i
 
-src/Gameplay/Entities/Camera.s: src/Gameplay/Entities/Camera.cpp.s
+src/Gameplay/Camera.s: src/Gameplay/Camera.cpp.s
 
-.PHONY : src/Gameplay/Entities/Camera.s
-
-# target to generate assembly for a file
-src/Gameplay/Entities/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.s
-.PHONY : src/Gameplay/Entities/Camera.cpp.s
-
-src/Gameplay/Entities/Creature.o: src/Gameplay/Entities/Creature.cpp.o
-
-.PHONY : src/Gameplay/Entities/Creature.o
-
-# target to build an object file
-src/Gameplay/Entities/Creature.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.o
-.PHONY : src/Gameplay/Entities/Creature.cpp.o
-
-src/Gameplay/Entities/Creature.i: src/Gameplay/Entities/Creature.cpp.i
-
-.PHONY : src/Gameplay/Entities/Creature.i
-
-# target to preprocess a source file
-src/Gameplay/Entities/Creature.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.i
-.PHONY : src/Gameplay/Entities/Creature.cpp.i
-
-src/Gameplay/Entities/Creature.s: src/Gameplay/Entities/Creature.cpp.s
-
-.PHONY : src/Gameplay/Entities/Creature.s
+.PHONY : src/Gameplay/Camera.s
 
 # target to generate assembly for a file
-src/Gameplay/Entities/Creature.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.s
-.PHONY : src/Gameplay/Entities/Creature.cpp.s
-
-src/Gameplay/Entities/LightEffect.o: src/Gameplay/Entities/LightEffect.cpp.o
-
-.PHONY : src/Gameplay/Entities/LightEffect.o
-
-# target to build an object file
-src/Gameplay/Entities/LightEffect.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.o
-.PHONY : src/Gameplay/Entities/LightEffect.cpp.o
-
-src/Gameplay/Entities/LightEffect.i: src/Gameplay/Entities/LightEffect.cpp.i
-
-.PHONY : src/Gameplay/Entities/LightEffect.i
-
-# target to preprocess a source file
-src/Gameplay/Entities/LightEffect.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.i
-.PHONY : src/Gameplay/Entities/LightEffect.cpp.i
-
-src/Gameplay/Entities/LightEffect.s: src/Gameplay/Entities/LightEffect.cpp.s
-
-.PHONY : src/Gameplay/Entities/LightEffect.s
-
-# target to generate assembly for a file
-src/Gameplay/Entities/LightEffect.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.s
-.PHONY : src/Gameplay/Entities/LightEffect.cpp.s
-
-src/Gameplay/Entity.o: src/Gameplay/Entity.cpp.o
-
-.PHONY : src/Gameplay/Entity.o
-
-# target to build an object file
-src/Gameplay/Entity.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o
-.PHONY : src/Gameplay/Entity.cpp.o
-
-src/Gameplay/Entity.i: src/Gameplay/Entity.cpp.i
-
-.PHONY : src/Gameplay/Entity.i
-
-# target to preprocess a source file
-src/Gameplay/Entity.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.i
-.PHONY : src/Gameplay/Entity.cpp.i
-
-src/Gameplay/Entity.s: src/Gameplay/Entity.cpp.s
-
-.PHONY : src/Gameplay/Entity.s
-
-# target to generate assembly for a file
-src/Gameplay/Entity.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Entity.cpp.s
-.PHONY : src/Gameplay/Entity.cpp.s
+src/Gameplay/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Camera.cpp.s
+.PHONY : src/Gameplay/Camera.cpp.s
 
 src/Gameplay/Level.o: src/Gameplay/Level.cpp.o
 
@@ -824,114 +527,6 @@ src/Input/Input.s: src/Input/Input.cpp.s
 src/Input/Input.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Input/Input.cpp.s
 .PHONY : src/Input/Input.cpp.s
-
-src/Interface/Bar.o: src/Interface/Bar.cpp.o
-
-.PHONY : src/Interface/Bar.o
-
-# target to build an object file
-src/Interface/Bar.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/Bar.cpp.o
-.PHONY : src/Interface/Bar.cpp.o
-
-src/Interface/Bar.i: src/Interface/Bar.cpp.i
-
-.PHONY : src/Interface/Bar.i
-
-# target to preprocess a source file
-src/Interface/Bar.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/Bar.cpp.i
-.PHONY : src/Interface/Bar.cpp.i
-
-src/Interface/Bar.s: src/Interface/Bar.cpp.s
-
-.PHONY : src/Interface/Bar.s
-
-# target to generate assembly for a file
-src/Interface/Bar.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/Bar.cpp.s
-.PHONY : src/Interface/Bar.cpp.s
-
-src/Interface/DiscreteBar.o: src/Interface/DiscreteBar.cpp.o
-
-.PHONY : src/Interface/DiscreteBar.o
-
-# target to build an object file
-src/Interface/DiscreteBar.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/DiscreteBar.cpp.o
-.PHONY : src/Interface/DiscreteBar.cpp.o
-
-src/Interface/DiscreteBar.i: src/Interface/DiscreteBar.cpp.i
-
-.PHONY : src/Interface/DiscreteBar.i
-
-# target to preprocess a source file
-src/Interface/DiscreteBar.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/DiscreteBar.cpp.i
-.PHONY : src/Interface/DiscreteBar.cpp.i
-
-src/Interface/DiscreteBar.s: src/Interface/DiscreteBar.cpp.s
-
-.PHONY : src/Interface/DiscreteBar.s
-
-# target to generate assembly for a file
-src/Interface/DiscreteBar.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/DiscreteBar.cpp.s
-.PHONY : src/Interface/DiscreteBar.cpp.s
-
-src/Interface/HeadsUpDisplay.o: src/Interface/HeadsUpDisplay.cpp.o
-
-.PHONY : src/Interface/HeadsUpDisplay.o
-
-# target to build an object file
-src/Interface/HeadsUpDisplay.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/HeadsUpDisplay.cpp.o
-.PHONY : src/Interface/HeadsUpDisplay.cpp.o
-
-src/Interface/HeadsUpDisplay.i: src/Interface/HeadsUpDisplay.cpp.i
-
-.PHONY : src/Interface/HeadsUpDisplay.i
-
-# target to preprocess a source file
-src/Interface/HeadsUpDisplay.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/HeadsUpDisplay.cpp.i
-.PHONY : src/Interface/HeadsUpDisplay.cpp.i
-
-src/Interface/HeadsUpDisplay.s: src/Interface/HeadsUpDisplay.cpp.s
-
-.PHONY : src/Interface/HeadsUpDisplay.s
-
-# target to generate assembly for a file
-src/Interface/HeadsUpDisplay.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/HeadsUpDisplay.cpp.s
-.PHONY : src/Interface/HeadsUpDisplay.cpp.s
-
-src/Interface/InfoPrompt.o: src/Interface/InfoPrompt.cpp.o
-
-.PHONY : src/Interface/InfoPrompt.o
-
-# target to build an object file
-src/Interface/InfoPrompt.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/InfoPrompt.cpp.o
-.PHONY : src/Interface/InfoPrompt.cpp.o
-
-src/Interface/InfoPrompt.i: src/Interface/InfoPrompt.cpp.i
-
-.PHONY : src/Interface/InfoPrompt.i
-
-# target to preprocess a source file
-src/Interface/InfoPrompt.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/InfoPrompt.cpp.i
-.PHONY : src/Interface/InfoPrompt.cpp.i
-
-src/Interface/InfoPrompt.s: src/Interface/InfoPrompt.cpp.s
-
-.PHONY : src/Interface/InfoPrompt.s
-
-# target to generate assembly for a file
-src/Interface/InfoPrompt.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Interface/InfoPrompt.cpp.s
-.PHONY : src/Interface/InfoPrompt.cpp.s
 
 src/Physics/CharacterController.o: src/Physics/CharacterController.cpp.o
 
@@ -1095,141 +690,6 @@ src/Physics/StaticBody.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Physics/StaticBody.cpp.s
 .PHONY : src/Physics/StaticBody.cpp.s
 
-src/Render/2D/FadedRect.o: src/Render/2D/FadedRect.cpp.o
-
-.PHONY : src/Render/2D/FadedRect.o
-
-# target to build an object file
-src/Render/2D/FadedRect.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/FadedRect.cpp.o
-.PHONY : src/Render/2D/FadedRect.cpp.o
-
-src/Render/2D/FadedRect.i: src/Render/2D/FadedRect.cpp.i
-
-.PHONY : src/Render/2D/FadedRect.i
-
-# target to preprocess a source file
-src/Render/2D/FadedRect.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/FadedRect.cpp.i
-.PHONY : src/Render/2D/FadedRect.cpp.i
-
-src/Render/2D/FadedRect.s: src/Render/2D/FadedRect.cpp.s
-
-.PHONY : src/Render/2D/FadedRect.s
-
-# target to generate assembly for a file
-src/Render/2D/FadedRect.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/FadedRect.cpp.s
-.PHONY : src/Render/2D/FadedRect.cpp.s
-
-src/Render/2D/Font.o: src/Render/2D/Font.cpp.o
-
-.PHONY : src/Render/2D/Font.o
-
-# target to build an object file
-src/Render/2D/Font.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Font.cpp.o
-.PHONY : src/Render/2D/Font.cpp.o
-
-src/Render/2D/Font.i: src/Render/2D/Font.cpp.i
-
-.PHONY : src/Render/2D/Font.i
-
-# target to preprocess a source file
-src/Render/2D/Font.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Font.cpp.i
-.PHONY : src/Render/2D/Font.cpp.i
-
-src/Render/2D/Font.s: src/Render/2D/Font.cpp.s
-
-.PHONY : src/Render/2D/Font.s
-
-# target to generate assembly for a file
-src/Render/2D/Font.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Font.cpp.s
-.PHONY : src/Render/2D/Font.cpp.s
-
-src/Render/2D/Rectangle.o: src/Render/2D/Rectangle.cpp.o
-
-.PHONY : src/Render/2D/Rectangle.o
-
-# target to build an object file
-src/Render/2D/Rectangle.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Rectangle.cpp.o
-.PHONY : src/Render/2D/Rectangle.cpp.o
-
-src/Render/2D/Rectangle.i: src/Render/2D/Rectangle.cpp.i
-
-.PHONY : src/Render/2D/Rectangle.i
-
-# target to preprocess a source file
-src/Render/2D/Rectangle.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Rectangle.cpp.i
-.PHONY : src/Render/2D/Rectangle.cpp.i
-
-src/Render/2D/Rectangle.s: src/Render/2D/Rectangle.cpp.s
-
-.PHONY : src/Render/2D/Rectangle.s
-
-# target to generate assembly for a file
-src/Render/2D/Rectangle.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Rectangle.cpp.s
-.PHONY : src/Render/2D/Rectangle.cpp.s
-
-src/Render/2D/Sprite.o: src/Render/2D/Sprite.cpp.o
-
-.PHONY : src/Render/2D/Sprite.o
-
-# target to build an object file
-src/Render/2D/Sprite.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Sprite.cpp.o
-.PHONY : src/Render/2D/Sprite.cpp.o
-
-src/Render/2D/Sprite.i: src/Render/2D/Sprite.cpp.i
-
-.PHONY : src/Render/2D/Sprite.i
-
-# target to preprocess a source file
-src/Render/2D/Sprite.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Sprite.cpp.i
-.PHONY : src/Render/2D/Sprite.cpp.i
-
-src/Render/2D/Sprite.s: src/Render/2D/Sprite.cpp.s
-
-.PHONY : src/Render/2D/Sprite.s
-
-# target to generate assembly for a file
-src/Render/2D/Sprite.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Sprite.cpp.s
-.PHONY : src/Render/2D/Sprite.cpp.s
-
-src/Render/2D/Text.o: src/Render/2D/Text.cpp.o
-
-.PHONY : src/Render/2D/Text.o
-
-# target to build an object file
-src/Render/2D/Text.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Text.cpp.o
-.PHONY : src/Render/2D/Text.cpp.o
-
-src/Render/2D/Text.i: src/Render/2D/Text.cpp.i
-
-.PHONY : src/Render/2D/Text.i
-
-# target to preprocess a source file
-src/Render/2D/Text.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Text.cpp.i
-.PHONY : src/Render/2D/Text.cpp.i
-
-src/Render/2D/Text.s: src/Render/2D/Text.cpp.s
-
-.PHONY : src/Render/2D/Text.s
-
-# target to generate assembly for a file
-src/Render/2D/Text.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/2D/Text.cpp.s
-.PHONY : src/Render/2D/Text.cpp.s
-
 src/Render/ArrayBuffer.o: src/Render/ArrayBuffer.cpp.o
 
 .PHONY : src/Render/ArrayBuffer.o
@@ -1310,114 +770,6 @@ src/Render/Cubemap.s: src/Render/Cubemap.cpp.s
 src/Render/Cubemap.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Cubemap.cpp.s
 .PHONY : src/Render/Cubemap.cpp.s
-
-src/Render/Effects/ParticleAffector.o: src/Render/Effects/ParticleAffector.cpp.o
-
-.PHONY : src/Render/Effects/ParticleAffector.o
-
-# target to build an object file
-src/Render/Effects/ParticleAffector.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleAffector.cpp.o
-.PHONY : src/Render/Effects/ParticleAffector.cpp.o
-
-src/Render/Effects/ParticleAffector.i: src/Render/Effects/ParticleAffector.cpp.i
-
-.PHONY : src/Render/Effects/ParticleAffector.i
-
-# target to preprocess a source file
-src/Render/Effects/ParticleAffector.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleAffector.cpp.i
-.PHONY : src/Render/Effects/ParticleAffector.cpp.i
-
-src/Render/Effects/ParticleAffector.s: src/Render/Effects/ParticleAffector.cpp.s
-
-.PHONY : src/Render/Effects/ParticleAffector.s
-
-# target to generate assembly for a file
-src/Render/Effects/ParticleAffector.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleAffector.cpp.s
-.PHONY : src/Render/Effects/ParticleAffector.cpp.s
-
-src/Render/Effects/ParticleGroup.o: src/Render/Effects/ParticleGroup.cpp.o
-
-.PHONY : src/Render/Effects/ParticleGroup.o
-
-# target to build an object file
-src/Render/Effects/ParticleGroup.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleGroup.cpp.o
-.PHONY : src/Render/Effects/ParticleGroup.cpp.o
-
-src/Render/Effects/ParticleGroup.i: src/Render/Effects/ParticleGroup.cpp.i
-
-.PHONY : src/Render/Effects/ParticleGroup.i
-
-# target to preprocess a source file
-src/Render/Effects/ParticleGroup.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleGroup.cpp.i
-.PHONY : src/Render/Effects/ParticleGroup.cpp.i
-
-src/Render/Effects/ParticleGroup.s: src/Render/Effects/ParticleGroup.cpp.s
-
-.PHONY : src/Render/Effects/ParticleGroup.s
-
-# target to generate assembly for a file
-src/Render/Effects/ParticleGroup.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleGroup.cpp.s
-.PHONY : src/Render/Effects/ParticleGroup.cpp.s
-
-src/Render/Effects/ParticleSystem.o: src/Render/Effects/ParticleSystem.cpp.o
-
-.PHONY : src/Render/Effects/ParticleSystem.o
-
-# target to build an object file
-src/Render/Effects/ParticleSystem.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleSystem.cpp.o
-.PHONY : src/Render/Effects/ParticleSystem.cpp.o
-
-src/Render/Effects/ParticleSystem.i: src/Render/Effects/ParticleSystem.cpp.i
-
-.PHONY : src/Render/Effects/ParticleSystem.i
-
-# target to preprocess a source file
-src/Render/Effects/ParticleSystem.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleSystem.cpp.i
-.PHONY : src/Render/Effects/ParticleSystem.cpp.i
-
-src/Render/Effects/ParticleSystem.s: src/Render/Effects/ParticleSystem.cpp.s
-
-.PHONY : src/Render/Effects/ParticleSystem.s
-
-# target to generate assembly for a file
-src/Render/Effects/ParticleSystem.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Effects/ParticleSystem.cpp.s
-.PHONY : src/Render/Effects/ParticleSystem.cpp.s
-
-src/Render/FontManager.o: src/Render/FontManager.cpp.o
-
-.PHONY : src/Render/FontManager.o
-
-# target to build an object file
-src/Render/FontManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/FontManager.cpp.o
-.PHONY : src/Render/FontManager.cpp.o
-
-src/Render/FontManager.i: src/Render/FontManager.cpp.i
-
-.PHONY : src/Render/FontManager.i
-
-# target to preprocess a source file
-src/Render/FontManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/FontManager.cpp.i
-.PHONY : src/Render/FontManager.cpp.i
-
-src/Render/FontManager.s: src/Render/FontManager.cpp.s
-
-.PHONY : src/Render/FontManager.s
-
-# target to generate assembly for a file
-src/Render/FontManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/FontManager.cpp.s
-.PHONY : src/Render/FontManager.cpp.s
 
 src/Render/Framebuffer.o: src/Render/Framebuffer.cpp.o
 
@@ -1716,33 +1068,6 @@ src/Render/RenderPass.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/RenderPass.cpp.s
 .PHONY : src/Render/RenderPass.cpp.s
 
-src/Render/Renderer2D.o: src/Render/Renderer2D.cpp.o
-
-.PHONY : src/Render/Renderer2D.o
-
-# target to build an object file
-src/Render/Renderer2D.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer2D.cpp.o
-.PHONY : src/Render/Renderer2D.cpp.o
-
-src/Render/Renderer2D.i: src/Render/Renderer2D.cpp.i
-
-.PHONY : src/Render/Renderer2D.i
-
-# target to preprocess a source file
-src/Render/Renderer2D.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer2D.cpp.i
-.PHONY : src/Render/Renderer2D.cpp.i
-
-src/Render/Renderer2D.s: src/Render/Renderer2D.cpp.s
-
-.PHONY : src/Render/Renderer2D.s
-
-# target to generate assembly for a file
-src/Render/Renderer2D.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Renderer2D.cpp.s
-.PHONY : src/Render/Renderer2D.cpp.s
-
 src/Render/Scene/RenderCloth.o: src/Render/Scene/RenderCloth.cpp.o
 
 .PHONY : src/Render/Scene/RenderCloth.o
@@ -1877,33 +1202,6 @@ src/Render/Scene/RenderMesh.s: src/Render/Scene/RenderMesh.cpp.s
 src/Render/Scene/RenderMesh.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Scene/RenderMesh.cpp.s
 .PHONY : src/Render/Scene/RenderMesh.cpp.s
-
-src/Render/Scene/RenderParticles.o: src/Render/Scene/RenderParticles.cpp.o
-
-.PHONY : src/Render/Scene/RenderParticles.o
-
-# target to build an object file
-src/Render/Scene/RenderParticles.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Scene/RenderParticles.cpp.o
-.PHONY : src/Render/Scene/RenderParticles.cpp.o
-
-src/Render/Scene/RenderParticles.i: src/Render/Scene/RenderParticles.cpp.i
-
-.PHONY : src/Render/Scene/RenderParticles.i
-
-# target to preprocess a source file
-src/Render/Scene/RenderParticles.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Scene/RenderParticles.cpp.i
-.PHONY : src/Render/Scene/RenderParticles.cpp.i
-
-src/Render/Scene/RenderParticles.s: src/Render/Scene/RenderParticles.cpp.s
-
-.PHONY : src/Render/Scene/RenderParticles.s
-
-# target to generate assembly for a file
-src/Render/Scene/RenderParticles.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Scene/RenderParticles.cpp.s
-.PHONY : src/Render/Scene/RenderParticles.cpp.s
 
 src/Render/Scene/RenderScene.o: src/Render/Scene/RenderScene.cpp.o
 
@@ -2400,21 +1698,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... out"
 	@echo "... edit_cache"
-	@echo "... src/AI/Waynet.o"
-	@echo "... src/AI/Waynet.i"
-	@echo "... src/AI/Waynet.s"
-	@echo "... src/Animation/AnimationBundle.o"
-	@echo "... src/Animation/AnimationBundle.i"
-	@echo "... src/Animation/AnimationBundle.s"
-	@echo "... src/Animation/AnimationManager.o"
-	@echo "... src/Animation/AnimationManager.i"
-	@echo "... src/Animation/AnimationManager.s"
-	@echo "... src/Animation/AnimationState.o"
-	@echo "... src/Animation/AnimationState.i"
-	@echo "... src/Animation/AnimationState.s"
-	@echo "... src/Animation/AnimationSystem.o"
-	@echo "... src/Animation/AnimationSystem.i"
-	@echo "... src/Animation/AnimationSystem.s"
 	@echo "... src/Animation/Animator.o"
 	@echo "... src/Animation/Animator.i"
 	@echo "... src/Animation/Animator.s"
@@ -2436,9 +1719,6 @@ help:
 	@echo "... src/Core/Convert.o"
 	@echo "... src/Core/Convert.i"
 	@echo "... src/Core/Convert.s"
-	@echo "... src/Core/FrameInfo.o"
-	@echo "... src/Core/FrameInfo.i"
-	@echo "... src/Core/FrameInfo.s"
 	@echo "... src/Core/Math3D.o"
 	@echo "... src/Core/Math3D.i"
 	@echo "... src/Core/Math3D.s"
@@ -2454,42 +1734,15 @@ help:
 	@echo "... src/Debug/Log.o"
 	@echo "... src/Debug/Log.i"
 	@echo "... src/Debug/Log.s"
-	@echo "... src/Gameplay/Controllers/CameraController.o"
-	@echo "... src/Gameplay/Controllers/CameraController.i"
-	@echo "... src/Gameplay/Controllers/CameraController.s"
-	@echo "... src/Gameplay/Controllers/PlayerController.o"
-	@echo "... src/Gameplay/Controllers/PlayerController.i"
-	@echo "... src/Gameplay/Controllers/PlayerController.s"
-	@echo "... src/Gameplay/Entities/Camera.o"
-	@echo "... src/Gameplay/Entities/Camera.i"
-	@echo "... src/Gameplay/Entities/Camera.s"
-	@echo "... src/Gameplay/Entities/Creature.o"
-	@echo "... src/Gameplay/Entities/Creature.i"
-	@echo "... src/Gameplay/Entities/Creature.s"
-	@echo "... src/Gameplay/Entities/LightEffect.o"
-	@echo "... src/Gameplay/Entities/LightEffect.i"
-	@echo "... src/Gameplay/Entities/LightEffect.s"
-	@echo "... src/Gameplay/Entity.o"
-	@echo "... src/Gameplay/Entity.i"
-	@echo "... src/Gameplay/Entity.s"
+	@echo "... src/Gameplay/Camera.o"
+	@echo "... src/Gameplay/Camera.i"
+	@echo "... src/Gameplay/Camera.s"
 	@echo "... src/Gameplay/Level.o"
 	@echo "... src/Gameplay/Level.i"
 	@echo "... src/Gameplay/Level.s"
 	@echo "... src/Input/Input.o"
 	@echo "... src/Input/Input.i"
 	@echo "... src/Input/Input.s"
-	@echo "... src/Interface/Bar.o"
-	@echo "... src/Interface/Bar.i"
-	@echo "... src/Interface/Bar.s"
-	@echo "... src/Interface/DiscreteBar.o"
-	@echo "... src/Interface/DiscreteBar.i"
-	@echo "... src/Interface/DiscreteBar.s"
-	@echo "... src/Interface/HeadsUpDisplay.o"
-	@echo "... src/Interface/HeadsUpDisplay.i"
-	@echo "... src/Interface/HeadsUpDisplay.s"
-	@echo "... src/Interface/InfoPrompt.o"
-	@echo "... src/Interface/InfoPrompt.i"
-	@echo "... src/Interface/InfoPrompt.s"
 	@echo "... src/Physics/CharacterController.o"
 	@echo "... src/Physics/CharacterController.i"
 	@echo "... src/Physics/CharacterController.s"
@@ -2508,21 +1761,6 @@ help:
 	@echo "... src/Physics/StaticBody.o"
 	@echo "... src/Physics/StaticBody.i"
 	@echo "... src/Physics/StaticBody.s"
-	@echo "... src/Render/2D/FadedRect.o"
-	@echo "... src/Render/2D/FadedRect.i"
-	@echo "... src/Render/2D/FadedRect.s"
-	@echo "... src/Render/2D/Font.o"
-	@echo "... src/Render/2D/Font.i"
-	@echo "... src/Render/2D/Font.s"
-	@echo "... src/Render/2D/Rectangle.o"
-	@echo "... src/Render/2D/Rectangle.i"
-	@echo "... src/Render/2D/Rectangle.s"
-	@echo "... src/Render/2D/Sprite.o"
-	@echo "... src/Render/2D/Sprite.i"
-	@echo "... src/Render/2D/Sprite.s"
-	@echo "... src/Render/2D/Text.o"
-	@echo "... src/Render/2D/Text.i"
-	@echo "... src/Render/2D/Text.s"
 	@echo "... src/Render/ArrayBuffer.o"
 	@echo "... src/Render/ArrayBuffer.i"
 	@echo "... src/Render/ArrayBuffer.s"
@@ -2532,18 +1770,6 @@ help:
 	@echo "... src/Render/Cubemap.o"
 	@echo "... src/Render/Cubemap.i"
 	@echo "... src/Render/Cubemap.s"
-	@echo "... src/Render/Effects/ParticleAffector.o"
-	@echo "... src/Render/Effects/ParticleAffector.i"
-	@echo "... src/Render/Effects/ParticleAffector.s"
-	@echo "... src/Render/Effects/ParticleGroup.o"
-	@echo "... src/Render/Effects/ParticleGroup.i"
-	@echo "... src/Render/Effects/ParticleGroup.s"
-	@echo "... src/Render/Effects/ParticleSystem.o"
-	@echo "... src/Render/Effects/ParticleSystem.i"
-	@echo "... src/Render/Effects/ParticleSystem.s"
-	@echo "... src/Render/FontManager.o"
-	@echo "... src/Render/FontManager.i"
-	@echo "... src/Render/FontManager.s"
 	@echo "... src/Render/Framebuffer.o"
 	@echo "... src/Render/Framebuffer.i"
 	@echo "... src/Render/Framebuffer.s"
@@ -2577,9 +1803,6 @@ help:
 	@echo "... src/Render/RenderPass.o"
 	@echo "... src/Render/RenderPass.i"
 	@echo "... src/Render/RenderPass.s"
-	@echo "... src/Render/Renderer2D.o"
-	@echo "... src/Render/Renderer2D.i"
-	@echo "... src/Render/Renderer2D.s"
 	@echo "... src/Render/Scene/RenderCloth.o"
 	@echo "... src/Render/Scene/RenderCloth.i"
 	@echo "... src/Render/Scene/RenderCloth.s"
@@ -2595,9 +1818,6 @@ help:
 	@echo "... src/Render/Scene/RenderMesh.o"
 	@echo "... src/Render/Scene/RenderMesh.i"
 	@echo "... src/Render/Scene/RenderMesh.s"
-	@echo "... src/Render/Scene/RenderParticles.o"
-	@echo "... src/Render/Scene/RenderParticles.i"
-	@echo "... src/Render/Scene/RenderParticles.s"
 	@echo "... src/Render/Scene/RenderScene.o"
 	@echo "... src/Render/Scene/RenderScene.i"
 	@echo "... src/Render/Scene/RenderScene.s"

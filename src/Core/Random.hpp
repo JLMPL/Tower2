@@ -1,7 +1,7 @@
 #pragma once
 #include <random>
 
-namespace core::rand
+namespace rng
 {
     extern std::mt19937 g_randomEngine;
 

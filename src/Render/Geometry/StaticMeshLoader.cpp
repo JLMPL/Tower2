@@ -41,8 +41,6 @@ LOCAL void loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool
         entry.vertices.push_back(vert);
     }
 
-    printf("verts.size %d\n", entry.vertices.size());
-
     u32 materialIndex = inMesh.mMaterialIndex;
 
     auto material = scene.mMaterials[materialIndex];

@@ -165,9 +165,9 @@ void PhysicsSystem::init()
     debug::g_Menu["Physics"].bind("debugDraw", &m_debugDraw);
 }
 
-Cloth* PhysicsSystem::addCloth(const std::string& mesh, anim::Animator* animer)
+Cloth* PhysicsSystem::addCloth(const std::string& mesh)
 {
-    m_cloths.emplace_back(new Cloth(m_physics, mesh, animer));
+    m_cloths.emplace_back(new Cloth(m_physics, mesh));
 
     m_scene->addActor(*m_cloths.back()->getClothActor());
 
@@ -334,7 +334,7 @@ SweepResult PhysicsSystem::sweepSphere(f32 radius, const vec3& origin, const vec
 
 void PhysicsSystem::preSimulationUpdate()
 {
-    m_manager->computeInteractions(core::g_FInfo.delta, &m_cctFilterCallback);
+    m_manager->computeInteractions(timer::delta, &m_cctFilterCallback);
 }
 
 void PhysicsSystem::stepSimulation()
@@ -344,7 +344,7 @@ void PhysicsSystem::stepSimulation()
     for (auto& cloth : m_cloths)
         cloth->skin();
 
-    m_scene->simulate(core::g_FInfo.delta);
+    m_scene->simulate(timer::delta);
     m_scene->fetchResults(true);
 }
 

@@ -26,7 +26,7 @@ public:
     using Sphere = physx::PxClothCollisionSphere;
 
     Cloth() = default;
-    Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* animer);
+    Cloth(physx::PxPhysics* phys, const std::string& mesh);
     ~Cloth();
 
     void setTargetTransform(const mat4& pos);
@@ -49,8 +49,7 @@ private:
     physx::PxClothParticleMotionConstraint* m_constraints = nullptr;
     vec3*                                   m_vertices = nullptr;
 
-    anim::Animator*                         m_animator = nullptr;
-    gfx::Mesh*                       m_mesh = nullptr;
+    gfx::Mesh*                              m_mesh = nullptr;
     u32                                     m_spawnTimer = 0;
 };
 

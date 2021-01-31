@@ -86,7 +86,7 @@ LOCAL vec3 lerpRoot(const JointAnimation& jointAnimation, Seconds animationTime)
     return math::lerp(keys[currPosIndex].value, keys[nextPosIndex].value, factor);
 }
 
-LOCAL JointAnimation* findJointAnimInternal(Animation* anim, const core::Name32& jointName)
+LOCAL JointAnimation* findJointAnimInternal(Animation* anim, const std::string& jointName)
 {
     for (auto& i : anim->jointAnimations)
         if (i.name == jointName)
@@ -147,7 +147,7 @@ void loadAnimationFromFile(Animation* anim, const std::string& path)
     generateRootMotion(anim);
 }
 
-const JointAnimation* findJointInAnimation(const Animation& anim, const core::Name32& jointName)
+const JointAnimation* findJointInAnimation(const Animation& anim, const std::string& jointName)
 {
     for (auto& i : anim.jointAnimations)
         if (i.name == jointName)

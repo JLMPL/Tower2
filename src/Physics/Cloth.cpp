@@ -6,10 +6,9 @@
 namespace phys
 {
 
-constexpr u32 ClothProtectionFrames = 30;
+constexpr u32 ClothProtectionFrames = 1;
 
-Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* animer) :
-    m_animator(animer)
+Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh)
 {
     using namespace physx;
     m_mesh = gfx::g_MeshMgr.getSkinnedMesh(mesh, true);
@@ -49,11 +48,11 @@ Cloth::Cloth(physx::PxPhysics* phys, const std::string& mesh, anim::Animator* an
     m_cloth->setClothFlag(PxClothFlag::eSWEPT_CONTACT, false);
 
     m_cloth->setSolverFrequency(240.f);
-    m_cloth->setStiffnessFrequency(5.0f);
+    m_cloth->setStiffnessFrequency(100.0f);
 
-    m_cloth->setDampingCoefficient(PxVec3(0.3f));
+    m_cloth->setDampingCoefficient(PxVec3(2.f));
     m_cloth->setLinearDragCoefficient(PxVec3(0.2f));
-    m_cloth->setAngularDragCoefficient(PxVec3(0.2f));
+    m_cloth->setAngularDragCoefficient(PxVec3(0.001f));
 
     m_cloth->setSelfCollisionDistance(0.01f);
     m_cloth->setSelfCollisionStiffness(0.5f);
@@ -85,7 +84,8 @@ void Cloth::skin()
     if (m_spawnTimer > ClothProtectionFrames + 1)
         m_spawnTimer = ClothProtectionFrames + 1;
 
-    auto jTrs = m_animator->matrixPalette;
+    // auto jTrs = m_animator->matrixPalette;
+    mat4 jTrs[128];
 
     auto& skinData = m_mesh->entries[0].weightsData;
     auto& vertData = m_mesh->entries[0].vertices;

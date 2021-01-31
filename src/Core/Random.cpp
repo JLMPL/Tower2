@@ -1,6 +1,6 @@
 #include "Random.hpp"
 
-namespace core::rand
+namespace rng
 {
     std::mt19937 g_randomEngine;
 }

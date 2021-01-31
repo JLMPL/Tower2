@@ -14,3 +14,10 @@ Seconds resetTimer(Timer& timer);
 Seconds getElapsedTime(Timer& timer);
 
 }
+
+namespace timer
+{
+
+extern float delta;
+
+}
