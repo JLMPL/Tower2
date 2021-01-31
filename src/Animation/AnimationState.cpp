@@ -10,7 +10,7 @@ void initAnimationState(AnimationState* animState, const std::string& name, cons
     animState->skeleton = skel;
 }
 
-void loadAnimStateFromJson(AnimationState* animState, const json& state)
+void loadAnimStateFromJson(AnimationState* animState, const std::json& state)
 {
     animState->name = state["name"].get<std::string>();
     animState->anim = anim::getLoadedAnimation(state["file"]);

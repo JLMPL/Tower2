@@ -1,5 +1,6 @@
 #include "Camera.hpp"
 #include "Core/Config.hpp"
+#include "Render/SceneRenderer.hpp"
 
 void Camera::updateMatrices()
 {
@@ -13,6 +14,9 @@ void Camera::updateMatrices()
     );
 
     m_view = math::lookAt(m_eye, m_center, math::vecY);
+
+    vec3 dir = m_center - m_eye;
+    gfx::g_SceneRenderer.addLine(vec3(0,0,0), vec3(dir.x, 0, dir.z), vec3(1,0,0));
 }
 
 void Camera::setFov(f32 fov)

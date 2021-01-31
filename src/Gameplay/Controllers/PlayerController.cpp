@@ -27,7 +27,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_light->hide();
 
     m_cape = m_context->physSys->addCloth("cape.dae", &m_cre->getAnimator());
-    // m_cape2 = m_context->physSys->addCloth("cape2.dae", &m_cre->getAnimator());
+    m_cape2 = m_context->physSys->addCloth("cape2.dae", &m_cre->getAnimator());
 
     for (auto i = 0; i < 6; i++)
     {
@@ -42,7 +42,7 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
     m_cape->addCapsule(0,3);
 
     m_capeNode = m_context->renderScene->addRenderCloth(m_cape);
-    // m_capeNode2 = m_context->renderScene->addRenderCloth(m_cape2);
+    m_capeNode2 = m_context->renderScene->addRenderCloth(m_cape2);
 
     auto animator = &m_cre->getAnimator();
 
@@ -76,8 +76,8 @@ PlayerController::PlayerController(Creature* cre, LevelContext* context)
         enterIdle();
     });
 
-    // m_dongle = m_context->physSys->addBox(vec3(0,2,0), vec3(0), vec3(0.05,0.3,0.02));
-    // m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
+    m_dongle = m_context->physSys->addBox(vec3(0,2,0), vec3(0), vec3(0.05,0.3,0.02));
+    m_context->physSys->addDistanceJoint(&m_dongle, vec3(0,0.3,0), vec3(1,2.25,0));
 }
 
 void PlayerController::updateHud()
@@ -135,7 +135,7 @@ void PlayerController::update()
 
         for (auto i = 0; i < 6; i++)
         {
-            m_spheres[i] = phys::Cloth::Sphere(core::conv::toPx(transforms[jInds[i]][3]), 0.12);
+            m_spheres[i] = phys::Cloth::Sphere(core::conv::toPx(transforms[jInds[i]][3]), 0.2);
         }
 
         m_cape->setCollisionSpheres(&m_spheres[0], 6);
@@ -160,7 +160,8 @@ void PlayerController::preSimulationUpdate()
     mat4 tr = math::translate(m_cre->getCharCtrl().getFootPosition()) * math::rotate(m_cre->getYaw(), vec3(0,1,0));
     m_cape->setTargetTransform(tr);
     m_capeNode->setTransform(tr);
-    // m_sord->setTransform(m_dongle.getGlobalTransform() * math::translate(vec3(0,0.5,0)) * math::rotate(M_PI, vec3(1,0,0)));
+    m_capeNode2->setTransform(tr);
+    m_sord->setTransform(m_dongle.getGlobalTransform() * math::translate(vec3(0,0.5,0)) * math::rotate(M_PI, vec3(1,0,0)));
 }
 
 void PlayerController::checkDrawWeapon()
@@ -248,12 +249,17 @@ void PlayerController::move()
         (leftAxis.x * math::rotateY(cameraForward, f32(-HALF_PI)))
     );
 
+    // walkDir = cameraForward;
+
+    gfx::g_SceneRenderer.addLine(m_cre->getPos(), m_cre->getPos() + walkDir, vec3(1,1,1));
+
     if (leftAxis != vec2(0))
     {
         m_cre->setDirection(walkDir);
+        // m_cre->setFacingDirection(walkDir);
         m_cre->setFacingDirection(math::lerp(m_cre->getFacingDir(), walkDir, core::g_FInfo.delta * 5));
 
-        m_cre->getCharCtrl().move(m_cre->getDirection() * speed, core::g_FInfo.delta);
+        m_cre->getCharCtrl().move(walkDir * speed, core::g_FInfo.delta);
     }
 
     if (gInput.isAttack())

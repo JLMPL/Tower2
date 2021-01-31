@@ -2148,33 +2148,6 @@ src/Render/VertexArray.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/VertexArray.cpp.s
 .PHONY : src/Render/VertexArray.cpp.s
 
-src/Script/Lua.o: src/Script/Lua.cpp.o
-
-.PHONY : src/Script/Lua.o
-
-# target to build an object file
-src/Script/Lua.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/Lua.cpp.o
-.PHONY : src/Script/Lua.cpp.o
-
-src/Script/Lua.i: src/Script/Lua.cpp.i
-
-.PHONY : src/Script/Lua.i
-
-# target to preprocess a source file
-src/Script/Lua.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/Lua.cpp.i
-.PHONY : src/Script/Lua.cpp.i
-
-src/Script/Lua.s: src/Script/Lua.cpp.s
-
-.PHONY : src/Script/Lua.s
-
-# target to generate assembly for a file
-src/Script/Lua.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Script/Lua.cpp.s
-.PHONY : src/Script/Lua.cpp.s
-
 src/ThirdParty/ImGui/imgui.o: src/ThirdParty/ImGui/imgui.cpp.o
 
 .PHONY : src/ThirdParty/ImGui/imgui.o
@@ -2652,9 +2625,6 @@ help:
 	@echo "... src/Render/VertexArray.o"
 	@echo "... src/Render/VertexArray.i"
 	@echo "... src/Render/VertexArray.s"
-	@echo "... src/Script/Lua.o"
-	@echo "... src/Script/Lua.i"
-	@echo "... src/Script/Lua.s"
 	@echo "... src/ThirdParty/ImGui/imgui.o"
 	@echo "... src/ThirdParty/ImGui/imgui.i"
 	@echo "... src/ThirdParty/ImGui/imgui.s"

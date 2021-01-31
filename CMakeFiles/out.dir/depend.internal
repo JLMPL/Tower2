@@ -2316,7 +2316,6 @@ CMakeFiles/out.dir/src/Application.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Texture.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
- /home/dominik/Desktop/TOWER_2/src/Script/Lua.hpp
  src/AI/Waynet.hpp
  src/AI/Waypoint.hpp
  src/Core/Convert.hpp
@@ -2808,100 +2807,6 @@ CMakeFiles/out.dir/src/Application.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility.hpp
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.c
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.h
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Core/Config.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Core/Config.cpp
  /home/dominik/Desktop/TOWER_2/src/Core/Config.hpp
@@ -3737,7 +3642,6 @@ CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.o
  src/Render/ShadowPass.hpp
  src/Render/Texture.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -4191,97 +4095,6 @@ CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Controllers/PlayerController.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Controllers/PlayerController.hpp
@@ -4344,7 +4157,6 @@ CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.o
  src/Render/ShadowPass.hpp
  src/Render/Texture.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -4798,103 +4610,37 @@ CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/Camera.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/Camera.hpp
+ src/Animation/Animation.hpp
  src/Core/Config.hpp
+ src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/Name.hpp
+ src/Core/Timer.hpp
  src/Core/Types.hpp
+ src/Debug/Log.hpp
+ src/Render/ArrayBuffer.hpp
+ src/Render/BasePass.hpp
+ src/Render/Cubemap.hpp
+ src/Render/Framebuffer.hpp
+ src/Render/Geometry/Geometry.hpp
+ src/Render/LineRenderer.hpp
+ src/Render/OpenGL.hpp
+ src/Render/RenderPass.hpp
+ src/Render/Scene/RenderCloth.hpp
+ src/Render/Scene/RenderEntity.hpp
+ src/Render/Scene/RenderFlare.hpp
+ src/Render/Scene/RenderLight.hpp
+ src/Render/Scene/RenderMesh.hpp
+ src/Render/Scene/RenderParticles.hpp
+ src/Render/Scene/RenderScene.hpp
+ src/Render/Scene/RenderSkinnedMesh.hpp
+ src/Render/SceneRenderer.hpp
+ src/Render/Shader.hpp
+ src/Render/ShadowPass.hpp
+ src/Render/VertexArray.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -5135,6 +4881,7 @@ CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.o
  src/ThirdParty/glm/vec3.hpp
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
+ src/ThirdParty/json/json.hpp
 CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/Creature.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/Creature.hpp
@@ -5191,7 +4938,6 @@ CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.o
  src/Render/Shader.hpp
  src/Render/Texture.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -5645,97 +5391,6 @@ CMakeFiles/out.dir/src/Gameplay/Entities/Creature.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/LightEffect.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entities/LightEffect.hpp
@@ -5788,7 +5443,6 @@ CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.o
  src/Render/Shader.hpp
  src/Render/Texture.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -6242,100 +5896,6 @@ CMakeFiles/out.dir/src/Gameplay/Entities/LightEffect.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility.hpp
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.c
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.h
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Gameplay/Entity.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entity.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Entity.hpp
@@ -6646,7 +6206,6 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/Render/ShadowPass.hpp
  src/Render/Texture.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -7100,100 +6659,6 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility.hpp
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.c
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.h
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Input/Input.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Input/Input.cpp
  /home/dominik/Desktop/TOWER_2/src/Input/Input.hpp
@@ -17749,7 +17214,6 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/Render/Texture.hpp
  src/Render/TextureManager.hpp
  src/Render/VertexArray.hpp
- src/Script/Lua.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -18203,100 +17667,6 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility.hpp
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.c
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.h
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderSkinnedMesh.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderSkinnedMesh.cpp
@@ -19614,104 +18984,6 @@ CMakeFiles/out.dir/src/Render/VertexArray.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
-CMakeFiles/out.dir/src/Script/Lua.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Script/Lua.cpp
- /home/dominik/Desktop/TOWER_2/src/Script/Lua.hpp
- src/Core/Types.hpp
- src/ThirdParty/sol2/sol.hpp
- src/ThirdParty/sol2/sol/as_args.hpp
- src/ThirdParty/sol2/sol/as_returns.hpp
- src/ThirdParty/sol2/sol/bind_traits.hpp
- src/ThirdParty/sol2/sol/call.hpp
- src/ThirdParty/sol2/sol/compatibility.hpp
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.c
- src/ThirdParty/sol2/sol/compatibility/compat-5.3.h
- src/ThirdParty/sol2/sol/compatibility/version.hpp
- src/ThirdParty/sol2/sol/config.hpp
- src/ThirdParty/sol2/sol/config_setup.hpp
- src/ThirdParty/sol2/sol/container_traits.hpp
- src/ThirdParty/sol2/sol/container_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/coroutine.hpp
- src/ThirdParty/sol2/sol/demangle.hpp
- src/ThirdParty/sol2/sol/deprecate.hpp
- src/ThirdParty/sol2/sol/environment.hpp
- src/ThirdParty/sol2/sol/error.hpp
- src/ThirdParty/sol2/sol/error_handler.hpp
- src/ThirdParty/sol2/sol/feature_test.hpp
- src/ThirdParty/sol2/sol/filters.hpp
- src/ThirdParty/sol2/sol/forward.hpp
- src/ThirdParty/sol2/sol/forward_detail.hpp
- src/ThirdParty/sol2/sol/function.hpp
- src/ThirdParty/sol2/sol/function_result.hpp
- src/ThirdParty/sol2/sol/function_types.hpp
- src/ThirdParty/sol2/sol/function_types_core.hpp
- src/ThirdParty/sol2/sol/function_types_overloaded.hpp
- src/ThirdParty/sol2/sol/function_types_stateful.hpp
- src/ThirdParty/sol2/sol/function_types_stateless.hpp
- src/ThirdParty/sol2/sol/function_types_templated.hpp
- src/ThirdParty/sol2/sol/in_place.hpp
- src/ThirdParty/sol2/sol/inheritance.hpp
- src/ThirdParty/sol2/sol/load_result.hpp
- src/ThirdParty/sol2/sol/object.hpp
- src/ThirdParty/sol2/sol/object_base.hpp
- src/ThirdParty/sol2/sol/optional.hpp
- src/ThirdParty/sol2/sol/optional_implementation.hpp
- src/ThirdParty/sol2/sol/overload.hpp
- src/ThirdParty/sol2/sol/property.hpp
- src/ThirdParty/sol2/sol/protect.hpp
- src/ThirdParty/sol2/sol/protected_function.hpp
- src/ThirdParty/sol2/sol/protected_function_result.hpp
- src/ThirdParty/sol2/sol/protected_handler.hpp
- src/ThirdParty/sol2/sol/proxy.hpp
- src/ThirdParty/sol2/sol/proxy_base.hpp
- src/ThirdParty/sol2/sol/raii.hpp
- src/ThirdParty/sol2/sol/reference.hpp
- src/ThirdParty/sol2/sol/resolve.hpp
- src/ThirdParty/sol2/sol/simple_usertype_metatable.hpp
- src/ThirdParty/sol2/sol/stack.hpp
- src/ThirdParty/sol2/sol/stack_check.hpp
- src/ThirdParty/sol2/sol/stack_check_get.hpp
- src/ThirdParty/sol2/sol/stack_check_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_check_qualified.hpp
- src/ThirdParty/sol2/sol/stack_check_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_core.hpp
- src/ThirdParty/sol2/sol/stack_field.hpp
- src/ThirdParty/sol2/sol/stack_get.hpp
- src/ThirdParty/sol2/sol/stack_get_qualified.hpp
- src/ThirdParty/sol2/sol/stack_get_unqualified.hpp
- src/ThirdParty/sol2/sol/stack_guard.hpp
- src/ThirdParty/sol2/sol/stack_iterator.hpp
- src/ThirdParty/sol2/sol/stack_pop.hpp
- src/ThirdParty/sol2/sol/stack_probe.hpp
- src/ThirdParty/sol2/sol/stack_proxy.hpp
- src/ThirdParty/sol2/sol/stack_proxy_base.hpp
- src/ThirdParty/sol2/sol/stack_push.hpp
- src/ThirdParty/sol2/sol/stack_reference.hpp
- src/ThirdParty/sol2/sol/state.hpp
- src/ThirdParty/sol2/sol/state_handling.hpp
- src/ThirdParty/sol2/sol/state_view.hpp
- src/ThirdParty/sol2/sol/string_view.hpp
- src/ThirdParty/sol2/sol/table.hpp
- src/ThirdParty/sol2/sol/table_core.hpp
- src/ThirdParty/sol2/sol/table_iterator.hpp
- src/ThirdParty/sol2/sol/thread.hpp
- src/ThirdParty/sol2/sol/tie.hpp
- src/ThirdParty/sol2/sol/traits.hpp
- src/ThirdParty/sol2/sol/trampoline.hpp
- src/ThirdParty/sol2/sol/tuple.hpp
- src/ThirdParty/sol2/sol/types.hpp
- src/ThirdParty/sol2/sol/unicode.hpp
- src/ThirdParty/sol2/sol/unsafe_function.hpp
- src/ThirdParty/sol2/sol/unsafe_function_result.hpp
- src/ThirdParty/sol2/sol/userdata.hpp
- src/ThirdParty/sol2/sol/usertype.hpp
- src/ThirdParty/sol2/sol/usertype_core.hpp
- src/ThirdParty/sol2/sol/usertype_metatable.hpp
- src/ThirdParty/sol2/sol/usertype_traits.hpp
- src/ThirdParty/sol2/sol/variadic_args.hpp
- src/ThirdParty/sol2/sol/variadic_results.hpp
- src/ThirdParty/sol2/sol/wrapper.hpp
 CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui.cpp.o
  /home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imconfig.h
  /home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui.cpp

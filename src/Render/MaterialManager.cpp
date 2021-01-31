@@ -15,7 +15,7 @@ void MaterialManager::loadMaterials()
 void MaterialManager::loadMaterialsFile(const std::string& path)
 {
     std::ifstream file(path.c_str());
-    json materials;
+    std::json materials;
     file >> materials;
 
     for (u32 i = 0; i < materials["materials"].size(); i++)

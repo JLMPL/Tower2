@@ -8,7 +8,6 @@
 #include "Interface/HeadsUpDisplay.hpp"
 #include "Render/Effects/ParticleSystem.hpp"
 #include "Render/Scene/RenderScene.hpp"
-#include "Script/Lua.hpp"
 
 union SDL_Event;
 
@@ -33,7 +32,6 @@ public:
     Level& operator=(const Level&) = delete;
 
     void initFromScript(const std::string& file);
-    void uploadFunctions(lua::state& state);
     void onEvent(const GameEvent& event);
     void update();
     void draw();
@@ -66,9 +64,9 @@ private:
     phys::PhysicsSystem m_physSys;
     ParticleSystem m_particleSystem;
 
-    ParticleGroup* m_particleGroup = nullptr;
-    ParticleAffector* m_particleAffector = nullptr;
-    RenderParticles* m_renderParticles = nullptr;
+    // ParticleGroup* m_particleGroup = nullptr;
+    // ParticleAffector* m_particleAffector = nullptr;
+    // RenderParticles* m_renderParticles = nullptr;
 
     ui::HeadsUpDisplay m_hud;
 

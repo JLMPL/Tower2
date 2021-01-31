@@ -6,7 +6,7 @@
 namespace gfx
 {
 
-void Material::load(json& node)
+void Material::load(std::json& node)
 {
     std::string name = node["name"];
 

@@ -18,7 +18,7 @@ public:
         Additive
     };
 
-    void load(json& node);
+    void load(std::json& node);
 
 public:
     Blending          m_blending = Blending::None;

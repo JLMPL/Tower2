@@ -51,7 +51,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/Render/Texture.cpp.o"
   "CMakeFiles/out.dir/src/Render/TextureManager.cpp.o"
   "CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
-  "CMakeFiles/out.dir/src/Script/Lua.cpp.o"
   "CMakeFiles/out.dir/src/Gameplay/Controllers/CameraController.cpp.o"
   "CMakeFiles/out.dir/src/Gameplay/Controllers/PlayerController.cpp.o"
   "CMakeFiles/out.dir/src/Gameplay/Entities/Camera.cpp.o"

@@ -124,7 +124,7 @@ i8 findSkeletonJoint(const Skeleton* skel, const core::Name32& name);
 Joint* getSkeletonJoint(Skeleton* skel, const core::Name32& name);
 
 void initAnimationState(AnimationState* animState, const std::string& name, const Animation* anim, const Skeleton* skel);
-void loadAnimStateFromJson(AnimationState* animState, const json& state);
+void loadAnimStateFromJson(AnimationState* animState, const std::json& state);
 void bindAnimStateEvent(AnimationState* animState, f32 time, const std::function<void (void)>& func);
 void enterAnimationState(AnimationState* animState, Pose pose);
 Pose updateAnimationState(AnimationState* animState, f32 delta);

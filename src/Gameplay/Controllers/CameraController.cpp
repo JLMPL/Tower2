@@ -23,13 +23,16 @@ void CameraController::updateCameraRotation()
 
     m_pitch = math::clamp(m_pitch, -0.6f, 0.9f);
 
-    m_arm = vec3(0,0,-1);
+    m_arm = vec3(0,0,-4);
     m_arm = math::rotateX(m_arm, m_pitch);
     m_arm = math::rotateY(m_arm, m_yaw);
 
     // m_camera->setCenter(vec3(0));
-    m_camera->setCenter(m_player->getPos() + vec3(0,1,0));
-    m_camera->setEye(m_arm);
+    m_camera->setCenter(m_player->getPos() + vec3(0,1.5,0));
+    m_camera->setEye(m_player->getPos() + vec3(0,1.5,0) + m_arm);
+
+    m_camera->updateMatrices();
+    m_context->renderScene->setView(m_camera->getView());
 
     // m_camera->setEye(vec3(0,3,0));
 }
@@ -55,20 +58,20 @@ void CameraController::updateCameraPosition()
     // eye.y = m_player->getPos().y + 4.f;
     // m_camera->setEye(eye);
 
-    vec3 dir = m_camera->getPos() - (m_player->getPos() + vec3(0,1,0));
+    // vec3 dir = m_camera->getPos() - (m_player->getPos() + vec3(0,1,0));
 
-    auto result = m_context->physSys->sweepSphere(0.5f, (m_player->getPos() + vec3(0,1,0)) + math::normalize(dir) * 1.f, dir, math::length(dir));
+    // auto result = m_context->physSys->sweepSphere(0.5f, (m_player->getPos() + vec3(0,1,0)) + math::normalize(dir) * 1.f, dir, math::length(dir));
 
-    if (result.hasHit)
-    {
-        m_camera->setEye(result.pos + result.normal * 0.5f);
-    }
+    // if (result.hasHit)
+    // {
+    //     m_camera->setEye(result.pos + result.normal * 0.5f);
+    // }
 
-    m_camera->updateMatrices();
-    m_context->renderScene->setView(m_camera->getView());
+    // m_camera->updateMatrices();
+    // m_context->renderScene->setView(m_camera->getView());
 
-    m_camera->setCenter(m_player->getPos() + vec3(0,2,0));
-    m_camera->setEye(m_player->getPos() + vec3(0,2,0) + m_arm * 4);
-    m_camera->updateMatrices();
-    m_context->renderScene->setView(m_camera->getView());
+    // m_camera->setCenter(m_player->getPos() + vec3(0,2,0));
+    // m_camera->setEye(m_player->getPos() + vec3(0,2,0) + m_arm * 4);
+    // m_camera->updateMatrices();
+    // m_context->renderScene->setView(m_camera->getView());
 }

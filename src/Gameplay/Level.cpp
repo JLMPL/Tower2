@@ -4,7 +4,6 @@
 #include "Render/SceneRenderer.hpp"
 #include "Render/MaterialManager.hpp"
 #include "Render/MeshManager.hpp"
-#include "Script/Lua.hpp"
 #include "Render/Scene/RenderMesh.hpp"
 #include "Core/Random.hpp"
 #include <SDL2/SDL.h>
@@ -23,44 +22,19 @@ void Level::initFromScript(const std::string& file)
 
     m_hud.init(m_renderScene);
 
-    lua::state state;
-    state.open_libraries(sol::lib::base);
-    uploadFunctions(state);
-    state.script_file("Maps/Level0.lua");
-
-    lua::function init = state["initializeLevel"];
-    init();
+    setLevelMesh("empty.obj", "net.obj");
+    addCreature(Creature::Species::Player, vec3(0,0,0));
 
     m_cameraCtrl.init(&m_lvlContext);
 
     addLightEffect(vec3(0,3,0));
 
-    m_particleGroup = m_particleSystem.addParticleGroup(1024, vec3(0));
-    m_particleAffector = m_particleGroup->addParticleAffector();
-    m_particleAffector->setPosition(vec3(3,2,0));
-    m_particleAffector->setStrength(25);
+    // m_particleGroup = m_particleSystem.addParticleGroup(1024, vec3(0));
+    // m_particleAffector = m_particleGroup->addParticleAffector();
+    // m_particleAffector->setPosition(vec3(3,2,0));
+    // m_particleAffector->setStrength(25);
 
-    m_renderParticles = m_renderScene.addRenderParticles(m_particleGroup);
-}
-
-void Level::uploadFunctions(lua::state& state)
-{
-    state["setLevelMesh"] = [&](const std::string& name)
-    {
-        setLevelMesh(name, "net.obj");
-    };
-
-    state["setPlayerSpawnPoint"] = [&](f32 x, f32 y, f32 z)
-    {
-        addCreature(Creature::Species::Player, vec3(x,y,z));
-    };
-
-    state["Species_Skeleton"] = i32(Creature::Species::Skeleton);
-
-    state["addCreature"] = [&](i32 species, f32 x, f32 y, f32 z) -> i32
-    {
-        return addCreature(Creature::Species(species), vec3(x,y,z));
-    };
+    // m_renderParticles = m_renderScene.addRenderParticles(m_particleGroup);
 }
 
 void Level::setLevelMesh(const std::string& map, const std::string& net)
@@ -154,15 +128,15 @@ void Level::update()
     createEntities();
     destroyEntities();
 
-    for (auto i = 0; i < 8; i++)
-    {
-        Particle p;
-        p.pos = vec3(0,2,0);
-        p.vel = vec3(core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f));
-        p.weight = 0.1;
-        p.lifetime = 2;
-        m_particleGroup->spawnParticle(p);
-    }
+    // for (auto i = 0; i < 8; i++)
+    // {
+    //     Particle p;
+    //     p.pos = vec3(0,2,0);
+    //     p.vel = vec3(core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f), core::rand::inRange(-2.f,2.f));
+    //     p.weight = 0.1;
+    //     p.lifetime = 2;
+    //     m_particleGroup->spawnParticle(p);
+    // }
 
     m_cameraCtrl.updateCameraRotation();
 
@@ -187,9 +161,9 @@ void Level::update()
 
     anim::updateAnimationSystem();
 
-    m_particleAffector->setPosition(m_entities[0]->getPos() + vec3(0,1,0));
+    // m_particleAffector->setPosition(m_entities[0]->getPos() + vec3(0,1,0));
 
-    m_particleSystem.update();
+    // m_particleSystem.update();
 
     m_physSys.debugDraw();
 

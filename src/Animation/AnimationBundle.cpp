@@ -8,12 +8,12 @@ namespace anim
 void loadAnimationBundleFromFile(AnimationBundle* animBundle, const std::string& path)
 {
     std::ifstream file(path.c_str());
-    json bundle;
+    std::json bundle;
     file >> bundle;
 
     animBundle->name = bundle["name"];
 
-    json& states = bundle["animations"];
+    std::json& states = bundle["animations"];
 
     for (i32 i = 0; i < states.size(); i++)
     {

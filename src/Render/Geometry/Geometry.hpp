@@ -59,3 +59,85 @@ void loadSkinnedMeshFromFile(Mesh& mesh, const std::string& path, bool cloth = f
 void loadStaticMeshFromFile(Mesh& mesh, const std::string& path, bool cloth = false);
 
 }
+
+/*
+
+//things needed to render something
+RenderTarget
+Vertices
+Material
+    Textures
+*SkinMatrices
+Light data
+
+MaterialRenderer
+    RenderTargets
+    View/Projection
+    Shaders
+
+MaterialRenderer* mr = adfsafsd->getMaterialRenderer();
+(view, proj) in state
+
+vertexData = {vaos}
+
+void drawVertices(const VertexData& data, const mat4& tr, const mat4* mats = nullptr);
+mr->drawVertices(vertexData, modelTransform, skinMatrices)
+
+
+verts = {
+    vec3(pos), vec3(normal), vec2(uv),
+    vec3(pos), vec3(normal), vec2(uv),
+    vec3(pos), vec3(normal), vec2(uv),
+    vec3(pos), vec3(normal), vec2(uv),
+    vec3(pos), vec3(normal), vec2(uv)
+}
+
+data.setVertexData(verts)
+    update vao, dbo, etc.
+
+texture.loadFromFile("data/texture.png")
+
+mat.texture = texture
+
+
+
+MaterialRenderer
+{
+public:
+    enum Pass
+    {
+        SHADOW,
+        REFLECTION,
+        REFRACTION,
+        SOLID
+    }
+
+    void setPass(Pass pass)
+
+
+
+    void drawVertices(const VertexData& data, const Material& mat, const mat4& tr, const mat4* mats = nullptr)
+    {
+        switch (pass)
+        {
+            case SHADOW:
+                if (mats)
+                {
+                    shader = skinnedShader
+                }
+                else shader = solidShader
+
+                bindvao
+                setuniforms m_currentMaterial
+            break;
+        }
+    }
+
+    void finalFrame()
+
+private:
+    RenderTarget m_shadow
+    RenderTarget m_solid
+}
+
+*/

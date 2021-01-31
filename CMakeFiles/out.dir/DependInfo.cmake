@@ -79,7 +79,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/dominik/Desktop/TOWER_2/src/Render/Texture.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Render/Texture.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Render/TextureManager.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Render/TextureManager.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Render/VertexArray.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
-  "/home/dominik/Desktop/TOWER_2/src/Script/Lua.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Script/Lua.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui_demo.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui_demo.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui_draw.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui_draw.cpp.o"

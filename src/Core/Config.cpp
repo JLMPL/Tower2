@@ -19,7 +19,7 @@ void loadConfigurationFile()
         exit(EXIT_FAILURE);
     }
 
-    json configs;
+    std::json configs;
     file >> configs;
 
     l_display.width = configs["DisplayWidth"].get<i32>();

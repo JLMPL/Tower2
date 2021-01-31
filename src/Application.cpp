@@ -11,7 +11,6 @@
 #include "Render/MaterialManager.hpp"
 #include "Render/Renderer2D.hpp"
 #include "Render/SceneRenderer.hpp"
-#include "Script/Lua.hpp"
 #include "Render/Geometry/Geometry.hpp"
 #include "Gameplay/Level.hpp"
 #include <SDL2/SDL.h>
@@ -130,8 +129,6 @@ LOCAL void init()
     setupImGui();
     setupSystems();
     setRelativeMouseMode(l_relativeMouse);
-
-    lua::checkInitialization();
 
     m_level = std::make_unique<Level>();
     m_level->initFromScript("Maps/Level0.lua");
