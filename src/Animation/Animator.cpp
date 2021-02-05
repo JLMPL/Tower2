@@ -1,11 +1,12 @@
 #include "Animation.hpp"
 #include "Debug/Log.hpp"
 #include "Core/Timer.hpp"
+#include "Render/SceneRenderer.hpp"
 
 namespace anim
 {
 
-static mat4 DaeCorrectionMatrix = math::rotate(-90.0_rad, vec3(1,0,0));
+static mat4 DaeCorrectionMatrix = mat4(1.f);//math::rotate(-90.0_rad, vec3(1,0,0));
 
 LOCAL void genMatrices(
     const Joint& joint,
@@ -39,6 +40,7 @@ LOCAL void genMatrices(
         return;
 
     globals[joint.index] = DaeCorrectionMatrix * globalTransform;
+    gfx::g_SceneRenderer.addLine((DaeCorrectionMatrix * parentTransform)[3], globals[joint.index][3], vec3(0,1,0));
     palette[joint.index] = DaeCorrectionMatrix * globalTransform * joint.offsetMatrix;
 
     for (u32 i = 0; i < Joint::MaxChildren; i++)

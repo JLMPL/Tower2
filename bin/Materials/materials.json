@@ -89,5 +89,11 @@
         "albedo" : "yellow.png",
         "normal" : "blank_normal.png",
         "specular" : "bone.png"
+    },
+    {
+        "name" : "kachujin_MAT",
+        "albedo" : "Kachujin_diffuse.png",
+        "normal" : "Kachujin_normal.png",
+        "specular" : "Kachujin_specular.png"
     }
 ]}

@@ -25,6 +25,8 @@ Debug/Log.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Debug/Log.hpp
 Core/Timer.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Core/Timer.hpp
+Render/SceneRenderer.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Render/SceneRenderer.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Animation/Clip.cpp
 Animation.hpp

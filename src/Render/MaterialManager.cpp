@@ -39,7 +39,8 @@ const Material* MaterialManager::getMaterial(const std::string& name)
         return (*found).second.get();
 
     Log::warning("No such material %s\n", name.c_str());
-    return nullptr;
+    return m_materials["env_empty"].get();
+    // return nullptr;
 }
 
 }

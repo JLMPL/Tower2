@@ -12,11 +12,6 @@
 #include "Cloth.hpp"
 #include <vector>
 
-namespace anim
-{
-    class Animator;
-}
-
 namespace phys
 {
 

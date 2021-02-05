@@ -12,20 +12,21 @@ void Level::initFromScript(const std::string& file)
     setLevelMesh("empty.obj", "net.obj");
 
     m_light = m_renderScene.addRenderLight();
-    m_light->setColor(vec3(0,500,1000));
+    m_light->setColor(vec3(1,1,1) * 400);
     m_light->setPosition(vec3(0,3,0));
 
     m_flare = m_renderScene.addRenderFlare("flare.png");
     m_flare->setColor(Color(0.5,0.75,1,1));
     m_flare->setPosition(vec3(0,3,0));
 
-    loadAnimationFromFile(&m_animation, "Animations/Clips/c_run.dae");
-    m_skeleton = &gfx::g_MeshMgr.getSkinnedMesh("rigud.dae")->skeleton;
+    loadAnimationFromFile(&m_animation, "Animations/Clips/Walk.dae");
+    m_skeleton = &gfx::g_MeshMgr.getSkinnedMesh("StandingDeath.dae")->skeleton;
 
     m_matrixPalette.resize(m_skeleton->joints.size());
     m_jointTransforms.resize(m_skeleton->joints.size());
 
-    m_rawskin = m_renderScene.addRenderSkinnedMesh("rigud.dae", m_matrixPalette.data());
+    m_rawskin = m_renderScene.addRenderSkinnedMesh("StandingDeath.dae", m_matrixPalette.data());
+    m_rawskin->setTransform(math::scale(vec3(0.01)));
 }
 
 void Level::setLevelMesh(const std::string& map, const std::string& net)
@@ -73,19 +74,21 @@ void Level::update()
 
     //post physics update
 
-    m_camera.setEye(vec3(3));
-    m_camera.setCenter(vec3(0,1,0));
-    m_camera.updateMatrices();
-    m_renderScene.setView(m_camera.getView());
-
     m_pose = getSkeletonPose(m_skeleton, &m_animation, along);
 
     computeSkinMatrices(*m_skeleton, m_pose, m_matrixPalette, m_jointTransforms);
 
     for (int i = 0; i < m_jointTransforms.size(); i++)
     {
-        gfx::g_SceneRenderer.addSphere(vec3(m_jointTransforms[i][3]), 0.1f, {0,0,1});
+        m_jointTransforms[i][3] = vec4(vec3(m_jointTransforms[i][3]) * 0.01, 1);
     }
+
+    m_camera.setEye(vec3(3));
+    m_camera.setCenter(vec3(m_jointTransforms[1][3]));
+    m_camera.updateMatrices();
+    m_renderScene.setView(m_camera.getView());
+
+    m_light->setPosition(vec3(m_jointTransforms[1][3]) + vec3(0,2,0));
 
     m_physSys.debugDraw();
 
