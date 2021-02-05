@@ -95,5 +95,17 @@
         "albedo" : "Kachujin_diffuse.png",
         "normal" : "Kachujin_normal.png",
         "specular" : "Kachujin_specular.png"
+    },
+    {
+        "name" : "Paladin_MAT",
+        "albedo" : "Paladin_diffuse.png",
+        "normal" : "blank_normal.png",
+        "specular" : "bone.png"
+    },
+    {
+        "name" : "Akai_MAT",
+        "albedo" : "akai_diffuse.png",
+        "normal" : "akai_normal.png",
+        "specular" : "bone.png"
     }
 ]}

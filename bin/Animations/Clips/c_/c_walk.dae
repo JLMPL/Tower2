@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9abfa</authoring_tool>
+    </contributor>
+    <created>2019-06-18T21:47:26</created>
+    <modified>2019-06-18T21:47:26</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects/>
+  <library_animations>
+    <animation id="metarig_Root_pose_matrix">
+      <source id="metarig_Root_pose_matrix-input">
+        <float_array id="metarig_Root_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Root_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Root_pose_matrix-output">
+        <float_array id="metarig_Root_pose_matrix-output-array" count="144">1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1 1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Root_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Root_pose_matrix-interpolation">
+        <Name_array id="metarig_Root_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Root_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Root_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Root_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Root_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Root_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Root_pose_matrix-sampler" target="metarig_Root/transform"/>
+    </animation>
+    <animation id="metarig_IK_Thigh_L_pose_matrix">
+      <source id="metarig_IK_Thigh_L_pose_matrix-input">
+        <float_array id="metarig_IK_Thigh_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Thigh_L_pose_matrix-output">
+        <float_array id="metarig_IK_Thigh_L_pose_matrix-output-array" count="144">0.9988343 0.04701187 -0.01095154 0.098 -0.03124653 0.8026354 0.5956508 0.09469014 0.03679274 -0.5946143 0.8031688 -0.01974627 0 0 0 1 0.9988343 0.04701183 -0.01095155 0.098 -0.03351811 0.8387476 0.5434877 0.09469014 0.03473593 -0.542487 0.8393457 -0.01974627 0 0 0 1 0.9988343 0.04701177 -0.01095156 0.098 -0.03703579 0.8918828 0.4507477 0.09469014 0.03095796 -0.4498167 0.8925841 -0.01974627 0 0 0 1 0.9988343 0.04701172 -0.01095157 0.098 -0.04326778 0.9725499 0.2286361 0.09469014 0.02139953 -0.2278957 0.9734503 -0.01974627 0 0 0 1 0.9988343 0.04701166 -0.01095158 0.098 -0.04634133 0.9974091 0.0550223 0.09469014 0.01350989 -0.05445063 0.9984249 -0.01974627 0 0 0 1 0.9988343 0.04701174 -0.01095159 0.098 -0.04429728 0.982855 0.1789796 0.09469014 0.01917797 -0.1782858 0.9837918 -0.01974627 0 0 0 1 0.9988343 0.04701178 -0.01095158 0.098 -0.040503 0.9396725 0.3396691 0.09469014 0.02625935 -0.3388296 0.9404812 -0.01974627 0 0 0 1 0.9988343 0.04701183 -0.01095156 0.098 -0.0350723 0.86269 0.5045154 0.09469014 0.03316599 -0.5035431 0.8633331 -0.01974627 0 0 0 1 0.9988343 0.04701187 -0.01095154 0.098 -0.03124653 0.8026354 0.5956508 0.09469014 0.03679274 -0.5946143 0.8031688 -0.01974627 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Thigh_L_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Thigh_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Thigh_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Thigh_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Thigh_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Thigh_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Thigh_L_pose_matrix-sampler" target="metarig_IK_Thigh_L/transform"/>
+    </animation>
+    <animation id="metarig_IK_Shin_L_pose_matrix">
+      <source id="metarig_IK_Shin_L_pose_matrix-input">
+        <float_array id="metarig_IK_Shin_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Shin_L_pose_matrix-output">
+        <float_array id="metarig_IK_Shin_L_pose_matrix-output-array" count="144">0.9988456 -0.04016013 0.02635592 0 0.04224506 0.9955692 -0.08400764 0.4669632 -0.02286539 0.0850241 0.9961165 -2.98023e-8 0 0 0 1 0.9988033 -0.03902806 0.02947459 0 0.04307382 0.9874138 -0.1521794 0.4669632 -0.02316435 0.1532669 0.9879133 -2.98023e-8 0 0 0 1 0.9987321 -0.03666205 0.0344984 0 0.04450105 0.9633459 -0.2645454 0.4669632 -0.02353512 0.2657452 0.9637559 -2.98023e-8 0 0 0 1 0.9986672 -0.03400608 0.03882701 0 0.0458357 0.9301673 -0.3642635 0.4669632 -0.02372845 0.3655577 0.9304861 -2.98023e-8 0 0 0 1 0.9986193 -0.03173409 0.041864 0 0.04684155 0.8986557 -0.4361467 0.4669632 -0.0237806 0.4375055 0.8989013 -2.98023e-8 0 0 0 1 0.9985686 -0.02902579 0.04492733 0 0.04792692 0.858475 -0.5106111 0.4669632 -0.0237481 0.5120335 0.8586371 -2.98023e-8 0 0 0 1 0.998503 -0.02502913 0.04863533 0 0.04936281 0.7953606 -0.6041232 0.4669632 -0.02356196 0.6056197 0.7954054 -2.98023e-8 0 0 0 1 0.9987149 -0.03600646 0.03566608 0 0.04485073 0.9556228 -0.2911591 0.4669632 -0.02359972 0.2923846 0.9560096 -2.98023e-8 0 0 0 1 0.9988456 -0.04016013 0.02635592 0 0.04224506 0.9955692 -0.08400764 0.4669632 -0.02286539 0.0850241 0.9961165 -2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Shin_L_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Shin_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Shin_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Shin_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Shin_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Shin_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Shin_L_pose_matrix-sampler" target="metarig_IK_Shin_L/transform"/>
+    </animation>
+    <animation id="metarig_IK_Foot_L_pose_matrix">
+      <source id="metarig_IK_Foot_L_pose_matrix-input">
+        <float_array id="metarig_IK_Foot_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Foot_L_pose_matrix-output">
+        <float_array id="metarig_IK_Foot_L_pose_matrix-output-array" count="144">0.9996561 -0.005653509 -0.02561094 -1.49012e-8 0.02396357 0.5937603 0.8042852 0.4927515 0.01065974 -0.8046222 0.5936915 2.98023e-8 0 0 0 1 0.9996986 -0.004463965 -0.02414015 -1.49012e-8 0.02207367 0.5937876 0.804319 0.4927515 0.01074368 -0.8046095 0.5937072 2.98023e-8 0 0 0 1 0.9997617 -0.002481272 -0.02168868 -1.49012e-8 0.01892365 0.5938283 0.8043692 0.4927515 0.0108835 -0.804588 0.5937337 2.98023e-8 0 0 0 1 0.9998051 -8.95042e-4 -0.01972742 -1.49012e-8 0.01640353 0.5938563 0.8044039 0.4927515 0.01099528 -0.8045707 0.5937552 2.98023e-8 0 0 0 1 0.9998334 2.94666e-4 -0.01825641 -1.49012e-8 0.01451336 0.5938747 0.8044266 0.4927515 0.01107907 -0.8045575 0.5937715 2.98023e-8 0 0 0 1 0.9998051 -8.95042e-4 -0.01972742 -1.49012e-8 0.01640353 0.5938563 0.8044039 0.4927515 0.01099528 -0.8045707 0.5937552 2.98023e-8 0 0 0 1 0.9997617 -0.002481272 -0.02168868 -1.49012e-8 0.01892365 0.5938283 0.8043692 0.4927515 0.0108835 -0.804588 0.5937337 2.98023e-8 0 0 0 1 0.9996986 -0.004463965 -0.02414015 -1.49012e-8 0.02207367 0.5937876 0.804319 0.4927515 0.01074368 -0.8046095 0.5937072 2.98023e-8 0 0 0 1 0.9996561 -0.005653509 -0.02561094 -1.49012e-8 0.02396357 0.5937603 0.8042852 0.4927515 0.01065974 -0.8046222 0.5936915 2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Foot_L_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Foot_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Foot_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Foot_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Foot_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Foot_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Foot_L_pose_matrix-sampler" target="metarig_IK_Foot_L/transform"/>
+    </animation>
+    <animation id="metarig_IK_Thigh_R_pose_matrix">
+      <source id="metarig_IK_Thigh_R_pose_matrix-input">
+        <float_array id="metarig_IK_Thigh_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Thigh_R_pose_matrix-output">
+        <float_array id="metarig_IK_Thigh_R_pose_matrix-output-array" count="144">0.9988343 -0.04701165 0.01095111 -0.098 0.04634131 0.997409 0.0550223 0.09469014 -0.01350941 -0.05445072 0.9984251 -0.0197463 0 0 0 1 0.9988343 -0.04701165 0.01095112 -0.098 0.04460524 0.9856418 0.1628508 0.09469014 -0.01844976 -0.1621726 0.9865898 -0.0197463 0 0 0 1 0.9988343 -0.0470116 0.01095113 -0.098 0.04050296 0.9396724 0.3396691 0.09469014 -0.02625886 -0.3388297 0.9404812 -0.0197463 0 0 0 1 0.9988343 -0.04701159 0.01095115 -0.098 0.0355619 0.8700871 0.4916133 0.09469014 -0.03263997 -0.4906508 0.8707447 -0.0197463 0 0 0 1 0.9988343 -0.04701155 0.01095116 -0.098 0.03124648 0.8026354 0.5956507 0.09469014 -0.03679225 -0.5946143 0.8031687 -0.0197463 0 0 0 1 0.9988343 -0.04701154 0.01095116 -0.098 0.03384874 0.8438975 0.5354356 0.09469014 -0.0344133 -0.5344408 0.844505 -0.0197463 0 0 0 1 0.9988343 -0.04701152 0.01095114 -0.098 0.03703573 0.8918827 0.4507477 0.09469014 -0.03095746 -0.4498168 0.8925841 -0.0197463 0 0 0 1 0.9988343 -0.04701161 0.01095112 -0.098 0.04370945 0.9771399 0.2080549 0.09469014 -0.02048177 -0.2073337 0.9780558 -0.0197463 0 0 0 1 0.9988343 -0.04701165 0.01095111 -0.098 0.04634131 0.997409 0.0550223 0.09469014 -0.01350941 -0.05445072 0.9984251 -0.0197463 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Thigh_R_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Thigh_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Thigh_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Thigh_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Thigh_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Thigh_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Thigh_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Thigh_R_pose_matrix-sampler" target="metarig_IK_Thigh_R/transform"/>
+    </animation>
+    <animation id="metarig_IK_Shin_R_pose_matrix">
+      <source id="metarig_IK_Shin_R_pose_matrix-input">
+        <float_array id="metarig_IK_Shin_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Shin_R_pose_matrix-output">
+        <float_array id="metarig_IK_Shin_R_pose_matrix-output-array" count="144">0.9986193 0.0317341 -0.04186399 0 -0.04684154 0.8986557 -0.4361467 0.4669632 0.02378059 0.4375054 0.8989011 0 0 0 0 1 0.998575 0.02938519 -0.04454989 0 -0.04778882 0.8639436 -0.5013158 0.4669632 0.02375735 0.5027303 0.8641167 0 0 0 0 1 0.9985031 0.02502913 -0.04863532 0 -0.04936281 0.7953606 -0.6041232 0.4669632 0.02356195 0.6056195 0.7954053 0 0 0 0 1 0.9986966 0.03526442 -0.03690286 0 -0.04522922 0.946482 -0.3195719 0.4669632 0.02365838 0.3208243 0.9468431 0 0 0 0 1 0.9988457 0.04016013 -0.02635591 0 -0.04224506 0.9955692 -0.08400768 0.4669632 0.02286538 0.08502409 0.9961164 0 0 0 0 1 0.9987972 0.03884492 -0.02992316 0 -0.04319648 0.9858316 -0.1620804 0.4669632 0.0232032 0.163178 0.9863236 0 0 0 0 1 0.9987322 0.03666205 -0.03449839 0 -0.04450105 0.9633459 -0.2645455 0.4669632 0.02353511 0.2657452 0.9637558 0 0 0 0 1 0.9986613 0.03373967 -0.03920997 0 -0.04595913 0.9265983 -0.3732336 0.4669632 0.02373912 0.3745359 0.9269083 0 0 0 0 1 0.9986193 0.0317341 -0.04186399 0 -0.04684154 0.8986557 -0.4361467 0.4669632 0.02378059 0.4375054 0.8989011 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Shin_R_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Shin_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Shin_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Shin_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Shin_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Shin_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Shin_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Shin_R_pose_matrix-sampler" target="metarig_IK_Shin_R/transform"/>
+    </animation>
+    <animation id="metarig_IK_Foot_R_pose_matrix">
+      <source id="metarig_IK_Foot_R_pose_matrix-input">
+        <float_array id="metarig_IK_Foot_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Foot_R_pose_matrix-output">
+        <float_array id="metarig_IK_Foot_R_pose_matrix-output-array" count="144">0.9998335 -2.94682e-4 0.0182564 0 -0.01451334 0.5938748 0.8044267 0.4927515 -0.01107907 -0.8045574 0.5937713 0 0 0 0 1 0.9998051 8.95027e-4 0.01972741 0 -0.01640351 0.5938565 0.804404 0.4927515 -0.01099528 -0.8045706 0.5937551 0 0 0 0 1 0.99975 0.002877814 0.02217899 0 -0.01955367 0.5938208 0.8043599 0.4927515 -0.01085555 -0.8045923 0.5937283 0 0 0 0 1 0.9996987 0.004463951 0.02414013 0 -0.02207365 0.5937878 0.804319 0.4927515 -0.01074368 -0.8046094 0.5937071 0 0 0 0 1 0.9996561 0.005653494 0.02561092 0 -0.02396354 0.5937604 0.8042851 0.4927515 -0.01065974 -0.8046222 0.5936914 0 0 0 0 1 0.9996987 0.004463951 0.02414013 0 -0.02207365 0.5937878 0.804319 0.4927515 -0.01074368 -0.8046094 0.5937071 0 0 0 0 1 0.99975 0.002877814 0.02217899 0 -0.01955367 0.5938208 0.8043599 0.4927515 -0.01085555 -0.8045923 0.5937283 0 0 0 0 1 0.9998051 8.95027e-4 0.01972741 0 -0.01640351 0.5938565 0.804404 0.4927515 -0.01099528 -0.8045706 0.5937551 0 0 0 0 1 0.9998335 -2.94682e-4 0.0182564 0 -0.01451334 0.5938748 0.8044267 0.4927515 -0.01107907 -0.8045574 0.5937713 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_IK_Foot_R_pose_matrix-interpolation">
+        <Name_array id="metarig_IK_Foot_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_IK_Foot_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_IK_Foot_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_IK_Foot_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_IK_Foot_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_IK_Foot_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_IK_Foot_R_pose_matrix-sampler" target="metarig_IK_Foot_R/transform"/>
+    </animation>
+    <animation id="metarig_Spine0_pose_matrix">
+      <source id="metarig_Spine0_pose_matrix-input">
+        <float_array id="metarig_Spine0_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Spine0_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Spine0_pose_matrix-output">
+        <float_array id="metarig_Spine0_pose_matrix-output-array" count="144">0.9993613 0.03571908 -0.001056633 -7.10543e-15 0.03547082 -0.9951347 -0.09191728 0 -0.004334714 0.09182109 -0.9957863 2.98023e-8 0 0 0 1 0.99977 0.02143582 -6.33919e-4 -7.10543e-15 0.02128686 -0.9955403 -0.09190528 0 -0.00260117 0.09187067 -0.9957879 2.98023e-8 0 0 0 1 0.9999971 -0.002382057 7.09717e-5 -7.10543e-15 -0.002365454 -0.9957656 -0.09189861 0 2.8958e-4 0.09189819 -0.9957886 2.98023e-8 0 0 0 1 0.99977 -0.02143587 6.3487e-4 -7.10543e-15 -0.02128682 -0.9955403 -0.09190528 0 0.002602122 0.09187067 -0.9957879 2.98023e-8 0 0 0 1 0.9993613 -0.03571913 0.001057584 -7.10543e-15 -0.03547079 -0.9951347 -0.09191728 0 0.004335665 0.09182103 -0.9957863 2.98023e-8 0 0 0 1 0.99977 -0.02143588 6.3487e-4 -7.10543e-15 -0.02128682 -0.9955403 -0.09190528 0 0.002602122 0.09187067 -0.9957879 2.98023e-8 0 0 0 1 0.9999971 -0.002382061 7.09718e-5 -7.10543e-15 -0.002365458 -0.9957656 -0.09189861 0 2.89581e-4 0.09189819 -0.9957886 2.98023e-8 0 0 0 1 0.99977 0.02143582 -6.33919e-4 -7.10543e-15 0.02128685 -0.9955403 -0.09190528 0 -0.00260117 0.09187067 -0.9957879 2.98023e-8 0 0 0 1 0.9993613 0.03571908 -0.001056633 -7.10543e-15 0.03547082 -0.9951347 -0.09191728 0 -0.004334714 0.09182109 -0.9957863 2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Spine0_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Spine0_pose_matrix-interpolation">
+        <Name_array id="metarig_Spine0_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Spine0_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Spine0_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Spine0_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Spine0_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Spine0_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Spine0_pose_matrix-sampler" target="metarig_Spine0/transform"/>
+    </animation>
+    <animation id="metarig_Spine1_pose_matrix">
+      <source id="metarig_Spine1_pose_matrix-input">
+        <float_array id="metarig_Spine1_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Spine1_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Spine1_pose_matrix-output">
+        <float_array id="metarig_Spine1_pose_matrix-output-array" count="144">0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1 0.9999999 7.07805e-8 -4.66593e-7 0 7.45058e-8 0.9513251 0.3081893 0.1554123 4.6473e-7 -0.3081892 0.9513251 -2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Spine1_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Spine1_pose_matrix-interpolation">
+        <Name_array id="metarig_Spine1_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Spine1_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Spine1_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Spine1_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Spine1_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Spine1_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Spine1_pose_matrix-sampler" target="metarig_Spine1/transform"/>
+    </animation>
+    <animation id="metarig_Chest_pose_matrix">
+      <source id="metarig_Chest_pose_matrix-input">
+        <float_array id="metarig_Chest_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Chest_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Chest_pose_matrix-output">
+        <float_array id="metarig_Chest_pose_matrix-output-array" count="144">0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1 0.9999999 -3.72529e-8 4.69387e-7 -3.72529e-9 -3.72529e-8 0.9847437 0.1740115 0.1708291 -4.71482e-7 -0.1740115 0.9847438 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Chest_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Chest_pose_matrix-interpolation">
+        <Name_array id="metarig_Chest_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Chest_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Chest_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Chest_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Chest_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Chest_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Chest_pose_matrix-sampler" target="metarig_Chest/transform"/>
+    </animation>
+    <animation id="metarig_Neck0_pose_matrix">
+      <source id="metarig_Neck0_pose_matrix-input">
+        <float_array id="metarig_Neck0_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Neck0_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Neck0_pose_matrix-output">
+        <float_array id="metarig_Neck0_pose_matrix-output-array" count="144">1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1 1 -1.15484e-7 2.98023e-8 3.72529e-9 1.19209e-7 0.8744158 -0.4851772 0.2587513 3.07336e-8 0.4851772 0.8744158 2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Neck0_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Neck0_pose_matrix-interpolation">
+        <Name_array id="metarig_Neck0_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Neck0_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Neck0_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Neck0_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Neck0_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Neck0_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Neck0_pose_matrix-sampler" target="metarig_Neck0/transform"/>
+    </animation>
+    <animation id="metarig_Neck1_pose_matrix">
+      <source id="metarig_Neck1_pose_matrix-input">
+        <float_array id="metarig_Neck1_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Neck1_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Neck1_pose_matrix-output">
+        <float_array id="metarig_Neck1_pose_matrix-output-array" count="144">1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1 1 1.86265e-8 9.31323e-10 3.72529e-9 -1.49012e-8 0.9982322 0.05943385 0.06539881 9.31323e-10 -0.05943389 0.9982322 -2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Neck1_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Neck1_pose_matrix-interpolation">
+        <Name_array id="metarig_Neck1_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Neck1_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Neck1_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Neck1_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Neck1_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Neck1_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Neck1_pose_matrix-sampler" target="metarig_Neck1/transform"/>
+    </animation>
+    <animation id="metarig_Head_pose_matrix">
+      <source id="metarig_Head_pose_matrix-input">
+        <float_array id="metarig_Head_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Head_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Head_pose_matrix-output">
+        <float_array id="metarig_Head_pose_matrix-output-array" count="144">1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1 1 4.09782e-8 -4.73578e-7 -7.45058e-9 4.47035e-8 0.985074 0.1721319 0.06127489 4.73112e-7 -0.1721319 0.9850739 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Head_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Head_pose_matrix-interpolation">
+        <Name_array id="metarig_Head_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Head_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Head_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Head_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Head_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Head_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Head_pose_matrix-sampler" target="metarig_Head/transform"/>
+    </animation>
+    <animation id="metarig_Shoulder_L_pose_matrix">
+      <source id="metarig_Shoulder_L_pose_matrix-input">
+        <float_array id="metarig_Shoulder_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Shoulder_L_pose_matrix-output">
+        <float_array id="metarig_Shoulder_L_pose_matrix-output-array" count="144">0.5162323 0.8483734 0.1173322 0.02921179 -0.1974664 -0.01540491 0.9801885 0.1954796 0.8333734 -0.5291741 0.1595728 0.0665977 0 0 0 1 0.4825372 0.8675205 0.1206897 0.02921179 -0.2020873 -0.0238035 0.9790781 0.1954796 0.8522431 -0.4968314 0.1638288 0.0665977 0 0 0 1 0.424771 0.8965596 0.1255002 0.02921179 -0.2090971 -0.03771779 0.9771671 0.1954796 0.8808223 -0.441314 0.1714467 0.0665977 0 0 0 1 0.3772532 0.9171368 0.1286073 0.02921179 -0.2140868 -0.04874296 0.9755976 0.1954796 0.9010254 -0.3955804 0.1779585 0.0665977 0 0 0 1 0.3409389 0.9309853 0.1304872 0.02921179 -0.2174719 -0.05693178 0.9744047 0.1954796 0.9145854 -0.3605897 0.183053 0.0665977 0 0 0 1 0.3772532 0.9171368 0.1286073 0.02921179 -0.2140868 -0.04874296 0.9755976 0.1954796 0.9010254 -0.3955804 0.1779585 0.0665977 0 0 0 1 0.424771 0.8965596 0.1255002 0.02921179 -0.2090971 -0.03771779 0.9771671 0.1954796 0.8808223 -0.441314 0.1714467 0.0665977 0 0 0 1 0.4825372 0.8675205 0.1206897 0.02921179 -0.2020873 -0.0238035 0.9790781 0.1954796 0.8522431 -0.4968314 0.1638288 0.0665977 0 0 0 1 0.5162323 0.8483734 0.1173322 0.02921179 -0.1974664 -0.01540491 0.9801885 0.1954796 0.8333734 -0.5291741 0.1595728 0.0665977 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Shoulder_L_pose_matrix-interpolation">
+        <Name_array id="metarig_Shoulder_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Shoulder_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Shoulder_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Shoulder_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Shoulder_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Shoulder_L_pose_matrix-sampler" target="metarig_Shoulder_L/transform"/>
+    </animation>
+    <animation id="metarig_UpperArm_L_pose_matrix">
+      <source id="metarig_UpperArm_L_pose_matrix-input">
+        <float_array id="metarig_UpperArm_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_UpperArm_L_pose_matrix-output">
+        <float_array id="metarig_UpperArm_L_pose_matrix-output-array" count="144">-0.4941298 -0.3011613 0.8155597 0 -0.805447 0.5116861 -0.2990527 0.1961788 -0.3272476 -0.8046609 -0.4954089 0 0 0 0 1 -0.4658302 -0.1837876 0.8655775 0 -0.8191751 0.4594512 -0.3433028 0.1961788 -0.3345959 -0.8689802 -0.3645805 0 0 0 0 1 -0.4171807 0.02814772 0.9083875 0 -0.844284 0.3579351 -0.3988322 0.1961788 -0.3363702 -0.933322 -0.1255589 0 0 0 0 1 -0.3795111 0.2013138 0.9030194 0 -0.865072 0.2688757 -0.4235047 0.1961788 -0.3280574 -0.9419016 0.07210962 0 0 0 0 1 -0.3534164 0.3266138 0.8765958 0 -0.8802662 0.2010183 -0.4297943 0.1961788 -0.3165887 -0.923534 0.216464 0 0 0 0 1 -0.3795111 0.2013138 0.9030194 0 -0.865072 0.2688757 -0.4235047 0.1961788 -0.3280574 -0.9419016 0.07210961 0 0 0 0 1 -0.4171807 0.02814774 0.9083875 0 -0.844284 0.3579351 -0.3988322 0.1961788 -0.3363702 -0.933322 -0.1255589 0 0 0 0 1 -0.4658302 -0.1837876 0.8655775 0 -0.8191751 0.4594512 -0.3433028 0.1961788 -0.3345959 -0.8689802 -0.3645805 0 0 0 0 1 -0.4941298 -0.3011613 0.8155597 0 -0.805447 0.5116861 -0.2990527 0.1961788 -0.3272476 -0.8046609 -0.4954089 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_UpperArm_L_pose_matrix-interpolation">
+        <Name_array id="metarig_UpperArm_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_UpperArm_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_UpperArm_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_UpperArm_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_UpperArm_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_UpperArm_L_pose_matrix-sampler" target="metarig_UpperArm_L/transform"/>
+    </animation>
+    <animation id="metarig_Forearm_L_pose_matrix">
+      <source id="metarig_Forearm_L_pose_matrix-input">
+        <float_array id="metarig_Forearm_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Forearm_L_pose_matrix-output">
+        <float_array id="metarig_Forearm_L_pose_matrix-output-array" count="144">0.9968061 -0.04251643 0.06759931 5.96046e-8 0.06311639 0.9380432 -0.3407218 0.2824196 -0.04892481 0.3439003 0.9377308 1.19209e-7 0 0 0 1 0.9966057 -0.04087053 0.07146059 5.96046e-8 0.06011983 0.9543335 -0.2926318 0.2824196 -0.05623723 0.2959348 0.9535512 1.19209e-7 0 0 0 1 0.9966803 -0.04401508 0.06848928 5.96046e-8 0.06457666 0.9397045 -0.3358352 0.2824196 -0.04957788 0.3391432 0.9394274 1.19209e-7 0 0 0 1 0.9967152 -0.04662575 0.06621654 5.96046e-8 0.06791966 0.926583 -0.3699067 0.2824196 -0.04410794 0.3731891 0.9267063 1.19209e-7 0 0 0 1 0.9951892 -0.06900594 0.06954443 5.96046e-8 0.09580058 0.8340152 -0.5433607 0.2824196 -0.02050601 0.5474092 0.8366138 1.19209e-7 0 0 0 1 0.9966799 -0.04653241 0.06681026 5.96046e-8 0.06771106 0.9294031 -0.3628018 0.2824196 -0.04521161 0.3661212 0.9294682 1.19209e-7 0 0 0 1 0.9966362 -0.04337983 0.0695298 5.96046e-8 0.06357671 0.9446178 -0.3219555 0.2824196 -0.05171273 0.325293 0.9441983 1.19209e-7 0 0 0 1 0.9965364 -0.03960997 0.07311618 5.96046e-8 0.05801602 0.9610924 -0.2700663 0.2824196 -0.05957408 0.2733729 0.9600616 1.19209e-7 0 0 0 1 0.9968061 -0.04251643 0.06759931 5.96046e-8 0.06311639 0.9380432 -0.3407218 0.2824196 -0.04892481 0.3439003 0.9377308 1.19209e-7 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Forearm_L_pose_matrix-interpolation">
+        <Name_array id="metarig_Forearm_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Forearm_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Forearm_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Forearm_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Forearm_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Forearm_L_pose_matrix-sampler" target="metarig_Forearm_L/transform"/>
+    </animation>
+    <animation id="metarig_Hand_L_pose_matrix">
+      <source id="metarig_Hand_L_pose_matrix-input">
+        <float_array id="metarig_Hand_L_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_L_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Hand_L_pose_matrix-output">
+        <float_array id="metarig_Hand_L_pose_matrix-output-array" count="144">0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1 0.9845699 0.169063 -0.04516447 0 -0.1704858 0.9849111 -0.02974202 0.2962031 0.03945472 0.036983 0.9985366 2.98023e-8 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_L_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Hand_L_pose_matrix-interpolation">
+        <Name_array id="metarig_Hand_L_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_L_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Hand_L_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Hand_L_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Hand_L_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Hand_L_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Hand_L_pose_matrix-sampler" target="metarig_Hand_L/transform"/>
+    </animation>
+    <animation id="metarig_Shoulder_R_pose_matrix">
+      <source id="metarig_Shoulder_R_pose_matrix-input">
+        <float_array id="metarig_Shoulder_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Shoulder_R_pose_matrix-output">
+        <float_array id="metarig_Shoulder_R_pose_matrix-output-array" count="144">0.3409391 -0.9309852 -0.1304873 -0.02921182 0.217472 -0.05693175 0.9744048 0.1954796 -0.9145855 -0.3605902 0.1830529 0.06659773 0 0 0 1 0.3772535 -0.9171368 -0.1286074 -0.02921182 0.2140869 -0.04874292 0.9755977 0.1954796 -0.9010254 -0.3955809 0.1779585 0.06659773 0 0 0 1 0.4364762 -0.8910435 -0.1246191 -0.02921182 0.2077642 -0.03494526 0.9775545 0.1954796 -0.8753986 -0.4525707 0.1698741 0.06659773 0 0 0 1 0.4825375 -0.8675203 -0.1206899 -0.02921182 0.2020873 -0.02380347 0.9790782 0.1954796 -0.8522431 -0.4968319 0.1638288 0.06659773 0 0 0 1 0.5162326 -0.8483734 -0.1173323 -0.02921182 0.1974665 -0.01540487 0.9801886 0.1954796 -0.8333733 -0.5291746 0.1595727 0.06659773 0 0 0 1 0.4825375 -0.8675203 -0.1206899 -0.02921182 0.2020873 -0.02380347 0.9790782 0.1954796 -0.8522431 -0.4968319 0.1638288 0.06659773 0 0 0 1 0.4364762 -0.8910435 -0.1246191 -0.02921182 0.2077642 -0.03494526 0.9775545 0.1954796 -0.8753986 -0.4525707 0.1698741 0.06659773 0 0 0 1 0.3772535 -0.9171368 -0.1286074 -0.02921182 0.2140869 -0.04874292 0.9755977 0.1954796 -0.9010254 -0.3955809 0.1779585 0.06659773 0 0 0 1 0.3409391 -0.9309852 -0.1304873 -0.02921182 0.217472 -0.05693175 0.9744048 0.1954796 -0.9145855 -0.3605902 0.1830529 0.06659773 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Shoulder_R_pose_matrix-interpolation">
+        <Name_array id="metarig_Shoulder_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Shoulder_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Shoulder_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Shoulder_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Shoulder_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Shoulder_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Shoulder_R_pose_matrix-sampler" target="metarig_Shoulder_R/transform"/>
+    </animation>
+    <animation id="metarig_UpperArm_R_pose_matrix">
+      <source id="metarig_UpperArm_R_pose_matrix-input">
+        <float_array id="metarig_UpperArm_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_UpperArm_R_pose_matrix-output">
+        <float_array id="metarig_UpperArm_R_pose_matrix-output-array" count="144">-0.3534164 -0.3266138 -0.8765959 0 0.8802663 0.2010185 -0.4297943 0.1961788 0.3165886 -0.923534 0.2164639 0 0 0 0 1 -0.3645844 -0.3218439 -0.873782 0 0.8738979 0.2057531 -0.4404186 0.1961788 0.3215292 -0.9241658 0.2062443 0 0 0 0 1 -0.4278685 0.001315862 -0.9038401 0 0.8377027 0.3760706 -0.3960121 0.1961788 0.3393863 -0.9265902 -0.162011 0 0 0 0 1 -0.4813417 0.2531579 -0.8391789 0 0.8105079 0.4930807 -0.3161469 0.1961788 0.3337478 -0.8323356 -0.4425268 0 0 0 0 1 -0.4941298 0.3011613 -0.8155598 0 0.8054471 0.5116863 -0.2990527 0.1961788 0.3272475 -0.804661 -0.4954089 0 0 0 0 1 -0.4801216 0.2829709 -0.8303076 0 0.811685 0.502248 -0.2981858 0.1961788 0.3326423 -0.8171136 -0.4708233 0 0 0 0 1 -0.4265819 0.03318472 -0.9038399 0 0.8382021 0.3899204 -0.381287 0.1961788 0.3397726 -0.9202505 -0.1941485 0 0 0 0 1 -0.3621873 -0.2934849 -0.884696 0 0.8741267 0.2225773 -0.431697 0.1961788 0.3236097 -0.9296914 0.1759283 0 0 0 0 1 -0.3534164 -0.3266138 -0.8765959 0 0.8802663 0.2010185 -0.4297943 0.1961788 0.3165886 -0.923534 0.2164639 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_UpperArm_R_pose_matrix-interpolation">
+        <Name_array id="metarig_UpperArm_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_UpperArm_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_UpperArm_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_UpperArm_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_UpperArm_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_UpperArm_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_UpperArm_R_pose_matrix-sampler" target="metarig_UpperArm_R/transform"/>
+    </animation>
+    <animation id="metarig_Forearm_R_pose_matrix">
+      <source id="metarig_Forearm_R_pose_matrix-input">
+        <float_array id="metarig_Forearm_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Forearm_R_pose_matrix-output">
+        <float_array id="metarig_Forearm_R_pose_matrix-output-array" count="144">0.9960671 0.06611324 -0.05898698 5.96046e-8 -0.08840135 0.7864066 -0.611351 0.2824194 0.005969346 0.6141613 0.7891582 0 0 0 0 1 0.9963129 0.06121136 -0.06011441 5.96046e-8 -0.08444738 0.8233327 -0.5612414 0.2824194 0.01513982 0.5642486 0.8254663 0 0 0 0 1 0.9966156 0.05319555 -0.06267017 5.96046e-8 -0.07658404 0.8778765 -0.4727241 0.2824194 0.02986984 0.4759237 0.8789792 0 0 0 0 1 0.9967582 0.04699773 -0.0653021 5.96046e-8 -0.06921689 0.9146723 -0.398226 0.2824194 0.04101431 0.401455 0.91496 0 0 0 0 1 0.9968062 0.04251653 -0.06759924 5.96046e-8 -0.06311649 0.9380432 -0.3407218 0.2824194 0.04892471 0.3439002 0.9377309 0 0 0 0 1 0.9967582 0.04699771 -0.0653021 5.96046e-8 -0.06921689 0.9146723 -0.398226 0.2824194 0.04101431 0.401455 0.91496 0 0 0 0 1 0.9966156 0.05319555 -0.06267017 5.96046e-8 -0.07658404 0.8778765 -0.4727241 0.2824194 0.02986984 0.4759237 0.8789792 0 0 0 0 1 0.9963129 0.06121136 -0.06011441 5.96046e-8 -0.08444738 0.8233327 -0.5612414 0.2824194 0.01513982 0.5642486 0.8254663 0 0 0 0 1 0.9960671 0.06611324 -0.05898698 5.96046e-8 -0.08840135 0.7864066 -0.611351 0.2824194 0.005969346 0.6141613 0.7891582 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Forearm_R_pose_matrix-interpolation">
+        <Name_array id="metarig_Forearm_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Forearm_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Forearm_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Forearm_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Forearm_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Forearm_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Forearm_R_pose_matrix-sampler" target="metarig_Forearm_R/transform"/>
+    </animation>
+    <animation id="metarig_Hand_R_pose_matrix">
+      <source id="metarig_Hand_R_pose_matrix-input">
+        <float_array id="metarig_Hand_R_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_R_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Hand_R_pose_matrix-output">
+        <float_array id="metarig_Hand_R_pose_matrix-output-array" count="144">0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1 0.9845698 -0.1690629 0.04516444 0 0.1704858 0.9849112 -0.02974206 0.296203 -0.03945471 0.03698286 0.9985366 0 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_R_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Hand_R_pose_matrix-interpolation">
+        <Name_array id="metarig_Hand_R_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Hand_R_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Hand_R_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Hand_R_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Hand_R_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Hand_R_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Hand_R_pose_matrix-sampler" target="metarig_Hand_R/transform"/>
+    </animation>
+    <animation id="metarig_Belt0_pose_matrix">
+      <source id="metarig_Belt0_pose_matrix-input">
+        <float_array id="metarig_Belt0_pose_matrix-input-array" count="9">0 0.125 0.3333333 0.5 0.625 0.75 0.9166667 1.125 1.25</float_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-input-array" count="9" stride="1">
+            <param name="TIME" type="float"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Belt0_pose_matrix-output">
+        <float_array id="metarig_Belt0_pose_matrix-output-array" count="144">0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1 0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1</float_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-output-array" count="9" stride="16">
+            <param name="TRANSFORM" type="float4x4"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <source id="metarig_Belt0_pose_matrix-interpolation">
+        <Name_array id="metarig_Belt0_pose_matrix-interpolation-array" count="9">LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR LINEAR</Name_array>
+        <technique_common>
+          <accessor source="#metarig_Belt0_pose_matrix-interpolation-array" count="9" stride="1">
+            <param name="INTERPOLATION" type="name"/>
+          </accessor>
+        </technique_common>
+      </source>
+      <sampler id="metarig_Belt0_pose_matrix-sampler">
+        <input semantic="INPUT" source="#metarig_Belt0_pose_matrix-input"/>
+        <input semantic="OUTPUT" source="#metarig_Belt0_pose_matrix-output"/>
+        <input semantic="INTERPOLATION" source="#metarig_Belt0_pose_matrix-interpolation"/>
+      </sampler>
+      <channel source="#metarig_Belt0_pose_matrix-sampler" target="metarig_Belt0/transform"/>
+    </animation>
+  </library_animations>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="metarig" name="metarig" type="NODE">
+        <translate sid="location">0 0 0</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <scale sid="scale">1 1 1</scale>
+        <node id="metarig_Root" name="Root" sid="Root" type="JOINT">
+          <matrix sid="transform">1 -2.42286e-9 2.36703e-7 4.0578e-10 -2.22463e-7 0.3321145 0.943239 -0.02391914 -8.08978e-8 -0.943239 0.3321145 1.148066 0 0 0 1</matrix>
+          <node id="metarig_IK_Thigh_L" name="IK_Thigh.L" sid="IK_Thigh_L" type="JOINT">
+            <matrix sid="transform">0.9883339 0.1521617 -0.006553704 0.098 -0.1388736 0.918021 0.3714181 0.09469014 0.06253206 -0.366175 0.9284425 -0.01974627 0 0 0 1</matrix>
+            <node id="metarig_IK_Shin_L" name="IK_Shin.L" sid="IK_Shin_L" type="JOINT">
+              <matrix sid="transform">0.9988457 -0.04016013 0.02635592 2.98023e-8 0.04224504 0.9955692 -0.08400764 0.4669632 -0.02286539 0.08502407 0.9961163 0 0 0 0 1</matrix>
+              <node id="metarig_IK_Foot_L" name="IK_Foot.L" sid="IK_Foot_L" type="JOINT">
+                <matrix sid="transform">0.9937709 -0.06058751 -0.09353316 -1.49012e-8 0.1112381 0.5900344 0.7996784 0.4927515 0.006737262 -0.8051016 0.5930986 4.65661e-10 0 0 0 1</matrix>
+              </node>
+            </node>
+          </node>
+          <node id="metarig_IK_Thigh_R" name="IK_Thigh.R" sid="IK_Thigh_R" type="JOINT">
+            <matrix sid="transform">0.9883339 -0.1521615 0.006553264 -0.098 0.1388736 0.918021 0.3714181 0.09469014 -0.06253158 -0.3661751 0.9284425 -0.0197463 0 0 0 1</matrix>
+            <node id="metarig_IK_Shin_R" name="IK_Shin.R" sid="IK_Shin_R" type="JOINT">
+              <matrix sid="transform">0.9988457 0.04016014 -0.02635592 -2.98023e-8 -0.04224504 0.9955692 -0.0840077 0.4669632 0.02286538 0.08502412 0.9961164 -3.72529e-9 0 0 0 1</matrix>
+              <node id="metarig_IK_Foot_R" name="IK_Foot.R" sid="IK_Foot_R" type="JOINT">
+                <matrix sid="transform">0.9937709 0.0605875 0.09353314 1.49012e-8 -0.111238 0.5900344 0.7996784 0.4927515 -0.006737259 -0.8051016 0.5930986 9.31323e-10 0 0 0 1</matrix>
+              </node>
+            </node>
+          </node>
+          <node id="metarig_Spine0" name="Spine0" sid="Spine0" type="JOINT">
+            <matrix sid="transform">1 -2.5291e-8 4.75399e-7 -7.10543e-15 1.8434e-8 -0.9957819 -0.09175171 0 4.75716e-7 0.09175171 -0.9958022 2.98023e-8 0 0 0 1</matrix>
+            <node id="metarig_Spine1" name="Spine1" sid="Spine1" type="JOINT">
+              <matrix sid="transform">1 7.29309e-8 -4.64316e-7 7.10543e-15 7.37162e-8 0.9513251 0.3081892 0.1554123 4.64192e-7 -0.3081892 0.951325 0 0 0 0 1</matrix>
+              <node id="metarig_Chest" name="Chest" sid="Chest" type="JOINT">
+                <matrix sid="transform">1 -3.85412e-8 4.71205e-7 -3.55271e-15 -4.40418e-8 0.9847437 0.1740114 0.1708291 -4.70722e-7 -0.1740114 0.9847436 0 0 0 0 1</matrix>
+                <node id="metarig_Neck0" name="Neck0" sid="Neck0" type="JOINT">
+                  <matrix sid="transform">1 -1.15932e-7 3.05613e-8 0 1.162e-7 0.8744158 -0.4851772 0.2587512 2.95242e-8 0.4851772 0.8744158 0 0 0 0 1</matrix>
+                  <node id="metarig_Neck1" name="Neck1" sid="Neck1" type="JOINT">
+                    <matrix sid="transform">1 1.41704e-8 4.21409e-10 -7.10543e-15 -1.41704e-8 0.9982323 0.05943385 0.06539881 4.21511e-10 -0.05943388 0.9982322 -2.98023e-8 0 0 0 1</matrix>
+                    <node id="metarig_Head" name="Head" sid="Head" type="JOINT">
+                      <matrix sid="transform">1 4.10403e-8 -4.73279e-7 0 4.10387e-8 0.9850739 0.172132 0.06127477 4.73279e-7 -0.1721319 0.985074 2.98023e-8 0 0 0 1</matrix>
+                    </node>
+                  </node>
+                </node>
+                <node id="metarig_Shoulder_L" name="Shoulder.L" sid="Shoulder_L" type="JOINT">
+                  <matrix sid="transform">0.4587099 0.8801277 0.1223131 0.02921179 -0.2051535 -0.02903308 0.9782991 0.1954796 0.8645793 -0.4738485 0.1672435 0.0665977 0 0 0 1</matrix>
+                  <node id="metarig_UpperArm_L" name="UpperArm.L" sid="UpperArm_L" type="JOINT">
+                    <matrix sid="transform">-0.2635278 0.3117785 0.9128786 0 -0.480491 0.7781576 -0.404474 0.1961788 -0.8364697 -0.54522 -0.05525939 1.19209e-7 0 0 0 1</matrix>
+                    <node id="metarig_Forearm_L" name="Forearm.L" sid="Forearm_L" type="JOINT">
+                      <matrix sid="transform">0.9968062 -0.04251644 0.0675993 0 0.06311637 0.9380431 -0.3407218 0.2824196 -0.04892481 0.3439002 0.9377308 -9.31323e-10 0 0 0 1</matrix>
+                      <node id="metarig_Hand_L" name="Hand.L" sid="Hand_L" type="JOINT">
+                        <matrix sid="transform">0.98457 0.1690629 -0.04516447 1.19209e-7 -0.1704857 0.984911 -0.02974199 0.2962031 0.03945471 0.03698299 0.9985368 1.49012e-8 0 0 0 1</matrix>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node id="metarig_Shoulder_R" name="Shoulder.R" sid="Shoulder_R" type="JOINT">
+                  <matrix sid="transform">0.4587102 -0.8801275 -0.1223133 -0.02921182 0.2051536 -0.02903307 0.9782991 0.1954796 -0.8645793 -0.4738488 0.1672435 0.06659767 0 0 0 1</matrix>
+                  <node id="metarig_UpperArm_R" name="UpperArm.R" sid="UpperArm_R" type="JOINT">
+                    <matrix sid="transform">-0.2635278 -0.3117786 -0.9128787 7.45058e-9 0.4804911 0.7781577 -0.404474 0.1961788 0.8364697 -0.5452201 -0.0552594 1.19209e-7 0 0 0 1</matrix>
+                    <node id="metarig_Forearm_R" name="Forearm.R" sid="Forearm_R" type="JOINT">
+                      <matrix sid="transform">0.9968061 0.0425165 -0.06759922 0 -0.06311637 0.9380431 -0.3407217 0.2824195 0.04892471 0.3439001 0.9377309 -1.86265e-9 0 0 0 1</matrix>
+                      <node id="metarig_Hand_R" name="Hand.R" sid="Hand_R" type="JOINT">
+                        <matrix sid="transform">0.98457 -0.1690629 0.04516444 0 0.1704859 0.9849111 -0.02974196 0.2962031 -0.03945469 0.03698293 0.9985367 -4.47035e-8 0 0 0 1</matrix>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node id="metarig_Belt0" name="Belt0" sid="Belt0" type="JOINT">
+            <matrix sid="transform">0.8085772 0 -0.5883901 0.2736984 0.1954127 0.9432392 0.26854 0.08925271 0.5549926 -0.3321142 0.7626817 -0.006913483 0 0 0 1</matrix>
+          </node>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

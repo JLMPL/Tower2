@@ -4,8 +4,6 @@
 #include "Physics/PhysicsSystem.hpp"
 #include "Camera.hpp"
 
-union SDL_Event;
-
 class Level
 {
 public:
@@ -32,12 +30,18 @@ private:
     RenderFlare* m_flare = nullptr;
 
     RenderSkinnedMesh*        m_rawskin = nullptr;
-    anim::Animation m_animation;
+
+    anim::Animation m_animations[4];
+    int m_currentAnim = 0;
+    int m_nextAnim = 0;
+
     const anim::Skeleton* m_skeleton = nullptr;
     anim::Pose m_pose;
     std::vector<mat4> m_matrixPalette;
     std::vector<mat4> m_jointTransforms;
     float along = 0.f;
+
+    vec3 m_eye = vec3(3);
 
     Camera m_camera;
 };

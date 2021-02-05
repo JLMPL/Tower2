@@ -2584,6 +2584,7 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/Core/Math3D.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
+ src/Debug/DebugMenu.hpp
  src/Debug/Log.hpp
  src/Physics/CCTFilterCallback.hpp
  src/Physics/Cloth.hpp

@@ -203,6 +203,8 @@ Render/MeshManager.hpp
 /home/dominik/Desktop/TOWER_2/src/Gameplay/Render/MeshManager.hpp
 Render/Scene/RenderMesh.hpp
 /home/dominik/Desktop/TOWER_2/src/Gameplay/Render/Scene/RenderMesh.hpp
+Debug/DebugMenu.hpp
+/home/dominik/Desktop/TOWER_2/src/Gameplay/Debug/DebugMenu.hpp
 SDL2/SDL.h
 -
 

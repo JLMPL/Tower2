@@ -2583,6 +2583,7 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Json.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Math3D.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Timer.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Types.hpp
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Debug/DebugMenu.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Debug/Log.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Physics/CCTFilterCallback.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Physics/Cloth.hpp

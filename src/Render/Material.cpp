@@ -30,15 +30,6 @@ void Material::load(std::json& node)
     }
     else
         Log::error("Material %s does not contain specular map!\n", name.c_str());
-
-    m_shader[Shader::Type::Static] =
-        g_ShaderMgr.getShader("Base.frag", Shader::Type::Static);
-
-    m_shader[Shader::Type::StaticWavy] =
-        g_ShaderMgr.getShader("Base.frag", Shader::Type::StaticWavy);
-
-    m_shader[Shader::Type::Skinned] =
-        g_ShaderMgr.getShader("Base.frag", Shader::Type::Skinned);
 }
 
 }
