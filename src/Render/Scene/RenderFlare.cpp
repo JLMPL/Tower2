@@ -1,6 +1,6 @@
 #include "RenderFlare.hpp"
 
-RenderFlare::RenderFlare(const gfx::Texture* tex) :
+RenderFlare::RenderFlare(TextureHandle tex) :
     m_texture(tex)
 {
     constexpr f32 verts[] = {

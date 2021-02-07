@@ -40,7 +40,6 @@ LOCAL void genMatrices(
         return;
 
     globals[joint.index] = DaeCorrectionMatrix * globalTransform;
-    gfx::g_SceneRenderer.addLine((DaeCorrectionMatrix * parentTransform)[3], globals[joint.index][3], vec3(0,1,0));
     palette[joint.index] = DaeCorrectionMatrix * globalTransform * joint.offsetMatrix;
 
     for (u32 i = 0; i < Joint::MaxChildren; i++)

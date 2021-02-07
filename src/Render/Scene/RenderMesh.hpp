@@ -1,5 +1,6 @@
 #pragma once
 #include "RenderEntity.hpp"
+#include "Resource/MeshCache.hpp"
 
 namespace gfx
 {
@@ -12,13 +13,13 @@ public:
     using Ptr = std::unique_ptr<RenderMesh>;
 
     RenderMesh() = default;
-    RenderMesh(gfx::Mesh* mesh);
+    RenderMesh(MeshHandle mesh);
     ~RenderMesh() = default;
 
-    gfx::Mesh* getMesh() const;
+    MeshHandle getMesh() const;
 
     Type getType() const override final;
 
 private:
-    gfx::Mesh* m_mesh = nullptr;
+    MeshHandle m_mesh;
 };

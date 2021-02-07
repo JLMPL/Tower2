@@ -1,20 +1,20 @@
 #pragma once
-#include "Shader.hpp"
-#include "Core/Json.hpp"
+#include <string>
+#include "Resource/TextureCache.hpp"
 
 namespace gfx
 {
 
-class Texture;
-
 class Material
 {
 public:
-    void load(std::json& node);
+    Material() = default;
+    Material(const std::string& name);
 
 public:
-    const Texture*    m_textures[8u] = {nullptr};
-    u32               m_numTextures = 0u;
+    TextureHandle m_diffuse;
+    TextureHandle m_normal;
+    TextureHandle m_specular;
 };
 
 }

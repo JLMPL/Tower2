@@ -1,5 +1,5 @@
 #pragma once
-#include "Animation/Animation.hpp"
+#include "Resource/AnimationCache.hpp"
 #include "Render/Scene/RenderScene.hpp"
 #include "Physics/PhysicsSystem.hpp"
 #include "Camera.hpp"
@@ -31,9 +31,11 @@ private:
 
     RenderSkinnedMesh*        m_rawskin = nullptr;
 
-    anim::Animation m_animations[4];
+    std::vector<AnimationHandle> m_animations;
     int m_currentAnim = 0;
     int m_nextAnim = 0;
+
+    float m_speed = 1.f;
 
     const anim::Skeleton* m_skeleton = nullptr;
     anim::Pose m_pose;

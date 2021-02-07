@@ -2,6 +2,7 @@
 #include "RenderEntity.hpp"
 #include "Render/VertexArray.hpp"
 #include "Render/ArrayBuffer.hpp"
+#include "Resource/TextureCache.hpp"
 
 namespace gfx
 {
@@ -15,7 +16,7 @@ public:
     using Ptr = std::unique_ptr<RenderFlare>;
 
     RenderFlare() = default;
-    RenderFlare(const gfx::Texture* tex);
+    RenderFlare(TextureHandle tex);
     ~RenderFlare() = default;
 
     void render();
@@ -32,7 +33,7 @@ private:
     gfx::ArrayBuffer m_vbo;
     gfx::ArrayBuffer m_tbo;
 
-    const gfx::Texture* m_texture = nullptr;
+    TextureHandle m_texture;
 
     Color m_color;
     f32 m_scale = 1.f;

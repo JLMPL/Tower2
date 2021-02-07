@@ -1,8 +1,6 @@
 #include "RenderScene.hpp"
 #include "Core/Config.hpp"
 #include "Gameplay/Level.hpp"
-#include "Render/MeshManager.hpp"
-#include "Render/TextureManager.hpp"
 
 RenderScene::RenderScene()
 {
@@ -21,15 +19,15 @@ RenderScene::RenderScene()
     m_view = math::lookAt(m_pos, center, math::vecY);
 }
 
-RenderMesh* RenderScene::addRenderMesh(const std::string& mesh)
+RenderMesh* RenderScene::addRenderMesh(MeshHandle mesh)
 {
-    m_meshes.emplace_back(new RenderMesh(gfx::g_MeshMgr.getMesh(mesh)));
+    m_meshes.emplace_back(new RenderMesh(mesh));
     return m_meshes.back().get();
 }
 
-RenderSkinnedMesh* RenderScene::addRenderSkinnedMesh(const std::string& mesh, const mat4* palette)
+RenderSkinnedMesh* RenderScene::addRenderSkinnedMesh(MeshHandle mesh, const mat4* palette)
 {
-    m_skinMeshes.emplace_back(new RenderSkinnedMesh(gfx::g_MeshMgr.getSkinnedMesh(mesh), palette));
+    m_skinMeshes.emplace_back(new RenderSkinnedMesh(mesh, palette));
     return m_skinMeshes.back().get();
 }
 
@@ -41,15 +39,15 @@ RenderLight* RenderScene::addRenderLight()
 
 RenderFlare* RenderScene::addRenderFlare(const std::string& tex)
 {
-    m_flares.emplace_back(new RenderFlare(gfx::g_TexMgr.getTexture(tex)));
+    m_flares.emplace_back(new RenderFlare(TextureCache.load<TextureLoader>("flare"_hs, "flare.png")));
     return m_flares.back().get();
 }
 
-RenderCloth* RenderScene::addRenderCloth(phys::Cloth* cloth)
-{
-    m_cloths.emplace_back(new RenderCloth(cloth));
-    return m_cloths.back().get();
-}
+// RenderCloth* RenderScene::addRenderCloth(phys::Cloth* cloth)
+// {
+//     m_cloths.emplace_back(new RenderCloth(cloth));
+//     return m_cloths.back().get();
+// }
 
 // RenderParticles* RenderScene::addRenderParticles(const ParticleGroup* group)
 // {

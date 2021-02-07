@@ -13,7 +13,7 @@ public:
     Texture(const char* path);
     ~Texture();
 
-    void loadFromFile(const char* path);
+    void loadFromFile(const std::string& path);
     void create(u32 width, u32 height, void* data);
 
     u32 getWidth() const;

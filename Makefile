@@ -960,60 +960,6 @@ src/Render/Material.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Material.cpp.s
 .PHONY : src/Render/Material.cpp.s
 
-src/Render/MaterialManager.o: src/Render/MaterialManager.cpp.o
-
-.PHONY : src/Render/MaterialManager.o
-
-# target to build an object file
-src/Render/MaterialManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o
-.PHONY : src/Render/MaterialManager.cpp.o
-
-src/Render/MaterialManager.i: src/Render/MaterialManager.cpp.i
-
-.PHONY : src/Render/MaterialManager.i
-
-# target to preprocess a source file
-src/Render/MaterialManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MaterialManager.cpp.i
-.PHONY : src/Render/MaterialManager.cpp.i
-
-src/Render/MaterialManager.s: src/Render/MaterialManager.cpp.s
-
-.PHONY : src/Render/MaterialManager.s
-
-# target to generate assembly for a file
-src/Render/MaterialManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MaterialManager.cpp.s
-.PHONY : src/Render/MaterialManager.cpp.s
-
-src/Render/MeshManager.o: src/Render/MeshManager.cpp.o
-
-.PHONY : src/Render/MeshManager.o
-
-# target to build an object file
-src/Render/MeshManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MeshManager.cpp.o
-.PHONY : src/Render/MeshManager.cpp.o
-
-src/Render/MeshManager.i: src/Render/MeshManager.cpp.i
-
-.PHONY : src/Render/MeshManager.i
-
-# target to preprocess a source file
-src/Render/MeshManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MeshManager.cpp.i
-.PHONY : src/Render/MeshManager.cpp.i
-
-src/Render/MeshManager.s: src/Render/MeshManager.cpp.s
-
-.PHONY : src/Render/MeshManager.s
-
-# target to generate assembly for a file
-src/Render/MeshManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MeshManager.cpp.s
-.PHONY : src/Render/MeshManager.cpp.s
-
 src/Render/OpenGL.o: src/Render/OpenGL.cpp.o
 
 .PHONY : src/Render/OpenGL.o
@@ -1311,33 +1257,6 @@ src/Render/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Shader.cpp.s
 .PHONY : src/Render/Shader.cpp.s
 
-src/Render/ShaderManager.o: src/Render/ShaderManager.cpp.o
-
-.PHONY : src/Render/ShaderManager.o
-
-# target to build an object file
-src/Render/ShaderManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o
-.PHONY : src/Render/ShaderManager.cpp.o
-
-src/Render/ShaderManager.i: src/Render/ShaderManager.cpp.i
-
-.PHONY : src/Render/ShaderManager.i
-
-# target to preprocess a source file
-src/Render/ShaderManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/ShaderManager.cpp.i
-.PHONY : src/Render/ShaderManager.cpp.i
-
-src/Render/ShaderManager.s: src/Render/ShaderManager.cpp.s
-
-.PHONY : src/Render/ShaderManager.s
-
-# target to generate assembly for a file
-src/Render/ShaderManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/ShaderManager.cpp.s
-.PHONY : src/Render/ShaderManager.cpp.s
-
 src/Render/ShadowPass.o: src/Render/ShadowPass.cpp.o
 
 .PHONY : src/Render/ShadowPass.o
@@ -1392,33 +1311,6 @@ src/Render/Texture.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/Texture.cpp.s
 .PHONY : src/Render/Texture.cpp.s
 
-src/Render/TextureManager.o: src/Render/TextureManager.cpp.o
-
-.PHONY : src/Render/TextureManager.o
-
-# target to build an object file
-src/Render/TextureManager.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/TextureManager.cpp.o
-.PHONY : src/Render/TextureManager.cpp.o
-
-src/Render/TextureManager.i: src/Render/TextureManager.cpp.i
-
-.PHONY : src/Render/TextureManager.i
-
-# target to preprocess a source file
-src/Render/TextureManager.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/TextureManager.cpp.i
-.PHONY : src/Render/TextureManager.cpp.i
-
-src/Render/TextureManager.s: src/Render/TextureManager.cpp.s
-
-.PHONY : src/Render/TextureManager.s
-
-# target to generate assembly for a file
-src/Render/TextureManager.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/TextureManager.cpp.s
-.PHONY : src/Render/TextureManager.cpp.s
-
 src/Render/VertexArray.o: src/Render/VertexArray.cpp.o
 
 .PHONY : src/Render/VertexArray.o
@@ -1445,6 +1337,114 @@ src/Render/VertexArray.s: src/Render/VertexArray.cpp.s
 src/Render/VertexArray.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/VertexArray.cpp.s
 .PHONY : src/Render/VertexArray.cpp.s
+
+src/Resource/AnimationCache.o: src/Resource/AnimationCache.cpp.o
+
+.PHONY : src/Resource/AnimationCache.o
+
+# target to build an object file
+src/Resource/AnimationCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+.PHONY : src/Resource/AnimationCache.cpp.o
+
+src/Resource/AnimationCache.i: src/Resource/AnimationCache.cpp.i
+
+.PHONY : src/Resource/AnimationCache.i
+
+# target to preprocess a source file
+src/Resource/AnimationCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i
+.PHONY : src/Resource/AnimationCache.cpp.i
+
+src/Resource/AnimationCache.s: src/Resource/AnimationCache.cpp.s
+
+.PHONY : src/Resource/AnimationCache.s
+
+# target to generate assembly for a file
+src/Resource/AnimationCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s
+.PHONY : src/Resource/AnimationCache.cpp.s
+
+src/Resource/MaterialCache.o: src/Resource/MaterialCache.cpp.o
+
+.PHONY : src/Resource/MaterialCache.o
+
+# target to build an object file
+src/Resource/MaterialCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
+.PHONY : src/Resource/MaterialCache.cpp.o
+
+src/Resource/MaterialCache.i: src/Resource/MaterialCache.cpp.i
+
+.PHONY : src/Resource/MaterialCache.i
+
+# target to preprocess a source file
+src/Resource/MaterialCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.i
+.PHONY : src/Resource/MaterialCache.cpp.i
+
+src/Resource/MaterialCache.s: src/Resource/MaterialCache.cpp.s
+
+.PHONY : src/Resource/MaterialCache.s
+
+# target to generate assembly for a file
+src/Resource/MaterialCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.s
+.PHONY : src/Resource/MaterialCache.cpp.s
+
+src/Resource/MeshCache.o: src/Resource/MeshCache.cpp.o
+
+.PHONY : src/Resource/MeshCache.o
+
+# target to build an object file
+src/Resource/MeshCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
+.PHONY : src/Resource/MeshCache.cpp.o
+
+src/Resource/MeshCache.i: src/Resource/MeshCache.cpp.i
+
+.PHONY : src/Resource/MeshCache.i
+
+# target to preprocess a source file
+src/Resource/MeshCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MeshCache.cpp.i
+.PHONY : src/Resource/MeshCache.cpp.i
+
+src/Resource/MeshCache.s: src/Resource/MeshCache.cpp.s
+
+.PHONY : src/Resource/MeshCache.s
+
+# target to generate assembly for a file
+src/Resource/MeshCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MeshCache.cpp.s
+.PHONY : src/Resource/MeshCache.cpp.s
+
+src/Resource/TextureCache.o: src/Resource/TextureCache.cpp.o
+
+.PHONY : src/Resource/TextureCache.o
+
+# target to build an object file
+src/Resource/TextureCache.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+.PHONY : src/Resource/TextureCache.cpp.o
+
+src/Resource/TextureCache.i: src/Resource/TextureCache.cpp.i
+
+.PHONY : src/Resource/TextureCache.i
+
+# target to preprocess a source file
+src/Resource/TextureCache.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i
+.PHONY : src/Resource/TextureCache.cpp.i
+
+src/Resource/TextureCache.s: src/Resource/TextureCache.cpp.s
+
+.PHONY : src/Resource/TextureCache.s
+
+# target to generate assembly for a file
+src/Resource/TextureCache.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s
+.PHONY : src/Resource/TextureCache.cpp.s
 
 src/ThirdParty/ImGui/imgui.o: src/ThirdParty/ImGui/imgui.cpp.o
 
@@ -1791,12 +1791,6 @@ help:
 	@echo "... src/Render/Material.o"
 	@echo "... src/Render/Material.i"
 	@echo "... src/Render/Material.s"
-	@echo "... src/Render/MaterialManager.o"
-	@echo "... src/Render/MaterialManager.i"
-	@echo "... src/Render/MaterialManager.s"
-	@echo "... src/Render/MeshManager.o"
-	@echo "... src/Render/MeshManager.i"
-	@echo "... src/Render/MeshManager.s"
 	@echo "... src/Render/OpenGL.o"
 	@echo "... src/Render/OpenGL.i"
 	@echo "... src/Render/OpenGL.s"
@@ -1830,21 +1824,27 @@ help:
 	@echo "... src/Render/Shader.o"
 	@echo "... src/Render/Shader.i"
 	@echo "... src/Render/Shader.s"
-	@echo "... src/Render/ShaderManager.o"
-	@echo "... src/Render/ShaderManager.i"
-	@echo "... src/Render/ShaderManager.s"
 	@echo "... src/Render/ShadowPass.o"
 	@echo "... src/Render/ShadowPass.i"
 	@echo "... src/Render/ShadowPass.s"
 	@echo "... src/Render/Texture.o"
 	@echo "... src/Render/Texture.i"
 	@echo "... src/Render/Texture.s"
-	@echo "... src/Render/TextureManager.o"
-	@echo "... src/Render/TextureManager.i"
-	@echo "... src/Render/TextureManager.s"
 	@echo "... src/Render/VertexArray.o"
 	@echo "... src/Render/VertexArray.i"
 	@echo "... src/Render/VertexArray.s"
+	@echo "... src/Resource/AnimationCache.o"
+	@echo "... src/Resource/AnimationCache.i"
+	@echo "... src/Resource/AnimationCache.s"
+	@echo "... src/Resource/MaterialCache.o"
+	@echo "... src/Resource/MaterialCache.i"
+	@echo "... src/Resource/MaterialCache.s"
+	@echo "... src/Resource/MeshCache.o"
+	@echo "... src/Resource/MeshCache.i"
+	@echo "... src/Resource/MeshCache.s"
+	@echo "... src/Resource/TextureCache.o"
+	@echo "... src/Resource/TextureCache.i"
+	@echo "... src/Resource/TextureCache.s"
 	@echo "... src/ThirdParty/ImGui/imgui.o"
 	@echo "... src/ThirdParty/ImGui/imgui.i"
 	@echo "... src/ThirdParty/ImGui/imgui.s"

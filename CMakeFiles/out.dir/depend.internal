@@ -16,6 +16,7 @@ CMakeFiles/out.dir/src/Animation/Animator.cpp.o
  src/Render/Framebuffer.hpp
  src/Render/Geometry/Geometry.hpp
  src/Render/LineRenderer.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/RenderPass.hpp
  src/Render/Scene/RenderCloth.hpp
@@ -28,7 +29,12 @@ CMakeFiles/out.dir/src/Animation/Animator.cpp.o
  src/Render/SceneRenderer.hpp
  src/Render/Shader.hpp
  src/Render/ShadowPass.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -1042,29 +1048,29 @@ CMakeFiles/out.dir/src/Application.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Camera.hpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.hpp
  /home/dominik/Desktop/TOWER_2/src/Input/Input.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/CCTFilterCallback.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/Cloth.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/ErrorCallback.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/PhysicsAllocator.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/PhysicsSystem.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/RigidBody.hpp
- /home/dominik/Desktop/TOWER_2/src/Physics/StaticBody.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/ArrayBuffer.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/BasePass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Cubemap.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Framebuffer.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Geometry/Geometry.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/LineRenderer.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/RenderPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/SceneRenderer.hpp
+ /home/dominik/Desktop/TOWER_2/src/Render/Shader.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
  src/Core/Types.hpp
+ src/Physics/CCTFilterCallback.hpp
+ src/Physics/Cloth.hpp
+ src/Physics/ErrorCallback.hpp
+ src/Physics/PhysicsAllocator.hpp
+ src/Physics/PhysicsSystem.hpp
+ src/Physics/RigidBody.hpp
+ src/Physics/StaticBody.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Material.hpp
  src/Render/OpenGL.hpp
@@ -1075,8 +1081,12 @@ CMakeFiles/out.dir/src/Application.cpp.o
  src/Render/Scene/RenderMesh.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Scene/RenderSkinnedMesh.hpp
- src/Render/Shader.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/AnimationCache.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/ImGui/imconfig.h
  src/ThirdParty/ImGui/imgui.h
  src/ThirdParty/ImGui/imgui_impl_opengl3.h
@@ -1293,6 +1303,7 @@ CMakeFiles/out.dir/src/Application.cpp.o
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
  src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -2320,6 +2331,7 @@ CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o
  src/Render/Framebuffer.hpp
  src/Render/Geometry/Geometry.hpp
  src/Render/LineRenderer.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/RenderPass.hpp
  src/Render/Scene/RenderCloth.hpp
@@ -2332,7 +2344,12 @@ CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o
  src/Render/SceneRenderer.hpp
  src/Render/Shader.hpp
  src/Render/ShadowPass.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -2600,8 +2617,6 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/Render/Geometry/Geometry.hpp
  src/Render/LineRenderer.hpp
  src/Render/Material.hpp
- src/Render/MaterialManager.hpp
- src/Render/MeshManager.hpp
  src/Render/OpenGL.hpp
  src/Render/RenderPass.hpp
  src/Render/Scene/RenderCloth.hpp
@@ -2614,7 +2629,12 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/Render/SceneRenderer.hpp
  src/Render/Shader.hpp
  src/Render/ShadowPass.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/AnimationCache.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -2827,6 +2847,7 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
  src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -3781,487 +3802,6 @@ CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o
  src/ThirdParty/glm/vector_relational.hpp
 CMakeFiles/out.dir/src/Physics/Cloth.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Physics/Cloth.cpp
- /home/dominik/Desktop/TOWER_2/src/Physics/Cloth.hpp
- src/Animation/Animation.hpp
- src/Core/Convert.hpp
- src/Core/Json.hpp
- src/Core/Math3D.hpp
- src/Core/Timer.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/Render/ArrayBuffer.hpp
- src/Render/BasePass.hpp
- src/Render/Cubemap.hpp
- src/Render/Framebuffer.hpp
- src/Render/Geometry/Geometry.hpp
- src/Render/LineRenderer.hpp
- src/Render/MeshManager.hpp
- src/Render/OpenGL.hpp
- src/Render/RenderPass.hpp
- src/Render/Scene/RenderCloth.hpp
- src/Render/Scene/RenderEntity.hpp
- src/Render/Scene/RenderFlare.hpp
- src/Render/Scene/RenderLight.hpp
- src/Render/Scene/RenderMesh.hpp
- src/Render/Scene/RenderScene.hpp
- src/Render/Scene/RenderSkinnedMesh.hpp
- src/Render/SceneRenderer.hpp
- src/Render/Shader.hpp
- src/Render/ShadowPass.hpp
- src/Render/VertexArray.hpp
- src/ThirdParty/PhysX/PxActor.h
- src/ThirdParty/PhysX/PxAggregate.h
- src/ThirdParty/PhysX/PxArticulation.h
- src/ThirdParty/PhysX/PxArticulationJoint.h
- src/ThirdParty/PhysX/PxArticulationLink.h
- src/ThirdParty/PhysX/PxBatchQuery.h
- src/ThirdParty/PhysX/PxBatchQueryDesc.h
- src/ThirdParty/PhysX/PxBroadPhase.h
- src/ThirdParty/PhysX/PxClient.h
- src/ThirdParty/PhysX/PxConstraint.h
- src/ThirdParty/PhysX/PxConstraintDesc.h
- src/ThirdParty/PhysX/PxContact.h
- src/ThirdParty/PhysX/PxContactModifyCallback.h
- src/ThirdParty/PhysX/PxDeletionListener.h
- src/ThirdParty/PhysX/PxFiltering.h
- src/ThirdParty/PhysX/PxForceMode.h
- src/ThirdParty/PhysX/PxLockedData.h
- src/ThirdParty/PhysX/PxMaterial.h
- src/ThirdParty/PhysX/PxPhysXConfig.h
- src/ThirdParty/PhysX/PxPhysics.h
- src/ThirdParty/PhysX/PxPhysicsAPI.h
- src/ThirdParty/PhysX/PxQueryFiltering.h
- src/ThirdParty/PhysX/PxQueryReport.h
- src/ThirdParty/PhysX/PxRigidActor.h
- src/ThirdParty/PhysX/PxRigidBody.h
- src/ThirdParty/PhysX/PxRigidDynamic.h
- src/ThirdParty/PhysX/PxRigidStatic.h
- src/ThirdParty/PhysX/PxScene.h
- src/ThirdParty/PhysX/PxSceneDesc.h
- src/ThirdParty/PhysX/PxSceneLock.h
- src/ThirdParty/PhysX/PxShape.h
- src/ThirdParty/PhysX/PxSimulationEventCallback.h
- src/ThirdParty/PhysX/PxSimulationStatistics.h
- src/ThirdParty/PhysX/PxSpatialIndex.h
- src/ThirdParty/PhysX/PxVisualizationParameter.h
- src/ThirdParty/PhysX/PxVolumeCache.h
- src/ThirdParty/PhysX/characterkinematic/PxBoxController.h
- src/ThirdParty/PhysX/characterkinematic/PxCapsuleController.h
- src/ThirdParty/PhysX/characterkinematic/PxCharacter.h
- src/ThirdParty/PhysX/characterkinematic/PxController.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerBehavior.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerManager.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerObstacles.h
- src/ThirdParty/PhysX/characterkinematic/PxExtended.h
- src/ThirdParty/PhysX/cloth/PxCloth.h
- src/ThirdParty/PhysX/cloth/PxClothCollisionData.h
- src/ThirdParty/PhysX/cloth/PxClothFabric.h
- src/ThirdParty/PhysX/cloth/PxClothParticleData.h
- src/ThirdParty/PhysX/cloth/PxClothTypes.h
- src/ThirdParty/PhysX/common/PxBase.h
- src/ThirdParty/PhysX/common/PxCollection.h
- src/ThirdParty/PhysX/common/PxCoreUtilityTypes.h
- src/ThirdParty/PhysX/common/PxMathUtils.h
- src/ThirdParty/PhysX/common/PxMetaData.h
- src/ThirdParty/PhysX/common/PxMetaDataFlags.h
- src/ThirdParty/PhysX/common/PxPhysXCommonConfig.h
- src/ThirdParty/PhysX/common/PxPhysicsInsertionCallback.h
- src/ThirdParty/PhysX/common/PxRenderBuffer.h
- src/ThirdParty/PhysX/common/PxSerialFramework.h
- src/ThirdParty/PhysX/common/PxSerializer.h
- src/ThirdParty/PhysX/common/PxStringTable.h
- src/ThirdParty/PhysX/common/PxTolerancesScale.h
- src/ThirdParty/PhysX/common/PxTypeInfo.h
- src/ThirdParty/PhysX/cooking/PxConvexMeshDesc.h
- src/ThirdParty/PhysX/cooking/PxCooking.h
- src/ThirdParty/PhysX/cooking/PxGaussMapLimit.h
- src/ThirdParty/PhysX/cooking/PxTriangleMeshDesc.h
- src/ThirdParty/PhysX/cooking/Pxc.h
- src/ThirdParty/PhysX/extensions/PxBinaryConverter.h
- src/ThirdParty/PhysX/extensions/PxBroadPhaseExt.h
- src/ThirdParty/PhysX/extensions/PxClothFabricCooker.h
- src/ThirdParty/PhysX/extensions/PxClothMeshDesc.h
- src/ThirdParty/PhysX/extensions/PxClothMeshQuadifier.h
- src/ThirdParty/PhysX/extensions/PxConstraintExt.h
- src/ThirdParty/PhysX/extensions/PxD6Joint.h
- src/ThirdParty/PhysX/extensions/PxDefaultAllocator.h
- src/ThirdParty/PhysX/extensions/PxDefaultBufferedProfiler.h
- src/ThirdParty/PhysX/extensions/PxDefaultCpuDispatcher.h
- src/ThirdParty/PhysX/extensions/PxDefaultErrorCallback.h
- src/ThirdParty/PhysX/extensions/PxDefaultSimulationFilterShader.h
- src/ThirdParty/PhysX/extensions/PxDefaultStreams.h
- src/ThirdParty/PhysX/extensions/PxDistanceJoint.h
- src/ThirdParty/PhysX/extensions/PxExtensionsAPI.h
- src/ThirdParty/PhysX/extensions/PxFixedJoint.h
- src/ThirdParty/PhysX/extensions/PxJoint.h
- src/ThirdParty/PhysX/extensions/PxJointLimit.h
- src/ThirdParty/PhysX/extensions/PxJointRepXSerializer.h
- src/ThirdParty/PhysX/extensions/PxParticleExt.h
- src/ThirdParty/PhysX/extensions/PxPrismaticJoint.h
- src/ThirdParty/PhysX/extensions/PxRepXSerializer.h
- src/ThirdParty/PhysX/extensions/PxRepXSimpleType.h
- src/ThirdParty/PhysX/extensions/PxRevoluteJoint.h
- src/ThirdParty/PhysX/extensions/PxRigidBodyExt.h
- src/ThirdParty/PhysX/extensions/PxSerialization.h
- src/ThirdParty/PhysX/extensions/PxShapeExt.h
- src/ThirdParty/PhysX/extensions/PxSimpleFactory.h
- src/ThirdParty/PhysX/extensions/PxSmoothNormals.h
- src/ThirdParty/PhysX/extensions/PxSphericalJoint.h
- src/ThirdParty/PhysX/extensions/PxStringTableExt.h
- src/ThirdParty/PhysX/extensions/PxTriangleMeshExt.h
- src/ThirdParty/PhysX/extensions/PxVisualDebuggerExt.h
- src/ThirdParty/PhysX/foundation/Px.h
- src/ThirdParty/PhysX/foundation/PxAllocatorCallback.h
- src/ThirdParty/PhysX/foundation/PxAssert.h
- src/ThirdParty/PhysX/foundation/PxBitAndData.h
- src/ThirdParty/PhysX/foundation/PxBounds3.h
- src/ThirdParty/PhysX/foundation/PxBroadcastingAllocator.h
- src/ThirdParty/PhysX/foundation/PxErrorCallback.h
- src/ThirdParty/PhysX/foundation/PxErrors.h
- src/ThirdParty/PhysX/foundation/PxFlags.h
- src/ThirdParty/PhysX/foundation/PxFoundation.h
- src/ThirdParty/PhysX/foundation/PxIO.h
- src/ThirdParty/PhysX/foundation/PxIntrinsics.h
- src/ThirdParty/PhysX/foundation/PxMat33.h
- src/ThirdParty/PhysX/foundation/PxMat44.h
- src/ThirdParty/PhysX/foundation/PxMath.h
- src/ThirdParty/PhysX/foundation/PxMemory.h
- src/ThirdParty/PhysX/foundation/PxPlane.h
- src/ThirdParty/PhysX/foundation/PxPreprocessor.h
- src/ThirdParty/PhysX/foundation/PxQuat.h
- src/ThirdParty/PhysX/foundation/PxSimpleTypes.h
- src/ThirdParty/PhysX/foundation/PxStrideIterator.h
- src/ThirdParty/PhysX/foundation/PxString.h
- src/ThirdParty/PhysX/foundation/PxTransform.h
- src/ThirdParty/PhysX/foundation/PxUnionCast.h
- src/ThirdParty/PhysX/foundation/PxVec2.h
- src/ThirdParty/PhysX/foundation/PxVec3.h
- src/ThirdParty/PhysX/foundation/PxVec4.h
- src/ThirdParty/PhysX/foundation/PxVersionNumber.h
- src/ThirdParty/PhysX/foundation/unix/PxUnixIntrinsics.h
- src/ThirdParty/PhysX/foundation/unix/PxUnixString.h
- src/ThirdParty/PhysX/foundation/windows/PxWindowsIntrinsics.h
- src/ThirdParty/PhysX/foundation/windows/PxWindowsString.h
- src/ThirdParty/PhysX/geometry/PxBoxGeometry.h
- src/ThirdParty/PhysX/geometry/PxCapsuleGeometry.h
- src/ThirdParty/PhysX/geometry/PxConvexMesh.h
- src/ThirdParty/PhysX/geometry/PxConvexMeshGeometry.h
- src/ThirdParty/PhysX/geometry/PxGeometry.h
- src/ThirdParty/PhysX/geometry/PxGeometryHelpers.h
- src/ThirdParty/PhysX/geometry/PxGeometryQuery.h
- src/ThirdParty/PhysX/geometry/PxHeightField.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldDesc.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldFlag.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldGeometry.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldSample.h
- src/ThirdParty/PhysX/geometry/PxMeshQuery.h
- src/ThirdParty/PhysX/geometry/PxMeshScale.h
- src/ThirdParty/PhysX/geometry/PxPlaneGeometry.h
- src/ThirdParty/PhysX/geometry/PxSimpleTriangleMesh.h
- src/ThirdParty/PhysX/geometry/PxSphereGeometry.h
- src/ThirdParty/PhysX/geometry/PxTriangle.h
- src/ThirdParty/PhysX/geometry/PxTriangleMesh.h
- src/ThirdParty/PhysX/geometry/PxTriangleMeshGeometry.h
- src/ThirdParty/PhysX/particles/PxParticleBase.h
- src/ThirdParty/PhysX/particles/PxParticleBaseFlag.h
- src/ThirdParty/PhysX/particles/PxParticleCreationData.h
- src/ThirdParty/PhysX/particles/PxParticleFlag.h
- src/ThirdParty/PhysX/particles/PxParticleFluid.h
- src/ThirdParty/PhysX/particles/PxParticleFluidReadData.h
- src/ThirdParty/PhysX/particles/PxParticleReadData.h
- src/ThirdParty/PhysX/particles/PxParticleSystem.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileBase.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileCompileTimeEventFilter.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileContextProvider.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventBufferClient.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventBufferClientManager.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventFilter.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventHandler.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventId.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventMutex.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventNames.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventSender.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventSystem.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEvents.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileMemoryEventTypes.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileScopedEvent.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileZone.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileZoneManager.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnection.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnectionFlags.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnectionManager.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdDataStream.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdErrorCodes.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdNetworkStreams.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdObjectModelBaseTypeDefs.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdObjectModelBaseTypes.h
- src/ThirdParty/PhysX/pvd/PxVisualDebugger.h
- src/ThirdParty/PhysX/pxtask/PxCpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxCudaContextManager.h
- src/ThirdParty/PhysX/pxtask/PxCudaMemoryManager.h
- src/ThirdParty/PhysX/pxtask/PxGpuCopyDesc.h
- src/ThirdParty/PhysX/pxtask/PxGpuCopyDescQueue.h
- src/ThirdParty/PhysX/pxtask/PxGpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxGpuTask.h
- src/ThirdParty/PhysX/pxtask/PxSpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxSpuTask.h
- src/ThirdParty/PhysX/pxtask/PxTask.h
- src/ThirdParty/PhysX/pxtask/PxTaskManager.h
- src/ThirdParty/PhysX/vehicle/PxVehicleComponents.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDrive.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDrive4W.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDriveNW.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDriveTank.h
- src/ThirdParty/PhysX/vehicle/PxVehicleNoDrive.h
- src/ThirdParty/PhysX/vehicle/PxVehicleSDK.h
- src/ThirdParty/PhysX/vehicle/PxVehicleShaders.h
- src/ThirdParty/PhysX/vehicle/PxVehicleTireFriction.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUpdate.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilControl.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
- src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
- src/ThirdParty/json/json.hpp
 CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Physics/ErrorCallback.cpp
  /home/dominik/Desktop/TOWER_2/src/Physics/ErrorCallback.hpp
@@ -4503,7 +4043,7 @@ CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o
  src/Render/Framebuffer.hpp
  src/Render/Geometry/Geometry.hpp
  src/Render/LineRenderer.hpp
- src/Render/MeshManager.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/RenderPass.hpp
  src/Render/Scene/RenderCloth.hpp
@@ -4516,7 +4056,11 @@ CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o
  src/Render/SceneRenderer.hpp
  src/Render/Shader.hpp
  src/Render/ShadowPass.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -4729,6 +4273,7 @@ CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
  src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -5900,11 +5445,8 @@ CMakeFiles/out.dir/src/Render/BasePass.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Geometry/Geometry.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/LineRenderer.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Material.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/RenderPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Shader.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/Texture.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
  src/Animation/Animation.hpp
  src/Core/Config.hpp
@@ -5923,7 +5465,12 @@ CMakeFiles/out.dir/src/Render/BasePass.cpp.o
  src/Render/Scene/RenderMesh.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Scene/RenderSkinnedMesh.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -6190,6 +5737,12 @@ CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o
  src/Core/Math3D.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
+ src/Render/Material.hpp
+ src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -6444,9 +5997,10 @@ CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/Material.hpp
- src/Render/MaterialManager.hpp
  src/Render/OpenGL.hpp
- src/Render/Shader.hpp
+ src/Render/Texture.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/PhysX/PxPhysXConfig.h
  src/ThirdParty/PhysX/characterkinematic/PxExtended.h
  src/ThirdParty/PhysX/common/PxPhysXCommonConfig.h
@@ -6463,6 +6017,7 @@ CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o
  src/ThirdParty/PhysX/foundation/PxVersionNumber.h
  src/ThirdParty/PhysX/foundation/unix/PxUnixIntrinsics.h
  src/ThirdParty/PhysX/foundation/windows/PxWindowsIntrinsics.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -6718,9 +6273,10 @@ CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/Material.hpp
- src/Render/MaterialManager.hpp
  src/Render/OpenGL.hpp
- src/Render/Shader.hpp
+ src/Render/Texture.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/PhysX/PxPhysXConfig.h
  src/ThirdParty/PhysX/characterkinematic/PxExtended.h
  src/ThirdParty/PhysX/common/PxPhysXCommonConfig.h
@@ -6737,6 +6293,7 @@ CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o
  src/ThirdParty/PhysX/foundation/PxVersionNumber.h
  src/ThirdParty/PhysX/foundation/unix/PxUnixIntrinsics.h
  src/ThirdParty/PhysX/foundation/windows/PxWindowsIntrinsics.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -7238,761 +6795,12 @@ CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o
 CMakeFiles/out.dir/src/Render/Material.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Material.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/Material.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/Shader.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/Texture.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.hpp
- src/Core/Json.hpp
- src/Core/Math3D.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/OpenGL.hpp
- src/Render/Shader.hpp
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
- src/ThirdParty/json/json.hpp
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.cpp
- /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.hpp
- src/Core/Json.hpp
- src/Core/Math3D.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/Render/Material.hpp
- src/Render/OpenGL.hpp
- src/Render/Shader.hpp
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
- src/ThirdParty/json/json.hpp
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Render/ArrayBuffer.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/Geometry/Geometry.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/MeshManager.cpp
- /home/dominik/Desktop/TOWER_2/src/Render/MeshManager.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
- src/Animation/Animation.hpp
- src/Core/Json.hpp
- src/Core/Math3D.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
- src/ThirdParty/json/json.hpp
+ src/Render/Texture.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.hpp
@@ -8008,6 +6816,7 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/Scene/RenderCloth.hpp
  src/Render/Scene/RenderEntity.hpp
@@ -8016,7 +6825,12 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o
  src/Render/Scene/RenderMesh.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Scene/RenderSkinnedMesh.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -8260,471 +7074,6 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o
  src/ThirdParty/json/json.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderCloth.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderCloth.cpp
- /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderCloth.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.hpp
- src/Animation/Animation.hpp
- src/Core/Json.hpp
- src/Core/Math3D.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/Physics/Cloth.hpp
- src/Render/ArrayBuffer.hpp
- src/Render/Geometry/Geometry.hpp
- src/Render/OpenGL.hpp
- src/Render/VertexArray.hpp
- src/ThirdParty/PhysX/PxActor.h
- src/ThirdParty/PhysX/PxAggregate.h
- src/ThirdParty/PhysX/PxArticulation.h
- src/ThirdParty/PhysX/PxArticulationJoint.h
- src/ThirdParty/PhysX/PxArticulationLink.h
- src/ThirdParty/PhysX/PxBatchQuery.h
- src/ThirdParty/PhysX/PxBatchQueryDesc.h
- src/ThirdParty/PhysX/PxBroadPhase.h
- src/ThirdParty/PhysX/PxClient.h
- src/ThirdParty/PhysX/PxConstraint.h
- src/ThirdParty/PhysX/PxConstraintDesc.h
- src/ThirdParty/PhysX/PxContact.h
- src/ThirdParty/PhysX/PxContactModifyCallback.h
- src/ThirdParty/PhysX/PxDeletionListener.h
- src/ThirdParty/PhysX/PxFiltering.h
- src/ThirdParty/PhysX/PxForceMode.h
- src/ThirdParty/PhysX/PxLockedData.h
- src/ThirdParty/PhysX/PxMaterial.h
- src/ThirdParty/PhysX/PxPhysXConfig.h
- src/ThirdParty/PhysX/PxPhysics.h
- src/ThirdParty/PhysX/PxPhysicsAPI.h
- src/ThirdParty/PhysX/PxQueryFiltering.h
- src/ThirdParty/PhysX/PxQueryReport.h
- src/ThirdParty/PhysX/PxRigidActor.h
- src/ThirdParty/PhysX/PxRigidBody.h
- src/ThirdParty/PhysX/PxRigidDynamic.h
- src/ThirdParty/PhysX/PxRigidStatic.h
- src/ThirdParty/PhysX/PxScene.h
- src/ThirdParty/PhysX/PxSceneDesc.h
- src/ThirdParty/PhysX/PxSceneLock.h
- src/ThirdParty/PhysX/PxShape.h
- src/ThirdParty/PhysX/PxSimulationEventCallback.h
- src/ThirdParty/PhysX/PxSimulationStatistics.h
- src/ThirdParty/PhysX/PxSpatialIndex.h
- src/ThirdParty/PhysX/PxVisualizationParameter.h
- src/ThirdParty/PhysX/PxVolumeCache.h
- src/ThirdParty/PhysX/characterkinematic/PxBoxController.h
- src/ThirdParty/PhysX/characterkinematic/PxCapsuleController.h
- src/ThirdParty/PhysX/characterkinematic/PxCharacter.h
- src/ThirdParty/PhysX/characterkinematic/PxController.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerBehavior.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerManager.h
- src/ThirdParty/PhysX/characterkinematic/PxControllerObstacles.h
- src/ThirdParty/PhysX/characterkinematic/PxExtended.h
- src/ThirdParty/PhysX/cloth/PxCloth.h
- src/ThirdParty/PhysX/cloth/PxClothCollisionData.h
- src/ThirdParty/PhysX/cloth/PxClothFabric.h
- src/ThirdParty/PhysX/cloth/PxClothParticleData.h
- src/ThirdParty/PhysX/cloth/PxClothTypes.h
- src/ThirdParty/PhysX/common/PxBase.h
- src/ThirdParty/PhysX/common/PxCollection.h
- src/ThirdParty/PhysX/common/PxCoreUtilityTypes.h
- src/ThirdParty/PhysX/common/PxMathUtils.h
- src/ThirdParty/PhysX/common/PxMetaData.h
- src/ThirdParty/PhysX/common/PxMetaDataFlags.h
- src/ThirdParty/PhysX/common/PxPhysXCommonConfig.h
- src/ThirdParty/PhysX/common/PxPhysicsInsertionCallback.h
- src/ThirdParty/PhysX/common/PxRenderBuffer.h
- src/ThirdParty/PhysX/common/PxSerialFramework.h
- src/ThirdParty/PhysX/common/PxSerializer.h
- src/ThirdParty/PhysX/common/PxStringTable.h
- src/ThirdParty/PhysX/common/PxTolerancesScale.h
- src/ThirdParty/PhysX/common/PxTypeInfo.h
- src/ThirdParty/PhysX/cooking/PxConvexMeshDesc.h
- src/ThirdParty/PhysX/cooking/PxCooking.h
- src/ThirdParty/PhysX/cooking/PxGaussMapLimit.h
- src/ThirdParty/PhysX/cooking/PxTriangleMeshDesc.h
- src/ThirdParty/PhysX/cooking/Pxc.h
- src/ThirdParty/PhysX/extensions/PxBinaryConverter.h
- src/ThirdParty/PhysX/extensions/PxBroadPhaseExt.h
- src/ThirdParty/PhysX/extensions/PxClothFabricCooker.h
- src/ThirdParty/PhysX/extensions/PxClothMeshDesc.h
- src/ThirdParty/PhysX/extensions/PxClothMeshQuadifier.h
- src/ThirdParty/PhysX/extensions/PxConstraintExt.h
- src/ThirdParty/PhysX/extensions/PxD6Joint.h
- src/ThirdParty/PhysX/extensions/PxDefaultAllocator.h
- src/ThirdParty/PhysX/extensions/PxDefaultBufferedProfiler.h
- src/ThirdParty/PhysX/extensions/PxDefaultCpuDispatcher.h
- src/ThirdParty/PhysX/extensions/PxDefaultErrorCallback.h
- src/ThirdParty/PhysX/extensions/PxDefaultSimulationFilterShader.h
- src/ThirdParty/PhysX/extensions/PxDefaultStreams.h
- src/ThirdParty/PhysX/extensions/PxDistanceJoint.h
- src/ThirdParty/PhysX/extensions/PxExtensionsAPI.h
- src/ThirdParty/PhysX/extensions/PxFixedJoint.h
- src/ThirdParty/PhysX/extensions/PxJoint.h
- src/ThirdParty/PhysX/extensions/PxJointLimit.h
- src/ThirdParty/PhysX/extensions/PxJointRepXSerializer.h
- src/ThirdParty/PhysX/extensions/PxParticleExt.h
- src/ThirdParty/PhysX/extensions/PxPrismaticJoint.h
- src/ThirdParty/PhysX/extensions/PxRepXSerializer.h
- src/ThirdParty/PhysX/extensions/PxRepXSimpleType.h
- src/ThirdParty/PhysX/extensions/PxRevoluteJoint.h
- src/ThirdParty/PhysX/extensions/PxRigidBodyExt.h
- src/ThirdParty/PhysX/extensions/PxSerialization.h
- src/ThirdParty/PhysX/extensions/PxShapeExt.h
- src/ThirdParty/PhysX/extensions/PxSimpleFactory.h
- src/ThirdParty/PhysX/extensions/PxSmoothNormals.h
- src/ThirdParty/PhysX/extensions/PxSphericalJoint.h
- src/ThirdParty/PhysX/extensions/PxStringTableExt.h
- src/ThirdParty/PhysX/extensions/PxTriangleMeshExt.h
- src/ThirdParty/PhysX/extensions/PxVisualDebuggerExt.h
- src/ThirdParty/PhysX/foundation/Px.h
- src/ThirdParty/PhysX/foundation/PxAllocatorCallback.h
- src/ThirdParty/PhysX/foundation/PxAssert.h
- src/ThirdParty/PhysX/foundation/PxBitAndData.h
- src/ThirdParty/PhysX/foundation/PxBounds3.h
- src/ThirdParty/PhysX/foundation/PxBroadcastingAllocator.h
- src/ThirdParty/PhysX/foundation/PxErrorCallback.h
- src/ThirdParty/PhysX/foundation/PxErrors.h
- src/ThirdParty/PhysX/foundation/PxFlags.h
- src/ThirdParty/PhysX/foundation/PxFoundation.h
- src/ThirdParty/PhysX/foundation/PxIO.h
- src/ThirdParty/PhysX/foundation/PxIntrinsics.h
- src/ThirdParty/PhysX/foundation/PxMat33.h
- src/ThirdParty/PhysX/foundation/PxMat44.h
- src/ThirdParty/PhysX/foundation/PxMath.h
- src/ThirdParty/PhysX/foundation/PxMemory.h
- src/ThirdParty/PhysX/foundation/PxPlane.h
- src/ThirdParty/PhysX/foundation/PxPreprocessor.h
- src/ThirdParty/PhysX/foundation/PxQuat.h
- src/ThirdParty/PhysX/foundation/PxSimpleTypes.h
- src/ThirdParty/PhysX/foundation/PxStrideIterator.h
- src/ThirdParty/PhysX/foundation/PxString.h
- src/ThirdParty/PhysX/foundation/PxTransform.h
- src/ThirdParty/PhysX/foundation/PxUnionCast.h
- src/ThirdParty/PhysX/foundation/PxVec2.h
- src/ThirdParty/PhysX/foundation/PxVec3.h
- src/ThirdParty/PhysX/foundation/PxVec4.h
- src/ThirdParty/PhysX/foundation/PxVersionNumber.h
- src/ThirdParty/PhysX/foundation/unix/PxUnixIntrinsics.h
- src/ThirdParty/PhysX/foundation/unix/PxUnixString.h
- src/ThirdParty/PhysX/foundation/windows/PxWindowsIntrinsics.h
- src/ThirdParty/PhysX/foundation/windows/PxWindowsString.h
- src/ThirdParty/PhysX/geometry/PxBoxGeometry.h
- src/ThirdParty/PhysX/geometry/PxCapsuleGeometry.h
- src/ThirdParty/PhysX/geometry/PxConvexMesh.h
- src/ThirdParty/PhysX/geometry/PxConvexMeshGeometry.h
- src/ThirdParty/PhysX/geometry/PxGeometry.h
- src/ThirdParty/PhysX/geometry/PxGeometryHelpers.h
- src/ThirdParty/PhysX/geometry/PxGeometryQuery.h
- src/ThirdParty/PhysX/geometry/PxHeightField.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldDesc.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldFlag.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldGeometry.h
- src/ThirdParty/PhysX/geometry/PxHeightFieldSample.h
- src/ThirdParty/PhysX/geometry/PxMeshQuery.h
- src/ThirdParty/PhysX/geometry/PxMeshScale.h
- src/ThirdParty/PhysX/geometry/PxPlaneGeometry.h
- src/ThirdParty/PhysX/geometry/PxSimpleTriangleMesh.h
- src/ThirdParty/PhysX/geometry/PxSphereGeometry.h
- src/ThirdParty/PhysX/geometry/PxTriangle.h
- src/ThirdParty/PhysX/geometry/PxTriangleMesh.h
- src/ThirdParty/PhysX/geometry/PxTriangleMeshGeometry.h
- src/ThirdParty/PhysX/particles/PxParticleBase.h
- src/ThirdParty/PhysX/particles/PxParticleBaseFlag.h
- src/ThirdParty/PhysX/particles/PxParticleCreationData.h
- src/ThirdParty/PhysX/particles/PxParticleFlag.h
- src/ThirdParty/PhysX/particles/PxParticleFluid.h
- src/ThirdParty/PhysX/particles/PxParticleFluidReadData.h
- src/ThirdParty/PhysX/particles/PxParticleReadData.h
- src/ThirdParty/PhysX/particles/PxParticleSystem.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileBase.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileCompileTimeEventFilter.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileContextProvider.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventBufferClient.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventBufferClientManager.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventFilter.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventHandler.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventId.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventMutex.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventNames.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventSender.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEventSystem.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileEvents.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileMemoryEventTypes.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileScopedEvent.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileZone.h
- src/ThirdParty/PhysX/physxprofilesdk/PxProfileZoneManager.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnection.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnectionFlags.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdConnectionManager.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdDataStream.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdErrorCodes.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdNetworkStreams.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdObjectModelBaseTypeDefs.h
- src/ThirdParty/PhysX/physxvisualdebuggersdk/PvdObjectModelBaseTypes.h
- src/ThirdParty/PhysX/pvd/PxVisualDebugger.h
- src/ThirdParty/PhysX/pxtask/PxCpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxCudaContextManager.h
- src/ThirdParty/PhysX/pxtask/PxCudaMemoryManager.h
- src/ThirdParty/PhysX/pxtask/PxGpuCopyDesc.h
- src/ThirdParty/PhysX/pxtask/PxGpuCopyDescQueue.h
- src/ThirdParty/PhysX/pxtask/PxGpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxGpuTask.h
- src/ThirdParty/PhysX/pxtask/PxSpuDispatcher.h
- src/ThirdParty/PhysX/pxtask/PxSpuTask.h
- src/ThirdParty/PhysX/pxtask/PxTask.h
- src/ThirdParty/PhysX/pxtask/PxTaskManager.h
- src/ThirdParty/PhysX/vehicle/PxVehicleComponents.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDrive.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDrive4W.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDriveNW.h
- src/ThirdParty/PhysX/vehicle/PxVehicleDriveTank.h
- src/ThirdParty/PhysX/vehicle/PxVehicleNoDrive.h
- src/ThirdParty/PhysX/vehicle/PxVehicleSDK.h
- src/ThirdParty/PhysX/vehicle/PxVehicleShaders.h
- src/ThirdParty/PhysX/vehicle/PxVehicleTireFriction.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUpdate.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilControl.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
- src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
- src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
- src/ThirdParty/json/json.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderEntity.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.hpp
@@ -8979,7 +7328,10 @@ CMakeFiles/out.dir/src/Render/Scene/RenderFlare.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -9477,8 +7829,14 @@ CMakeFiles/out.dir/src/Render/Scene/RenderMesh.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -9747,12 +8105,15 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/Physics/StaticBody.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
- src/Render/MeshManager.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Texture.hpp
- src/Render/TextureManager.hpp
  src/Render/VertexArray.hpp
+ src/Resource/AnimationCache.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -9965,6 +8326,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilSetup.h
  src/ThirdParty/PhysX/vehicle/PxVehicleUtilTelemetry.h
  src/ThirdParty/PhysX/vehicle/PxVehicleWheels.h
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -10217,8 +8579,14 @@ CMakeFiles/out.dir/src/Render/Scene/RenderSkinnedMesh.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -10482,6 +8850,7 @@ CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/Scene/RenderCloth.hpp
  src/Render/Scene/RenderEntity.hpp
@@ -10490,7 +8859,12 @@ CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o
  src/Render/Scene/RenderMesh.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Scene/RenderSkinnedMesh.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -10982,254 +9356,6 @@ CMakeFiles/out.dir/src/Render/Shader.cpp.o
  src/ThirdParty/glm/vec3.hpp
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.cpp
- /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.hpp
- src/Core/Math3D.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/Render/OpenGL.hpp
- src/Render/Shader.hpp
- src/ThirdParty/glm/./common.hpp
- src/ThirdParty/glm/./detail/_noise.hpp
- src/ThirdParty/glm/./detail/_vectorize.hpp
- src/ThirdParty/glm/./detail/func_common.hpp
- src/ThirdParty/glm/./detail/func_exponential.hpp
- src/ThirdParty/glm/./detail/func_geometric.hpp
- src/ThirdParty/glm/./detail/func_integer.hpp
- src/ThirdParty/glm/./detail/precision.hpp
- src/ThirdParty/glm/./detail/setup.hpp
- src/ThirdParty/glm/./detail/type_half.hpp
- src/ThirdParty/glm/./detail/type_half.inl
- src/ThirdParty/glm/./detail/type_int.hpp
- src/ThirdParty/glm/./detail/type_vec1.hpp
- src/ThirdParty/glm/./detail/type_vec1.inl
- src/ThirdParty/glm/./detail/type_vec2.hpp
- src/ThirdParty/glm/./exponential.hpp
- src/ThirdParty/glm/./geometric.hpp
- src/ThirdParty/glm/./glm.hpp
- src/ThirdParty/glm/./gtc/bitfield.hpp
- src/ThirdParty/glm/./gtc/bitfield.inl
- src/ThirdParty/glm/./gtc/color_space.hpp
- src/ThirdParty/glm/./gtc/color_space.inl
- src/ThirdParty/glm/./gtc/constants.hpp
- src/ThirdParty/glm/./gtc/constants.inl
- src/ThirdParty/glm/./gtc/epsilon.hpp
- src/ThirdParty/glm/./gtc/epsilon.inl
- src/ThirdParty/glm/./gtc/functions.hpp
- src/ThirdParty/glm/./gtc/functions.inl
- src/ThirdParty/glm/./gtc/integer.hpp
- src/ThirdParty/glm/./gtc/integer.inl
- src/ThirdParty/glm/./gtc/matrix_access.hpp
- src/ThirdParty/glm/./gtc/matrix_access.inl
- src/ThirdParty/glm/./gtc/matrix_integer.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.hpp
- src/ThirdParty/glm/./gtc/matrix_inverse.inl
- src/ThirdParty/glm/./gtc/matrix_transform.hpp
- src/ThirdParty/glm/./gtc/matrix_transform.inl
- src/ThirdParty/glm/./gtc/noise.hpp
- src/ThirdParty/glm/./gtc/noise.inl
- src/ThirdParty/glm/./gtc/packing.hpp
- src/ThirdParty/glm/./gtc/packing.inl
- src/ThirdParty/glm/./gtc/quaternion.hpp
- src/ThirdParty/glm/./gtc/quaternion.inl
- src/ThirdParty/glm/./gtc/quaternion_simd.inl
- src/ThirdParty/glm/./gtc/random.hpp
- src/ThirdParty/glm/./gtc/random.inl
- src/ThirdParty/glm/./gtc/reciprocal.hpp
- src/ThirdParty/glm/./gtc/reciprocal.inl
- src/ThirdParty/glm/./gtc/round.hpp
- src/ThirdParty/glm/./gtc/round.inl
- src/ThirdParty/glm/./gtc/type_aligned.hpp
- src/ThirdParty/glm/./gtc/type_precision.hpp
- src/ThirdParty/glm/./gtc/type_precision.inl
- src/ThirdParty/glm/./gtc/type_ptr.hpp
- src/ThirdParty/glm/./gtc/type_ptr.inl
- src/ThirdParty/glm/./gtc/ulp.hpp
- src/ThirdParty/glm/./gtc/ulp.inl
- src/ThirdParty/glm/./gtc/vec1.hpp
- src/ThirdParty/glm/./gtc/vec1.inl
- src/ThirdParty/glm/./gtx/associated_min_max.hpp
- src/ThirdParty/glm/./gtx/associated_min_max.inl
- src/ThirdParty/glm/./gtx/bit.hpp
- src/ThirdParty/glm/./gtx/bit.inl
- src/ThirdParty/glm/./gtx/closest_point.hpp
- src/ThirdParty/glm/./gtx/closest_point.inl
- src/ThirdParty/glm/./gtx/color_space.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
- src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
- src/ThirdParty/glm/./gtx/compatibility.hpp
- src/ThirdParty/glm/./gtx/compatibility.inl
- src/ThirdParty/glm/./gtx/component_wise.hpp
- src/ThirdParty/glm/./gtx/component_wise.inl
- src/ThirdParty/glm/./gtx/dual_quaternion.hpp
- src/ThirdParty/glm/./gtx/dual_quaternion.inl
- src/ThirdParty/glm/./gtx/euler_angles.hpp
- src/ThirdParty/glm/./gtx/euler_angles.inl
- src/ThirdParty/glm/./gtx/extend.hpp
- src/ThirdParty/glm/./gtx/extend.inl
- src/ThirdParty/glm/./gtx/extended_min_max.hpp
- src/ThirdParty/glm/./gtx/extended_min_max.inl
- src/ThirdParty/glm/./gtx/fast_exponential.hpp
- src/ThirdParty/glm/./gtx/fast_exponential.inl
- src/ThirdParty/glm/./gtx/fast_square_root.hpp
- src/ThirdParty/glm/./gtx/fast_square_root.inl
- src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
- src/ThirdParty/glm/./gtx/fast_trigonometry.inl
- src/ThirdParty/glm/./gtx/gradient_paint.hpp
- src/ThirdParty/glm/./gtx/gradient_paint.inl
- src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
- src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
- src/ThirdParty/glm/./gtx/integer.hpp
- src/ThirdParty/glm/./gtx/intersect.hpp
- src/ThirdParty/glm/./gtx/intersect.inl
- src/ThirdParty/glm/./gtx/log_base.hpp
- src/ThirdParty/glm/./gtx/log_base.inl
- src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
- src/ThirdParty/glm/./gtx/matrix_cross_product.inl
- src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
- src/ThirdParty/glm/./gtx/matrix_interpolation.inl
- src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
- src/ThirdParty/glm/./gtx/matrix_major_storage.inl
- src/ThirdParty/glm/./gtx/matrix_operation.hpp
- src/ThirdParty/glm/./gtx/matrix_operation.inl
- src/ThirdParty/glm/./gtx/matrix_query.hpp
- src/ThirdParty/glm/./gtx/matrix_query.inl
- src/ThirdParty/glm/./gtx/mixed_product.hpp
- src/ThirdParty/glm/./gtx/mixed_product.inl
- src/ThirdParty/glm/./gtx/norm.hpp
- src/ThirdParty/glm/./gtx/norm.inl
- src/ThirdParty/glm/./gtx/normal.hpp
- src/ThirdParty/glm/./gtx/normal.inl
- src/ThirdParty/glm/./gtx/normalize_dot.hpp
- src/ThirdParty/glm/./gtx/normalize_dot.inl
- src/ThirdParty/glm/./gtx/number_precision.hpp
- src/ThirdParty/glm/./gtx/number_precision.inl
- src/ThirdParty/glm/./gtx/optimum_pow.hpp
- src/ThirdParty/glm/./gtx/optimum_pow.inl
- src/ThirdParty/glm/./gtx/orthonormalize.hpp
- src/ThirdParty/glm/./gtx/orthonormalize.inl
- src/ThirdParty/glm/./gtx/perpendicular.hpp
- src/ThirdParty/glm/./gtx/perpendicular.inl
- src/ThirdParty/glm/./gtx/polar_coordinates.hpp
- src/ThirdParty/glm/./gtx/polar_coordinates.inl
- src/ThirdParty/glm/./gtx/projection.hpp
- src/ThirdParty/glm/./gtx/projection.inl
- src/ThirdParty/glm/./gtx/quaternion.hpp
- src/ThirdParty/glm/./gtx/range.hpp
- src/ThirdParty/glm/./gtx/raw_data.hpp
- src/ThirdParty/glm/./gtx/raw_data.inl
- src/ThirdParty/glm/./gtx/rotate_vector.hpp
- src/ThirdParty/glm/./gtx/rotate_vector.inl
- src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
- src/ThirdParty/glm/./gtx/spline.hpp
- src/ThirdParty/glm/./gtx/spline.inl
- src/ThirdParty/glm/./gtx/std_based_type.hpp
- src/ThirdParty/glm/./gtx/std_based_type.inl
- src/ThirdParty/glm/./gtx/string_cast.hpp
- src/ThirdParty/glm/./gtx/string_cast.inl
- src/ThirdParty/glm/./gtx/transform.hpp
- src/ThirdParty/glm/./gtx/transform.inl
- src/ThirdParty/glm/./gtx/transform2.hpp
- src/ThirdParty/glm/./gtx/transform2.inl
- src/ThirdParty/glm/./gtx/vector_angle.hpp
- src/ThirdParty/glm/./gtx/vector_angle.inl
- src/ThirdParty/glm/./gtx/vector_query.hpp
- src/ThirdParty/glm/./gtx/vector_query.inl
- src/ThirdParty/glm/./gtx/wrap.hpp
- src/ThirdParty/glm/./gtx/wrap.inl
- src/ThirdParty/glm/./mat2x2.hpp
- src/ThirdParty/glm/./mat2x3.hpp
- src/ThirdParty/glm/./mat2x4.hpp
- src/ThirdParty/glm/./mat3x2.hpp
- src/ThirdParty/glm/./mat3x3.hpp
- src/ThirdParty/glm/./mat3x4.hpp
- src/ThirdParty/glm/./mat4x2.hpp
- src/ThirdParty/glm/./mat4x3.hpp
- src/ThirdParty/glm/./mat4x4.hpp
- src/ThirdParty/glm/./matrix.hpp
- src/ThirdParty/glm/./simd/integer.h
- src/ThirdParty/glm/./simd/platform.h
- src/ThirdParty/glm/./trigonometric.hpp
- src/ThirdParty/glm/./vec2.hpp
- src/ThirdParty/glm/./vec3.hpp
- src/ThirdParty/glm/./vec4.hpp
- src/ThirdParty/glm/./vector_relational.hpp
- src/ThirdParty/glm/common.hpp
- src/ThirdParty/glm/detail/_fixes.hpp
- src/ThirdParty/glm/detail/_swizzle.hpp
- src/ThirdParty/glm/detail/_swizzle_func.hpp
- src/ThirdParty/glm/detail/_vectorize.hpp
- src/ThirdParty/glm/detail/func_common.hpp
- src/ThirdParty/glm/detail/func_common.inl
- src/ThirdParty/glm/detail/func_exponential.hpp
- src/ThirdParty/glm/detail/func_exponential.inl
- src/ThirdParty/glm/detail/func_geometric.hpp
- src/ThirdParty/glm/detail/func_geometric.inl
- src/ThirdParty/glm/detail/func_integer.hpp
- src/ThirdParty/glm/detail/func_integer.inl
- src/ThirdParty/glm/detail/func_matrix.hpp
- src/ThirdParty/glm/detail/func_matrix.inl
- src/ThirdParty/glm/detail/func_packing.hpp
- src/ThirdParty/glm/detail/func_packing.inl
- src/ThirdParty/glm/detail/func_trigonometric.hpp
- src/ThirdParty/glm/detail/func_trigonometric.inl
- src/ThirdParty/glm/detail/func_vector_relational.hpp
- src/ThirdParty/glm/detail/func_vector_relational.inl
- src/ThirdParty/glm/detail/precision.hpp
- src/ThirdParty/glm/detail/setup.hpp
- src/ThirdParty/glm/detail/type_float.hpp
- src/ThirdParty/glm/detail/type_half.hpp
- src/ThirdParty/glm/detail/type_int.hpp
- src/ThirdParty/glm/detail/type_mat.hpp
- src/ThirdParty/glm/detail/type_mat2x2.hpp
- src/ThirdParty/glm/detail/type_mat2x2.inl
- src/ThirdParty/glm/detail/type_mat2x3.hpp
- src/ThirdParty/glm/detail/type_mat2x3.inl
- src/ThirdParty/glm/detail/type_mat2x4.hpp
- src/ThirdParty/glm/detail/type_mat2x4.inl
- src/ThirdParty/glm/detail/type_mat3x2.hpp
- src/ThirdParty/glm/detail/type_mat3x2.inl
- src/ThirdParty/glm/detail/type_mat3x3.hpp
- src/ThirdParty/glm/detail/type_mat3x3.inl
- src/ThirdParty/glm/detail/type_mat3x4.hpp
- src/ThirdParty/glm/detail/type_mat3x4.inl
- src/ThirdParty/glm/detail/type_mat4x2.hpp
- src/ThirdParty/glm/detail/type_mat4x2.inl
- src/ThirdParty/glm/detail/type_mat4x3.hpp
- src/ThirdParty/glm/detail/type_mat4x3.inl
- src/ThirdParty/glm/detail/type_mat4x4.hpp
- src/ThirdParty/glm/detail/type_mat4x4.inl
- src/ThirdParty/glm/detail/type_vec.hpp
- src/ThirdParty/glm/detail/type_vec1.hpp
- src/ThirdParty/glm/detail/type_vec2.hpp
- src/ThirdParty/glm/detail/type_vec2.inl
- src/ThirdParty/glm/detail/type_vec3.hpp
- src/ThirdParty/glm/detail/type_vec3.inl
- src/ThirdParty/glm/detail/type_vec4.hpp
- src/ThirdParty/glm/detail/type_vec4.inl
- src/ThirdParty/glm/exponential.hpp
- src/ThirdParty/glm/ext.hpp
- src/ThirdParty/glm/fwd.hpp
- src/ThirdParty/glm/geometric.hpp
- src/ThirdParty/glm/glm.hpp
- src/ThirdParty/glm/integer.hpp
- src/ThirdParty/glm/mat2x2.hpp
- src/ThirdParty/glm/mat2x3.hpp
- src/ThirdParty/glm/mat2x4.hpp
- src/ThirdParty/glm/mat3x2.hpp
- src/ThirdParty/glm/mat3x3.hpp
- src/ThirdParty/glm/mat3x4.hpp
- src/ThirdParty/glm/mat4x2.hpp
- src/ThirdParty/glm/mat4x3.hpp
- src/ThirdParty/glm/mat4x4.hpp
- src/ThirdParty/glm/matrix.hpp
- src/ThirdParty/glm/packing.hpp
- src/ThirdParty/glm/trigonometric.hpp
- src/ThirdParty/glm/vec2.hpp
- src/ThirdParty/glm/vec3.hpp
- src/ThirdParty/glm/vec4.hpp
- src/ThirdParty/glm/vector_relational.hpp
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/ArrayBuffer.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Cubemap.hpp
@@ -11248,6 +9374,7 @@ CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
  src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
  src/Render/OpenGL.hpp
  src/Render/Scene/RenderCloth.hpp
  src/Render/Scene/RenderEntity.hpp
@@ -11256,7 +9383,12 @@ CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o
  src/Render/Scene/RenderMesh.hpp
  src/Render/Scene/RenderScene.hpp
  src/Render/Scene/RenderSkinnedMesh.hpp
+ src/Render/Texture.hpp
  src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/MeshCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
  src/ThirdParty/glm/./detail/_vectorize.hpp
@@ -11505,19 +9637,537 @@ CMakeFiles/out.dir/src/Render/Texture.cpp.o
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/OpenGL.hpp
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Render/Texture.hpp
- /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.cpp
- /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.hpp
- src/Core/Types.hpp
- src/Debug/Log.hpp
- src/Render/OpenGL.hpp
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+ /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.cpp
+ /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.hpp
+ src/Animation/Animation.hpp
+ src/Core/Json.hpp
+ src/Core/Math3D.hpp
+ src/Core/Types.hpp
+ src/ThirdParty/entt/entt.hpp
+ src/ThirdParty/glm/./common.hpp
+ src/ThirdParty/glm/./detail/_noise.hpp
+ src/ThirdParty/glm/./detail/_vectorize.hpp
+ src/ThirdParty/glm/./detail/func_common.hpp
+ src/ThirdParty/glm/./detail/func_exponential.hpp
+ src/ThirdParty/glm/./detail/func_geometric.hpp
+ src/ThirdParty/glm/./detail/func_integer.hpp
+ src/ThirdParty/glm/./detail/precision.hpp
+ src/ThirdParty/glm/./detail/setup.hpp
+ src/ThirdParty/glm/./detail/type_half.hpp
+ src/ThirdParty/glm/./detail/type_half.inl
+ src/ThirdParty/glm/./detail/type_int.hpp
+ src/ThirdParty/glm/./detail/type_vec1.hpp
+ src/ThirdParty/glm/./detail/type_vec1.inl
+ src/ThirdParty/glm/./detail/type_vec2.hpp
+ src/ThirdParty/glm/./exponential.hpp
+ src/ThirdParty/glm/./geometric.hpp
+ src/ThirdParty/glm/./glm.hpp
+ src/ThirdParty/glm/./gtc/bitfield.hpp
+ src/ThirdParty/glm/./gtc/bitfield.inl
+ src/ThirdParty/glm/./gtc/color_space.hpp
+ src/ThirdParty/glm/./gtc/color_space.inl
+ src/ThirdParty/glm/./gtc/constants.hpp
+ src/ThirdParty/glm/./gtc/constants.inl
+ src/ThirdParty/glm/./gtc/epsilon.hpp
+ src/ThirdParty/glm/./gtc/epsilon.inl
+ src/ThirdParty/glm/./gtc/functions.hpp
+ src/ThirdParty/glm/./gtc/functions.inl
+ src/ThirdParty/glm/./gtc/integer.hpp
+ src/ThirdParty/glm/./gtc/integer.inl
+ src/ThirdParty/glm/./gtc/matrix_access.hpp
+ src/ThirdParty/glm/./gtc/matrix_access.inl
+ src/ThirdParty/glm/./gtc/matrix_integer.hpp
+ src/ThirdParty/glm/./gtc/matrix_inverse.hpp
+ src/ThirdParty/glm/./gtc/matrix_inverse.inl
+ src/ThirdParty/glm/./gtc/matrix_transform.hpp
+ src/ThirdParty/glm/./gtc/matrix_transform.inl
+ src/ThirdParty/glm/./gtc/noise.hpp
+ src/ThirdParty/glm/./gtc/noise.inl
+ src/ThirdParty/glm/./gtc/packing.hpp
+ src/ThirdParty/glm/./gtc/packing.inl
+ src/ThirdParty/glm/./gtc/quaternion.hpp
+ src/ThirdParty/glm/./gtc/quaternion.inl
+ src/ThirdParty/glm/./gtc/quaternion_simd.inl
+ src/ThirdParty/glm/./gtc/random.hpp
+ src/ThirdParty/glm/./gtc/random.inl
+ src/ThirdParty/glm/./gtc/reciprocal.hpp
+ src/ThirdParty/glm/./gtc/reciprocal.inl
+ src/ThirdParty/glm/./gtc/round.hpp
+ src/ThirdParty/glm/./gtc/round.inl
+ src/ThirdParty/glm/./gtc/type_aligned.hpp
+ src/ThirdParty/glm/./gtc/type_precision.hpp
+ src/ThirdParty/glm/./gtc/type_precision.inl
+ src/ThirdParty/glm/./gtc/type_ptr.hpp
+ src/ThirdParty/glm/./gtc/type_ptr.inl
+ src/ThirdParty/glm/./gtc/ulp.hpp
+ src/ThirdParty/glm/./gtc/ulp.inl
+ src/ThirdParty/glm/./gtc/vec1.hpp
+ src/ThirdParty/glm/./gtc/vec1.inl
+ src/ThirdParty/glm/./gtx/associated_min_max.hpp
+ src/ThirdParty/glm/./gtx/associated_min_max.inl
+ src/ThirdParty/glm/./gtx/bit.hpp
+ src/ThirdParty/glm/./gtx/bit.inl
+ src/ThirdParty/glm/./gtx/closest_point.hpp
+ src/ThirdParty/glm/./gtx/closest_point.inl
+ src/ThirdParty/glm/./gtx/color_space.hpp
+ src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
+ src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
+ src/ThirdParty/glm/./gtx/compatibility.hpp
+ src/ThirdParty/glm/./gtx/compatibility.inl
+ src/ThirdParty/glm/./gtx/component_wise.hpp
+ src/ThirdParty/glm/./gtx/component_wise.inl
+ src/ThirdParty/glm/./gtx/dual_quaternion.hpp
+ src/ThirdParty/glm/./gtx/dual_quaternion.inl
+ src/ThirdParty/glm/./gtx/euler_angles.hpp
+ src/ThirdParty/glm/./gtx/euler_angles.inl
+ src/ThirdParty/glm/./gtx/extend.hpp
+ src/ThirdParty/glm/./gtx/extend.inl
+ src/ThirdParty/glm/./gtx/extended_min_max.hpp
+ src/ThirdParty/glm/./gtx/extended_min_max.inl
+ src/ThirdParty/glm/./gtx/fast_exponential.hpp
+ src/ThirdParty/glm/./gtx/fast_exponential.inl
+ src/ThirdParty/glm/./gtx/fast_square_root.hpp
+ src/ThirdParty/glm/./gtx/fast_square_root.inl
+ src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
+ src/ThirdParty/glm/./gtx/fast_trigonometry.inl
+ src/ThirdParty/glm/./gtx/gradient_paint.hpp
+ src/ThirdParty/glm/./gtx/gradient_paint.inl
+ src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
+ src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
+ src/ThirdParty/glm/./gtx/integer.hpp
+ src/ThirdParty/glm/./gtx/intersect.hpp
+ src/ThirdParty/glm/./gtx/intersect.inl
+ src/ThirdParty/glm/./gtx/log_base.hpp
+ src/ThirdParty/glm/./gtx/log_base.inl
+ src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
+ src/ThirdParty/glm/./gtx/matrix_cross_product.inl
+ src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
+ src/ThirdParty/glm/./gtx/matrix_interpolation.inl
+ src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
+ src/ThirdParty/glm/./gtx/matrix_major_storage.inl
+ src/ThirdParty/glm/./gtx/matrix_operation.hpp
+ src/ThirdParty/glm/./gtx/matrix_operation.inl
+ src/ThirdParty/glm/./gtx/matrix_query.hpp
+ src/ThirdParty/glm/./gtx/matrix_query.inl
+ src/ThirdParty/glm/./gtx/mixed_product.hpp
+ src/ThirdParty/glm/./gtx/mixed_product.inl
+ src/ThirdParty/glm/./gtx/norm.hpp
+ src/ThirdParty/glm/./gtx/norm.inl
+ src/ThirdParty/glm/./gtx/normal.hpp
+ src/ThirdParty/glm/./gtx/normal.inl
+ src/ThirdParty/glm/./gtx/normalize_dot.hpp
+ src/ThirdParty/glm/./gtx/normalize_dot.inl
+ src/ThirdParty/glm/./gtx/number_precision.hpp
+ src/ThirdParty/glm/./gtx/number_precision.inl
+ src/ThirdParty/glm/./gtx/optimum_pow.hpp
+ src/ThirdParty/glm/./gtx/optimum_pow.inl
+ src/ThirdParty/glm/./gtx/orthonormalize.hpp
+ src/ThirdParty/glm/./gtx/orthonormalize.inl
+ src/ThirdParty/glm/./gtx/perpendicular.hpp
+ src/ThirdParty/glm/./gtx/perpendicular.inl
+ src/ThirdParty/glm/./gtx/polar_coordinates.hpp
+ src/ThirdParty/glm/./gtx/polar_coordinates.inl
+ src/ThirdParty/glm/./gtx/projection.hpp
+ src/ThirdParty/glm/./gtx/projection.inl
+ src/ThirdParty/glm/./gtx/quaternion.hpp
+ src/ThirdParty/glm/./gtx/range.hpp
+ src/ThirdParty/glm/./gtx/raw_data.hpp
+ src/ThirdParty/glm/./gtx/raw_data.inl
+ src/ThirdParty/glm/./gtx/rotate_vector.hpp
+ src/ThirdParty/glm/./gtx/rotate_vector.inl
+ src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
+ src/ThirdParty/glm/./gtx/spline.hpp
+ src/ThirdParty/glm/./gtx/spline.inl
+ src/ThirdParty/glm/./gtx/std_based_type.hpp
+ src/ThirdParty/glm/./gtx/std_based_type.inl
+ src/ThirdParty/glm/./gtx/string_cast.hpp
+ src/ThirdParty/glm/./gtx/string_cast.inl
+ src/ThirdParty/glm/./gtx/transform.hpp
+ src/ThirdParty/glm/./gtx/transform.inl
+ src/ThirdParty/glm/./gtx/transform2.hpp
+ src/ThirdParty/glm/./gtx/transform2.inl
+ src/ThirdParty/glm/./gtx/vector_angle.hpp
+ src/ThirdParty/glm/./gtx/vector_angle.inl
+ src/ThirdParty/glm/./gtx/vector_query.hpp
+ src/ThirdParty/glm/./gtx/vector_query.inl
+ src/ThirdParty/glm/./gtx/wrap.hpp
+ src/ThirdParty/glm/./gtx/wrap.inl
+ src/ThirdParty/glm/./mat2x2.hpp
+ src/ThirdParty/glm/./mat2x3.hpp
+ src/ThirdParty/glm/./mat2x4.hpp
+ src/ThirdParty/glm/./mat3x2.hpp
+ src/ThirdParty/glm/./mat3x3.hpp
+ src/ThirdParty/glm/./mat3x4.hpp
+ src/ThirdParty/glm/./mat4x2.hpp
+ src/ThirdParty/glm/./mat4x3.hpp
+ src/ThirdParty/glm/./mat4x4.hpp
+ src/ThirdParty/glm/./matrix.hpp
+ src/ThirdParty/glm/./simd/integer.h
+ src/ThirdParty/glm/./simd/platform.h
+ src/ThirdParty/glm/./trigonometric.hpp
+ src/ThirdParty/glm/./vec2.hpp
+ src/ThirdParty/glm/./vec3.hpp
+ src/ThirdParty/glm/./vec4.hpp
+ src/ThirdParty/glm/./vector_relational.hpp
+ src/ThirdParty/glm/common.hpp
+ src/ThirdParty/glm/detail/_fixes.hpp
+ src/ThirdParty/glm/detail/_swizzle.hpp
+ src/ThirdParty/glm/detail/_swizzle_func.hpp
+ src/ThirdParty/glm/detail/_vectorize.hpp
+ src/ThirdParty/glm/detail/func_common.hpp
+ src/ThirdParty/glm/detail/func_common.inl
+ src/ThirdParty/glm/detail/func_exponential.hpp
+ src/ThirdParty/glm/detail/func_exponential.inl
+ src/ThirdParty/glm/detail/func_geometric.hpp
+ src/ThirdParty/glm/detail/func_geometric.inl
+ src/ThirdParty/glm/detail/func_integer.hpp
+ src/ThirdParty/glm/detail/func_integer.inl
+ src/ThirdParty/glm/detail/func_matrix.hpp
+ src/ThirdParty/glm/detail/func_matrix.inl
+ src/ThirdParty/glm/detail/func_packing.hpp
+ src/ThirdParty/glm/detail/func_packing.inl
+ src/ThirdParty/glm/detail/func_trigonometric.hpp
+ src/ThirdParty/glm/detail/func_trigonometric.inl
+ src/ThirdParty/glm/detail/func_vector_relational.hpp
+ src/ThirdParty/glm/detail/func_vector_relational.inl
+ src/ThirdParty/glm/detail/precision.hpp
+ src/ThirdParty/glm/detail/setup.hpp
+ src/ThirdParty/glm/detail/type_float.hpp
+ src/ThirdParty/glm/detail/type_half.hpp
+ src/ThirdParty/glm/detail/type_int.hpp
+ src/ThirdParty/glm/detail/type_mat.hpp
+ src/ThirdParty/glm/detail/type_mat2x2.hpp
+ src/ThirdParty/glm/detail/type_mat2x2.inl
+ src/ThirdParty/glm/detail/type_mat2x3.hpp
+ src/ThirdParty/glm/detail/type_mat2x3.inl
+ src/ThirdParty/glm/detail/type_mat2x4.hpp
+ src/ThirdParty/glm/detail/type_mat2x4.inl
+ src/ThirdParty/glm/detail/type_mat3x2.hpp
+ src/ThirdParty/glm/detail/type_mat3x2.inl
+ src/ThirdParty/glm/detail/type_mat3x3.hpp
+ src/ThirdParty/glm/detail/type_mat3x3.inl
+ src/ThirdParty/glm/detail/type_mat3x4.hpp
+ src/ThirdParty/glm/detail/type_mat3x4.inl
+ src/ThirdParty/glm/detail/type_mat4x2.hpp
+ src/ThirdParty/glm/detail/type_mat4x2.inl
+ src/ThirdParty/glm/detail/type_mat4x3.hpp
+ src/ThirdParty/glm/detail/type_mat4x3.inl
+ src/ThirdParty/glm/detail/type_mat4x4.hpp
+ src/ThirdParty/glm/detail/type_mat4x4.inl
+ src/ThirdParty/glm/detail/type_vec.hpp
+ src/ThirdParty/glm/detail/type_vec1.hpp
+ src/ThirdParty/glm/detail/type_vec2.hpp
+ src/ThirdParty/glm/detail/type_vec2.inl
+ src/ThirdParty/glm/detail/type_vec3.hpp
+ src/ThirdParty/glm/detail/type_vec3.inl
+ src/ThirdParty/glm/detail/type_vec4.hpp
+ src/ThirdParty/glm/detail/type_vec4.inl
+ src/ThirdParty/glm/exponential.hpp
+ src/ThirdParty/glm/ext.hpp
+ src/ThirdParty/glm/fwd.hpp
+ src/ThirdParty/glm/geometric.hpp
+ src/ThirdParty/glm/glm.hpp
+ src/ThirdParty/glm/integer.hpp
+ src/ThirdParty/glm/mat2x2.hpp
+ src/ThirdParty/glm/mat2x3.hpp
+ src/ThirdParty/glm/mat2x4.hpp
+ src/ThirdParty/glm/mat3x2.hpp
+ src/ThirdParty/glm/mat3x3.hpp
+ src/ThirdParty/glm/mat3x4.hpp
+ src/ThirdParty/glm/mat4x2.hpp
+ src/ThirdParty/glm/mat4x3.hpp
+ src/ThirdParty/glm/mat4x4.hpp
+ src/ThirdParty/glm/matrix.hpp
+ src/ThirdParty/glm/packing.hpp
+ src/ThirdParty/glm/trigonometric.hpp
+ src/ThirdParty/glm/vec2.hpp
+ src/ThirdParty/glm/vec3.hpp
+ src/ThirdParty/glm/vec4.hpp
+ src/ThirdParty/glm/vector_relational.hpp
+ src/ThirdParty/json/json.hpp
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
+ /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.cpp
+ /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.hpp
+ src/Core/Types.hpp
+ src/Debug/Log.hpp
+ src/Render/Material.hpp
+ src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
+ /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp
+ /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.hpp
+ src/Animation/Animation.hpp
+ src/Core/Json.hpp
+ src/Core/Math3D.hpp
+ src/Core/Types.hpp
+ src/Debug/Log.hpp
+ src/Render/ArrayBuffer.hpp
+ src/Render/Geometry/Geometry.hpp
+ src/Render/Material.hpp
+ src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
+ src/Render/VertexArray.hpp
+ src/Resource/MaterialCache.hpp
+ src/Resource/TextureCache.hpp
+ src/ThirdParty/entt/entt.hpp
+ src/ThirdParty/glm/./common.hpp
+ src/ThirdParty/glm/./detail/_noise.hpp
+ src/ThirdParty/glm/./detail/_vectorize.hpp
+ src/ThirdParty/glm/./detail/func_common.hpp
+ src/ThirdParty/glm/./detail/func_exponential.hpp
+ src/ThirdParty/glm/./detail/func_geometric.hpp
+ src/ThirdParty/glm/./detail/func_integer.hpp
+ src/ThirdParty/glm/./detail/precision.hpp
+ src/ThirdParty/glm/./detail/setup.hpp
+ src/ThirdParty/glm/./detail/type_half.hpp
+ src/ThirdParty/glm/./detail/type_half.inl
+ src/ThirdParty/glm/./detail/type_int.hpp
+ src/ThirdParty/glm/./detail/type_vec1.hpp
+ src/ThirdParty/glm/./detail/type_vec1.inl
+ src/ThirdParty/glm/./detail/type_vec2.hpp
+ src/ThirdParty/glm/./exponential.hpp
+ src/ThirdParty/glm/./geometric.hpp
+ src/ThirdParty/glm/./glm.hpp
+ src/ThirdParty/glm/./gtc/bitfield.hpp
+ src/ThirdParty/glm/./gtc/bitfield.inl
+ src/ThirdParty/glm/./gtc/color_space.hpp
+ src/ThirdParty/glm/./gtc/color_space.inl
+ src/ThirdParty/glm/./gtc/constants.hpp
+ src/ThirdParty/glm/./gtc/constants.inl
+ src/ThirdParty/glm/./gtc/epsilon.hpp
+ src/ThirdParty/glm/./gtc/epsilon.inl
+ src/ThirdParty/glm/./gtc/functions.hpp
+ src/ThirdParty/glm/./gtc/functions.inl
+ src/ThirdParty/glm/./gtc/integer.hpp
+ src/ThirdParty/glm/./gtc/integer.inl
+ src/ThirdParty/glm/./gtc/matrix_access.hpp
+ src/ThirdParty/glm/./gtc/matrix_access.inl
+ src/ThirdParty/glm/./gtc/matrix_integer.hpp
+ src/ThirdParty/glm/./gtc/matrix_inverse.hpp
+ src/ThirdParty/glm/./gtc/matrix_inverse.inl
+ src/ThirdParty/glm/./gtc/matrix_transform.hpp
+ src/ThirdParty/glm/./gtc/matrix_transform.inl
+ src/ThirdParty/glm/./gtc/noise.hpp
+ src/ThirdParty/glm/./gtc/noise.inl
+ src/ThirdParty/glm/./gtc/packing.hpp
+ src/ThirdParty/glm/./gtc/packing.inl
+ src/ThirdParty/glm/./gtc/quaternion.hpp
+ src/ThirdParty/glm/./gtc/quaternion.inl
+ src/ThirdParty/glm/./gtc/quaternion_simd.inl
+ src/ThirdParty/glm/./gtc/random.hpp
+ src/ThirdParty/glm/./gtc/random.inl
+ src/ThirdParty/glm/./gtc/reciprocal.hpp
+ src/ThirdParty/glm/./gtc/reciprocal.inl
+ src/ThirdParty/glm/./gtc/round.hpp
+ src/ThirdParty/glm/./gtc/round.inl
+ src/ThirdParty/glm/./gtc/type_aligned.hpp
+ src/ThirdParty/glm/./gtc/type_precision.hpp
+ src/ThirdParty/glm/./gtc/type_precision.inl
+ src/ThirdParty/glm/./gtc/type_ptr.hpp
+ src/ThirdParty/glm/./gtc/type_ptr.inl
+ src/ThirdParty/glm/./gtc/ulp.hpp
+ src/ThirdParty/glm/./gtc/ulp.inl
+ src/ThirdParty/glm/./gtc/vec1.hpp
+ src/ThirdParty/glm/./gtc/vec1.inl
+ src/ThirdParty/glm/./gtx/associated_min_max.hpp
+ src/ThirdParty/glm/./gtx/associated_min_max.inl
+ src/ThirdParty/glm/./gtx/bit.hpp
+ src/ThirdParty/glm/./gtx/bit.inl
+ src/ThirdParty/glm/./gtx/closest_point.hpp
+ src/ThirdParty/glm/./gtx/closest_point.inl
+ src/ThirdParty/glm/./gtx/color_space.hpp
+ src/ThirdParty/glm/./gtx/color_space_YCoCg.hpp
+ src/ThirdParty/glm/./gtx/color_space_YCoCg.inl
+ src/ThirdParty/glm/./gtx/compatibility.hpp
+ src/ThirdParty/glm/./gtx/compatibility.inl
+ src/ThirdParty/glm/./gtx/component_wise.hpp
+ src/ThirdParty/glm/./gtx/component_wise.inl
+ src/ThirdParty/glm/./gtx/dual_quaternion.hpp
+ src/ThirdParty/glm/./gtx/dual_quaternion.inl
+ src/ThirdParty/glm/./gtx/euler_angles.hpp
+ src/ThirdParty/glm/./gtx/euler_angles.inl
+ src/ThirdParty/glm/./gtx/extend.hpp
+ src/ThirdParty/glm/./gtx/extend.inl
+ src/ThirdParty/glm/./gtx/extended_min_max.hpp
+ src/ThirdParty/glm/./gtx/extended_min_max.inl
+ src/ThirdParty/glm/./gtx/fast_exponential.hpp
+ src/ThirdParty/glm/./gtx/fast_exponential.inl
+ src/ThirdParty/glm/./gtx/fast_square_root.hpp
+ src/ThirdParty/glm/./gtx/fast_square_root.inl
+ src/ThirdParty/glm/./gtx/fast_trigonometry.hpp
+ src/ThirdParty/glm/./gtx/fast_trigonometry.inl
+ src/ThirdParty/glm/./gtx/gradient_paint.hpp
+ src/ThirdParty/glm/./gtx/gradient_paint.inl
+ src/ThirdParty/glm/./gtx/handed_coordinate_space.hpp
+ src/ThirdParty/glm/./gtx/handed_coordinate_space.inl
+ src/ThirdParty/glm/./gtx/integer.hpp
+ src/ThirdParty/glm/./gtx/intersect.hpp
+ src/ThirdParty/glm/./gtx/intersect.inl
+ src/ThirdParty/glm/./gtx/log_base.hpp
+ src/ThirdParty/glm/./gtx/log_base.inl
+ src/ThirdParty/glm/./gtx/matrix_cross_product.hpp
+ src/ThirdParty/glm/./gtx/matrix_cross_product.inl
+ src/ThirdParty/glm/./gtx/matrix_interpolation.hpp
+ src/ThirdParty/glm/./gtx/matrix_interpolation.inl
+ src/ThirdParty/glm/./gtx/matrix_major_storage.hpp
+ src/ThirdParty/glm/./gtx/matrix_major_storage.inl
+ src/ThirdParty/glm/./gtx/matrix_operation.hpp
+ src/ThirdParty/glm/./gtx/matrix_operation.inl
+ src/ThirdParty/glm/./gtx/matrix_query.hpp
+ src/ThirdParty/glm/./gtx/matrix_query.inl
+ src/ThirdParty/glm/./gtx/mixed_product.hpp
+ src/ThirdParty/glm/./gtx/mixed_product.inl
+ src/ThirdParty/glm/./gtx/norm.hpp
+ src/ThirdParty/glm/./gtx/norm.inl
+ src/ThirdParty/glm/./gtx/normal.hpp
+ src/ThirdParty/glm/./gtx/normal.inl
+ src/ThirdParty/glm/./gtx/normalize_dot.hpp
+ src/ThirdParty/glm/./gtx/normalize_dot.inl
+ src/ThirdParty/glm/./gtx/number_precision.hpp
+ src/ThirdParty/glm/./gtx/number_precision.inl
+ src/ThirdParty/glm/./gtx/optimum_pow.hpp
+ src/ThirdParty/glm/./gtx/optimum_pow.inl
+ src/ThirdParty/glm/./gtx/orthonormalize.hpp
+ src/ThirdParty/glm/./gtx/orthonormalize.inl
+ src/ThirdParty/glm/./gtx/perpendicular.hpp
+ src/ThirdParty/glm/./gtx/perpendicular.inl
+ src/ThirdParty/glm/./gtx/polar_coordinates.hpp
+ src/ThirdParty/glm/./gtx/polar_coordinates.inl
+ src/ThirdParty/glm/./gtx/projection.hpp
+ src/ThirdParty/glm/./gtx/projection.inl
+ src/ThirdParty/glm/./gtx/quaternion.hpp
+ src/ThirdParty/glm/./gtx/range.hpp
+ src/ThirdParty/glm/./gtx/raw_data.hpp
+ src/ThirdParty/glm/./gtx/raw_data.inl
+ src/ThirdParty/glm/./gtx/rotate_vector.hpp
+ src/ThirdParty/glm/./gtx/rotate_vector.inl
+ src/ThirdParty/glm/./gtx/scalar_multiplication.hpp
+ src/ThirdParty/glm/./gtx/spline.hpp
+ src/ThirdParty/glm/./gtx/spline.inl
+ src/ThirdParty/glm/./gtx/std_based_type.hpp
+ src/ThirdParty/glm/./gtx/std_based_type.inl
+ src/ThirdParty/glm/./gtx/string_cast.hpp
+ src/ThirdParty/glm/./gtx/string_cast.inl
+ src/ThirdParty/glm/./gtx/transform.hpp
+ src/ThirdParty/glm/./gtx/transform.inl
+ src/ThirdParty/glm/./gtx/transform2.hpp
+ src/ThirdParty/glm/./gtx/transform2.inl
+ src/ThirdParty/glm/./gtx/vector_angle.hpp
+ src/ThirdParty/glm/./gtx/vector_angle.inl
+ src/ThirdParty/glm/./gtx/vector_query.hpp
+ src/ThirdParty/glm/./gtx/vector_query.inl
+ src/ThirdParty/glm/./gtx/wrap.hpp
+ src/ThirdParty/glm/./gtx/wrap.inl
+ src/ThirdParty/glm/./mat2x2.hpp
+ src/ThirdParty/glm/./mat2x3.hpp
+ src/ThirdParty/glm/./mat2x4.hpp
+ src/ThirdParty/glm/./mat3x2.hpp
+ src/ThirdParty/glm/./mat3x3.hpp
+ src/ThirdParty/glm/./mat3x4.hpp
+ src/ThirdParty/glm/./mat4x2.hpp
+ src/ThirdParty/glm/./mat4x3.hpp
+ src/ThirdParty/glm/./mat4x4.hpp
+ src/ThirdParty/glm/./matrix.hpp
+ src/ThirdParty/glm/./simd/integer.h
+ src/ThirdParty/glm/./simd/platform.h
+ src/ThirdParty/glm/./trigonometric.hpp
+ src/ThirdParty/glm/./vec2.hpp
+ src/ThirdParty/glm/./vec3.hpp
+ src/ThirdParty/glm/./vec4.hpp
+ src/ThirdParty/glm/./vector_relational.hpp
+ src/ThirdParty/glm/common.hpp
+ src/ThirdParty/glm/detail/_fixes.hpp
+ src/ThirdParty/glm/detail/_swizzle.hpp
+ src/ThirdParty/glm/detail/_swizzle_func.hpp
+ src/ThirdParty/glm/detail/_vectorize.hpp
+ src/ThirdParty/glm/detail/func_common.hpp
+ src/ThirdParty/glm/detail/func_common.inl
+ src/ThirdParty/glm/detail/func_exponential.hpp
+ src/ThirdParty/glm/detail/func_exponential.inl
+ src/ThirdParty/glm/detail/func_geometric.hpp
+ src/ThirdParty/glm/detail/func_geometric.inl
+ src/ThirdParty/glm/detail/func_integer.hpp
+ src/ThirdParty/glm/detail/func_integer.inl
+ src/ThirdParty/glm/detail/func_matrix.hpp
+ src/ThirdParty/glm/detail/func_matrix.inl
+ src/ThirdParty/glm/detail/func_packing.hpp
+ src/ThirdParty/glm/detail/func_packing.inl
+ src/ThirdParty/glm/detail/func_trigonometric.hpp
+ src/ThirdParty/glm/detail/func_trigonometric.inl
+ src/ThirdParty/glm/detail/func_vector_relational.hpp
+ src/ThirdParty/glm/detail/func_vector_relational.inl
+ src/ThirdParty/glm/detail/precision.hpp
+ src/ThirdParty/glm/detail/setup.hpp
+ src/ThirdParty/glm/detail/type_float.hpp
+ src/ThirdParty/glm/detail/type_half.hpp
+ src/ThirdParty/glm/detail/type_int.hpp
+ src/ThirdParty/glm/detail/type_mat.hpp
+ src/ThirdParty/glm/detail/type_mat2x2.hpp
+ src/ThirdParty/glm/detail/type_mat2x2.inl
+ src/ThirdParty/glm/detail/type_mat2x3.hpp
+ src/ThirdParty/glm/detail/type_mat2x3.inl
+ src/ThirdParty/glm/detail/type_mat2x4.hpp
+ src/ThirdParty/glm/detail/type_mat2x4.inl
+ src/ThirdParty/glm/detail/type_mat3x2.hpp
+ src/ThirdParty/glm/detail/type_mat3x2.inl
+ src/ThirdParty/glm/detail/type_mat3x3.hpp
+ src/ThirdParty/glm/detail/type_mat3x3.inl
+ src/ThirdParty/glm/detail/type_mat3x4.hpp
+ src/ThirdParty/glm/detail/type_mat3x4.inl
+ src/ThirdParty/glm/detail/type_mat4x2.hpp
+ src/ThirdParty/glm/detail/type_mat4x2.inl
+ src/ThirdParty/glm/detail/type_mat4x3.hpp
+ src/ThirdParty/glm/detail/type_mat4x3.inl
+ src/ThirdParty/glm/detail/type_mat4x4.hpp
+ src/ThirdParty/glm/detail/type_mat4x4.inl
+ src/ThirdParty/glm/detail/type_vec.hpp
+ src/ThirdParty/glm/detail/type_vec1.hpp
+ src/ThirdParty/glm/detail/type_vec2.hpp
+ src/ThirdParty/glm/detail/type_vec2.inl
+ src/ThirdParty/glm/detail/type_vec3.hpp
+ src/ThirdParty/glm/detail/type_vec3.inl
+ src/ThirdParty/glm/detail/type_vec4.hpp
+ src/ThirdParty/glm/detail/type_vec4.inl
+ src/ThirdParty/glm/exponential.hpp
+ src/ThirdParty/glm/ext.hpp
+ src/ThirdParty/glm/fwd.hpp
+ src/ThirdParty/glm/geometric.hpp
+ src/ThirdParty/glm/glm.hpp
+ src/ThirdParty/glm/integer.hpp
+ src/ThirdParty/glm/mat2x2.hpp
+ src/ThirdParty/glm/mat2x3.hpp
+ src/ThirdParty/glm/mat2x4.hpp
+ src/ThirdParty/glm/mat3x2.hpp
+ src/ThirdParty/glm/mat3x3.hpp
+ src/ThirdParty/glm/mat3x4.hpp
+ src/ThirdParty/glm/mat4x2.hpp
+ src/ThirdParty/glm/mat4x3.hpp
+ src/ThirdParty/glm/mat4x4.hpp
+ src/ThirdParty/glm/matrix.hpp
+ src/ThirdParty/glm/packing.hpp
+ src/ThirdParty/glm/trigonometric.hpp
+ src/ThirdParty/glm/vec2.hpp
+ src/ThirdParty/glm/vec3.hpp
+ src/ThirdParty/glm/vec4.hpp
+ src/ThirdParty/glm/vector_relational.hpp
+ src/ThirdParty/json/json.hpp
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+ /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp
+ /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.hpp
+ src/Core/Types.hpp
+ src/Debug/Log.hpp
+ src/Render/OpenGL.hpp
+ src/Render/Texture.hpp
+ src/ThirdParty/entt/entt.hpp
 CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui.cpp.o
  /home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imconfig.h
  /home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui.cpp

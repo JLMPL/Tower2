@@ -753,57 +753,9 @@ CMakeFiles/out.dir/src/Render/Material.cpp.o.provides: CMakeFiles/out.dir/src/Re
 CMakeFiles/out.dir/src/Render/Material.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Material.cpp.o
 
 
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o: src/Render/MaterialManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.cpp
-
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/MaterialManager.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.cpp > CMakeFiles/out.dir/src/Render/MaterialManager.cpp.i
-
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/MaterialManager.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Render/MaterialManager.cpp -o CMakeFiles/out.dir/src/Render/MaterialManager.cpp.s
-
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.requires
-
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.provides: CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.provides
-
-CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o
-
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o: src/Render/MeshManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/Render/MeshManager.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/MeshManager.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/MeshManager.cpp
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/MeshManager.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Render/MeshManager.cpp > CMakeFiles/out.dir/src/Render/MeshManager.cpp.i
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/MeshManager.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Render/MeshManager.cpp -o CMakeFiles/out.dir/src/Render/MeshManager.cpp.s
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.requires
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.provides: CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.provides
-
-CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/MeshManager.cpp.o
-
-
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.o: src/Render/OpenGL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/Render/OpenGL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/Render/OpenGL.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/OpenGL.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.cpp
 
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.i: cmake_force
@@ -827,7 +779,7 @@ CMakeFiles/out.dir/src/Render/OpenGL.cpp.o.provides.build: CMakeFiles/out.dir/sr
 
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.o: src/Render/RenderPass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/Render/RenderPass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/Render/RenderPass.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/RenderPass.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/RenderPass.cpp
 
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.i: cmake_force
@@ -851,7 +803,7 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o.provides.build: CMakeFiles/out.di
 
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o: src/Render/SceneRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/SceneRenderer.cpp
 
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.i: cmake_force
@@ -875,7 +827,7 @@ CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o.provides.build: CMakeFiles/out
 
 CMakeFiles/out.dir/src/Render/Shader.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Shader.cpp.o: src/Render/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/Render/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/Render/Shader.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Shader.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Shader.cpp
 
 CMakeFiles/out.dir/src/Render/Shader.cpp.i: cmake_force
@@ -897,33 +849,9 @@ CMakeFiles/out.dir/src/Render/Shader.cpp.o.provides: CMakeFiles/out.dir/src/Rend
 CMakeFiles/out.dir/src/Render/Shader.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Shader.cpp.o
 
 
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o: src/Render/ShaderManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.cpp
-
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/ShaderManager.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.cpp > CMakeFiles/out.dir/src/Render/ShaderManager.cpp.i
-
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/ShaderManager.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Render/ShaderManager.cpp -o CMakeFiles/out.dir/src/Render/ShaderManager.cpp.s
-
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.requires
-
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.provides: CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.provides
-
-CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o
-
-
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o: src/Render/ShadowPass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.cpp
 
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.i: cmake_force
@@ -947,7 +875,7 @@ CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o.provides.build: CMakeFiles/out.di
 
 CMakeFiles/out.dir/src/Render/Texture.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Texture.cpp.o: src/Render/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/out.dir/src/Render/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/Render/Texture.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Texture.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Texture.cpp
 
 CMakeFiles/out.dir/src/Render/Texture.cpp.i: cmake_force
@@ -969,33 +897,9 @@ CMakeFiles/out.dir/src/Render/Texture.cpp.o.provides: CMakeFiles/out.dir/src/Ren
 CMakeFiles/out.dir/src/Render/Texture.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/Texture.cpp.o
 
 
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o: src/Render/TextureManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/out.dir/src/Render/TextureManager.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/TextureManager.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.cpp
-
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Render/TextureManager.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.cpp > CMakeFiles/out.dir/src/Render/TextureManager.cpp.i
-
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Render/TextureManager.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Render/TextureManager.cpp -o CMakeFiles/out.dir/src/Render/TextureManager.cpp.s
-
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.requires
-
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.provides: CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.provides
-
-CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/TextureManager.cpp.o
-
-
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o: src/Render/VertexArray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/VertexArray.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.cpp
 
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.i: cmake_force
@@ -1015,6 +919,102 @@ CMakeFiles/out.dir/src/Render/VertexArray.cpp.o.provides: CMakeFiles/out.dir/src
 .PHONY : CMakeFiles/out.dir/src/Render/VertexArray.cpp.o.provides
 
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o.provides.build: CMakeFiles/out.dir/src/Render/VertexArray.cpp.o
+
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: src/Resource/AnimationCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.cpp
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.cpp > CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.cpp -o CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.s
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides
+
+CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o: src/Resource/MaterialCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.cpp
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.cpp > CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.i
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.cpp -o CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.s
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.requires
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.provides
+
+CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
+
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o: src/Resource/MeshCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/MeshCache.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp > CMakeFiles/out.dir/src/Resource/MeshCache.cpp.i
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/MeshCache.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp -o CMakeFiles/out.dir/src/Resource/MeshCache.cpp.s
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.provides
+
+CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
+
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: src/Resource/TextureCache.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp > CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp -o CMakeFiles/out.dir/src/Resource/TextureCache.cpp.s
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides
+
+CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
 
 
 CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o: CMakeFiles/out.dir/flags.make
@@ -1480,17 +1480,17 @@ out_OBJECTS = \
 "CMakeFiles/out.dir/src/Render/Image.cpp.o" \
 "CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Material.cpp.o" \
-"CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o" \
-"CMakeFiles/out.dir/src/Render/MeshManager.cpp.o" \
 "CMakeFiles/out.dir/src/Render/OpenGL.cpp.o" \
 "CMakeFiles/out.dir/src/Render/RenderPass.cpp.o" \
 "CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Shader.cpp.o" \
-"CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o" \
 "CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Texture.cpp.o" \
-"CMakeFiles/out.dir/src/Render/TextureManager.cpp.o" \
 "CMakeFiles/out.dir/src/Render/VertexArray.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o" \
+"CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o" \
@@ -1542,17 +1542,17 @@ bin/out: CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Image.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Material.cpp.o
-bin/out: CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o
-bin/out: CMakeFiles/out.dir/src/Render/MeshManager.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/OpenGL.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/RenderPass.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Shader.cpp.o
-bin/out: CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Texture.cpp.o
-bin/out: CMakeFiles/out.dir/src/Render/TextureManager.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/VertexArray.cpp.o
+bin/out: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
+bin/out: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
+bin/out: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
+bin/out: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o
@@ -1610,17 +1610,17 @@ CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o.req
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Image.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Material.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/MaterialManager.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/MeshManager.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/OpenGL.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/RenderPass.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Shader.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/ShaderManager.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Texture.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/TextureManager.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/VertexArray.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o.requires

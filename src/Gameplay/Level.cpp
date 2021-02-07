@@ -1,9 +1,8 @@
 #include "Level.hpp"
 #include "Render/SceneRenderer.hpp"
-#include "Render/MaterialManager.hpp"
-#include "Render/MeshManager.hpp"
 #include "Render/Scene/RenderMesh.hpp"
 #include "Debug/DebugMenu.hpp"
+#include "Resource/MeshCache.hpp"
 #include <SDL2/SDL.h>
 
 void Level::initFromScript(const std::string& file)
@@ -20,26 +19,29 @@ void Level::initFromScript(const std::string& file)
     m_flare->setColor(Color(0.5,0.75,1,1));
     m_flare->setPosition(vec3(0,3,0));
 
-    loadAnimationFromFile(&m_animations[0], "Animations/Clips/Walk.dae");
-    loadAnimationFromFile(&m_animations[1], "Meshes/StandingDeath.dae");
-    loadAnimationFromFile(&m_animations[2], "Animations/Clips/Jump.dae");
-    loadAnimationFromFile(&m_animations[3], "Animations/Clips/RunningJump.dae");
+    m_animations.push_back(AnimationCache.load<AnimationLoader>("idle"_hs, "Animations/Idle.dae"));
+    m_animations.push_back(AnimationCache.load<AnimationLoader>("slash"_hs, "Animations/Slash.dae"));
+    m_animations.push_back(AnimationCache.load<AnimationLoader>("jump"_hs, "Animations/Jump.dae"));
+    m_animations.push_back(AnimationCache.load<AnimationLoader>("run_jump"_hs, "Animations/RunningJump.dae"));
+    m_animations.push_back(AnimationCache.load<AnimationLoader>("kick"_hs, "Animations/Kick.dae"));
 
     debug::g_Menu["Scene"].bind("animIndex", &m_nextAnim);
     debug::g_Menu["Scene"].bind("cameraPos", &m_eye);
+    debug::g_Menu["Scene"].bind("speed", &m_speed);
 
-    m_skeleton = &gfx::g_MeshMgr.getSkinnedMesh("Archer.dae")->skeleton;
+    auto mesh = MeshCache.load<SkinnedMeshLoader>("archer"_hs, "Archer.dae");
+    m_skeleton = &mesh->skeleton;
 
     m_matrixPalette.resize(m_skeleton->joints.size());
     m_jointTransforms.resize(m_skeleton->joints.size());
 
-    m_rawskin = m_renderScene.addRenderSkinnedMesh("Archer.dae", m_matrixPalette.data());
+    m_rawskin = m_renderScene.addRenderSkinnedMesh(mesh, m_matrixPalette.data());
     m_rawskin->setTransform(math::scale(vec3(0.01)));
 }
 
 void Level::setLevelMesh(const std::string& map, const std::string& net)
 {
-    auto mesh = gfx::g_MeshMgr.getMesh(map);
+    auto mesh = MeshCache.load<StaticMeshLoader>("map"_hs, map);
 
     for (const auto& entry : mesh->entries)
     {
@@ -63,7 +65,7 @@ void Level::setLevelMesh(const std::string& map, const std::string& net)
         m_physSys.addTriangleMesh(meshDesc);
     }
 
-    m_mapMesh = m_renderScene.addRenderMesh(map);
+    m_mapMesh = m_renderScene.addRenderMesh(mesh);
 }
 
 void Level::update()
@@ -74,16 +76,20 @@ void Level::update()
 
     m_physSys.stepSimulation();
 
-    along += timer::delta;
-    if (along >= m_animations[m_currentAnim].duration)
+    along += timer::delta * m_speed;
+    if (along >= m_animations[m_currentAnim]->duration)
     {
         along = 0;
+
+        if (m_nextAnim >= m_animations.size())
+            m_nextAnim = m_animations.size()-1;
+
         m_currentAnim = m_nextAnim;
     }
 
     //post physics update
 
-    m_pose = getSkeletonPose(m_skeleton, &m_animations[m_currentAnim], along);
+    m_pose = getSkeletonPose(*m_skeleton, m_animations[m_currentAnim], along);
 
     computeSkinMatrices(*m_skeleton, m_pose, m_matrixPalette, m_jointTransforms);
 

@@ -46,19 +46,19 @@ LOCAL quat lerpRotation(const JointAnimation& jointAnimation, Seconds animationT
     return math::slerp(keys[currPosIndex].value, keys[nextPosIndex].value, factor);
 }
 
-Pose getSkeletonPose(const Skeleton* skel, const Animation* anim, Seconds time)
+Pose getSkeletonPose(const Skeleton& skel, const Animation& anim, Seconds time)
 {
     Pose poz;
 
-    poz.jointPoses.resize(skel->joints.size());
+    poz.jointPoses.resize(skel.joints.size());
 
-    for (u32 i = 0; i < skel->joints.size(); i++)
+    for (u32 i = 0; i < skel.joints.size(); i++)
     {
-        const JointAnimation* jointAnim = findJointInAnimation(*anim, skel->joints[i].name);
+        const JointAnimation* jointAnim = findJointInAnimation(anim, skel.joints[i].name);
 
         if (jointAnim)
         {
-            poz.jointPoses[i].name = skel->joints[i].name;
+            poz.jointPoses[i].name = skel.joints[i].name;
 
             poz.jointPoses[i].pos = lerpPosition(*jointAnim, time);
             poz.jointPoses[i].rot = lerpRotation(*jointAnim, time);

@@ -1,56 +1,45 @@
-#pragma once
-#include "Core/Math3D.hpp"
-#define _DEBUG
-#include <PhysX/PxPhysicsAPI.h>
-#include <memory>
-#include <vector>
+// #pragma once
+// #include "Core/Math3D.hpp"
+// #define _DEBUG
+// #include <PhysX/PxPhysicsAPI.h>
+// #include <memory>
+// #include <vector>
 
-namespace anim
-{
-    class Animator;
-}
+// namespace phys
+// {
 
-namespace gfx
-{
-    // struct StaticMesh;
-    struct Mesh;
-}
+// class Cloth
+// {
+// public:
+//     using Ptr = std::unique_ptr<Cloth>;
+//     using Sphere = physx::PxClothCollisionSphere;
 
-namespace phys
-{
+//     Cloth() = default;
+//     Cloth(physx::PxPhysics* phys, const std::string& mesh);
+//     ~Cloth();
 
-class Cloth
-{
-public:
-    using Ptr = std::unique_ptr<Cloth>;
-    using Sphere = physx::PxClothCollisionSphere;
+//     void setTargetTransform(const mat4& pos);
 
-    Cloth() = default;
-    Cloth(physx::PxPhysics* phys, const std::string& mesh);
-    ~Cloth();
+//     void skin();
 
-    void setTargetTransform(const mat4& pos);
+//     void setCollisionSpheres(const Sphere* spheres, u32 numSpheres);
+//     void addCapsule(i32 a, i32 b);
 
-    void skin();
+//     u32 getVertexCount();
+//     vec3* getVertices();
 
-    void setCollisionSpheres(const Sphere* spheres, u32 numSpheres);
-    void addCapsule(i32 a, i32 b);
+//     // gfx::Mesh* getMesh() const;
+//     physx::PxCloth* getClothActor() const;
 
-    u32 getVertexCount();
-    vec3* getVertices();
+// private:
+//     physx::PxClothFabric*                   m_fabric = nullptr;
+//     physx::PxCloth*                         m_cloth = nullptr;
 
-    gfx::Mesh* getMesh() const;
-    physx::PxCloth* getClothActor() const;
+//     physx::PxClothParticleMotionConstraint* m_constraints = nullptr;
+//     vec3*                                   m_vertices = nullptr;
 
-private:
-    physx::PxClothFabric*                   m_fabric = nullptr;
-    physx::PxCloth*                         m_cloth = nullptr;
+//     // gfx::Mesh*                              m_mesh = nullptr;
+//     u32                                     m_spawnTimer = 0;
+// };
 
-    physx::PxClothParticleMotionConstraint* m_constraints = nullptr;
-    vec3*                                   m_vertices = nullptr;
-
-    gfx::Mesh*                              m_mesh = nullptr;
-    u32                                     m_spawnTimer = 0;
-};
-
-}
+// }

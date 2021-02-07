@@ -3,7 +3,6 @@
 #include "Debug/DebugMenu.hpp"
 #include "Core/Random.hpp"
 #include "Render/SceneRenderer.hpp"
-#include "Render/MeshManager.hpp"
 #include <PhysX/PxRigidActor.h>
 
 enum Group
@@ -165,14 +164,14 @@ void PhysicsSystem::init()
     debug::g_Menu["Physics"].bind("debugDraw", &m_debugDraw);
 }
 
-Cloth* PhysicsSystem::addCloth(const std::string& mesh)
-{
-    m_cloths.emplace_back(new Cloth(m_physics, mesh));
+// Cloth* PhysicsSystem::addCloth(const std::string& mesh)
+// {
+//     m_cloths.emplace_back(new Cloth(m_physics, mesh));
 
-    m_scene->addActor(*m_cloths.back()->getClothActor());
+//     m_scene->addActor(*m_cloths.back()->getClothActor());
 
-    return m_cloths.back().get();
-}
+//     return m_cloths.back().get();
+// }
 
 physx::PxController* PhysicsSystem::addController(u32* entityID, f32 radius, f32 height)
 {
@@ -341,8 +340,8 @@ void PhysicsSystem::stepSimulation()
 {
     using namespace physx;
 
-    for (auto& cloth : m_cloths)
-        cloth->skin();
+    // for (auto& cloth : m_cloths)
+    //     cloth->skin();
 
     m_scene->simulate(timer::delta);
     m_scene->fetchResults(true);

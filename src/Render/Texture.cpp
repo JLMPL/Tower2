@@ -16,10 +16,10 @@ Texture::~Texture()
         GL(glDeleteTextures(1, &m_texture));
 }
 
-void Texture::loadFromFile(const char* path)
+void Texture::loadFromFile(const std::string& path)
 {
     Image img;
-    img.loadFromFile(path);
+    img.loadFromFile(path.c_str());
 
     if (!img.isValid())
     {

@@ -6,8 +6,6 @@
 #include "Debug/Log.hpp"
 #include "Events/Event.hpp"
 #include "Input/Input.hpp"
-#include "Physics/PhysicsSystem.hpp"
-#include "Render/MaterialManager.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/Geometry/Geometry.hpp"
 #include "Gameplay/Level.hpp"
@@ -107,7 +105,6 @@ LOCAL void setupImGui()
 
 LOCAL void setupSystems()
 {
-    gfx::g_MatMgr.loadMaterials();
     gfx::g_SceneRenderer.init();
     // gfx::g_Renderer2D.init();
     // aud::g_AudioSys.init();

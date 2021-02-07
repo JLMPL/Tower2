@@ -1,6 +1,5 @@
 #include "Geometry.hpp"
 #include "Core/Convert.hpp"
-#include "Render/MaterialManager.hpp"
 #include <assimp/Importer.hpp>
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
@@ -102,7 +101,9 @@ LOCAL void addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
         aiString name;
         material->Get(AI_MATKEY_NAME, name);
 
-        entry.material = g_MatMgr.getMaterial(name.C_Str());
+        printf("skinned material: %s\n", name.C_Str());
+
+        entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string{name.C_Str()}, name.C_Str());
 
         for (u32 i = 0; i < inMesh->mNumFaces; i++)
         {

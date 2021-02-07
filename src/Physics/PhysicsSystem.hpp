@@ -57,7 +57,7 @@ public:
 
     physx::PxController* addController(u32* entityID, f32 radius, f32 height);
 
-    Cloth* addCloth(const std::string& mesh);
+    // Cloth* addCloth(const std::string& mesh);
 
     RaycastResult raycast(const vec3& origin, const vec3& dir, f32 dist);
     SweepResult sweepSphere(f32 radius, const vec3& origin, const vec3& dir, f32 dist);
@@ -82,7 +82,7 @@ private:
     std::vector<physx::PxRigidStatic*> m_statics;
     std::vector<physx::PxRigidDynamic*> m_dynamics;
 
-    std::vector<Cloth::Ptr> m_cloths;
+    // std::vector<Cloth::Ptr> m_cloths;
 
     physx::PxParticleSystem* m_particleSystem = nullptr;
 

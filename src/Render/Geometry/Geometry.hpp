@@ -2,6 +2,7 @@
 #include "../ArrayBuffer.hpp"
 #include "../VertexArray.hpp"
 #include "Animation/Animation.hpp"
+#include "Resource/MaterialCache.hpp"
 #include "Core/Types.hpp"
 #include <string>
 #include <memory>
@@ -9,8 +10,6 @@
 
 namespace gfx
 {
-
-class Material;
 
 struct VertexWeightData
 {
@@ -36,7 +35,7 @@ struct Mesh
         std::vector<VertexWeightData> weightsData;
         std::vector<u32>              indices;
 
-        const Material* material = nullptr;
+        MaterialHandle material;
 
         VertexArray vao;
         ArrayBuffer dbo;

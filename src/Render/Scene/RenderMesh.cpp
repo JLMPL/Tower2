@@ -2,12 +2,12 @@
 #include "Animation/Animation.hpp"
 #include "Render/Geometry/Geometry.hpp"
 
-RenderMesh::RenderMesh(gfx::Mesh* mesh) :
+RenderMesh::RenderMesh(MeshHandle mesh) :
     m_mesh(mesh)
 {
 }
 
-gfx::Mesh* RenderMesh::getMesh() const
+MeshHandle RenderMesh::getMesh() const
 {
     return m_mesh;
 }

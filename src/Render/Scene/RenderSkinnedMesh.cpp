@@ -2,12 +2,12 @@
 #include "Animation/Animation.hpp"
 #include "Render/Geometry/Geometry.hpp"
 
-RenderSkinnedMesh::RenderSkinnedMesh(gfx::Mesh* mesh, const mat4* palette) :
+RenderSkinnedMesh::RenderSkinnedMesh(MeshHandle mesh, const mat4* palette) :
     m_mesh(mesh), m_matrixPalette(palette)
 {
 }
 
-gfx::Mesh* RenderSkinnedMesh::getMesh() const
+MeshHandle RenderSkinnedMesh::getMesh() const
 {
     return m_mesh;
 }

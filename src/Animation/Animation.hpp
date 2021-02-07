@@ -68,7 +68,7 @@ const JointAnimation* findJointInAnimation(const Animation& anim, const std::str
 
 Pose lerpPose(const Pose& a, const Pose& b, f32 v);
 
-Pose getSkeletonPose(const Skeleton* skel, const Animation* anim, Seconds time);
+Pose getSkeletonPose(const Skeleton& skel, const Animation& anim, Seconds time);
 vec3 getSkeletonRootMotion(const Skeleton* skel, const Animation* anim, Seconds time);
 
 i8 findSkeletonJoint(const Skeleton* skel, const std::string& name);

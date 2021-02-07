@@ -5,10 +5,7 @@
 #include "Render/Scene/RenderCloth.hpp"
 #include "Geometry/Geometry.hpp"
 #include "Material.hpp"
-#include "MaterialManager.hpp"
 #include "Core/Config.hpp"
-
-#include "TextureManager.hpp"
 
 namespace gfx
 {
@@ -55,11 +52,11 @@ void BasePass::sortLights(RenderScene& scene)
 
 void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 {
-    for (auto& cloth : scene.m_cloths)
-    {
-        if (cloth->isVisible())
-            cloth->updateGeometry();
-    }
+    // for (auto& cloth : scene.m_cloths)
+    // {
+    //     if (cloth->isVisible())
+    //         cloth->updateGeometry();
+    // }
 
     // for (auto& part : scene.m_particles)
     // {
@@ -99,9 +96,9 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
                 m_flatShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
             }
 
-            m_flatShader.setUniformTexture("uImage", 0, *mat->m_textures[0]);
-            m_flatShader.setUniformTexture("uNormal", 1, *mat->m_textures[1]);
-            m_flatShader.setUniformTexture("uSpecular", 2, *mat->m_textures[2]);
+            m_flatShader.setUniformTexture("uImage", 0, *mat->m_diffuse);
+            m_flatShader.setUniformTexture("uNormal", 1, *mat->m_normal);
+            m_flatShader.setUniformTexture("uSpecular", 2, *mat->m_specular);
 
             m_flatShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
@@ -112,40 +109,40 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
         }
     }
 
-    for (auto& renderCloth : scene.m_cloths)
-    {
-        if (!renderCloth->isVisible())
-            continue;
+    // for (auto& renderCloth : scene.m_cloths)
+    // {
+    //     if (!renderCloth->isVisible())
+    //         continue;
 
-        auto mat = renderCloth->getMaterial();
+    //     auto mat = renderCloth->getMaterial();
 
-        m_clothShader.bind();
-        m_clothShader.setUniformMatrix("uProj", scene.getProjection());
-        m_clothShader.setUniformMatrix("uView", scene.getView());
-        m_clothShader.setUniformMatrix("uModel", renderCloth->getTransform());
-        m_clothShader.setUniform3f("uCamPos", scene.getCameraPos());
+    //     m_clothShader.bind();
+    //     m_clothShader.setUniformMatrix("uProj", scene.getProjection());
+    //     m_clothShader.setUniformMatrix("uView", scene.getView());
+    //     m_clothShader.setUniformMatrix("uModel", renderCloth->getTransform());
+    //     m_clothShader.setUniform3f("uCamPos", scene.getCameraPos());
 
-        for (u32 i = 0; i < 4; i++)
-        {
-            std::string index = std::to_string(i);
+    //     for (u32 i = 0; i < 4; i++)
+    //     {
+    //         std::string index = std::to_string(i);
 
-            std::string pos = "uPointLights[" + index + "].pos";
-            std::string color = "uPointLights[" + index + "].color";
+    //         std::string pos = "uPointLights[" + index + "].pos";
+    //         std::string color = "uPointLights[" + index + "].color";
 
-            m_clothShader.setUniform3f(pos.c_str(), m_lights[i]->getPosition());
-            m_clothShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
-        }
+    //         m_clothShader.setUniform3f(pos.c_str(), m_lights[i]->getPosition());
+    //         m_clothShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
+    //     }
 
-        m_clothShader.setUniformTexture("uImage", 0, *mat->m_textures[0]);
-        m_clothShader.setUniformTexture("uNormal", 1, *mat->m_textures[1]);
-        m_clothShader.setUniformTexture("uSpecular", 2, *mat->m_textures[2]);
+    //     m_clothShader.setUniformTexture("uImage", 0, *mat->m_diffuse);
+    //     m_clothShader.setUniformTexture("uNormal", 1, *mat->m_normal);
+    //     m_clothShader.setUniformTexture("uSpecular", 2, *mat->m_specular);
 
-        m_clothShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
+    //     m_clothShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
-        drawVertexArray(renderCloth->m_vao);
+    //     drawVertexArray(renderCloth->m_vao);
 
-        m_clothShader.unbind();
-    }
+    //     m_clothShader.unbind();
+    // }
 
     for (auto& renderSkin : scene.m_skinMeshes)
     {
@@ -183,9 +180,9 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
                 m_aflatShader.setUniform3f(color.c_str(), m_lights[i]->getColor());
             }
 
-            m_aflatShader.setUniformTexture("uImage", 0, *mat->m_textures[0]);
-            m_aflatShader.setUniformTexture("uNormal", 1, *mat->m_textures[1]);
-            m_aflatShader.setUniformTexture("uSpecular", 2, *mat->m_textures[2]);
+            m_aflatShader.setUniformTexture("uImage", 0, *mat->m_diffuse);
+            m_aflatShader.setUniformTexture("uNormal", 1, *mat->m_normal);
+            m_aflatShader.setUniformTexture("uSpecular", 2, *mat->m_specular);
 
             m_aflatShader.setUniformCubemap("uPointShadowCubemap", 3, shadow0);
 
