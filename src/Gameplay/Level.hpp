@@ -38,6 +38,7 @@ private:
     float m_speed = 1.f;
 
     const anim::Skeleton* m_skeleton = nullptr;
+    anim::Skeleton m_otherSkeleton;
     anim::Pose m_pose;
     std::vector<mat4> m_matrixPalette;
     std::vector<mat4> m_jointTransforms;

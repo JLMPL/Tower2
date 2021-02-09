@@ -27,7 +27,7 @@ public:
     ~RenderScene() = default;
 
     RenderMesh* addRenderMesh(MeshHandle mesh);
-    RenderSkinnedMesh* addRenderSkinnedMesh(MeshHandle mesh, const mat4* palette);
+    RenderSkinnedMesh* addRenderSkinnedMesh(MeshHandle mesh, const std::vector<mat4>& palette);
     RenderLight* addRenderLight();
     RenderFlare* addRenderFlare(const std::string& tex);
     // RenderCloth* addRenderCloth(phys::Cloth* cloth);

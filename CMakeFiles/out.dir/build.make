@@ -105,33 +105,9 @@ CMakeFiles/out.dir/src/main.cpp.o.provides: CMakeFiles/out.dir/src/main.cpp.o.re
 CMakeFiles/out.dir/src/main.cpp.o.provides.build: CMakeFiles/out.dir/src/main.cpp.o
 
 
-CMakeFiles/out.dir/src/Animation/Animator.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Animation/Animator.cpp.o: src/Animation/Animator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/out.dir/src/Animation/Animator.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Animation/Animator.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Animation/Animator.cpp
-
-CMakeFiles/out.dir/src/Animation/Animator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Animation/Animator.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Animation/Animator.cpp > CMakeFiles/out.dir/src/Animation/Animator.cpp.i
-
-CMakeFiles/out.dir/src/Animation/Animator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Animation/Animator.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Animation/Animator.cpp -o CMakeFiles/out.dir/src/Animation/Animator.cpp.s
-
-CMakeFiles/out.dir/src/Animation/Animator.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Animation/Animator.cpp.o.requires
-
-CMakeFiles/out.dir/src/Animation/Animator.cpp.o.provides: CMakeFiles/out.dir/src/Animation/Animator.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/Animator.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Animation/Animator.cpp.o.provides
-
-CMakeFiles/out.dir/src/Animation/Animator.cpp.o.provides.build: CMakeFiles/out.dir/src/Animation/Animator.cpp.o
-
-
 CMakeFiles/out.dir/src/Animation/Clip.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Animation/Clip.cpp.o: src/Animation/Clip.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/out.dir/src/Animation/Clip.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/out.dir/src/Animation/Clip.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Animation/Clip.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Animation/Clip.cpp
 
 CMakeFiles/out.dir/src/Animation/Clip.cpp.i: cmake_force
@@ -155,7 +131,7 @@ CMakeFiles/out.dir/src/Animation/Clip.cpp.o.provides.build: CMakeFiles/out.dir/s
 
 CMakeFiles/out.dir/src/Animation/Pose.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Animation/Pose.cpp.o: src/Animation/Pose.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.dir/src/Animation/Pose.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/out.dir/src/Animation/Pose.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Animation/Pose.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Animation/Pose.cpp
 
 CMakeFiles/out.dir/src/Animation/Pose.cpp.i: cmake_force
@@ -179,7 +155,7 @@ CMakeFiles/out.dir/src/Animation/Pose.cpp.o.provides.build: CMakeFiles/out.dir/s
 
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o: src/Animation/Skeleton.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Animation/Skeleton.cpp
 
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.i: cmake_force
@@ -199,6 +175,30 @@ CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o.provides: CMakeFiles/out.dir/src
 .PHONY : CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o.provides
 
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o.provides.build: CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o
+
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Animation/SkinningData.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Animation/SkinningData.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp > CMakeFiles/out.dir/src/Animation/SkinningData.cpp.i
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Animation/SkinningData.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp -o CMakeFiles/out.dir/src/Animation/SkinningData.cpp.s
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.requires
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.provides: CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.provides
+
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.provides.build: CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o
 
 
 CMakeFiles/out.dir/src/Core/Config.cpp.o: CMakeFiles/out.dir/flags.make
@@ -1453,10 +1453,10 @@ CMakeFiles/out.dir/src/ThirdParty/glm/detail/glm.cpp.o.provides.build: CMakeFile
 out_OBJECTS = \
 "CMakeFiles/out.dir/src/Application.cpp.o" \
 "CMakeFiles/out.dir/src/main.cpp.o" \
-"CMakeFiles/out.dir/src/Animation/Animator.cpp.o" \
 "CMakeFiles/out.dir/src/Animation/Clip.cpp.o" \
 "CMakeFiles/out.dir/src/Animation/Pose.cpp.o" \
 "CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o" \
+"CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o" \
 "CMakeFiles/out.dir/src/Core/Config.cpp.o" \
 "CMakeFiles/out.dir/src/Core/Convert.cpp.o" \
 "CMakeFiles/out.dir/src/Core/Math3D.cpp.o" \
@@ -1515,10 +1515,10 @@ out_EXTERNAL_OBJECTS =
 
 bin/out: CMakeFiles/out.dir/src/Application.cpp.o
 bin/out: CMakeFiles/out.dir/src/main.cpp.o
-bin/out: CMakeFiles/out.dir/src/Animation/Animator.cpp.o
 bin/out: CMakeFiles/out.dir/src/Animation/Clip.cpp.o
 bin/out: CMakeFiles/out.dir/src/Animation/Pose.cpp.o
 bin/out: CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o
+bin/out: CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o
 bin/out: CMakeFiles/out.dir/src/Core/Config.cpp.o
 bin/out: CMakeFiles/out.dir/src/Core/Convert.cpp.o
 bin/out: CMakeFiles/out.dir/src/Core/Math3D.cpp.o
@@ -1583,10 +1583,10 @@ CMakeFiles/out.dir/build: bin/out
 
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Application.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/main.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Animation/Animator.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Animation/Clip.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Animation/Pose.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Config.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Convert.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Math3D.cpp.o.requires

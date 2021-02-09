@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/Application.cpp.o"
   "CMakeFiles/out.dir/src/main.cpp.o"
-  "CMakeFiles/out.dir/src/Animation/Animator.cpp.o"
   "CMakeFiles/out.dir/src/Animation/Clip.cpp.o"
   "CMakeFiles/out.dir/src/Animation/Pose.cpp.o"
   "CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o"
+  "CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o"
   "CMakeFiles/out.dir/src/Core/Config.cpp.o"
   "CMakeFiles/out.dir/src/Core/Convert.cpp.o"
   "CMakeFiles/out.dir/src/Core/Math3D.cpp.o"

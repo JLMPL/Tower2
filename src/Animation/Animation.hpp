@@ -53,7 +53,9 @@ struct Joint
     std::string    name;
     mat4      offsetMatrix;
     i32       index = -1;
-    i8        children[MaxChildren];
+    // i8        children[MaxChildren];
+
+    std::vector<int> children;
 };
 
 struct Skeleton
@@ -73,5 +75,7 @@ vec3 getSkeletonRootMotion(const Skeleton* skel, const Animation* anim, Seconds 
 
 i8 findSkeletonJoint(const Skeleton* skel, const std::string& name);
 Joint* getSkeletonJoint(Skeleton* skel, const std::string& name);
+
+void loadSkeletonFromFile(Skeleton* skel, const std::string& path);
 
 }

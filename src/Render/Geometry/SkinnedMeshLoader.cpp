@@ -12,26 +12,21 @@ LOCAL std::vector<i32> m_redirect;
 
 LOCAL i8 addJointsToSkeleton(Mesh& mesh, const aiNode& node)
 {
-    i8 jointIndex = mesh.skeleton.joints.size();
+    // i8 jointIndex = mesh.skeleton.joints.size();
 
-    anim::Joint joint;
-    joint.name = node.mName.C_Str();
+    // anim::Joint joint;
+    // joint.name = node.mName.C_Str();
 
-    for (u32 i = 0; i < anim::Joint::MaxChildren; i++)
-        joint.children[i] = -1;
+    // mesh.skeleton.joints.push_back(joint);
+    // mesh.skeleton.joints.back().index = mesh.skeleton.joints.size()-1;
 
-    std::string nome = joint.name.c_str();
+    // for (u32 i = 0; i < node.mNumChildren; i++)
+    // {
+    //     i8 childJointIndex = addJointsToSkeleton(mesh, *node.mChildren[i]);
+    //     // mesh.skeleton.joints[jointIndex].children.push_back(childJointIndex);
+    // }
 
-    mesh.skeleton.joints.push_back(joint);
-    mesh.skeleton.joints.back().index = mesh.skeleton.joints.size()-1;
-
-    for (u32 i = 0; i < node.mNumChildren; i++)
-    {
-        i8 childJointIndex = addJointsToSkeleton(mesh, *node.mChildren[i]);
-        mesh.skeleton.joints[jointIndex].children[i] = childJointIndex;
-    }
-
-    return jointIndex;
+    // return jointIndex;
 }
 
 LOCAL void addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
@@ -103,7 +98,7 @@ LOCAL void addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
 
         printf("skinned material: %s\n", name.C_Str());
 
-        entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string{name.C_Str()}, name.C_Str());
+        entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string(name.C_Str()), name.C_Str());
 
         for (u32 i = 0; i < inMesh->mNumFaces; i++)
         {
@@ -126,11 +121,11 @@ LOCAL void addMeshesAndJoints(Mesh& mesh, const aiScene& scene, bool cloth)
 
         mesh.entries.push_back(entry);
 
-        for (u32 i = 0; i < inMesh->mNumBones; i++)
-        {
-            anim::Joint* joint = getSkeletonJoint(&mesh.skeleton, inMesh->mBones[i]->mName.C_Str());
-            joint->offsetMatrix = core::conv::toGlm(inMesh->mBones[i]->mOffsetMatrix);
-        }
+        // for (u32 i = 0; i < inMesh->mNumBones; i++)
+        // {
+        //     anim::Joint* joint = getSkeletonJoint(&mesh.skeleton, inMesh->mBones[i]->mName.C_Str());
+        //     joint->offsetMatrix = core::conv::toGlm(inMesh->mBones[i]->mOffsetMatrix);
+        // }
     }
 }
 
@@ -147,11 +142,11 @@ LOCAL void addVertexWeightData(VertexWeightData& vwd, const i32& id, f32 weight)
     }
 }
 
-LOCAL void doTheShitWithWeights(Mesh& mesh, const aiMesh& inMesh, Mesh::Entry& entry, bool cloth)
+LOCAL void doTheShitWithWeights(const anim::Skeleton& skeleton, const aiMesh& inMesh, Mesh::Entry& entry, bool cloth)
 {
-    for (u32 i = 0; i < mesh.skeleton.joints.size(); i++)
+    for (u32 i = 0; i < skeleton.joints.size(); i++)
     {
-        auto& joint = mesh.skeleton.joints[i];
+        auto& joint = skeleton.joints[i];
         const aiBone* bone = nullptr;
 
         for (u32 i = 0; i < inMesh.mNumBones; i++)
@@ -206,7 +201,7 @@ LOCAL void genBufferObjects(Mesh::Entry& entry)
     unbindVertexArray(entry.vao);
 }
 
-void loadSkinnedMeshFromFile(Mesh& mesh, const std::string& path, bool cloth)
+void loadSkinnedMeshFromFile(Mesh& mesh, const anim::Skeleton& skeleton, const std::string& path, bool cloth)
 {
     Assimp::Importer Importer;
     const aiScene* scene = Importer.ReadFile(path.c_str(),
@@ -225,11 +220,11 @@ void loadSkinnedMeshFromFile(Mesh& mesh, const std::string& path, bool cloth)
 
     mesh.name = path;
 
-    addJointsToSkeleton(mesh, *scene->mRootNode);
+    // addJointsToSkeleton(mesh, *scene->mRootNode);
     addMeshesAndJoints(mesh, *scene, cloth);
 
     for (u32 i = 0; i < scene->mNumMeshes; i++)
-        doTheShitWithWeights(mesh, *scene->mMeshes[i], mesh.entries[i], cloth);
+        doTheShitWithWeights(skeleton, *scene->mMeshes[i], mesh.entries[i], cloth);
 
     for (auto& ent : mesh.entries)
         genBufferObjects(ent);

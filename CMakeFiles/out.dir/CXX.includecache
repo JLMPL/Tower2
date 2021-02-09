@@ -18,16 +18,6 @@ vector
 functional
 -
 
-/home/dominik/Desktop/TOWER_2/src/Animation/Animator.cpp
-Animation.hpp
-/home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
-Debug/Log.hpp
-/home/dominik/Desktop/TOWER_2/src/Animation/Debug/Log.hpp
-Core/Timer.hpp
-/home/dominik/Desktop/TOWER_2/src/Animation/Core/Timer.hpp
-Render/SceneRenderer.hpp
-/home/dominik/Desktop/TOWER_2/src/Animation/Render/SceneRenderer.hpp
-
 /home/dominik/Desktop/TOWER_2/src/Animation/Clip.cpp
 Animation.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
@@ -49,6 +39,26 @@ Animation.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Skeleton.cpp
 Animation.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
+Core/Convert.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Core/Convert.hpp
+Debug/Log.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Debug/Log.hpp
+assimp/Importer.hpp
+-
+assimp/postprocess.h
+-
+assimp/scene.h
+-
+
+/home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp
+Animation.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
+Debug/Log.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Debug/Log.hpp
+Core/Timer.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Core/Timer.hpp
+Render/SceneRenderer.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Render/SceneRenderer.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Application.cpp
 Application.hpp
@@ -715,6 +725,8 @@ ThirdParty/entt/entt.hpp
 /home/dominik/Desktop/TOWER_2/src/Resource/ThirdParty/entt/entt.hpp
 Render/Geometry/Geometry.hpp
 /home/dominik/Desktop/TOWER_2/src/Resource/Render/Geometry/Geometry.hpp
+Animation/Animation.hpp
+/home/dominik/Desktop/TOWER_2/src/Resource/Animation/Animation.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp
 TextureCache.hpp
@@ -1283,6 +1295,8 @@ ThirdParty/entt/entt.hpp
 src/Resource/ThirdParty/entt/entt.hpp
 Render/Geometry/Geometry.hpp
 src/Resource/Render/Geometry/Geometry.hpp
+Animation/Animation.hpp
+src/Resource/Animation/Animation.hpp
 
 src/Resource/TextureCache.hpp
 ThirdParty/entt/entt.hpp

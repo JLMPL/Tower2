@@ -49,7 +49,7 @@ LOCAL void loadMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh, bool
 
     printf("static material: %s\n", name.C_Str());
 
-    entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string{name.C_Str()}, name.C_Str());
+    entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string(name.C_Str()), name.C_Str());
 
     if (!entry.material)
         Log::info("in %s\n", mesh.name.c_str());
@@ -127,7 +127,7 @@ LOCAL void loadClothMesh(Mesh& mesh, const aiScene& scene, const aiMesh& inMesh,
     aiString name;
     material->Get(AI_MATKEY_NAME, name);
 
-    entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string{name.C_Str()}, name.C_Str());
+    entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string(name.C_Str()), name.C_Str());
 
     if (!entry.material)
         Log::info("in %s\n", mesh.name.c_str());

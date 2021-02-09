@@ -25,7 +25,7 @@ RenderMesh* RenderScene::addRenderMesh(MeshHandle mesh)
     return m_meshes.back().get();
 }
 
-RenderSkinnedMesh* RenderScene::addRenderSkinnedMesh(MeshHandle mesh, const mat4* palette)
+RenderSkinnedMesh* RenderScene::addRenderSkinnedMesh(MeshHandle mesh, const std::vector<mat4>& palette)
 {
     m_skinMeshes.emplace_back(new RenderSkinnedMesh(mesh, palette));
     return m_skinMeshes.back().get();

@@ -123,33 +123,6 @@ out/fast:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/build
 .PHONY : out/fast
 
-src/Animation/Animator.o: src/Animation/Animator.cpp.o
-
-.PHONY : src/Animation/Animator.o
-
-# target to build an object file
-src/Animation/Animator.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/Animator.cpp.o
-.PHONY : src/Animation/Animator.cpp.o
-
-src/Animation/Animator.i: src/Animation/Animator.cpp.i
-
-.PHONY : src/Animation/Animator.i
-
-# target to preprocess a source file
-src/Animation/Animator.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/Animator.cpp.i
-.PHONY : src/Animation/Animator.cpp.i
-
-src/Animation/Animator.s: src/Animation/Animator.cpp.s
-
-.PHONY : src/Animation/Animator.s
-
-# target to generate assembly for a file
-src/Animation/Animator.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/Animator.cpp.s
-.PHONY : src/Animation/Animator.cpp.s
-
 src/Animation/Clip.o: src/Animation/Clip.cpp.o
 
 .PHONY : src/Animation/Clip.o
@@ -230,6 +203,33 @@ src/Animation/Skeleton.s: src/Animation/Skeleton.cpp.s
 src/Animation/Skeleton.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/Skeleton.cpp.s
 .PHONY : src/Animation/Skeleton.cpp.s
+
+src/Animation/SkinningData.o: src/Animation/SkinningData.cpp.o
+
+.PHONY : src/Animation/SkinningData.o
+
+# target to build an object file
+src/Animation/SkinningData.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o
+.PHONY : src/Animation/SkinningData.cpp.o
+
+src/Animation/SkinningData.i: src/Animation/SkinningData.cpp.i
+
+.PHONY : src/Animation/SkinningData.i
+
+# target to preprocess a source file
+src/Animation/SkinningData.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/SkinningData.cpp.i
+.PHONY : src/Animation/SkinningData.cpp.i
+
+src/Animation/SkinningData.s: src/Animation/SkinningData.cpp.s
+
+.PHONY : src/Animation/SkinningData.s
+
+# target to generate assembly for a file
+src/Animation/SkinningData.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Animation/SkinningData.cpp.s
+.PHONY : src/Animation/SkinningData.cpp.s
 
 src/Application.o: src/Application.cpp.o
 
@@ -1698,9 +1698,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... out"
 	@echo "... edit_cache"
-	@echo "... src/Animation/Animator.o"
-	@echo "... src/Animation/Animator.i"
-	@echo "... src/Animation/Animator.s"
 	@echo "... src/Animation/Clip.o"
 	@echo "... src/Animation/Clip.i"
 	@echo "... src/Animation/Clip.s"
@@ -1710,6 +1707,9 @@ help:
 	@echo "... src/Animation/Skeleton.o"
 	@echo "... src/Animation/Skeleton.i"
 	@echo "... src/Animation/Skeleton.s"
+	@echo "... src/Animation/SkinningData.o"
+	@echo "... src/Animation/SkinningData.i"
+	@echo "... src/Animation/SkinningData.s"
 	@echo "... src/Application.o"
 	@echo "... src/Application.i"
 	@echo "... src/Application.s"

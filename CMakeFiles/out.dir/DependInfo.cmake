@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dominik/Desktop/TOWER_2/src/Animation/Animator.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Animation/Animator.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Animation/Clip.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Animation/Clip.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Animation/Pose.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Animation/Pose.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Animation/Skeleton.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o"
+  "/home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Application.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Application.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Core/Config.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Core/Config.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Core/Convert.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Core/Convert.cpp.o"

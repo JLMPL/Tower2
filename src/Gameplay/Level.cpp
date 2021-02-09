@@ -29,13 +29,20 @@ void Level::initFromScript(const std::string& file)
     debug::g_Menu["Scene"].bind("cameraPos", &m_eye);
     debug::g_Menu["Scene"].bind("speed", &m_speed);
 
-    auto mesh = MeshCache.load<SkinnedMeshLoader>("archer"_hs, "Archer.dae");
-    m_skeleton = &mesh->skeleton;
+    loadSkeletonFromFile(&m_otherSkeleton, "Meshes/Archer.dae");
 
-    m_matrixPalette.resize(m_skeleton->joints.size());
-    m_jointTransforms.resize(m_skeleton->joints.size());
+    auto mesh = MeshCache.load<SkinnedMeshLoader>("archer"_hs, "Archer.dae", m_otherSkeleton);
 
-    m_rawskin = m_renderScene.addRenderSkinnedMesh(mesh, m_matrixPalette.data());
+    // for (int i = 0; i < m_skeleton->joints.size(); i++)
+    {
+        // printf("%d\n", i);
+        // m_otherSkeleton.joints[i].offsetMatrix = m_skeleton->joints[i].offsetMatrix;
+    }
+
+    m_matrixPalette.resize(m_otherSkeleton.joints.size());
+    m_jointTransforms.resize(m_otherSkeleton.joints.size());
+
+    m_rawskin = m_renderScene.addRenderSkinnedMesh(mesh, m_matrixPalette);
     m_rawskin->setTransform(math::scale(vec3(0.01)));
 }
 
@@ -89,13 +96,14 @@ void Level::update()
 
     //post physics update
 
-    m_pose = getSkeletonPose(*m_skeleton, m_animations[m_currentAnim], along);
+    m_pose = getSkeletonPose(m_otherSkeleton, m_animations[m_currentAnim], along);
 
-    computeSkinMatrices(*m_skeleton, m_pose, m_matrixPalette, m_jointTransforms);
+    computeSkinMatrices(m_otherSkeleton, m_pose, m_matrixPalette, m_jointTransforms);
 
     for (int i = 0; i < m_jointTransforms.size(); i++)
     {
         m_jointTransforms[i][3] = vec4(vec3(m_jointTransforms[i][3]) * 0.01, 1);
+        // gfx::g_SceneRenderer.addSphere(m_jointTransforms[i][3], 0.1f, vec3(0,1,0));
     }
 
     m_camera.setEye(m_eye);

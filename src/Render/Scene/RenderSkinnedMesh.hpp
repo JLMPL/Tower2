@@ -13,7 +13,7 @@ public:
     using Ptr = std::unique_ptr<RenderSkinnedMesh>;
 
     RenderSkinnedMesh() = default;
-    RenderSkinnedMesh(MeshHandle mesh, const mat4* palette);
+    RenderSkinnedMesh(MeshHandle mesh, const std::vector<mat4>& palette);
     ~RenderSkinnedMesh() = default;
 
     MeshHandle getMesh() const;
@@ -25,5 +25,5 @@ public:
 
 private:
     MeshHandle m_mesh;
-    const mat4* m_matrixPalette = nullptr;
+    const std::vector<mat4>& m_matrixPalette;
 };
