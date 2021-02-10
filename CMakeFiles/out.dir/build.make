@@ -369,57 +369,9 @@ CMakeFiles/out.dir/src/Debug/Log.cpp.o.provides: CMakeFiles/out.dir/src/Debug/Lo
 CMakeFiles/out.dir/src/Debug/Log.cpp.o.provides.build: CMakeFiles/out.dir/src/Debug/Log.cpp.o
 
 
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o: src/Gameplay/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Gameplay/Camera.cpp
-
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Camera.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Gameplay/Camera.cpp > CMakeFiles/out.dir/src/Gameplay/Camera.cpp.i
-
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Camera.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Gameplay/Camera.cpp -o CMakeFiles/out.dir/src/Gameplay/Camera.cpp.s
-
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.requires
-
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.provides
-
-CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o
-
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Gameplay/Level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/out.dir/src/Gameplay/Level.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Gameplay/Level.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.cpp
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Gameplay/Level.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.cpp > CMakeFiles/out.dir/src/Gameplay/Level.cpp.i
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Gameplay/Level.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.cpp -o CMakeFiles/out.dir/src/Gameplay/Level.cpp.s
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires:
-
-.PHONY : CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides
-
-CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.provides.build: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
-
-
 CMakeFiles/out.dir/src/Input/Input.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Input/Input.cpp.o: src/Input/Input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/out.dir/src/Input/Input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/out.dir/src/Input/Input.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Input/Input.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Input/Input.cpp
 
 CMakeFiles/out.dir/src/Input/Input.cpp.i: cmake_force
@@ -443,7 +395,7 @@ CMakeFiles/out.dir/src/Input/Input.cpp.o.provides.build: CMakeFiles/out.dir/src/
 
 CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o: src/Physics/CharacterController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/CharacterController.cpp
 
 CMakeFiles/out.dir/src/Physics/CharacterController.cpp.i: cmake_force
@@ -467,7 +419,7 @@ CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/out.dir/src/Physics/Cloth.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/Cloth.cpp.o: src/Physics/Cloth.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/out.dir/src/Physics/Cloth.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/out.dir/src/Physics/Cloth.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/Cloth.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/Cloth.cpp
 
 CMakeFiles/out.dir/src/Physics/Cloth.cpp.i: cmake_force
@@ -491,7 +443,7 @@ CMakeFiles/out.dir/src/Physics/Cloth.cpp.o.provides.build: CMakeFiles/out.dir/sr
 
 CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o: src/Physics/ErrorCallback.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/ErrorCallback.cpp
 
 CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.i: cmake_force
@@ -515,7 +467,7 @@ CMakeFiles/out.dir/src/Physics/ErrorCallback.cpp.o.provides.build: CMakeFiles/ou
 
 CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o: src/Physics/PhysicsSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/PhysicsSystem.cpp
 
 CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.i: cmake_force
@@ -539,7 +491,7 @@ CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o.provides.build: CMakeFiles/ou
 
 CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o: src/Physics/RigidBody.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/RigidBody.cpp
 
 CMakeFiles/out.dir/src/Physics/RigidBody.cpp.i: cmake_force
@@ -563,7 +515,7 @@ CMakeFiles/out.dir/src/Physics/RigidBody.cpp.o.provides.build: CMakeFiles/out.di
 
 CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o: src/Physics/StaticBody.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Physics/StaticBody.cpp
 
 CMakeFiles/out.dir/src/Physics/StaticBody.cpp.i: cmake_force
@@ -587,7 +539,7 @@ CMakeFiles/out.dir/src/Physics/StaticBody.cpp.o.provides.build: CMakeFiles/out.d
 
 CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o: src/Render/ArrayBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/ArrayBuffer.cpp
 
 CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.i: cmake_force
@@ -611,7 +563,7 @@ CMakeFiles/out.dir/src/Render/ArrayBuffer.cpp.o.provides.build: CMakeFiles/out.d
 
 CMakeFiles/out.dir/src/Render/BasePass.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/BasePass.cpp.o: src/Render/BasePass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/out.dir/src/Render/BasePass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/out.dir/src/Render/BasePass.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/BasePass.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/BasePass.cpp
 
 CMakeFiles/out.dir/src/Render/BasePass.cpp.i: cmake_force
@@ -635,7 +587,7 @@ CMakeFiles/out.dir/src/Render/BasePass.cpp.o.provides.build: CMakeFiles/out.dir/
 
 CMakeFiles/out.dir/src/Render/Cubemap.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Cubemap.cpp.o: src/Render/Cubemap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/out.dir/src/Render/Cubemap.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/out.dir/src/Render/Cubemap.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Cubemap.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Cubemap.cpp
 
 CMakeFiles/out.dir/src/Render/Cubemap.cpp.i: cmake_force
@@ -659,7 +611,7 @@ CMakeFiles/out.dir/src/Render/Cubemap.cpp.o.provides.build: CMakeFiles/out.dir/s
 
 CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o: src/Render/Framebuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Framebuffer.cpp
 
 CMakeFiles/out.dir/src/Render/Framebuffer.cpp.i: cmake_force
@@ -683,7 +635,7 @@ CMakeFiles/out.dir/src/Render/Framebuffer.cpp.o.provides.build: CMakeFiles/out.d
 
 CMakeFiles/out.dir/src/Render/Image.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Image.cpp.o: src/Render/Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/out.dir/src/Render/Image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/out.dir/src/Render/Image.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Image.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Image.cpp
 
 CMakeFiles/out.dir/src/Render/Image.cpp.i: cmake_force
@@ -707,7 +659,7 @@ CMakeFiles/out.dir/src/Render/Image.cpp.o.provides.build: CMakeFiles/out.dir/src
 
 CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o: src/Render/LineRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/LineRenderer.cpp
 
 CMakeFiles/out.dir/src/Render/LineRenderer.cpp.i: cmake_force
@@ -731,7 +683,7 @@ CMakeFiles/out.dir/src/Render/LineRenderer.cpp.o.provides.build: CMakeFiles/out.
 
 CMakeFiles/out.dir/src/Render/Material.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Material.cpp.o: src/Render/Material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/out.dir/src/Render/Material.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/out.dir/src/Render/Material.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Material.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Material.cpp
 
 CMakeFiles/out.dir/src/Render/Material.cpp.i: cmake_force
@@ -755,7 +707,7 @@ CMakeFiles/out.dir/src/Render/Material.cpp.o.provides.build: CMakeFiles/out.dir/
 
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.o: src/Render/OpenGL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/Render/OpenGL.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/out.dir/src/Render/OpenGL.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/OpenGL.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/OpenGL.cpp
 
 CMakeFiles/out.dir/src/Render/OpenGL.cpp.i: cmake_force
@@ -779,7 +731,7 @@ CMakeFiles/out.dir/src/Render/OpenGL.cpp.o.provides.build: CMakeFiles/out.dir/sr
 
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.o: src/Render/RenderPass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/Render/RenderPass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/out.dir/src/Render/RenderPass.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/RenderPass.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/RenderPass.cpp
 
 CMakeFiles/out.dir/src/Render/RenderPass.cpp.i: cmake_force
@@ -803,7 +755,7 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o.provides.build: CMakeFiles/out.di
 
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o: src/Render/SceneRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/SceneRenderer.cpp
 
 CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.i: cmake_force
@@ -827,7 +779,7 @@ CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o.provides.build: CMakeFiles/out
 
 CMakeFiles/out.dir/src/Render/Shader.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Shader.cpp.o: src/Render/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/Render/Shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/out.dir/src/Render/Shader.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Shader.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Shader.cpp
 
 CMakeFiles/out.dir/src/Render/Shader.cpp.i: cmake_force
@@ -851,7 +803,7 @@ CMakeFiles/out.dir/src/Render/Shader.cpp.o.provides.build: CMakeFiles/out.dir/sr
 
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o: src/Render/ShadowPass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.cpp
 
 CMakeFiles/out.dir/src/Render/ShadowPass.cpp.i: cmake_force
@@ -875,7 +827,7 @@ CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o.provides.build: CMakeFiles/out.di
 
 CMakeFiles/out.dir/src/Render/Texture.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/Texture.cpp.o: src/Render/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/Render/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/out.dir/src/Render/Texture.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/Texture.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/Texture.cpp
 
 CMakeFiles/out.dir/src/Render/Texture.cpp.i: cmake_force
@@ -899,7 +851,7 @@ CMakeFiles/out.dir/src/Render/Texture.cpp.o.provides.build: CMakeFiles/out.dir/s
 
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.o: src/Render/VertexArray.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/out.dir/src/Render/VertexArray.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Render/VertexArray.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.cpp
 
 CMakeFiles/out.dir/src/Render/VertexArray.cpp.i: cmake_force
@@ -923,7 +875,7 @@ CMakeFiles/out.dir/src/Render/VertexArray.cpp.o.provides.build: CMakeFiles/out.d
 
 CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o: src/Resource/AnimationCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/AnimationCache.cpp
 
 CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.i: cmake_force
@@ -947,7 +899,7 @@ CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o: src/Resource/MaterialCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/MaterialCache.cpp
 
 CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.i: cmake_force
@@ -971,7 +923,7 @@ CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.provides.build: CMakeFiles/o
 
 CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o: src/Resource/MeshCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp
 
 CMakeFiles/out.dir/src/Resource/MeshCache.cpp.i: cmake_force
@@ -995,7 +947,7 @@ CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.provides.build: CMakeFiles/out.d
 
 CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: CMakeFiles/out.dir/flags.make
 CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o: src/Resource/TextureCache.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
 	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp
 
 CMakeFiles/out.dir/src/Resource/TextureCache.cpp.i: cmake_force
@@ -1015,6 +967,54 @@ CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides: CMakeFiles/out.dir/
 .PHONY : CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides
 
 CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.provides.build: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Scene/Camera.cpp.o: src/Scene/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/out.dir/src/Scene/Camera.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Scene/Camera.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Scene/Camera.cpp
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Scene/Camera.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Scene/Camera.cpp > CMakeFiles/out.dir/src/Scene/Camera.cpp.i
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Scene/Camera.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Scene/Camera.cpp -o CMakeFiles/out.dir/src/Scene/Camera.cpp.s
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Scene/Camera.cpp.o.requires
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides: CMakeFiles/out.dir/src/Scene/Camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides
+
+CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides.build: CMakeFiles/out.dir/src/Scene/Camera.cpp.o
+
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Scene/Level.cpp.o: src/Scene/Level.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Scene/Level.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Scene/Level.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Scene/Level.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp > CMakeFiles/out.dir/src/Scene/Level.cpp.i
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Scene/Level.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp -o CMakeFiles/out.dir/src/Scene/Level.cpp.s
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires:
+
+.PHONY : CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides: CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides
+
+CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides.build: CMakeFiles/out.dir/src/Scene/Level.cpp.o
 
 
 CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o: CMakeFiles/out.dir/flags.make
@@ -1464,8 +1464,6 @@ out_OBJECTS = \
 "CMakeFiles/out.dir/src/Core/Timer.cpp.o" \
 "CMakeFiles/out.dir/src/Debug/DebugMenu.cpp.o" \
 "CMakeFiles/out.dir/src/Debug/Log.cpp.o" \
-"CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o" \
-"CMakeFiles/out.dir/src/Gameplay/Level.cpp.o" \
 "CMakeFiles/out.dir/src/Input/Input.cpp.o" \
 "CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o" \
 "CMakeFiles/out.dir/src/Physics/Cloth.cpp.o" \
@@ -1491,6 +1489,8 @@ out_OBJECTS = \
 "CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o" \
 "CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o" \
 "CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o" \
+"CMakeFiles/out.dir/src/Scene/Camera.cpp.o" \
+"CMakeFiles/out.dir/src/Scene/Level.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o" \
@@ -1526,8 +1526,6 @@ bin/out: CMakeFiles/out.dir/src/Core/Random.cpp.o
 bin/out: CMakeFiles/out.dir/src/Core/Timer.cpp.o
 bin/out: CMakeFiles/out.dir/src/Debug/DebugMenu.cpp.o
 bin/out: CMakeFiles/out.dir/src/Debug/Log.cpp.o
-bin/out: CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o
-bin/out: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
 bin/out: CMakeFiles/out.dir/src/Input/Input.cpp.o
 bin/out: CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o
 bin/out: CMakeFiles/out.dir/src/Physics/Cloth.cpp.o
@@ -1553,6 +1551,8 @@ bin/out: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
+bin/out: CMakeFiles/out.dir/src/Scene/Camera.cpp.o
+bin/out: CMakeFiles/out.dir/src/Scene/Level.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o
@@ -1594,8 +1594,6 @@ CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Random.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Core/Timer.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Debug/DebugMenu.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Debug/Log.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Camera.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Gameplay/Level.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Input/Input.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Physics/CharacterController.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Physics/Cloth.cpp.o.requires
@@ -1621,6 +1619,8 @@ CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/AnimationCache.cpp.
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Scene/Camera.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o.requires

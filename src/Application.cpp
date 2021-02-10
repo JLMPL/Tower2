@@ -8,7 +8,7 @@
 #include "Input/Input.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/Geometry/Geometry.hpp"
-#include "Gameplay/Level.hpp"
+#include "Scene/Level.hpp"
 #include <SDL2/SDL.h>
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLEW

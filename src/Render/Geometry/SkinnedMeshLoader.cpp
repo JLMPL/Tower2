@@ -77,8 +77,6 @@ LOCAL void addMeshes(Mesh& mesh, const aiScene& scene, bool cloth)
         aiString name;
         material->Get(AI_MATKEY_NAME, name);
 
-        printf("skinned material: %s\n", name.C_Str());
-
         entry.material = MaterialCache.load<MaterialLoader>(entt::hashed_string(name.C_Str()), name.C_Str());
 
         for (u32 i = 0; i < inMesh->mNumFaces; i++)

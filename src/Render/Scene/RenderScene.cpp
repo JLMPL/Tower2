@@ -1,6 +1,6 @@
 #include "RenderScene.hpp"
 #include "Core/Config.hpp"
-#include "Gameplay/Level.hpp"
+#include "Scene/Level.hpp"
 
 RenderScene::RenderScene()
 {
