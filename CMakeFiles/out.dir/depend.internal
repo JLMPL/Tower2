@@ -779,8 +779,8 @@ CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
 CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o
- /home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
  /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp
+ /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.hpp
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
@@ -1078,6 +1078,7 @@ CMakeFiles/out.dir/src/Application.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Shader.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
+ src/Animation/SkinningData.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
@@ -2614,6 +2615,7 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.cpp
  /home/dominik/Desktop/TOWER_2/src/Gameplay/Level.hpp
  src/Animation/Animation.hpp
+ src/Animation/SkinningData.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
@@ -8106,6 +8108,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderScene.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderSkinnedMesh.hpp
  src/Animation/Animation.hpp
+ src/Animation/SkinningData.hpp
  src/Core/Config.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp

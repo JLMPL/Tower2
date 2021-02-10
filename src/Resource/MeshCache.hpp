@@ -19,7 +19,7 @@ struct StaticMeshLoader : entt::resource_loader<StaticMeshLoader, gfx::Mesh>
 
 struct SkinnedMeshLoader : entt::resource_loader<SkinnedMeshLoader, gfx::Mesh>
 {
-    std::shared_ptr<gfx::Mesh> load(const std::string& filename, const anim::Skeleton& skel) const
+    std::shared_ptr<gfx::Mesh> load(const std::string& filename, const Skeleton& skel) const
     {
         auto mesh = std::make_shared<gfx::Mesh>();
 

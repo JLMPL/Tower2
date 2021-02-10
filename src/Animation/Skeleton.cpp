@@ -5,9 +5,6 @@
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
 
-namespace anim
-{
-
 template<typename T>
 LOCAL u32 findCurrentFrameIndex(const T& keys, f32 animationTime)
 {
@@ -92,7 +89,7 @@ LOCAL i8 addJointsToSkeleton(Skeleton& skeleton, const aiNode& node)
 {
     i8 jointIndex = skeleton.joints.size();
 
-    anim::Joint joint;
+    Joint joint;
     joint.name = node.mName.C_Str();
 
     std::string nome = joint.name.c_str();
@@ -145,6 +142,4 @@ void loadSkeletonFromFile(Skeleton* skel, const std::string& path)
 
     addJointsToSkeleton(*skel, *scene->mRootNode);
     loadBindPose(*skel, *scene);
-}
-
 }

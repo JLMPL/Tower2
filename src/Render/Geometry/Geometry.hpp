@@ -46,7 +46,6 @@ struct Mesh
     std::string name;
 
     std::vector<Entry> entries;
-    // anim::Skeleton skeleton;
 };
 
 f32 getVertexHash(const Vertex& vert);
@@ -54,7 +53,7 @@ f32 getVertexHash(const Vertex& vert);
 void initScreenQuad();
 void renderScreenQuad();
 
-void loadSkinnedMeshFromFile(Mesh& mesh, const anim::Skeleton& skeleton, const std::string& path, bool cloth = false);
+void loadSkinnedMeshFromFile(Mesh& mesh, const Skeleton& skeleton, const std::string& path, bool cloth = false);
 void loadStaticMeshFromFile(Mesh& mesh, const std::string& path, bool cloth = false);
 
 }

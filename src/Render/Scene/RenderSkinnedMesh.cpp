@@ -14,7 +14,6 @@ MeshHandle RenderSkinnedMesh::getMesh() const
 
 i32 RenderSkinnedMesh::getNumJoints() const
 {
-    // return m_mesh->skeleton.joints.size();
     return m_matrixPalette.size();
 }
 

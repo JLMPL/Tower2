@@ -1,8 +1,5 @@
 #include "Animation.hpp"
 
-namespace anim
-{
-
 Pose lerpPose(const Pose& a, const Pose& b, f32 v)
 {
     Pose final;
@@ -16,6 +13,4 @@ Pose lerpPose(const Pose& a, const Pose& b, f32 v)
     }
 
     return final;
-}
-
 }

@@ -1,10 +1,7 @@
-#include "Animation.hpp"
+#include "SkinningData.hpp"
 #include "Debug/Log.hpp"
 #include "Core/Timer.hpp"
 #include "Render/SceneRenderer.hpp"
-
-namespace anim
-{
 
 LOCAL void genMatrices(
     const Joint& joint,
@@ -51,4 +48,9 @@ void computeSkinMatrices(const Skeleton& skel, const Pose& pose, std::vector<mat
     genMatrices(skel.joints[0], mat4(1.f), pose, skel, palette, globals);
 }
 
+void SkinningData::computeMatrices(const Skeleton& skeleton, const Pose& pose)
+{
+    palette.resize(skeleton.joints.size());
+    transforms.resize(skeleton.joints.size());
+    genMatrices(skeleton.joints[0], mat4(1.f), pose, skeleton, palette, transforms);
 }

@@ -4,19 +4,19 @@
 
 using namespace entt::literals;
 
-struct AnimationLoader : entt::resource_loader<AnimationLoader, anim::Animation>
+struct AnimationLoader : entt::resource_loader<AnimationLoader, Animation>
 {
-    std::shared_ptr<anim::Animation> load(const std::string& filename) const
+    std::shared_ptr<Animation> load(const std::string& filename) const
     {
-        auto anim = std::make_shared<anim::Animation>();
+        auto anim = std::make_shared<Animation>();
 
-        anim::loadAnimationFromFile(anim.get(), filename);
+        loadAnimationFromFile(anim.get(), filename);
 
         return anim;
     };
 };
 
-using _AnimationCache = entt::resource_cache<anim::Animation>;
-using AnimationHandle = entt::resource_handle<anim::Animation>;
+using _AnimationCache = entt::resource_cache<Animation>;
+using AnimationHandle = entt::resource_handle<Animation>;
 
 extern _AnimationCache AnimationCache;

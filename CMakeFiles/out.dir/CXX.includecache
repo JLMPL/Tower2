@@ -51,14 +51,20 @@ assimp/scene.h
 -
 
 /home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.cpp
-Animation.hpp
-/home/dominik/Desktop/TOWER_2/src/Animation/Animation.hpp
+SkinningData.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.hpp
 Debug/Log.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Debug/Log.hpp
 Core/Timer.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Core/Timer.hpp
 Render/SceneRenderer.hpp
 /home/dominik/Desktop/TOWER_2/src/Animation/Render/SceneRenderer.hpp
+
+/home/dominik/Desktop/TOWER_2/src/Animation/SkinningData.hpp
+Core/Math3D.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Core/Math3D.hpp
+Animation/Animation.hpp
+/home/dominik/Desktop/TOWER_2/src/Animation/Animation/Animation.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Application.cpp
 Application.hpp
@@ -219,6 +225,8 @@ Render/Scene/RenderScene.hpp
 /home/dominik/Desktop/TOWER_2/src/Gameplay/Render/Scene/RenderScene.hpp
 Physics/PhysicsSystem.hpp
 /home/dominik/Desktop/TOWER_2/src/Gameplay/Physics/PhysicsSystem.hpp
+Animation/SkinningData.hpp
+/home/dominik/Desktop/TOWER_2/src/Gameplay/Animation/SkinningData.hpp
 Camera.hpp
 /home/dominik/Desktop/TOWER_2/src/Gameplay/Camera.hpp
 
@@ -978,6 +986,12 @@ vector
 functional
 -
 
+src/Animation/SkinningData.hpp
+Core/Math3D.hpp
+src/Animation/Core/Math3D.hpp
+Animation/Animation.hpp
+src/Animation/Animation/Animation.hpp
+
 src/Core/Config.hpp
 Core/Types.hpp
 src/Core/Core/Types.hpp
@@ -1047,6 +1061,8 @@ Render/Scene/RenderScene.hpp
 src/Gameplay/Render/Scene/RenderScene.hpp
 Physics/PhysicsSystem.hpp
 src/Gameplay/Physics/PhysicsSystem.hpp
+Animation/SkinningData.hpp
+src/Gameplay/Animation/SkinningData.hpp
 Camera.hpp
 src/Gameplay/Camera.hpp
 

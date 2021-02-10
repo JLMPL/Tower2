@@ -5,9 +5,6 @@
 #include <vector>
 #include <functional>
 
-namespace anim
-{
-
 template<typename T>
 struct Key
 {
@@ -53,7 +50,6 @@ struct Joint
     std::string    name;
     mat4      offsetMatrix;
     i32       index = -1;
-    // i8        children[MaxChildren];
 
     std::vector<int> children;
 };
@@ -77,5 +73,3 @@ i8 findSkeletonJoint(const Skeleton* skel, const std::string& name);
 Joint* getSkeletonJoint(Skeleton* skel, const std::string& name);
 
 void loadSkeletonFromFile(Skeleton* skel, const std::string& path);
-
-}

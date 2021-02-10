@@ -29,20 +29,11 @@ void Level::initFromScript(const std::string& file)
     debug::g_Menu["Scene"].bind("cameraPos", &m_eye);
     debug::g_Menu["Scene"].bind("speed", &m_speed);
 
-    loadSkeletonFromFile(&m_otherSkeleton, "Meshes/Archer.dae");
+    loadSkeletonFromFile(&m_skeleton, "Meshes/Archer.dae");
 
-    auto mesh = MeshCache.load<SkinnedMeshLoader>("archer"_hs, "Archer.dae", m_otherSkeleton);
+    auto mesh = MeshCache.load<SkinnedMeshLoader>("archer"_hs, "Archer.dae", m_skeleton);
 
-    // for (int i = 0; i < m_skeleton->joints.size(); i++)
-    {
-        // printf("%d\n", i);
-        // m_otherSkeleton.joints[i].offsetMatrix = m_skeleton->joints[i].offsetMatrix;
-    }
-
-    m_matrixPalette.resize(m_otherSkeleton.joints.size());
-    m_jointTransforms.resize(m_otherSkeleton.joints.size());
-
-    m_rawskin = m_renderScene.addRenderSkinnedMesh(mesh, m_matrixPalette);
+    m_rawskin = m_renderScene.addRenderSkinnedMesh(mesh, m_skinData.palette);
     m_rawskin->setTransform(math::scale(vec3(0.01)));
 }
 
@@ -96,22 +87,22 @@ void Level::update()
 
     //post physics update
 
-    m_pose = getSkeletonPose(m_otherSkeleton, m_animations[m_currentAnim], along);
+    m_pose = getSkeletonPose(m_skeleton, m_animations[m_currentAnim], along);
 
-    computeSkinMatrices(m_otherSkeleton, m_pose, m_matrixPalette, m_jointTransforms);
+    m_skinData.computeMatrices(m_skeleton, m_pose);
 
-    for (int i = 0; i < m_jointTransforms.size(); i++)
+    for (int i = 0; i < m_skinData.transforms.size(); i++)
     {
-        m_jointTransforms[i][3] = vec4(vec3(m_jointTransforms[i][3]) * 0.01, 1);
-        // gfx::g_SceneRenderer.addSphere(m_jointTransforms[i][3], 0.1f, vec3(0,1,0));
+        m_skinData.transforms[i][3] = vec4(vec3(m_skinData.transforms[i][3]) * 0.01, 1);
+        // gfx::g_SceneRenderer.addSphere(m_skinData.transforms[i][3], 0.1f, vec3(0,1,0));
     }
 
     m_camera.setEye(m_eye);
-    m_camera.setCenter(vec3(m_jointTransforms[1][3]));
+    m_camera.setCenter(vec3(m_skinData.transforms[1][3]));
     m_camera.updateMatrices();
     m_renderScene.setView(m_camera.getView());
 
-    m_light->setPosition(vec3(m_jointTransforms[1][3]) + vec3(1,2,0));
+    m_light->setPosition(vec3(m_skinData.transforms[1][3]) + vec3(1,2,0));
 
     m_physSys.debugDraw();
 

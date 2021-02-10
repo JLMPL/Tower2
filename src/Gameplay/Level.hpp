@@ -2,6 +2,7 @@
 #include "Resource/AnimationCache.hpp"
 #include "Render/Scene/RenderScene.hpp"
 #include "Physics/PhysicsSystem.hpp"
+#include "Animation/SkinningData.hpp"
 #include "Camera.hpp"
 
 class Level
@@ -37,11 +38,11 @@ private:
 
     float m_speed = 1.f;
 
-    const anim::Skeleton* m_skeleton = nullptr;
-    anim::Skeleton m_otherSkeleton;
-    anim::Pose m_pose;
-    std::vector<mat4> m_matrixPalette;
-    std::vector<mat4> m_jointTransforms;
+    Skeleton m_skeleton;
+    Pose m_pose;
+
+    SkinningData m_skinData;
+
     float along = 0.f;
 
     vec3 m_eye = vec3(3);

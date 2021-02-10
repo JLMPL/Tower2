@@ -778,8 +778,8 @@ CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o: src/ThirdParty/glm/vec4.hpp
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o: src/ThirdParty/glm/vector_relational.hpp
 CMakeFiles/out.dir/src/Animation/Skeleton.cpp.o: src/ThirdParty/json/json.hpp
 
-CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Animation/Animation.hpp
 CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Animation/SkinningData.cpp
+CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Animation/SkinningData.hpp
 CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Animation/Animation.hpp
 CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Core/Json.hpp
 CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o: src/Core/Math3D.hpp
@@ -1077,6 +1077,7 @@ CMakeFiles/out.dir/src/Application.cpp.o: src/Render/SceneRenderer.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Render/Shader.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Render/ShadowPass.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Render/VertexArray.hpp
+CMakeFiles/out.dir/src/Application.cpp.o: src/Animation/SkinningData.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Core/Convert.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Core/Json.hpp
 CMakeFiles/out.dir/src/Application.cpp.o: src/Core/Math3D.hpp
@@ -2613,6 +2614,7 @@ CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Gameplay/Camera.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Gameplay/Level.cpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Gameplay/Level.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Animation/Animation.hpp
+CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Animation/SkinningData.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Convert.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Json.hpp
 CMakeFiles/out.dir/src/Gameplay/Level.cpp.o: src/Core/Math3D.hpp
@@ -8105,6 +8107,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Render/Scene/RenderSc
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Render/Scene/RenderScene.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Render/Scene/RenderSkinnedMesh.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Animation/Animation.hpp
+CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Animation/SkinningData.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Core/Config.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Core/Convert.hpp
 CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o: src/Core/Json.hpp

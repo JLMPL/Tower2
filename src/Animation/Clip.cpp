@@ -5,9 +5,6 @@
 #include <assimp/postprocess.h>
 #include <assimp/scene.h>
 
-namespace anim
-{
-
 LOCAL void loadAnimation(Animation* anim, const std::string& path)
 {
     Assimp::Importer Importer;
@@ -107,6 +104,4 @@ const JointAnimation* findJointInAnimation(const Animation& anim, const std::str
             return &i;
 
     return nullptr;
-}
-
 }
