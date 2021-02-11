@@ -784,6 +784,7 @@ CMakeFiles/out.dir/src/Animation/SkinningData.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
@@ -1077,11 +1078,12 @@ CMakeFiles/out.dir/src/Application.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/ShadowPass.hpp
  /home/dominik/Desktop/TOWER_2/src/Render/VertexArray.hpp
  /home/dominik/Desktop/TOWER_2/src/Scene/Camera.hpp
- /home/dominik/Desktop/TOWER_2/src/Scene/Level.hpp
+ /home/dominik/Desktop/TOWER_2/src/Scene/Scene.hpp
  src/Animation/SkinningData.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Physics/CCTFilterCallback.hpp
  src/Physics/Cloth.hpp
@@ -3277,6 +3279,7 @@ CMakeFiles/out.dir/src/Physics/PhysicsSystem.cpp.o
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Random.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
@@ -4697,6 +4700,7 @@ CMakeFiles/out.dir/src/Render/BasePass.cpp.o
  src/Core/Config.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -6057,6 +6061,7 @@ CMakeFiles/out.dir/src/Render/RenderPass.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -6323,6 +6328,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderEntity.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderEntity.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
@@ -6569,6 +6575,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderFlare.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderFlare.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderFlare.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -6822,6 +6829,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderLight.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderLight.cpp
  /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderLight.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/ThirdParty/glm/./common.hpp
  src/ThirdParty/glm/./detail/_noise.hpp
@@ -7070,6 +7078,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderMesh.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -7338,6 +7347,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Physics/CCTFilterCallback.hpp
@@ -7359,7 +7369,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderScene.cpp.o
  src/Resource/MeshCache.hpp
  src/Resource/TextureCache.hpp
  src/Scene/Camera.hpp
- src/Scene/Level.hpp
+ src/Scene/Scene.hpp
  src/ThirdParty/PhysX/PxActor.h
  src/ThirdParty/PhysX/PxAggregate.h
  src/ThirdParty/PhysX/PxArticulation.h
@@ -7821,6 +7831,7 @@ CMakeFiles/out.dir/src/Render/Scene/RenderSkinnedMesh.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -8091,6 +8102,7 @@ CMakeFiles/out.dir/src/Render/SceneRenderer.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
@@ -8616,6 +8628,7 @@ CMakeFiles/out.dir/src/Render/ShadowPass.cpp.o
  src/Animation/Animation.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
  src/Render/ArrayBuffer.hpp
@@ -9421,6 +9434,7 @@ CMakeFiles/out.dir/src/Scene/Camera.cpp.o
  src/Core/Config.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
  src/Debug/Log.hpp
@@ -9690,16 +9704,17 @@ CMakeFiles/out.dir/src/Scene/Camera.cpp.o
  src/ThirdParty/glm/vec4.hpp
  src/ThirdParty/glm/vector_relational.hpp
  src/ThirdParty/json/json.hpp
-CMakeFiles/out.dir/src/Scene/Level.cpp.o
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o
  /home/dominik/Desktop/TOWER_2/src/Scene/Camera.hpp
  /home/dominik/Desktop/TOWER_2/src/Scene/Components.hpp
- /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp
- /home/dominik/Desktop/TOWER_2/src/Scene/Level.hpp
+ /home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp
+ /home/dominik/Desktop/TOWER_2/src/Scene/Scene.hpp
  src/Animation/Animation.hpp
  src/Animation/SkinningData.hpp
  src/Core/Convert.hpp
  src/Core/Json.hpp
  src/Core/Math3D.hpp
+ src/Core/NeatCast.hpp
  src/Core/Timer.hpp
  src/Core/Types.hpp
  src/Debug/DebugMenu.hpp

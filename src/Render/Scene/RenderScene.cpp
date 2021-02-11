@@ -1,6 +1,6 @@
 #include "RenderScene.hpp"
 #include "Core/Config.hpp"
-#include "Scene/Level.hpp"
+#include "Scene/Scene.hpp"
 
 RenderScene::RenderScene()
 {
@@ -54,18 +54,6 @@ RenderFlare* RenderScene::addRenderFlare(const std::string& tex)
 //     m_particles.emplace_back(new RenderParticles(group));
 //     return m_particles.back().get();
 // }
-
-void RenderScene::removeRenderMesh(RenderMesh* mesh)
-{
-    for (auto i = m_meshes.begin(); i != m_meshes.end(); i++)
-    {
-        if ((*i).get() == mesh)
-        {
-            m_meshes.erase(i);
-            break;
-        }
-    }
-}
 
 void RenderScene::setProjection(const mat4& proj)
 {

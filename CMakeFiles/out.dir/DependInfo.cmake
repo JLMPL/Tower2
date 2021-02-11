@@ -52,7 +52,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/dominik/Desktop/TOWER_2/src/Resource/MeshCache.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Resource/TextureCache.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/Scene/Camera.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Scene/Camera.cpp.o"
-  "/home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Scene/Level.cpp.o"
+  "/home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/Scene/Scene.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui_demo.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui_demo.cpp.o"
   "/home/dominik/Desktop/TOWER_2/src/ThirdParty/ImGui/imgui_draw.cpp" "/home/dominik/Desktop/TOWER_2/CMakeFiles/out.dir/src/ThirdParty/ImGui/imgui_draw.cpp.o"

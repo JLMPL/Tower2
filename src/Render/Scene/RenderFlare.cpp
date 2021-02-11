@@ -58,11 +58,5 @@ void RenderFlare::setScale(f32 factor)
 void RenderFlare::setPosition(const vec3& pos)
 {
     m_pos = pos;
-    m_transform = math::translate(m_pos);
+    transform = math::translate(m_pos);
 }
-
-RenderEntity::Type RenderFlare::getType() const
-{
-    return Type::Flare;
-}
-

@@ -87,8 +87,8 @@ Render/SceneRenderer.hpp
 /home/dominik/Desktop/TOWER_2/src/Render/SceneRenderer.hpp
 Render/Geometry/Geometry.hpp
 /home/dominik/Desktop/TOWER_2/src/Render/Geometry/Geometry.hpp
-Scene/Level.hpp
-/home/dominik/Desktop/TOWER_2/src/Scene/Level.hpp
+Scene/Scene.hpp
+/home/dominik/Desktop/TOWER_2/src/Scene/Scene.hpp
 SDL2/SDL.h
 -
 ImGui/imgui.h
@@ -507,6 +507,8 @@ vector
 -
 memory
 -
+Core/NeatCast.hpp
+/home/dominik/Desktop/TOWER_2/src/Render/Scene/Core/NeatCast.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderFlare.cpp
 RenderFlare.hpp
@@ -549,8 +551,8 @@ RenderScene.hpp
 /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderScene.hpp
 Core/Config.hpp
 /home/dominik/Desktop/TOWER_2/src/Render/Scene/Core/Config.hpp
-Scene/Level.hpp
-/home/dominik/Desktop/TOWER_2/src/Render/Scene/Scene/Level.hpp
+Scene/Scene.hpp
+/home/dominik/Desktop/TOWER_2/src/Render/Scene/Scene/Scene.hpp
 
 /home/dominik/Desktop/TOWER_2/src/Render/Scene/RenderScene.hpp
 RenderMesh.hpp
@@ -724,9 +726,9 @@ Core/Math3D.hpp
 Core/Math3D.hpp
 /home/dominik/Desktop/TOWER_2/src/Scene/Core/Math3D.hpp
 
-/home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp
-Level.hpp
-/home/dominik/Desktop/TOWER_2/src/Scene/Level.hpp
+/home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp
+Scene.hpp
+/home/dominik/Desktop/TOWER_2/src/Scene/Scene.hpp
 Render/SceneRenderer.hpp
 /home/dominik/Desktop/TOWER_2/src/Scene/Render/SceneRenderer.hpp
 Render/Scene/RenderMesh.hpp
@@ -740,7 +742,7 @@ Components.hpp
 SDL2/SDL.h
 -
 
-/home/dominik/Desktop/TOWER_2/src/Scene/Level.hpp
+/home/dominik/Desktop/TOWER_2/src/Scene/Scene.hpp
 Resource/AnimationCache.hpp
 /home/dominik/Desktop/TOWER_2/src/Scene/Resource/AnimationCache.hpp
 Render/Scene/RenderScene.hpp
@@ -1026,6 +1028,8 @@ glm/glm.hpp
 glm/ext.hpp
 -
 
+src/Core/NeatCast.hpp
+
 src/Core/Random.hpp
 random
 -
@@ -1201,6 +1205,8 @@ vector
 -
 memory
 -
+Core/NeatCast.hpp
+src/Render/Scene/Core/NeatCast.hpp
 
 src/Render/Scene/RenderFlare.hpp
 RenderEntity.hpp
@@ -1316,7 +1322,7 @@ src/Scene/Camera.hpp
 Core/Math3D.hpp
 src/Scene/Core/Math3D.hpp
 
-src/Scene/Level.hpp
+src/Scene/Scene.hpp
 Resource/AnimationCache.hpp
 src/Scene/Resource/AnimationCache.hpp
 Render/Scene/RenderScene.hpp

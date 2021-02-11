@@ -5,6 +5,7 @@ class RenderLight : public RenderEntity
 {
 public:
     using Ptr = std::unique_ptr<RenderLight>;
+    using Ref = std::shared_ptr<RenderLight>;
 
     RenderLight() = default;
     RenderLight(const vec3& color, bool shadow = true);
@@ -23,8 +24,6 @@ public:
 
     void setPosition(const vec3& pos);
     const vec3& getPosition() const;
-
-    Type getType() const override final;
 
 private:
     vec3 m_color;

@@ -14,6 +14,7 @@ class RenderFlare : public RenderEntity
 {
 public:
     using Ptr = std::unique_ptr<RenderFlare>;
+    using Ref = std::shared_ptr<RenderFlare>;
 
     RenderFlare() = default;
     RenderFlare(TextureHandle tex);
@@ -25,8 +26,6 @@ public:
     void setScale(f32 factor);
 
     void setPosition(const vec3& pos);
-
-    Type getType() const override final;
 
 private:
     gfx::VertexArray m_vao;

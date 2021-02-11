@@ -62,10 +62,10 @@ void ShadowPass::execute(RenderScene& scene)
 
         for (auto& renderMesh : scene.m_meshes)
         {
-            if (!renderMesh->isVisible())
+            if (!renderMesh->visible)
                 continue;
 
-            auto mesh = renderMesh->getMesh();
+            auto mesh = renderMesh->mesh;
 
             for (auto& entry : mesh->entries)
             {
@@ -74,7 +74,7 @@ void ShadowPass::execute(RenderScene& scene)
                 m_shadowShader.bind();
                 m_shadowShader.setUniformMatrix("uProj", m_proj);
                 m_shadowShader.setUniformMatrix("uView", m_views[face]);
-                m_shadowShader.setUniformMatrix("uModel", renderMesh->getTransform());
+                m_shadowShader.setUniformMatrix("uModel", renderMesh->transform);
                 m_shadowShader.setUniform3f("uLightPos", eye);
 
                 drawVertexArray(*vao);
@@ -84,10 +84,10 @@ void ShadowPass::execute(RenderScene& scene)
         }
         for (auto& renderSkin : scene.m_skinMeshes)
         {
-            if (!renderSkin->isVisible())
+            if (!renderSkin->visible)
                 continue;
 
-            auto mesh = renderSkin->getMesh();
+            auto mesh = renderSkin->mesh;
 
             for (auto& entry : mesh->entries)
             {
@@ -96,14 +96,14 @@ void ShadowPass::execute(RenderScene& scene)
                 m_ashadowShader.bind();
                 m_ashadowShader.setUniformMatrix("uProj", m_proj);
                 m_ashadowShader.setUniformMatrix("uView", m_views[face]);
-                m_ashadowShader.setUniformMatrix("uModel", renderSkin->getTransform());
+                m_ashadowShader.setUniformMatrix("uModel", renderSkin->transform);
                 m_ashadowShader.setUniform3f("uLightPos", eye);
 
-                for (u32 j = 0; j < renderSkin->getNumJoints(); j++)
+                for (u32 j = 0; j < renderSkin->matrixPalette.size(); j++)
                 {
                     char index[10];
                     sprintf(index, "bones[%d]", j);
-                    m_ashadowShader.setUniformMatrix(index, renderSkin->getMatrixPalette()[j]);
+                    m_ashadowShader.setUniformMatrix(index, renderSkin->matrixPalette[j]);
                 }
 
                 drawVertexArray(*vao);

@@ -29,4 +29,11 @@ struct SkinnedMesh
     float along = 0.f;
 };
 
+struct Camera
+{
+    vec3 target;
+    vec3 eye;
+    mat4 view;
+};
+
 }

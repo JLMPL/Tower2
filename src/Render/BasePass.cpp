@@ -69,10 +69,10 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
     for (auto& renderMesh : scene.m_meshes)
     {
-        if (!renderMesh->isVisible())
+        if (!renderMesh->visible)
             continue;
 
-        auto mesh = renderMesh->getMesh();
+        auto mesh = renderMesh->mesh;
 
         for (auto& entry : mesh->entries)
         {
@@ -82,7 +82,7 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
             m_flatShader.bind();
             m_flatShader.setUniformMatrix("uProj", scene.getProjection());
             m_flatShader.setUniformMatrix("uView", scene.getView());
-            m_flatShader.setUniformMatrix("uModel", renderMesh->getTransform());
+            m_flatShader.setUniformMatrix("uModel", renderMesh->transform);
             m_flatShader.setUniform3f("uCamPos", scene.getCameraPos());
 
             for (u32 i = 0; i < 4; i++)
@@ -146,10 +146,10 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
     for (auto& renderSkin : scene.m_skinMeshes)
     {
-        if (!renderSkin->isVisible())
+        if (!renderSkin->visible)
             continue;
 
-        auto mesh = renderSkin->getMesh();
+        auto mesh = renderSkin->mesh;
 
         for (auto& entry : mesh->entries)
         {
@@ -159,14 +159,14 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
             m_aflatShader.bind();
             m_aflatShader.setUniformMatrix("uProj", scene.getProjection());
             m_aflatShader.setUniformMatrix("uView", scene.getView());
-            m_aflatShader.setUniformMatrix("uModel", renderSkin->getTransform());
+            m_aflatShader.setUniformMatrix("uModel", renderSkin->transform);
             m_aflatShader.setUniform3f("uCamPos", scene.getCameraPos());
 
-            for (u32 j = 0; j < renderSkin->getNumJoints(); j++)
+            for (u32 j = 0; j < renderSkin->matrixPalette.size(); j++)
             {
                 char index[10];
                 sprintf(index, "bones[%d]", j);
-                m_aflatShader.setUniformMatrix(index, renderSkin->getMatrixPalette()[j]);
+                m_aflatShader.setUniformMatrix(index, renderSkin->matrixPalette[j]);
             }
 
             for (u32 i = 0; i < 4; i++)
@@ -200,13 +200,13 @@ void BasePass::renderMeshes(RenderScene& scene, GLuint shadow0)
 
     for (auto& renderFlare : scene.m_flares)
     {
-        if (!renderFlare->isVisible())
+        if (!renderFlare->visible)
             continue;
 
         m_flareShader.bind();
         m_flareShader.setUniformMatrix("uProj", scene.getProjection());
         m_flareShader.setUniformMatrix("uView", scene.getView());
-        m_flareShader.setUniformMatrix("uModel", renderFlare->getTransform());
+        m_flareShader.setUniformMatrix("uModel", renderFlare->transform);
 
         m_flareShader.setUniform1f("uScale", renderFlare->m_scale);
         m_flareShader.setUniformColor4("uColor", renderFlare->m_color);

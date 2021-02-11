@@ -8,7 +8,7 @@
 #include "Input/Input.hpp"
 #include "Render/SceneRenderer.hpp"
 #include "Render/Geometry/Geometry.hpp"
-#include "Scene/Level.hpp"
+#include "Scene/Scene.hpp"
 #include <SDL2/SDL.h>
 
 #define IMGUI_IMPL_OPENGL_LOADER_GLEW
@@ -21,7 +21,7 @@ SDL_GLContext      l_context;
 SDL_Event          l_event;
 
 core::Timer        l_timer;
-std::unique_ptr<Level> m_level;
+std::unique_ptr<Level> m_scene;
 
 bool               l_relativeMouse = true;
 bool               l_running = true;
@@ -127,8 +127,8 @@ LOCAL void init()
     setupSystems();
     setRelativeMouseMode(l_relativeMouse);
 
-    m_level = std::make_unique<Level>();
-    m_level->initFromScript("Maps/Level0.lua");
+    m_scene = std::make_unique<Level>();
+    m_scene->initFromScript("Maps/Level0.lua");
 }
 
 LOCAL void shutdown()
@@ -231,7 +231,7 @@ LOCAL void processClientEvent(const Event& event)
 
 LOCAL void update()
 {
-    m_level->update();
+    m_scene->update();
 }
 
 void runApplication()
@@ -254,7 +254,7 @@ void runApplication()
         update();
 
         // gfx::g_Renderer2D.beginFrame();
-        // m_level->draw();
+        // m_scene->draw();
         // gfx::g_Renderer2D.endFrame();
 
         ImGui_ImplOpenGL3_NewFrame();

@@ -16,16 +16,6 @@ class Shader
 public:
     using Ptr = std::unique_ptr<Shader>;
 
-    enum Type
-    {
-        Static,
-        StaticWavy,
-        Skinned,
-
-        Invalid,
-        Count = Invalid
-    };
-
     ~Shader();
 
     void loadFromFile(const std::string& path, const std::string& otherPath = std::string());

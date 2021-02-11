@@ -993,28 +993,28 @@ CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides: CMakeFiles/out.dir/src/Scene
 CMakeFiles/out.dir/src/Scene/Camera.cpp.o.provides.build: CMakeFiles/out.dir/src/Scene/Camera.cpp.o
 
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.o: CMakeFiles/out.dir/flags.make
-CMakeFiles/out.dir/src/Scene/Level.cpp.o: src/Scene/Level.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Scene/Level.cpp.o"
-	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Scene/Level.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o: CMakeFiles/out.dir/flags.make
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o: src/Scene/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dominik/Desktop/TOWER_2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/out.dir/src/Scene/Scene.cpp.o"
+	/usr/bin/g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/out.dir/src/Scene/Scene.cpp.o -c /home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Scene/Level.cpp.i"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp > CMakeFiles/out.dir/src/Scene/Level.cpp.i
+CMakeFiles/out.dir/src/Scene/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/out.dir/src/Scene/Scene.cpp.i"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp > CMakeFiles/out.dir/src/Scene/Scene.cpp.i
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Scene/Level.cpp.s"
-	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Scene/Level.cpp -o CMakeFiles/out.dir/src/Scene/Level.cpp.s
+CMakeFiles/out.dir/src/Scene/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/out.dir/src/Scene/Scene.cpp.s"
+	/usr/bin/g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dominik/Desktop/TOWER_2/src/Scene/Scene.cpp -o CMakeFiles/out.dir/src/Scene/Scene.cpp.s
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires:
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o.requires:
 
-.PHONY : CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
+.PHONY : CMakeFiles/out.dir/src/Scene/Scene.cpp.o.requires
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides: CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides.build
-.PHONY : CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o.provides: CMakeFiles/out.dir/src/Scene/Scene.cpp.o.requires
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Scene.cpp.o.provides.build
+.PHONY : CMakeFiles/out.dir/src/Scene/Scene.cpp.o.provides
 
-CMakeFiles/out.dir/src/Scene/Level.cpp.o.provides.build: CMakeFiles/out.dir/src/Scene/Level.cpp.o
+CMakeFiles/out.dir/src/Scene/Scene.cpp.o.provides.build: CMakeFiles/out.dir/src/Scene/Scene.cpp.o
 
 
 CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o: CMakeFiles/out.dir/flags.make
@@ -1490,7 +1490,7 @@ out_OBJECTS = \
 "CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o" \
 "CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o" \
 "CMakeFiles/out.dir/src/Scene/Camera.cpp.o" \
-"CMakeFiles/out.dir/src/Scene/Level.cpp.o" \
+"CMakeFiles/out.dir/src/Scene/Scene.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o" \
 "CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o" \
@@ -1552,7 +1552,7 @@ bin/out: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o
 bin/out: CMakeFiles/out.dir/src/Scene/Camera.cpp.o
-bin/out: CMakeFiles/out.dir/src/Scene/Level.cpp.o
+bin/out: CMakeFiles/out.dir/src/Scene/Scene.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o
 bin/out: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o
@@ -1620,7 +1620,7 @@ CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MaterialCache.cpp.o
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Scene/Camera.cpp.o.requires
-CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Scene/Level.cpp.o.requires
+CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Scene/Scene.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o.requires
 CMakeFiles/out.dir/requires: CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o.requires

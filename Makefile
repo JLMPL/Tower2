@@ -1419,32 +1419,32 @@ src/Scene/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Camera.cpp.s
 .PHONY : src/Scene/Camera.cpp.s
 
-src/Scene/Level.o: src/Scene/Level.cpp.o
+src/Scene/Scene.o: src/Scene/Scene.cpp.o
 
-.PHONY : src/Scene/Level.o
+.PHONY : src/Scene/Scene.o
 
 # target to build an object file
-src/Scene/Level.cpp.o:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Level.cpp.o
-.PHONY : src/Scene/Level.cpp.o
+src/Scene/Scene.cpp.o:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Scene.cpp.o
+.PHONY : src/Scene/Scene.cpp.o
 
-src/Scene/Level.i: src/Scene/Level.cpp.i
+src/Scene/Scene.i: src/Scene/Scene.cpp.i
 
-.PHONY : src/Scene/Level.i
+.PHONY : src/Scene/Scene.i
 
 # target to preprocess a source file
-src/Scene/Level.cpp.i:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Level.cpp.i
-.PHONY : src/Scene/Level.cpp.i
+src/Scene/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Scene.cpp.i
+.PHONY : src/Scene/Scene.cpp.i
 
-src/Scene/Level.s: src/Scene/Level.cpp.s
+src/Scene/Scene.s: src/Scene/Scene.cpp.s
 
-.PHONY : src/Scene/Level.s
+.PHONY : src/Scene/Scene.s
 
 # target to generate assembly for a file
-src/Scene/Level.cpp.s:
-	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Level.cpp.s
-.PHONY : src/Scene/Level.cpp.s
+src/Scene/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles/out.dir/build.make CMakeFiles/out.dir/src/Scene/Scene.cpp.s
+.PHONY : src/Scene/Scene.cpp.s
 
 src/ThirdParty/ImGui/imgui.o: src/ThirdParty/ImGui/imgui.cpp.o
 
@@ -1842,9 +1842,9 @@ help:
 	@echo "... src/Scene/Camera.o"
 	@echo "... src/Scene/Camera.i"
 	@echo "... src/Scene/Camera.s"
-	@echo "... src/Scene/Level.o"
-	@echo "... src/Scene/Level.i"
-	@echo "... src/Scene/Level.s"
+	@echo "... src/Scene/Scene.o"
+	@echo "... src/Scene/Scene.i"
+	@echo "... src/Scene/Scene.s"
 	@echo "... src/ThirdParty/ImGui/imgui.o"
 	@echo "... src/ThirdParty/ImGui/imgui.i"
 	@echo "... src/ThirdParty/ImGui/imgui.s"

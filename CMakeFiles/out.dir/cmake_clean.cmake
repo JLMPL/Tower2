@@ -38,7 +38,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/out.dir/src/Resource/MeshCache.cpp.o"
   "CMakeFiles/out.dir/src/Resource/TextureCache.cpp.o"
   "CMakeFiles/out.dir/src/Scene/Camera.cpp.o"
-  "CMakeFiles/out.dir/src/Scene/Level.cpp.o"
+  "CMakeFiles/out.dir/src/Scene/Scene.cpp.o"
   "CMakeFiles/out.dir/src/Render/Geometry/ScreenQuad.cpp.o"
   "CMakeFiles/out.dir/src/Render/Geometry/SkinnedMeshLoader.cpp.o"
   "CMakeFiles/out.dir/src/Render/Geometry/StaticMeshLoader.cpp.o"

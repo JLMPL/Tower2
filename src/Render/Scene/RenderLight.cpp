@@ -45,11 +45,6 @@ bool RenderLight::isOn() const
     return m_on;
 }
 
-RenderEntity::Type RenderLight::getType() const
-{
-    return Type::Light;
-}
-
 void RenderLight::setPosition(const vec3& pos)
 {
     m_pos = pos;
